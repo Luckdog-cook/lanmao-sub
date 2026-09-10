@@ -2,7 +2,8 @@ name: Auto Update Sub
 
 on:
   schedule:
-    - cron: '0 3 */3 * *'
+    # 每 6 小时跑一次（UTC：00 / 06 / 12 / 18）
+    - cron: '0 0,6,12,18 * * *'
   workflow_dispatch:
 
 jobs:
@@ -18,15 +19,78 @@ jobs:
           python-version: '3.11'
 
       - name: Run script
+        id: run
         run: |
+          echo "===== 开始执行 ====="
           python 蓝猫VPN.py
+          
+          NODE_COUNT=$(wc -l < nodes.txt 2>/dev/null || echo 0)
+          echo "NODE_COUNT=$NODE_COUNT" >> $GITHUB_OUTPUT
+          
+          if [ -f token.json ]; then
+            CREATED=$(python -c "import json,time; d=json.load(open('token.json')); print(int(time.time()) - d.get('created_at',0))" 2>/dev/null || echo 999999)
+            if [ "$CREATED" -lt 300 ]; then
+              echo "ACTION=换新号" >> $GITHUB_OUTPUT
+            else
+              echo "ACTION=刷新" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "ACTION=换新号" >> $GITHUB_OUTPUT
+          fi
+          
+          echo "===== 执行完成 ====="
+          python 蓝猫VPN.py status || true
           ls -la
-          head -c 100 nodes_sub_base64.txt || true
+          head -c 150 nodes_sub_base64.txt || true
 
       - name: Commit and push
+        id: commit
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
-          git add nodes_sub_base64.txt nodes.txt || true
-          git diff --quiet && git diff --staged --quiet || git commit -m "Auto update subscription $(date +%Y-%m-%d)"
-          git push
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          git add nodes_sub_base64.txt nodes.txt token.json || true
+          
+          if git diff --quiet && git diff --staged --quiet; then
+            echo "CHANGED=false" >> $GITHUB_OUTPUT
+            echo "No changes to commit"
+          else
+            ACTION="${{ steps.run.outputs.ACTION }}"
+            NODE_COUNT="${{ steps.run.outputs.NODE_COUNT }}"
+            DATE=$(date -u +"%Y-%m-%d %H:%M UTC")
+            
+            git commit -m "🔄 ${ACTION} 订阅 | ${NODE_COUNT} 个节点 | ${DATE}"
+            git push
+            echo "CHANGED=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Notify (可选)
+        if: always()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        run: |
+          ACTION="${{ steps.run.outputs.ACTION || '未知' }}"
+          NODE_COUNT="${{ steps.run.outputs.NODE_COUNT || 0 }}"
+          CHANGED="${{ steps.commit.outputs.CHANGED || 'false' }}"
+          STATUS="${{ job.status }}"
+          
+          MSG="蓝猫订阅更新
+          状态: ${STATUS}
+          操作: ${ACTION}
+          节点: ${NODE_COUNT} 个
+          有变更: ${CHANGED}
+          时间: $(date -u +'%Y-%m-%d %H:%M UTC')"
+          
+          if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
+            curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              -d chat_id="${TELEGRAM_CHAT_ID}" \
+              -d text="${MSG}" || true
+          fi
+          
+          if [ -n "$DISCORD_WEBHOOK" ]; then
+            curl -s -X POST "$DISCORD_WEBHOOK" \
+              -H "Content-Type: application/json" \
+              -d "{\"content\": \"${MSG}\"}" || true
+          fi
