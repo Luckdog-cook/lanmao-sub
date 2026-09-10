@@ -1,0 +1,44 @@
+name: Update Fengniao Nodes
+
+on:
+  schedule:
+    - cron: '0 */8 * * *'   # 每 8 小时
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run script
+        env:
+          FENGNIAO_SERIAL: ${{ secrets.FENGNIAO_SERIAL }}
+        run: |
+          python fengniao_sign.py --delay 3.0
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 节点链接.txt sub.txt fengniao_nodes.json clash.yaml || true
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update nodes $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
