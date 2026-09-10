@@ -1,0 +1,32 @@
+name: Auto Update Sub
+
+on:
+  schedule:
+    - cron: '0 3 */3 * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run script
+        run: |
+          python 蓝猫VPN.py
+          ls -la
+          head -c 100 nodes_sub_base64.txt || true
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add nodes_sub_base64.txt nodes.txt || true
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto update subscription $(date +%Y-%m-%d)"
+          git push
