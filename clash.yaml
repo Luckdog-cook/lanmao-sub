@@ -7,9 +7,9 @@ external-controller: 127.0.0.1:9090
 proxies:
   - name: "新加坡"
     type: trojan
-    server: t193m.iamnew2020.top
-    port: 92
-    password: "770266c359654fb9"
+    server: iwt196.moldscience.cc
+    port: 20006
+    password: "07c13d6035994478"
     udp: true
     skip-cert-verify: true
 
@@ -31,9 +31,9 @@ proxies:
 
   - name: "美国"
     type: trojan
-    server: su106.izzzzzi.com
+    server: su108.izzzzzi.com
     port: 20006
-    password: "88a63d0a47ce4e5f"
+    password: "423addf9c9ec433a"
     udp: true
     skip-cert-verify: true
 
@@ -63,17 +63,17 @@ proxies:
 
   - name: "中国台湾"
     type: trojan
-    server: uwt125.zxom.eu.org
-    port: 20006
-    password: "a9cf1c58394b4d91"
+    server: iwt119.izzzzzi.com
+    port: 201
+    password: "27017754a6dc40a9"
     udp: true
     skip-cert-verify: true
 
   - name: "台湾二线"
     type: trojan
-    server: iwt196.moldscience.cc
-    port: 20006
-    password: "07c13d6035994478"
+    server: wt194.moldscience.cc
+    port: 101
+    password: "112bd507195f4b76"
     udp: true
     skip-cert-verify: true
 
@@ -119,9 +119,9 @@ proxies:
 
   - name: "英国"
     type: trojan
-    server: ikuk195.zxom.eu.org
+    server: ikuk204.zxom.eu.org
     port: 99
-    password: "4f2c590e7afe4717"
+    password: "fe673c74c79b461b"
     udp: true
     skip-cert-verify: true
 
@@ -151,9 +151,9 @@ proxies:
 
   - name: "视频专线"
     type: trojan
-    server: su108.izzzzzi.com
+    server: su106.izzzzzi.com
     port: 20006
-    password: "423addf9c9ec433a"
+    password: "88a63d0a47ce4e5f"
     udp: true
     skip-cert-verify: true
 
