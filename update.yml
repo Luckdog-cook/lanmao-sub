@@ -1,0 +1,35 @@
+name: Update Flux Nodes
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # 每 6 小时更新一次
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch nodes
+        run: python fetch_flux.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add 节点链接.txt sub.txt || true
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Update nodes $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
