@@ -1,0 +1,55 @@
+name: Update SingLink Subscription
+
+on:
+  schedule:
+    # 每 2 小时更新一次（UTC）
+    - cron: '0 */2 * * *'
+  workflow_dispatch:  # 支持手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install pycryptodome pyyaml
+
+      - name: Run fetch script
+        env:
+          SINGLINK_TOKEN: ${{ secrets.SINGLINK_TOKEN }}
+          SINGLINK_DEVICE: ${{ secrets.SINGLINK_DEVICE }}
+          OUTPUT_DIR: "."
+          OUT_TXT: safevpn_sub.txt
+          OUT_CLASH: clash.yaml
+          OUT_SINGBOX: sing-box.json
+        run: python 星链.py
+
+      - name: Detect changes
+        id: changes
+        run: |
+          git add safevpn_sub.txt clash.yaml sing-box.json || true
+          if git diff --staged --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "没有节点变化"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "检测到节点更新"
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: update nodes $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
