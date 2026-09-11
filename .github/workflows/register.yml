@@ -27,5 +27,5 @@ jobs:
 
       - name: Run register
         env:
-          REGISTER_COUNT: "1"   # 每次注册几个，可改
+          REGISTER_COUNT: "3"   # 每次注册几个，可改
         run: python huozhong_register.py
