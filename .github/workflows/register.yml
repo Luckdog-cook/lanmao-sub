@@ -1,0 +1,45 @@
+name: 批量注册火种账号
+
+on:
+  workflow_dispatch:
+    inputs:
+      num:
+        description: '要注册的账号数量'
+        required: true
+        default: '3'
+      retry:
+        description: '验证码重试次数'
+        required: true
+        default: '3'
+
+jobs:
+  register:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 安装 tesseract
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 运行注册
+        env:
+          REFERRAL_CODE: ${{ secrets.REFERRAL_CODE }}
+        run: python register.py -n ${{ github.event.inputs.num }} -r ${{ github.event.inputs.retry }}
+
+      - name: 上传注册结果
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: accounts
+          path: accounts.txt
+          if-no-files-found: ignore
