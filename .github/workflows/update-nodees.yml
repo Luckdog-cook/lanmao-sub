@@ -1,0 +1,40 @@
+name: Update YesVPN Nodes
+
+on:
+  schedule:
+    # 每 4 小时更新一次（UTC 时间），可自行调整
+    - cron: '0 */4 * * *'
+  workflow_dispatch:  # 支持手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch nodes
+        run: |
+          python get_nodes.py
+          # 脚本会输出到 stdout 并写入 nodes_vless.txt
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if git diff --quiet nodes_vless.txt; then
+            echo "No changes"
+          else
+            git add nodes_vless.txt
+            git commit -m "chore: update nodes $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
