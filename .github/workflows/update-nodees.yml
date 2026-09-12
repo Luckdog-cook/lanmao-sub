@@ -2,9 +2,8 @@ name: Update YesVPN Nodes
 
 on:
   schedule:
-    # 每 4 小时更新一次（UTC 时间），可自行调整
     - cron: '0 */4 * * *'
-  workflow_dispatch:  # 支持手动触发
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -21,10 +20,11 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install dependencies
+        run: pip install requests
+
       - name: Fetch nodes
-        run: |
-          python get_nodes.py
-          # 脚本会输出到 stdout 并写入 nodes_vless.txt
+        run: python get_nodes.py
 
       - name: Commit and push if changed
         run: |
