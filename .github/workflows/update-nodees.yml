@@ -20,6 +20,9 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install dependencies
+        run: pip install requests
+
       - name: Fetch nodes
         run: python get_nodes.py
 
