@@ -1,0 +1,36 @@
+name: 获取火种节点并更新Gist
+
+on:
+  workflow_dispatch:          # 手动触发
+  schedule:
+    - cron: '0 0,12 * * *'   # 每天北京时间 08:00 和 20:00
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 设置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: pip install requests urllib3
+
+      - name: 运行脚本
+        env:
+          ACCOUNTS: ${{ secrets.ACCOUNTS }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+          GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
+        run: python get_nodes.py
+
+      - name: 上传本地备份
+        uses: actions/upload-artifact@v4
+        with:
+          name: nodes-backup
+          path: |
+            subscription.txt
+            clash.yaml
+          retention-days: 3
