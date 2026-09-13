@@ -1,1 +1,40 @@
-.github/workflows/update_nodes.yml
+name: 更新火种节点
+
+on:
+  schedule:
+    - cron: '0 0,6,12,18 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'huozhong_nodes.py'
+      - '.github/workflows/update_nodes.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install deps
+        run: pip install -q requests urllib3
+      - name: Fetch nodes
+        run: |
+          set -e
+          python huozhong_nodes.py
+          wc -l huozhong_nodes.txt || true
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ ! -f huozhong_nodes.txt ]; then exit 1; fi
+          git add huozhong_nodes.txt
+          git diff --staged --quiet && echo "无变化" && exit 0
+          git commit -m "chore: update huozhong_nodes.txt"
+          git push
