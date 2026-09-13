@@ -1,0 +1,38 @@
+name: 手动注册账号（刷邀请）
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: '要注册的账号数量'
+        required: true
+        default: '3'
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  register:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: pip install -q requests pillow ddddocr -i https://pypi.tuna.tsinghua.edu.cn/simple
+      - name: Run register
+        env:
+          REGISTER_COUNT: ${{ inputs.count }}
+          CI: true
+        run: python register_auto.py
+      - name: Upload accounts artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: huozhong-accounts
+          path: huozhong_accounts.txt
+          if-no-files-found: warn
+          retention-days: 7
