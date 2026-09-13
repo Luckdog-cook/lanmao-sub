@@ -1,4 +1,4 @@
-name: 更新火种
+name: 更新火种节点
 
 on:
   schedule:
