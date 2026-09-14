@@ -1,0 +1,50 @@
+name: 更新 iPoW 节点
+
+on:
+  schedule:
+    - cron: '0 0,12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install -q requests eth-account cryptography
+
+      - name: Fetch iPoW nodes
+        run: |
+          set -e
+          python ipow_nodes.py --quiet || true
+          if [ -f ipow_nodes.txt ]; then
+            echo "节点行数:"
+            wc -l ipow_nodes.txt
+            head -3 ipow_nodes.txt
+          else
+            echo "未生成 ipow_nodes.txt"
+            exit 1
+          fi
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ipow_nodes.txt
+          git add all_nodes_vless.txt all_nodes.json 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "无变化，跳过提交"
+            exit 0
+          fi
+          git commit -m "chore: update ipow_nodes.txt"
+          git push
