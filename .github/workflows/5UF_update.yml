@@ -1,0 +1,46 @@
+name: Update 5UF Subscription
+
+on:
+  schedule:
+    - cron: '*/40 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Fetch & group nodes
+        run: |
+          python 5uf_auto.py --ci --format all --renew --group
+        env:
+          5UF_OUT_DIR: .
+
+      - name: Show summary
+        run: |
+          echo "=== 文件列表 ==="
+          ls -la nodes*.txt nodes.base64 clash.yaml 2>/dev/null || true
+          echo "=== 各国节点数 ==="
+          for f in nodes-*.txt; do
+            [ -f "$f" ] && echo "$f : $(wc -l < $f) 条"
+          done
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add nodes.txt nodes.base64 clash.yaml nodes-*.txt 5uf_nodes* 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "No changes"
+          else
+            git commit -m "chore: update 5UF nodes $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push
+          fi
