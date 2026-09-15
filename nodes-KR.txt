@@ -1,1 +1,0 @@
-vless://f45dfc31-c2fe-41b5-a263-724a17108f9a@kr1.xinhuanet.network:443?security=tls&sni=kr1.xinhuanet.network&fp=chrome&type=xhttp&path=%2Fspeedtest%2Fapi%2Fprobe&host=kr1.xinhuanet.network&mode=stream-up&allowInsecure=1#5UF%20%E9%9F%A9%E5%9B%BD%20%2C%E7%9B%B4%E8%BF%9E%E9%A6%96%E5%B0%94
