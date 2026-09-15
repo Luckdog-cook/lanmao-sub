@@ -1,4 +1,0 @@
-vless://f45dfc31-c2fe-41b5-a263-724a17108f9a@uk4.xinhuanet.network:38573?security=reality&sni=www.apple.com&flow=xtls-rprx-vision&fp=chrome&type=tcp&pbk=dA2t2td9r8lguXOw3P1p6n-45OCeIEmw5aYpeocUYV4&sid=0123456789abcdef#5UF%20%E8%8B%B1%E5%9B%BD%206%20VLESS
-vless://f45dfc31-c2fe-41b5-a263-724a17108f9a@uk4.xinhuanet.network:443?security=tls&sni=uk4.xinhuanet.network&fp=chrome&type=xhttp&path=%2Fspeedtest%2Fapi%2Fprobe&host=uk4.xinhuanet.network&mode=stream-up&allowInsecure=1#5UF%20%E8%8B%B1%E5%9B%BD%207%20VLESS%20%2B%20NGINX%20CDN
-vless://f45dfc31-c2fe-41b5-a263-724a17108f9a@uk4.xinhuanet.network:38574?security=tls&sni=uk4.xinhuanet.network&fp=chrome&type=xhttp&path=%2Fspeedtest%2Fapi%2Fprobe&host=uk4.xinhuanet.network&mode=stream-up&allowInsecure=1#5UF%20%E8%8B%B1%E5%9B%BD%208%20Naive%20HTTP
-anytls://f45dfc31-c2fe-41b5-a263-724a17108f9a@uk4.xinhuanet.network:38553?sni=uk4.xinhuanet.network&insecure=1#5UF%20%E8%8B%B1%E5%9B%BD%204%20AnyTLS%20%2B%20HTTP2
