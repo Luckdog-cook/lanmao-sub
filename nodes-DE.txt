@@ -1,0 +1,1 @@
+vless://f45dfc31-c2fe-41b5-a263-724a17108f9a@de1.xinhuanet.network:443?security=tls&sni=de1.xinhuanet.network&fp=chrome&type=xhttp&path=%2Fspeedtest%2Fapi%2Fprobe&host=de1.xinhuanet.network&mode=stream-up&allowInsecure=1#5UF%20%E5%BE%B7%E5%9B%BD1%2C%E7%9B%B4%E8%BF%9EFrankfurt%2C%20DE

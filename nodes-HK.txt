@@ -1,0 +1,1 @@
+vless://f45dfc31-c2fe-41b5-a263-724a17108f9a@hk4.febbox.cn:443?security=tls&sni=hk4.febbox.cn&fp=chrome&type=xhttp&path=%2Fspeedtest%2Fapi%2Fprobe&host=hk4.febbox.cn&mode=stream-up&allowInsecure=1#5UF%20%E9%A6%99%E6%B8%AF%204%2C%20vless_xhttp%20CDN%20%E5%8D%8F%E8%AE%AE%E6%B5%8B%E8%AF%95

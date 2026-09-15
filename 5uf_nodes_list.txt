@@ -1,0 +1,50 @@
+[  1] 5UF 德国1,直连Frankfurt, DE	vless	de1.xinhuanet.network:443
+[  2] 5UF 法国 3 vless 测试	vless	fr1.xinhuanet.network:38573
+[  3] 5UF 法国 4 vless+NGINX(CDN) TEST	vless	fr1.xinhuanet.network:443
+[  4] 5UF 法国 5 naive http TEST	vless	fr1.xinhuanet.network:38574
+[  5] 5UF 法国 1 anytls测试	anytls	fr1.xinhuanet.network:38553
+[  6] 5UF 法国 2 Hysteria2 测试	hysteria2	fr1.xinhuanet.network:38590
+[  7] 5UF 英国 6 VLESS	vless	uk4.xinhuanet.network:38573
+[  8] 5UF 英国 7 VLESS + NGINX CDN	vless	uk4.xinhuanet.network:443
+[  9] 5UF 英国 8 Naive HTTP	vless	uk4.xinhuanet.network:38574
+[ 10] 5UF 英国 4 AnyTLS + HTTP2	anytls	uk4.xinhuanet.network:38553
+[ 11] 5UF 香港 4, vless_xhttp CDN 协议测试	vless	hk4.febbox.cn:443
+[ 12] 5UF 印度 1,直连印度	vless	in1.xinhuanet.network:443
+[ 13] 5UF 韩国 ,直连首尔	vless	kr1.xinhuanet.network:443
+[ 14] 5UF 新加坡 sg3，Hysteria2	hysteria2	sg1.xinhuanet.network:443
+[ 15] 5UF 台湾 1,直连台北市,可以看 netflix	vless	tw1.xinhuanet.network:443
+[ 16] 5UF 美国1,直连美国东部	vless	usa1.xinhuanet.network:443
+[ 17] 5UF 香港1,直连香港核心机房	vless	hk1.xinhuanet.network:443
+[ 18] 5UF 香港2,专线，BGP移动电信联通都可以用,大陆专用	vless	hk2.xinhuanet.network:20453
+[ 19] 5UF 香港3,直连香港核心机房	vless	hk3.xinhuanet.network:443
+[ 20] 5UF 日本2,中国BGP优化,专线	vless	jp2.xinhuanet.network:20452
+[ 21] 5UF 日本1,直连东京	vless	jp1.xinhuanet.network:443
+[ 22] 5UF 新加坡1,SG1,新加坡直连	vless	sg1.xinhuanet.network:443
+[ 23] 5UF 英国1,直连英国伦敦	vless	uk1.xinhuanet.network:443
+[ 24] 5UF 英国2,专线,中国 BGP优化	vless	uk2.xinhuanet.network:20454
+[ 25] 5UF 美国2,中港专线，大陆BGP优化	vless	usa2.xinhuanet.network:20451
+[ 26] 5UF 越南1,直连胡志民市	vless	vn1.xinhuanet.network:443
+[ 27] 5UF 泰国1,直连曼谷	vless	th1.xinhuanet.network:443
+[ 28] 5UF 巴西 1,直连圣保罗	vless	br1.xinhuanet.network:443
+[ 29] 5UF 美国6,直连美国	vless	usa6.xinhuanet.network:443
+[ 30] 5UF 澳大利亚1,直连澳大利亚	vless	au1.xinhuanet.network:443
+[ 31] 5UF 新加坡2,BGP中转	vless	sg2.xinhuanet.network:20443
+[ 32] 5UF 英国5  Hysteria2	hysteria2	uk4.xinhuanet.network:38590
+[ 33] 5UF 越南3，VN1 同机 Hysteria2	hysteria2	vn1.xinhuanet.network:443
+[ 34] 5UF 美国3，Hysteria2	hysteria2	usa1.xinhuanet.network:443
+[ 35] 5UF 日本3，Hysteria2	hysteria2	jp1.xinhuanet.network:443
+[ 36] 5UF 澳大利亚3，Hysteria2	hysteria2	au1.xinhuanet.network:443
+[ 37] 5UF 香港6，新直连，Hysteria2	hysteria2	hk6.xinhuanet.network:443
+[ 38] 5UF 英国3，Hysteria2	hysteria2	uk1.xinhuanet.network:443
+[ 39] 5UF 日本4，直连东京，Hysteria2	hysteria2	jp4.xinhuanet.network:443
+[ 40] 5UF 新加坡4，日本中转，Hysteria2 + HTTP2	hysteria2	jp4.xinhuanet.network:22001
+[ 41] 5UF 台湾3，日本中转，Hysteria2 + HTTP2	hysteria2	jp4.xinhuanet.network:22002
+[ 42] 5UF 越南4，日本中转，Hysteria2 + HTTP2	hysteria2	jp4.xinhuanet.network:22003
+[ 43] 5UF 韩国3，日本中转，Hysteria2 + HTTP2	hysteria2	jp4.xinhuanet.network:22004
+[ 44] 5UF 泰国3，日本中转，Hysteria2 + HTTP2	hysteria2	jp4.xinhuanet.network:22005
+[ 45] 5UF 澳大利亚4，日本中转，Hysteria2 + HTTP2	hysteria2	jp4.xinhuanet.network:22006
+[ 46] 5UF 印度3，日本中转，Hysteria2 + HTTP2	hysteria2	jp4.xinhuanet.network:22007
+[ 47] 5UF 德国3，日本中转，Hysteria2 + HTTP2	hysteria2	jp4.xinhuanet.network:22008
+[ 48] 5UF 美国4，日本中转，Hysteria2 + HTTP2	hysteria2	jp4.xinhuanet.network:22009
+[ 49] 5UF 日本5，直连东京，Hysteria2 + HTTP2	hysteria2	jp4.xinhuanet.network:22010
+[ 50] 5UF 英国9，日本中转，Hysteria2 + HTTP2	hysteria2	jp4.xinhuanet.network:22012

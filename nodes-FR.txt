@@ -1,0 +1,5 @@
+vless://f45dfc31-c2fe-41b5-a263-724a17108f9a@fr1.xinhuanet.network:38573?security=reality&sni=www.apple.com&flow=xtls-rprx-vision&fp=chrome&type=tcp&pbk=dA2t2td9r8lguXOw3P1p6n-45OCeIEmw5aYpeocUYV4&sid=0123456789abcdef#5UF%20%E6%B3%95%E5%9B%BD%203%20vless%20%E6%B5%8B%E8%AF%95
+vless://f45dfc31-c2fe-41b5-a263-724a17108f9a@fr1.xinhuanet.network:443?security=tls&sni=fr1.xinhuanet.network&fp=chrome&type=xhttp&path=%2Fspeedtest%2Fapi%2Fprobe&host=fr1.xinhuanet.network&mode=stream-up&allowInsecure=1#5UF%20%E6%B3%95%E5%9B%BD%204%20vless%2BNGINX%28CDN%29%20TEST
+vless://f45dfc31-c2fe-41b5-a263-724a17108f9a@fr1.xinhuanet.network:38574?security=tls&sni=fr1.xinhuanet.network&fp=chrome&type=xhttp&path=%2Fspeedtest%2Fapi%2Fprobe&host=fr1.xinhuanet.network&mode=stream-up&allowInsecure=1#5UF%20%E6%B3%95%E5%9B%BD%205%20naive%20http%20TEST
+anytls://f45dfc31-c2fe-41b5-a263-724a17108f9a@fr1.xinhuanet.network:38553?sni=fr1.xinhuanet.network&insecure=1#5UF%20%E6%B3%95%E5%9B%BD%201%20anytls%E6%B5%8B%E8%AF%95
+hysteria2://f45dfc31-c2fe-41b5-a263-724a17108f9a@fr1.xinhuanet.network:38590?sni=fr1.xinhuanet.network#5UF%20%E6%B3%95%E5%9B%BD%202%20Hysteria2%20%E6%B5%8B%E8%AF%95
