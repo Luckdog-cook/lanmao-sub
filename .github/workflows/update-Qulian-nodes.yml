@@ -40,7 +40,7 @@ jobs:
           timeout_minutes: 18
           max_attempts: 3                 # 验证码失败时自动重试最多3次
           retry_wait_seconds: 45
-          command: python 趣连.py
+          command: python qulian.py
         # 如果需要更详细日志可加：python 趣连.py -v
 
       - name: 提交更新
