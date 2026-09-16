@@ -1,4 +1,4 @@
-name: Auto Update lanmao nodes
+name: Update lanmao nodes
 
 on:
   schedule:
