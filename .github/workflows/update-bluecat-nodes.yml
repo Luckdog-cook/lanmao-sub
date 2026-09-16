@@ -1,26 +1,72 @@
-name: 更新订阅
+name: 更新蓝猫订阅
+
 on:
   schedule:
-    - cron: '20 */4 * * *'
-  workflow_dispatch:
+    - cron: '15 */4 * * *'          # 每4小时
+  workflow_dispatch:                # 支持手动触发
+
+concurrency:
+  group: lanmao-update
+  cancel-in-progress: true          # 有新任务时取消旧的
+
 permissions:
   contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 10             # 整体超时
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Python
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: 运行
+          cache: 'pip'
+
+      - name: 安装依赖（如有）
+        run: |
+          pip install --upgrade pip
+          # 蓝猫脚本是纯标准库，一般不需要额外包
+          # 如果以后加了 requests 等，在这里写
+
+      - name: 运行脚本（带重试）
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 8
+          max_attempts: 3
+          retry_wait_seconds: 30
+          command: python 蓝猫VPN.py auto
         env:
           VPN_PASSWORD: ${{ secrets.VPN_PASSWORD }}
           VPN_ENCRYPT_KEY: ${{ secrets.VPN_ENCRYPT_KEY }}
-        run: python 蓝猫VPN.py auto
-      - name: 提交
+          # VPN_TEST_LATENCY: "0"     # 需要关闭延迟测试时取消注释
+
+      - name: 提交更新
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@users.noreply.github.com"
-          git add nodes.txt nodes_sub_base64.txt subscription_info.txt clash.yaml token.json || true
-          git diff --staged --quiet || (git commit -m "update $(date -u +%Y%m%d-%H%M)" && git push)
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add nodes.txt nodes_sub_base64.txt subscription_info.txt clash.yaml token.json 2>/dev/null || true
+          
+          if git diff --staged --quiet; then
+            echo "内容无变化，跳过提交"
+          else
+            git commit -m "chore: update subscription $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
+
+      # ---------- 可选：失败时通知（取消注释并配置 Secrets 即可） ----------
+      # - name: 失败通知
+      #   if: failure()
+      #   run: |
+      #     # 示例1：Bark（iOS）
+      #     # curl -X POST "https://api.day.app/${{ secrets.BARK_KEY }}/蓝猫订阅更新失败/请检查Actions"
+      #
+      #     # 示例2：Telegram
+      #     # curl -s -X POST "https://api.telegram.org/bot${{ secrets.TG_BOT_TOKEN }}/sendMessage" \
+      #     #   -d "chat_id=${{ secrets.TG_CHAT_ID }}" \
+      #     #   -d "text=蓝猫订阅更新失败，请检查 Actions"
