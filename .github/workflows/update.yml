@@ -1,4 +1,4 @@
-name: Auto Update Sub
+name: Auto Update lanmao nodes
 
 on:
   schedule:
