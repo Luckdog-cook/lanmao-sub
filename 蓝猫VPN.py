@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-蓝猫 智能订阅脚本（最终完整版）
+蓝猫VPN 智能订阅脚本（最终完整版）
 手机 + GitHub / Gitee 固定订阅自动更新专用
 """
 
