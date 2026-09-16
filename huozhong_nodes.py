@@ -28,8 +28,8 @@ API_SERVERS = [
     "https://47.76.166.180/api/nodesystem/user",
 ]
 
-USERNAME = "soul20241126"
-PASSWORD = "Czy1234."
+USERNAME = "110gfw"
+PASSWORD = "Czy5201314."
 CLIENT_ID = "vpn-user"
 CLIENT_SECRET = "i16bYq4sXxlGl3s"
 
