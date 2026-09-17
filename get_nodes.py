@@ -35,7 +35,7 @@ BASE_HEADERS = {
     "X-App-Version": "1.1.21",
     "X-Device-OS": "Android",
     "Accept": "application/json",
-    "Accept-Encoding": "q6i3q78",
+    "Accept-Encoding": "gzip",
 }
 
 # ==================== 登录与节点 ====================
