@@ -1,5 +1,5 @@
 # 趣连自动订阅 (Clash Meta / mihomo)
-# 更新时间: 2026-09-18 17:41:52 UTC
+# 更新时间: 2026-09-18 19:06:11 UTC
 # 节点数: 80
 
 mixed-port: 7890
@@ -8,30 +8,44 @@ mode: rule
 log-level: info
 
 proxies:
-  - name: "NG-hk-02.tronsg.com"
+  - name: "HK-pccw05.aileoneed.org"
+    type: vless
+    server: "pccw05.aileoneed.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "TW-twct03.akacaio.org"
+    type: vless
+    server: "twct03.akacaio.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "KR-kr1.zestapp778.com"
     type: trojan
-    server: "hk-02.tronsg.com"
+    server: "kr1.zestapp778.com"
     port: 443
-    password: "9daT1DW2Jp"
+    password: "Trojan@82164024"
     udp: true
-    sni: "hk-02.tronsg.com"
-  - name: "KR-kr04.alilago.org"
+    sni: "kr1.zestapp778.com"
+  - name: "US-us15.allmzk.org"
     type: vless
-    server: "kr04.alilago.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "DE-ge06.alilago.org"
-    type: vless
-    server: "ge06.alilago.org"
+    server: "us15.allmzk.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -43,9 +57,16 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "FR-fr06.alilago.org"
+  - name: "JP-jp.tronsg.com"
+    type: trojan
+    server: "jp.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "jp.tronsg.com"
+  - name: "HK-hk06.alilago.org"
     type: vless
-    server: "fr06.alilago.org"
+    server: "hk06.alilago.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -57,9 +78,9 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "AU-au06.bsxis.org"
+  - name: "TW-twct06.akacaio.org"
     type: vless
-    server: "au06.bsxis.org"
+    server: "twct06.akacaio.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -71,9 +92,23 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "HK-pccw07.aileoneed.org"
+  - name: "TW-twgame01.akacaio.org"
     type: vless
-    server: "pccw07.aileoneed.org"
+    server: "twgame01.akacaio.org"
+    port: 1200
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "TW-tw09.akacaio.org"
+    type: vless
+    server: "tw09.akacaio.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -85,23 +120,9 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "GB-uk03.alilago.org"
+  - name: "JP-jp08.aileoneed.org"
     type: vless
-    server: "uk03.alilago.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "JP-jp09.aileoneed.org"
-    type: vless
-    server: "jp09.aileoneed.org"
+    server: "jp08.aileoneed.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -120,23 +141,9 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "de.tronsg.com"
-  - name: "HK-bgp06.aileoneed.org"
+  - name: "JP-jp20.aileoneed.org"
     type: vless
-    server: "bgp06.aileoneed.org"
-    port: 8080
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "HK-pccw03.aisafushi.org"
-    type: vless
-    server: "pccw03.aisafushi.org"
+    server: "jp20.aileoneed.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -148,30 +155,9 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "AU-au.tronsg.com"
-    type: trojan
-    server: "au.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "au.tronsg.com"
-  - name: "HK-bgp09.aileoneed.org"
+  - name: "SG-sgp03.allmzk.org"
     type: vless
-    server: "bgp09.aileoneed.org"
-    port: 8080
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "TW-twgame09.akacaio.org"
-    type: vless
-    server: "twgame09.akacaio.org"
+    server: "sgp03.allmzk.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -183,9 +169,9 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "US-us10.allmzk.org"
+  - name: "TW-tw06.akacaio.org"
     type: vless
-    server: "us10.allmzk.org"
+    server: "tw06.akacaio.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -197,436 +183,9 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "JP-diz01.akacaio.org"
+  - name: "JP-jp19.aileoneed.org"
     type: vless
-    server: "diz01.akacaio.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "HK-qat10.6isthe6.org"
-    type: vless
-    server: "qat10.6isthe6.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "HK-qat04.6isthe6.org"
-    type: vless
-    server: "qat04.6isthe6.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "GB-uk04.alilago.org"
-    type: vless
-    server: "uk04.alilago.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "NL-nl.tronsg.com"
-    type: trojan
-    server: "nl.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "nl.tronsg.com"
-  - name: "US-us01.allmzk.org"
-    type: vless
-    server: "us01.allmzk.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "KR-kr02.alilago.org"
-    type: vless
-    server: "kr02.alilago.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "MY-my.zestapp778.com"
-    type: trojan
-    server: "my.zestapp778.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "my.zestapp778.com"
-  - name: "CA-ca01.alilago.org"
-    type: vless
-    server: "ca01.alilago.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "HK-bgp02.aileoneed.org"
-    type: vless
-    server: "bgp02.aileoneed.org"
-    port: 8080
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "FR-fr01.alilago.org"
-    type: vless
-    server: "fr01.alilago.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "HK-hk03.alilago.org"
-    type: vless
-    server: "hk03.alilago.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "BR-br.tronsg.com"
-    type: trojan
-    server: "br.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "br.tronsg.com"
-  - name: "SG-sg2.zestapp778.com"
-    type: trojan
-    server: "sg2.zestapp778.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "sg2.zestapp778.com"
-  - name: "JP-hr06.aileoneed.org"
-    type: vless
-    server: "hr06.aileoneed.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "HK-qat07.6isthe6.org"
-    type: vless
-    server: "qat07.6isthe6.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "JP-jp16.aileoneed.org"
-    type: vless
-    server: "jp16.aileoneed.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "TW-twgame06.akacaio.org"
-    type: vless
-    server: "twgame06.akacaio.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "SG-sg2.zestapp778.com (2)"
-    type: trojan
-    server: "sg2.zestapp778.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "sg2.zestapp778.com"
-  - name: "CA-ca02.alilago.org"
-    type: vless
-    server: "ca02.alilago.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "TW-twgame02.akacaio.org"
-    type: vless
-    server: "twgame02.akacaio.org"
-    port: 1200
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "JP-hr10.aileoneed.org"
-    type: vless
-    server: "hr10.aileoneed.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "TW-twgame03.akacaio.org"
-    type: vless
-    server: "twgame03.akacaio.org"
-    port: 1200
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "JP-hr04.aileoneed.org"
-    type: vless
-    server: "hr04.aileoneed.org"
-    port: 1400
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "AU-au04.bsxis.org"
-    type: vless
-    server: "au04.bsxis.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "DE-ge05.alilago.org"
-    type: vless
-    server: "ge05.alilago.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "US-us05.allmzk.org"
-    type: vless
-    server: "us05.allmzk.org"
-    port: 1300
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "FR-fr04.alilago.org"
-    type: vless
-    server: "fr04.alilago.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "JP-hr05.aileoneed.org"
-    type: vless
-    server: "hr05.aileoneed.org"
-    port: 1400
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "HK-hk10.alilago.org"
-    type: vless
-    server: "hk10.alilago.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "HK-qat05.6isthe6.org"
-    type: vless
-    server: "qat05.6isthe6.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "HK-pccw04.aileoneed.org"
-    type: vless
-    server: "pccw04.aileoneed.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "JP-jp17.aileoneed.org"
-    type: vless
-    server: "jp17.aileoneed.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "TW-tw05.akacaio.org"
-    type: vless
-    server: "tw05.akacaio.org"
+    server: "jp19.aileoneed.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -652,9 +211,30 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "HK-qat08.6isthe6.org"
+  - name: "JP-jp14.aileoneed.org"
     type: vless
-    server: "qat08.6isthe6.org"
+    server: "jp14.aileoneed.org"
+    port: 1400
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "AU-au.tronsg.com"
+    type: trojan
+    server: "au.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "au.tronsg.com"
+  - name: "SG-sgp02.allmzk.org"
+    type: vless
+    server: "sgp02.allmzk.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -666,9 +246,16 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "US-us20.allmzk.org"
+  - name: "US-us5.zestapp778.com"
+    type: trojan
+    server: "us5.zestapp778.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "us5.zestapp778.com"
+  - name: "GB-uk05.alilago.org"
     type: vless
-    server: "us20.allmzk.org"
+    server: "uk05.alilago.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -680,9 +267,58 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "SG-sgp01.allmzk.org"
+  - name: "HK-hk03.alilago.org"
     type: vless
-    server: "sgp01.allmzk.org"
+    server: "hk03.alilago.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "TR-tr.tronsg.com"
+    type: trojan
+    server: "tr.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "tr.tronsg.com"
+  - name: "FR-fr05.alilago.org"
+    type: vless
+    server: "fr05.alilago.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "US-us13.allmzk.org"
+    type: vless
+    server: "us13.allmzk.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "US-us09.allmzk.org"
+    type: vless
+    server: "us09.allmzk.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -708,90 +344,6 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "US-us14.allmzk.org"
-    type: vless
-    server: "us14.allmzk.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "TW-twgame10.akacaio.org"
-    type: vless
-    server: "twgame10.akacaio.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "HK-hk01.alilago.org"
-    type: vless
-    server: "hk01.alilago.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "TW-twct10.akacaio.org"
-    type: vless
-    server: "twct10.akacaio.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "US-us04.allmzk.org"
-    type: vless
-    server: "us04.allmzk.org"
-    port: 1300
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "JP-jp08.aileoneed.org"
-    type: vless
-    server: "jp08.aileoneed.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
   - name: "CA-ca05.alilago.org"
     type: vless
     server: "ca05.alilago.org"
@@ -806,121 +358,9 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "TW-tw.tronsg.com"
-    type: trojan
-    server: "tw.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "tw.tronsg.com"
-  - name: "SG-sgp02.allmzk.org"
+  - name: "TW-twct02.akacaio.org"
     type: vless
-    server: "sgp02.allmzk.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "DE-ge02.alilago.org"
-    type: vless
-    server: "ge02.alilago.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "TW-twct07.akacaio.org"
-    type: vless
-    server: "twct07.akacaio.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "SG-sgp05.allmzk.org"
-    type: vless
-    server: "sgp05.allmzk.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "US-us03.allmzk.org"
-    type: vless
-    server: "us03.allmzk.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "US-us2.zestapp778.com"
-    type: trojan
-    server: "us2.zestapp778.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "us2.zestapp778.com"
-  - name: "TW-twgame04.akacaio.org"
-    type: vless
-    server: "twgame04.akacaio.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "SG-sgp07.allmzk.org"
-    type: vless
-    server: "sgp07.allmzk.org"
-    port: 443
-    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "www.apple.com"
-    client-fingerprint: chrome
-    flow: "xtls-rprx-vision"
-    reality-opts:
-      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
-      short-id: "1bc2c1ef1c"
-  - name: "JP-diz02.akacaio.org"
-    type: vless
-    server: "diz02.akacaio.org"
+    server: "twct02.akacaio.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -946,9 +386,9 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "IN-in06.bsxis.org"
+  - name: "FR-fr01.alilago.org"
     type: vless
-    server: "in06.bsxis.org"
+    server: "fr01.alilago.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -960,16 +400,100 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "MY-my.tronsg.com"
+  - name: "JP-hr02.aileoneed.org"
+    type: vless
+    server: "hr02.aileoneed.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "TW-tw03.akacaio.org"
+    type: vless
+    server: "tw03.akacaio.org"
+    port: 1200
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "HK-hk08.alilago.org"
+    type: vless
+    server: "hk08.alilago.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "JP-jp12.aileoneed.org"
+    type: vless
+    server: "jp12.aileoneed.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "JP-hr10.aileoneed.org"
+    type: vless
+    server: "hr10.aileoneed.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "HK-qat04.6isthe6.org"
+    type: vless
+    server: "qat04.6isthe6.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "TW-tw.tronsg.com"
     type: trojan
-    server: "my.tronsg.com"
+    server: "tw.tronsg.com"
     port: 443
     password: "Trojan@82164024"
     udp: true
-    sni: "my.tronsg.com"
-  - name: "HK-pccw10.alilago.org"
+    sni: "tw.tronsg.com"
+  - name: "AU-au03.bsxis.org"
     type: vless
-    server: "pccw10.alilago.org"
+    server: "au03.bsxis.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -981,9 +505,9 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "JP-diz04.akacaio.org"
+  - name: "TW-twgame05.akacaio.org"
     type: vless
-    server: "diz04.akacaio.org"
+    server: "twgame05.akacaio.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -995,9 +519,100 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "JP-jp02.aileoneed.org"
+  - name: "KR-kr01.alilago.org"
     type: vless
-    server: "jp02.aileoneed.org"
+    server: "kr01.alilago.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "JP-hr05.aileoneed.org"
+    type: vless
+    server: "hr05.aileoneed.org"
+    port: 1400
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "HK-hk09.alilago.org"
+    type: vless
+    server: "hk09.alilago.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "TW-twgame09.akacaio.org"
+    type: vless
+    server: "twgame09.akacaio.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "IN-in05.bsxis.org"
+    type: vless
+    server: "in05.bsxis.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "TH-th1.zestapp778.com"
+    type: trojan
+    server: "th1.zestapp778.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "th1.zestapp778.com"
+  - name: "JP-hr04.aileoneed.org"
+    type: vless
+    server: "hr04.aileoneed.org"
+    port: 1400
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "HK-pccw04.aileoneed.org"
+    type: vless
+    server: "pccw04.aileoneed.org"
     port: 443
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
@@ -1023,17 +638,409 @@ proxies:
     reality-opts:
       public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
       short-id: "1bc2c1ef1c"
-  - name: "TR-tr.tronsg.com"
+  - name: "US-us10.allmzk.org"
+    type: vless
+    server: "us10.allmzk.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "TW-twgame10.akacaio.org"
+    type: vless
+    server: "twgame10.akacaio.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "JP-jp05.aileoneed.org"
+    type: vless
+    server: "jp05.aileoneed.org"
+    port: 1400
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "US-us02.allmzk.org"
+    type: vless
+    server: "us02.allmzk.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "SE-se.tronsg.com"
     type: trojan
-    server: "tr.tronsg.com"
+    server: "se.tronsg.com"
     port: 443
     password: "Trojan@82164024"
     udp: true
-    sni: "tr.tronsg.com"
+    sni: "se.tronsg.com"
+  - name: "CH-ch.tronsg.com"
+    type: trojan
+    server: "ch.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "ch.tronsg.com"
+  - name: "TW-twct07.akacaio.org"
+    type: vless
+    server: "twct07.akacaio.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "TW-twct09.akacaio.org"
+    type: vless
+    server: "twct09.akacaio.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "US-us14.allmzk.org"
+    type: vless
+    server: "us14.allmzk.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "TW-twct10.akacaio.org"
+    type: vless
+    server: "twct10.akacaio.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "HK-bgp08.aileoneed.org"
+    type: vless
+    server: "bgp08.aileoneed.org"
+    port: 8080
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "DE-ge03.alilago.org"
+    type: vless
+    server: "ge03.alilago.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "DE-ge06.alilago.org"
+    type: vless
+    server: "ge06.alilago.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "JP-diz05.akacaio.org"
+    type: vless
+    server: "diz05.akacaio.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "FR-fr06.alilago.org"
+    type: vless
+    server: "fr06.alilago.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "GB-gb.tronsg.com"
+    type: trojan
+    server: "gb.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "gb.tronsg.com"
+  - name: "GB-uk01.alilago.org"
+    type: vless
+    server: "uk01.alilago.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "DE-ge02.alilago.org"
+    type: vless
+    server: "ge02.alilago.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "US-us11.allmzk.org"
+    type: vless
+    server: "us11.allmzk.org"
+    port: 1300
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "HK-bgp04.aileoneed.org"
+    type: vless
+    server: "bgp04.aileoneed.org"
+    port: 8080
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "HK-bgp07.aileoneed.org"
+    type: vless
+    server: "bgp07.aileoneed.org"
+    port: 8080
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "SG-sgp05.allmzk.org"
+    type: vless
+    server: "sgp05.allmzk.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "US-us07.allmzk.org"
+    type: vless
+    server: "us07.allmzk.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "US-us16.allmzk.org"
+    type: vless
+    server: "us16.allmzk.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "JP-jp17.aileoneed.org"
+    type: vless
+    server: "jp17.aileoneed.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "HK-hk02.alilago.org"
+    type: vless
+    server: "hk02.alilago.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "AU-au02.bsxis.org"
+    type: vless
+    server: "au02.bsxis.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "HK-qat08.6isthe6.org"
+    type: vless
+    server: "qat08.6isthe6.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "SG-sgp09.allmzk.org"
+    type: vless
+    server: "sgp09.allmzk.org"
+    port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
   - name: "TW-tw08.akacaio.org"
     type: vless
     server: "tw08.akacaio.org"
     port: 443
+    uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "www.apple.com"
+    client-fingerprint: chrome
+    flow: "xtls-rprx-vision"
+    reality-opts:
+      public-key: "Vc8ycAgKqfRvtXjvGP0ry_U91o5wgrQlqOhHq72HYRs"
+      short-id: "1bc2c1ef1c"
+  - name: "JP-jp13.aileoneed.org"
+    type: vless
+    server: "jp13.aileoneed.org"
+    port: 1400
     uuid: "9fc428ed-70fd-4885-8964-636c4678044e"
     udp: true
     tls: true
@@ -1052,171 +1059,171 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "NG-hk-02.tronsg.com"
-      - "KR-kr04.alilago.org"
-      - "DE-ge06.alilago.org"
-      - "FR-fr06.alilago.org"
-      - "AU-au06.bsxis.org"
-      - "HK-pccw07.aileoneed.org"
-      - "GB-uk03.alilago.org"
-      - "JP-jp09.aileoneed.org"
-      - "DE-de.tronsg.com"
-      - "HK-bgp06.aileoneed.org"
-      - "HK-pccw03.aisafushi.org"
-      - "AU-au.tronsg.com"
-      - "HK-bgp09.aileoneed.org"
-      - "TW-twgame09.akacaio.org"
-      - "US-us10.allmzk.org"
-      - "JP-diz01.akacaio.org"
-      - "HK-qat10.6isthe6.org"
-      - "HK-qat04.6isthe6.org"
-      - "GB-uk04.alilago.org"
-      - "NL-nl.tronsg.com"
-      - "US-us01.allmzk.org"
-      - "KR-kr02.alilago.org"
-      - "MY-my.zestapp778.com"
-      - "CA-ca01.alilago.org"
-      - "HK-bgp02.aileoneed.org"
-      - "FR-fr01.alilago.org"
-      - "HK-hk03.alilago.org"
-      - "BR-br.tronsg.com"
-      - "SG-sg2.zestapp778.com"
-      - "JP-hr06.aileoneed.org"
-      - "HK-qat07.6isthe6.org"
-      - "JP-jp16.aileoneed.org"
-      - "TW-twgame06.akacaio.org"
-      - "SG-sg2.zestapp778.com (2)"
-      - "CA-ca02.alilago.org"
-      - "TW-twgame02.akacaio.org"
-      - "JP-hr10.aileoneed.org"
-      - "TW-twgame03.akacaio.org"
-      - "JP-hr04.aileoneed.org"
-      - "AU-au04.bsxis.org"
-      - "DE-ge05.alilago.org"
-      - "US-us05.allmzk.org"
-      - "FR-fr04.alilago.org"
-      - "JP-hr05.aileoneed.org"
-      - "HK-hk10.alilago.org"
-      - "HK-qat05.6isthe6.org"
-      - "HK-pccw04.aileoneed.org"
-      - "JP-jp17.aileoneed.org"
-      - "TW-tw05.akacaio.org"
-      - "JP-jp06.aileoneed.org"
-      - "HK-qat08.6isthe6.org"
-      - "US-us20.allmzk.org"
-      - "SG-sgp01.allmzk.org"
-      - "JP-jp01.aisthegroupa.org"
-      - "US-us14.allmzk.org"
-      - "TW-twgame10.akacaio.org"
-      - "HK-hk01.alilago.org"
-      - "TW-twct10.akacaio.org"
-      - "US-us04.allmzk.org"
+      - "HK-pccw05.aileoneed.org"
+      - "TW-twct03.akacaio.org"
+      - "KR-kr1.zestapp778.com"
+      - "US-us15.allmzk.org"
+      - "JP-jp.tronsg.com"
+      - "HK-hk06.alilago.org"
+      - "TW-twct06.akacaio.org"
+      - "TW-twgame01.akacaio.org"
+      - "TW-tw09.akacaio.org"
       - "JP-jp08.aileoneed.org"
-      - "CA-ca05.alilago.org"
-      - "TW-tw.tronsg.com"
+      - "DE-de.tronsg.com"
+      - "JP-jp20.aileoneed.org"
+      - "SG-sgp03.allmzk.org"
+      - "TW-tw06.akacaio.org"
+      - "JP-jp19.aileoneed.org"
+      - "JP-jp06.aileoneed.org"
+      - "JP-jp14.aileoneed.org"
+      - "AU-au.tronsg.com"
       - "SG-sgp02.allmzk.org"
-      - "DE-ge02.alilago.org"
-      - "TW-twct07.akacaio.org"
-      - "SG-sgp05.allmzk.org"
-      - "US-us03.allmzk.org"
-      - "US-us2.zestapp778.com"
-      - "TW-twgame04.akacaio.org"
-      - "SG-sgp07.allmzk.org"
-      - "JP-diz02.akacaio.org"
-      - "TW-tw07.akacaio.org"
-      - "IN-in06.bsxis.org"
-      - "MY-my.tronsg.com"
-      - "HK-pccw10.alilago.org"
-      - "JP-diz04.akacaio.org"
-      - "JP-jp02.aileoneed.org"
-      - "JP-hr09.aileoneed.org"
+      - "US-us5.zestapp778.com"
+      - "GB-uk05.alilago.org"
+      - "HK-hk03.alilago.org"
       - "TR-tr.tronsg.com"
+      - "FR-fr05.alilago.org"
+      - "US-us13.allmzk.org"
+      - "US-us09.allmzk.org"
+      - "JP-jp01.aisthegroupa.org"
+      - "CA-ca05.alilago.org"
+      - "TW-twct02.akacaio.org"
+      - "TW-tw07.akacaio.org"
+      - "FR-fr01.alilago.org"
+      - "JP-hr02.aileoneed.org"
+      - "TW-tw03.akacaio.org"
+      - "HK-hk08.alilago.org"
+      - "JP-jp12.aileoneed.org"
+      - "JP-hr10.aileoneed.org"
+      - "HK-qat04.6isthe6.org"
+      - "TW-tw.tronsg.com"
+      - "AU-au03.bsxis.org"
+      - "TW-twgame05.akacaio.org"
+      - "KR-kr01.alilago.org"
+      - "JP-hr05.aileoneed.org"
+      - "HK-hk09.alilago.org"
+      - "TW-twgame09.akacaio.org"
+      - "IN-in05.bsxis.org"
+      - "TH-th1.zestapp778.com"
+      - "JP-hr04.aileoneed.org"
+      - "HK-pccw04.aileoneed.org"
+      - "JP-hr09.aileoneed.org"
+      - "US-us10.allmzk.org"
+      - "TW-twgame10.akacaio.org"
+      - "JP-jp05.aileoneed.org"
+      - "US-us02.allmzk.org"
+      - "SE-se.tronsg.com"
+      - "CH-ch.tronsg.com"
+      - "TW-twct07.akacaio.org"
+      - "TW-twct09.akacaio.org"
+      - "US-us14.allmzk.org"
+      - "TW-twct10.akacaio.org"
+      - "HK-bgp08.aileoneed.org"
+      - "DE-ge03.alilago.org"
+      - "DE-ge06.alilago.org"
+      - "JP-diz05.akacaio.org"
+      - "FR-fr06.alilago.org"
+      - "GB-gb.tronsg.com"
+      - "GB-uk01.alilago.org"
+      - "DE-ge02.alilago.org"
+      - "US-us11.allmzk.org"
+      - "HK-bgp04.aileoneed.org"
+      - "HK-bgp07.aileoneed.org"
+      - "SG-sgp05.allmzk.org"
+      - "US-us07.allmzk.org"
+      - "US-us16.allmzk.org"
+      - "JP-jp17.aileoneed.org"
+      - "HK-hk02.alilago.org"
+      - "AU-au02.bsxis.org"
+      - "HK-qat08.6isthe6.org"
+      - "SG-sgp09.allmzk.org"
       - "TW-tw08.akacaio.org"
+      - "JP-jp13.aileoneed.org"
   - name: "节点选择"
     type: select
     proxies:
       - "自动选择"
       - "DIRECT"
-      - "NG-hk-02.tronsg.com"
-      - "KR-kr04.alilago.org"
-      - "DE-ge06.alilago.org"
-      - "FR-fr06.alilago.org"
-      - "AU-au06.bsxis.org"
-      - "HK-pccw07.aileoneed.org"
-      - "GB-uk03.alilago.org"
-      - "JP-jp09.aileoneed.org"
-      - "DE-de.tronsg.com"
-      - "HK-bgp06.aileoneed.org"
-      - "HK-pccw03.aisafushi.org"
-      - "AU-au.tronsg.com"
-      - "HK-bgp09.aileoneed.org"
-      - "TW-twgame09.akacaio.org"
-      - "US-us10.allmzk.org"
-      - "JP-diz01.akacaio.org"
-      - "HK-qat10.6isthe6.org"
-      - "HK-qat04.6isthe6.org"
-      - "GB-uk04.alilago.org"
-      - "NL-nl.tronsg.com"
-      - "US-us01.allmzk.org"
-      - "KR-kr02.alilago.org"
-      - "MY-my.zestapp778.com"
-      - "CA-ca01.alilago.org"
-      - "HK-bgp02.aileoneed.org"
-      - "FR-fr01.alilago.org"
-      - "HK-hk03.alilago.org"
-      - "BR-br.tronsg.com"
-      - "SG-sg2.zestapp778.com"
-      - "JP-hr06.aileoneed.org"
-      - "HK-qat07.6isthe6.org"
-      - "JP-jp16.aileoneed.org"
-      - "TW-twgame06.akacaio.org"
-      - "SG-sg2.zestapp778.com (2)"
-      - "CA-ca02.alilago.org"
-      - "TW-twgame02.akacaio.org"
-      - "JP-hr10.aileoneed.org"
-      - "TW-twgame03.akacaio.org"
-      - "JP-hr04.aileoneed.org"
-      - "AU-au04.bsxis.org"
-      - "DE-ge05.alilago.org"
-      - "US-us05.allmzk.org"
-      - "FR-fr04.alilago.org"
-      - "JP-hr05.aileoneed.org"
-      - "HK-hk10.alilago.org"
-      - "HK-qat05.6isthe6.org"
-      - "HK-pccw04.aileoneed.org"
-      - "JP-jp17.aileoneed.org"
-      - "TW-tw05.akacaio.org"
-      - "JP-jp06.aileoneed.org"
-      - "HK-qat08.6isthe6.org"
-      - "US-us20.allmzk.org"
-      - "SG-sgp01.allmzk.org"
-      - "JP-jp01.aisthegroupa.org"
-      - "US-us14.allmzk.org"
-      - "TW-twgame10.akacaio.org"
-      - "HK-hk01.alilago.org"
-      - "TW-twct10.akacaio.org"
-      - "US-us04.allmzk.org"
+      - "HK-pccw05.aileoneed.org"
+      - "TW-twct03.akacaio.org"
+      - "KR-kr1.zestapp778.com"
+      - "US-us15.allmzk.org"
+      - "JP-jp.tronsg.com"
+      - "HK-hk06.alilago.org"
+      - "TW-twct06.akacaio.org"
+      - "TW-twgame01.akacaio.org"
+      - "TW-tw09.akacaio.org"
       - "JP-jp08.aileoneed.org"
-      - "CA-ca05.alilago.org"
-      - "TW-tw.tronsg.com"
+      - "DE-de.tronsg.com"
+      - "JP-jp20.aileoneed.org"
+      - "SG-sgp03.allmzk.org"
+      - "TW-tw06.akacaio.org"
+      - "JP-jp19.aileoneed.org"
+      - "JP-jp06.aileoneed.org"
+      - "JP-jp14.aileoneed.org"
+      - "AU-au.tronsg.com"
       - "SG-sgp02.allmzk.org"
-      - "DE-ge02.alilago.org"
-      - "TW-twct07.akacaio.org"
-      - "SG-sgp05.allmzk.org"
-      - "US-us03.allmzk.org"
-      - "US-us2.zestapp778.com"
-      - "TW-twgame04.akacaio.org"
-      - "SG-sgp07.allmzk.org"
-      - "JP-diz02.akacaio.org"
-      - "TW-tw07.akacaio.org"
-      - "IN-in06.bsxis.org"
-      - "MY-my.tronsg.com"
-      - "HK-pccw10.alilago.org"
-      - "JP-diz04.akacaio.org"
-      - "JP-jp02.aileoneed.org"
-      - "JP-hr09.aileoneed.org"
+      - "US-us5.zestapp778.com"
+      - "GB-uk05.alilago.org"
+      - "HK-hk03.alilago.org"
       - "TR-tr.tronsg.com"
+      - "FR-fr05.alilago.org"
+      - "US-us13.allmzk.org"
+      - "US-us09.allmzk.org"
+      - "JP-jp01.aisthegroupa.org"
+      - "CA-ca05.alilago.org"
+      - "TW-twct02.akacaio.org"
+      - "TW-tw07.akacaio.org"
+      - "FR-fr01.alilago.org"
+      - "JP-hr02.aileoneed.org"
+      - "TW-tw03.akacaio.org"
+      - "HK-hk08.alilago.org"
+      - "JP-jp12.aileoneed.org"
+      - "JP-hr10.aileoneed.org"
+      - "HK-qat04.6isthe6.org"
+      - "TW-tw.tronsg.com"
+      - "AU-au03.bsxis.org"
+      - "TW-twgame05.akacaio.org"
+      - "KR-kr01.alilago.org"
+      - "JP-hr05.aileoneed.org"
+      - "HK-hk09.alilago.org"
+      - "TW-twgame09.akacaio.org"
+      - "IN-in05.bsxis.org"
+      - "TH-th1.zestapp778.com"
+      - "JP-hr04.aileoneed.org"
+      - "HK-pccw04.aileoneed.org"
+      - "JP-hr09.aileoneed.org"
+      - "US-us10.allmzk.org"
+      - "TW-twgame10.akacaio.org"
+      - "JP-jp05.aileoneed.org"
+      - "US-us02.allmzk.org"
+      - "SE-se.tronsg.com"
+      - "CH-ch.tronsg.com"
+      - "TW-twct07.akacaio.org"
+      - "TW-twct09.akacaio.org"
+      - "US-us14.allmzk.org"
+      - "TW-twct10.akacaio.org"
+      - "HK-bgp08.aileoneed.org"
+      - "DE-ge03.alilago.org"
+      - "DE-ge06.alilago.org"
+      - "JP-diz05.akacaio.org"
+      - "FR-fr06.alilago.org"
+      - "GB-gb.tronsg.com"
+      - "GB-uk01.alilago.org"
+      - "DE-ge02.alilago.org"
+      - "US-us11.allmzk.org"
+      - "HK-bgp04.aileoneed.org"
+      - "HK-bgp07.aileoneed.org"
+      - "SG-sgp05.allmzk.org"
+      - "US-us07.allmzk.org"
+      - "US-us16.allmzk.org"
+      - "JP-jp17.aileoneed.org"
+      - "HK-hk02.alilago.org"
+      - "AU-au02.bsxis.org"
+      - "HK-qat08.6isthe6.org"
+      - "SG-sgp09.allmzk.org"
       - "TW-tw08.akacaio.org"
+      - "JP-jp13.aileoneed.org"
 
 rules:
   - GEOIP,LAN,DIRECT,no-resolve
