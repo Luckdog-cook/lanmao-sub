@@ -8038,3 +8038,133 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+# =========================================================
+# 直接替換 滑翔傘.py 最底部的 def main(): 和 if __name__ == "__main__":
+# =========================================================
+import socket
+import time
+from urllib.parse import urlparse
+import base64
+import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+def decode_base64_string(b64_str: str) -> str:
+    b64_str = b64_str.split('#')[0].split('?')[0]
+    b64_str += "=" * (-len(b64_str) % 4)
+    try:
+        return base64.b64decode(b64_str, validate=False).decode('utf-8', errors='ignore')
+    except Exception:
+        try:
+            return base64.urlsafe_b64decode(b64_str, validate=False).decode('utf-8', errors='ignore')
+        except Exception:
+            return ""
+
+def test_tcp_latency(host: str, port: int, timeout: float = 2.0) -> float:
+    try:
+        start_time = time.perf_counter()
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+            sock.settimeout(timeout)
+            sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+            sock.connect((host, port))
+        return round((time.perf_counter() - start_time) * 1000, 2)
+    except Exception:
+        return -1.0
+
+def parse_node_address(node_url: str):
+    node_url = str(node_url).strip()
+    if not node_url:
+        return None, None
+    try:
+        if node_url.startswith("vmess://"):
+            b64_content = node_url.replace("vmess://", "")
+            decoded_json = decode_base64_string(b64_content)
+            if decoded_json:
+                json_data = json.loads(decoded_json)
+                host = json_data.get("add") or json_data.get("host")
+                port = json_data.get("port")
+                if host and port:
+                    return str(host), int(port)
+        elif node_url.startswith(("vless://", "trojan://", "ss://")):
+            if node_url.startswith("ss://"):
+                parsed = urlparse(node_url)
+                if '@' not in parsed.netloc:
+                    decoded_netloc = decode_base64_string(parsed.netloc)
+                    if '@' in decoded_netloc:
+                        re_parsed = urlparse(f"ss://{decoded_netloc}")
+                        return re_parsed.hostname, re_parsed.port
+            parsed = urlparse(node_url)
+            host = parsed.hostname
+            port = parsed.port if parsed.port else 443
+            if host:
+                return str(host), int(port)
+    except Exception:
+        pass
+    return None, None
+
+def filter_nodes_optimized(node_list: list, max_latency: float = 800.0, max_threads: int = 50) -> list:
+    unique_nodes = list(dict.fromkeys(node_list))
+    valid_nodes = []
+
+    def check_node(node):
+        host, port = parse_node_address(node)
+        if not host or not port or str(host).startswith(('127.', '192.168.', '10.')):
+            return None
+        latency = test_tcp_latency(host, port, timeout=2.0)
+        if 0 < latency <= max_latency:
+            print(f"[保留] 延遲: {latency}ms -> {host}:{port}")
+            return node
+        return None
+
+    print(f"開始併發檢測 {len(unique_nodes)} 個節點...")
+    with ThreadPoolExecutor(max_workers=max_threads) as executor:
+        futures = [executor.submit(check_node, node) for node in unique_nodes]
+        for future in as_completed(futures):
+            res = future.result()
+            if res:
+                valid_nodes.append(res)
+                
+    return valid_nodes
+
+def auto_get_raw_nodes():
+    """自動尋找腳本中的節點數據或執行函數"""
+    g = globals()
+    # 1. 嘗試常見的全局變量名
+    for var_name in ['raw_nodes', 'nodes', 'node_list', 'all_nodes']:
+        if var_name in g and isinstance(g[var_name], list) and len(g[var_name]) > 0:
+            return g[var_name]
+            
+    # 2. 嘗試常見的獲取函數名
+    for func_name in ['get_vip_nodes', 'get_nodes', 'fetch_nodes', 'get_all_nodes']:
+        if func_name in g and callable(g[func_name]):
+            try:
+                res = g[func_name]()
+                if isinstance(res, list) and len(res) > 0:
+                    return res
+            except Exception:
+                pass
+    return []
+
+def main():
+    print("=== GitHub Actions 全自動運行與過濾模式 ===")
+    
+    # 自動獲取節點
+    raw_nodes = auto_get_raw_nodes()
+
+    if not raw_nodes:
+        print("未自動匹配到節點數據，請確保原腳本解密邏輯正常執行！")
+        return
+
+    # 併發測速與去重過濾
+    clean_nodes = filter_nodes_optimized(raw_nodes, max_latency=800.0, max_threads=50)
+
+    # 導出為 Base64 訂閱文本
+    final_text = "\n".join(clean_nodes)
+    encoded_output = base64.b64encode(final_text.encode('utf-8')).decode('utf-8')
+
+    with open("滑翔伞.txt", "w", encoding="utf-8") as f:
+        f.write(encoded_output)
+
+    print(f"處理完成！原始節點: {len(raw_nodes)} 個 | 保留有效節點: {len(clean_nodes)} 個。")
+
+if __name__ == "__main__":
+    main()
