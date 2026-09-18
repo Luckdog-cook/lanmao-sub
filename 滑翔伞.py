@@ -8036,5 +8036,111 @@ def main() -> None:
             print(f"操作失败：{exc}")
 
 
-if __name__ == "__main__":
+if __name__ == "__mai
+n__":
     main()
+# =========================================================
+# 在你原本 滑翔伞.py 的最下方追加以下完整过滤与自动化导出逻辑
+# =========================================================
+import socket
+import time
+from urllib.parse import urlparse
+import base64
+import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+def decode_base64_string(b64_str: str) -> str:
+    """安全解码 Base64 字符串"""
+    b64_str = b64_str.split('#')[0].split('?')[0]
+    b64_str += "=" * (-len(b64_str) % 4)
+    try:
+        return base64.b64decode(b64_str, validate=False).decode('utf-8', errors='ignore')
+    except Exception:
+        try:
+            return base64.urlsafe_b64decode(b64_str).decode('utf-8', errors='ignore')
+        except Exception:
+            return ""
+
+def test_tcp_latency(host: str, port: int, timeout: float = 2.0) -> float:
+    """测试 TCP 握手延迟"""
+    try:
+        start_time = time.perf_counter()
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
+            sock.settimeout(timeout)
+            sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+            sock.connect((host, port))
+        return round((time.perf_counter() - start_time) * 1000, 2)
+    except Exception:
+        return -1.0
+
+def parse_node_address(node_url: str):
+    """提取节点的 Host 与 Port"""
+    node_url = node_url.strip()
+    if not node_url:
+        return None, None
+    try:
+        if node_url.startswith("vmess://"):
+            b64_content = node_url.replace("vmess://", "")
+            decoded_json = decode_base64_string(b64_content)
+            if decoded_json:
+                json_data = json.loads(decoded_json)
+                host = json_data.get("add") or json_data.get("host")
+                port = json_data.get("port")
+                if host and port:
+                    return str(host), int(port)
+        elif node_url.startswith(("vless://", "trojan://", "ss://")):
+            if node_url.startswith("ss://"):
+                parsed = urlparse(node_url)
+                if '@' not in parsed.netloc:
+                    decoded_netloc = decode_base64_string(parsed.netloc)
+                    if '@' in decoded_netloc:
+                        re_parsed = urlparse(f"ss://{decoded_netloc}")
+                        return re_parsed.hostname, re_parsed.port
+            parsed = urlparse(node_url)
+            host = parsed.hostname
+            port = parsed.port if parsed.port else 443
+            if host:
+                return str(host), int(port)
+    except Exception:
+        pass
+    return None, None
+
+def filter_nodes(node_list: list, max_latency: float = 800.0, max_threads: int = 50) -> list:
+    """并发测试并剔除失效与高延迟节点"""
+    valid_nodes = []
+    def check_node(node):
+        host, port = parse_node_address(node)
+        if not host or not port or str(host).startswith(('127.', '192.168.', '10.')):
+            return None
+        latency = test_tcp_latency(host, port, timeout=2.0)
+        if 0 < latency <= max_latency:
+            print(f"[有效] {latency}ms -> {host}:{port}")
+            return node
+        return None
+
+    print(f"开始测速过滤，原始节点数: {len(node_list)}")
+    with ThreadPoolExecutor(max_workers=max_threads) as executor:
+        futures = [executor.submit(check_node, node) for node in node_list]
+        for future in as_completed(futures):
+            res = future.result()
+            if res:
+                valid_nodes.append(res)
+    return valid_nodes
+
+# =========================================================
+# 自动化执行入口（请将下面的 raw_nodes 替换为你原脚本中存储节点列表的变量）
+# =========================================================
+if __name__ == "__main__":
+    # 假设你原本脚本生成的节点列表变量叫 raw_nodes（如果是字符串列表，直接传入）
+    # 如果原脚本生成的是一个大文本内容（如 nodes_text），可用 nodes_text.splitlines() 转为列表
+    if 'raw_nodes' in locals() and raw_nodes:
+        clean_nodes = filter_nodes(raw_nodes, max_latency=800.0, max_threads=50)
+        
+        # 将有效节点拼接并进行 Base64 编码导出，方便各类客户端直接订阅
+        final_text = "\n".join(clean_nodes)
+        encoded_output = base64.b64encode(final_text.encode('utf-8')).decode('utf-8')
+        
+        with open("滑翔伞.txt", "w", encoding="utf-8") as f:
+            f.write(encoded_output)
+            
+        print(f"处理完成！最终保留有效节点: {len(clean_nodes)} 个。")
