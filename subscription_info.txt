@@ -1,4 +1,4 @@
 # 蓝猫VPN 自动更新订阅
-# 更新时间: 2026-09-18 12:24:44 UTC
-# 节点数量: 28
-# Subscription-Userinfo: upload=0; download=0; total=10737418240; expire=1789993484
+# 更新时间: 2026-09-18 15:02:03 UTC
+# 节点数量: 34
+# Subscription-Userinfo: upload=0; download=0; total=10737418240; expire=1790002923
