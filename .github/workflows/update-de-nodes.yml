@@ -1,0 +1,34 @@
+name: Update Subscriptions
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # 每 6 小时自动运行一次
+  workflow_dispatch: # 支持在 GitHub 网页手动点击触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/bootstrapped-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run DeVPN script
+        run: |
+          python devpn.py
+
+      - name: Commit and Push update
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add nodes.txt last_account.json
+          git commit -m "Auto update nodes [skip ci]" || exit 0
+          git push
