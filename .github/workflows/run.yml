@@ -24,11 +24,10 @@ jobs:
           pip install cryptography requests
 
       - name: 注册账户
-   run: python 滑翔伞.py register
+        run: python 滑翔伞.py register
 
-- name: 拉取节点
-  run: python 滑翔伞.py fetch
-          
+      - name: 拉取节点
+        run: python 滑翔伞.py fetch
 
       - name: Commit and push changes
         run: |
