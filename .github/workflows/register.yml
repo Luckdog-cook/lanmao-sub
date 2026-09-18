@@ -1,4 +1,4 @@
-name: 手动注册账号（刷邀请）
+name: 手动注册火种账号（刷邀请）
 
 on:
   workflow_dispatch:
