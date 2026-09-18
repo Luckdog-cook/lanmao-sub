@@ -1,0 +1,34 @@
+name: 更新天猫订阅
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # 每 6 小時自動運行一次
+  workflow_dispatch: # 支援在 GitHub 網頁手動點擊觸發
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run Tianmiao script
+        run: |
+          python3 "天喵VPN提取.py"
+
+      - name: Commit and Push update
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add nodes.txt subscribe.txt nodes.json
+          git commit -m "Auto update tianmiao nodes [skip ci]" || exit 0
+          git push
