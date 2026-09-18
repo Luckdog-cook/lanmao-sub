@@ -40,7 +40,7 @@ def main():
         }, timeout=15)
         r.raise_for_status()
         d = r.json()
-        
+
         if d.get('code') != 0 and 'data' not in d:
             print(f"註冊失敗: {d}")
             return
@@ -63,7 +63,7 @@ def main():
             'include_shadowsocks': '1',
             'include_trojan': '1'
         }, timeout=15)
-        
+
         nodes_data = r.json().get('data', [])
         vip = []
         for g in nodes_data:
@@ -81,7 +81,7 @@ def main():
         urls = [n['url'] for n in vip]
 
         # 4. 保存原始鏈接
-        with open('nodes.txt', 'w', encoding='utf-8') as f:
+        with open('flycat_nodes.txt', 'w', encoding='utf-8') as f:
             f.write('\n'.join(urls) + '\n')
 
         # 5. Base64 訂閱
@@ -114,11 +114,11 @@ def main():
         with open('nodes.json', 'w', encoding='utf-8') as f:
             json.dump({'count': len(proxies), 'proxies': proxies}, f, ensure_ascii=False, indent=2)
 
-        print('已成功更新並保存: nodes.txt, subscribe.txt, nodes.json')
+        print('已成功更新並保存: flycat_nodes.txt, subscribe.txt, nodes.json')
 
     except Exception as e:
         print(f"運行過程發生異常: {e}")
-        exit(1) # 讓 Actions 能捕捉到錯誤狀態
+        exit(1)
 
 if __name__ == '__main__':
     main()
