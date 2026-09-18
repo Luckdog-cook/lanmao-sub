@@ -2,7 +2,7 @@ name: 更新趣连订阅
 
 on:
   schedule:
-    - cron: '25 */4 * * *'          # 每4小时（错开蓝猫时间）
+    - cron: '25 */4 * * *'          # 每4小时
   workflow_dispatch:
 
 concurrency:
@@ -41,15 +41,15 @@ jobs:
           max_attempts: 3                 # 验证码失败时自动重试最多3次
           retry_wait_seconds: 45
           command: python qulian.py
-        # 如果需要更详细日志可加：python 趣连.py -v
+        # 如果需要更详细日志可加：python qulian.py -v
 
       - name: 提交更新
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          
-          git add nodes.txt nodes_sub_base64.txt subscription_info.txt 2>/dev/null || true
-          
+
+          git add nodes.txt qulian_nodes_base64 qulian_clash.yaml subscription_info.txt 2>/dev/null || true
+
           if git diff --staged --quiet; then
             echo "内容无变化，跳过提交"
           else
@@ -65,6 +65,8 @@ jobs:
           path: |
             *.log
             nodes.txt
+            qulian_nodes_base64
+            qulian_clash.yaml
           retention-days: 3
 
       # ---------- 可选：失败通知 ----------
