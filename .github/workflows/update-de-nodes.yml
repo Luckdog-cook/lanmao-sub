@@ -1,4 +1,4 @@
-name: 更新de订阅
+name: Update Subscriptions
 
 on:
   schedule:
@@ -19,7 +19,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install cryptography
 
       - name: Run DeVPN script
         run: |
