@@ -1,4 +1,4 @@
-name: Update de Subscriptions
+name: 更新DE订阅
 
 on:
   schedule:
