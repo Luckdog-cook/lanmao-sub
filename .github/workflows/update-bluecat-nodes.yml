@@ -25,13 +25,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: 'pip'
+          # 注意：因为脚本是纯标准库，没有 requirements.txt，所以这里不能写 cache: 'pip'
 
       - name: 安装依赖（如有）
         run: |
           pip install --upgrade pip
           # 蓝猫脚本是纯标准库，一般不需要额外包
-          # 如果以后加了 requests 等，在这里写
+          # 如果以后加了 requests 等，在这里写：
+          # pip install requests
 
       - name: 运行脚本（带重试）
         uses: nick-fields/retry@v3
