@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
-"""DeVPN 一键拉节点（单文件，拷走即可跑）
+"""DeVPN 一键拉节点（含 Base64 编码订阅输出）
 
     python3 devpn.py
 
 流程：自动注册新账号 → 绑邀请码 → 领免费时长
-     → 各地区并发各拉 10 轮并激活 → 保存 nodes.txt / last_account.json
+     → 各地区并发各拉 10 轮并激活 → 保存 nodes.txt (Base64编码) / last_account.json
 
 依赖：
   - Python 3
-  - cryptography 或 pynacl（二选一，用于 ed25519 注册签名）
-        pip install cryptography
+  - cryptography （必选）
   - 能访问外网
 
 不需要其它本地文件、配置、数据库。
@@ -26,6 +25,8 @@ import uuid
 import urllib.error
 import urllib.parse
 import urllib.request
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -207,16 +208,9 @@ def ed25519_keypair():
         sk = Ed25519PrivateKey.from_private_bytes(seed)
         pub = sk.public_key().public_bytes_raw()
         return pub, (lambda msg, _sk=sk: _sk.sign(msg))
-    except Exception:
-        pass
-    try:
-        from nacl.signing import SigningKey
-        sk = SigningKey.generate()
-        pub = bytes(sk.verify_key)
-        return pub, (lambda msg, _sk=sk: _sk.sign(msg).signature)
     except Exception as e:
         raise RuntimeError(
-            "需要 ed25519 支持：请安装 cryptography 或 pynacl\n"
+            "需要 ed25519 支持：请安装 cryptography\n"
             "  pip install cryptography\n"
             f"原始错误: {e}"
         )
@@ -239,21 +233,13 @@ DOMAINS = [
     "https://sports.devpn.vip",
 ]
 
-_HERE = os.path.dirname(os.path.abspath(__file__))
-if sys.platform.startswith("linux") and os.path.exists("/storage/emulated/0"):
-    SAVE_DIR = "/storage/emulated/0/Download/"          # Android (Termux)
-elif sys.platform == "win32":
-    SAVE_DIR = os.path.join(os.path.expanduser("~"), "Downloads")
-else:
-    SAVE_DIR = _HERE
-
-# 节点服务器是自签/非标准证书，关闭校验（与 App vpnBypassPost 行为一致）
+# 节点服务器是自签/非标准证书，关闭校验
 _SSL_CTX = ssl.create_default_context()
 _SSL_CTX.check_hostname = False
 _SSL_CTX.verify_mode = ssl.CERT_NONE
 
 # ================================================================
-# 设备证明头（一次生成，全程复用同一份 requestid）
+# 设备证明头
 # ================================================================
 def make_headers(token, device_id, proof=None):
     device = {
@@ -314,10 +300,6 @@ def pick_base(hdrs=None):
     return None
 
 def register_account(invite=DEFAULT_INVITE, android_id=None, claim_free=True):
-    """生成 Solana 密钥 → 登录拿新 dsf-token → 绑邀请码 → 领免费时长。
-
-    返回 dict: token / android_id / wallet / base / user / proof
-    """
     android_id = android_id or "".join(random.choice("0123456789abcdef") for _ in range(16))
     device_info = make_login_device_info(android_id)
     fingerprint = hashlib.sha256(
@@ -417,18 +399,11 @@ def register_account(invite=DEFAULT_INVITE, android_id=None, claim_free=True):
         "android_id": android_id,
         "wallet": wallet,
         "base": base,
-        "user": (data or {}).get("user") or {},
         "proof": proof,
-        "session_id": (data or {}).get("sessionId"),
-        "expire_time": (data or {}).get("expireTime"),
         "bind_ok": bind_ok,
         "free_ok": free_ok,
-        "raw": data,
     }
 
-# ================================================================
-# API
-# ================================================================
 def http(method, url, headers=None, body=None, timeout=20):
     req = urllib.request.Request(url, method=method, headers=headers or {})
     if body is not None:
@@ -445,29 +420,24 @@ def http(method, url, headers=None, body=None, timeout=20):
     except Exception as e:
         return -1, str(e)
 
-def fetch_nodes(base, token, hdrs, code, residence=False):
-    path = "/app/equipment/with-account-home-v1" if residence else "/app/devpn/unified-with-account"
+def fetch_nodes(base, token, hdrs, code):
+    path = "/app/devpn/unified-with-account"
     st, body = http("POST", f"{base}/api/dsf{path}?code={code}&uuid={OWNER_ID}", hdrs, body=[])
     try:
         return json.loads(body)
     except Exception:
         return {"code": -1, "msg": "bad response"}
 
-def get_countries(base, token, hdrs, residence=False):
-    if residence:
-        st, body = http("GET", f"{base}/api/dsf/app/equipment/list-home?language=zh_HK", hdrs)
-    else:
-        st, body = http("GET",
-                        f"{base}/api/dsf/app/devpn/country-list?ownerId={OWNER_ID}&language=zh_HK&variant=0",
-                        hdrs)
+def get_countries(base, token, hdrs):
+    st, body = http("GET",
+                    f"{base}/api/dsf/app/devpn/country-list?ownerId={OWNER_ID}&language=zh_HK&variant=0",
+                    hdrs)
     try:
         return json.loads(body).get("data") or []
     except Exception:
         return []
 
 def activate_node(node):
-    """POST sm2ciphertext 到节点服务器的 /server/setAccount。
-    返回 True 表示激活成功（data:true）。"""
     domain = node.get("domainName")
     port = node.get("appPort") or "443"
     sm2 = node.get("sm2ciphertext") or ""
@@ -478,9 +448,6 @@ def activate_node(node):
     except Exception:
         return False
 
-# ================================================================
-# vmess
-# ================================================================
 def vmess_link(node, name):
     domain = node.get("domainName")
     cfg = {
@@ -498,15 +465,11 @@ def vmess_link(node, name):
     return "vmess://" + base64.b64encode(json.dumps(cfg).encode()).decode()
 
 # ================================================================
-# 一键并发拉取入口
+# 主逻辑
 # ================================================================
-import threading
-from concurrent.futures import ThreadPoolExecutor, as_completed
-
 INVITE = DEFAULT_INVITE
-HERE = os.path.dirname(os.path.abspath(__file__)) or "."
-OUT_FILE = os.path.join(HERE, "nodes.txt")
-META_FILE = os.path.join(HERE, "last_account.json")
+OUT_FILE = "nodes.txt"
+META_FILE = "last_account.json"
 ROUNDS_PER_COUNTRY = 10
 COUNTRY_WORKERS = 7
 ACTIVATE_WORKERS = 16
@@ -514,11 +477,9 @@ ACTIVATE_WORKERS = 16
 _print_lock = threading.Lock()
 _activate_pool = None
 
-
 def log(msg: str) -> None:
     with _print_lock:
         print(msg, flush=True)
-
 
 def activate_batch(nodes):
     ok = []
@@ -526,16 +487,7 @@ def activate_batch(nodes):
         return ok
     pool = _activate_pool
     if pool is None:
-        with ThreadPoolExecutor(max_workers=ACTIVATE_WORKERS) as tmp:
-            futs = {tmp.submit(activate_node, n): n for n in nodes}
-            for fut in as_completed(futs):
-                n = futs[fut]
-                try:
-                    if fut.result():
-                        ok.append(n)
-                except Exception:
-                    pass
-        return ok
+        return []
     futs = {pool.submit(activate_node, n): n for n in nodes}
     for fut in as_completed(futs):
         n = futs[fut]
@@ -546,13 +498,11 @@ def activate_batch(nodes):
             pass
     return ok
 
-
 def harvest_country(base, token, hdrs, code, rounds=ROUNDS_PER_COUNTRY):
     bucket = {}
     log(f"开始 {code} …")
     for round_i in range(1, rounds + 1):
-        before = len(bucket)
-        data = fetch_nodes(base, token, hdrs, code, residence=False)
+        data = fetch_nodes(base, token, hdrs, code)
         fresh = []
         for n in data.get("data") or []:
             dn = n.get("domainName")
@@ -562,62 +512,46 @@ def harvest_country(base, token, hdrs, code, rounds=ROUNDS_PER_COUNTRY):
             dn = n.get("domainName")
             if dn:
                 bucket[dn] = n
-        gained = len(bucket) - before
-        log(f"  {code}: 第{round_i}/{rounds}轮  累计{len(bucket)}  (+{gained})")
-    log(f"  → {code} 完成 {len(bucket)} 条（{rounds} 轮）")
+        log(f"  {code}: 第{round_i}/{rounds}轮  累计{len(bucket)}")
+    log(f"  → {code} 完成 {len(bucket)} 条")
     return code, bucket
-
 
 def main():
     global _activate_pool
     t0 = time.time()
 
     log("===== 1/3 注册新账号 =====")
-    acc = register_account(invite=INVITE, claim_free=True)
+    try:
+        acc = register_account(invite=INVITE, claim_free=True)
+    except Exception as e:
+        log(f"注册失败: {e}")
+        return
     token = acc["token"]
     device_id = acc["android_id"]
     log(f"token:  {token}")
     log(f"wallet: {acc['wallet']}")
-    log(
-        f"invite: {'ok' if acc.get('bind_ok') else 'fail'}  "
-        f"free: {'ok' if acc.get('free_ok') else 'fail'}"
-    )
-
+    
     hdrs = make_headers(token, device_id)
     base = acc.get("base")
-    if not base:
-        for d in DOMAINS:
-            r = fetch_nodes(d, token, hdrs, "HK")
-            if r.get("code") == 0 and r.get("data"):
-                base = d
-                break
     if not base:
         log("无法连接 API")
         sys.exit(1)
     log(f"API: {base}")
 
-    log("\n===== 2/3 并发拉取全部国家节点 =====")
-    countries = get_countries(base, token, hdrs, residence=False)
+    log("\n===== 2/3 拉取并激活节点 =====")
+    countries = get_countries(base, token, hdrs)
     if not countries:
         log("国家列表为空")
         sys.exit(1)
 
     codes = [c.get("egName") for c in countries if c.get("egName")]
-    log(
-        f"国家 {len(codes)} 个，每国 {ROUNDS_PER_COUNTRY} 轮，"
-        f"地区并发 {COUNTRY_WORKERS}，激活并发 {ACTIVATE_WORKERS}"
-    )
-    for c in countries:
-        log(f"  - {c.get('egName')}: {c.get('name')} ({c.get('total', 0)})")
+    log(f"地区并发 {COUNTRY_WORKERS}，激活并发 {ACTIVATE_WORKERS}")
 
     collected = {}
     _activate_pool = ThreadPoolExecutor(max_workers=ACTIVATE_WORKERS)
     try:
         with ThreadPoolExecutor(max_workers=min(COUNTRY_WORKERS, len(codes) or 1)) as pool:
-            futs = [
-                pool.submit(harvest_country, base, token, hdrs, code)
-                for code in codes
-            ]
+            futs = [pool.submit(harvest_country, base, token, hdrs, code) for code in codes]
             for fut in as_completed(futs):
                 code, bucket = fut.result()
                 collected[code] = bucket
@@ -627,38 +561,35 @@ def main():
 
     ordered = {code: collected[code] for code in codes if code in collected}
 
-    log("\n===== 3/3 保存 =====")
-    links = []
+    log("\n===== 3/3 保存（含 Base64 编码订阅） =====")
+    raw_links = []
     for code, nodes in ordered.items():
         for i, n in enumerate(nodes.values()):
-            links.append(vmess_link(n, f"DeVPN-{code}-{i}"))
+            raw_links.append(vmess_link(n, f"DeVPN-{code}-{i}"))
+
+    if not raw_links:
+        log("警告：没有收集到任何节点！不更新 nodes.txt 文件。")
+        return
+
+    # 关键修改：将节点列表转换为纯 Base64 编码，适配标准订阅
+    all_links_str = "\n".join(raw_links)
+    base64_encoded_str = base64.b64encode(all_links_str.encode('utf-8')).decode('utf-8')
 
     with open(OUT_FILE, "w", encoding="utf-8") as f:
-        f.write("\n".join(links) + "\n")
+        f.write(base64_encoded_str)
 
     elapsed = time.time() - t0
     meta = {
-        "token": token,
-        "android_id": device_id,
         "wallet": acc["wallet"],
         "invite": INVITE,
-        "rounds_per_country": ROUNDS_PER_COUNTRY,
-        "country_workers": COUNTRY_WORKERS,
-        "activate_workers": ACTIVATE_WORKERS,
-        "per_country": {k: len(val) for k, val in ordered.items()},
-        "total_links": len(links),
+        "total_nodes": len(raw_links),
         "elapsed_sec": round(elapsed, 1),
-        "nodes_file": OUT_FILE,
     }
     with open(META_FILE, "w", encoding="utf-8") as f:
         json.dump(meta, f, ensure_ascii=False, indent=2)
 
-    log(f"合计 {len(links)} 条 → {OUT_FILE}")
-    log(f"账号信息 → {META_FILE}")
+    log(f"合计 {len(raw_links)} 条 → {OUT_FILE}")
     log(f"耗时 {elapsed:.1f}s")
-    for k, n in meta["per_country"].items():
-        log(f"  {k}: {n}")
-
 
 if __name__ == "__main__":
     main()
