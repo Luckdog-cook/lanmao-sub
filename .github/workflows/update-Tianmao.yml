@@ -2,7 +2,7 @@ name: 更新天猫订阅
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # 每 6 小時自動運行一次
+    - cron: '*/30 * * * *' # 每 6 小時自動運行一次
   workflow_dispatch: # 支援在 GitHub 網頁手動點擊觸發
 
 jobs:
