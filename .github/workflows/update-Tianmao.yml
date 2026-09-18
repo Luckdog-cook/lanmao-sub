@@ -23,7 +23,7 @@ jobs:
 
       - name: Run Tianmiao script
         run: |
-          python3 "天喵VPN提取.py"
+          python3 "天喵.py"
 
       - name: Commit and Push update
         run: |
