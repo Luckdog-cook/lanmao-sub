@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-蓝猫VPN 智能订阅脚本（最终完整版）
+蓝猫VPN 智能订阅脚本（最终完整优化版）
 手机 + GitHub / Gitee 固定订阅自动更新专用
 """
 
@@ -46,7 +46,8 @@ EXTRA_OUT_DIRS = [p.strip() for p in os.getenv("VPN_EXTRA_OUT", "").split(",") i
 OUT_DIR = Path(os.getenv("VPN_OUT_DIR", Path(__file__).resolve().parent if "__file__" in globals() else Path.cwd()))
 TOKEN_FILE = OUT_DIR / "token.json"
 NODES_FILE = OUT_DIR / "nodes.txt"
-SUB64_FILE = OUT_DIR / "nodes_sub_base64.txt"
+# 【修改点1】统一文件名，解决“更新无变化”的根源
+SUB64_FILE = OUT_DIR / "bluecat_nodes_base64.txt"
 CLASH_FILE = OUT_DIR / "clash.yaml"                 # 可直接导入的 Clash 配置
 INFO_FILE = OUT_DIR / "subscription_info.txt"
 DEVICE_FILE = OUT_DIR / "device_id.txt"
@@ -280,7 +281,7 @@ def write_outputs(links: List[str]):
 # Subscription-Userinfo: {userinfo}
 """
 
-    # 可直接导入的 Clash 配置（使用订阅链接方式，最稳定）
+    # 【修改点2】修正 Clash 模板里的真实订阅地址，解决 Clash 拉取失败
     clash = f"""mixed-port: 7890
 allow-lan: true
 mode: rule
@@ -290,7 +291,7 @@ external-controller: 127.0.0.1:9090
 proxy-providers:
   蓝猫:
     type: http
-    url: "https://raw.githubusercontent.com/你的用户名/仓库名/main/nodes_sub_base64.txt"
+    url: "https://raw.githubusercontent.com/Luckdog-cook/lanmao-sub/main/bluecat_nodes_base64.txt"
     interval: 3600
     path: ./providers/蓝猫.yaml
     health-check:
@@ -325,7 +326,8 @@ rules:
         try:
             t.mkdir(parents=True, exist_ok=True)
             (t / "nodes.txt").write_text(plain, encoding="utf-8")
-            (t / "nodes_sub_base64.txt").write_text(b64, encoding="utf-8")
+            # 【修改点3】写入文件时统一命名为 bluecat_nodes_base64.txt
+            (t / "bluecat_nodes_base64.txt").write_text(b64, encoding="utf-8")
             (t / "subscription_info.txt").write_text(info, encoding="utf-8")
             (t / "clash.yaml").write_text(clash, encoding="utf-8")
             logger.info("已写入: %s", t)
@@ -393,6 +395,7 @@ def cmd_login(email: str, pwd: str) -> bool:
         return fetch_subscribe(d.get("auth_data") or "", d.get("token") or "")
     return False
 
+# 【修改点4】加入“节点死绝自动换号”逻辑
 def cmd_auto(force_new: bool = False) -> bool:
     d = load_token_full()
     md5_tok, jwt, email = d.get("token") or "", d.get("auth") or "", d.get("email") or ""
@@ -400,14 +403,27 @@ def cmd_auto(force_new: bool = False) -> bool:
         return cmd_register(rand_email(), DEFAULT_PASSWORD)
     if not (jwt or md5_tok):
         return cmd_register(rand_email(), DEFAULT_PASSWORD)
+    
     age = token_age_seconds()
     logger.info("当前账号: %s | %s", email or "未知", format_remain())
+    
     if is_token_expired():
         logger.info("账号过期，换新号")
         return cmd_register(rand_email(), DEFAULT_PASSWORD)
+    
     if not fetch_subscribe(jwt, md5_tok):
         logger.warning("刷新失败，换新号")
         return cmd_register(rand_email(), DEFAULT_PASSWORD)
+    
+    # 新增判断：如果抓到的节点少于 8 个，强制换号重新抓取
+    if os.path.exists(NODES_FILE):
+        with open(NODES_FILE, "r", encoding="utf-8") as f:
+            lines = f.readlines()
+        valid_lines = [l for l in lines if l.strip()]
+        if len(valid_lines) < 8:
+            logger.warning("当前账号节点存活极少（%d个），强制换新号重新抓取", len(valid_lines))
+            return cmd_register(rand_email(), DEFAULT_PASSWORD)
+            
     return True
 
 def cmd_status():
