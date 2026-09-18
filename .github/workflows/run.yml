@@ -1,8 +1,8 @@
-name: 更新滑翔伞订阅
+name: Auto Update Glider Sub
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # 每 12 小时自动运行一次
+    - cron: '0 */6 * * *' # 每 6 小时自动运行一次
   workflow_dispatch: # 支持手动点击运行
 
 jobs:
@@ -23,9 +23,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install cryptography requests
 
-      - name: Run script
-        run: |
-          python 滑翔伞.py
+      - name: 注册账户
+   run: python 滑翔伞.py register
+
+- name: 拉取节点
+  run: python 滑翔伞.py fetch
+          
 
       - name: Commit and push changes
         run: |
