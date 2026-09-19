@@ -111,10 +111,11 @@ def main():
                 'network': params.get('type', 'tcp')
             })
 
-        with open('nodes.json', 'w', encoding='utf-8') as f:
+        # 已修改：輸出到 flycat_nodes.json，不再生成 nodes.json
+        with open('flycat_nodes.json', 'w', encoding='utf-8') as f:
             json.dump({'count': len(proxies), 'proxies': proxies}, f, ensure_ascii=False, indent=2)
 
-        print('已成功更新並保存: flycat_nodes.txt, subscribe.txt, nodes.json')
+        print('已成功更新並保存: flycat_nodes.txt, subscribe.txt, flycat_nodes.json')
 
     except Exception as e:
         print(f"運行過程發生異常: {e}")
