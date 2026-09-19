@@ -43,7 +43,3 @@ jobs:
             git commit -m "Auto update tianmiao nodes [skip ci]"
             git push
           fi
-
-      - name: Purge jsDelivr cache
-        run: |
-          curl -s "https://purge.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/flycat_nodes.txt"
