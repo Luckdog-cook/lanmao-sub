@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-蓝猫VPN 智能订阅脚本（最终完整优化版）
-手机 + GitHub / Gitee 固定订阅自动更新专用
+蓝猫VPN 智能订阅脚本（精简最终版）
+仅输出 bluecat_nodes_base64.txt 和 clash.yaml
 """
 
 import sys, os, json, base64, random, string, ssl, time, logging, argparse, socket, hashlib, concurrent.futures
@@ -17,7 +17,6 @@ try:
 except ImportError:
     sys.exit("需要 Python 3")
 
-# ======================== 配置（一般不用改） ========================
 BOOT_URL = "https://qiyusur.oss-cn-shanghai.aliyuncs.com/2002552026.log"
 FALLBACK_GATEWAY = "http://8.210.52.158:8020"
 UA = "okhttp/4.12.0"
@@ -27,29 +26,17 @@ DEFAULT_PASSWORD = os.getenv("VPN_PASSWORD", "Py12345678")
 HTTP_RETRIES = 3
 HTTP_TIMEOUT = 18
 
-# 协议过滤（空=全部保留，想只留某些协议就填，例如 ["vless", "trojan"]）
 ALLOWED_PROTOCOLS: List[str] = []
-
-# 延迟测试（默认开启）
-ENABLE_LATENCY_TEST = os.getenv("VPN_TEST_LATENCY", "1") != "0"   # 设为 0 可关闭
+ENABLE_LATENCY_TEST = os.getenv("VPN_TEST_LATENCY", "1") != "0"
 LATENCY_TIMEOUT = 2.2
 MAX_LATENCY_MS = 1100
 LATENCY_WORKERS = 16
 
-# Token 加密密钥（强烈建议在 GitHub Secrets 里设置）
 ENCRYPT_KEY = os.getenv("VPN_ENCRYPT_KEY", "").strip()
-
-# 额外输出目录（镜像用，逗号分隔）
 EXTRA_OUT_DIRS = [p.strip() for p in os.getenv("VPN_EXTRA_OUT", "").split(",") if p.strip()]
-# ==================================================================
 
 OUT_DIR = Path(os.getenv("VPN_OUT_DIR", Path(__file__).resolve().parent if "__file__" in globals() else Path.cwd()))
 TOKEN_FILE = OUT_DIR / "token.json"
-NODES_FILE = OUT_DIR / "nodes.txt"
-# 【修改点1】统一文件名，解决“更新无变化”的根源
-SUB64_FILE = OUT_DIR / "bluecat_nodes_base64.txt"
-CLASH_FILE = OUT_DIR / "clash.yaml"                 # 可直接导入的 Clash 配置
-INFO_FILE = OUT_DIR / "subscription_info.txt"
 DEVICE_FILE = OUT_DIR / "device_id.txt"
 GATEWAY_CACHE_FILE = OUT_DIR / "gateway_cache.json"
 LOG_FILE = OUT_DIR / "run.log"
@@ -270,18 +257,9 @@ def filter_and_dedup(links: List[str]) -> List[str]:
 
 def write_outputs(links: List[str]):
     if not links: return
-    plain = "\n".join(links) + "\n"
     b64 = base64.b64encode("\n".join(links).encode("utf-8")).decode("ascii")
-    expire_ts = int(time.time()) + TOKEN_MAX_AGE
-    userinfo = f"upload=0; download=0; total=10737418240; expire={expire_ts}"
 
-    info = f"""# 蓝猫VPN 自动更新订阅
-# 更新时间: {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}
-# 节点数量: {len(links)}
-# Subscription-Userinfo: {userinfo}
-"""
-
-    # 【修改点2】修正 Clash 模板里的真实订阅地址，解决 Clash 拉取失败
+    # 只保留 base64 和 clash，去掉多余的 nodes.txt 和 info
     clash = f"""mixed-port: 7890
 allow-lan: true
 mode: rule
@@ -325,10 +303,7 @@ rules:
     for t in targets:
         try:
             t.mkdir(parents=True, exist_ok=True)
-            (t / "nodes.txt").write_text(plain, encoding="utf-8")
-            # 【修改点3】写入文件时统一命名为 bluecat_nodes_base64.txt
             (t / "bluecat_nodes_base64.txt").write_text(b64, encoding="utf-8")
-            (t / "subscription_info.txt").write_text(info, encoding="utf-8")
             (t / "clash.yaml").write_text(clash, encoding="utf-8")
             logger.info("已写入: %s", t)
         except Exception as e:
@@ -395,7 +370,6 @@ def cmd_login(email: str, pwd: str) -> bool:
         return fetch_subscribe(d.get("auth_data") or "", d.get("token") or "")
     return False
 
-# 【修改点4】加入“节点死绝自动换号”逻辑
 def cmd_auto(force_new: bool = False) -> bool:
     d = load_token_full()
     md5_tok, jwt, email = d.get("token") or "", d.get("auth") or "", d.get("email") or ""
@@ -415,14 +389,19 @@ def cmd_auto(force_new: bool = False) -> bool:
         logger.warning("刷新失败，换新号")
         return cmd_register(rand_email(), DEFAULT_PASSWORD)
     
-    # 新增判断：如果抓到的节点少于 8 个，强制换号重新抓取
-    if os.path.exists(NODES_FILE):
-        with open(NODES_FILE, "r", encoding="utf-8") as f:
-            lines = f.readlines()
-        valid_lines = [l for l in lines if l.strip()]
-        if len(valid_lines) < 8:
-            logger.warning("当前账号节点存活极少（%d个），强制换新号重新抓取", len(valid_lines))
-            return cmd_register(rand_email(), DEFAULT_PASSWORD)
+    # 只从 base64 文件里判断节点数，不再依赖 nodes.txt
+    b64_file = OUT_DIR / "bluecat_nodes_base64.txt"
+    if b64_file.exists():
+        try:
+            content = b64_file.read_text(encoding="utf-8").strip()
+            if content:
+                decoded = base64.b64decode(content).decode("utf-8")
+                valid_lines = [l for l in decoded.splitlines() if l.strip()]
+                if len(valid_lines) < 8:
+                    logger.warning("当前账号节点存活极少（%d个），强制换新号重新抓取", len(valid_lines))
+                    return cmd_register(rand_email(), DEFAULT_PASSWORD)
+        except Exception:
+            pass
             
     return True
 
