@@ -1,0 +1,64 @@
+name: 更新火种节点
+
+on:
+  schedule:
+    - cron: '0 0,6,12,18 * * *'   # 每天 0/6/12/18 点（UTC）
+  workflow_dispatch:               # 允许手动触发
+  push:
+    branches: [main]
+    paths:
+      - 'huozhong_nodes.py'
+      - '.github/workflows/update_nodes.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 拉取完整历史，方便后续 rebase
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install -q requests urllib3
+
+      - name: Fetch nodes
+        run: |
+          set -e
+          python huozhong_nodes.py
+          wc -l huozhong_nodes.txt || true
+          ls -l huozhong_clash.yaml || true
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          # 检查核心文件是否生成成功
+          if [ ! -f huozhong_nodes.txt ]; then 
+            echo "huozhong_nodes.txt 未生成，退出。"
+            exit 1
+          fi
+          
+          git add huozhong_nodes.txt huozhong_clash.yaml 2>/dev/null || true
+          
+          if git diff --staged --quiet; then
+            echo "内容无变化，跳过提交"
+            exit 0
+          fi
+          
+          git commit -m "chore: update huozhong nodes and clash config"
+          
+          # 【核心修复】先拉取远程最新代码并变基，防止推送冲突
+          git pull --rebase origin main
+          
+          # 推送到远程
+          git push origin main
