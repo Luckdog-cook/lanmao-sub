@@ -2,47 +2,48 @@ name: 更新天猫订阅
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # 每30分钟自动运行
-  workflow_dispatch: # 支持手动触发
+    - cron: '*/30 * * * *' # 保留默认每30分钟运行，实际靠外挂 cron-job.org 触发
+  workflow_dispatch:        # 支持手动触发
+
+concurrency:
+  group: tianmao-update
+  cancel-in-progress: true  # 【新增】防止多次触发导致任务重叠冲突
 
 permissions:
-  contents: write # 必须有写权限，否则无法提交
+  contents: write           # 【新增】必须要有写权限，否则 git push 会静默失败
 
 jobs:
-  build:
+  update:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
     steps:
-      - name: Checkout repository
+      - name: 拉取代码
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: 安装 Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
+          # 保持原样，不要写 cache: 'pip'，因为你没有 requirements.txt
 
-      - name: Install dependencies
+      - name: 安装依赖
         run: |
+          pip install --upgrade pip
           pip install requests
 
-      - name: Run Tianmiao script
-        run: |
-          python3 "天喵.py"
+      - name: 运行天猫脚本
+        run: python3 "天喵.py"
 
-      # 👇 👇 就是漏了这一步！把生成的文件复制给目标文件 👇 👇
-      - name: 复制节点文件
-        run: |
-          cp nodes.txt flycat_nodes.txt
-      # 👆 👆 就是漏了这一步！把生成的文件复制给目标文件 👆 👆
-
-      - name: Commit and Push update
+      - name: 提交更新
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # 删除可能残留的 nodes.json
+          # 删除仓库里可能残留的 nodes.json（保持你之前的优良习惯）
           git rm -f nodes.json 2>/dev/null || true
           
-          # 提交刚刚复制过来的新文件
+          # 只添加需要的文件
           git add flycat_nodes.txt subscribe.txt
           
           if git diff --staged --quiet; then
@@ -51,3 +52,8 @@ jobs:
             git commit -m "Auto update tianmiao nodes [skip ci]"
             git push
           fi
+
+      - name: 刷新 jsDelivr 缓存
+        run: |
+          curl -s "https://purge.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/flycat_nodes.txt"
+          echo "已通知 jsDelivr 刷新缓存"
