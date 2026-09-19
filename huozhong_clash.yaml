@@ -1,6 +1,6 @@
 # 火种VPN Clash 订阅
-# 生成时间: 2026-09-19 15:29:04
-# 节点数量: 45
+# 生成时间: 2026-09-19 20:09:32
+# 节点数量: 46
 
 mixed-port: 7890
 allow-lan: false
@@ -413,6 +413,15 @@ proxies:
     skip-cert-verify: true
     sni: "vpn-node.internal"
     alpn: ["http/1.1"]
+  - name: "印度 - 印度-V1 - (班加罗尔/移动优化)"
+    type: trojan
+    server: "139.162.108.36"
+    port: 42300
+    password: "22ce7737-321b-418b-a3a3-11a9963c158a"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
 
 proxy-groups:
   - name: "🚀 节点选择"
@@ -465,6 +474,7 @@ proxy-groups:
       - "美国 - 美国-V16 - (洛杉矶/大陆优化)"
       - "美国 - 美国-V17 - (俄勒冈/大陆优化)"
       - "日本 - 日本- V19 - (东京/联通移动优化)"
+      - "印度 - 印度-V1 - (班加罗尔/移动优化)"
   - name: "♻️ 自动选择"
     type: url-test
     url: "http://www.gstatic.com/generate_204"
@@ -516,6 +526,7 @@ proxy-groups:
       - "美国 - 美国-V16 - (洛杉矶/大陆优化)"
       - "美国 - 美国-V17 - (俄勒冈/大陆优化)"
       - "日本 - 日本- V19 - (东京/联通移动优化)"
+      - "印度 - 印度-V1 - (班加罗尔/移动优化)"
 
 rules:
   - GEOIP,LAN,DIRECT,no-resolve

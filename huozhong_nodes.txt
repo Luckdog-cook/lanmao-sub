@@ -1,5 +1,5 @@
-# 火种VPN 节点订阅 - 生成时间: 2026-09-19 15:29:04
-# 有效节点: 45 / 145
+# 火种VPN 节点订阅 - 生成时间: 2026-09-19 20:09:32
+# 有效节点: 46 / 150
 trojan://d0cfbc61-6fbb-4c16-ad8f-bca7ae627f0e@64.32.12.59:47317?security=tls&sni=vpn-node.internal&allowInsecure=1&fp=chrome&alpn=http%2F1.1&type=ws&path=%2FxVpnTrojanWsSvc7f3a&host=vpn-node.internal#%E9%A6%99%E6%B8%AF%20-%20%E9%A6%99%E6%B8%AF-V1%20-%20%28%E9%A6%99%E6%B8%AF/%E5%AE%B6%E5%AE%BDIP/%E8%A7%A3%E9%94%81%E6%B5%81%E5%AA%92%E4%BD%93AI%29
 trojan://b202a557-bbd9-4839-baae-2153256b6f04@104.105.140.151:47752?security=tls&sni=vpn-node.internal&allowInsecure=1&fp=chrome&alpn=http%2F1.1&type=ws&path=%2FxVpnTrojanWsSvc7f3a&host=vpn-node.internal#%E7%BE%8E%E5%9B%BD%20-%20%E7%BE%8E%E5%9B%BD-V1%20-%20%28%E5%87%A4%E5%87%B0%E5%9F%8E/%E7%A7%BB%E5%8A%A8%E4%BC%98%E5%8C%96%29
 trojan://cc60f063-53b9-4133-95b9-8d65ab1b4da5@64.32.12.59:48467?security=tls&sni=vpn-node.internal&allowInsecure=1&fp=chrome&alpn=http%2F1.1&type=ws&path=%2FxVpnTrojanWsSvc7f3a&host=vpn-node.internal#%E7%BE%8E%E5%9B%BD%20-%20%E7%BE%8E%E5%9B%BD-V2%20-%20%28%E6%B4%9B%E6%9D%89%E7%9F%B6/%E5%A4%A7%E9%99%86%E4%BC%98%E5%8C%96%29
@@ -45,3 +45,4 @@ trojan://d0cfbc61-6fbb-4c16-ad8f-bca7ae627f0e@64.32.12.59:44734?security=tls&sni
 trojan://36d79bc1-db51-4c58-84b5-23dedff3c929@45.58.165.159:28443?security=tls&sni=vpn-node.internal&allowInsecure=1&fp=chrome&alpn=http%2F1.1&type=ws&path=%2FxVpnTrojanWsSvc7f3a&host=vpn-node.internal#%E7%BE%8E%E5%9B%BD%20-%20%E7%BE%8E%E5%9B%BD-V16%20-%20%28%E6%B4%9B%E6%9D%89%E7%9F%B6/%E5%A4%A7%E9%99%86%E4%BC%98%E5%8C%96%29
 trojan://f4586415-7ef6-4246-b66b-2480c551dedd@45.58.165.159:46948?security=tls&sni=vpn-node.internal&allowInsecure=1&fp=chrome&alpn=http%2F1.1&type=ws&path=%2FxVpnTrojanWsSvc7f3a&host=vpn-node.internal#%E7%BE%8E%E5%9B%BD%20-%20%E7%BE%8E%E5%9B%BD-V17%20-%20%28%E4%BF%84%E5%8B%92%E5%86%88/%E5%A4%A7%E9%99%86%E4%BC%98%E5%8C%96%29
 trojan://93cb5308-dc32-47aa-befc-478257b78508@54.238.213.168:18444?security=tls&sni=vpn-node.internal&allowInsecure=1&fp=chrome&alpn=http%2F1.1&type=raw#%E6%97%A5%E6%9C%AC%20-%20%E6%97%A5%E6%9C%AC-%20V19%20-%20%28%E4%B8%9C%E4%BA%AC/%E8%81%94%E9%80%9A%E7%A7%BB%E5%8A%A8%E4%BC%98%E5%8C%96%29
+trojan://22ce7737-321b-418b-a3a3-11a9963c158a@139.162.108.36:42300?security=tls&sni=vpn-node.internal&allowInsecure=1&fp=chrome&alpn=http%2F1.1&type=ws&path=%2FxVpnTrojanWsSvc7f3a&host=vpn-node.internal#%E5%8D%B0%E5%BA%A6%20-%20%E5%8D%B0%E5%BA%A6-V1%20-%20%28%E7%8F%AD%E5%8A%A0%E7%BD%97%E5%B0%94/%E7%A7%BB%E5%8A%A8%E4%BC%98%E5%8C%96%29
