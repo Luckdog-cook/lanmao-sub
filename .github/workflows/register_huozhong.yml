@@ -18,21 +18,44 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+      
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      # 1. 自动补齐 ddddocr 所需的系统图像库，防止跑一半报错
+      - name: Install system dependencies
+        run: sudo apt-get update && sudo apt-get install -y libgl1 libglib2.0-0
+
+      # 2. 自动校验输入，防手抖输错
+      - name: Validate input
+        run: |
+          if ! [[ "${{ inputs.count }}" =~ ^[0-9]+$ ]]; then
+            echo "错误：输入的数量必须是正整数！"
+            exit 1
+          fi
+
+      # 3. 自动安装 Python 依赖
       - name: Install dependencies
         run: pip install -q requests pillow ddddocr -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+      # 4. 自动跑注册脚本，并自动加时间戳重命名，防覆盖
       - name: Run register
         env:
           REGISTER_COUNT: ${{ inputs.count }}
           CI: true
-        run: python register_auto.py
+        run: |
+          python register_auto.py
+          if [ -f huozhong_accounts.txt ]; then
+            mv huozhong_accounts.txt huozhong_accounts_$(date +'%Y%m%d_%H%M%S').txt
+          fi
+
+      # 5. 自动上传打包好的账号文件
       - name: Upload accounts artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: huozhong-accounts
-          path: huozhong_accounts.txt
+          path: huozhong_accounts_*.txt
           if-no-files-found: warn
           retention-days: 7
