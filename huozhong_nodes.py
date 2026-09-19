@@ -28,13 +28,14 @@ API_SERVERS = [
     "https://47.76.166.180/api/nodesystem/user",
 ]
 
-USERNAME = "110gfw"
-PASSWORD = "Czy5201314."
+# 【优化】从环境变量读取，避免明文写在代码里。如果没有环境变量则使用默认值（仅本地测试用）
+USERNAME = os.getenv("HUOZHONG_USER", "110gfw")
+PASSWORD = os.getenv("HUOZHONG_PASS", "Czy5201314.")
 CLIENT_ID = "vpn-user"
 CLIENT_SECRET = "i16bYq4sXxlGl3s"
 
 ALLOWED_STATUS = {"HEALTHY"}
-MAX_WORKERS = 8
+MAX_WORKERS = 4  # 降低并发数，减少风控触发概率
 
 OUTPUT_FILE = os.path.join(
     os.path.dirname(os.path.abspath(__file__)) or ".",
@@ -52,7 +53,9 @@ BASE_HEADERS = {
 _global_session = requests.Session()
 _global_session.verify = False
 
+# 增加登录锁，防止多线程竞争导致 Token 刷新混乱
 _lock = threading.Lock()
+_login_lock = threading.Lock()
 _token_state = {"token": None, "expire_at": 0.0}
 
 
@@ -119,10 +122,18 @@ def ensure_token() -> str:
         expire_at = _token_state["expire_at"]
     if token and time.time() < expire_at:
         return token
-    new_token = login_and_get_token()
-    if not new_token:
-        raise RuntimeError("Token 刷新失败")
-    return new_token
+    
+    with _login_lock:
+        with _lock:
+            token = _token_state["token"]
+            expire_at = _token_state["expire_at"]
+        if token and time.time() < expire_at:
+            return token
+        
+        new_token = login_and_get_token()
+        if not new_token:
+            raise RuntimeError("Token 刷新失败")
+        return new_token
 
 
 @retry_request(max_retries=3)
@@ -229,11 +240,12 @@ def generate_trojan_link(config: Dict, node_name: str) -> str:
         params["security"] = "tls"
         if sni := tls.get("serverName"):
             params["sni"] = sni
-        if tls.get("allowInsecure") is not None:
-            params["allowInsecure"] = "1" if tls.get("allowInsecure") else "0"
+        # 【关键修复】强制允许不安全连接，解决 legacy Common Name 证书报错
+        params["allowInsecure"] = "1"
         if fp := tls.get("fingerprint"):
             params["fp"] = fp
-        params["alpn"] = "h2" if network == "grpc" else "http/1.1"
+        # 固定 alpn 为 http/1.1，兼容老旧证书节点
+        params["alpn"] = "http/1.1"
 
     params["type"] = network
     if network == "ws":
@@ -287,11 +299,11 @@ def generate_vless_link(config: Dict, node_name: str) -> str:
         params["security"] = "tls"
         if sni := tls.get("serverName"):
             params["sni"] = sni
-        if tls.get("allowInsecure") is not None:
-            params["allowInsecure"] = "1" if tls.get("allowInsecure") else "0"
+        # VLESS 也加上 allowInsecure 以防万一
+        params["allowInsecure"] = "1"
         if fp := tls.get("fingerprint"):
             params["fp"] = fp
-        params["alpn"] = "h2" if network == "grpc" else "http/1.1"
+        params["alpn"] = "http/1.1"
 
     if network == "ws":
         ws = stream.get("wsSettings", {})
@@ -340,16 +352,18 @@ def main():
 
     token = login_and_get_token()
     if not token:
+        print("[ERROR] 登录失败，跳过本次抓取，保留旧文件")
         sys.exit(1)
 
     try:
         nodes = get_node_list(token)
     except Exception as e:
-        print(f"获取节点列表失败: {e}")
+        print(f"[ERROR] 获取节点列表失败: {e}")
+        print("[INFO] 抓取失败，保留旧文件。")
         sys.exit(1)
 
     if not nodes:
-        print("节点列表为空")
+        print("节点列表为空，保留旧文件。")
         sys.exit(1)
 
     valid_nodes = [n for n in nodes if n.get("status") in ALLOWED_STATUS]
@@ -357,7 +371,7 @@ def main():
     print(f"  [OK] 过滤后保留 {len(valid_nodes)} 个 HEALTHY 节点（跳过 {skipped} 个）")
 
     if not valid_nodes:
-        print("没有可用节点")
+        print("没有可用节点，保留旧文件。")
         sys.exit(1)
 
     out_dir = os.path.dirname(os.path.abspath(OUTPUT_FILE))
@@ -386,6 +400,10 @@ def main():
             except Exception as e:
                 failed += 1
                 print(f"  [{idx:3d}/{total}] [FAIL] {node_name} - {e}")
+
+    if not results:
+        print("[ERROR] 所有节点解析均失败，保留旧文件。")
+        sys.exit(1)
 
     results.sort(key=lambda x: x[0] or 0)
 
