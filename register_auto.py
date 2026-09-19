@@ -850,6 +850,9 @@ def single_register(reg_info):
             if retry % 10 == 0:
                 _why = f"上次识别 {code} 未通过" if code else "自动识别无结果"
                 print(f"  … 已试{retry}次（{_why}），持续换图中")
+
+            # 【新增】每次换图重试前，加 1-2 秒随机延时，防触发验证码接口风控
+            time.sleep(random.uniform(1, 2))
             continue
 
         except Exception:
@@ -940,6 +943,12 @@ if __name__ == '__main__':
             fail += 1
             fails.append(f"第{i}个：{info['username']} - {str(e)}")
             print(f"❌ 失败：{str(e)}")
+
+        # 【新增】每个账号注册结束后，加 8-15 秒随机延时，避免短时间高频注册触发风控
+        if i < total:
+            delay = random.uniform(8, 15)
+            print(f"⏳ 休眠 {delay:.1f} 秒后继续下一个账号...")
+            time.sleep(delay)
 
     print("\n===== 统计报告 =====")
     print(f"📊 总数：{total} | 成功(可登录)：{ok} | 失败：{fail}")
