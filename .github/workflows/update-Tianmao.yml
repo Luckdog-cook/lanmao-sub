@@ -2,18 +2,21 @@ name: 更新天猫订阅
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # 每 30 分鐘自動運行一次
-  workflow_dispatch: # 支援在 GitHub 網頁手動點擊觸發
+    - cron: '*/30 * * * *' # 每30分钟自动运行
+  workflow_dispatch: # 支持手动触发
+
+permissions:
+  contents: write # 必须有写权限，否则无法提交
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4  # 升级到 v4 更好
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v5 # 升级到 v5
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -25,18 +28,23 @@ jobs:
         run: |
           python3 "天喵.py"
 
+      # 👇 👇 就是漏了这一步！把生成的文件复制给目标文件 👇 👇
+      - name: 复制节点文件
+        run: |
+          cp nodes.txt flycat_nodes.txt
+      # 👆 👆 就是漏了这一步！把生成的文件复制给目标文件 👆 👆
+
       - name: Commit and Push update
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           
-          # 1. 新增：自动删除仓库中遗留下来的 nodes.json（如果存在）
+          # 删除可能残留的 nodes.json
           git rm -f nodes.json 2>/dev/null || true
           
-          # 2. 修改：去掉 nodes.json，只添加需要的文件
+          # 提交刚刚复制过来的新文件
           git add flycat_nodes.txt subscribe.txt
           
-          # 如果没有任何变化，就跳过提交，不报错
           if git diff --staged --quiet; then
             echo "内容无变化，跳过提交"
           else
