@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4  # 升级到 v4 更好
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5 # 升级到 v5
         with:
           python-version: '3.10'
 
@@ -29,9 +29,20 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add flycat_nodes.txt subscribe.txt nodes.json
-          git commit -m "Auto update tianmiao nodes to flycat_nodes.txt [skip ci]" || exit 0
-          git push
+          
+          # 1. 新增：自动删除仓库中遗留下来的 nodes.json（如果存在）
+          git rm -f nodes.json 2>/dev/null || true
+          
+          # 2. 修改：去掉 nodes.json，只添加需要的文件
+          git add flycat_nodes.txt subscribe.txt
+          
+          # 如果没有任何变化，就跳过提交，不报错
+          if git diff --staged --quiet; then
+            echo "内容无变化，跳过提交"
+          else
+            git commit -m "Auto update tianmiao nodes [skip ci]"
+            git push
+          fi
 
       - name: Purge jsDelivr cache
         run: |
