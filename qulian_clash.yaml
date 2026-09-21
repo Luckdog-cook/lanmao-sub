@@ -1,6 +1,6 @@
 # 趣连自动订阅 (Clash Meta / mihomo)
-# 更新时间: 2026-09-20 22:32:20 UTC
-# 节点数: 9
+# 更新时间: 2026-09-21 05:06:50 UTC
+# 节点数: 13
 
 mixed-port: 7890
 allow-lan: false
@@ -8,55 +8,20 @@ mode: rule
 log-level: info
 
 proxies:
-  - name: "SG-sg2.zestapp778.com"
+  - name: "US-us5.zestapp778.com"
     type: trojan
-    server: "sg2.zestapp778.com"
+    server: "us5.zestapp778.com"
     port: 443
     password: "Trojan@82164024"
     udp: true
-    sni: "sg2.zestapp778.com"
-  - name: "NL-nl.tronsg.com"
+    sni: "us5.zestapp778.com"
+  - name: "CH-ch.tronsg.com"
     type: trojan
-    server: "nl.tronsg.com"
+    server: "ch.tronsg.com"
     port: 443
     password: "Trojan@82164024"
     udp: true
-    sni: "nl.tronsg.com"
-  - name: "VN-yn.zestapp778.com"
-    type: trojan
-    server: "yn.zestapp778.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "yn.zestapp778.com"
-  - name: "US-us4.zestapp778.com"
-    type: trojan
-    server: "us4.zestapp778.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "us4.zestapp778.com"
-  - name: "TR-tr.tronsg.com"
-    type: trojan
-    server: "tr.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "tr.tronsg.com"
-  - name: "JP-jp1.zestapp778.com"
-    type: trojan
-    server: "jp1.zestapp778.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "jp1.zestapp778.com"
-  - name: "VN-vn.tronsg.com"
-    type: trojan
-    server: "vn.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "vn.tronsg.com"
+    sni: "ch.tronsg.com"
   - name: "RU-ru.tronsg.com"
     type: trojan
     server: "ru.tronsg.com"
@@ -64,13 +29,76 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "ru.tronsg.com"
-  - name: "US-us2.zestapp778.com"
+  - name: "NG-hk-02.tronsg.com"
     type: trojan
-    server: "us2.zestapp778.com"
+    server: "hk-02.tronsg.com"
+    port: 443
+    password: "9daT1DW2Jp"
+    udp: true
+    sni: "hk-02.tronsg.com"
+  - name: "PH-flb.zestapp778.com"
+    type: trojan
+    server: "flb.zestapp778.com"
     port: 443
     password: "Trojan@82164024"
     udp: true
-    sni: "us2.zestapp778.com"
+    sni: "flb.zestapp778.com"
+  - name: "KR-kr1.zestapp778.com"
+    type: trojan
+    server: "kr1.zestapp778.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "kr1.zestapp778.com"
+  - name: "GB-gb.tronsg.com"
+    type: trojan
+    server: "gb.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "gb.tronsg.com"
+  - name: "SG-sg2.zestapp778.com"
+    type: trojan
+    server: "sg2.zestapp778.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "sg2.zestapp778.com"
+  - name: "SG-sg1.zestapp778.com"
+    type: trojan
+    server: "sg1.zestapp778.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "sg1.zestapp778.com"
+  - name: "MX-mx.tronsg.com"
+    type: trojan
+    server: "mx.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "mx.tronsg.com"
+  - name: "ES-es.tronsg.com"
+    type: trojan
+    server: "es.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "es.tronsg.com"
+  - name: "US-us3.zestapp778.com"
+    type: trojan
+    server: "us3.zestapp778.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "us3.zestapp778.com"
+  - name: "VN-vn.tronsg.com"
+    type: trojan
+    server: "vn.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "vn.tronsg.com"
 
 proxy-groups:
   - name: "自动选择"
@@ -79,29 +107,37 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "SG-sg2.zestapp778.com"
-      - "NL-nl.tronsg.com"
-      - "VN-yn.zestapp778.com"
-      - "US-us4.zestapp778.com"
-      - "TR-tr.tronsg.com"
-      - "JP-jp1.zestapp778.com"
-      - "VN-vn.tronsg.com"
+      - "US-us5.zestapp778.com"
+      - "CH-ch.tronsg.com"
       - "RU-ru.tronsg.com"
-      - "US-us2.zestapp778.com"
+      - "NG-hk-02.tronsg.com"
+      - "PH-flb.zestapp778.com"
+      - "KR-kr1.zestapp778.com"
+      - "GB-gb.tronsg.com"
+      - "SG-sg2.zestapp778.com"
+      - "SG-sg1.zestapp778.com"
+      - "MX-mx.tronsg.com"
+      - "ES-es.tronsg.com"
+      - "US-us3.zestapp778.com"
+      - "VN-vn.tronsg.com"
   - name: "节点选择"
     type: select
     proxies:
       - "自动选择"
       - "DIRECT"
-      - "SG-sg2.zestapp778.com"
-      - "NL-nl.tronsg.com"
-      - "VN-yn.zestapp778.com"
-      - "US-us4.zestapp778.com"
-      - "TR-tr.tronsg.com"
-      - "JP-jp1.zestapp778.com"
-      - "VN-vn.tronsg.com"
+      - "US-us5.zestapp778.com"
+      - "CH-ch.tronsg.com"
       - "RU-ru.tronsg.com"
-      - "US-us2.zestapp778.com"
+      - "NG-hk-02.tronsg.com"
+      - "PH-flb.zestapp778.com"
+      - "KR-kr1.zestapp778.com"
+      - "GB-gb.tronsg.com"
+      - "SG-sg2.zestapp778.com"
+      - "SG-sg1.zestapp778.com"
+      - "MX-mx.tronsg.com"
+      - "ES-es.tronsg.com"
+      - "US-us3.zestapp778.com"
+      - "VN-vn.tronsg.com"
 
 rules:
   - GEOIP,LAN,DIRECT,no-resolve
