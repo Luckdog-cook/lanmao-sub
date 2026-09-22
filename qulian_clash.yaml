@@ -1,6 +1,6 @@
 # 趣连自动订阅 (Clash Meta / mihomo)
-# 更新时间: 2026-09-22 19:47:36 UTC
-# 节点数: 14
+# 更新时间: 2026-09-22 23:01:31 UTC
+# 节点数: 15
 
 mixed-port: 7890
 allow-lan: false
@@ -8,34 +8,20 @@ mode: rule
 log-level: info
 
 proxies:
-  - name: "CA-ca.tronsg.com"
+  - name: "SG-sg2.zestapp778.com"
     type: trojan
-    server: "ca.tronsg.com"
+    server: "sg2.zestapp778.com"
     port: 443
     password: "Trojan@82164024"
     udp: true
-    sni: "ca.tronsg.com"
-  - name: "US-us3.zestapp778.com"
+    sni: "sg2.zestapp778.com"
+  - name: "MY-my.zestapp778.com"
     type: trojan
-    server: "us3.zestapp778.com"
+    server: "my.zestapp778.com"
     port: 443
     password: "Trojan@82164024"
     udp: true
-    sni: "us3.zestapp778.com"
-  - name: "FR-fr.tronsg.com"
-    type: trojan
-    server: "fr.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "fr.tronsg.com"
-  - name: "RU-ru.tronsg.com"
-    type: trojan
-    server: "ru.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "ru.tronsg.com"
+    sni: "my.zestapp778.com"
   - name: "AU-au.tronsg.com"
     type: trojan
     server: "au.tronsg.com"
@@ -43,55 +29,6 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "au.tronsg.com"
-  - name: "VN-vn.tronsg.com"
-    type: trojan
-    server: "vn.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "vn.tronsg.com"
-  - name: "NL-nl.tronsg.com"
-    type: trojan
-    server: "nl.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "nl.tronsg.com"
-  - name: "CH-ch.tronsg.com"
-    type: trojan
-    server: "ch.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "ch.tronsg.com"
-  - name: "MY-my.tronsg.com"
-    type: trojan
-    server: "my.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "my.tronsg.com"
-  - name: "SE-se.tronsg.com"
-    type: trojan
-    server: "se.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "se.tronsg.com"
-  - name: "GB-gb.tronsg.com"
-    type: trojan
-    server: "gb.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "gb.tronsg.com"
-  - name: "DE-de.tronsg.com"
-    type: trojan
-    server: "de.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "de.tronsg.com"
   - name: "NO-no.tronsg.com"
     type: trojan
     server: "no.tronsg.com"
@@ -99,6 +36,62 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "no.tronsg.com"
+  - name: "US-us3.zestapp778.com"
+    type: trojan
+    server: "us3.zestapp778.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "us3.zestapp778.com"
+  - name: "DE-de.tronsg.com"
+    type: trojan
+    server: "de.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "de.tronsg.com"
+  - name: "US-us1.zestapp778.com"
+    type: trojan
+    server: "us1.zestapp778.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "us1.zestapp778.com"
+  - name: "TR-tr.tronsg.com"
+    type: trojan
+    server: "tr.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "tr.tronsg.com"
+  - name: "VN-vn.tronsg.com"
+    type: trojan
+    server: "vn.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "vn.tronsg.com"
+  - name: "JP-jp1.zestapp778.com"
+    type: trojan
+    server: "jp1.zestapp778.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "jp1.zestapp778.com"
+  - name: "ES-es.tronsg.com"
+    type: trojan
+    server: "es.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "es.tronsg.com"
+  - name: "IN-in.tronsg.com"
+    type: trojan
+    server: "in.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "in.tronsg.com"
   - name: "IE-ie.tronsg.com"
     type: trojan
     server: "ie.tronsg.com"
@@ -106,6 +99,20 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "ie.tronsg.com"
+  - name: "RU-ru.tronsg.com"
+    type: trojan
+    server: "ru.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "ru.tronsg.com"
+  - name: "PH-flb.zestapp778.com"
+    type: trojan
+    server: "flb.zestapp778.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "flb.zestapp778.com"
 
 proxy-groups:
   - name: "自动选择"
@@ -114,39 +121,41 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "CA-ca.tronsg.com"
-      - "US-us3.zestapp778.com"
-      - "FR-fr.tronsg.com"
-      - "RU-ru.tronsg.com"
+      - "SG-sg2.zestapp778.com"
+      - "MY-my.zestapp778.com"
       - "AU-au.tronsg.com"
-      - "VN-vn.tronsg.com"
-      - "NL-nl.tronsg.com"
-      - "CH-ch.tronsg.com"
-      - "MY-my.tronsg.com"
-      - "SE-se.tronsg.com"
-      - "GB-gb.tronsg.com"
-      - "DE-de.tronsg.com"
       - "NO-no.tronsg.com"
+      - "US-us3.zestapp778.com"
+      - "DE-de.tronsg.com"
+      - "US-us1.zestapp778.com"
+      - "TR-tr.tronsg.com"
+      - "VN-vn.tronsg.com"
+      - "JP-jp1.zestapp778.com"
+      - "ES-es.tronsg.com"
+      - "IN-in.tronsg.com"
       - "IE-ie.tronsg.com"
+      - "RU-ru.tronsg.com"
+      - "PH-flb.zestapp778.com"
   - name: "节点选择"
     type: select
     proxies:
       - "自动选择"
       - "DIRECT"
-      - "CA-ca.tronsg.com"
-      - "US-us3.zestapp778.com"
-      - "FR-fr.tronsg.com"
-      - "RU-ru.tronsg.com"
+      - "SG-sg2.zestapp778.com"
+      - "MY-my.zestapp778.com"
       - "AU-au.tronsg.com"
-      - "VN-vn.tronsg.com"
-      - "NL-nl.tronsg.com"
-      - "CH-ch.tronsg.com"
-      - "MY-my.tronsg.com"
-      - "SE-se.tronsg.com"
-      - "GB-gb.tronsg.com"
-      - "DE-de.tronsg.com"
       - "NO-no.tronsg.com"
+      - "US-us3.zestapp778.com"
+      - "DE-de.tronsg.com"
+      - "US-us1.zestapp778.com"
+      - "TR-tr.tronsg.com"
+      - "VN-vn.tronsg.com"
+      - "JP-jp1.zestapp778.com"
+      - "ES-es.tronsg.com"
+      - "IN-in.tronsg.com"
       - "IE-ie.tronsg.com"
+      - "RU-ru.tronsg.com"
+      - "PH-flb.zestapp778.com"
 
 rules:
   - GEOIP,LAN,DIRECT,no-resolve
