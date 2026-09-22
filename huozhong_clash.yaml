@@ -1,6 +1,6 @@
 # 火种VPN Clash 订阅
-# 生成时间: 2026-09-22 16:24:34
-# 节点数量: 41
+# 生成时间: 2026-09-22 20:59:30
+# 节点数量: 46
 
 mixed-port: 7890
 allow-lan: false
@@ -8,6 +8,24 @@ mode: rule
 log-level: info
 
 proxies:
+  - name: "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
+    type: trojan
+    server: "64.32.12.59"
+    port: 47317
+    password: "0a8073ee-f526-47d9-84da-457b1f99a305"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
+  - name: "美国 - 美国-V1 - (凤凰城/移动优化)"
+    type: trojan
+    server: "104.105.140.151"
+    port: 47752
+    password: "3eb639ab-98d4-410b-a92f-74ee021f1103"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
   - name: "美国 - 美国-V2 - (洛杉矶/大陆优化)"
     type: trojan
     server: "64.32.12.59"
@@ -49,6 +67,15 @@ proxies:
     server: "58.152.26.250"
     port: 43925
     password: "863759e8-61c0-4704-876c-c654a8128c3f"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
+  - name: "美国 - 美国-V7 - (新泽西/大陆优化)"
+    type: trojan
+    server: "104.105.140.151"
+    port: 41470
+    password: "b9a6b927-c0e6-43a0-abd2-cebf521ee357"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -157,6 +184,15 @@ proxies:
     server: "152.175.28.15"
     port: 46928
     password: "913c22db-b527-416e-80c3-32c6244e2e18"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
+  - name: "美国 - 美国-V11 - (凤凰城/移动优化)"
+    type: trojan
+    server: "104.105.140.151"
+    port: 48533
+    password: "3eb639ab-98d4-410b-a92f-74ee021f1103"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -341,6 +377,15 @@ proxies:
     skip-cert-verify: true
     sni: "vpn-node.internal"
     alpn: ["http/1.1"]
+  - name: "香港 - 香港-V13 - (香港/家宽IP/解锁流媒体AI)"
+    type: trojan
+    server: "64.32.12.59"
+    port: 44734
+    password: "0a8073ee-f526-47d9-84da-457b1f99a305"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
   - name: "美国 - 美国-V16 - (洛杉矶/大陆优化)"
     type: trojan
     server: "45.58.165.159"
@@ -384,11 +429,14 @@ proxy-groups:
     proxies:
       - "♻️ 自动选择"
       - "DIRECT"
+      - "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
+      - "美国 - 美国-V1 - (凤凰城/移动优化)"
       - "美国 - 美国-V2 - (洛杉矶/大陆优化)"
       - "美国 - 美国-V3 - (洛杉矶/大陆优化)"
       - "美国 - 美国-V4 - (亚特兰大/国际优化)"
       - "美国 - 美国-V5 - (芝加哥/大陆优化)"
       - "美国 - 美国-V6 - (达拉斯/大陆优化)"
+      - "美国 - 美国-V7 - (新泽西/大陆优化)"
       - "美国 - 美国-V8 - (迈阿密/大陆优化)"
       - "美国 - 美国-V9 - (西雅图/大陆优化)"
       - "日本 - 日本-V7 - (大阪/移动优化)"
@@ -401,6 +449,7 @@ proxy-groups:
       - "香港 - 香港-V7 - (香港/移动优化)"
       - "香港 - 香港-V8 - (香港/移动优化)"
       - "香港 - 香港-V9 - (香港/移动优化)"
+      - "美国 - 美国-V11 - (凤凰城/移动优化)"
       - "台湾 - 台湾-V1 - (台北/移动优化)"
       - "马来西亚 - 马来西亚-V1 - (吉隆坡/家宽IP/解锁流媒体AI)"
       - "韩国 - 韩国-V1 - (首尔/移动优化)"
@@ -421,6 +470,7 @@ proxy-groups:
       - "英国 - 英国-V2 - (伦敦/优化线路)"
       - "加拿大 - 加拿大-V3 - (温哥华/家宽IP/解锁流媒体AI)"
       - "美国 - 美国-V15 - (洛杉矶/大陆优化)"
+      - "香港 - 香港-V13 - (香港/家宽IP/解锁流媒体AI)"
       - "美国 - 美国-V16 - (洛杉矶/大陆优化)"
       - "美国 - 美国-V17 - (俄勒冈/大陆优化)"
       - "日本 - 日本- V19 - (东京/联通移动优化)"
@@ -431,11 +481,14 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
+      - "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
+      - "美国 - 美国-V1 - (凤凰城/移动优化)"
       - "美国 - 美国-V2 - (洛杉矶/大陆优化)"
       - "美国 - 美国-V3 - (洛杉矶/大陆优化)"
       - "美国 - 美国-V4 - (亚特兰大/国际优化)"
       - "美国 - 美国-V5 - (芝加哥/大陆优化)"
       - "美国 - 美国-V6 - (达拉斯/大陆优化)"
+      - "美国 - 美国-V7 - (新泽西/大陆优化)"
       - "美国 - 美国-V8 - (迈阿密/大陆优化)"
       - "美国 - 美国-V9 - (西雅图/大陆优化)"
       - "日本 - 日本-V7 - (大阪/移动优化)"
@@ -448,6 +501,7 @@ proxy-groups:
       - "香港 - 香港-V7 - (香港/移动优化)"
       - "香港 - 香港-V8 - (香港/移动优化)"
       - "香港 - 香港-V9 - (香港/移动优化)"
+      - "美国 - 美国-V11 - (凤凰城/移动优化)"
       - "台湾 - 台湾-V1 - (台北/移动优化)"
       - "马来西亚 - 马来西亚-V1 - (吉隆坡/家宽IP/解锁流媒体AI)"
       - "韩国 - 韩国-V1 - (首尔/移动优化)"
@@ -468,6 +522,7 @@ proxy-groups:
       - "英国 - 英国-V2 - (伦敦/优化线路)"
       - "加拿大 - 加拿大-V3 - (温哥华/家宽IP/解锁流媒体AI)"
       - "美国 - 美国-V15 - (洛杉矶/大陆优化)"
+      - "香港 - 香港-V13 - (香港/家宽IP/解锁流媒体AI)"
       - "美国 - 美国-V16 - (洛杉矶/大陆优化)"
       - "美国 - 美国-V17 - (俄勒冈/大陆优化)"
       - "日本 - 日本- V19 - (东京/联通移动优化)"
