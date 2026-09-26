@@ -1,6 +1,6 @@
 # 火种VPN Clash 订阅
-# 生成时间: 2026-09-26 10:56:40
-# 节点数量: 44
+# 生成时间: 2026-09-26 15:54:35
+# 节点数量: 41
 
 mixed-port: 7890
 allow-lan: false
@@ -13,15 +13,6 @@ proxies:
     server: "64.32.12.59"
     port: 47317
     password: "66079fb8-54dc-4b5b-ab99-846ebcd5c653"
-    udp: true
-    skip-cert-verify: true
-    sni: "vpn-node.internal"
-    alpn: ["http/1.1"]
-  - name: "美国 - 美国-V1 - (凤凰城/移动优化)"
-    type: trojan
-    server: "104.105.140.151"
-    port: 47752
-    password: "ba2ad894-da42-4357-8589-3e4d69df23ab"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -49,15 +40,6 @@ proxies:
     server: "58.152.26.250"
     port: 43925
     password: "1eb96723-f466-4e7a-ba72-55eb3f62e599"
-    udp: true
-    skip-cert-verify: true
-    sni: "vpn-node.internal"
-    alpn: ["http/1.1"]
-  - name: "美国 - 美国-V7 - (新泽西/大陆优化)"
-    type: trojan
-    server: "104.105.140.151"
-    port: 41470
-    password: "35abb3cb-fa89-44a4-aac7-dd2587fa9658"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -166,15 +148,6 @@ proxies:
     server: "152.175.28.15"
     port: 46928
     password: "3b97c9dc-49f1-495a-91cd-bcbd545bb386"
-    udp: true
-    skip-cert-verify: true
-    sni: "vpn-node.internal"
-    alpn: ["http/1.1"]
-  - name: "美国 - 美国-V11 - (凤凰城/移动优化)"
-    type: trojan
-    server: "104.105.140.151"
-    port: 48533
-    password: "ba2ad894-da42-4357-8589-3e4d69df23ab"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -412,11 +385,9 @@ proxy-groups:
       - "♻️ 自动选择"
       - "DIRECT"
       - "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
-      - "美国 - 美国-V1 - (凤凰城/移动优化)"
       - "美国 - 美国-V4 - (亚特兰大/国际优化)"
       - "美国 - 美国-V5 - (芝加哥/大陆优化)"
       - "美国 - 美国-V6 - (达拉斯/大陆优化)"
-      - "美国 - 美国-V7 - (新泽西/大陆优化)"
       - "美国 - 美国-V8 - (迈阿密/大陆优化)"
       - "美国 - 美国-V9 - (西雅图/大陆优化)"
       - "日本 - 日本-V7 - (大阪/移动优化)"
@@ -429,7 +400,6 @@ proxy-groups:
       - "香港 - 香港-V7 - (香港/移动优化)"
       - "香港 - 香港-V8 - (香港/移动优化)"
       - "香港 - 香港-V9 - (香港/移动优化)"
-      - "美国 - 美国-V11 - (凤凰城/移动优化)"
       - "台湾 - 台湾-V1 - (台北/移动优化)"
       - "马来西亚 - 马来西亚-V1 - (吉隆坡/家宽IP/解锁流媒体AI)"
       - "韩国 - 韩国-V1 - (首尔/移动优化)"
@@ -462,11 +432,9 @@ proxy-groups:
     tolerance: 50
     proxies:
       - "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
-      - "美国 - 美国-V1 - (凤凰城/移动优化)"
       - "美国 - 美国-V4 - (亚特兰大/国际优化)"
       - "美国 - 美国-V5 - (芝加哥/大陆优化)"
       - "美国 - 美国-V6 - (达拉斯/大陆优化)"
-      - "美国 - 美国-V7 - (新泽西/大陆优化)"
       - "美国 - 美国-V8 - (迈阿密/大陆优化)"
       - "美国 - 美国-V9 - (西雅图/大陆优化)"
       - "日本 - 日本-V7 - (大阪/移动优化)"
@@ -479,7 +447,6 @@ proxy-groups:
       - "香港 - 香港-V7 - (香港/移动优化)"
       - "香港 - 香港-V8 - (香港/移动优化)"
       - "香港 - 香港-V9 - (香港/移动优化)"
-      - "美国 - 美国-V11 - (凤凰城/移动优化)"
       - "台湾 - 台湾-V1 - (台北/移动优化)"
       - "马来西亚 - 马来西亚-V1 - (吉隆坡/家宽IP/解锁流媒体AI)"
       - "韩国 - 韩国-V1 - (首尔/移动优化)"
