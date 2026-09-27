@@ -1,6 +1,6 @@
 # 火种VPN Clash 订阅
-# 生成时间: 2026-09-27 11:32:13
-# 节点数量: 45
+# 生成时间: 2026-09-27 16:30:59
+# 节点数量: 46
 
 mixed-port: 7890
 allow-lan: false
@@ -22,6 +22,15 @@ proxies:
     server: "104.105.140.151"
     port: 47752
     password: "5150a2ce-df00-4d11-b025-fa8e99f14ca0"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
+  - name: "美国 - 美国-V3 - (洛杉矶/大陆优化)"
+    type: trojan
+    server: "64.32.12.59"
+    port: 43208
+    password: "f6cea932-4837-4df7-98af-1bddd41e8dae"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -422,6 +431,7 @@ proxy-groups:
       - "DIRECT"
       - "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
       - "美国 - 美国-V1 - (凤凰城/移动优化)"
+      - "美国 - 美国-V3 - (洛杉矶/大陆优化)"
       - "美国 - 美国-V4 - (亚特兰大/国际优化)"
       - "美国 - 美国-V5 - (芝加哥/大陆优化)"
       - "美国 - 美国-V6 - (达拉斯/大陆优化)"
@@ -473,6 +483,7 @@ proxy-groups:
     proxies:
       - "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
       - "美国 - 美国-V1 - (凤凰城/移动优化)"
+      - "美国 - 美国-V3 - (洛杉矶/大陆优化)"
       - "美国 - 美国-V4 - (亚特兰大/国际优化)"
       - "美国 - 美国-V5 - (芝加哥/大陆优化)"
       - "美国 - 美国-V6 - (达拉斯/大陆优化)"
