@@ -21,13 +21,35 @@ jobs:
         run: pip install requests pyyaml
 
       - name: Generate
-        run: python scripts/wenrugou_subscribe.py
+        run: |
+          if [ -f "wenrugou.py" ]; then
+            echo "Found wenrugou.py in root"
+            python wenrugou.py
+          elif [ -f "scripts/wenrugou.py" ]; then
+            echo "Found wenrugou.py in scripts/"
+            python scripts/wenrugou.py
+          else
+            echo "ERROR: wenrugou.py not found anywhere!"
+            echo "--- Current root files ---"
+            ls -la
+            echo "--- Current scripts/ files ---"
+            ls -la scripts/ || true
+            exit 1
+          fi
 
       - name: Copy to repo root
         run: |
           mkdir -p download/wenrugou
-          cp -f "download/wenrugou/wenrugou.txt" "./wenrugou.txt"
-          cp -f "download/wenrugou/clash_config.yaml" "./clash_config.yaml"
+          # 兼容你的脚本可能输出到 download/wenrugou/ 或当前目录
+          if [ -f "download/wenrugou/wenrugou.txt" ]; then
+            cp -f "download/wenrugou/wenrugou.txt" "./wenrugou.txt"
+            cp -f "download/wenrugou/clash_config.yaml" "./clash_config.yaml"
+          elif [ -f "wenrugou.txt" ]; then
+            echo "Files already in root"
+          else
+            echo "ERROR: Generated files not found!"
+            exit 1
+          fi
 
       - name: Commit
         run: |
