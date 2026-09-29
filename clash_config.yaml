@@ -1,0 +1,64 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver:
+  - 223.5.5.5
+  - 8.8.8.8
+  nameserver:
+  - https://dns.alidns.com/dns-query
+  - https://doh.pub/dns-query
+  fallback:
+  - https://1.0.0.1/dns-query
+  - tls://dns.google
+proxy-providers:
+  wenrugou:
+    type: http
+    url: https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/wenrugou.txt
+    path: ./providers/wenrugou.yaml
+    interval: 3600
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+proxy-groups:
+- name: PROXY
+  type: select
+  proxies:
+  - AUTO
+  - FALLBACK
+  - DIRECT
+- name: AUTO
+  type: url-test
+  use:
+  - wenrugou
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+- name: FALLBACK
+  type: fallback
+  use:
+  - wenrugou
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+rules:
+- DOMAIN-SUFFIX,cn,DIRECT
+- DOMAIN-KEYWORD,baidu,DIRECT
+- DOMAIN-KEYWORD,taobao,DIRECT
+- DOMAIN-KEYWORD,jd,DIRECT
+- DOMAIN-KEYWORD,qq,DIRECT
+- DOMAIN-KEYWORD,weixin,DIRECT
+- DOMAIN-KEYWORD,alipay,DIRECT
+- DOMAIN-KEYWORD,google,PROXY
+- DOMAIN-KEYWORD,youtube,PROXY
+- DOMAIN-KEYWORD,github,PROXY
+- DOMAIN-KEYWORD,telegram,PROXY
+- DOMAIN-KEYWORD,twitter,PROXY
+- GEOIP,CN,DIRECT
+- MATCH,PROXY
