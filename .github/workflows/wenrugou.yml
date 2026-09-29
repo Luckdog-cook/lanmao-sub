@@ -1,0 +1,47 @@
+name: wenrugou subscribe update
+on:
+  schedule:
+    - cron: "13 */12 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install requests pyyaml
+
+      - name: Generate
+        run: python scripts/wenrugou_subscribe.py
+
+      - name: Copy to repo root
+        run: |
+          mkdir -p download/wenrugou
+          cp -f "download/wenrugou/wenrugou.txt" "./wenrugou.txt"
+          cp -f "download/wenrugou/clash_config.yaml" "./clash_config.yaml"
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A wenrugou.txt clash_config.yaml
+          git diff --cached --quiet || git commit -m "chore: update wenrugou subscription"
+          git push
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: wenrugou-subscription
+          path: |
+            wenrugou.txt
+            clash_config.yaml
+          if-no-files-found: error
