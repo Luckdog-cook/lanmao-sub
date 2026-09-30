@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          path: gy-hunter
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -25,5 +27,5 @@ jobs:
       - name: Run guangying.py
         run: |
           python3 -m pip install --upgrade pip
-          cd ~/gy-hunter
+          cd gy-hunter
           python3 guangying.py
