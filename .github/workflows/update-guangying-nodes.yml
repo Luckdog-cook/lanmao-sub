@@ -39,25 +39,14 @@ jobs:
           ssbin=$(find /tmp/ss -type f -name sslocal | head -n1)
           install -m 755 "$ssbin" /usr/local/bin/sslocal
           sslocal --version
-      - name: Debug connectivity (关键诊断)
-        run: |
-          echo "--- 直连目标 IP 测试（不经 sslocal）---"
-          timeout 6 bash -c 'echo > /dev/tcp/43.159.7.5/21574' && echo "RESULT_21574=OPEN" || echo "RESULT_21574=BLOCKED"
-          timeout 6 bash -c 'echo > /dev/tcp/43.159.7.5/443' && echo "RESULT_443=OPEN" || echo "RESULT_443=BLOCKED"
-          echo "--- sslocal 单端口详细探测 ---"
-          sslocal -s 43.159.7.5 -p 21574 -l 18080 -m aes-128-gcm -k 2wsxcde3 -t 5 > /tmp/sslog 2>&1 &
-          sleep 3
-          curl -s --socks5-hostname 127.0.0.1:18080 -m 9 https://www.cloudflare.com/cdn-cgi/trace || echo "CURL_PROBE=FAIL"
-          echo "--- sslocal 日志（前几行）---"
-          head -n 10 /tmp/sslog || true
       - name: Run hunter
         run: python3 guangying.py
       - name: Commit & push (无文件时跳过，不再红叉)
         run: |
-          if test -f guangying.yml; then
-            git add guangying.yml
+          if test -f guangying.txt; then
+            git add guangying.txt
             git commit -m "auto update nodes $(date -u '+%Y-%m-%d %H:%M')" --allow-empty
             git push origin HEAD:main
           else
-            echo "no guangying.yml generated, skip push"
+            echo "no guangying.txt generated, skip push"
           fi
