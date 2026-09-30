@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""光影VPN 节点猎手 v6.3 -- GitHub Actions 版（ss-rust 静态二进制 + 本地 clash 引擎支持）"""
+"""光影VPN 节点猎手 v6.4 -- GitHub Actions 版（自动下载 sslocal 静态二进制，支持本地 clash）"""
 
 import base64, concurrent.futures as cf, os, random, re, shutil, subprocess, sys, time, tempfile
 
@@ -20,7 +20,7 @@ def get_proxy_bin():
             return ("ss", b)
     if shutil.which("clash"):
         return ("clash", "clash")
-    sys.exit("[x] 无 ss 客户端也无 clash")
+    sys.exit("[x] 无 ss 客户端也无 clash，请先运行 workflow 的 Download 步骤")
 
 def discover_ports():
     if os.environ.get("GITHUB_ACTIONS") == "true":
@@ -111,7 +111,6 @@ def main():
     if not hits:
         print("[x] 零命中，保留旧 guangying.yml 不覆盖")
         return
-    userinfo = base64.b64encode(f"{METHOD}:{PASSWORD}".encode()).decode().rstrip("=")
     lines = ["port: 7890", "socks-port: 7891", "allow-lan: true",
              "mode: rule", "log-level: info", "external-controller: 127.0.0.1:9090",
              "", "proxy-providers:"]
