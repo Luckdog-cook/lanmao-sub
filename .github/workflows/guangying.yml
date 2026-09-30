@@ -1,25 +1,29 @@
-name: 光影VPN 自动节点猎手（每天 02:00 运行）
+name: Hunter
 
 on:
   schedule:
-    - cron: '0 2 * * *'
-  workflow_dispatch:
+    - cron: '0 */12 * * *'   # 每12小时执行一次
+  workflow_dispatch:         # 手动触发也可以
 
 jobs:
-  hunter:
+  run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
       - name: Install dependencies
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq masscan nmap curl python3
-          which python3 && python3 --version
+          sudo apt-get update
+          sudo apt-get install -y masscan nmap curl git
 
-      - name: Run guangying
+      - name: Run guangying.py
         run: |
+          python3 -m pip install --upgrade pip
           cd ~/gy-hunter
-          chmod +x guangying.py
-          ./guangying.py
+          python3 guangying.py
