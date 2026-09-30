@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""光影VPN 节点猎手 v6.5 -- GitHub Actions 版（ss-rust 静态二进制 + 本地 clash 引擎支持）"""
+"""光影VPN 节点猎手 v6.6 -- GitHub Actions 版"""
 
 import base64, concurrent.futures as cf, os, random, re, shutil, subprocess, sys, time, tempfile
 
@@ -117,10 +117,9 @@ def main():
             p = futs[fu]
             res = fu.result()
             if res is not None:
-                _loc = res<i class="markdown-ref custom">0</i>
-                _ip = res<i class="markdown-ref custom">1</i>
-                hits.append((p, _loc, _ip))
-                print("  OK %d loc=%s" % (p, _loc))
+                loc, ip = res
+                hits.append((p, loc, ip))
+                print("  OK %d loc=%s" % (p, loc))
     if not hits:
         print("[x] no hits, keep old guangying.yml")
         return
