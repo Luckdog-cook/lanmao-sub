@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""光影VPN 节点猎手 v6.6 -- GitHub Actions 版"""
+"""光影VPN 节点猎手 v6.8 -- GitHub Actions 版，适配 sslocal 新版 --server-url"""
 
 import base64, concurrent.futures as cf, os, random, re, shutil, subprocess, sys, time, tempfile
 
@@ -18,65 +18,26 @@ def get_proxy_bin():
     for b in ("ss-local", "sslocal"):
         if shutil.which(b):
             return ("ss", b)
-    if shutil.which("clash"):
-        return ("clash", "clash")
-    sys.exit("no ss or clash found")
+    sys.exit("no sslocal engine found")
 
 def discover_ports():
     if os.environ.get("GITHUB_ACTIONS") == "true":
         return sorted(set(KNOWN + [36736, 49278, 53908]))
-    if shutil.which("masscan"):
-        ports = set()
-        sh("masscan -p1-65535 %s --rate 300 -oL /tmp/m1" % TARGET, timeout=600)
-        for line in open("/tmp/m1", errors="ignore"):
-            m = re.match(r"open tcp (\d+)", line)
-            if m:
-                ports.add(int(m.group(1)))
-        return sorted(ports)
     return sorted(KNOWN)
 
-def make_clash_config(port, lp):
-    return "mixed-port: %d\n" \
-           "allow-lan: false\n" \
-           "mode: global\n" \
-           "log-level: silent\n" \
-           "proxies:\n" \
-           "  - name: probe\n" \
-           "    type: ss\n" \
-           "    server: %s\n" \
-           "    port: %d\n" \
-           "    cipher: %s\n" \
-           "    password: %s\n" \
-           "    udp: true\n" \
-           "proxy-groups:\n" \
-           "  - name: PROXY\n" \
-           "    type: select\n" \
-           "    proxies: [probe]\n" \
-           "rules:\n" \
-           "  - MATCH,PROXY\n" % (lp, TARGET, port, METHOD, PASSWORD)
-
-def handshake(port, timeout=9, engine=None, bin_path=None):
+def handshake(port, timeout=9, bin_path=None):
     lp = random.randint(20000, 59999)
     proc = None
-    tmp_cfg = None
-    curl_cmd = None
-    cmd = None
-    wait = 0.6
+    # 新版 sslocal(s) 用 --server-url 传整条 ss:// 链接
+    # 形式: ss://base64(method:password)@host:port
+    userinfo = base64.b64encode(("%s:%s" % (METHOD, PASSWORD)).encode()).decode()
+    server_url = "ss://%s@%s:%d" % (userinfo, TARGET, port)
+    cmd = [bin_path, "-b", "127.0.0.1:%d" % lp, "--server-url", server_url]
+    curl_cmd = ["curl", "-s", "--socks5-hostname", "127.0.0.1:%d" % lp,
+                "-m", str(timeout), TRACE]
     try:
-        if engine == "clash":
-            fd, tmp_cfg = tempfile.mkstemp(suffix=".yml")
-            with os.fdopen(fd, "w") as f:
-                f.write(make_clash_config(port, lp))
-            cmd = [bin_path, "-f", tmp_cfg]
-            curl_cmd = ["curl", "-s", "-x", "http://127.0.0.1:%d" % lp, "-m", str(timeout), TRACE]
-            wait = 1.2
-        else:
-            cmd = [bin_path, "-s", TARGET, "-p", str(port), "-l", str(lp),
-                   "-m", METHOD, "-k", PASSWORD, "-t", "5"]
-            curl_cmd = ["curl", "-s", "--socks5-hostname", "127.0.0.1:%d" % lp,
-                        "-m", str(timeout), TRACE]
         proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        time.sleep(wait)
+        time.sleep(1.0)  # 新版 sslocal 启动稍慢
         r = subprocess.run(curl_cmd, capture_output=True, text=True, timeout=timeout + 3)
         loc = None
         ip = None
@@ -96,23 +57,17 @@ def handshake(port, timeout=9, engine=None, bin_path=None):
                 proc.wait(timeout=2)
             except Exception:
                 proc.kill()
-        if tmp_cfg and os.path.exists(tmp_cfg):
-            try:
-                os.unlink(tmp_cfg)
-            except Exception:
-                pass
     return None
 
 def main():
     os.makedirs(OUTDIR, exist_ok=True)
-    engine, bin_path = get_proxy_bin()
-    print("[*] engine: %s (%s)" % (engine, bin_path))
+    _engine, bin_path = get_proxy_bin()
+    print("[*] engine: sslocal (%s)" % bin_path)
     ports = discover_ports()
     print("[*] ports to test: %d" % len(ports))
     hits = []
-    workers = 15 if engine == "clash" else 25
-    with cf.ThreadPoolExecutor(workers) as ex:
-        futs = {ex.submit(handshake, p, 9, engine, bin_path): p for p in ports}
+    with cf.ThreadPoolExecutor(20) as ex:
+        futs = {ex.submit(handshake, p, 10, bin_path): p for p in ports}
         for fu in cf.as_completed(futs):
             p = futs[fu]
             res = fu.result()
@@ -121,27 +76,16 @@ def main():
                 hits.append((p, loc, ip))
                 print("  OK %d loc=%s" % (p, loc))
     if not hits:
-        print("[x] no hits, keep old guangying.yml")
+        print("[x] no hits, keep old guangying.txt")
         return
-    lines = ["port: 7890", "socks-port: 7891", "allow-lan: true",
-             "mode: rule", "log-level: info", "external-controller: 127.0.0.1:9090",
-             "", "proxy-providers:"]
-    for port, loc, _ in sorted(hits):
-        tag = "%s-%d" % (loc, port)
-        lines.append("  %s:" % tag)
-        lines.append("    type: ss")
-        lines.append("    server: %s" % TARGET)
-        lines.append("    port: %d" % port)
-        lines.append("    cipher: %s" % METHOD)
-        lines.append("    password: %s" % PASSWORD)
-        lines.append("    obfs: none")
-        lines.append("    udp: true")
-        lines.append("")
-    lines.append("rules:")
-    lines.append("  - MATCH,DIRECT")
-    with open(os.path.join(OUTDIR, "guangying.yml"), "w") as f:
-        f.write("\n".join(lines))
-    print("[+] guangying.yml generated, %d nodes" % len(hits))
+    # 输出 clash 订阅格式: 每行一个 ss:// 节点
+    sub_lines = []
+    for p in sorted(_p for _p, _loc, _ip in hits):
+        userinfo = base64.b64encode(("%s:%s" % (METHOD, PASSWORD)).encode()).decode()
+        sub_lines.append("ss://%s@%s:%d" % (userinfo, TARGET, p))
+    with open(os.path.join(OUTDIR, "guangying.txt"), "w") as f:
+        f.write("\n".join(sub_lines) + "\n")
+    print("[+] guangying.txt generated, %d nodes" % len(hits))
 
 if __name__ == "__main__":
     main()
