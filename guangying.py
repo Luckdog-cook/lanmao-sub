@@ -1,20 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-guangying.py - 光影VPN 自动节点猎手（GitHub 自动化版）
-===========================
-用途: 全自动扫描 + 生成固定订阅 guangying.txt + guangying.yaml
+光影VPN 全自动节点猎手 v5.0 (GitHub Pages 固定订阅 + 12小时自动更新)
+脚本名: guangying.py
+专为 guangying.yml 优化（只生成一个文件）
 """
 
 import argparse, base64, concurrent.futures as cf, os, random, re, shutil, subprocess, sys, tempfile, time
-from collections import defaultdict
 
 TARGET   = "43.159.7.5"
 METHOD   = "aes-128-gcm"
 PASSWORD = "2wsxcde3"
 KNOWN    = [21574, 31597, 35933, 36735, 40322, 49277, 53907]
 TRACE    = "https://www.cloudflare.com/cdn-cgi/trace"
-OUTDIR   = os.path.expanduser("~/gy-hunter")
+OUTDIR   = os.path.expanduser("~/gy-nodes")
 DEADLIST = os.path.join(OUTDIR, "dead_ports.txt")
 
 def sh(cmd, timeout=60):
@@ -62,7 +61,6 @@ def discover_ports(rate=600):
         if m: n3.add(int(m.group(1)))
     ports |= n3
 
-    # nmap 最终兜底
     print("[*] nmap 最终兜底")
     sh(f"nmap -p1-65535 --host-timeout 3s -T4 -Pn {TARGET} -oG -", timeout=1200)
     for line in open("nmap_output", errors="ignore"):
@@ -120,7 +118,7 @@ def geo_detail(port, ss_bin=None):
         parts = [x.strip() for x in r.stdout.splitlines() if x.strip()]
         if len(parts) >= 3:
             return parts
-    except:
+    except Exception:
         pass
     finally:
         p.terminate()
@@ -194,35 +192,39 @@ def main():
 
     print("\n============ 可用节点 ============")
     print(f"{'端口':<8}{'国家':<14}{'城市':<18}{'出口IP'}")
-    for p, c, ci, ip, f in final:
-        print(f"{p:<8}{f}{c:<12}{ci:<16}{ip}")
+    for port, country, city, ip, flag in final:
+        print(f"{port:<8}{flag}{country:<12}{city:<16}{ip}")
 
-    # ==================== 生成固定订阅 guangying.txt ====================
-    nodes_file = os.path.expanduser("~/gy-nodes/guangying.txt")
-    os.makedirs(os.path.dirname(nodes_file), exist_ok=True)
+    # ==================== 只生成 guangying.yml（专为你的需求）===================
+    userinfo = base64.b64encode(f"{METHOD}:{PASSWORD}".encode()).decode().rstrip("=")
+    sub_lines = []
 
-    with open(nodes_file, "w") as f:
-        f.write("# --- 光影VPN guangying.txt --- " + time.strftime("%Y-%m-%d %H:%M") + " ---\n")
-        for port, country, city, ip, flag in final:
-            cc = CODE.get(country, country[:2])
-            tag = f"{ABBR.get(cc, cc)}-{city.replace(' ','')}-{port}"
-            f.write(f"ss://{base64.b64encode(f'{METHOD}:{PASSWORD}'.encode()).decode().rstrip('=')}={TARGET}:{port}#{tag}\n")
+    print("\n============ 生成 guangying.yml ==============")
+    for port, country, city, ip, flag in final:
+        cc = CODE.get(country, country[:2])
+        tag = f"{ABBR.get(cc, cc)}-{city.replace(' ','')}-{port}"
+        sub_lines.append(f"ss://{userinfo}=@{TARGET}:{port}#{tag}")
 
-    print(f"\n[+] 固定订阅已生成: {nodes_file}（手机导入用）")
-
-    # ==================== Clash 导出 ====================
-    clash_file = os.path.expanduser("~/gy-nodes/guangying.yaml")
-    if not os.path.exists(os.path.dirname(clash_file)):
-        clash_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "guangying.yaml")
-
-    with open(clash_file, "w") as f:
+    with open(os.path.join(OUTDIR, "guangying.yml"), "w") as f:
         f.write("port: 7890\nsocks-port: 7891\nallow-lan: true\nmode: rule\nlog-level: info\nexternal-controller: 127.0.0.1:9090\n")
         f.write("proxy-providers:\n")
         for port, country, city, ip, flag in final:
             cc = CODE.get(country, country[:2])
             tag = f"{ABBR.get(cc, cc)}-{city.replace(' ','')}-{port}"
             f.write(f"  {tag}:\n    type: ss\n    server: {TARGET}\n    port: {port}\n    cipher: {METHOD}\n    password: {PASSWORD}\n    obfs: none\n    udp: true\n\n")
-    print(f"[+] Clash 配置文件已生成: {clash_file}")
+        f.write("rules:\n  - MATCH, DIRECT\n")
+
+    print(f"[+] guangying.yml 已生成: {os.path.join(OUTDIR, "guangying.yml")}")
+
+    # 推送 GitHub
+    try:
+        import subprocess
+        subprocess.run(["git", "add", "."], cwd=OUTDIR, check=False)
+        subprocess.run(["git", "commit", "-m", f"gy_hunter 12小时更新 {time.strftime('%Y-%m-%d %H:%M')}", "--allow-empty"], cwd=OUTDIR, check=False)
+        subprocess.run(["git", "push", "origin", "main"], cwd=OUTDIR, check=False)
+        print("[+] 已自动推送到 GitHub Pages！")
+    except Exception as e:
+        print(f"[!] GitHub 推送失败: {e}（手动 git push 即可）")
 
 if __name__ == "__main__":
     main()
