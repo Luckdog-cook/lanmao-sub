@@ -35,8 +35,11 @@ jobs:
           echo "下载: $URL"
           curl -sL -o /tmp/ss.tar.xz "$URL"
           file /tmp/ss.tar.xz
-          tar -xJf /tmp/ss.tar.xz -C /tmp
-          find /tmp -name sslocal -type f -exec install -m 755 {} /usr/local/bin/sslocal \;
+          mkdir -p /tmp/ss
+          tar -xJf /tmp/ss.tar.xz -C /tmp/ss
+          ssbin=$(find /tmp/ss -type f -name sslocal | head -n1)
+          echo "找到: $ssbin"
+          install -m 755 "$ssbin" /usr/local/bin/sslocal
           sslocal --version
       - name: Run hunter
         run: python3 guangying.py
