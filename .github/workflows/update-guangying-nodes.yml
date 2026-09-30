@@ -11,25 +11,37 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Clone repo
+        run: |
+          git clone --depth 1 "https://github.com/${GITHUB_REPOSITORY}.git" .
+          git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git config user.name "gy-bot"
+          git config user.email "gy-bot@users.noreply.github.com"
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Download sslocal (静态二进制，固定版本，不解析 release)
+      - name: Download sslocal (自动解析最新版，不用 apt)
         run: |
-          curl -sL -o /tmp/ss.tar.xz \
-            "https://github.com/shadowsocks/shadowsocks-rust/releases/download/v1.19.1/shadowsocks-rust-v1.19.1.x86_64-unknown-linux-gnu.tar.xz"
+          set -e
+          URL=$(curl -sL https://api.github.com/repos/shadowsocks/shadowsocks-rust/releases/latest | python3 -c "
+          import json,sys
+          d=json.load(sys.stdin)
+          for a in d.get('assets',[]):
+              n=a['name']
+              if 'x86_64-unknown-linux-gnu' in n and n.endswith('.tar.xz'):
+                  print(a['browser_download_url']); break
+          ")
+          echo "下载: $URL"
+          curl -sL -o /tmp/ss.tar.xz "$URL"
+          file /tmp/ss.tar.xz
           tar -xJf /tmp/ss.tar.xz -C /tmp
-          find /tmp -name sslocal -exec install -m 755 {} /usr/local/bin/sslocal \;
+          find /tmp -name sslocal -type f -exec install -m 755 {} /usr/local/bin/sslocal \;
           sslocal --version
       - name: Run hunter
         run: python3 guangying.py
       - name: Commit & push
         run: |
-          git config user.name "gy-bot"
-          git config user.email "gy-bot@users.noreply.github.com"
           git add guangying.yml
           git commit -m "auto update nodes $(date -u '+%Y-%m-%d %H:%M')" --allow-empty
-          git push
+          git push origin HEAD:main
