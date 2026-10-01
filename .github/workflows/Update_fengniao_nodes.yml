@@ -79,11 +79,11 @@ jobs:
 
           # 蜂鸟脚本输出:
           #   fengniao_nodes.json    - 节点 JSON
-          #   节点链接.txt           - 明文 Trojan 链接
-          #   sub.txt                - Base64 订阅
-          #   clash.yaml             - Clash Meta 配置
+          #   fengniao_nodes.txt     - 明文 Trojan 链接
+          #   fengniao_sub.txt       - Base64 订阅
+          #   fengniao_clash.yaml    - Clash Meta 配置
           #   fengniao_account.json  - 账号信息（serial + vipEndTime，跨次复用）
-          git add fengniao_nodes.json "节点链接.txt" sub.txt clash.yaml fengniao_account.json 2>/dev/null || true
+          git add fengniao_nodes.json fengniao_nodes.txt fengniao_sub.txt fengniao_clash.yaml fengniao_account.json 2>/dev/null || true
 
           if git diff --staged --quiet; then
             echo "📋 内容无变化，跳过提交"
