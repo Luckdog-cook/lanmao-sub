@@ -4,34 +4,240 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 
-proxy-providers:
-  蓝猫:
-    type: http
-    url: "https://raw.githubusercontent.com/Luckdog-cook/lanmao-sub/main/bluecat_nodes_base64.txt"
-    interval: 3600
-    path: ./providers/蓝猫.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
+proxies:
+  - name: "新加坡"
+    type: trojan
+    server: iwt196.moldscience.cc
+    port: 20026
+    password: "b51ef6c7c777427c"
+    udp: true
+    skip-cert-verify: true
 
-proxies: []
+  - name: "新加坡二线"
+    type: trojan
+    server: kw119.zxmm.eu.org
+    port: 20010
+    password: "9532413ac7984cc9"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "新加坡三线"
+    type: trojan
+    server: ip157i.moldscience.cc
+    port: 20015
+    password: "3c6deaecc19e4662"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "美国"
+    type: trojan
+    server: su106.izzzzzi.com
+    port: 20027
+    password: "19f7202b366a460c"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "美国二线"
+    type: trojan
+    server: lius3.moldscience.cc
+    port: 20029
+    password: "72d30a8672bd4202"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "美国三线"
+    type: trojan
+    server: sa245.moldscience.cc
+    port: 20027
+    password: "fae305e611c9466c"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "美国四线"
+    type: trojan
+    server: gous175.moldscience.cc
+    port: 20005
+    password: "c99da03b46dc44a0"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "中国台湾"
+    type: trojan
+    server: kw119.zxmm.eu.org
+    port: 20010
+    password: "9532413ac7984cc9"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "台湾二线"
+    type: trojan
+    server: gu232.izzzzzi.com
+    port: 20030
+    password: "d62018e2e2304498"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "中国香港"
+    type: trojan
+    server: ihk135.zxom.eu.org
+    port: 20024
+    password: "fa4b071950234552"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "香港二线"
+    type: trojan
+    server: khk9527.vision.jp.eu.org
+    port: 99
+    password: "58d09189ae4a4f91"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "日本"
+    type: trojan
+    server: ip157i.moldscience.cc
+    port: 20015
+    password: "3c6deaecc19e4662"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "日本二线"
+    type: trojan
+    server: gjp42.moldscience.cc
+    port: 201
+    password: "ef9192d1850a4ba1"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "韩国"
+    type: trojan
+    server: ikr100b.zxom.eu.org
+    port: 20038
+    password: "a48a80c36dd64d12"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "韩国二线"
+    type: trojan
+    server: akr187.moldscience.cc
+    port: 20005
+    password: "c57f5312ef3249f6"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "德国"
+    type: trojan
+    server: lige51.zxmm.eu.org
+    port: 20005
+    password: "a0f78e380d2945b8"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "德国二线"
+    type: trojan
+    server: oge188.pacemakere.com
+    port: 20008
+    password: "88a2ef6549144393"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "英国"
+    type: trojan
+    server: ikuk204.zxom.eu.org
+    port: 20012
+    password: "f9cdbc5a70864e0b"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "泰国"
+    type: trojan
+    server: gsg192i.zxom.eu.org
+    port: 20016
+    password: "f7257702e25e4668"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "ChatGPT"
+    type: trojan
+    server: ip157i.moldscience.cc
+    port: 20015
+    password: "3c6deaecc19e4662"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "视频专线"
+    type: trojan
+    server: su106.izzzzzi.com
+    port: 20027
+    password: "19f7202b366a460c"
+    udp: true
+    skip-cert-verify: true
+
+  - name: "亚洲大区"
+    type: trojan
+    server: gsg192i.zxom.eu.org
+    port: 20016
+    password: "f7257702e25e4668"
+    udp: true
+    skip-cert-verify: true
 
 proxy-groups:
-  - name: 🚀 节点选择
+  - name: PROXY
     type: select
-    use:
-      - 蓝猫
     proxies:
-      - ♻️ 自动选择
+      - "新加坡"
+      - "新加坡二线"
+      - "新加坡三线"
+      - "美国"
+      - "美国二线"
+      - "美国三线"
+      - "美国四线"
+      - "中国台湾"
+      - "台湾二线"
+      - "中国香港"
+      - "香港二线"
+      - "日本"
+      - "日本二线"
+      - "韩国"
+      - "韩国二线"
+      - "德国"
+      - "德国二线"
+      - "英国"
+      - "泰国"
+      - "ChatGPT"
+      - "视频专线"
+      - "亚洲大区"
       - DIRECT
-  - name: ♻️ 自动选择
+
+  - name: AUTO
     type: url-test
-    use:
-      - 蓝猫
     url: http://www.gstatic.com/generate_204
     interval: 300
+    tolerance: 50
+    proxies:
+      - "新加坡"
+      - "新加坡二线"
+      - "新加坡三线"
+      - "美国"
+      - "美国二线"
+      - "美国三线"
+      - "美国四线"
+      - "中国台湾"
+      - "台湾二线"
+      - "中国香港"
+      - "香港二线"
+      - "日本"
+      - "日本二线"
+      - "韩国"
+      - "韩国二线"
+      - "德国"
+      - "德国二线"
+      - "英国"
+      - "泰国"
+      - "ChatGPT"
+      - "视频专线"
+      - "亚洲大区"
 
 rules:
   - GEOIP,CN,DIRECT
-  - MATCH,🚀 节点选择
+  - MATCH,PROXY
