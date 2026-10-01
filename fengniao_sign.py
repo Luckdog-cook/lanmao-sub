@@ -204,11 +204,11 @@ def generate_clash_config(proxies: list) -> str:
 # 账号持久化：存取 serial + vipEndTime
 # ============================================================
 
-def save_account(serial: str, vip_end: int = 0, account: str = "", extra: dict = None):
-    """保存账号信息到 JSON 文件"""
+def save_account(serial: str, vip_end=0, account: str = "", extra: dict = None):
+    """保存账号信息到 JSON 文件（vipEndTime 统一存为秒级整数）"""
     data = {
         "serial": serial,
-        "vipEndTime": vip_end,
+        "vipEndTime": _to_vip_seconds(vip_end),   # 存秒级，方便 JSON 反序列化后还是整数
         "account": account,
         "saved_at": int(time.time()),
     }
@@ -228,21 +228,40 @@ def load_account() -> dict:
     except Exception:
         return {}
 
-def is_vip_expiring_soon(vip_end_ts: int, margin: int = VIP_RENEW_MARGIN) -> bool:
-    """ 判断 VIP 是否快过期了。 vip_end_ts 是毫秒时间戳（蜂鸟 API 返回的 vipEndTime） 返回 True 表示距离过期不到 margin 秒，该换号了 """
-    if not vip_end_ts or vip_end_ts <= 0:
+def _to_vip_seconds(vip_end_ts) -> int:
+    """ 把 API 返回的 vipEndTime 统一转成"秒级 Unix 时间戳"整数。 兼容三种情况： - 整数 / 浮点数（毫秒或秒） - 数字字符串 - 0 / 空 / 非数字 → 返回 0（表示无有效时间） """
+    if vip_end_ts is None:
+        return 0
+    if isinstance(vip_end_ts, str):
+        vip_end_ts = vip_end_ts.strip()
+        if not vip_end_ts:
+            return 0
+        try:
+            vip_end_ts = float(vip_end_ts)
+        except ValueError:
+            return 0
+    if not isinstance(vip_end_ts, (int, float)):
+        return 0
+    n = float(vip_end_ts)
+    if n <= 0:
+        return 0
+    # 如果大于 1e12，判定为毫秒，转秒；否则按秒处理
+    return int(n / 1000) if n > 1e12 else int(n)
+
+
+def is_vip_expiring_soon(vip_end_ts, margin: int = VIP_RENEW_MARGIN) -> bool:
+    """ 判断 VIP 是否快过期了。 vip_end_ts 是 vipEndTime（毫秒或秒时间戳，可能是 str/int/float） 返回 True 表示距离过期不到 margin 秒，该换号了 """
+    vip_end_sec = _to_vip_seconds(vip_end_ts)
+    if vip_end_sec <= 0:
         return True   # 没有有效时间，需要换号
-    # API 返回的 vipEndTime 是毫秒，转成秒
-    vip_end_sec = vip_end_ts / 1000 if vip_end_ts > 1e12 else vip_end_ts
-    now = time.time()
-    remain = vip_end_sec - now
+    remain = vip_end_sec - time.time()
     return remain < margin
 
-def format_vip_remain(vip_end_ts: int) -> str:
-    """格式化 VIP 剩余时间"""
-    if not vip_end_ts or vip_end_ts <= 0:
+def format_vip_remain(vip_end_ts) -> str:
+    """格式化 VIP 剩余时间（兼容字符串或数值）"""
+    vip_end_sec = _to_vip_seconds(vip_end_ts)
+    if vip_end_sec <= 0:
         return "无有效时间"
-    vip_end_sec = vip_end_ts / 1000 if vip_end_ts > 1e12 else vip_end_ts
     remain = vip_end_sec - time.time()
     if remain <= 0:
         return "已过期"
