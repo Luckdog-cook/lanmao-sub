@@ -387,32 +387,32 @@ def fetch_all_nodes(serial: str, delay: float = 2.0, max_login_retry: int = 2) -
     print(f"\n成功解密节点: {len(success_nodes)} / {len(nodes)}")
 
     # ========== 保存文件 ==========
-    # 1. JSON（只含成功节点）
+    # 不管有没有节点，都先创建/清空文件，防止旧的过期节点残留
     json_path = os.path.join(OUTPUT_DIR, "fengniao_nodes.json")
+    links_path = os.path.join(OUTPUT_DIR, "fengniao_nodes.txt")
+    sub_path = os.path.join(OUTPUT_DIR, "fengniao_sub.txt")
+    clash_path = os.path.join(OUTPUT_DIR, "fengniao_clash.yaml")
+
+    # 1. JSON（只含成功节点）
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(success_nodes, f, ensure_ascii=False, indent=2)
     print(f"JSON 已保存至 {json_path}")
 
-    # 2. 明文 Trojan 链接
-    links_path = os.path.join(OUTPUT_DIR, "节点链接.txt")
+    # 2. 明文 Trojan 链接（空也写，保证文件存在）
     with open(links_path, "w", encoding="utf-8") as f:
         f.write("\n".join(node_links))
     print(f"Trojan 链接已保存至 {links_path}（共 {len(node_links)} 条）")
 
-    # 3. Base64 订阅
-    if node_links:
-        b64 = base64.b64encode("\n".join(node_links).encode("utf-8")).decode("utf-8")
-        sub_path = os.path.join(OUTPUT_DIR, "sub.txt")
-        with open(sub_path, "w", encoding="utf-8") as f:
-            f.write(b64)
-        print(f"Base64 订阅已保存至 {sub_path}")
+    # 3. Base64 订阅（空也写，保证文件存在）
+    b64 = base64.b64encode("\n".join(node_links).encode("utf-8")).decode("utf-8") if node_links else ""
+    with open(sub_path, "w", encoding="utf-8") as f:
+        f.write(b64)
+    print(f"Base64 订阅已保存至 {sub_path}")
 
-    # 4. Clash Meta 配置
-    if clash_proxies:
-        clash_content = generate_clash_config(clash_proxies)
-        clash_path = os.path.join(OUTPUT_DIR, "clash.yaml")
-        with open(clash_path, "w", encoding="utf-8") as f:
-            f.write(clash_content)
+    # 4. Clash Meta 配置（空也写，保证文件存在）
+    clash_content = generate_clash_config(clash_proxies) if clash_proxies else ""
+    with open(clash_path, "w", encoding="utf-8") as f:
+        f.write(clash_content)
         print(f"Clash 配置已保存至 {clash_path}（共 {len(clash_proxies)} 个节点）")
 
     return token, vip_end, account_name
