@@ -307,28 +307,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]香港-vip-339",
-      "server": "apinbxs.zalolink.com",
-      "server_port": 57047,
-      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.lamer.com.hk",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "9rXzsFYQ48jdOylVnqpS9UyTd4vSBMueW1qw3TyOiSQ",
-          "short_id": "66b9d368ce8c"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "[CN]英国-vip-140",
+      "tag": "[CN]英国-vip-139",
       "server": "funagfr.alixxplay.com",
       "server_port": 52128,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -349,7 +328,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]澳大利亚-vip-141",
+      "tag": "[CN]澳大利亚-vip-140",
       "server": "apinbxs.zalolink.com",
       "server_port": 39518,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -370,7 +349,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]美国-vip-142",
+      "tag": "[CN]美国-vip-141",
       "server": "apinbxs.zalolink.com",
       "server_port": 20631,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -391,7 +370,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]美国-vip-243",
+      "tag": "[CN]美国-vip-242",
       "server": "funagfr.alixxplay.com",
       "server_port": 47672,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -412,7 +391,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]新加坡-vip-544",
+      "tag": "[CN]新加坡-vip-543",
       "server": "apinbxs.zalolink.com",
       "server_port": 62233,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -433,7 +412,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]泰国-vip-245",
+      "tag": "[CN]泰国-vip-244",
       "server": "funagfr.alixxplay.com",
       "server_port": 56415,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -454,7 +433,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]日本-vip-346",
+      "tag": "[CN]日本-vip-345",
       "server": "funagfr.alixxplay.com",
       "server_port": 46530,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -475,7 +454,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]日本-vip-447",
+      "tag": "[CN]日本-vip-446",
       "server": "funagfr.alixxplay.com",
       "server_port": 35544,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -496,7 +475,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]日本-vip-548",
+      "tag": "[CN]日本-vip-547",
       "server": "funagfr.alixxplay.com",
       "server_port": 42433,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -517,7 +496,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]美国-vip-349",
+      "tag": "[CN]美国-vip-348",
       "server": "funagfr.alixxplay.com",
       "server_port": 34379,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -538,7 +517,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]澳大利亚-vip-250",
+      "tag": "[CN]澳大利亚-vip-249",
       "server": "funagfr.alixxplay.com",
       "server_port": 54527,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -559,7 +538,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]美国-vip-451",
+      "tag": "[CN]美国-vip-450",
       "server": "funagfr.alixxplay.com",
       "server_port": 30892,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -580,7 +559,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]日本-vip-652",
+      "tag": "[CN]日本-vip-651",
       "server": "funagfr.alixxplay.com",
       "server_port": 51177,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -601,7 +580,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]日本-vip-753",
+      "tag": "[CN]日本-vip-752",
       "server": "funagfr.alixxplay.com",
       "server_port": 56656,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -622,7 +601,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]美国-vip-554",
+      "tag": "[CN]美国-vip-553",
       "server": "apinbxs.zalolink.com",
       "server_port": 21263,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -643,7 +622,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]越南-vip-255",
+      "tag": "[CN]越南-vip-254",
       "server": "funagfr.alixxplay.com",
       "server_port": 55688,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -664,7 +643,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]德国-vip-256",
+      "tag": "[CN]德国-vip-255",
       "server": "funagfr.alixxplay.com",
       "server_port": 33939,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -685,7 +664,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]越南-vip-357",
+      "tag": "[CN]越南-vip-356",
       "server": "apinbxs.zalolink.com",
       "server_port": 44988,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -706,7 +685,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]英国-vip-258",
+      "tag": "[CN]英国-vip-257",
       "server": "apinbxs.zalolink.com",
       "server_port": 52128,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -727,7 +706,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]新加坡-vip-659",
+      "tag": "[CN]新加坡-vip-658",
       "server": "funagfr.alixxplay.com",
       "server_port": 46105,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -748,28 +727,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]香港-vip-460",
-      "server": "funagfr.alixxplay.com",
-      "server_port": 57047,
-      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.lamer.com.hk",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "9rXzsFYQ48jdOylVnqpS9UyTd4vSBMueW1qw3TyOiSQ",
-          "short_id": "66b9d368ce8c"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "[CN]香港-vip-561",
+      "tag": "[CN]香港-vip-359",
       "server": "apinbxs.zalolink.com",
       "server_port": 15022,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -790,7 +748,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]香港-vip-662",
+      "tag": "[CN]香港-vip-460",
       "server": "funagfr.alixxplay.com",
       "server_port": 15022,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -811,7 +769,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]美国-vip-663",
+      "tag": "[CN]美国-vip-661",
       "server": "funagfr.alixxplay.com",
       "server_port": 47691,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -832,7 +790,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]印度尼西亚-vip-164",
+      "tag": "[CN]印度尼西亚-vip-162",
       "server": "funagfr.alixxplay.com",
       "server_port": 61847,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -853,7 +811,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]印度尼西亚-vip-265",
+      "tag": "[CN]印度尼西亚-vip-263",
       "server": "apinbxs.zalolink.com",
       "server_port": 31094,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -874,7 +832,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]美国-vip-766",
+      "tag": "[CN]美国-vip-764",
       "server": "apinbxs.zalolink.com",
       "server_port": 44544,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -895,7 +853,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]泰国-vip-367",
+      "tag": "[CN]泰国-vip-365",
       "server": "funagfr.alixxplay.com",
       "server_port": 56415,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -911,6 +869,48 @@
           "enabled": true,
           "public_key": "EG-jzQw1RyOwAM4L9rMKondSx7cyFmPyv1OP7xXkIk4",
           "short_id": "cbd39bea0805e2"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "[CN]日本-vip-866",
+      "server": "apinbxs.mate-fox.com",
+      "server_port": 41563,
+      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "iosapps.itunes.apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "HrcXRHtsitc_AVlN-_8fZuRgaP-Mqa_9JJotI9OnkVc",
+          "short_id": "25c79e5856c7"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "[CN]香港-vip-567",
+      "server": "apinbxs.mate-fox.com",
+      "server_port": 43653,
+      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.lamer.com.hk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "CEI2EZLWT56cxGGEaLpJOp6769o_YrgYp6s2UGOw2ns",
+          "short_id": "32a89f7336ff0119"
         }
       }
     },
@@ -2257,35 +2257,35 @@
         "[CN]越南-vip-136",
         "[CN]日本-vip-137",
         "[CN]日本-vip-238",
-        "[CN]香港-vip-339",
-        "[CN]英国-vip-140",
-        "[CN]澳大利亚-vip-141",
-        "[CN]美国-vip-142",
-        "[CN]美国-vip-243",
-        "[CN]新加坡-vip-544",
-        "[CN]泰国-vip-245",
-        "[CN]日本-vip-346",
-        "[CN]日本-vip-447",
-        "[CN]日本-vip-548",
-        "[CN]美国-vip-349",
-        "[CN]澳大利亚-vip-250",
-        "[CN]美国-vip-451",
-        "[CN]日本-vip-652",
-        "[CN]日本-vip-753",
-        "[CN]美国-vip-554",
-        "[CN]越南-vip-255",
-        "[CN]德国-vip-256",
-        "[CN]越南-vip-357",
-        "[CN]英国-vip-258",
-        "[CN]新加坡-vip-659",
+        "[CN]英国-vip-139",
+        "[CN]澳大利亚-vip-140",
+        "[CN]美国-vip-141",
+        "[CN]美国-vip-242",
+        "[CN]新加坡-vip-543",
+        "[CN]泰国-vip-244",
+        "[CN]日本-vip-345",
+        "[CN]日本-vip-446",
+        "[CN]日本-vip-547",
+        "[CN]美国-vip-348",
+        "[CN]澳大利亚-vip-249",
+        "[CN]美国-vip-450",
+        "[CN]日本-vip-651",
+        "[CN]日本-vip-752",
+        "[CN]美国-vip-553",
+        "[CN]越南-vip-254",
+        "[CN]德国-vip-255",
+        "[CN]越南-vip-356",
+        "[CN]英国-vip-257",
+        "[CN]新加坡-vip-658",
+        "[CN]香港-vip-359",
         "[CN]香港-vip-460",
-        "[CN]香港-vip-561",
-        "[CN]香港-vip-662",
-        "[CN]美国-vip-663",
-        "[CN]印度尼西亚-vip-164",
-        "[CN]印度尼西亚-vip-265",
-        "[CN]美国-vip-766",
-        "[CN]泰国-vip-367",
+        "[CN]美国-vip-661",
+        "[CN]印度尼西亚-vip-162",
+        "[CN]印度尼西亚-vip-263",
+        "[CN]美国-vip-764",
+        "[CN]泰国-vip-365",
+        "[CN]日本-vip-866",
+        "[CN]香港-vip-567",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
@@ -2376,35 +2376,35 @@
         "[CN]越南-vip-136",
         "[CN]日本-vip-137",
         "[CN]日本-vip-238",
-        "[CN]香港-vip-339",
-        "[CN]英国-vip-140",
-        "[CN]澳大利亚-vip-141",
-        "[CN]美国-vip-142",
-        "[CN]美国-vip-243",
-        "[CN]新加坡-vip-544",
-        "[CN]泰国-vip-245",
-        "[CN]日本-vip-346",
-        "[CN]日本-vip-447",
-        "[CN]日本-vip-548",
-        "[CN]美国-vip-349",
-        "[CN]澳大利亚-vip-250",
-        "[CN]美国-vip-451",
-        "[CN]日本-vip-652",
-        "[CN]日本-vip-753",
-        "[CN]美国-vip-554",
-        "[CN]越南-vip-255",
-        "[CN]德国-vip-256",
-        "[CN]越南-vip-357",
-        "[CN]英国-vip-258",
-        "[CN]新加坡-vip-659",
+        "[CN]英国-vip-139",
+        "[CN]澳大利亚-vip-140",
+        "[CN]美国-vip-141",
+        "[CN]美国-vip-242",
+        "[CN]新加坡-vip-543",
+        "[CN]泰国-vip-244",
+        "[CN]日本-vip-345",
+        "[CN]日本-vip-446",
+        "[CN]日本-vip-547",
+        "[CN]美国-vip-348",
+        "[CN]澳大利亚-vip-249",
+        "[CN]美国-vip-450",
+        "[CN]日本-vip-651",
+        "[CN]日本-vip-752",
+        "[CN]美国-vip-553",
+        "[CN]越南-vip-254",
+        "[CN]德国-vip-255",
+        "[CN]越南-vip-356",
+        "[CN]英国-vip-257",
+        "[CN]新加坡-vip-658",
+        "[CN]香港-vip-359",
         "[CN]香港-vip-460",
-        "[CN]香港-vip-561",
-        "[CN]香港-vip-662",
-        "[CN]美国-vip-663",
-        "[CN]印度尼西亚-vip-164",
-        "[CN]印度尼西亚-vip-265",
-        "[CN]美国-vip-766",
-        "[CN]泰国-vip-367",
+        "[CN]美国-vip-661",
+        "[CN]印度尼西亚-vip-162",
+        "[CN]印度尼西亚-vip-263",
+        "[CN]美国-vip-764",
+        "[CN]泰国-vip-365",
+        "[CN]日本-vip-866",
+        "[CN]香港-vip-567",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
