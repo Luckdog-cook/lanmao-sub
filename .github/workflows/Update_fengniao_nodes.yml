@@ -5,17 +5,14 @@ name: 更新蜂鸟订阅
 #
 # 设计目标：无缝衔接，账号不会过期断档
 #
-# 核心机制：
-#   1. serial 号持久化在 fengniao_serial.txt，跨次运行复用同一账号
-#      → 避免每次都注册新号被风控
-#   2. 每 3 小时跑一次，在 token 过期前就刷新
-#      → 蜂鸟免费号 token 有效期通常 2-4h，3h 足够安全
-#   3. 双层重试：
-#      外层 nick-fields/retry 重试 3 次（应对网络抖动）
-#      + 脚本内部已有重试（登录 2 次 + 单节点 3 次）
-#   4. 风控失败自动换号：旧号失败 → 删 serial → 生成新号再试
-#      → 被 ban 了不会卡死，不用等下次定时
-#   5. 只有节点真正变化才 commit，避免空跑产生垃圾提交
+# 核心机制（全在脚本里，工作流只负责调度 + 提交）:
+#   1. 脚本自动存 fengniao_account.json（serial + vipEndTime）
+#   2. 每次运行先查 vipEndTime，快过期就自动换新号
+#   3. 复用旧号失败 → 清账号文件 → 下次自动换号
+#   4. 工作流每 3 小时跑一次 + 外层重试 3 次
+#   5. 只有节点真正变化才 commit
+#
+# 不依赖猜有效期——直接用 API 返回的 vipEndTime 时间戳判断
 # ============================================================
 
 on:
@@ -24,8 +21,8 @@ on:
     - cron: '0 */3 * * *'
   workflow_dispatch:
     inputs:
-      force_new_serial:
-        description: '强制生成新账号（忽略已有 serial）'
+      force_new:
+        description: '强制生成新账号'
         required: false
         type: boolean
         default: false
@@ -35,115 +32,58 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: write              # 【必须】没有写权限 git push 会静默失败
+  contents: write
 
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 20        # 留足换号重试的时间
+    timeout-minutes: 15
 
     steps:
-      # ========== 1. 拉取代码 ==========
       - name: 拉取代码
         uses: actions/checkout@v4
 
-      # ========== 2. 安装 Python ==========
       - name: 安装 Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
 
-      # ========== 3. 安装依赖 ==========
       - name: 安装依赖
         run: |
           pip install --upgrade pip
-          pip install pycryptodome    # 蜂鸟脚本需要 AES 解密
+          pip install pycryptodome
 
-      # ========== 4. 准备 serial 号 ==========
-      # serial 持久化在 fengniao_serial.txt：
-      #   有文件 → 复用（避免每次注册新号被风控）
-      #   没文件 → 预生成新号并存盘
-      - name: 准备 serial 号
-        id: prep_serial
-        run: |
-          FORCE="${{ github.event.inputs.force_new_serial }}"
-
-          if [ "$FORCE" = "true" ]; then
-            echo "🔧 强制换新号"
-            rm -f fengniao_serial.txt
-          fi
-
-          if [ -f fengniao_serial.txt ] && [ -s fengniao_serial.txt ]; then
-            SERIAL=$(tr -d '[:space:]' < fengniao_serial.txt)
-            echo "📖 复用已有 serial: ${SERIAL:0:24}..."
-          else
-            SERIAL=$(python3 -c "
-          import base64, uuid
-          print(base64.b64encode(uuid.uuid4().bytes + uuid.uuid4().bytes[:16]).decode())
-          ")
-            echo "$SERIAL" > fengniao_serial.txt
-            echo "🆕 预生成新 serial: ${SERIAL:0:24}... 已存入 fengniao_serial.txt"
-          fi
-
-          echo "serial=$SERIAL" >> $GITHUB_OUTPUT
-
-      # ========== 5. 第一轮：用已有 serial 运行（带重试）==========
-      - name: 运行蜂鸟脚本（第一轮）
-        id: first_run
+      # 脚本自己会：
+      #   1. 读 fengniao_account.json → 查 vipEndTime → 快过期就自动换号
+      #   2. 复用旧号失败 → 清账号文件 → 下次自动换号
+      #   3. 拉节点 + 输出 4 个文件 + 更新 account 文件
+      # 外层重试 3 次应对偶发网络抖动
+      - name: 运行蜂鸟脚本
         uses: nick-fields/retry@v3
         with:
-          timeout_minutes: 12
+          timeout_minutes: 10
           max_attempts: 3
           retry_wait_seconds: 60
-          command: python fengniao_sign.py --delay=2.0
-        env:
-          FENGNIAO_SERIAL: ${{ steps.prep_serial.outputs.serial }}
-        continue-on-error: true   # 失败了不中断，进入换号逻辑
-
-      # ========== 6. 第一轮失败 → 换新号重试 ==========
-      # 旧 serial 被风控了，生成全新号再试一次
-      # 这是"无缝衔接"的关键：不用等下次定时，当场恢复
-      - name: 换新号重试（第二轮）
-        id: second_run
-        if: steps.first_run.outcome == 'failure'
-        run: |
-          echo "🔄 第一轮失败，换新号重试"
-
-          # 生成全新 serial
-          NEW_SERIAL=$(python3 -c "
-          import base64, uuid
-          print(base64.b64encode(uuid.uuid4().bytes + uuid.uuid4().bytes[:16]).decode())
-          ")
-          echo "$NEW_SERIAL" > fengniao_serial.txt
-          echo "🆕 换号: ${NEW_SERIAL:0:24}..."
-
-          # 用新号跑脚本（内联重试 2 次）
-          for attempt in 1 2; do
-            echo "--- 换号后第 ${attempt} 次尝试 ---"
-            if FENGNIAO_SERIAL="$NEW_SERIAL" python fengniao_sign.py --delay=2.0; then
-              echo "✅ 换号后成功"
-              exit 0
+          command: |
+            if [ "${{ github.event.inputs.force_new }}" = "true" ]; then
+              python fengniao_sign.py --force-new --delay=2.0
+            else
+              python fengniao_sign.py --delay=2.0
             fi
-            [ $attempt -lt 2 ] && sleep 30
-          done
 
-          echo "❌ 换号后仍然失败"
-          exit 1
-
-      # ========== 7. 提交更新 ==========
       - name: 提交更新
-        if: success() || steps.first_run.outcome == 'success'
+        if: success()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # 蜂鸟脚本输出 4 个文件 + 1 个 serial 持久化文件:
-          #   fengniao_nodes.json  - 节点 JSON
-          #   节点链接.txt         - 明文 Trojan 链接
-          #   sub.txt              - Base64 订阅
-          #   clash.yaml           - Clash Meta 配置
-          #   fengniao_serial.txt  - serial 号（跨次复用）
-          git add fengniao_nodes.json "节点链接.txt" sub.txt clash.yaml fengniao_serial.txt 2>/dev/null || true
+          # 蜂鸟脚本输出:
+          #   fengniao_nodes.json    - 节点 JSON
+          #   节点链接.txt           - 明文 Trojan 链接
+          #   sub.txt                - Base64 订阅
+          #   clash.yaml             - Clash Meta 配置
+          #   fengniao_account.json  - 账号信息（serial + vipEndTime，跨次复用）
+          git add fengniao_nodes.json "节点链接.txt" sub.txt clash.yaml fengniao_account.json 2>/dev/null || true
 
           if git diff --staged --quiet; then
             echo "📋 内容无变化，跳过提交"
@@ -152,11 +92,3 @@ jobs:
             git push
             echo "✅ 已提交更新"
           fi
-
-      # ========== 8. 最终失败通知 ==========
-      - name: 最终失败
-        if: failure()
-        run: |
-          echo "❌ 两轮尝试都失败了，等待下次定时任务自动重试"
-          echo "可能原因：蜂鸟服务端异常或 GitHub Actions 网络问题"
-          # 不删 serial 文件，下次定时还能用旧号试
