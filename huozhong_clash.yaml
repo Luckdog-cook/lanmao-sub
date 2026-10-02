@@ -1,6 +1,6 @@
 # 火种VPN Clash 订阅
-# 生成时间: 2026-10-01 22:26:48
-# 节点数量: 45
+# 生成时间: 2026-10-02 04:15:13
+# 节点数量: 46
 
 mixed-port: 7890
 allow-lan: false
@@ -12,7 +12,7 @@ proxies:
     type: trojan
     server: "64.32.12.59"
     port: 47317
-    password: "e7b2b7b0-f618-4751-9a91-bedde1db2f14"
+    password: "d08b1a2b-70fb-4673-88f7-a97b14b94bc7"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -21,7 +21,16 @@ proxies:
     type: trojan
     server: "104.105.140.151"
     port: 47752
-    password: "a8cd435f-ae8b-447c-bd9d-3ffb5501f1d3"
+    password: "2dcf6ad6-78a8-4e66-81c4-438b62dd5873"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
+  - name: "美国 - 美国-V3 - (洛杉矶/大陆优化)"
+    type: trojan
+    server: "64.32.12.59"
+    port: 43208
+    password: "7870e23e-50b3-47ea-a504-235e24a50292"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -30,7 +39,7 @@ proxies:
     type: trojan
     server: "64.32.12.59"
     port: 49462
-    password: "030b7893-8976-4d41-ba50-fc2ccfac544a"
+    password: "955dca5a-886e-4256-998b-240eb1f61e57"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -39,7 +48,7 @@ proxies:
     type: trojan
     server: "134.199.141.127"
     port: 43899
-    password: "90c3fb1f-ce6c-40ca-ac42-83eb06525609"
+    password: "446a56c4-4666-471a-abff-369cea0eaecd"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -48,7 +57,7 @@ proxies:
     type: trojan
     server: "58.152.26.250"
     port: 43925
-    password: "0298abdb-5865-44d2-ba3a-9d6523072af5"
+    password: "4d58b742-5869-4bb2-ae24-73aa1f14f7e3"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -57,7 +66,7 @@ proxies:
     type: trojan
     server: "172.238.18.118"
     port: 42118
-    password: "1f916139-e6b7-4d2e-866e-e705f52a008e"
+    password: "c16097c5-b960-4aee-812f-1e33e29350c4"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -66,7 +75,7 @@ proxies:
     type: trojan
     server: "45.58.165.159"
     port: 47222
-    password: "2e4fb00e-5a19-4ead-9a00-7864ba68ba4f"
+    password: "0e023379-a02f-4637-834b-7ecec0603b6f"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -75,7 +84,7 @@ proxies:
     type: trojan
     server: "64.32.12.59"
     port: 46560
-    password: "91507dc5-8d8f-4612-a4a0-d8cb01a51c0f"
+    password: "ba97e229-415a-42aa-bb5e-1bdb7de65ac3"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -84,7 +93,7 @@ proxies:
     type: trojan
     server: "172.233.91.25"
     port: 28443
-    password: "ca0c095f-cb77-4501-b7ad-ed7a052e0c58"
+    password: "52be0ef8-6d63-48de-8d6f-36a34df65b05"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -93,7 +102,7 @@ proxies:
     type: trojan
     server: "58.152.26.250"
     port: 44912
-    password: "f794ead7-5107-4443-ac92-0526ff55e30d"
+    password: "d5831e8e-bfe5-446d-9949-556b6b313021"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -102,7 +111,7 @@ proxies:
     type: trojan
     server: "64.32.12.59"
     port: 41468
-    password: "c3afee74-f6e7-4ff7-81e6-f761f0c2bc95"
+    password: "0871e0d4-7c86-411b-9868-2841ea77f9b2"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -111,7 +120,7 @@ proxies:
     type: trojan
     server: "64.32.12.59"
     port: 47729
-    password: "bc67f5e7-35c0-4c3e-a0dc-00fdc03467dd"
+    password: "886e1d00-98bd-445d-9033-c8c485bee3d1"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -120,7 +129,7 @@ proxies:
     type: trojan
     server: "58.152.26.250"
     port: 49167
-    password: "446c93d7-1585-4d3f-bda0-bbd740f1c93a"
+    password: "3a17da33-2225-4fd4-b603-082df64dcc9b"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -129,7 +138,7 @@ proxies:
     type: trojan
     server: "45.192.205.101"
     port: 28443
-    password: "ee30f036-82ad-4484-8065-6129868fc3f5"
+    password: "2a7f101b-4a7c-45e5-b0e2-2f8b17b39216"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -138,7 +147,7 @@ proxies:
     type: trojan
     server: "64.118.128.180"
     port: 28443
-    password: "063fbf63-de64-4bdc-a122-954726092175"
+    password: "3f741d5d-c56d-439b-8ab3-000092267724"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -147,7 +156,7 @@ proxies:
     type: trojan
     server: "152.175.28.15"
     port: 44807
-    password: "39cfa9f8-14c7-40eb-84c4-f38c116330d3"
+    password: "f691f253-36c5-4059-a6fd-c4fea18d7df5"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -156,7 +165,7 @@ proxies:
     type: trojan
     server: "152.175.28.15"
     port: 49929
-    password: "39cfa9f8-14c7-40eb-84c4-f38c116330d3"
+    password: "f691f253-36c5-4059-a6fd-c4fea18d7df5"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -165,7 +174,7 @@ proxies:
     type: trojan
     server: "152.175.28.15"
     port: 46928
-    password: "2b510a8f-563c-4df5-8014-069071b3cae1"
+    password: "4a21a97d-e997-4bb5-ab64-7317388acd32"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -174,7 +183,7 @@ proxies:
     type: trojan
     server: "172.238.18.118"
     port: 43588
-    password: "a8cd435f-ae8b-447c-bd9d-3ffb5501f1d3"
+    password: "2dcf6ad6-78a8-4e66-81c4-438b62dd5873"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -183,7 +192,7 @@ proxies:
     type: trojan
     server: "139.162.100.58"
     port: 40143
-    password: "e555a241-9498-4a35-a553-61ae4c7d46bc"
+    password: "0048a7f1-0377-46c2-b121-589c146403e6"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -192,7 +201,7 @@ proxies:
     type: trojan
     server: "172.237.81.74"
     port: 41934
-    password: "963e3088-1900-4d99-b636-b3c2a4b2e610"
+    password: "446c3b63-2665-4283-a117-cb3508aaf6f1"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -201,7 +210,7 @@ proxies:
     type: trojan
     server: "139.162.100.58"
     port: 49755
-    password: "53927ffc-245f-4dda-a8fe-1950727e443b"
+    password: "82d7e032-f2d3-4155-a77b-a3bf0046263b"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -210,7 +219,7 @@ proxies:
     type: trojan
     server: "172.232.249.14"
     port: 28443
-    password: "e4f28b47-d89a-4c3a-94b6-7bd408c1749f"
+    password: "4066a1dd-692e-4b35-b99b-541c0dfabcbb"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -219,7 +228,7 @@ proxies:
     type: trojan
     server: "139.162.100.58"
     port: 41269
-    password: "1013b6a3-36bf-459a-93be-24cd5d20381b"
+    password: "e84e7062-eea2-414c-9ba2-650ffb8ac4a7"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -228,7 +237,7 @@ proxies:
     type: trojan
     server: "58.152.26.250"
     port: 45630
-    password: "df8cc039-592d-4fa4-929c-be103689d82c"
+    password: "b3b45cca-e6eb-47c2-ae2b-2df85cd02214"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -237,7 +246,7 @@ proxies:
     type: trojan
     server: "45.32.129.84"
     port: 28443
-    password: "ba877ebd-a8a3-44c4-bc93-e12ad0c4b339"
+    password: "b642aa04-c6a2-4355-ae39-61f5e5ab47d5"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -246,7 +255,7 @@ proxies:
     type: trojan
     server: "172.238.18.184"
     port: 42575
-    password: "3d9791c0-bc4f-4ed1-83d7-32d8a60f3683"
+    password: "7abb4e07-eeae-494b-aa3e-cec71f470ce3"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -255,7 +264,7 @@ proxies:
     type: trojan
     server: "188.166.35.66"
     port: 28443
-    password: "2b4b3f00-bc74-4748-8143-759a0cc847d4"
+    password: "09a112ef-782b-4c0f-b2b4-212af087bf5d"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -264,7 +273,7 @@ proxies:
     type: trojan
     server: "64.32.12.59"
     port: 46332
-    password: "61b2b762-7e95-4cb3-a832-35da32838f39"
+    password: "73a15c3d-d740-41f5-9ea2-11524b1a6210"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -273,7 +282,7 @@ proxies:
     type: trojan
     server: "18.181.168.46"
     port: 42423
-    password: "5b3100ca-cc2c-4c6d-a599-d95eb77ab55a"
+    password: "0f47374b-a412-44d9-9fb4-d753858f4203"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -282,7 +291,7 @@ proxies:
     type: trojan
     server: "3.126.152.47"
     port: 43443
-    password: "d64e3119-765c-4365-a920-62c04481fe68"
+    password: "30822732-fb76-4ba3-92b5-aca8e275c9da"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -291,7 +300,7 @@ proxies:
     type: trojan
     server: "154.83.92.205"
     port: 41334
-    password: "54a0a004-b4ad-4e9e-b31f-cd8b53a68e22"
+    password: "4bbeb435-dc8e-4c31-b61a-8587c69d0294"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -300,7 +309,7 @@ proxies:
     type: trojan
     server: "58.152.26.250"
     port: 49813
-    password: "7380c21e-352e-49ac-9494-1546e3b5aa93"
+    password: "c6da9104-2592-4b37-a317-b845f5c42be2"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -309,7 +318,7 @@ proxies:
     type: trojan
     server: "152.175.28.15"
     port: 45556
-    password: "e555a241-9498-4a35-a553-61ae4c7d46bc"
+    password: "0048a7f1-0377-46c2-b121-589c146403e6"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -318,7 +327,7 @@ proxies:
     type: trojan
     server: "64.32.12.59"
     port: 46067
-    password: "1b35c6a5-4daa-4e39-bf53-863008761c95"
+    password: "fcc5bb5f-c911-4954-a369-4bd61cdae3b9"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -327,7 +336,7 @@ proxies:
     type: trojan
     server: "64.32.12.59"
     port: 40333
-    password: "a8cd435f-ae8b-447c-bd9d-3ffb5501f1d3"
+    password: "2dcf6ad6-78a8-4e66-81c4-438b62dd5873"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -336,7 +345,7 @@ proxies:
     type: trojan
     server: "194.147.16.44"
     port: 46224
-    password: "090351bb-3f6f-46be-9d2c-d7f411051ff7"
+    password: "77ca52c3-99cd-4ea6-a8f3-e410b8e6064d"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -345,7 +354,7 @@ proxies:
     type: trojan
     server: "64.32.12.59"
     port: 48375
-    password: "f6a330b2-7610-4bb7-a164-d8838df4f42e"
+    password: "372cf259-4d64-44cd-b55e-7ec2d26dd0ea"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -354,7 +363,7 @@ proxies:
     type: trojan
     server: "64.32.12.59"
     port: 45800
-    password: "38e2ed06-a56b-467f-b696-d6d240b7c7ea"
+    password: "5377d6d8-b4f8-4d1d-9518-661af02961ca"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -363,7 +372,7 @@ proxies:
     type: trojan
     server: "64.32.12.59"
     port: 44734
-    password: "e7b2b7b0-f618-4751-9a91-bedde1db2f14"
+    password: "d08b1a2b-70fb-4673-88f7-a97b14b94bc7"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -372,7 +381,7 @@ proxies:
     type: trojan
     server: "45.58.165.159"
     port: 46948
-    password: "021b4af3-e221-4edf-845f-57efd1cd59fb"
+    password: "0bcb7220-c1fc-4c36-8131-b76f31089739"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -381,7 +390,7 @@ proxies:
     type: trojan
     server: "54.238.213.168"
     port: 18444
-    password: "366e6c16-d78c-4001-b6ee-ebd963e97293"
+    password: "16475199-84d6-49d0-9327-0f05c12468a7"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -390,7 +399,7 @@ proxies:
     type: trojan
     server: "139.162.108.36"
     port: 42300
-    password: "4f95b526-b747-4d4a-9de1-d71ad69e6673"
+    password: "51f520fc-4f39-482e-b5da-0defc74c1d2e"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -399,7 +408,7 @@ proxies:
     type: trojan
     server: "50.114.55.52"
     port: 28443
-    password: "8e6c3669-de59-4e0c-8b54-4cc5320e870e"
+    password: "4c257f03-dd87-4131-8c01-3f221a49f04e"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -408,7 +417,7 @@ proxies:
     type: trojan
     server: "172.235.53.180"
     port: 18444
-    password: "eff7dcf4-ceb1-40ce-bb9b-f8bafaf017a3"
+    password: "1498e536-685b-4f98-8e2d-41db37fc7b66"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -422,6 +431,7 @@ proxy-groups:
       - "DIRECT"
       - "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
       - "美国 - 美国-V1 - (凤凰城/移动优化)"
+      - "美国 - 美国-V3 - (洛杉矶/大陆优化)"
       - "美国 - 美国-V4 - (亚特兰大/国际优化)"
       - "美国 - 美国-V5 - (芝加哥/大陆优化)"
       - "美国 - 美国-V6 - (达拉斯/大陆优化)"
@@ -473,6 +483,7 @@ proxy-groups:
     proxies:
       - "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
       - "美国 - 美国-V1 - (凤凰城/移动优化)"
+      - "美国 - 美国-V3 - (洛杉矶/大陆优化)"
       - "美国 - 美国-V4 - (亚特兰大/国际优化)"
       - "美国 - 美国-V5 - (芝加哥/大陆优化)"
       - "美国 - 美国-V6 - (达拉斯/大陆优化)"
