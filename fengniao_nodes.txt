@@ -1,7 +1,7 @@
-trojan://552a273454e34e80@it193k.zxom.eu.org:20020?encryption=chacha20#%E6%96%B0%E5%8A%A0%E5%9D%A1
+trojan://112bd507195f4b76@wt194.moldscience.cc:101?encryption=chacha20#%E6%96%B0%E5%8A%A0%E5%9D%A1
 trojan://863abab4f4e248a6@uwt125.zxom.eu.org:20029?encryption=chacha20#%E6%96%B0%E5%8A%A0%E5%9D%A1%E4%BA%8C%E7%BA%BF
 trojan://ae119eb43b6243b5@ip157i.moldscience.cc:20017?encryption=chacha20#%E6%96%B0%E5%8A%A0%E5%9D%A1%E4%B8%89%E7%BA%BF
-trojan://f3deea7671db4b1c@su108.izzzzzi.com:20029?encryption=chacha20#%E7%BE%8E%E5%9B%BD
+trojan://13ecf6b01ba1476d@su106.izzzzzi.com:20029?encryption=chacha20#%E7%BE%8E%E5%9B%BD
 trojan://2f15ad8e7d15456c@lius3.moldscience.cc:20031?encryption=chacha20#%E7%BE%8E%E5%9B%BD%E4%BA%8C%E7%BA%BF
 trojan://6993abf2d3c74706@sa245.moldscience.cc:20029?encryption=chacha20#%E7%BE%8E%E5%9B%BD%E4%B8%89%E7%BA%BF
 trojan://2c49aef53400461b@goodus.zxmm.eu.org:20012?encryption=chacha20#%E7%BE%8E%E5%9B%BD%E5%9B%9B%E7%BA%BF
