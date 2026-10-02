@@ -1,6 +1,6 @@
 # 火种VPN Clash 订阅
-# 生成时间: 2026-10-02 17:36:43
-# 节点数量: 43
+# 生成时间: 2026-10-02 21:55:33
+# 节点数量: 47
 
 mixed-port: 7890
 allow-lan: false
@@ -26,6 +26,24 @@ proxies:
     skip-cert-verify: true
     sni: "vpn-node.internal"
     alpn: ["http/1.1"]
+  - name: "美国 - 美国-V3 - (洛杉矶/大陆优化)"
+    type: trojan
+    server: "64.32.12.59"
+    port: 43208
+    password: "42e44e47-16b4-46fe-a54b-0f8ba6aaf326"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
+  - name: "美国 - 美国-V4 - (亚特兰大/国际优化)"
+    type: trojan
+    server: "64.32.12.59"
+    port: 49462
+    password: "e5669fed-1e4a-4533-8872-061255b78de5"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
   - name: "美国 - 美国-V5 - (芝加哥/大陆优化)"
     type: trojan
     server: "134.199.141.127"
@@ -40,6 +58,15 @@ proxies:
     server: "58.152.26.250"
     port: 43925
     password: "89f09be5-20bb-487c-89e1-a692be26530e"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
+  - name: "美国 - 美国-V7 - (新泽西/大陆优化)"
+    type: trojan
+    server: "172.238.18.118"
+    port: 42118
+    password: "bf9de38b-46b2-44bd-88ea-395de4ddb625"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -112,6 +139,15 @@ proxies:
     server: "45.192.205.101"
     port: 28443
     password: "4c30e913-d5f8-4ef0-9025-3e28134df6de"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
+  - name: "香港 - 香港-V4 - (香港/大陆优化)"
+    type: trojan
+    server: "64.118.128.180"
+    port: 28443
+    password: "3e49b1fd-402f-47ea-915d-6181ea18f559"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -404,8 +440,11 @@ proxy-groups:
       - "DIRECT"
       - "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
       - "美国 - 美国-V1 - (凤凰城/移动优化)"
+      - "美国 - 美国-V3 - (洛杉矶/大陆优化)"
+      - "美国 - 美国-V4 - (亚特兰大/国际优化)"
       - "美国 - 美国-V5 - (芝加哥/大陆优化)"
       - "美国 - 美国-V6 - (达拉斯/大陆优化)"
+      - "美国 - 美国-V7 - (新泽西/大陆优化)"
       - "美国 - 美国-V8 - (迈阿密/大陆优化)"
       - "美国 - 美国-V9 - (西雅图/大陆优化)"
       - "日本 - 日本-V7 - (大阪/移动优化)"
@@ -414,6 +453,7 @@ proxy-groups:
       - "巴西 - 巴西-V3 - (圣保罗/大陆优化)"
       - "新加坡 - 新加坡-V13 - (新加坡/移动优化)"
       - "香港 - 香港-V2 - (香港/移动优化)"
+      - "香港 - 香港-V4 - (香港/大陆优化)"
       - "香港 - 香港-V6 - (移动优化/IP送中/油管无广告)"
       - "香港 - 香港-V7 - (香港/移动优化)"
       - "香港 - 香港-V8 - (香港/移动优化)"
@@ -453,8 +493,11 @@ proxy-groups:
     proxies:
       - "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
       - "美国 - 美国-V1 - (凤凰城/移动优化)"
+      - "美国 - 美国-V3 - (洛杉矶/大陆优化)"
+      - "美国 - 美国-V4 - (亚特兰大/国际优化)"
       - "美国 - 美国-V5 - (芝加哥/大陆优化)"
       - "美国 - 美国-V6 - (达拉斯/大陆优化)"
+      - "美国 - 美国-V7 - (新泽西/大陆优化)"
       - "美国 - 美国-V8 - (迈阿密/大陆优化)"
       - "美国 - 美国-V9 - (西雅图/大陆优化)"
       - "日本 - 日本-V7 - (大阪/移动优化)"
@@ -463,6 +506,7 @@ proxy-groups:
       - "巴西 - 巴西-V3 - (圣保罗/大陆优化)"
       - "新加坡 - 新加坡-V13 - (新加坡/移动优化)"
       - "香港 - 香港-V2 - (香港/移动优化)"
+      - "香港 - 香港-V4 - (香港/大陆优化)"
       - "香港 - 香港-V6 - (移动优化/IP送中/油管无广告)"
       - "香港 - 香港-V7 - (香港/移动优化)"
       - "香港 - 香港-V8 - (香港/移动优化)"
