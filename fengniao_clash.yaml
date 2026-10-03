@@ -47,17 +47,17 @@ proxies:
 
  - name: "美国三线"
  type: trojan
- server: sa245.moldscience.cc
+ server: sa175.moldscience.cc
  port: 20029
- password: "6993abf2d3c74706"
+ password: "0f11163790cd4c73"
  udp: true
  skip-cert-verify: true
 
  - name: "美国四线"
  type: trojan
- server: goodus.zxmm.eu.org
- port: 20012
- password: "2c49aef53400461b"
+ server: gous175.moldscience.cc
+ port: 20007
+ password: "39f25e28213e414b"
  udp: true
  skip-cert-verify: true
 
@@ -111,9 +111,9 @@ proxies:
 
  - name: "韩国"
  type: trojan
- server: ikr200.zxom.eu.org
- port: 20040
- password: "04f856e805e34a16"
+ server: ikr185.moldscience.cc
+ port: 20029
+ password: "f69c81a5a4944467"
  udp: true
  skip-cert-verify: true
 
@@ -127,9 +127,9 @@ proxies:
 
  - name: "德国"
  type: trojan
- server: lige51.zxmm.eu.org
- port: 20007
- password: "af87b668d0cb4267"
+ server: lge179.zxmm.eu.org
+ port: 20010
+ password: "22af9acb66bf4c7c"
  udp: true
  skip-cert-verify: true
 
@@ -143,9 +143,9 @@ proxies:
 
  - name: "英国"
  type: trojan
- server: ikuk204.zxom.eu.org
- port: 20014
- password: "478bc94b1d65406d"
+ server: ikuk195.zxom.eu.org
+ port: 20011
+ password: "fd53b1ac263e4f83"
  udp: true
  skip-cert-verify: true
 
