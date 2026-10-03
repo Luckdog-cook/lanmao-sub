@@ -97,6 +97,20 @@ proxies:
   reality-opts:
     public-key: fuiWKvjvDOv56iLWdJu_s8d6d-6v5Q-UCyis8-r8RXE
     short-id: af804b5f1138db28
+- name: 🇸🇬Singapore 04
+  server: tocgpk.miaokaa.com
+  port: 34602
+  type: vless
+  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.nippon.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: cbtWohH8LlC5T5WWDZnKo5J9EKQg-ojHKISXLW1JcDg
+    short-id: a22ec3a3f0
 - name: 🇸🇬Singapore 03
   server: tocgpk.miaokaa.com
   port: 32313
@@ -139,6 +153,20 @@ proxies:
   reality-opts:
     public-key: fuiWKvjvDOv56iLWdJu_s8d6d-6v5Q-UCyis8-r8RXE
     short-id: af804b5f1138db28
+- name: 🇯🇵Japan 04
+  server: tocgpk.miaokaa.com
+  port: 11425
+  type: vless
+  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.nippon.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: roqYV5l9jnIqe6Xvy2FKOVpfQY9j0FMjO6cj2YtYbjE
+    short-id: 769d80f72500
 - name: 🇯🇵Japan 03
   server: tocgpk.miaokaa.com
   port: 39560
@@ -181,6 +209,34 @@ proxies:
   reality-opts:
     public-key: fuiWKvjvDOv56iLWdJu_s8d6d-6v5Q-UCyis8-r8RXE
     short-id: af804b5f1138db28
+- name: 🇺🇸America 03
+  server: tocgpk.miaokaa.com
+  port: 57001
+  type: vless
+  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.nippon.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: p8OjkrUbJA0WTwAlddc3HkLZt6olgkIoSoe3udJxSxE
+    short-id: 2e25d3
+- name: 🇺🇸America 04
+  server: tocgpk.miaokaa.com
+  port: 14932
+  type: vless
+  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.nippon.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: Lol5iyP9q1aoE_i0kaCZOaapZ82QfCLG4brALX3S9zI
+    short-id: 599c2146214cc2
 - name: HK-01-三网优化
   server: hk01.node.qixi.best
   port: 443
