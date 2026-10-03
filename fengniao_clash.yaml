@@ -7,81 +7,81 @@ external-controller: 127.0.0.1:9090
 proxies:
  - name: "新加坡"
  type: trojan
- server: wt194.moldscience.cc
- port: 101
- password: "112bd507195f4b76"
+ server: it193k.zxom.eu.org
+ port: 20021
+ password: "75545b7f240341dc"
  udp: true
  skip-cert-verify: true
 
  - name: "新加坡二线"
  type: trojan
- server: uwt125.zxom.eu.org
- port: 20029
- password: "863abab4f4e248a6"
+ server: kw119.zxmm.eu.org
+ port: 20013
+ password: "3b68e4ba5efa42ab"
  udp: true
  skip-cert-verify: true
 
  - name: "新加坡三线"
  type: trojan
  server: ip157i.moldscience.cc
- port: 20017
- password: "ae119eb43b6243b5"
+ port: 20018
+ password: "f92da4d31615402c"
  udp: true
  skip-cert-verify: true
 
  - name: "美国"
  type: trojan
- server: su108.izzzzzi.com
- port: 20029
- password: "f3deea7671db4b1c"
+ server: su106.izzzzzi.com
+ port: 20030
+ password: "b45d1d6db3d94204"
  udp: true
  skip-cert-verify: true
 
  - name: "美国二线"
  type: trojan
  server: lius3.moldscience.cc
- port: 20031
- password: "2f15ad8e7d15456c"
+ port: 20032
+ password: "32764b28029249bd"
  udp: true
  skip-cert-verify: true
 
  - name: "美国三线"
  type: trojan
  server: sa245.moldscience.cc
- port: 20029
- password: "6993abf2d3c74706"
+ port: 20030
+ password: "bf3032ad3f1342da"
  udp: true
  skip-cert-verify: true
 
  - name: "美国四线"
  type: trojan
- server: gous175.moldscience.cc
- port: 20007
- password: "39f25e28213e414b"
+ server: goodus.zxmm.eu.org
+ port: 20013
+ password: "1a214ccbe41a44db"
  udp: true
  skip-cert-verify: true
 
  - name: "中国台湾"
  type: trojan
  server: kw119.zxmm.eu.org
- port: 20012
- password: "f204eb4b5874442d"
+ port: 20013
+ password: "3b68e4ba5efa42ab"
  udp: true
  skip-cert-verify: true
 
  - name: "台湾二线"
  type: trojan
  server: gu232.izzzzzi.com
- port: 20032
- password: "0a7119bdbf584cfd"
+ port: 20033
+ password: "83faa10605014a63"
  udp: true
  skip-cert-verify: true
 
  - name: "中国香港"
  type: trojan
  server: ihk135.zxom.eu.org
- port: 20026
- password: "f63ed055ea154dd0"
+ port: 20027
+ password: "5fca622c8fff424c"
  udp: true
  skip-cert-verify: true
 
@@ -96,8 +96,8 @@ proxies:
  - name: "日本"
  type: trojan
  server: ip157i.moldscience.cc
- port: 20017
- password: "ae119eb43b6243b5"
+ port: 20018
+ password: "f92da4d31615402c"
  udp: true
  skip-cert-verify: true
 
@@ -112,72 +112,72 @@ proxies:
  - name: "韩国"
  type: trojan
  server: ikr100a.zxom.eu.org
- port: 20041
- password: "f3b9ccb216264ade"
+ port: 20042
+ password: "03378a7f1c114c87"
  udp: true
  skip-cert-verify: true
 
  - name: "韩国二线"
  type: trojan
  server: akr187.moldscience.cc
- port: 20007
- password: "d5327241e0744a00"
+ port: 20008
+ password: "4db6e375fd2546ca"
  udp: true
  skip-cert-verify: true
 
  - name: "德国"
  type: trojan
- server: lige51.zxmm.eu.org
- port: 20007
- password: "af87b668d0cb4267"
+ server: lge179.zxmm.eu.org
+ port: 20011
+ password: "f492678ad5e94fd1"
  udp: true
  skip-cert-verify: true
 
  - name: "德国二线"
  type: trojan
- server: oge188.pacemakere.com
- port: 20010
- password: "6455210c42154638"
+ server: oge126.pacemakere.com
+ port: 20011
+ password: "161684fb080a438a"
  udp: true
  skip-cert-verify: true
 
  - name: "英国"
  type: trojan
- server: ikuk204.zxom.eu.org
- port: 20015
- password: "a8e17a13414543a8"
+ server: ikuk195.zxom.eu.org
+ port: 20012
+ password: "78d19f5438764b21"
  udp: true
  skip-cert-verify: true
 
  - name: "泰国"
  type: trojan
  server: gsg192i.zxom.eu.org
- port: 20018
- password: "ea36a5c89da047e2"
+ port: 20019
+ password: "7c0aea6857e84236"
  udp: true
  skip-cert-verify: true
 
  - name: "ChatGPT"
  type: trojan
  server: ip157i.moldscience.cc
- port: 20017
- password: "ae119eb43b6243b5"
+ port: 20018
+ password: "f92da4d31615402c"
  udp: true
  skip-cert-verify: true
 
  - name: "视频专线"
  type: trojan
- server: su108.izzzzzi.com
- port: 20029
- password: "f3deea7671db4b1c"
+ server: su106.izzzzzi.com
+ port: 20030
+ password: "b45d1d6db3d94204"
  udp: true
  skip-cert-verify: true
 
  - name: "亚洲大区"
  type: trojan
  server: gsg192i.zxom.eu.org
- port: 20018
- password: "ea36a5c89da047e2"
+ port: 20019
+ password: "7c0aea6857e84236"
  udp: true
  skip-cert-verify: true
 
