@@ -1,4 +1,137 @@
 proxies:
+- name: HK-01-三网优化
+  server: hk01.node.qixi.best
+  port: 443
+  type: trojan
+  password: 364d93b4-866c-461d-8713-3b63c470f677
+  network: ws
+  udp: true
+  tls: true
+  servername: hk01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk01.node.qixi.best
+- name: HK-02-三网优化
+  server: hk02.node.qixi.best
+  port: 443
+  type: trojan
+  password: 364d93b4-866c-461d-8713-3b63c470f677
+  network: ws
+  udp: true
+  tls: true
+  servername: hk02.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk02.node.qixi.best
+- name: HK-03-三网优化
+  server: hk03.node.qixi.best
+  port: 443
+  type: trojan
+  password: 364d93b4-866c-461d-8713-3b63c470f677
+  network: ws
+  udp: true
+  tls: true
+  servername: hk03.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk03.node.qixi.best
+- name: HK-05-三网优化
+  server: hk05.node.qixi.best
+  port: 443
+  type: trojan
+  password: 364d93b4-866c-461d-8713-3b63c470f677
+  network: ws
+  udp: true
+  tls: true
+  servername: hk05.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk05.node.qixi.best
+- name: HK-06-三网优化
+  server: hk06.node.qixi.best
+  port: 443
+  type: trojan
+  password: 364d93b4-866c-461d-8713-3b63c470f677
+  network: ws
+  udp: true
+  tls: true
+  servername: hk06.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk06.node.qixi.best
+- name: JP-01-三网优化
+  server: JP01.node.qixi.best
+  port: 443
+  type: trojan
+  password: 364d93b4-866c-461d-8713-3b63c470f677
+  network: ws
+  udp: true
+  tls: true
+  servername: jp01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp01.node.qixi.best
+- name: JP-02-三网优化
+  server: JP02.node.qixi.best
+  port: 443
+  type: trojan
+  password: 364d93b4-866c-461d-8713-3b63c470f677
+  network: ws
+  udp: true
+  tls: true
+  servername: jp02.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp02.node.qixi.best
+- name: JP-03-三网优化
+  server: JP03.node.qixi.best
+  port: 443
+  type: trojan
+  password: 364d93b4-866c-461d-8713-3b63c470f677
+  network: ws
+  udp: true
+  tls: true
+  servername: jp03.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp03.node.qixi.best
+- name: JP-04-三网优化
+  server: JP04.node.qixi.best
+  port: 443
+  type: trojan
+  password: 364d93b4-866c-461d-8713-3b63c470f677
+  network: ws
+  udp: true
+  tls: true
+  servername: jp04.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp04.node.qixi.best
+- name: JP-05-三网优化
+  server: 216.23.120.16
+  port: 16606
+  type: hysteria2
+  password: 364d93b4-866c-461d-8713-3b63c470f677
+  sni: bing.com
+  skip-cert-verify: true
 - name: 🇭🇰Hong Kong 01
   server: tocgpk.miaokaa.com
   port: 15020
@@ -237,139 +370,6 @@ proxies:
   reality-opts:
     public-key: Lol5iyP9q1aoE_i0kaCZOaapZ82QfCLG4brALX3S9zI
     short-id: 599c2146214cc2
-- name: HK-01-三网优化
-  server: hk01.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: hk01.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk01.node.qixi.best
-- name: HK-02-三网优化
-  server: hk02.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: hk02.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk02.node.qixi.best
-- name: HK-03-三网优化
-  server: hk03.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: hk03.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk03.node.qixi.best
-- name: HK-05-三网优化
-  server: hk05.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: hk05.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk05.node.qixi.best
-- name: HK-06-三网优化
-  server: hk06.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: hk06.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk06.node.qixi.best
-- name: JP-01-三网优化
-  server: JP01.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: jp01.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: jp01.node.qixi.best
-- name: JP-02-三网优化
-  server: JP02.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: jp02.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: jp02.node.qixi.best
-- name: JP-03-三网优化
-  server: JP03.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: jp03.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: jp03.node.qixi.best
-- name: JP-04-三网优化
-  server: JP04.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: jp04.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: jp04.node.qixi.best
-- name: JP-05-三网优化
-  server: 216.23.120.16
-  port: 16606
-  type: hysteria2
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  sni: bing.com
-  skip-cert-verify: true
 - name: 🇯🇵日本20
   server: 74.82.193.221
   port: 2053
