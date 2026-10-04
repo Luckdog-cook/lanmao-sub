@@ -1,6 +1,6 @@
 # 火种VPN Clash 订阅
-# 生成时间: 2026-10-04 16:33:04
-# 节点数量: 47
+# 生成时间: 2026-10-04 20:58:14
+# 节点数量: 48
 
 mixed-port: 7890
 allow-lan: false
@@ -22,6 +22,15 @@ proxies:
     server: "104.105.140.151"
     port: 47752
     password: "e6b3db1d-3f60-4967-8663-d78e3eb10ecd"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
+  - name: "美国 - 美国-V3 - (洛杉矶/大陆优化)"
+    type: trojan
+    server: "64.32.12.59"
+    port: 43208
+    password: "cdc2e59b-2d8f-4622-91ec-68827c3518e5"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -440,6 +449,7 @@ proxy-groups:
       - "DIRECT"
       - "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
       - "美国 - 美国-V1 - (凤凰城/移动优化)"
+      - "美国 - 美国-V3 - (洛杉矶/大陆优化)"
       - "新加坡 - 新加坡-V5 - (新加坡/移动优化)"
       - "新加坡 - 新加坡-V11 - (新加坡/移动优化)"
       - "美国 - 美国-V4 - (亚特兰大/国际优化)"
@@ -493,6 +503,7 @@ proxy-groups:
     proxies:
       - "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
       - "美国 - 美国-V1 - (凤凰城/移动优化)"
+      - "美国 - 美国-V3 - (洛杉矶/大陆优化)"
       - "新加坡 - 新加坡-V5 - (新加坡/移动优化)"
       - "新加坡 - 新加坡-V11 - (新加坡/移动优化)"
       - "美国 - 美国-V4 - (亚特兰大/国际优化)"
