@@ -15,9 +15,9 @@ proxies:
 
  - name: "新加坡二线"
  type: trojan
- server: kw119.zxmm.eu.org
- port: 20014
- password: "5f02a21608b94624"
+ server: uwt125.zxom.eu.org
+ port: 20031
+ password: "2397d2f95ae54387"
  udp: true
  skip-cert-verify: true
 
@@ -31,9 +31,9 @@ proxies:
 
  - name: "美国"
  type: trojan
- server: su108.izzzzzi.com
+ server: su106.izzzzzi.com
  port: 20031
- password: "e09825df974749a4"
+ password: "9566660cf79645cb"
  udp: true
  skip-cert-verify: true
 
@@ -111,9 +111,9 @@ proxies:
 
  - name: "韩国"
  type: trojan
- server: ikr100a.zxom.eu.org
+ server: ikr100b.zxom.eu.org
  port: 20043
- password: "ffd97c81fca74657"
+ password: "edf04801509e4e64"
  udp: true
  skip-cert-verify: true
 
@@ -135,9 +135,9 @@ proxies:
 
  - name: "德国二线"
  type: trojan
- server: oge188.pacemakere.com
+ server: oge126.pacemakere.com
  port: 20012
- password: "5095e5a810e74bd0"
+ password: "e728d6c2f0fd4c64"
  udp: true
  skip-cert-verify: true
 
