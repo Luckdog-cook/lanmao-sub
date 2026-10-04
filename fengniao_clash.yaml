@@ -7,9 +7,9 @@ external-controller: 127.0.0.1:9090
 proxies:
  - name: "新加坡"
  type: trojan
- server: it193k.zxom.eu.org
- port: 20021
- password: "75545b7f240341dc"
+ server: wt194.moldscience.cc
+ port: 101
+ password: "112bd507195f4b76"
  udp: true
  skip-cert-verify: true
 
@@ -31,9 +31,9 @@ proxies:
 
  - name: "美国"
  type: trojan
- server: su106.izzzzzi.com
+ server: su108.izzzzzi.com
  port: 20030
- password: "b45d1d6db3d94204"
+ password: "61dbbe47ddc047cd"
  udp: true
  skip-cert-verify: true
 
@@ -55,9 +55,9 @@ proxies:
 
  - name: "美国四线"
  type: trojan
- server: gous175.moldscience.cc
- port: 20008
- password: "a8adc0c2fb9f4d8d"
+ server: goodus.zxmm.eu.org
+ port: 20013
+ password: "1a214ccbe41a44db"
  udp: true
  skip-cert-verify: true
 
@@ -79,9 +79,9 @@ proxies:
 
  - name: "中国香港"
  type: trojan
- server: ihk135.zxom.eu.org
- port: 20027
- password: "5fca622c8fff424c"
+ server: tk160.moldscience.cc
+ port: 20001
+ password: "14e20b4026b648b4"
  udp: true
  skip-cert-verify: true
 
@@ -127,9 +127,9 @@ proxies:
 
  - name: "德国"
  type: trojan
- server: lge179.zxmm.eu.org
- port: 20011
- password: "f492678ad5e94fd1"
+ server: lige51.zxmm.eu.org
+ port: 20008
+ password: "4a9687bf26114231"
  udp: true
  skip-cert-verify: true
 
@@ -143,17 +143,17 @@ proxies:
 
  - name: "英国"
  type: trojan
- server: ikuk195.zxom.eu.org
- port: 20012
- password: "78d19f5438764b21"
+ server: ikuk204.zxom.eu.org
+ port: 20016
+ password: "05d0418e1fb64a16"
  udp: true
  skip-cert-verify: true
 
  - name: "泰国"
  type: trojan
- server: gsg192i.zxom.eu.org
- port: 20019
- password: "7c0aea6857e84236"
+ server: isg247.moldscience.cc
+ port: 20001
+ password: "ec5ee9cb78604e4a"
  udp: true
  skip-cert-verify: true
 
@@ -167,17 +167,17 @@ proxies:
 
  - name: "视频专线"
  type: trojan
- server: su108.izzzzzi.com
+ server: su106.izzzzzi.com
  port: 20030
- password: "61dbbe47ddc047cd"
+ password: "b45d1d6db3d94204"
  udp: true
  skip-cert-verify: true
 
  - name: "亚洲大区"
  type: trojan
- server: gsg192i.zxom.eu.org
- port: 20019
- password: "7c0aea6857e84236"
+ server: isg247.moldscience.cc
+ port: 20001
+ password: "ec5ee9cb78604e4a"
  udp: true
  skip-cert-verify: true
 
