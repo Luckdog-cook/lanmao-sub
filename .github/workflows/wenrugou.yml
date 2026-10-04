@@ -1,17 +1,27 @@
 name: wenrugou subscribe update
+
 on:
   schedule:
-    - cron: "13 */12 * * *"
+    # 原为每 12 小时一次，GitHub Actions 的 schedule 经常延迟或漏跑，
+    # 加密到每 4 小时，降低"订阅停摆一整天"的概率
+    - cron: "13 */4 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+# 避免本工作流自身的多次运行互相打架
+concurrency:
+  group: wenrugou-sub-update
+  cancel-in-progress: false
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-python@v5
         with:
@@ -20,8 +30,21 @@ jobs:
       - name: Install deps
         run: pip install requests pyyaml
 
-      - name: Generate
-        run: python wenrugou_subscribe.py
+      - name: Generate (含发布前健康探测)
+        run: python wenrugou_subscribe.py 2>&1 | tee generate.log
+
+      - name: Health report
+        if: always()
+        run: |
+          {
+            echo "## wenrugou 节点健康探测"
+            echo ""
+            echo '```'
+            grep -E '$$(OK   *|DEAD)$$' generate.log || echo '(无探测输出)'
+            echo '```'
+            echo ""
+            grep -E '^$$health$$' generate.log || true
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Copy to repo root
         run: |
@@ -30,8 +53,8 @@ jobs:
             cp -f "download/wenrugou/wenrugou.txt" "./wenrugou.txt"
             cp -f "download/wenrugou/clash_config.yaml" "./clash_config.yaml"
           else
-            echo "ERROR: generated files not found in download/wenrugou/"
-            ls -la download/wenrugou/ || true
+            echo "ERROR: 全部节点未通过健康探测，未生成文件"
+            echo "::error::all wenrugou nodes failed health check, keeping last known-good subscription"
             exit 1
           fi
 
@@ -39,15 +62,31 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -A wenrugou.txt clash_config.yaml
-          git diff --cached --quiet || git commit -m "chore: update wenrugou subscription"
-          git push
+          git add wenrugou.txt clash_config.yaml
+          if git diff --cached --quiet; then
+            echo "no change, skip commit"
+            exit 0
+          fi
+          git commit -m "chore: update wenrugou subscription"
+          # 仓库里十几个工作流都往 main 推送，并发 push 冲突会导致更新静默丢失，
+          # 这里先 rebase 再重试，显著降低"漏更新"概率
+          for i in 1 2 3; do
+            if git pull --rebase --autostash origin main && git push origin main; then
+              echo "push ok on attempt $i"
+              exit 0
+            fi
+            echo "push attempt $i failed, retrying..."
+            sleep 5
+          done
+          echo "::error::push failed after 3 attempts"
+          exit 1
 
       - name: Upload artifacts
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: wenrugou-subscription
           path: |
             wenrugou.txt
             clash_config.yaml
-          if-no-files-found: error
+          if-no-files-found: warn
