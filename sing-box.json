@@ -97,7 +97,28 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]香港-vip-229",
+      "tag": "[CN]泰国-vip-129",
+      "server": "apinbxs.zalolink.com",
+      "server_port": 34914,
+      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.kaidee.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "EG-jzQw1RyOwAM4L9rMKondSx7cyFmPyv1OP7xXkIk4",
+          "short_id": "cbd39bea0805e2"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "[CN]香港-vip-230",
       "server": "apinbxs.zalolink.com",
       "server_port": 39675,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -118,7 +139,7 @@
     },
     {
       "type": "vless",
-      "tag": "[CN]新加坡-vip-230",
+      "tag": "[CN]新加坡-vip-231",
       "server": "funagfr.alixxplay.com",
       "server_port": 57541,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -134,27 +155,6 @@
           "enabled": true,
           "public_key": "hAtfAzXQrbxyqiK3b2XrsxZ35sWiN8iqp0LvjKr9_DE",
           "short_id": "22b19630280c3f"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "[CN]泰国-vip-131",
-      "server": "apinbxs.zalolink.com",
-      "server_port": 34914,
-      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.kaidee.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "ios"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "EG-jzQw1RyOwAM4L9rMKondSx7cyFmPyv1OP7xXkIk4",
-          "short_id": "cbd39bea0805e2"
         }
       }
     },
@@ -911,6 +911,48 @@
           "enabled": true,
           "public_key": "CEI2EZLWT56cxGGEaLpJOp6769o_YrgYp6s2UGOw2ns",
           "short_id": "32a89f7336ff0119"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "[CN]日本-vip-968",
+      "server": "apinbxs.zalolink.com",
+      "server_port": 17606,
+      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "cdn-dynmedia-1.microsoft.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ztQ8VYq_dVDc3x-QM8LXjup2161CirYrIBE1F7loVzQ",
+          "short_id": "6772eb2b7a"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "[CN]新加坡-vip-769",
+      "server": "apinbxs.zalolink.com",
+      "server_port": 46105,
+      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.lamer.com.sg",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "Lk5nwDxC2tr3J7hT8emhUUiMX8cHyKX9TiRj_EnAiik",
+          "short_id": "28f5c1f8f98a"
         }
       }
     },
@@ -2232,9 +2274,9 @@
         "[CN]香港-vip-126",
         "[CN]德国-vip-127",
         "[CN]新加坡-vip-128",
-        "[CN]香港-vip-229",
-        "[CN]新加坡-vip-230",
-        "[CN]泰国-vip-131",
+        "[CN]泰国-vip-129",
+        "[CN]香港-vip-230",
+        "[CN]新加坡-vip-231",
         "[CN]土耳其-vip-132",
         "[CN]土耳其-vip-233",
         "[CN]新加坡-vip-334",
@@ -2271,6 +2313,8 @@
         "[CN]泰国-vip-365",
         "[CN]日本-vip-866",
         "[CN]香港-vip-567",
+        "[CN]日本-vip-968",
+        "[CN]新加坡-vip-769",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
@@ -2350,9 +2394,9 @@
         "[CN]香港-vip-126",
         "[CN]德国-vip-127",
         "[CN]新加坡-vip-128",
-        "[CN]香港-vip-229",
-        "[CN]新加坡-vip-230",
-        "[CN]泰国-vip-131",
+        "[CN]泰国-vip-129",
+        "[CN]香港-vip-230",
+        "[CN]新加坡-vip-231",
         "[CN]土耳其-vip-132",
         "[CN]土耳其-vip-233",
         "[CN]新加坡-vip-334",
@@ -2389,6 +2433,8 @@
         "[CN]泰国-vip-365",
         "[CN]日本-vip-866",
         "[CN]香港-vip-567",
+        "[CN]日本-vip-968",
+        "[CN]新加坡-vip-769",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
