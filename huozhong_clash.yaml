@@ -1,6 +1,6 @@
 # 火种VPN Clash 订阅
-# 生成时间: 2026-10-04 11:53:33
-# 节点数量: 45
+# 生成时间: 2026-10-04 16:33:04
+# 节点数量: 47
 
 mixed-port: 7890
 allow-lan: false
@@ -22,6 +22,24 @@ proxies:
     server: "104.105.140.151"
     port: 47752
     password: "e6b3db1d-3f60-4967-8663-d78e3eb10ecd"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
+  - name: "新加坡 - 新加坡-V5 - (新加坡/移动优化)"
+    type: trojan
+    server: "104.64.206.38"
+    port: 47725
+    password: "438d5731-52b7-4fd4-8094-1a37f7111cc4"
+    udp: true
+    skip-cert-verify: true
+    sni: "vpn-node.internal"
+    alpn: ["http/1.1"]
+  - name: "新加坡 - 新加坡-V11 - (新加坡/移动优化)"
+    type: trojan
+    server: "104.64.206.38"
+    port: 42397
+    password: "438d5731-52b7-4fd4-8094-1a37f7111cc4"
     udp: true
     skip-cert-verify: true
     sni: "vpn-node.internal"
@@ -422,6 +440,8 @@ proxy-groups:
       - "DIRECT"
       - "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
       - "美国 - 美国-V1 - (凤凰城/移动优化)"
+      - "新加坡 - 新加坡-V5 - (新加坡/移动优化)"
+      - "新加坡 - 新加坡-V11 - (新加坡/移动优化)"
       - "美国 - 美国-V4 - (亚特兰大/国际优化)"
       - "美国 - 美国-V5 - (芝加哥/大陆优化)"
       - "美国 - 美国-V6 - (达拉斯/大陆优化)"
@@ -473,6 +493,8 @@ proxy-groups:
     proxies:
       - "香港 - 香港-V1 - (香港/家宽IP/解锁流媒体AI)"
       - "美国 - 美国-V1 - (凤凰城/移动优化)"
+      - "新加坡 - 新加坡-V5 - (新加坡/移动优化)"
+      - "新加坡 - 新加坡-V11 - (新加坡/移动优化)"
       - "美国 - 美国-V4 - (亚特兰大/国际优化)"
       - "美国 - 美国-V5 - (芝加哥/大陆优化)"
       - "美国 - 美国-V6 - (达拉斯/大陆优化)"
