@@ -1,380 +1,9 @@
 proxies:
-- name: HK-01-三网优化
-  server: hk01.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: hk01.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk01.node.qixi.best
-- name: HK-02-三网优化
-  server: hk02.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: hk02.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk02.node.qixi.best
-- name: HK-03-三网优化
-  server: hk03.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: hk03.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk03.node.qixi.best
-- name: HK-05-三网优化
-  server: hk05.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: hk05.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk05.node.qixi.best
-- name: HK-06-三网优化
-  server: hk06.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: hk06.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk06.node.qixi.best
-- name: JP-01-三网优化
-  server: JP01.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: jp01.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: jp01.node.qixi.best
-- name: JP-02-三网优化
-  server: JP02.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: jp02.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: jp02.node.qixi.best
-- name: JP-03-三网优化
-  server: JP03.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: jp03.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: jp03.node.qixi.best
-- name: JP-04-三网优化
-  server: JP04.node.qixi.best
-  port: 443
-  type: trojan
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  network: ws
-  udp: true
-  tls: true
-  servername: jp04.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: jp04.node.qixi.best
-- name: JP-05-三网优化
-  server: 216.23.120.16
-  port: 16606
-  type: hysteria2
-  password: 364d93b4-866c-461d-8713-3b63c470f677
-  sni: bing.com
-  skip-cert-verify: true
-- name: 🇭🇰Hong Kong 01
-  server: tocgpk.miaokaa.com
-  port: 15020
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: fuiWKvjvDOv56iLWdJu_s8d6d-6v5Q-UCyis8-r8RXE
-    short-id: af804b5f1138db28
-- name: 🇭🇰Hong Kong 02
-  server: tocgpk.miaokaa.com
-  port: 31265
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: fuiWKvjvDOv56iLWdJu_s8d6d-6v5Q-UCyis8-r8RXE
-    short-id: af804b5f1138db28
-- name: 🇹🇼Taiwan 01
-  server: tocgpk.miaokaa.com
-  port: 15118
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: fuiWKvjvDOv56iLWdJu_s8d6d-6v5Q-UCyis8-r8RXE
-    short-id: af804b5f1138db28
-- name: 🇹🇼Taiwan 02
-  server: tocgpk.miaokaa.com
-  port: 52528
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: fuiWKvjvDOv56iLWdJu_s8d6d-6v5Q-UCyis8-r8RXE
-    short-id: af804b5f1138db28
-- name: 🇹🇼Taiwan 03
-  server: tocgpk.miaokaa.com
-  port: 28669
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Y_kufzeV7K49RADtrk1_D53mrbi7PmeTB6AKExYPbjo
-    short-id: d0f1bd28e9167c88
-- name: 🇸🇬Singapore 01
-  server: tocgpk.miaokaa.com
-  port: 15147
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: fuiWKvjvDOv56iLWdJu_s8d6d-6v5Q-UCyis8-r8RXE
-    short-id: af804b5f1138db28
-- name: 🇸🇬Singapore 02
-  server: tocgpk.miaokaa.com
-  port: 58385
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: fuiWKvjvDOv56iLWdJu_s8d6d-6v5Q-UCyis8-r8RXE
-    short-id: af804b5f1138db28
-- name: 🇸🇬Singapore 04
-  server: tocgpk.miaokaa.com
-  port: 34602
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: cbtWohH8LlC5T5WWDZnKo5J9EKQg-ojHKISXLW1JcDg
-    short-id: a22ec3a3f0
-- name: 🇸🇬Singapore 03
-  server: tocgpk.miaokaa.com
-  port: 32313
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: dzuDIXZ-QJZBWSLfUbEc-ehDu9ImQRr5OM1jPEmTJUU
-    short-id: 7e73f3
-- name: 🇯🇵Japan 01
-  server: tocgpk.miaokaa.com
-  port: 21488
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: fuiWKvjvDOv56iLWdJu_s8d6d-6v5Q-UCyis8-r8RXE
-    short-id: af804b5f1138db28
-- name: 🇯🇵Japan 02
-  server: tocgpk.miaokaa.com
-  port: 30947
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: fuiWKvjvDOv56iLWdJu_s8d6d-6v5Q-UCyis8-r8RXE
-    short-id: af804b5f1138db28
-- name: 🇯🇵Japan 04
-  server: tocgpk.miaokaa.com
-  port: 11425
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: roqYV5l9jnIqe6Xvy2FKOVpfQY9j0FMjO6cj2YtYbjE
-    short-id: 769d80f72500
-- name: 🇯🇵Japan 03
-  server: tocgpk.miaokaa.com
-  port: 39560
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: 9Bpfgw4gaW-CDhPquRf1sjQkwXZRCak9oswmAvVz2CE
-    short-id: 25cefded73e704
-- name: 🇺🇸America 01
-  server: tocgpk.miaokaa.com
-  port: 23303
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: fuiWKvjvDOv56iLWdJu_s8d6d-6v5Q-UCyis8-r8RXE
-    short-id: af804b5f1138db28
-- name: 🇺🇸America 02
-  server: tocgpk.miaokaa.com
-  port: 20213
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: fuiWKvjvDOv56iLWdJu_s8d6d-6v5Q-UCyis8-r8RXE
-    short-id: af804b5f1138db28
-- name: 🇺🇸America 03
-  server: tocgpk.miaokaa.com
-  port: 57001
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: p8OjkrUbJA0WTwAlddc3HkLZt6olgkIoSoe3udJxSxE
-    short-id: 2e25d3
-- name: 🇺🇸America 04
-  server: tocgpk.miaokaa.com
-  port: 14932
-  type: vless
-  uuid: f8a30ab4-a208-4fd9-9ac5-fa0b20132e1c
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.nippon.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: Lol5iyP9q1aoE_i0kaCZOaapZ82QfCLG4brALX3S9zI
-    short-id: 599c2146214cc2
-- name: 🇯🇵日本20
+- name: 🇭🇰香港-Gemini-IEPL
   server: 74.82.193.221
-  port: 2053
+  port: 31000
   type: vless
-  uuid: f96500be-6dce-46f7-8e45-82f269f0d294
+  uuid: 5a481287-8163-4dea-88d1-2ae25e6b8f4b
   network: tcp
   udp: true
   flow: xtls-rprx-vision
@@ -382,5 +11,159 @@ proxies:
   servername: www.cloudflare.com
   client-fingerprint: chrome
   reality-opts:
-    public-key: BduiVUe1QHYj9bg0YNeCW6lw1SvitNzJqYoQe9B8Q0Y
-    short-id: d60944e27067cb30
+    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
+    short-id: a136d276f05dbf1f
+- name: 🇭🇰香港2-IEPL
+  server: 74.82.193.221
+  port: 31001
+  type: vless
+  uuid: a6318bed-dc98-4cdc-822f-dc88c02c6d01
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
+    short-id: a136d276f05dbf1f
+- name: 🇹🇼台湾-IEPL
+  server: 74.82.193.221
+  port: 31002
+  type: vless
+  uuid: 5b2f0f53-28f4-459a-a75d-fb403be41a78
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
+    short-id: a136d276f05dbf1f
+- name: 🇹🇼台湾2-IEPL
+  server: 74.82.193.221
+  port: 31003
+  type: vless
+  uuid: 79470266-c45d-4cd5-b2cd-6488491b668b
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
+    short-id: a136d276f05dbf1f
+- name: 🇸🇬新加坡-Gemini-IEPL
+  server: 74.82.193.221
+  port: 31004
+  type: vless
+  uuid: a63eb263-a0d1-4509-bbfa-65cbd511c943
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
+    short-id: a136d276f05dbf1f
+- name: 🇸🇬新加坡2-Gemini-IEPL
+  server: 74.82.193.221
+  port: 31005
+  type: vless
+  uuid: be798d3f-adb3-4e1a-9320-17edc657321d
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
+    short-id: a136d276f05dbf1f
+- name: 🇯🇵日本-IEPL-GPT
+  server: 74.82.193.221
+  port: 31006
+  type: vless
+  uuid: eb79326d-bc6d-4539-85dc-0c0553f46b33
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
+    short-id: a136d276f05dbf1f
+- name: 🇯🇵日本2-IEPL-GPT
+  server: 74.82.193.221
+  port: 31007
+  type: vless
+  uuid: 416b058a-e4ce-4b44-88f7-a8cf2f4e896b
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
+    short-id: a136d276f05dbf1f
+- name: 🇯🇵日本4-IEPL-家宽
+  server: 74.82.193.221
+  port: 31008
+  type: vless
+  uuid: 5ce81440-219c-4cde-8358-df3688f6bffb
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
+    short-id: a136d276f05dbf1f
+- name: 🇺🇸美国-IEPL-GPT
+  server: 74.82.193.221
+  port: 31009
+  type: vless
+  uuid: 21a41bb1-c4a1-4f2f-9a44-102868e57f2a
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
+    short-id: a136d276f05dbf1f
+- name: 🇺🇸美国2-IEPL-GPT
+  server: 74.82.193.221
+  port: 31010
+  type: vless
+  uuid: 0c387178-d8f3-465d-bbe4-98c22dc69337
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
+    short-id: a136d276f05dbf1f
+- name: 🇩🇪德国-IEPL
+  server: 74.82.193.221
+  port: 31011
+  type: vless
+  uuid: 3305303f-eede-4e76-ae98-c5693dd187bb
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
+    short-id: a136d276f05dbf1f
