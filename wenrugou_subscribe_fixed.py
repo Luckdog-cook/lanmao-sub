@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """WenruGou nodes -> generate only 2 files: wenrugou.txt + clash_config.yaml"""
-import os, sys, json, time, base64, urllib.parse, requests
+import os, sys, json, time, base64, urllib.parse, socket, requests
 from datetime import datetime
 import yaml
 
@@ -244,6 +244,84 @@ def write_clash_config(path):
         yaml.dump(cfg, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
 
 
+def build_client_hello(sni):
+    """鎵嬪伐鏋勯€犱竴涓渶灏� TLS ClientHello锛屼粎鐢ㄤ簬鎺㈡祴鏈嶅姟绔槸鍚︽湁 TLS 灞傚搷搴斻€�"""
+    ext = b""
+    if sni:
+        name = sni.encode("utf-8")
+        entry = b"\x00" + len(name).to_bytes(2, "big") + name
+        data = len(entry).to_bytes(2, "big") + entry
+        ext += b"\x00\x00" + len(data).to_bytes(2, "big") + data
+    d = b"\x04\x03\x04"                      # supported_versions: TLS1.3
+    ext += b"\x00\x2b" + len(d).to_bytes(2, "big") + d
+    groups = b"\x00\x1d\x00\x17\x00\x18"     # supported_groups
+    d = len(groups).to_bytes(2, "big") + groups
+    ext += b"\x00\x0a" + len(d).to_bytes(2, "big") + d
+    algs = bytes.fromhex("04030804040105030805050108060601")   # signature_algorithms
+    d = len(algs).to_bytes(2, "big") + algs
+    ext += b"\x00\x0d" + len(d).to_bytes(2, "big") + d
+    ciphers = bytes.fromhex("130113021303c02fc02bc030")
+    body = (b"\x03\x03" + os.urandom(32) + b"\x00"
+            + len(ciphers).to_bytes(2, "big") + ciphers
+            + b"\x01\x00" + len(ext).to_bytes(2, "big") + ext)
+    hs = b"\x01" + len(body).to_bytes(3, "big") + body
+    return b"\x16\x03\x01" + len(hs).to_bytes(2, "big") + hs
+
+
+def tls_alive(host, port, sni, timeout=6):
+    """鎺㈡祴鏈嶅姟绔槸鍚﹀搷搴� TLS銆�
+
+    Reality 鏈嶅姟绔敹鍒伴潪 Reality 鐨� ClientHello 鏃堕€氬父浼氳浆鍙戝埌 dest 骞惰繑鍥炶瘉涔︼紝
+    鍥犳"鏀跺埌浠讳綍瀛楄妭"鍗冲彲璁や负璇ョ鍙ｅ瓨娲伙紱瀹屽叏 0 瀛楄妭鍝嶅簲鎴� RST 璇存槑绔彛宸插け鏁堛€�
+    """
+    try:
+        s = socket.create_connection((host, port), timeout=timeout)
+    except Exception as e:
+        return False, "TCP澶辫触: %s" % type(e).__name__
+    try:
+        s.settimeout(timeout)
+        s.sendall(build_client_hello(sni or host))
+        data = s.recv(2048)
+        if data:
+            return True, "鏈夊搷搴�(%dB)" % len(data)
+        return False, "鏃犲搷搴�(0瀛楄妭)"
+    except socket.timeout:
+        return False, "TLS鎻℃墜鏃犲搷搴�(瓒呮椂)"
+    except Exception as e:
+        return False, "%s: %s" % (type(e).__name__, str(e)[:40])
+    finally:
+        try:
+            s.close()
+        except Exception:
+            pass
+
+
+def health_check(nodes, workers=16):
+    """骞跺彂鎺㈡祴鑺傜偣瀛樻椿锛岃繑鍥� (瀛樻椿鑺傜偣鍒楄〃, 鎺㈡祴鎶ュ憡)銆�"""
+    from concurrent.futures import ThreadPoolExecutor
+
+    def work(n):
+        cfg = n.get("config", {}) or {}
+        host = cfg.get("server", "")
+        try:
+            port = int(cfg.get("server_port", 0) or 0)
+        except Exception:
+            port = 0
+        sni = (cfg.get("tls", {}) or {}).get("server_name") or ""
+        if not host or not port:
+            return n, False, "缂哄皯鍦板潃/绔彛"
+        ok, reason = tls_alive(host, port, sni)
+        return n, ok, reason
+
+    alive, report = [], []
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        for n, ok, reason in ex.map(work, nodes):
+            report.append((n.get("name", "?"), ok, reason))
+            if ok:
+                alive.append(n)
+    return alive, report
+
+
 def fetch_api_with_retry(max_retries=3, retry_delay=2):
     for i in range(1, max_retries + 1):
         try:
@@ -268,6 +346,16 @@ def main():
         print("no nodes")
         return
     print(f"got {len(nodes)} nodes, generating...")
+
+    # 鍙戝竷鍓嶅仴搴锋帰娴嬶細鍓旈櫎绔彛宸插け鏁堢殑鑺傜偣锛岄伩鍏嶆帹閫佷竴鍫嗗繀鐒惰秴鏃剁殑姝婚摼
+    print("[health] probing nodes...")
+    nodes, report = health_check(nodes)
+    for name, ok, reason in report:
+        print(f"  [{'OK  ' if ok else 'DEAD'}] {name} - {reason}")
+    if not nodes:
+        print("ERROR: 鍏ㄩ儴鑺傜偣鏈€氳繃鍋ュ悍鎺㈡祴 -> 涓嶈鐩栨棫璁㈤槄锛屼繚鐣欎笂涓€娆″彲鐢ㄧ増鏈�")
+        return
+    print(f"[health] alive {len(nodes)}/{len(report)}")
 
     os.makedirs(SAVE_DIR, exist_ok=True)
     print(f"DIR: {SAVE_DIR}")
