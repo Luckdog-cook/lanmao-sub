@@ -16,72 +16,72 @@ proxies:
  - name: "新加坡二线"
  type: trojan
  server: uwt125.zxom.eu.org
- port: 20030
- password: "0bfedf35a16e4564"
+ port: 20031
+ password: "2397d2f95ae54387"
  udp: true
  skip-cert-verify: true
 
  - name: "新加坡三线"
  type: trojan
  server: ip157i.moldscience.cc
- port: 20018
- password: "f92da4d31615402c"
+ port: 20019
+ password: "829dd045be1841bc"
  udp: true
  skip-cert-verify: true
 
  - name: "美国"
  type: trojan
  server: su108.izzzzzi.com
- port: 20030
- password: "61dbbe47ddc047cd"
+ port: 20031
+ password: "e09825df974749a4"
  udp: true
  skip-cert-verify: true
 
  - name: "美国二线"
  type: trojan
  server: lius3.moldscience.cc
- port: 20032
- password: "32764b28029249bd"
+ port: 20033
+ password: "5c3558b194a149ac"
  udp: true
  skip-cert-verify: true
 
  - name: "美国三线"
  type: trojan
  server: sa245.moldscience.cc
- port: 20030
- password: "bf3032ad3f1342da"
+ port: 20031
+ password: "19d0e8bb45eb489f"
  udp: true
  skip-cert-verify: true
 
  - name: "美国四线"
  type: trojan
- server: goodus.zxmm.eu.org
- port: 20013
- password: "1a214ccbe41a44db"
+ server: gous175.moldscience.cc
+ port: 20009
+ password: "c64af78422e14cec"
  udp: true
  skip-cert-verify: true
 
  - name: "中国台湾"
  type: trojan
  server: uwt125.zxom.eu.org
- port: 20030
- password: "0bfedf35a16e4564"
+ port: 20031
+ password: "2397d2f95ae54387"
  udp: true
  skip-cert-verify: true
 
  - name: "台湾二线"
  type: trojan
  server: gu232.izzzzzi.com
- port: 20033
- password: "83faa10605014a63"
+ port: 20034
+ password: "c10eebb4086f4317"
  udp: true
  skip-cert-verify: true
 
  - name: "中国香港"
  type: trojan
  server: tk160.moldscience.cc
- port: 20001
- password: "14e20b4026b648b4"
+ port: 20002
+ password: "b6b2716a23004171"
  udp: true
  skip-cert-verify: true
 
@@ -96,8 +96,8 @@ proxies:
  - name: "日本"
  type: trojan
  server: ip157i.moldscience.cc
- port: 20018
- password: "f92da4d31615402c"
+ port: 20019
+ password: "829dd045be1841bc"
  udp: true
  skip-cert-verify: true
 
@@ -112,72 +112,72 @@ proxies:
  - name: "韩国"
  type: trojan
  server: ikr100a.zxom.eu.org
- port: 20042
- password: "03378a7f1c114c87"
+ port: 20043
+ password: "ffd97c81fca74657"
  udp: true
  skip-cert-verify: true
 
  - name: "韩国二线"
  type: trojan
  server: akr187.moldscience.cc
- port: 20008
- password: "4db6e375fd2546ca"
+ port: 20009
+ password: "fd39056c80244c90"
  udp: true
  skip-cert-verify: true
 
  - name: "德国"
  type: trojan
  server: lige51.zxmm.eu.org
- port: 20008
- password: "4a9687bf26114231"
+ port: 20009
+ password: "ecfec9e3acfa42a9"
  udp: true
  skip-cert-verify: true
 
  - name: "德国二线"
  type: trojan
- server: oge188.pacemakere.com
- port: 20011
- password: "7eff7556b17a46bc"
+ server: oge126.pacemakere.com
+ port: 20012
+ password: "e728d6c2f0fd4c64"
  udp: true
  skip-cert-verify: true
 
  - name: "英国"
  type: trojan
  server: ikuk204.zxom.eu.org
- port: 20016
- password: "05d0418e1fb64a16"
+ port: 20017
+ password: "c085f408774541d4"
  udp: true
  skip-cert-verify: true
 
  - name: "泰国"
  type: trojan
  server: isg247.moldscience.cc
- port: 20001
- password: "ec5ee9cb78604e4a"
+ port: 20002
+ password: "d88062af575f4bc0"
  udp: true
  skip-cert-verify: true
 
  - name: "ChatGPT"
  type: trojan
  server: ip157i.moldscience.cc
- port: 20018
- password: "f92da4d31615402c"
+ port: 20019
+ password: "829dd045be1841bc"
  udp: true
  skip-cert-verify: true
 
  - name: "视频专线"
  type: trojan
  server: su106.izzzzzi.com
- port: 20030
- password: "b45d1d6db3d94204"
+ port: 20031
+ password: "9566660cf79645cb"
  udp: true
  skip-cert-verify: true
 
  - name: "亚洲大区"
  type: trojan
  server: isg247.moldscience.cc
- port: 20001
- password: "ec5ee9cb78604e4a"
+ port: 20002
+ password: "d88062af575f4bc0"
  udp: true
  skip-cert-verify: true
 
