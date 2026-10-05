@@ -1,169 +1,133 @@
 proxies:
 - name: 🇭🇰香港-Gemini-IEPL
-  server: 74.82.193.221
-  port: 31000
-  type: vless
-  uuid: 6817f831-4cac-40bc-bc43-a02c02cf27a5
-  network: tcp
+  server: gd.bjnet2.com
+  port: 36602
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
-    short-id: a136d276f05dbf1f
+  plugin: obfs-local
+  plugin-opts:
+    obfs: http
+    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇭🇰香港2-IEPL
-  server: 74.82.193.221
-  port: 31001
-  type: vless
-  uuid: cd1d6779-cc6a-4882-a292-e79cc52674b4
-  network: tcp
+  server: gd2.bjnet2.com
+  port: 36602
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
-    short-id: a136d276f05dbf1f
+  plugin: obfs-local
+  plugin-opts:
+    obfs: http
+    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇹🇼台湾-IEPL
-  server: 74.82.193.221
-  port: 31002
-  type: vless
-  uuid: ff374e35-d340-40f1-ad3e-22fcfd9a5e3e
-  network: tcp
+  server: gd.bjnet2.com
+  port: 36603
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
-    short-id: a136d276f05dbf1f
+  plugin: obfs-local
+  plugin-opts:
+    obfs: http
+    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇹🇼台湾2-IEPL
-  server: 74.82.193.221
-  port: 31003
-  type: vless
-  uuid: b03172ff-cd26-4312-b2a6-89d1856d3e28
-  network: tcp
+  server: gd2.bjnet2.com
+  port: 36603
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
-    short-id: a136d276f05dbf1f
+  plugin: obfs-local
+  plugin-opts:
+    obfs: http
+    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇸🇬新加坡-Gemini-IEPL
-  server: 74.82.193.221
-  port: 31004
-  type: vless
-  uuid: 556d3557-d2aa-4f3c-adf0-9878a5e19705
-  network: tcp
+  server: gd.bjnet2.com
+  port: 36604
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
-    short-id: a136d276f05dbf1f
+  plugin: obfs-local
+  plugin-opts:
+    obfs: http
+    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇸🇬新加坡2-Gemini-IEPL
-  server: 74.82.193.221
-  port: 31005
-  type: vless
-  uuid: ffa30c83-2a0f-42fd-a935-4ec5910fc953
-  network: tcp
+  server: gd2.bjnet2.com
+  port: 36604
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
-    short-id: a136d276f05dbf1f
+  plugin: obfs-local
+  plugin-opts:
+    obfs: http
+    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本-IEPL-GPT
-  server: 74.82.193.221
-  port: 31006
-  type: vless
-  uuid: 6690828e-6eec-409c-9e17-48b4d5c35a5b
-  network: tcp
+  server: gd.bjnet2.com
+  port: 36609
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
-    short-id: a136d276f05dbf1f
+  plugin: obfs-local
+  plugin-opts:
+    obfs: http
+    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本2-IEPL-GPT
-  server: 74.82.193.221
-  port: 31007
-  type: vless
-  uuid: b4ade5da-aeba-493a-8271-0cdbcb8790ef
-  network: tcp
+  server: gd2.bjnet2.com
+  port: 36609
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
-    short-id: a136d276f05dbf1f
+  plugin: obfs-local
+  plugin-opts:
+    obfs: http
+    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本4-IEPL-家宽
-  server: 74.82.193.221
-  port: 31008
-  type: vless
-  uuid: bf5c42b2-0304-4b7b-a190-a1cdc27eeb30
-  network: tcp
+  server: gd2.bjnet2.com
+  port: 36610
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
-    short-id: a136d276f05dbf1f
+  plugin: obfs-local
+  plugin-opts:
+    obfs: http
+    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇺🇸美国-IEPL-GPT
-  server: 74.82.193.221
-  port: 31009
-  type: vless
-  uuid: ea51668c-1882-4b7c-80f6-4d121ca1c1ef
-  network: tcp
+  server: gd.bjnet2.com
+  port: 36608
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
-    short-id: a136d276f05dbf1f
+  plugin: obfs-local
+  plugin-opts:
+    obfs: http
+    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇺🇸美国2-IEPL-GPT
-  server: 74.82.193.221
-  port: 31010
-  type: vless
-  uuid: 501df885-4c78-4d3d-bb31-ab311af52cdc
-  network: tcp
+  server: gd2.bjnet2.com
+  port: 36608
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
-    short-id: a136d276f05dbf1f
+  plugin: obfs-local
+  plugin-opts:
+    obfs: http
+    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇩🇪德国-IEPL
-  server: 74.82.193.221
-  port: 31011
-  type: vless
-  uuid: 6c8c16a4-5b7e-4727-acc9-b6d2bf2d2a57
-  network: tcp
+  server: gd.bjnet2.com
+  port: 36611
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: UGyT3l-fyb6z4gIsb789qHWMHutV83Y0dBJfp4jnZic
-    short-id: a136d276f05dbf1f
+  plugin: obfs-local
+  plugin-opts:
+    obfs: http
+    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
