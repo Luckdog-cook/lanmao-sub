@@ -3,7 +3,7 @@ proxies:
   server: 74.82.193.221
   port: 31000
   type: vless
-  uuid: 5a481287-8163-4dea-88d1-2ae25e6b8f4b
+  uuid: 6817f831-4cac-40bc-bc43-a02c02cf27a5
   network: tcp
   udp: true
   flow: xtls-rprx-vision
@@ -17,7 +17,7 @@ proxies:
   server: 74.82.193.221
   port: 31001
   type: vless
-  uuid: a6318bed-dc98-4cdc-822f-dc88c02c6d01
+  uuid: cd1d6779-cc6a-4882-a292-e79cc52674b4
   network: tcp
   udp: true
   flow: xtls-rprx-vision
@@ -31,7 +31,7 @@ proxies:
   server: 74.82.193.221
   port: 31002
   type: vless
-  uuid: 5b2f0f53-28f4-459a-a75d-fb403be41a78
+  uuid: ff374e35-d340-40f1-ad3e-22fcfd9a5e3e
   network: tcp
   udp: true
   flow: xtls-rprx-vision
@@ -45,7 +45,7 @@ proxies:
   server: 74.82.193.221
   port: 31003
   type: vless
-  uuid: 79470266-c45d-4cd5-b2cd-6488491b668b
+  uuid: b03172ff-cd26-4312-b2a6-89d1856d3e28
   network: tcp
   udp: true
   flow: xtls-rprx-vision
@@ -59,7 +59,7 @@ proxies:
   server: 74.82.193.221
   port: 31004
   type: vless
-  uuid: a63eb263-a0d1-4509-bbfa-65cbd511c943
+  uuid: 556d3557-d2aa-4f3c-adf0-9878a5e19705
   network: tcp
   udp: true
   flow: xtls-rprx-vision
@@ -73,7 +73,7 @@ proxies:
   server: 74.82.193.221
   port: 31005
   type: vless
-  uuid: be798d3f-adb3-4e1a-9320-17edc657321d
+  uuid: ffa30c83-2a0f-42fd-a935-4ec5910fc953
   network: tcp
   udp: true
   flow: xtls-rprx-vision
@@ -87,7 +87,7 @@ proxies:
   server: 74.82.193.221
   port: 31006
   type: vless
-  uuid: eb79326d-bc6d-4539-85dc-0c0553f46b33
+  uuid: 6690828e-6eec-409c-9e17-48b4d5c35a5b
   network: tcp
   udp: true
   flow: xtls-rprx-vision
@@ -101,7 +101,7 @@ proxies:
   server: 74.82.193.221
   port: 31007
   type: vless
-  uuid: 416b058a-e4ce-4b44-88f7-a8cf2f4e896b
+  uuid: b4ade5da-aeba-493a-8271-0cdbcb8790ef
   network: tcp
   udp: true
   flow: xtls-rprx-vision
@@ -115,7 +115,7 @@ proxies:
   server: 74.82.193.221
   port: 31008
   type: vless
-  uuid: 5ce81440-219c-4cde-8358-df3688f6bffb
+  uuid: bf5c42b2-0304-4b7b-a190-a1cdc27eeb30
   network: tcp
   udp: true
   flow: xtls-rprx-vision
@@ -129,7 +129,7 @@ proxies:
   server: 74.82.193.221
   port: 31009
   type: vless
-  uuid: 21a41bb1-c4a1-4f2f-9a44-102868e57f2a
+  uuid: ea51668c-1882-4b7c-80f6-4d121ca1c1ef
   network: tcp
   udp: true
   flow: xtls-rprx-vision
@@ -143,7 +143,7 @@ proxies:
   server: 74.82.193.221
   port: 31010
   type: vless
-  uuid: 0c387178-d8f3-465d-bbe4-98c22dc69337
+  uuid: 501df885-4c78-4d3d-bb31-ab311af52cdc
   network: tcp
   udp: true
   flow: xtls-rprx-vision
@@ -157,7 +157,7 @@ proxies:
   server: 74.82.193.221
   port: 31011
   type: vless
-  uuid: 3305303f-eede-4e76-ae98-c5693dd187bb
+  uuid: 6c8c16a4-5b7e-4727-acc9-b6d2bf2d2a57
   network: tcp
   udp: true
   flow: xtls-rprx-vision
