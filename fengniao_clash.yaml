@@ -7,9 +7,9 @@ external-controller: 127.0.0.1:9090
 proxies:
  - name: "新加坡"
  type: trojan
- server: iwt196.moldscience.cc
- port: 20031
- password: "cc70b22a23ed4de3"
+ server: it193k.zxom.eu.org
+ port: 20022
+ password: "307e2c5f339e482b"
  udp: true
  skip-cert-verify: true
 
@@ -48,8 +48,8 @@ proxies:
  - name: "美国三线"
  type: trojan
  server: sa245.moldscience.cc
- port: 20031
- password: "19d0e8bb45eb489f"
+ port: 20032
+ password: "e50c734b033a4ca9"
  udp: true
  skip-cert-verify: true
 
@@ -63,9 +63,9 @@ proxies:
 
  - name: "中国台湾"
  type: trojan
- server: uwt125.zxom.eu.org
- port: 20031
- password: "2397d2f95ae54387"
+ server: kw119.zxmm.eu.org
+ port: 20014
+ password: "5f02a21608b94624"
  udp: true
  skip-cert-verify: true
 
@@ -111,9 +111,9 @@ proxies:
 
  - name: "韩国"
  type: trojan
- server: ikr185.moldscience.cc
- port: 20031
- password: "98abdb204f81446a"
+ server: ikr200.zxom.eu.org
+ port: 20042
+ password: "0138525040164ede"
  udp: true
  skip-cert-verify: true
 
@@ -127,9 +127,9 @@ proxies:
 
  - name: "德国"
  type: trojan
- server: lge179.zxmm.eu.org
- port: 20012
- password: "12913174d4f84968"
+ server: lige51.zxmm.eu.org
+ port: 20009
+ password: "ecfec9e3acfa42a9"
  udp: true
  skip-cert-verify: true
 
