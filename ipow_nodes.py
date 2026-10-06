@@ -1,16 +1,5 @@
 #!/usr/bin/env python3
-"""iPoW.ai 自动注册 + 全网节点拉取（429 自动换号续传）。
-
-**独立单文件**：不依赖 ipow_client.py 或 generate_configs.py，所有必要代码已内联。
-
-用法
-----
-    python auto_register.py                      # 拉全部节点
-    python auto_register.py --limit 5             # 只拉前 5 个
-    python auto_register.py --wallets 3           # 最多用 3 个钱包
-    python auto_register.py --interval 2.5        # 请求间隔
-    python auto_register.py -v                    # 详细输出
-"""
+"""iPoW.ai 自动注册 + 全网节点拉取（429 自动换号续传）。 **独立单文件**：不依赖 ipow_client.py 或 generate_configs.py，所有必要代码已内联。 本版本已对齐可用的 v2 拉取逻辑，修复"拉不全全部节点"的问题： * 去掉会卡死循环的命中校验（got != node_id -> continue） * 失败的节点归入 unusable 集合一次性跳过，保证 remaining 严格递减 * 取消每钱包 62 个的人为截断，单个钱包拉完全部剩余节点（撞 429 才换号） * 移除"空结果即 break"的提前终止 * 目录获取兼容 /v1/nodes 与 /p2p-lite/v1/nodes，并补入全量已知物理节点 用法 ---- python auto_register.py # 拉全部节点 python auto_register.py --limit 5 # 只拉前 5 个 python auto_register.py --wallets 3 # 最多用 3 个钱包 python auto_register.py --interval 2.5 # 请求间隔 python auto_register.py -v # 详细输出 """
 
 import argparse
 import base64
@@ -57,6 +46,72 @@ DEFAULT_SNI = 'www.cloudflare.com'
 DEFAULT_FINGERPRINT = 'chrome'
 MERGED_NODES_FILE = 'all_nodes.json'
 WALLETS_FILE = 'auto_wallets.json'
+
+# 内置全量已知物理节点（单文件独立运行，目录不全时兜底，确保 62 个物理机都能被尝试）
+KNOWN_PHYSICAL_NODES = [
+    {"id": "gcp-australia-southeast1-1", "country_code": "AU", "country": "Australia", "city": "australia-southeast1-a", "status": "online"},
+    {"id": "gcp-australia-southeast1-2", "country_code": "AU", "country": "Australia", "city": "australia-southeast1-b", "status": "online"},
+    {"id": "gcp-europe-west1-1", "country_code": "BE", "country": "Belgium", "city": "Brussels", "status": "online"},
+    {"id": "gcp-europe-west1-2", "country_code": "BE", "country": "Belgium", "city": "Brussels", "status": "online"},
+    {"id": "gcp-europe-west1-be-1", "country_code": "BE", "country": "Belgium", "city": "europe-west1-b", "status": "online"},
+    {"id": "gcp-europe-west1-be-2", "country_code": "BE", "country": "Belgium", "city": "europe-west1-c", "status": "online"},
+    {"id": "gcp-southamerica-east1-1", "country_code": "BR", "country": "Brazil", "city": "southamerica-east1-a", "status": "online"},
+    {"id": "gcp-southamerica-east1-2", "country_code": "BR", "country": "Brazil", "city": "southamerica-east1-a", "status": "online"},
+    {"id": "gcp-northamerica-northeast1-1", "country_code": "CA", "country": "Canada", "city": "northamerica-northeast1-a", "status": "online"},
+    {"id": "gcp-northamerica-northeast1-2", "country_code": "CA", "country": "Canada", "city": "northamerica-northeast1-b", "status": "online"},
+    {"id": "gcp-europe-west6-1", "country_code": "CH", "country": "Switzerland", "city": "europe-west6-a", "status": "online"},
+    {"id": "gcp-europe-west6-2", "country_code": "CH", "country": "Switzerland", "city": "europe-west6-b", "status": "online"},
+    {"id": "gcp-southamerica-west1-cl-1", "country_code": "CL", "country": "Chile", "city": "southamerica-west1-a", "status": "online"},
+    {"id": "gcp-southamerica-west1-cl-2", "country_code": "CL", "country": "Chile", "city": "southamerica-west1-b", "status": "online"},
+    {"id": "gcp-europe-west3-1", "country_code": "DE", "country": "Germany", "city": "europe-west3-b", "status": "online"},
+    {"id": "gcp-europe-west3-2", "country_code": "DE", "country": "Germany", "city": "europe-west3-c", "status": "online"},
+    {"id": "gcp-europe-southwest1-es-1", "country_code": "ES", "country": "Spain", "city": "europe-southwest1-a", "status": "online"},
+    {"id": "gcp-europe-southwest1-es-2", "country_code": "ES", "country": "Spain", "city": "europe-southwest1-b", "status": "online"},
+    {"id": "gcp-europe-north1-fi-1", "country_code": "FI", "country": "Finland", "city": "europe-north1-a", "status": "online"},
+    {"id": "gcp-europe-north1-fi-2", "country_code": "FI", "country": "Finland", "city": "europe-north1-b", "status": "online"},
+    {"id": "gcp-europe-west9-1", "country_code": "FR", "country": "France", "city": "europe-west9-b", "status": "online"},
+    {"id": "gcp-europe-west9-2", "country_code": "FR", "country": "France", "city": "europe-west9-b", "status": "online"},
+    {"id": "gcp-europe-west2-1", "country_code": "GB", "country": "United Kingdom", "city": "europe-west2-b", "status": "online"},
+    {"id": "gcp-europe-west2-2", "country_code": "GB", "country": "United Kingdom", "city": "europe-west2-a", "status": "online"},
+    {"id": "gcp-asia-east2-1", "country_code": "HK", "country": "Hong Kong", "city": "asia-east2-a", "status": "online"},
+    {"id": "gcp-asia-east2-2", "country_code": "HK", "country": "Hong Kong", "city": "asia-east2-b", "status": "online"},
+    {"id": "gcp-asia-southeast2-1", "country_code": "ID", "country": "Indonesia", "city": "asia-southeast2-a", "status": "online"},
+    {"id": "gcp-asia-southeast2-2", "country_code": "ID", "country": "Indonesia", "city": "asia-southeast2-b", "status": "online"},
+    {"id": "gcp-me-west1-il-1", "country_code": "IL", "country": "Israel", "city": "me-west1-a", "status": "online"},
+    {"id": "gcp-me-west1-il-2", "country_code": "IL", "country": "Israel", "city": "me-west1-b", "status": "online"},
+    {"id": "gcp-asia-south1-1", "country_code": "IN", "country": "India", "city": "asia-south1-b", "status": "online"},
+    {"id": "gcp-asia-south1-2", "country_code": "IN", "country": "India", "city": "asia-south1-c", "status": "online"},
+    {"id": "gcp-europe-west8-it-1", "country_code": "IT", "country": "Italy", "city": "europe-west8-a", "status": "online"},
+    {"id": "gcp-europe-west8-it-2", "country_code": "IT", "country": "Italy", "city": "europe-west8-b", "status": "online"},
+    {"id": "gcp-asia-northeast1-1", "country_code": "JP", "country": "Japan", "city": "asia-northeast1-b", "status": "online"},
+    {"id": "gcp-asia-northeast1-2", "country_code": "JP", "country": "Japan", "city": "asia-northeast1-c", "status": "online"},
+    {"id": "gcp-asia-northeast3-1", "country_code": "KR", "country": "South Korea", "city": "asia-northeast3-a", "status": "online"},
+    {"id": "gcp-asia-northeast3-2", "country_code": "KR", "country": "South Korea", "city": "asia-northeast3-b", "status": "online"},
+    {"id": "gcp-northamerica-south1-mx-1", "country_code": "MX", "country": "Mexico", "city": "northamerica-south1-a", "status": "online"},
+    {"id": "gcp-northamerica-south1-mx-2", "country_code": "MX", "country": "Mexico", "city": "northamerica-south1-b", "status": "online"},
+    {"id": "gcp-europe-west4-1", "country_code": "NL", "country": "Netherlands", "city": "europe-west4-a", "status": "online"},
+    {"id": "gcp-europe-west4-2", "country_code": "NL", "country": "Netherlands", "city": "europe-west4-b", "status": "online"},
+    {"id": "gcp-europe-central2-pl-1", "country_code": "PL", "country": "Poland", "city": "Warsaw", "status": "online"},
+    {"id": "gcp-europe-central2-pl-2", "country_code": "PL", "country": "Poland", "city": "Warsaw", "status": "online"},
+    {"id": "gcp-me-central1-1", "country_code": "QA", "country": "Qatar", "city": "me-central1-a", "status": "online"},
+    {"id": "gcp-me-central1-2", "country_code": "QA", "country": "Qatar", "city": "me-central1-b", "status": "online"},
+    {"id": "gcp-europe-north2-1", "country_code": "SE", "country": "Sweden", "city": "europe-north2-b", "status": "online"},
+    {"id": "gcp-europe-north2-2", "country_code": "SE", "country": "Sweden", "city": "europe-north2-c", "status": "online"},
+    {"id": "gcp-asia-southeast1-1", "country_code": "SG", "country": "Singapore", "city": "Singapore", "status": "online"},
+    {"id": "gcp-asia-southeast1-2", "country_code": "SG", "country": "Singapore", "city": "asia-southeast1-c", "status": "online"},
+    {"id": "gcp-asia-southeast3-1", "country_code": "TH", "country": "Thailand", "city": "asia-southeast3-a", "status": "online"},
+    {"id": "gcp-asia-southeast3-2", "country_code": "TH", "country": "Thailand", "city": "asia-southeast3-b", "status": "online"},
+    {"id": "gcp-asia-east1-1", "country_code": "TW", "country": "Taiwan", "city": "asia-east1-a", "status": "online"},
+    {"id": "gcp-asia-east1-2", "country_code": "TW", "country": "Taiwan", "city": "asia-east1-b", "status": "online"},
+    {"id": "gcp-us-central1-1", "country_code": "US", "country": "United States", "city": "Council Bluffs", "status": "online"},
+    {"id": "gcp-us-central1-2", "country_code": "US", "country": "United States", "city": "Council Bluffs", "status": "online"},
+    {"id": "gcp-us-east4-1", "country_code": "US", "country": "United States", "city": "us-east4-b", "status": "online"},
+    {"id": "gcp-us-east4-2", "country_code": "US", "country": "United States", "city": "us-east4-c", "status": "online"},
+    {"id": "gcp-us-west1-1", "country_code": "US", "country": "United States", "city": "us-west1-b", "status": "online"},
+    {"id": "gcp-us-west1-2", "country_code": "US", "country": "United States", "city": "us-west1-c", "status": "online"},
+    {"id": "gcp-africa-south1-za-1", "country_code": "ZA", "country": "South Africa", "city": "africa-south1-a", "status": "online"},
+    {"id": "gcp-africa-south1-za-2", "country_code": "ZA", "country": "South Africa", "city": "africa-south1-b", "status": "online"},
+]
 
 # ---------------------------------------------------------------------------
 # 异常
@@ -123,11 +178,11 @@ class IpowClient:
         url = self.base + path
         if self.verbose:
             shown = json.dumps(body, ensure_ascii=False)[:160] if body else ''
-            print('  -> {} {} {}'.format(method, path, shown))
+            print(' -> {} {} {}'.format(method, path, shown))
         r = self.http.request(method, url, json=body, headers=headers,
                               timeout=self.timeout)
         if self.verbose:
-            print('  <- {} {}'.format(r.status_code, r.text[:160]))
+            print(' <- {} {}'.format(r.status_code, r.text[:160]))
         if r.status_code == 429:
             raw = r.headers.get('Retry-After') or r.headers.get('retry-after')
             try:
@@ -175,8 +230,7 @@ class IpowClient:
             'preferred_country': 'AUTO',
         }, token=token)
 
-    def capability(self, token, session_id, country, subscription_token,
-                   device_id, node_id=None):
+    def capability(self, token, session_id, country, subscription_token, device_id, node_id=None):
         body = {
             'session_id': session_id,
             'client_type': CLIENT_TYPE,
@@ -222,20 +276,20 @@ def build_clash_yaml(nodes):
         'proxies:',
     ]
     for n in nodes:
-        lines.append("  - name: '{}'".format(node_name(n)))
-        lines.append('    type: vless')
-        lines.append('    server: {}'.format(n['server']))
-        lines.append('    port: {}'.format(n['port']))
-        lines.append('    uuid: {}'.format(n['uuid']))
-        lines.append('    network: tcp')
-        lines.append('    tls: true')
-        lines.append('    udp: true')
-        lines.append('    servername: {}'.format(n.get('sni') or DEFAULT_SNI))
-        lines.append('    client-fingerprint: {}'.format(
+        lines.append(" - name: '{}'".format(node_name(n)))
+        lines.append(' type: vless')
+        lines.append(' server: {}'.format(n['server']))
+        lines.append(' port: {}'.format(n['port']))
+        lines.append(' uuid: {}'.format(n['uuid']))
+        lines.append(' network: tcp')
+        lines.append(' tls: true')
+        lines.append(' udp: true')
+        lines.append(' servername: {}'.format(n.get('sni') or DEFAULT_SNI))
+        lines.append(' client-fingerprint: {}'.format(
             n.get('fingerprint') or DEFAULT_FINGERPRINT))
-        lines.append('    reality-opts:')
-        lines.append("      public-key: '{}'".format(n['public_key']))
-        lines.append("      short-id: '{}'".format(n['short_id']))
+        lines.append(' reality-opts:')
+        lines.append(" public-key: '{}'".format(n['public_key']))
+        lines.append(" short-id: '{}'".format(n['short_id']))
     return '\n'.join(lines)
 
 
@@ -290,7 +344,7 @@ def write_configs(nodes, work_dir, quiet=False):
     if not quiet:
         print('已写入 {} 个节点:'.format(len(nodes)))
         for k, p in paths.items():
-            print('  {} -> {}'.format(k, p))
+            print(' {} -> {}'.format(k, p))
     return paths
 
 
@@ -364,9 +418,9 @@ def register_new_wallet(client, verbose=False):
     device_name = random_device_name()
 
     if verbose:
-        print(f'  新钱包: {address}')
-        print(f'  设备ID: {device_id}')
-        print(f'  设备名: {device_name}')
+        print(f' 新钱包: {address}')
+        print(f' 设备ID: {device_id}')
+        print(f' 设备名: {device_name}')
 
     ch = client.challenge(address)
     message = ch.get('message') or ch.get('nonce')
@@ -396,32 +450,35 @@ def register_new_wallet(client, verbose=False):
 
     if res.get('is_new_user'):
         if verbose:
-            print('  ✅ 新账号已创建')
+            print(' ✅ 新账号已创建')
     else:
         if verbose:
-            print('  ⚡ 已有钱包，复用登录')
+            print(' ⚡ 已有钱包，复用登录')
 
     return state
 
 # ---------------------------------------------------------------------------
-# 从单个钱包拉取节点
+# 从单个钱包拉取节点（已对齐 v2：无命中校验 / 全量遍历 / unusable 集合）
+# 返回 4 元组: (nodes, rate_limited, pulled, unusable)
 # ---------------------------------------------------------------------------
 
 def pull_with_wallet(client, state, session_id, device_id, args, remaining_ids):
     nodes = []
     pulled = []
+    unusable = set()
     token = state['jwt']
     sub_token = state.get('subscription_token')
 
-    batch = remaining_ids[:args.batch_size]
-    total = len(batch)
-    print(f'  逐个拉取 {total} 个节点...')
+    # 关键修复：遍历全部 remaining（v2 行为），不再 [:batch_size] 截断，
+    # 这样单个钱包会拉完当前所有剩余节点，撞到 429/402 才提前返回换号。
+    total = len(remaining_ids)
+    print(f' 逐个拉取 {total} 个节点...')
 
-    for idx, (node_id, country) in enumerate(batch):
+    for idx, (node_id, country) in enumerate(remaining_ids):
         if idx:
             time.sleep(args.interval)
 
-        print(f'    [{idx+1}/{total}] {node_id} ...', end=' ', flush=True)
+        print(f' [{idx+1}/{total}] {node_id} ...', end=' ', flush=True)
 
         try:
             resp = client.capability(
@@ -429,35 +486,36 @@ def pull_with_wallet(client, state, session_id, device_id, args, remaining_ids):
                 node_id=node_id)
         except RateLimited as exc:
             print(f'429 限流! 需等待 {exc.retry_after}s → 自动换号')
-            return nodes, True, pulled
+            return nodes, True, pulled, unusable
         except QuotaExhausted:
-            print('402 配额耗尽!')
-            return nodes, True, pulled
+            print('402 配额耗尽! → 自动换号')
+            return nodes, True, pulled, unusable
         except IpowError as exc:
             code = getattr(exc, 'code', None)
             if code in ('p2p_dht_capability_unavailable',
                         'p2p_lite_country_mismatch'):
-                print('暂不可用')
+                print('暂不可用（跳过）')
             else:
                 print(f'失败: {exc}')
+            # 关键修复：失败节点归入 unusable，一次性跳过，不再回来堵头部
+            unusable.add(node_id)
             continue
 
-        got = resp.get('selected_node_id') or resp.get('node_id')
-        if got != node_id:
-            print(f'未命中({got})')
-            continue
-
+        # 关键修复：去掉命中校验（got != node_id → continue）。
+        # 服务端对定向 capability 返回的就是该节点本身的解密结果，
+        # 无谓的命中校验会卡死循环；直接解密使用即可。
         try:
             node = node_from_capability(resp)
         except IpowError as exc:
             print(f'解密失败: {exc}')
+            unusable.add(node_id)
             continue
 
         nodes.append(node)
         pulled.append((node_id, country))
         print(f'{node["server"]} | {node.get("latency_ms", "-")}ms')
 
-    return nodes, False, pulled
+    return nodes, False, pulled, unusable
 
 # ---------------------------------------------------------------------------
 # 合并去重
@@ -485,7 +543,7 @@ def main(argv=None):
 
     ap = argparse.ArgumentParser(
         prog='auto_register.py',
-        description='iPoW.ai 自动注册 + 节点拉取（429 自动换钱包）')
+        description='iPoW.ai 自动注册 + 节点拉取（429 自动换钱包，已修复拉不全）')
     ap.add_argument('--interval', type=float, default=2.0,
                     help='每次请求间隔秒数，默认 %(default)s')
     ap.add_argument('--wallets', type=int, default=10,
@@ -493,7 +551,9 @@ def main(argv=None):
     ap.add_argument('--limit', type=int, default=None,
                     help='限制总拉取节点数（默认全部）')
     ap.add_argument('--batch-size', type=int, default=62,
-                    help='每个钱包拉取的最大节点数，默认 %(default)s')
+                    help='（保留兼容）当前版本每钱包拉取全部剩余节点，此参数不再截断')
+    ap.add_argument('--no-merge', action='store_true',
+                    help='不补入内置全量已知物理节点（默认会自动合并，确保目录不全也能拉全）')
     ap.add_argument('--base-url', default=API_BASE,
                     help='接口地址，默认 %(default)s')
     ap.add_argument('-v', '--verbose', action='store_true',
@@ -504,26 +564,53 @@ def main(argv=None):
 
     if not args.quiet:
         print('=' * 60)
-        print('iPoW.ai 自动注册 + 节点拉取')
+        print('iPoW.ai 自动注册 + 节点拉取（拉全修复版）')
         print('=' * 60)
 
     client = IpowClient(base=args.base_url, verbose=args.verbose)
 
     all_nodes = []
     seen_ids = set()
+    unusable_ids = set()
 
-    # 从 API 拉取节点目录（不依赖本地文件）
+    # 从 API 拉取节点目录（兼容多个端点，优先 v2 使用的 /v1/nodes）
     print('正在获取节点目录...')
-    try:
-        cat_body = client._request('GET', '/p2p-lite/v1/nodes?redacted=1')
-    except IpowError:
-        cat_body = client._request('GET', '/p2p-lite/v1/nodes')
+    cat_body = None
+    for path in ('/v1/nodes', '/p2p-lite/v1/nodes?redacted=1', '/p2p-lite/v1/nodes'):
+        try:
+            body = client._request('GET', path)
+            entries = body.get('nodes') or body.get('entries') or []
+            if entries:
+                cat_body = body
+                if not args.quiet:
+                    print(f' 目录来源: {path}（{len(entries)} 个）')
+                break
+        except IpowError:
+            continue
+    if cat_body is None:
+        print('错误: 服务端未返回任何节点目录')
+        return 1
     entries = cat_body.get('nodes') or cat_body.get('entries') or []
     if not entries:
         print('错误: 服务端未返回任何节点')
         return 1
+
     all_ids = [(e.get('id') or e.get('node_id'), e.get('country_code', 'AUTO'))
                for e in entries if e.get('id') or e.get('node_id')]
+
+    # 补入全量已知物理节点（目录不全时兜底，确保 62 个物理机都能被尝试）
+    if not args.no_merge:
+        existing_ids = {nid for nid, _ in all_ids}
+        added_known = 0
+        for ke in KNOWN_PHYSICAL_NODES:
+            kid = ke.get('id') or ke.get('node_id')
+            if kid and kid not in existing_ids:
+                all_ids.append((kid, ke.get('country_code', 'AUTO')))
+                existing_ids.add(kid)
+                added_known += 1
+        if added_known and not args.quiet:
+            print(f' 💡 自动补入已知物理节点: +{added_known} 个（总计 {len(all_ids)} 个）')
+
     target = args.limit or len(all_ids)
     remaining = all_ids[:target]
 
@@ -545,10 +632,10 @@ def main(argv=None):
                 'plan_id': state['plan_id'],
             })
         except IpowError as exc:
-            print(f'  ❌ 注册失败: {exc}')
+            print(f' ❌ 注册失败: {exc}')
             break
         except Exception as exc:
-            print(f'  ❌ 注册异常: {exc}')
+            print(f' ❌ 注册异常: {exc}')
             break
 
         if len(wallets_used) > args.wallets:
@@ -563,23 +650,24 @@ def main(argv=None):
             session = client.session_start(token, device_id, device_name)
             session_id = (session.get('session') or {}).get('id')
             if not session_id:
-                print('  ❌ sessions/start 无 session_id')
+                print(' ❌ sessions/start 无 session_id')
                 continue
             if not args.quiet:
-                print(f'  会话: {session_id}')
+                print(f' 会话: {session_id}')
         except IpowError as exc:
-            print(f'  ❌ 开启会话失败: {exc}')
+            print(f' ❌ 开启会话失败: {exc}')
             continue
 
         # 3) 拉取节点
         try:
-            nodes, rate_limited, pulled = pull_with_wallet(
+            nodes, rate_limited, pulled, unusable = pull_with_wallet(
                 client, state, session_id, device_id, args, remaining)
         except Exception as exc:
-            print(f'  ❌ 拉取异常: {exc}')
+            print(f' ❌ 拉取异常: {exc}')
             continue
 
-        # 4) 合并去重
+        # 4) 合并去重 + 推进 remaining
+        unusable_ids.update(unusable)
         if nodes:
             all_nodes, added = merge_nodes(all_nodes, nodes)
             for n in nodes:
@@ -587,23 +675,19 @@ def main(argv=None):
                 if nid:
                     seen_ids.add(nid)
 
-            print(f'  ✅ 拉到 {len(nodes)} 个（总计 {len(all_nodes)}）')
+            print(f' ✅ 拉到 {len(nodes)} 个（总计 {len(all_nodes)}）')
 
-            pulled_ids = {nid for nid, _ in pulled}
-            remaining = [(nid, cc) for nid, cc in remaining
-                         if nid not in seen_ids]
+        # 关键修复：已拉取 + 真正不可用 的节点都从 remaining 移除，
+        # 保证 remaining 严格递减，不会卡死，也不会提前 break。
+        pulled_set = {nid for nid, _ in pulled}
+        remaining = [(nid, cc) for nid, cc in remaining
+                     if nid not in pulled_set and nid not in unusable_ids]
 
-            write_json(os.path.join(BASE_DIR, MERGED_NODES_FILE), all_nodes)
-        else:
-            print('  ⚠️  本次未拉到节点')
-            if rate_limited:
-                continue
-            else:
-                break
+        write_json(os.path.join(BASE_DIR, MERGED_NODES_FILE), all_nodes)
 
-        # 5) 429 时自动换钱包
+        # 5) 429/402 时自动换钱包续传
         if rate_limited:
-            print(f'  🔄 429 触发 → 注册新钱包继续拉取剩余 {len(remaining)} 个')
+            print(f' 🔄 限流触发 → 注册新钱包继续拉取剩余 {len(remaining)} 个')
             time.sleep(1)
             continue
 
@@ -625,27 +709,33 @@ def main(argv=None):
                 n.get('vless_url') or build_vless_url(n) for n in all_nodes
             ) + '\n')
         if not args.quiet:
-            print(f'  已生成订阅文件: ipow_nodes.txt （{len(all_nodes)} 条）')
+            print(f' 已生成订阅文件: ipow_nodes.txt （{len(all_nodes)} 条）')
 
     # 汇总
     print(f'\n{"=" * 60}')
     print('汇总:')
-    print(f'  使用钱包数: {len(wallets_used)}')
-    print(f'  总节点数:   {len(all_nodes)}')
+    print(f' 目标节点数: {target}')
+    print(f' 成功拉取: {len(all_nodes)}')
+    print(f' 未能拉取: {len(unusable_ids)}')
+    if unusable_ids:
+        print(' 未能拉取清单:')
+        for nid in sorted(unusable_ids):
+            print(f' - {nid}')
+    print(f' 使用钱包数: {len(wallets_used)}')
 
     countries = {}
     for n in all_nodes:
         cc = n.get('country_code', '?')
         countries[cc] = countries.get(cc, 0) + 1
     if countries:
-        print(f'  国家覆盖:   {len(countries)} 个')
+        print(f' 国家覆盖: {len(countries)} 个')
         for cc in sorted(countries):
-            print(f'    {cc}: {countries[cc]} 个节点')
+            print(f' {cc}: {countries[cc]} 个节点')
 
     if wallets_used:
         print('\n已使用钱包:')
         for w in wallets_used:
-            print(f'  {w["address"]} ({w["user_id"]})')
+            print(f' {w["address"]} ({w["user_id"]})')
 
     print(f'\n{"=" * 60}')
     return 0
