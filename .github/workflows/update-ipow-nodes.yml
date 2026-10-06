@@ -30,12 +30,12 @@ jobs:
         run: |
           set -e
           python auto_register.py --quiet -o . || true
-          if [ -f ipow_nodes.txt ]; then
-            echo "VLESS 节点行数:"
-            wc -l ipow_nodes.txt
-            head -3 ipow_nodes.txt
+          if [ -f ipow.txt ]; then
+            echo "订阅节点行数:"
+            wc -l ipow.txt
+            head -3 ipow.txt
           else
-            echo "未生成 ipow_nodes.txt"
+            echo "未生成 ipow.txt"
             exit 1
           fi
 
@@ -43,12 +43,12 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ipow_nodes.txt
+          git add ipow.txt
           git add all_nodes_vless.txt all_nodes_hy2.txt all_nodes.json \
                   clash_proxies.yaml singbox_outbounds.json node_ip_map.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "无变化，跳过提交"
             exit 0
           fi
-          git commit -m "chore: update ipow_nodes.txt"
+          git commit -m "chore: update ipow.txt"
           git push
