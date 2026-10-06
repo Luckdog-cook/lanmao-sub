@@ -23,13 +23,13 @@ jobs:
       - name: Install deps
         run: pip install -q requests eth-account cryptography
 
-      # 关键改动：跑更新后的 auto_register.py（不是旧的 ipow_nodes.py）
+      # 跑仓库里的 ipow_nodes.py（更新后的新脚本，融合 v2 全功能 + v1 订阅输出）
       # -o . 把输出锁到仓库根目录（否则会落到 ~/Downloads 找不到文件）
       # 不需要任何 Secrets：脚本会自动注册钱包拉取（与本地运行一致）
       - name: Fetch iPoW nodes
         run: |
           set -e
-          python auto_register.py --quiet -o . || true
+          python ipow_nodes.py --quiet -o . || true
           if [ -f ipow.txt ]; then
             echo "订阅节点行数:"
             wc -l ipow.txt
