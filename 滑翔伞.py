@@ -1,7 +1,7 @@
 """滑翔伞 VPN 接口客户端（仅用于已获授权的账户和服务）。
 
 依赖：python -m pip install cryptography
-运行：python 滑翔伞.py
+运行：python .py
 """
 
 import base64
