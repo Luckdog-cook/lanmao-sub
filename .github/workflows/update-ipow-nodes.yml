@@ -23,12 +23,15 @@ jobs:
       - name: Install deps
         run: pip install -q requests eth-account cryptography
 
+      # 关键改动：跑更新后的 auto_register.py（不是旧的 ipow_nodes.py）
+      # -o . 把输出锁到仓库根目录（否则会落到 ~/Downloads 找不到文件）
+      # 不需要任何 Secrets：脚本会自动注册钱包拉取（与本地运行一致）
       - name: Fetch iPoW nodes
         run: |
           set -e
-          python ipow_nodes.py --quiet || true
+          python auto_register.py --quiet -o . || true
           if [ -f ipow_nodes.txt ]; then
-            echo "节点行数:"
+            echo "VLESS 节点行数:"
             wc -l ipow_nodes.txt
             head -3 ipow_nodes.txt
           else
@@ -41,7 +44,8 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add ipow_nodes.txt
-          git add all_nodes_vless.txt all_nodes.json 2>/dev/null || true
+          git add all_nodes_vless.txt all_nodes_hy2.txt all_nodes.json \
+                  clash_proxies.yaml singbox_outbounds.json node_ip_map.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "无变化，跳过提交"
             exit 0
