@@ -329,8 +329,8 @@
     {
       "type": "vless",
       "tag": "[CN]美国-vip-140",
-      "server": "apifunx.mate-fox.com",
-      "server_port": 35791,
+      "server": "26uusapi.mate-fox.com",
+      "server_port": 16586,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "flow": "xtls-rprx-vision",
       "tls": {
@@ -581,8 +581,8 @@
     {
       "type": "vless",
       "tag": "[CN]美国-vip-552",
-      "server": "apinbxs.zalolink.com",
-      "server_port": 21263,
+      "server": "26uusapi.mate-fox.com",
+      "server_port": 39567,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "flow": "xtls-rprx-vision",
       "tls": {
@@ -812,8 +812,8 @@
     {
       "type": "vless",
       "tag": "[CN]美国-vip-763",
-      "server": "apinbxs.zalolink.com",
-      "server_port": 44544,
+      "server": "26uusapi.mate-fox.com",
+      "server_port": 41705,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "flow": "xtls-rprx-vision",
       "tls": {
