@@ -1260,6 +1260,7 @@ def main(argv=None):
     dropped_ids = set()      # 钱包耗尽后仍未拉到的节点（确属不可用/受限）
     resolved_ids = set()     # 已成功取得任意协议配置的节点（VLESS 或 Hy2）
     custom_state = get_custom_state(args)
+    has_creds = custom_state is not None  # 是否通过 --token/--sub-url/--state-file 提供了凭据
 
     # 第一步：若需要 Hy2，从官方订阅直接提取实时 Hysteria2 真实落地 IP
     if args.mode in ('all', 'hy2'):
@@ -1394,6 +1395,20 @@ def main(argv=None):
     print(f' 真实 VLESS 物理节点: {v_count} 个')
     print(f' 真实 Hysteria2 物理节点: {h_count} 个')
     print('=' * 60)
+
+    # 明确报错：避免「静默 0 节点」被误判为成功
+    if target_total > 0 and resolved_total == 0:
+        if has_creds:
+            print('⚠️ 已提供凭据但仍拉到 0 个节点：Token 可能已过期、订阅 URL 可能失效，或官方接口暂不可用。')
+            print(' 请重新获取有效的 --token 与 --sub-url 后重试。')
+        else:
+            print('⚠️ 未提供任何有效凭据（--token / --sub-url / --state-file 均为空）。')
+            print(' 新注册的空钱包会撞 402（Phase-1 计费模式），无法拉取任何节点。')
+            print(' CI 环境：在 GitHub Secrets 配置 IPOW_TOKEN 与 IPOW_SUB_URL。')
+            print(' 本地运行：python auto_register.py --token <JWT> --sub-url <订阅URL>')
+        print('=' * 60)
+        return 2
+
     print('💡 安卓导入提示:')
     print(f' - v2rayNG: 复制 {paths["vless"]} 内容，打开 App 选择“从剪贴板导入”')
     print(f' - Clash Meta: 打开 App 配置页面，直接选择导入本地文件 {paths["clash"]}')
