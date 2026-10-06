@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""iPoW.ai 全自动实时真实 IP 拉取脚本（auto_register.py 融合版：v2 全功能 + v1 订阅输出） 【核心设计原则：100% 动态实时获取，绝无任何硬编码 IP】 1. **零内置静态 IP 字典**：不依赖任何硬编码 IP，官方换一万次 IP 也绝不失效。 2. **双轨实时真 IP 获取**： - VLESS-Reality：调用官方 DHT 接口 `/p2p-lite/v2/dht/capability`， 纯 Python 实时解密 `encrypted_profile`，获取官方当下真实的物理落地 IP！ - Hysteria2：从官方订阅数据 `sub.ipow.ai` 中实时提取当前物理落地 IP， 并自动纠偏 SNI，符合 RFC 规范。 3. **100% 纯 Python 3 标准库（零依赖）**： - 内置纯 Python Keccak-256、Secp256k1 椭圆曲线签名、AES-256-GCM 解密引擎。 - 手机 Termux 仅需 `pkg install python`，单文件拷入即跑，免 pip / 免 Rust / 免 C 编译！ 4. **429 限流全自动换号续传**： - 逐节点拉取撞到 429 限流时，0.5 秒内自动生成新 Web3 钱包并无缝接力。 5. **安卓目录直通**： - 自动识别并保存到 `/sdcard/Download`，方便直接在 v2rayNG / Clash Meta 中导入。 【完整性修复（v2.1）】 - 瞬时失败（网络抖动/5xx/解密偶发失败/节点命中不匹配）现在会**自动重试**而非永久丢弃， 只有在钱包轮换上限内仍无法拉取的节点才会被标记为「未能拉取」并汇总输出。 - 恢复「节点命中校验」：仅当服务端返回的就是请求的 node_id 时才接受，避免错收默认节点。 - 增加内层重试（MAX_INNER_RETRY），减少无谓的钱包额度消耗。 - 融合 v1 输出习惯：额外生成 `ipow_nodes.txt`（一行一个 VLESS，GitHub raw 友好订阅）。 """
+"""iPoW.ai 全自动实时真实 IP 拉取脚本（auto_register.py 融合版：v2 全功能 + v1 订阅输出） 【核心设计原则：100% 动态实时获取，绝无任何硬编码 IP】 1. **零内置静态 IP 字典**：不依赖任何硬编码 IP，官方换一万次 IP 也绝不失效。 2. **双轨实时真 IP 获取**： - VLESS-Reality：调用官方 DHT 接口 `/p2p-lite/v2/dht/capability`， 纯 Python 实时解密 `encrypted_profile`，获取官方当下真实的物理落地 IP！ - Hysteria2：从官方订阅数据 `sub.ipow.ai` 中实时提取当前物理落地 IP， 并自动纠偏 SNI，符合 RFC 规范。 3. **100% 纯 Python 3 标准库（零依赖）**： - 内置纯 Python Keccak-256、Secp256k1 椭圆曲线签名、AES-256-GCM 解密引擎。 - 手机 Termux 仅需 `pkg install python`，单文件拷入即跑，免 pip / 免 Rust / 免 C 编译！ 4. **429 限流全自动换号续传**： - 逐节点拉取撞到 429 限流时，0.5 秒内自动生成新 Web3 钱包并无缝接力。 5. **安卓目录直通**： - 自动识别并保存到 `/sdcard/Download`，方便直接在 v2rayNG / Clash Meta 中导入。 【完整性修复（v2.1）】 - 瞬时失败（网络抖动/5xx/解密偶发失败/节点命中不匹配）现在会**自动重试**而非永久丢弃， 只有在钱包轮换上限内仍无法拉取的节点才会被标记为「未能拉取」并汇总输出。 - 恢复「节点命中校验」：仅当服务端返回的就是请求的 node_id 时才接受，避免错收默认节点。 - 增加内层重试（MAX_INNER_RETRY），减少无谓的钱包额度消耗。 - 融合 v1 输出习惯：额外生成 `ipow.txt`（一行一个，VLESS + Hysteria2 混排，GitHub raw / 剪贴板导入友好）。 """
 
 import argparse
 import base64
@@ -1371,15 +1371,18 @@ def main(argv=None):
 
     expanded_nodes = expand_protocol_variants(all_nodes, with_vision=args.with_vision)
 
-    # v1 习惯：生成一行一个 vless 的固定订阅文件（GitHub raw 友好）
-    vless_urls = [n.get('vless_url') for n in expanded_nodes
-                  if n.get('protocol') != 'hysteria2' and n.get('vless_url')]
-    if vless_urls:
-        ipow_path = os.path.join(out_dir, 'ipow_nodes.txt')
+    # 生成一行一个的订阅文件（VLESS + Hysteria2 混排，GitHub raw / 剪贴板导入友好）
+    sub_urls = []
+    for n in expanded_nodes:
+        u = n.get('vless_url') or n.get('hy2_url')
+        if u:
+            sub_urls.append(u)
+    if sub_urls:
+        ipow_path = os.path.join(out_dir, 'ipow.txt')
         with open(ipow_path, 'w', encoding='utf-8', newline='\n') as f:
-            f.write('\n'.join(vless_urls) + '\n')
+            f.write('\n'.join(sub_urls) + '\n')
         if not args.quiet:
-            print(f'\n 已生成订阅文件: ipow_nodes.txt （{len(vless_urls)} 条 VLESS）')
+            print(f'\n 已生成订阅文件: ipow.txt （{len(sub_urls)} 条，含 VLESS + Hysteria2）')
 
     resolved_total = len(resolved_ids)
     target_total = len(all_ids)
