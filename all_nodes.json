@@ -12,7 +12,7 @@
     "short_id": "5ced03e42cc31aab",
     "vless_url": "vless://4758aee6-6d1a-4306-b460-2398b5af4e35@34.35.189.111:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=dcox8XXfkOCmKn3kgrloj6wY5o1_0brJOi2mczYmAT4&sid=5ced03e42cc31aab&type=tcp#iPoW-ZA-gcp-africa-south1-za-1",
     "region": "africa-south1",
-    "latency_ms": 230
+    "latency_ms": 226
   },
   {
     "node_id": "gcp-africa-south1-za-2",
@@ -27,7 +27,7 @@
     "short_id": "89b3a20484eb43ec",
     "vless_url": "vless://8d65c8a7-4876-4556-bb6a-feccfb46ee81@34.35.186.228:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=bSN0cv0VMxmYZsNsMkkLndOTHZu74C1htJ2M71QMaVE&sid=89b3a20484eb43ec&type=tcp#iPoW-ZA-gcp-africa-south1-za-2",
     "region": "africa-south1",
-    "latency_ms": 232
+    "latency_ms": 227
   },
   {
     "node_id": "gcp-asia-east1-1",
@@ -49,13 +49,13 @@
     "country": "Taiwan",
     "country_code": "TW",
     "city": "asia-east1-b",
-    "server": "130.211.240.128",
+    "server": "34.81.16.9",
     "port": 443,
     "uuid": "31a40f42-4ad6-4a32-a760-71102b459584",
     "sni": "www.cloudflare.com",
     "public_key": "qvekI7tKB1NDnZA6JcS_24aV4n8mlCbI3SFvkRr22wg",
     "short_id": "d74a6321deec9f31",
-    "vless_url": "vless://31a40f42-4ad6-4a32-a760-71102b459584@130.211.240.128:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=qvekI7tKB1NDnZA6JcS_24aV4n8mlCbI3SFvkRr22wg&sid=d74a6321deec9f31&type=tcp#iPoW-TW-gcp-asia-east1-2",
+    "vless_url": "vless://31a40f42-4ad6-4a32-a760-71102b459584@34.81.16.9:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=qvekI7tKB1NDnZA6JcS_24aV4n8mlCbI3SFvkRr22wg&sid=d74a6321deec9f31&type=tcp#iPoW-TW-gcp-asia-east1-2",
     "region": "asia-east1",
     "latency_ms": 1
   },
@@ -102,7 +102,7 @@
     "short_id": "780152c21e234b5a",
     "vless_url": "vless://51a43b75-c84b-46eb-885e-c24e7819cd0b@34.153.208.209:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=qMPnrSiXgWvw2ETefb46OfJKnYpfX6HfyGdWpWWxtVI&sid=780152c21e234b5a&type=tcp#iPoW-JP-gcp-asia-northeast1-1",
     "region": "asia-northeast1",
-    "latency_ms": 34
+    "latency_ms": 36
   },
   {
     "node_id": "gcp-asia-northeast1-2",
@@ -117,7 +117,7 @@
     "short_id": "8380ad05cd21a69f",
     "vless_url": "vless://0c4c6ebb-603f-4429-8682-beef6b65b80d@34.146.91.83:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=Ti7zRkfweHdrQ5QHI9o_zEgHn39xRfMG2C2Gfp_AMHE&sid=8380ad05cd21a69f&type=tcp#iPoW-JP-gcp-asia-northeast1-2",
     "region": "asia-northeast1",
-    "latency_ms": 39
+    "latency_ms": 37
   },
   {
     "node_id": "gcp-asia-northeast3-1",
@@ -132,7 +132,7 @@
     "short_id": "8685f8b4d9f4f51e",
     "vless_url": "vless://cb2abff3-5fe6-4b5a-aa19-5739deb285b6@34.22.111.30:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=M0QKczb2MzOH45qDViIAbb9LPrVVyCp880D4HlwIKnA&sid=8685f8b4d9f4f51e&type=tcp#iPoW-KR-gcp-asia-northeast3-1",
     "region": "asia-northeast3",
-    "latency_ms": 37
+    "latency_ms": 36
   },
   {
     "node_id": "gcp-asia-northeast3-2",
@@ -147,7 +147,7 @@
     "short_id": "3fd0a8ddef3ae5c6",
     "vless_url": "vless://700a7a0e-3f27-406c-81d1-aa1abe411af8@34.50.26.212:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=kqIDhDhYFrXD-1GeurwjzFwbB0zWipgWmcbADXwmyy8&sid=3fd0a8ddef3ae5c6&type=tcp#iPoW-KR-gcp-asia-northeast3-2",
     "region": "asia-northeast3",
-    "latency_ms": 36
+    "latency_ms": 35
   },
   {
     "node_id": "gcp-asia-southeast1-1",
@@ -162,7 +162,7 @@
     "short_id": "b1fef7a9181ea31d",
     "vless_url": "vless://50cbda48-00ce-4688-8b3d-0177ab8f177c@34.142.207.152:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=GqyMciP_v8rJZKLJd-EgzQmWbi_Qx_c_n1f-nlPkaEA&sid=b1fef7a9181ea31d&type=tcp#iPoW-SG-gcp-asia-southeast1-1",
     "region": "asia-southeast1",
-    "latency_ms": 41
+    "latency_ms": 47
   },
   {
     "node_id": "gcp-asia-southeast1-2",
@@ -192,7 +192,7 @@
     "short_id": "409192cee72716d7",
     "vless_url": "vless://e440fa81-fe9d-4ca1-b711-f7b72c3d79ed@34.101.37.72:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=-9nhbWBjFTNIE5q0kg76hjyzCS2giPfZ-fbd8xvmRX0&sid=409192cee72716d7&type=tcp#iPoW-ID-gcp-asia-southeast2-1",
     "region": "asia-southeast2",
-    "latency_ms": 54
+    "latency_ms": 58
   },
   {
     "node_id": "gcp-australia-southeast1-1",
@@ -207,7 +207,7 @@
     "short_id": "d725f0dd8cce210f",
     "vless_url": "vless://325bc1be-0cb7-4cf7-bd35-a79ded91bbbd@34.40.216.97:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=fsdIMU2apN1C_NbkL7mHTsBKEfhwbDhgCRcB8ICf03E&sid=d725f0dd8cce210f&type=tcp#iPoW-AU-gcp-australia-southeast1-1",
     "region": "australia-southeast1",
-    "latency_ms": 111
+    "latency_ms": 110
   },
   {
     "node_id": "gcp-australia-southeast1-2",
@@ -222,7 +222,7 @@
     "short_id": "8a7d5e0248cdb1b1",
     "vless_url": "vless://4f865f35-cf47-4e7f-a7e6-8882511a1b36@34.87.236.166:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=OgTkmAQdLjipA9oLloxbU5BAX3hPjzbvkEGHF4aZ8z4&sid=8a7d5e0248cdb1b1&type=tcp#iPoW-AU-gcp-australia-southeast1-2",
     "region": "australia-southeast1",
-    "latency_ms": 111
+    "latency_ms": 110
   },
   {
     "node_id": "gcp-southamerica-east1-1",
@@ -252,7 +252,7 @@
     "short_id": "4b414f69a06e1e81",
     "vless_url": "vless://e9c2ed7f-79ab-40a8-8910-24468f5da712@35.198.46.59:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=0WXz3PJQnr-KprrwiO5BlKVRdqA4ZS6U5jGHc_aeJnw&sid=4b414f69a06e1e81&type=tcp#iPoW-BR-gcp-southamerica-east1-2",
     "region": "southamerica-east1",
-    "latency_ms": 281
+    "latency_ms": 280
   },
   {
     "node_id": "gcp-us-central1-1",
@@ -267,7 +267,7 @@
     "short_id": "7dfdbf323c4ef0a8",
     "vless_url": "vless://0106efd7-39bf-449d-b734-a4aa758d6480@34.31.93.173:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=VL1ZiaWxae8teZWJeBAIHadbo7z1Ezu1KA2kIA1TDmk&sid=7dfdbf323c4ef0a8&type=tcp#iPoW-US-gcp-us-central1-1",
     "region": "us-central1",
-    "latency_ms": 151
+    "latency_ms": 154
   },
   {
     "node_id": "gcp-us-central1-2",
@@ -282,7 +282,7 @@
     "short_id": "76d093d99ceaf06a",
     "vless_url": "vless://3893f05b-9b24-4bb1-a1dc-ba55509b0a01@136.65.145.234:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=Th2whwnn3zQaHdImi5B1wYn8hxXz3JQs3_AQCuHfanQ&sid=76d093d99ceaf06a&type=tcp#iPoW-US-gcp-us-central1-2",
     "region": "us-central1",
-    "latency_ms": 151
+    "latency_ms": 154
   },
   {
     "node_id": "gcp-us-east4-1",
@@ -297,7 +297,7 @@
     "short_id": "c08efcd72d7e8389",
     "vless_url": "vless://8ea1a178-2719-47b7-99d0-33d8dc361ba3@136.70.146.238:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=cTwhlN0bIkprnzvGCMPmsdxk8XkqUz3LcCrS0FKnbVI&sid=c08efcd72d7e8389&type=tcp#iPoW-US-gcp-us-east4-1",
     "region": "us-east4",
-    "latency_ms": 185
+    "latency_ms": 190
   },
   {
     "node_id": "gcp-us-east4-2",
@@ -334,13 +334,13 @@
     "country": "United States",
     "country_code": "US",
     "city": "us-west1-c",
-    "server": "34.187.170.146",
+    "server": "35.252.180.212",
     "port": 443,
     "uuid": "dffab367-7769-4c6c-86f2-66fc6bd03003",
     "sni": "www.cloudflare.com",
     "public_key": "LYnDDS0AkBwVeeTyIEE5MhrTV_PZO5f1qBAbMN6z4HM",
     "short_id": "f1955f72763eb2fb",
-    "vless_url": "vless://dffab367-7769-4c6c-86f2-66fc6bd03003@34.187.170.146:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=LYnDDS0AkBwVeeTyIEE5MhrTV_PZO5f1qBAbMN6z4HM&sid=f1955f72763eb2fb&type=tcp#iPoW-US-gcp-us-west1-2",
+    "vless_url": "vless://dffab367-7769-4c6c-86f2-66fc6bd03003@35.252.180.212:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=LYnDDS0AkBwVeeTyIEE5MhrTV_PZO5f1qBAbMN6z4HM&sid=f1955f72763eb2fb&type=tcp#iPoW-US-gcp-us-west1-2",
     "region": "us-west1",
     "latency_ms": 119
   }
