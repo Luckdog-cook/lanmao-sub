@@ -18,7 +18,7 @@ proxies:
     public-key: tJfMaYwHSX3YPmiPu0vNEgEFA2JqEDvn2jXdu0bL2n8
     short-id: d0794b71a2b50f05
   flow: xtls-rprx-vision
-- name: 香港 03（1MB限速） [free]
+- name: 🆓香港 03（1MB限速）
   type: vless
   server: relay.xiaomans.com
   port: 20001
@@ -46,7 +46,7 @@ proxies:
     public-key: QTJCsEI6kStTp5vCNDl-M1QhDK5Ki2qgEYwCxpwst0E
     short-id: c0196c432a03dcb5
   flow: xtls-rprx-vision
-- name: 香港 04（1MB限速） [free]
+- name: 🆓香港 04（1MB限速）
   type: vless
   server: relay.xiaomans.com
   port: 20002
@@ -74,7 +74,7 @@ proxies:
     public-key: OgcLHAAzQV0qTuXwHnz0huEueM5f3vRpYZHMH8JsjC4
     short-id: 09d75ddaf90d0ba5
   flow: xtls-rprx-vision
-- name: 香港 05（1MB限速） [free]
+- name: 🆓香港 05（1MB限速）
   type: vless
   server: relay.xiaomans.com
   port: 20003
@@ -102,7 +102,7 @@ proxies:
     public-key: zVIESiLSczwOhE1qKC6yX-bIGMp5WrGGcKxE7X7_8TA
     short-id: 686a51fda2f48e40
   flow: xtls-rprx-vision
-- name: 日本 03（1MB限速） [free]
+- name: 🆓日本 03（1MB限速）
   type: vless
   server: relay.xiaomans.com
   port: 20004
@@ -130,7 +130,7 @@ proxies:
     public-key: NdpLwhOfALzPx26QT985xAncCWejWJBrcREI8I2lrHM
     short-id: 2bd5ea1422613a24
   flow: xtls-rprx-vision
-- name: 日本 04（1MB限速） [free]
+- name: 🆓日本 04（1MB限速）
   type: vless
   server: relay.xiaomans.com
   port: 20005
@@ -158,7 +158,7 @@ proxies:
     public-key: EwpuwXSOb0jp7rsG7Gk_MBFc3bl8R5l9IJniRtmGgFE
     short-id: d13ca00a58f42b85
   flow: xtls-rprx-vision
-- name: 台湾 01（1MB限速） [free]
+- name: 🆓台湾 01（1MB限速）
   type: vless
   server: relay.xiaomans.com
   port: 20006
@@ -186,7 +186,7 @@ proxies:
     public-key: h67BY8lUGUOtatqfbLJ8pgxS-bYXqODnS_aBIRUrIDw
     short-id: 22b82cf5d70ea10e
   flow: xtls-rprx-vision
-- name: 新加坡 03（1MB限速） [free]
+- name: 🆓新加坡 03（1MB限速）
   type: vless
   server: relay.xiaomans.com
   port: 20007
@@ -214,7 +214,7 @@ proxies:
     public-key: z3-XLw1M_HlLNPQ2vZ8mvbVY_xbrnIGAdpXEEk7RFQc
     short-id: 3c6b40a10d5beedd
   flow: xtls-rprx-vision
-- name: 美国 03（1MB限速） [free]
+- name: 🆓美国 03（1MB限速）
   type: vless
   server: relay.xiaomans.com
   port: 20008
@@ -242,7 +242,7 @@ proxies:
     public-key: lKhzz-7fA5uyFxSoPPp3r-iIPk7D67bT-r6U-MB5kH8
     short-id: 69a1fc81c267e44a
   flow: xtls-rprx-vision
-- name: 英国 01（1MB限速） [free]
+- name: 🆓英国 01（1MB限速）
   type: vless
   server: relay.xiaomans.com
   port: 20009
@@ -263,46 +263,46 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 香港 03
-  - 香港 03（1MB限速） [free]
+  - 🆓香港 03（1MB限速）
   - 香港 04
-  - 香港 04（1MB限速） [free]
+  - 🆓香港 04（1MB限速）
   - 香港 05
-  - 香港 05（1MB限速） [free]
+  - 🆓香港 05（1MB限速）
   - 日本 03
-  - 日本 03（1MB限速） [free]
+  - 🆓日本 03（1MB限速）
   - 日本 04
-  - 日本 04（1MB限速） [free]
+  - 🆓日本 04（1MB限速）
   - 台湾 01
-  - 台湾 01（1MB限速） [free]
+  - 🆓台湾 01（1MB限速）
   - 新加坡 03
-  - 新加坡 03（1MB限速） [free]
+  - 🆓新加坡 03（1MB限速）
   - 美国 03
-  - 美国 03（1MB限速） [free]
+  - 🆓美国 03（1MB限速）
   - 英国 01
-  - 英国 01（1MB限速） [free]
+  - 🆓英国 01（1MB限速）
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - 香港 03
-  - 香港 03（1MB限速） [free]
+  - 🆓香港 03（1MB限速）
   - 香港 04
-  - 香港 04（1MB限速） [free]
+  - 🆓香港 04（1MB限速）
   - 香港 05
-  - 香港 05（1MB限速） [free]
+  - 🆓香港 05（1MB限速）
   - 日本 03
-  - 日本 03（1MB限速） [free]
+  - 🆓日本 03（1MB限速）
   - 日本 04
-  - 日本 04（1MB限速） [free]
+  - 🆓日本 04（1MB限速）
   - 台湾 01
-  - 台湾 01（1MB限速） [free]
+  - 🆓台湾 01（1MB限速）
   - 新加坡 03
-  - 新加坡 03（1MB限速） [free]
+  - 🆓新加坡 03（1MB限速）
   - 美国 03
-  - 美国 03（1MB限速） [free]
+  - 🆓美国 03（1MB限速）
   - 英国 01
-  - 英国 01（1MB限速） [free]
+  - 🆓英国 01（1MB限速）
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,🚀 节点选择
