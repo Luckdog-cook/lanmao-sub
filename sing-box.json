@@ -728,8 +728,8 @@
     {
       "type": "vless",
       "tag": "[CN]香港-vip-459",
-      "server": "funagfrdfs.alixxplay.com",
-      "server_port": 15022,
+      "server": "dghk2610.supertoolify.com",
+      "server_port": 28675,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "flow": "xtls-rprx-vision",
       "tls": {
@@ -974,6 +974,27 @@
           "enabled": true,
           "public_key": "EG-jzQw1RyOwAM4L9rMKondSx7cyFmPyv1OP7xXkIk4",
           "short_id": "cbd39bea0805e2"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "[CN]英国-vip-371",
+      "server": "xxvisa.hikigo.com",
+      "server_port": 443,
+      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.tesla.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "7bh0nHGSgGyHN4MgnGJc76RFvp3C96qCbi6PQ5iCsz4",
+          "short_id": "b10cd4d3"
         }
       }
     },
@@ -2337,6 +2358,7 @@
         "[CN]新加坡-vip-668",
         "[CN]新加坡-vip-769",
         "[CN]泰国-vip-470",
+        "[CN]英国-vip-371",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
@@ -2458,6 +2480,7 @@
         "[CN]新加坡-vip-668",
         "[CN]新加坡-vip-769",
         "[CN]泰国-vip-470",
+        "[CN]英国-vip-371",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
