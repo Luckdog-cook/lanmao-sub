@@ -350,7 +350,7 @@ def to_singbox_outbound(node):
 
 
 def write_singbox_config(nodes, path):
-    """生成 NekoBox / sing-box 可直接订阅的完整 JSON 配置"""
+    """生成 NekoBox / sing-box 可直接订阅的节点列表（纯 outbounds）"""
     outs, seen = [], set()
     for n in nodes:
         o = to_singbox_outbound(n)
@@ -366,27 +366,13 @@ def write_singbox_config(nodes, path):
     if not outs:
         return 0
 
-    tags = [o["tag"] for o in outs]
-    cfg = {
-        "log": {"level": "info"},
-        # 不写 dns 段：新旧版 sing-box 的 dns.server 字段名不兼容，
-        # 留空交给 NekoBox 用内置默认 DNS，最稳
-        "outbounds": [
-            {"type": "selector", "tag": "PROXY", "outbounds": ["AUTO"] + tags + ["DIRECT"]},
-            {"type": "urltest", "tag": "AUTO", "outbounds": tags,
-             "url": "http://www.gstatic.com/generate_204",
-             "interval": "3m", "tolerance": 50},
-        ] + outs + [
-            {"type": "direct", "tag": "DIRECT"},
-        ],
-        "route": {
-            "rules": [
-                {"domain_suffix": [".cn"], "outbound": "DIRECT"},
-            ],
-            "final": "PROXY",
-            "auto_detect_interface": True,
-        },
-    }
+    # 只输出裸 outbounds 列表，不包 PROXY/AUTO/DIRECT 外壳：
+    #  - NekoBox 订阅解析只认真实代理节点，会把 selector/urltest/direct
+    #    当成"非节点"丢弃，导致"订阅节点数 < 文件导入节点数"的差值假象
+    #  - 去掉外壳后，订阅解析与文件导入数出来完全一致（都是真实节点数）
+    #  - NekoBox 拿到裸列表会自动包一层自己的分组，行为正常
+    # 不写 dns / route：订阅场景下 NekoBox 用自己的 DNS 与路由，留空最稳
+    cfg = {"outbounds": outs}
     with open(path, "w", encoding="utf-8") as f:
         json.dump(cfg, f, ensure_ascii=False, indent=2)
     return len(outs)
@@ -484,8 +470,8 @@ def to_clash_proxy(node):
 
 
 # ============================================================ 输出文件
-def write_wenrugou_txt(nodes, path):
-    """生成供 proxy-provider 拉取的订阅内容（纯 proxies 列表）"""
+def _build_clash_proxies(nodes):
+    """节点 -> Clash proxy 列表（按 name 去重，重复名追加 #2/#3 ...）"""
     proxies, seen = [], set()
     for n in nodes:
         p = to_clash_proxy(n)
@@ -494,24 +480,43 @@ def write_wenrugou_txt(nodes, path):
         name, i = p["name"], 1
         while name in seen:
             i += 1
-            name = f"{p['name']} #{i}"
+            name = "%s #%d" % (p["name"], i)
         p["name"] = name
         seen.add(name)
         proxies.append(p)
-    with open(path, "w", encoding="utf-8") as f:
-        yaml.dump({"proxies": proxies}, f, allow_unicode=True,
-                  sort_keys=False, default_flow_style=False)
-    return len(proxies)
+    return proxies
 
 
-def write_clash_config(path):
+def _full_clash_config(proxies, enhanced_dns=False):
+    """拼出一份完整、可直接当订阅/配置使用的 Clash Meta 配置。
+
+    关键点：proxy-groups 直接引用*全部*节点名（动态生成，不写死当前这批），
+    接口以后新增多少节点都会自动进分组 —— 不会只显示当下这 24 个。
+    """
+    names = [p["name"] for p in proxies]
     cfg = {
         "mixed-port": 7890,
-        "allow-lan": True,
+        "allow-lan": False,
         "mode": "rule",
         "log-level": "info",
         "external-controller": "127.0.0.1:9090",
-        "dns": {
+        "proxies": proxies,
+        "proxy-groups": [
+            {"name": "节点选择", "type": "select",
+             "proxies": ["自动优选"] + names + ["DIRECT"]},
+            {"name": "自动优选", "type": "url-test",
+             "proxies": names,
+             "url": "http://www.gstatic.com/generate_204",
+             "interval": 300, "tolerance": 50},
+            {"name": "全球直连", "type": "select", "proxies": ["DIRECT"]},
+        ],
+        "rules": [
+            "GEOIP,CN,DIRECT",
+            "MATCH,节点选择",
+        ],
+    }
+    if enhanced_dns:
+        cfg["dns"] = {
             "enable": True,
             "ipv6": False,
             "enhanced-mode": "fake-ip",
@@ -519,47 +524,30 @@ def write_clash_config(path):
             "default-nameserver": ["223.5.5.5", "8.8.8.8"],
             "nameserver": ["https://dns.alidns.com/dns-query", "https://doh.pub/dns-query"],
             "fallback": ["https://1.0.0.1/dns-query", "tls://dns.google"],
-        },
-        "proxy-providers": {
-            "wenrugou": {
-                "type": "http",
-                "url": REMOTE_CLASH_SUB_URL,
-                "path": "./providers/wenrugou.yaml",
-                "interval": 3600,
-                "health-check": {
-                    "enable": True,
-                    "url": "http://www.gstatic.com/generate_204",
-                    "interval": 300,
-                },
-            }
-        },
-        "proxy-groups": [
-            {"name": "PROXY", "type": "select",
-             "proxies": ["AUTO", "FALLBACK", "DIRECT"]},
-            {"name": "AUTO", "type": "url-test", "use": ["wenrugou"],
-             "url": "http://www.gstatic.com/generate_204", "interval": 300, "tolerance": 50},
-            {"name": "FALLBACK", "type": "fallback", "use": ["wenrugou"],
-             "url": "http://www.gstatic.com/generate_204", "interval": 300},
-        ],
-        "rules": [
-            "DOMAIN-SUFFIX,cn,DIRECT",
-            "DOMAIN-KEYWORD,baidu,DIRECT",
-            "DOMAIN-KEYWORD,taobao,DIRECT",
-            "DOMAIN-KEYWORD,jd,DIRECT",
-            "DOMAIN-KEYWORD,qq,DIRECT",
-            "DOMAIN-KEYWORD,weixin,DIRECT",
-            "DOMAIN-KEYWORD,alipay,DIRECT",
-            "DOMAIN-KEYWORD,google,PROXY",
-            "DOMAIN-KEYWORD,youtube,PROXY",
-            "DOMAIN-KEYWORD,github,PROXY",
-            "DOMAIN-KEYWORD,telegram,PROXY",
-            "DOMAIN-KEYWORD,twitter,PROXY",
-            "GEOIP,CN,DIRECT",
-            "MATCH,PROXY",
-        ],
-    }
+        }
+    return cfg
+
+
+def write_wenrugou_txt(nodes, path):
+    """生成供 Clash / Mihomo 客户端直接导入的完整订阅（含分组与规则）"""
+    proxies = _build_clash_proxies(nodes)
+    if not proxies:
+        return 0
+    cfg = _full_clash_config(proxies, enhanced_dns=False)
     with open(path, "w", encoding="utf-8") as f:
         yaml.dump(cfg, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
+    return len(proxies)
+
+
+def write_clash_config(nodes, path):
+    """增强版完整配置（含 fake-ip DNS 等高级项，可直接当本地配置用）"""
+    proxies = _build_clash_proxies(nodes)
+    if not proxies:
+        return 0
+    cfg = _full_clash_config(proxies, enhanced_dns=True)
+    with open(path, "w", encoding="utf-8") as f:
+        yaml.dump(cfg, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
+    return len(proxies)
 
 
 # ============================================================ 健康探测
@@ -714,7 +702,7 @@ def main():
     print(f"OK: {wenru_path}  ({n} proxies)")
 
     clash_path = os.path.join(SAVE_DIR, "clash_config.yaml")
-    write_clash_config(clash_path)
+    write_clash_config(nodes, clash_path)
     print(f"OK: {clash_path}")
 
     # NekoBox / sing-box 用这份：ss 插件保留 SIP003 原生写法（obfs-local + obfs=http;obfs-host=...）

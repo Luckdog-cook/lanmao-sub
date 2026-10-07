@@ -1,73 +1,5 @@
 {
-  "log": {
-    "level": "info"
-  },
   "outbounds": [
-    {
-      "type": "selector",
-      "tag": "PROXY",
-      "outbounds": [
-        "AUTO",
-        "HK-01-三网优化",
-        "HK-02-三网优化",
-        "HK-03-三网优化",
-        "HK-05-三网优化",
-        "HK-06-三网优化",
-        "JP-01-三网优化",
-        "JP-02-三网优化",
-        "JP-03-三网优化",
-        "JP-04-三网优化",
-        "JP-05-三网优化",
-        "JP06-三网优化",
-        "🇭🇰香港-Gemini-IEPL",
-        "🇭🇰香港2-IEPL",
-        "🇹🇼台湾-IEPL",
-        "🇹🇼台湾2-IEPL",
-        "🇸🇬新加坡-Gemini-IEPL",
-        "🇸🇬新加坡2-Gemini-IEPL",
-        "🇯🇵日本-IEPL-GPT",
-        "🇯🇵日本2-IEPL-GPT",
-        "🇯🇵日本4-IEPL-家宽",
-        "🇺🇸美国-IEPL-GPT",
-        "🇺🇸美国2-IEPL-GPT",
-        "🇩🇪德国-IEPL",
-        "🇯🇵日本20",
-        "DIRECT"
-      ]
-    },
-    {
-      "type": "urltest",
-      "tag": "AUTO",
-      "outbounds": [
-        "HK-01-三网优化",
-        "HK-02-三网优化",
-        "HK-03-三网优化",
-        "HK-05-三网优化",
-        "HK-06-三网优化",
-        "JP-01-三网优化",
-        "JP-02-三网优化",
-        "JP-03-三网优化",
-        "JP-04-三网优化",
-        "JP-05-三网优化",
-        "JP06-三网优化",
-        "🇭🇰香港-Gemini-IEPL",
-        "🇭🇰香港2-IEPL",
-        "🇹🇼台湾-IEPL",
-        "🇹🇼台湾2-IEPL",
-        "🇸🇬新加坡-Gemini-IEPL",
-        "🇸🇬新加坡2-Gemini-IEPL",
-        "🇯🇵日本-IEPL-GPT",
-        "🇯🇵日本2-IEPL-GPT",
-        "🇯🇵日本4-IEPL-家宽",
-        "🇺🇸美国-IEPL-GPT",
-        "🇺🇸美国2-IEPL-GPT",
-        "🇩🇪德国-IEPL",
-        "🇯🇵日本20"
-      ],
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "3m",
-      "tolerance": 50
-    },
     {
       "tag": "HK-01-三网优化",
       "server": "hk01.node.qixi.best",
@@ -430,22 +362,6 @@
           "short_id": "d60944e27067cb30"
         }
       }
-    },
-    {
-      "type": "direct",
-      "tag": "DIRECT"
     }
-  ],
-  "route": {
-    "rules": [
-      {
-        "domain_suffix": [
-          ".cn"
-        ],
-        "outbound": "DIRECT"
-      }
-    ],
-    "final": "PROXY",
-    "auto_detect_interface": true
-  }
+  ]
 }

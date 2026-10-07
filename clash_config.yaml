@@ -1,8 +1,362 @@
 mixed-port: 7890
-allow-lan: true
+allow-lan: false
 mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
+proxies:
+- name: HK-01-三网优化
+  server: hk01.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: hk01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk01.node.qixi.best
+- name: HK-02-三网优化
+  server: hk02.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: hk02.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk02.node.qixi.best
+- name: HK-03-三网优化
+  server: hk03.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: hk03.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk03.node.qixi.best
+- name: HK-05-三网优化
+  server: hk05.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: hk05.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk05.node.qixi.best
+- name: HK-06-三网优化
+  server: hk06.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: hk06.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk06.node.qixi.best
+- name: JP-01-三网优化
+  server: JP01.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: jp01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp01.node.qixi.best
+- name: JP-02-三网优化
+  server: JP02.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: jp02.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp02.node.qixi.best
+- name: JP-03-三网优化
+  server: JP03.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: jp03.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp03.node.qixi.best
+- name: JP-04-三网优化
+  server: JP04.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: jp04.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp04.node.qixi.best
+- name: JP-05-三网优化
+  server: 216.23.120.16
+  port: 16606
+  type: hysteria2
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  sni: bing.com
+  skip-cert-verify: true
+- name: JP06-三网优化
+  server: 52.199.139.99
+  port: 16606
+  type: hysteria2
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  sni: bing.com
+  skip-cert-verify: true
+- name: 🇭🇰香港-Gemini-IEPL
+  server: gd.bjnet2.com
+  port: 36602
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇭🇰香港2-IEPL
+  server: gd2.bjnet2.com
+  port: 36602
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇹🇼台湾-IEPL
+  server: gd.bjnet2.com
+  port: 36603
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇹🇼台湾2-IEPL
+  server: gd2.bjnet2.com
+  port: 36603
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇸🇬新加坡-Gemini-IEPL
+  server: gd.bjnet2.com
+  port: 36604
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇸🇬新加坡2-Gemini-IEPL
+  server: gd2.bjnet2.com
+  port: 36604
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇯🇵日本-IEPL-GPT
+  server: gd.bjnet2.com
+  port: 36609
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇯🇵日本2-IEPL-GPT
+  server: gd2.bjnet2.com
+  port: 36609
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇯🇵日本4-IEPL-家宽
+  server: gd2.bjnet2.com
+  port: 36610
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇺🇸美国-IEPL-GPT
+  server: gd.bjnet2.com
+  port: 36608
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇺🇸美国2-IEPL-GPT
+  server: gd2.bjnet2.com
+  port: 36608
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇩🇪德国-IEPL
+  server: gd.bjnet2.com
+  port: 36611
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇯🇵日本20
+  server: jp01.wenrugou.uk
+  port: 2053
+  type: vless
+  uuid: f96500be-6dce-46f7-8e45-82f269f0d294
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: BduiVUe1QHYj9bg0YNeCW6lw1SvitNzJqYoQe9B8Q0Y
+    short-id: d60944e27067cb30
+proxy-groups:
+- name: 节点选择
+  type: select
+  proxies:
+  - 自动优选
+  - HK-01-三网优化
+  - HK-02-三网优化
+  - HK-03-三网优化
+  - HK-05-三网优化
+  - HK-06-三网优化
+  - JP-01-三网优化
+  - JP-02-三网优化
+  - JP-03-三网优化
+  - JP-04-三网优化
+  - JP-05-三网优化
+  - JP06-三网优化
+  - 🇭🇰香港-Gemini-IEPL
+  - 🇭🇰香港2-IEPL
+  - 🇹🇼台湾-IEPL
+  - 🇹🇼台湾2-IEPL
+  - 🇸🇬新加坡-Gemini-IEPL
+  - 🇸🇬新加坡2-Gemini-IEPL
+  - 🇯🇵日本-IEPL-GPT
+  - 🇯🇵日本2-IEPL-GPT
+  - 🇯🇵日本4-IEPL-家宽
+  - 🇺🇸美国-IEPL-GPT
+  - 🇺🇸美国2-IEPL-GPT
+  - 🇩🇪德国-IEPL
+  - 🇯🇵日本20
+  - DIRECT
+- name: 自动优选
+  type: url-test
+  proxies:
+  - HK-01-三网优化
+  - HK-02-三网优化
+  - HK-03-三网优化
+  - HK-05-三网优化
+  - HK-06-三网优化
+  - JP-01-三网优化
+  - JP-02-三网优化
+  - JP-03-三网优化
+  - JP-04-三网优化
+  - JP-05-三网优化
+  - JP06-三网优化
+  - 🇭🇰香港-Gemini-IEPL
+  - 🇭🇰香港2-IEPL
+  - 🇹🇼台湾-IEPL
+  - 🇹🇼台湾2-IEPL
+  - 🇸🇬新加坡-Gemini-IEPL
+  - 🇸🇬新加坡2-Gemini-IEPL
+  - 🇯🇵日本-IEPL-GPT
+  - 🇯🇵日本2-IEPL-GPT
+  - 🇯🇵日本4-IEPL-家宽
+  - 🇺🇸美国-IEPL-GPT
+  - 🇺🇸美国2-IEPL-GPT
+  - 🇩🇪德国-IEPL
+  - 🇯🇵日本20
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+- name: 全球直连
+  type: select
+  proxies:
+  - DIRECT
+rules:
+- GEOIP,CN,DIRECT
+- MATCH,节点选择
 dns:
   enable: true
   ipv6: false
@@ -17,48 +371,3 @@ dns:
   fallback:
   - https://1.0.0.1/dns-query
   - tls://dns.google
-proxy-providers:
-  wenrugou:
-    type: http
-    url: https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/wenrugou.txt
-    path: ./providers/wenrugou.yaml
-    interval: 3600
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 300
-proxy-groups:
-- name: PROXY
-  type: select
-  proxies:
-  - AUTO
-  - FALLBACK
-  - DIRECT
-- name: AUTO
-  type: url-test
-  use:
-  - wenrugou
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-- name: FALLBACK
-  type: fallback
-  use:
-  - wenrugou
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-rules:
-- DOMAIN-SUFFIX,cn,DIRECT
-- DOMAIN-KEYWORD,baidu,DIRECT
-- DOMAIN-KEYWORD,taobao,DIRECT
-- DOMAIN-KEYWORD,jd,DIRECT
-- DOMAIN-KEYWORD,qq,DIRECT
-- DOMAIN-KEYWORD,weixin,DIRECT
-- DOMAIN-KEYWORD,alipay,DIRECT
-- DOMAIN-KEYWORD,google,PROXY
-- DOMAIN-KEYWORD,youtube,PROXY
-- DOMAIN-KEYWORD,github,PROXY
-- DOMAIN-KEYWORD,telegram,PROXY
-- DOMAIN-KEYWORD,twitter,PROXY
-- GEOIP,CN,DIRECT
-- MATCH,PROXY

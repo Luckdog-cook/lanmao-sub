@@ -1,3 +1,8 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
 proxies:
 - name: HK-01-三网优化
   server: hk01.node.qixi.best
@@ -285,3 +290,70 @@ proxies:
   reality-opts:
     public-key: BduiVUe1QHYj9bg0YNeCW6lw1SvitNzJqYoQe9B8Q0Y
     short-id: d60944e27067cb30
+proxy-groups:
+- name: 节点选择
+  type: select
+  proxies:
+  - 自动优选
+  - HK-01-三网优化
+  - HK-02-三网优化
+  - HK-03-三网优化
+  - HK-05-三网优化
+  - HK-06-三网优化
+  - JP-01-三网优化
+  - JP-02-三网优化
+  - JP-03-三网优化
+  - JP-04-三网优化
+  - JP-05-三网优化
+  - JP06-三网优化
+  - 🇭🇰香港-Gemini-IEPL
+  - 🇭🇰香港2-IEPL
+  - 🇹🇼台湾-IEPL
+  - 🇹🇼台湾2-IEPL
+  - 🇸🇬新加坡-Gemini-IEPL
+  - 🇸🇬新加坡2-Gemini-IEPL
+  - 🇯🇵日本-IEPL-GPT
+  - 🇯🇵日本2-IEPL-GPT
+  - 🇯🇵日本4-IEPL-家宽
+  - 🇺🇸美国-IEPL-GPT
+  - 🇺🇸美国2-IEPL-GPT
+  - 🇩🇪德国-IEPL
+  - 🇯🇵日本20
+  - DIRECT
+- name: 自动优选
+  type: url-test
+  proxies:
+  - HK-01-三网优化
+  - HK-02-三网优化
+  - HK-03-三网优化
+  - HK-05-三网优化
+  - HK-06-三网优化
+  - JP-01-三网优化
+  - JP-02-三网优化
+  - JP-03-三网优化
+  - JP-04-三网优化
+  - JP-05-三网优化
+  - JP06-三网优化
+  - 🇭🇰香港-Gemini-IEPL
+  - 🇭🇰香港2-IEPL
+  - 🇹🇼台湾-IEPL
+  - 🇹🇼台湾2-IEPL
+  - 🇸🇬新加坡-Gemini-IEPL
+  - 🇸🇬新加坡2-Gemini-IEPL
+  - 🇯🇵日本-IEPL-GPT
+  - 🇯🇵日本2-IEPL-GPT
+  - 🇯🇵日本4-IEPL-家宽
+  - 🇺🇸美国-IEPL-GPT
+  - 🇺🇸美国2-IEPL-GPT
+  - 🇩🇪德国-IEPL
+  - 🇯🇵日本20
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+  tolerance: 50
+- name: 全球直连
+  type: select
+  proxies:
+  - DIRECT
+rules:
+- GEOIP,CN,DIRECT
+- MATCH,节点选择
