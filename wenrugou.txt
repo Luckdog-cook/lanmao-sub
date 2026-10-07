@@ -1,4 +1,144 @@
 proxies:
+- name: HK-01-三网优化
+  server: hk01.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: hk01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk01.node.qixi.best
+- name: HK-02-三网优化
+  server: hk02.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: hk02.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk02.node.qixi.best
+- name: HK-03-三网优化
+  server: hk03.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: hk03.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk03.node.qixi.best
+- name: HK-05-三网优化
+  server: hk05.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: hk05.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk05.node.qixi.best
+- name: HK-06-三网优化
+  server: hk06.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: hk06.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk06.node.qixi.best
+- name: JP-01-三网优化
+  server: JP01.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: jp01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp01.node.qixi.best
+- name: JP-02-三网优化
+  server: JP02.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: jp02.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp02.node.qixi.best
+- name: JP-03-三网优化
+  server: JP03.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: jp03.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp03.node.qixi.best
+- name: JP-04-三网优化
+  server: JP04.node.qixi.best
+  port: 443
+  type: trojan
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  network: ws
+  udp: true
+  tls: true
+  servername: jp04.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp04.node.qixi.best
+- name: JP-05-三网优化
+  server: 216.23.120.16
+  port: 16606
+  type: hysteria2
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  sni: bing.com
+  skip-cert-verify: true
+- name: JP06-三网优化
+  server: 52.199.139.99
+  port: 16606
+  type: hysteria2
+  password: c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c
+  sni: bing.com
+  skip-cert-verify: true
 - name: 🇭🇰香港-Gemini-IEPL
   server: gd.bjnet2.com
   port: 36602
@@ -6,10 +146,10 @@ proxies:
   cipher: aes-128-gcm
   password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  plugin: obfs-local
+  plugin: obfs
   plugin-opts:
-    obfs: http
-    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇭🇰香港2-IEPL
   server: gd2.bjnet2.com
   port: 36602
@@ -17,10 +157,10 @@ proxies:
   cipher: aes-128-gcm
   password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  plugin: obfs-local
+  plugin: obfs
   plugin-opts:
-    obfs: http
-    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇹🇼台湾-IEPL
   server: gd.bjnet2.com
   port: 36603
@@ -28,10 +168,10 @@ proxies:
   cipher: aes-128-gcm
   password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  plugin: obfs-local
+  plugin: obfs
   plugin-opts:
-    obfs: http
-    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇹🇼台湾2-IEPL
   server: gd2.bjnet2.com
   port: 36603
@@ -39,10 +179,10 @@ proxies:
   cipher: aes-128-gcm
   password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  plugin: obfs-local
+  plugin: obfs
   plugin-opts:
-    obfs: http
-    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇸🇬新加坡-Gemini-IEPL
   server: gd.bjnet2.com
   port: 36604
@@ -50,10 +190,10 @@ proxies:
   cipher: aes-128-gcm
   password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  plugin: obfs-local
+  plugin: obfs
   plugin-opts:
-    obfs: http
-    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇸🇬新加坡2-Gemini-IEPL
   server: gd2.bjnet2.com
   port: 36604
@@ -61,10 +201,10 @@ proxies:
   cipher: aes-128-gcm
   password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  plugin: obfs-local
+  plugin: obfs
   plugin-opts:
-    obfs: http
-    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本-IEPL-GPT
   server: gd.bjnet2.com
   port: 36609
@@ -72,10 +212,10 @@ proxies:
   cipher: aes-128-gcm
   password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  plugin: obfs-local
+  plugin: obfs
   plugin-opts:
-    obfs: http
-    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本2-IEPL-GPT
   server: gd2.bjnet2.com
   port: 36609
@@ -83,10 +223,10 @@ proxies:
   cipher: aes-128-gcm
   password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  plugin: obfs-local
+  plugin: obfs
   plugin-opts:
-    obfs: http
-    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本4-IEPL-家宽
   server: gd2.bjnet2.com
   port: 36610
@@ -94,10 +234,10 @@ proxies:
   cipher: aes-128-gcm
   password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  plugin: obfs-local
+  plugin: obfs
   plugin-opts:
-    obfs: http
-    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇺🇸美国-IEPL-GPT
   server: gd.bjnet2.com
   port: 36608
@@ -105,10 +245,10 @@ proxies:
   cipher: aes-128-gcm
   password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  plugin: obfs-local
+  plugin: obfs
   plugin-opts:
-    obfs: http
-    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇺🇸美国2-IEPL-GPT
   server: gd2.bjnet2.com
   port: 36608
@@ -116,10 +256,10 @@ proxies:
   cipher: aes-128-gcm
   password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  plugin: obfs-local
+  plugin: obfs
   plugin-opts:
-    obfs: http
-    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇩🇪德国-IEPL
   server: gd.bjnet2.com
   port: 36611
@@ -127,10 +267,10 @@ proxies:
   cipher: aes-128-gcm
   password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  plugin: obfs-local
+  plugin: obfs
   plugin-opts:
-    obfs: http
-    obfs-host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本20
   server: jp01.wenrugou.uk
   port: 2053
