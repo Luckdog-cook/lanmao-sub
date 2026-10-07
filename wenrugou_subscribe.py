@@ -1,7 +1,23 @@
 # -*- coding: utf-8 -*-
-"""WenruGou nodes -> generate only 2 files: wenrugou.txt + clash_config.yaml"""
-import os, sys, json, time, base64, urllib.parse, socket, requests
+"""
+WenruGou nodes -> 只生成两个文件：wenrugou.txt + clash_config.yaml
+
+本版相对原脚本的改动：
+  1. 注释全部恢复为正常 UTF-8 中文（原文件被 GBK/UTF-8 反复转码，已损坏不可逆）
+  2. SS 插件归一化：obfs-local -> obfs、obfs -> mode、obfs-host -> host（Clash/Mihomo 标准）
+  3. plugin_opts 支持无值开关（如 tls、mux），不再被 "=" 判断吃掉
+  4. 健康探测按协议分流：SS/SSR 只做 TCP 连通，不再发 TLS ClientHello（避免误杀/假阳性）
+
+注意：本文件必须以 UTF-8 编码保存，不要用 GBK 另存，否则注释会再次变成乱码。
+"""
+import os
+import sys
+import time
+import socket
+import requests
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor
+
 import yaml
 
 if hasattr(sys.stdout, "reconfigure"):
@@ -20,7 +36,11 @@ SAVE_DIR = DEFAULT_DIR if os.path.exists("/storage/emulated/0") else os.path.joi
 
 REMOTE_CLASH_SUB_URL = "https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/wenrugou.txt"
 
+# 非 TLS 协议：不做 ClientHello 探测，只测 TCP 连通
+NO_TLS_PROTO = ("shadowsocks", "ss", "shadowsocksr", "ssr", "hysteria", "hy", "hysteria2", "hy2")
 
+
+# ============================================================ 通用字段提取
 def _headers_host(t):
     h = t.get("headers", {}) or {}
     return h.get("Host") or h.get("host") or ""
@@ -72,6 +92,116 @@ def _tls_common(tls, out):
         }
 
 
+# ============================================================ SS 插件归一化
+# SIP003 / shadowsocks-libev 的插件名 -> Clash / Mihomo 认识的 plugin 名
+SS_PLUGIN_ALIAS = {
+    "obfs-local": "obfs",
+    "obfs-server": "obfs",
+    "simple-obfs": "obfs",
+    "obfs": "obfs",
+    "v2ray-plugin": "v2ray-plugin",
+    "gost-plugin": "gost-plugin",
+    "shadow-tls": "shadow-tls",
+    "restls": "restls",
+    "kcptun": "kcptun",
+    "jls": "jls",
+}
+
+
+def _parse_plugin_opts(raw):
+    """解析 SIP003 串：obfs=http;obfs-host=a.com;tls
+
+    无 '=' 的独立开关（tls / mux 等）保留为 True，不能被丢掉。
+    """
+    if isinstance(raw, dict):
+        return {str(k): v for k, v in raw.items()}
+    opts = {}
+    for kv in (raw or "").split(";"):
+        kv = kv.strip()
+        if not kv:
+            continue
+        if "=" in kv:
+            k, v = kv.split("=", 1)
+            opts[k.strip()] = v.strip()
+        else:
+            opts[kv] = True
+    return opts
+
+
+def _first(d, *keys, default=None):
+    for k in keys:
+        v = d.get(k)
+        if v not in (None, "", True):
+            return v
+    return default
+
+
+def normalize_ss_plugin(plugin_name, plugin_opts):
+    """(SIP003 插件名, opts串) -> (clash plugin, clash plugin-opts)；无法识别返回 (None, {})"""
+    key = (plugin_name or "").strip().lower()
+    opts = _parse_plugin_opts(plugin_opts)
+
+    # 兜底：plugin 字段缺失但 opts 带 obfs= / mode= 等，反推插件类型
+    if not key:
+        if "obfs" in opts or "obfs-host" in opts:
+            key = "obfs-local"
+        elif "mode" in opts or "path" in opts:
+            key = "v2ray-plugin"
+        else:
+            return None, {}
+
+    clash = SS_PLUGIN_ALIAS.get(key)
+    if not clash:
+        return None, {}
+
+    if clash == "obfs":
+        out = {"mode": str(_first(opts, "obfs", "mode", default="http")).lower()}
+        host = _first(opts, "obfs-host", "host", "obfs_host")
+        if host:
+            out["host"] = host
+        return clash, out
+
+    if clash == "v2ray-plugin":
+        mode = str(_first(opts, "mode", default="websocket")).lower()
+        out = {"mode": "quic" if mode == "quic" else "websocket"}
+        if opts.get("tls") is True or str(opts.get("tls")).lower() == "true":
+            out["tls"] = True
+        if opts.get("mux") is True:
+            out["mux"] = True
+        for k in ("host", "path", "fingerprint", "skip-cert-verify", "v2ray-http-upgrade"):
+            if k in opts and opts[k] is not True:
+                out[k] = opts[k]
+        return clash, out
+
+    # shadow-tls / restls / kcptun / jls / gost-plugin：键名本来就是 clash 风格，原样保留
+    return clash, {k: v for k, v in opts.items()}
+
+
+def apply_ss_plugin(p, cfg):
+    """把插件信息写进 ss 节点字典 p（原地修改）"""
+    raw_plugin = cfg.get("plugin") or cfg.get("plugin_name") or ""
+    raw_opts = cfg.get("plugin_opts") or cfg.get("plugin_options") or ""
+
+    plugin, opts = normalize_ss_plugin(raw_plugin, raw_opts)
+    if plugin:
+        p["plugin"] = plugin
+        if opts:
+            p["plugin-opts"] = opts
+        return p
+
+    if raw_plugin:
+        # 未知插件：别静默丢弃，原样透传 + 提示，方便排查
+        p["plugin"] = raw_plugin
+        o = _parse_plugin_opts(raw_opts)
+        if o:
+            p["plugin-opts"] = o
+        print("WARN: 未识别的 SS 插件 %r，已原样透传" % raw_plugin)
+    elif raw_opts:
+        print("WARN: 有 plugin_opts 但没有 plugin，已丢弃: %r" % raw_opts)
+    return p
+
+
+# ============================================================ 节点转换
 def to_clash_proxy(node):
     cfg = node.get("config", {}) or {}
     proto = (node.get("protocol") or "").lower().strip()
@@ -85,28 +215,23 @@ def to_clash_proxy(node):
         p.update({"type": "vless", "uuid": cfg.get("uuid", ""), "network": net, "udp": True})
         if cfg.get("flow"):
             p["flow"] = cfg["flow"]
-        _tls_common(tls, p); p.update(_network_opts(tr, net))
+        _tls_common(tls, p)
+        p.update(_network_opts(tr, net))
     elif proto == "trojan":
         p.update({"type": "trojan", "password": cfg.get("password", ""), "network": net, "udp": True})
-        _tls_common(tls, p); p.update(_network_opts(tr, net))
+        _tls_common(tls, p)
+        p.update(_network_opts(tr, net))
     elif proto == "vmess":
         p.update({"type": "vmess", "uuid": cfg.get("uuid", ""),
                   "alterId": int(cfg.get("alter_id", 0) or 0),
                   "cipher": cfg.get("security", "auto") or "auto",
                   "network": net, "udp": True})
-        _tls_common(tls, p); p.update(_network_opts(tr, net))
+        _tls_common(tls, p)
+        p.update(_network_opts(tr, net))
     elif proto in ("shadowsocks", "ss"):
         p.update({"type": "ss", "cipher": cfg.get("method", "aes-256-gcm"),
                   "password": str(cfg.get("password", "")), "udp": True})
-        if cfg.get("plugin"):
-            p["plugin"] = cfg["plugin"]
-            opts = {}
-            for kv in (cfg.get("plugin_opts", "") or "").split(";"):
-                if "=" in kv:
-                    k, v = kv.split("=", 1)
-                    opts[k.strip()] = v.strip()
-            if opts:
-                p["plugin-opts"] = opts
+        apply_ss_plugin(p, cfg)
     elif proto in ("shadowsocksr", "ssr"):
         p.update({"type": "ssr", "cipher": cfg.get("method", "aes-256-cfb"),
                   "password": str(cfg.get("password", "")),
@@ -167,7 +292,9 @@ def to_clash_proxy(node):
     return p
 
 
+# ============================================================ 输出文件
 def write_wenrugou_txt(nodes, path):
+    """生成供 proxy-provider 拉取的订阅内容（纯 proxies 列表）"""
     proxies, seen = [], set()
     for n in nodes:
         p = to_clash_proxy(n)
@@ -244,8 +371,9 @@ def write_clash_config(path):
         yaml.dump(cfg, f, allow_unicode=True, sort_keys=False, default_flow_style=False)
 
 
+# ============================================================ 健康探测
 def build_client_hello(sni):
-    """鎵嬪伐鏋勯€犱竴涓渶灏� TLS ClientHello锛屼粎鐢ㄤ簬鎺㈡祴鏈嶅姟绔槸鍚︽湁 TLS 灞傚搷搴斻€�"""
+    """手工构造一个最小 TLS ClientHello，仅用于探测服务端是否有 TLS 层响应"""
     ext = b""
     if sni:
         name = sni.encode("utf-8")
@@ -269,24 +397,24 @@ def build_client_hello(sni):
 
 
 def tls_alive(host, port, sni, timeout=6):
-    """鎺㈡祴鏈嶅姟绔槸鍚﹀搷搴� TLS銆�
+    """探测服务端是否响应 TLS。
 
-    Reality 鏈嶅姟绔敹鍒伴潪 Reality 鐨� ClientHello 鏃堕€氬父浼氳浆鍙戝埌 dest 骞惰繑鍥炶瘉涔︼紝
-    鍥犳"鏀跺埌浠讳綍瀛楄妭"鍗冲彲璁や负璇ョ鍙ｅ瓨娲伙紱瀹屽叏 0 瀛楄妭鍝嶅簲鎴� RST 璇存槑绔彛宸插け鏁堛€�
+    Reality 服务端收到非 Reality 的 ClientHello 时通常会转发到 dest 并返回证书，
+    因此"收到任何字节"即可认为该端口存活；完全 0 字节响应或 RST 说明端口已失效。
     """
     try:
         s = socket.create_connection((host, port), timeout=timeout)
     except Exception as e:
-        return False, "TCP澶辫触: %s" % type(e).__name__
+        return False, "TCP失败: %s" % type(e).__name__
     try:
         s.settimeout(timeout)
         s.sendall(build_client_hello(sni or host))
         data = s.recv(2048)
         if data:
-            return True, "鏈夊搷搴�(%dB)" % len(data)
-        return False, "鏃犲搷搴�(0瀛楄妭)"
+            return True, "有响应(%dB)" % len(data)
+        return False, "无响应(0字节)"
     except socket.timeout:
-        return False, "TLS鎻℃墜鏃犲搷搴�(瓒呮椂)"
+        return False, "TLS握手无响应(超时)"
     except Exception as e:
         return False, "%s: %s" % (type(e).__name__, str(e)[:40])
     finally:
@@ -296,12 +424,28 @@ def tls_alive(host, port, sni, timeout=6):
             pass
 
 
-def health_check(nodes, workers=16):
-    """骞跺彂鎺㈡祴鑺傜偣瀛樻椿锛岃繑鍥� (瀛樻椿鑺傜偣鍒楄〃, 鎺㈡祴鎶ュ憡)銆�"""
-    from concurrent.futures import ThreadPoolExecutor
+def tcp_alive(host, port, timeout=6):
+    """非 TLS 协议（SS/SSR/Hysteria）只测 TCP 连通，不做 TLS 握手。
 
+    实测：SS + obfs 端口对 ClientHello 会回一个 HTTP/1.1 400，
+    用 TLS 探测判活属于假阳性；反过来遇到静默端口又会被误杀。
+    """
+    try:
+        s = socket.create_connection((host, port), timeout=timeout)
+    except Exception as e:
+        return False, "TCP失败: %s" % type(e).__name__
+    try:
+        s.close()
+        return True, "TCP可连接"
+    except Exception:
+        return True, "TCP可连接"
+
+
+def health_check(nodes, workers=16):
+    """并发探测节点存活，返回 (存活节点列表, 探测报告)"""
     def work(n):
         cfg = n.get("config", {}) or {}
+        proto = (n.get("protocol") or "").lower().strip()
         host = cfg.get("server", "")
         try:
             port = int(cfg.get("server_port", 0) or 0)
@@ -309,67 +453,12 @@ def health_check(nodes, workers=16):
             port = 0
         sni = (cfg.get("tls", {}) or {}).get("server_name") or ""
         if not host or not port:
-            return n, False, "缂哄皯鍦板潃/绔彛"
-        ok, reason = tls_alive(host, port, sni)
+            return n, False, "缺少地址/端口"
+        if proto in NO_TLS_PROTO:
+            ok, reason = tcp_alive(host, port)
+        else:
+            ok, reason = tls_alive(host, port, sni)
         return n, ok, reason
 
     alive, report = [], []
-    with ThreadPoolExecutor(max_workers=workers) as ex:
-        for n, ok, reason in ex.map(work, nodes):
-            report.append((n.get("name", "?"), ok, reason))
-            if ok:
-                alive.append(n)
-    return alive, report
-
-
-def fetch_api_with_retry(max_retries=3, retry_delay=2):
-    for i in range(1, max_retries + 1):
-        try:
-            print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] fetch nodes ({i}/{max_retries})...")
-            r = requests.get(API_URL, headers=HEADERS, timeout=15)
-            r.raise_for_status()
-            return r.json()
-        except Exception as e:
-            print(f"WARN: attempt {i} failed: {e}")
-            if i < max_retries:
-                time.sleep(retry_delay)
-    print("ERROR: max retries reached")
-    return None
-
-
-def main():
-    data = fetch_api_with_retry()
-    if not data:
-        return
-    nodes = data.get("nodes", [])
-    if not nodes:
-        print("no nodes")
-        return
-    print(f"got {len(nodes)} nodes, generating...")
-
-    # 鍙戝竷鍓嶅仴搴锋帰娴嬶細鍓旈櫎绔彛宸插け鏁堢殑鑺傜偣锛岄伩鍏嶆帹閫佷竴鍫嗗繀鐒惰秴鏃剁殑姝婚摼
-    print("[health] probing nodes...")
-    nodes, report = health_check(nodes)
-    for name, ok, reason in report:
-        print(f"  [{'OK  ' if ok else 'DEAD'}] {name} - {reason}")
-    if not nodes:
-        print("ERROR: 鍏ㄩ儴鑺傜偣鏈€氳繃鍋ュ悍鎺㈡祴 -> 涓嶈鐩栨棫璁㈤槄锛屼繚鐣欎笂涓€娆″彲鐢ㄧ増鏈�")
-        return
-    print(f"[health] alive {len(nodes)}/{len(report)}")
-
-    os.makedirs(SAVE_DIR, exist_ok=True)
-    print(f"DIR: {SAVE_DIR}")
-
-    wenru_path = os.path.join(SAVE_DIR, "wenrugou.txt")
-    n = write_wenrugou_txt(nodes, wenru_path)
-    print(f"OK: {wenru_path}  ({n} proxies)")
-
-    clash_path = os.path.join(SAVE_DIR, "clash_config.yaml")
-    write_clash_config(clash_path)
-    print(f"OK: {clash_path}")
-    print(f"remote sub: {REMOTE_CLASH_SUB_URL}")
-    print("done")
-
-
-if __name__ == "__main__":
-    main()
+    with ThreadPoolExecutor(max_workers=
