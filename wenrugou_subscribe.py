@@ -7,6 +7,7 @@ WenruGou nodes -> 只生成两个文件：wenrugou.txt + clash_config.yaml
   2. SS 插件归一化：obfs-local -> obfs、obfs -> mode、obfs-host -> host（Clash/Mihomo 标准）
   3. plugin_opts 支持无值开关（如 tls、mux），不再被 "=" 判断吃掉
   4. 健康探测按协议分流：SS/SSR 只做 TCP 连通，不再发 TLS ClientHello（避免误杀/假阳性）
+  5. CI 环境（GITHUB_ACTIONS / CI / WENRG_SKIP_HEALTH）自动跳过健康探测
 
 注意：本文件必须以 UTF-8 编码保存，不要用 GBK 另存，否则注释会再次变成乱码。
 """
@@ -461,4 +462,73 @@ def health_check(nodes, workers=16):
         return n, ok, reason
 
     alive, report = [], []
-    with ThreadPoolExecutor(max_workers=
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        for n, ok, reason in ex.map(work, nodes):
+            report.append((n.get("name", "?"), ok, reason))
+            if ok:
+                alive.append(n)
+    return alive, report
+
+
+# ============================================================ 主流程
+def fetch_api_with_retry(max_retries=3, retry_delay=2):
+    for i in range(1, max_retries + 1):
+        try:
+            print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] fetch nodes ({i}/{max_retries})...")
+            r = requests.get(API_URL, headers=HEADERS, timeout=15)
+            r.raise_for_status()
+            return r.json()
+        except Exception as e:
+            print(f"WARN: attempt {i} failed: {e}")
+            if i < max_retries:
+                time.sleep(retry_delay)
+    print("ERROR: max retries reached")
+    return None
+
+
+def main():
+    data = fetch_api_with_retry()
+    if not data:
+        return
+    nodes = data.get("nodes", [])
+    if not nodes:
+        print("no nodes")
+        return
+    print(f"got {len(nodes)} nodes, generating...")
+
+    # 发布前健康探测：剔除端口已失效的节点，避免推送一堆必然超时的死链
+    # 云端(GitHub Actions / GitLab CI 等)对这些国内节点基本不可达，跳过；
+    # 本地 Termux 正常探测。设置 WENRG_SKIP_HEALTH=1 可强制跳过。
+    skip_health = (
+        os.environ.get("WENRG_SKIP_HEALTH", "").lower() in ("1", "true", "yes")
+        or os.environ.get("GITHUB_ACTIONS", "").lower() == "true"
+        or os.environ.get("CI", "").lower() == "true"
+    )
+    if skip_health:
+        print("[health] skipped (CI environment, trust API data)")
+    else:
+        print("[health] probing nodes...")
+        nodes, report = health_check(nodes)
+        for name, ok, reason in report:
+            print(f"  [{'OK  ' if ok else 'DEAD'}] {name} - {reason}")
+        if not nodes:
+            print("WARN: 全部节点未通过健康探测 -> 不覆盖旧订阅，保留上一次可用版本")
+            return
+        print(f"[health] alive {len(nodes)}/{len(report)}")
+
+    os.makedirs(SAVE_DIR, exist_ok=True)
+    print(f"DIR: {SAVE_DIR}")
+
+    wenru_path = os.path.join(SAVE_DIR, "wenrugou.txt")
+    n = write_wenrugou_txt(nodes, wenru_path)
+    print(f"OK: {wenru_path}  ({n} proxies)")
+
+    clash_path = os.path.join(SAVE_DIR, "clash_config.yaml")
+    write_clash_config(clash_path)
+    print(f"OK: {clash_path}")
+    print(f"remote sub: {REMOTE_CLASH_SUB_URL}")
+    print("done")
+
+
+if __name__ == "__main__":
+    main()
