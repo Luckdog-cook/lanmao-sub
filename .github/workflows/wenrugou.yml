@@ -70,10 +70,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add wenrugou.txt clash_config.yaml
-          if [ -f "wenrugou&nk.txt" ]; then
-            git add wenrugou&nk.txt
-          fi
+          # "wenrugou&nk.txt" 中的 & 在 bash 里是后台控制符，
+          # 必须加引号，否则会拆成 "git add wenrugou" + "nk.txt" 两条命令
+          git add wenrugou.txt clash_config.yaml "wenrugou&nk.txt"
           if git diff --cached --quiet; then
             echo "no change, skip commit"
             exit 0
