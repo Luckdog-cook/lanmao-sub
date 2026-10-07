@@ -255,7 +255,7 @@ def main():
             continue
         label = it.get("name") or nid
         if "::free::xiaoman" in nid:
-            label = f"{label} [free]"
+            label = f"🆓{label}"
         for ob in cfg.get("outbounds", []):
             if ob.get("type") == "vless":
                 uris.append(outbound_to_vless(ob, label))
