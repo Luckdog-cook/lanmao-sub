@@ -8,80 +8,80 @@ proxies:
  - name: "新加坡"
  type: trojan
  server: it194.pacemakere.com
- port: 20003
- password: "5c1fff0cfafe426b"
+ port: 20004
+ password: "5393ff5a762c42d2"
  udp: true
  skip-cert-verify: true
 
  - name: "新加坡二线"
  type: trojan
  server: uwt125.zxom.eu.org
- port: 20033
- password: "1d624be3a19f4630"
+ port: 20034
+ password: "e7bad10769244d0c"
  udp: true
  skip-cert-verify: true
 
  - name: "新加坡三线"
  type: trojan
  server: ip157i.moldscience.cc
- port: 20021
- password: "9f7bd4186c754a38"
+ port: 20022
+ password: "15b8515aaef947ab"
  udp: true
  skip-cert-verify: true
 
  - name: "美国"
  type: trojan
- server: su106.izzzzzi.com
- port: 20033
- password: "15eeddefb0ba40da"
+ server: su108.izzzzzi.com
+ port: 20034
+ password: "7de29a4813914d46"
  udp: true
  skip-cert-verify: true
 
  - name: "美国二线"
  type: trojan
  server: lius3.moldscience.cc
- port: 20035
- password: "c6141f851c924b2f"
+ port: 20036
+ password: "51e1050bb92846d4"
  udp: true
  skip-cert-verify: true
 
  - name: "美国三线"
  type: trojan
- server: jus134.pacemakere.com
- port: 20002
- password: "128bee172c2a48e1"
+ server: sa175.moldscience.cc
+ port: 20034
+ password: "5fa6bc6d2e9045f2"
  udp: true
  skip-cert-verify: true
 
  - name: "美国四线"
  type: trojan
- server: gous175.moldscience.cc
- port: 20011
- password: "2aee23c591604149"
+ server: goodus.zxmm.eu.org
+ port: 20017
+ password: "16b290dc47034ac3"
  udp: true
  skip-cert-verify: true
 
  - name: "中国台湾"
  type: trojan
- server: kw119.zxmm.eu.org
- port: 20016
- password: "cfcf8e56d3b641c1"
+ server: uwt125.zxom.eu.org
+ port: 20034
+ password: "e7bad10769244d0c"
  udp: true
  skip-cert-verify: true
 
  - name: "台湾二线"
  type: trojan
  server: gu232.izzzzzi.com
- port: 20036
- password: "5d42f367d6af430c"
+ port: 20037
+ password: "395c4152ba6344ac"
  udp: true
  skip-cert-verify: true
 
  - name: "中国香港"
  type: trojan
  server: tk160.moldscience.cc
- port: 20004
- password: "ca0948af660049df"
+ port: 20005
+ password: "311303d855a3467b"
  udp: true
  skip-cert-verify: true
 
@@ -96,8 +96,8 @@ proxies:
  - name: "日本"
  type: trojan
  server: ip157i.moldscience.cc
- port: 20021
- password: "9f7bd4186c754a38"
+ port: 20022
+ password: "15b8515aaef947ab"
  udp: true
  skip-cert-verify: true
 
@@ -111,73 +111,73 @@ proxies:
 
  - name: "韩国"
  type: trojan
- server: ikr100a.zxom.eu.org
- port: 20045
- password: "711e03cff43f468c"
+ server: ikr185.moldscience.cc
+ port: 20034
+ password: "8f51000562574b0c"
  udp: true
  skip-cert-verify: true
 
  - name: "韩国二线"
  type: trojan
  server: akr187.moldscience.cc
- port: 20011
- password: "75c785fb46fe458b"
+ port: 20012
+ password: "1435ddeaa4f64c6e"
  udp: true
  skip-cert-verify: true
 
  - name: "德国"
  type: trojan
  server: lige51.zxmm.eu.org
- port: 20011
- password: "2cb21cfcda2c4097"
+ port: 20012
+ password: "d1680b9471e64b81"
  udp: true
  skip-cert-verify: true
 
  - name: "德国二线"
  type: trojan
- server: oge126.pacemakere.com
- port: 20014
- password: "56a2a67d495b4c74"
+ server: oge188.pacemakere.com
+ port: 20015
+ password: "380399761d5046a8"
  udp: true
  skip-cert-verify: true
 
  - name: "英国"
  type: trojan
  server: ikuk204.zxom.eu.org
- port: 20020
- password: "109113aa39e7425d"
+ port: 20021
+ password: "5a38941831eb4c0c"
  udp: true
  skip-cert-verify: true
 
  - name: "泰国"
  type: trojan
  server: isg247.moldscience.cc
- port: 20004
- password: "73546fbecdc94dd8"
+ port: 20005
+ password: "c75166dc070a455c"
  udp: true
  skip-cert-verify: true
 
  - name: "ChatGPT"
  type: trojan
  server: ip157i.moldscience.cc
- port: 20021
- password: "9f7bd4186c754a38"
+ port: 20022
+ password: "15b8515aaef947ab"
  udp: true
  skip-cert-verify: true
 
  - name: "视频专线"
  type: trojan
- server: su106.izzzzzi.com
- port: 20033
- password: "15eeddefb0ba40da"
+ server: su108.izzzzzi.com
+ port: 20034
+ password: "7de29a4813914d46"
  udp: true
  skip-cert-verify: true
 
  - name: "亚洲大区"
  type: trojan
  server: isg247.moldscience.cc
- port: 20004
- password: "73546fbecdc94dd8"
+ port: 20005
+ password: "c75166dc070a455c"
  udp: true
  skip-cert-verify: true
 
