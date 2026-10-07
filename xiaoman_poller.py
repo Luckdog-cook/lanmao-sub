@@ -23,19 +23,19 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 
 # ============ 配置区（均可用环境变量覆盖，部署时走 GitHub Secrets） ============
-TOKEN   = os.environ.get("XIAOMAN_TOKEN", "925a5c96bd673bb2e3cf12def6d77ddc687b354be973b74650515bb24ed0c0d3")
-KEY_B64 = os.environ.get("XIAOMAN_KEY_B64", "xNLbV68V85fHLm8LfYsG5Uawao8ODo5wrSQD2qiGkjI=")
+TOKEN   = os.environ.get("XIAOMAN_TOKEN") or "925a5c96bd673bb2e3cf12def6d77ddc687b354be973b74650515bb24ed0c0d3"
+KEY_B64 = os.environ.get("XIAOMAN_KEY_B64") or "xNLbV68V85fHLm8LfYsG5Uawao8ODo5wrSQD2qiGkjI="
 
 # 输出目录：本地默认仓库内 subscription/，可通过 OUT_DIR 覆盖（如 Android 的 Download 目录）
-OUT_DIR = Path(os.environ.get("OUT_DIR", Path(__file__).resolve().parent / "subscription"))
+OUT_DIR = Path(os.environ.get("OUT_DIR") or Path(__file__).resolve().parent / "subscription")
 
-BASE    = os.environ.get("XIAOMAN_BASE", "https://xiaomans.com/vela-api/api/v1")
-PLATFORM = os.environ.get("XIAOMAN_PLATFORM", "android")
-ROUTING_MODE = os.environ.get("XIAOMAN_ROUTING", "smart")
+BASE    = os.environ.get("XIAOMAN_BASE") or "https://xiaomans.com/vela-api/api/v1"
+PLATFORM = os.environ.get("XIAOMAN_PLATFORM") or "android"
+ROUTING_MODE = os.environ.get("XIAOMAN_ROUTING") or "smart"
 
-SLEEP_SELECT = float(os.environ.get("SLEEP_SELECT", "0.3"))
-SLEEP_CONFIG = float(os.environ.get("SLEEP_CONFIG", "0.3"))
-TIMEOUT = int(os.environ.get("TIMEOUT", "30"))
+SLEEP_SELECT = float(os.environ.get("SLEEP_SELECT") or "0.3")
+SLEEP_CONFIG = float(os.environ.get("SLEEP_CONFIG") or "0.3")
+TIMEOUT = int(os.environ.get("TIMEOUT") or "30")
 # =============================================================================
 
 
