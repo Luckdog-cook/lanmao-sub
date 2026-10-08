@@ -1,126 +1,6 @@
 {
   "outbounds": [
     {
-      "tag": "🇭🇰香港-Gemini-IEPL",
-      "server": "gd.bjnet2.com",
-      "server_port": 36602,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇭🇰香港2-IEPL",
-      "server": "gd2.bjnet2.com",
-      "server_port": 36602,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇹🇼台湾-IEPL",
-      "server": "gd.bjnet2.com",
-      "server_port": 36603,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇹🇼台湾2-IEPL",
-      "server": "gd2.bjnet2.com",
-      "server_port": 36603,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇸🇬新加坡-Gemini-IEPL",
-      "server": "gd.bjnet2.com",
-      "server_port": 36604,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇸🇬新加坡2-Gemini-IEPL",
-      "server": "gd2.bjnet2.com",
-      "server_port": 36604,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇯🇵日本-IEPL-GPT",
-      "server": "gd.bjnet2.com",
-      "server_port": 36609,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇯🇵日本2-IEPL-GPT",
-      "server": "gd2.bjnet2.com",
-      "server_port": 36609,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇯🇵日本4-IEPL-家宽",
-      "server": "gd2.bjnet2.com",
-      "server_port": 36610,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇺🇸美国-IEPL-GPT",
-      "server": "gd.bjnet2.com",
-      "server_port": 36608,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇺🇸美国2-IEPL-GPT",
-      "server": "gd2.bjnet2.com",
-      "server_port": 36608,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇩🇪德国-IEPL",
-      "server": "gd.bjnet2.com",
-      "server_port": 36611,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
       "tag": "HK-01-三网优化",
       "server": "hk01.node.qixi.best",
       "server_port": 443,
@@ -341,6 +221,126 @@
         "server_name": "bing.com",
         "insecure": true
       }
+    },
+    {
+      "tag": "🇭🇰香港-Gemini-IEPL",
+      "server": "gd.bjnet2.com",
+      "server_port": 36602,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇭🇰香港2-IEPL",
+      "server": "gd2.bjnet2.com",
+      "server_port": 36602,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇹🇼台湾-IEPL",
+      "server": "gd.bjnet2.com",
+      "server_port": 36603,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇹🇼台湾2-IEPL",
+      "server": "gd2.bjnet2.com",
+      "server_port": 36603,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇸🇬新加坡-Gemini-IEPL",
+      "server": "gd.bjnet2.com",
+      "server_port": 36604,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇸🇬新加坡2-Gemini-IEPL",
+      "server": "gd2.bjnet2.com",
+      "server_port": 36604,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇯🇵日本-IEPL-GPT",
+      "server": "gd.bjnet2.com",
+      "server_port": 36609,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇯🇵日本2-IEPL-GPT",
+      "server": "gd2.bjnet2.com",
+      "server_port": 36609,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇯🇵日本4-IEPL-家宽",
+      "server": "gd2.bjnet2.com",
+      "server_port": 36610,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇺🇸美国-IEPL-GPT",
+      "server": "gd.bjnet2.com",
+      "server_port": 36608,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇺🇸美国2-IEPL-GPT",
+      "server": "gd2.bjnet2.com",
+      "server_port": 36608,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇩🇪德国-IEPL",
+      "server": "gd.bjnet2.com",
+      "server_port": 36611,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
     },
     {
       "tag": "🇯🇵日本20",
