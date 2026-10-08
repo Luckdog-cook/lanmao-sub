@@ -7,6 +7,13 @@
     "_plain": "Trojan,it194.pacemakere.com,20004,5393ff5a762c42d2,chacha20"
   },
   {
+    "id": "1689828047729483776",
+    "logo": "https://api.frog001.top/images/flag/xinjiapo.png",
+    "name": "新加坡二线",
+    "recommend": false,
+    "_plain": "Trojan,uwt125.zxom.eu.org,20034,e7bad10769244d0c,chacha20"
+  },
+  {
     "id": "1691441926012166144",
     "logo": "https://api.frog001.top/images/flag/xinjiapo.png",
     "name": "新加坡三线",
@@ -18,7 +25,7 @@
     "logo": "https://api.frog001.top/images/flag/meiguo.png",
     "name": "美国",
     "recommend": false,
-    "_plain": "Trojan,su108.izzzzzi.com,20034,7de29a4813914d46,chacha20"
+    "_plain": "Trojan,su106.izzzzzi.com,20034,756c5e40f8db49e5,chacha20"
   },
   {
     "id": "1708286710383960064",
@@ -39,14 +46,14 @@
     "logo": "https://api.frog001.top/images/flag/meiguo.png",
     "name": "美国四线",
     "recommend": false,
-    "_plain": "Trojan,uis183.pacemakere.com,20001,e93ba221569e4606,chacha20"
+    "_plain": "Trojan,uis175.pacemakere.com,20001,316a6661a43d4188,chacha20"
   },
   {
     "id": "1989192271811616768",
     "logo": "https://api.frog001.top/images/flag/zhongguo.png",
     "name": "中国台湾",
     "recommend": false,
-    "_plain": "Trojan,kw119.zxmm.eu.org,20017,c9ae4b585556432e,chacha20"
+    "_plain": "Trojan,uwt125.zxom.eu.org,20034,e7bad10769244d0c,chacha20"
   },
   {
     "id": "1822409212996587520",
@@ -109,7 +116,7 @@
     "logo": "https://api.frog001.top/images/flag/deguo.png",
     "name": "德国二线",
     "recommend": false,
-    "_plain": "Trojan,oge188.pacemakere.com,20015,380399761d5046a8,chacha20"
+    "_plain": "Trojan,oge126.pacemakere.com,20015,6c7bc3a31a654c2e,chacha20"
   },
   {
     "id": "1822410430481403904",
@@ -137,7 +144,7 @@
     "logo": "https://api.frog001.top/images/flag/shipin3.png",
     "name": "视频专线",
     "recommend": false,
-    "_plain": "Trojan,su106.izzzzzi.com,20034,756c5e40f8db49e5,chacha20"
+    "_plain": "Trojan,su108.izzzzzi.com,20034,7de29a4813914d46,chacha20"
   },
   {
     "id": "2025557943464345600",
