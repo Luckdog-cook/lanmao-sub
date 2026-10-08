@@ -47,17 +47,17 @@ proxies:
 
  - name: "美国三线"
  type: trojan
- server: sa175.moldscience.cc
- port: 20034
- password: "5fa6bc6d2e9045f2"
+ server: jus134.pacemakere.com
+ port: 20003
+ password: "453f6647a34947bd"
  udp: true
  skip-cert-verify: true
 
  - name: "美国四线"
  type: trojan
- server: goodus.zxmm.eu.org
- port: 20017
- password: "16b290dc47034ac3"
+ server: gous175.moldscience.cc
+ port: 20012
+ password: "89403995df6e471f"
  udp: true
  skip-cert-verify: true
 
@@ -111,9 +111,9 @@ proxies:
 
  - name: "韩国"
  type: trojan
- server: ikr185.moldscience.cc
- port: 20034
- password: "8f51000562574b0c"
+ server: ikr200.zxom.eu.org
+ port: 20045
+ password: "463f7453753f4d47"
  udp: true
  skip-cert-verify: true
 
@@ -135,9 +135,9 @@ proxies:
 
  - name: "德国二线"
  type: trojan
- server: oge188.pacemakere.com
+ server: oge126.pacemakere.com
  port: 20015
- password: "380399761d5046a8"
+ password: "6c7bc3a31a654c2e"
  udp: true
  skip-cert-verify: true
 
