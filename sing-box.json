@@ -56,7 +56,7 @@
     {
       "type": "vless",
       "tag": "[CN]香港-vip-227",
-      "server": "apifunx.mate-fox.com",
+      "server": "dghk2610.supertoolify.com",
       "server_port": 39675,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "flow": "xtls-rprx-vision",
@@ -1016,6 +1016,69 @@
           "enabled": true,
           "public_key": "XBntt77MdH3EMkPXibOAO_NSBrL_aqwiLItU98rqlHE",
           "short_id": "9c3c0f8ec8b4af12"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "[CN]越南-vip-473",
+      "server": "dghk2610.supertoolify.com",
+      "server_port": 51279,
+      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.tesla.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A",
+          "short_id": "bb82c8"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "[CN]日本-vip-1074",
+      "server": "dghk2610.supertoolify.com",
+      "server_port": 20884,
+      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "iosapps.itunes.apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "HyqKpSHY4gS8aE65sGpvUkWNJj0JgGRBjsS4MFzVbhA",
+          "short_id": "6cdfb8b5878caf8d"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "[CN]新加坡-vip-875",
+      "server": "dghk2610.supertoolify.com",
+      "server_port": 47592,
+      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.lamer.com.sg",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "WIQGJ43m8ym13-VZ57mAtWY5vOwHMHEpnLV8caw2-kA",
+          "short_id": "f38326f99edf"
         }
       }
     },
@@ -2381,6 +2444,9 @@
         "[CN]泰国-vip-470",
         "[CN]英国-vip-371",
         "[CN]印度尼西亚-vip-372",
+        "[CN]越南-vip-473",
+        "[CN]日本-vip-1074",
+        "[CN]新加坡-vip-875",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
@@ -2504,6 +2570,9 @@
         "[CN]泰国-vip-470",
         "[CN]英国-vip-371",
         "[CN]印度尼西亚-vip-372",
+        "[CN]越南-vip-473",
+        "[CN]日本-vip-1074",
+        "[CN]新加坡-vip-875",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
