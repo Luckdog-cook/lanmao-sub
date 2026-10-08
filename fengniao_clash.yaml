@@ -13,14 +13,6 @@ proxies:
  udp: true
  skip-cert-verify: true
 
- - name: "新加坡二线"
- type: trojan
- server: uwt125.zxom.eu.org
- port: 20034
- password: "e7bad10769244d0c"
- udp: true
- skip-cert-verify: true
-
  - name: "新加坡三线"
  type: trojan
  server: ip157i.moldscience.cc
@@ -39,9 +31,9 @@ proxies:
 
  - name: "美国二线"
  type: trojan
- server: lius3.moldscience.cc
- port: 20036
- password: "51e1050bb92846d4"
+ server: lisa3.pacemakere.com
+ port: 20001
+ password: "16554ff3e0874f2a"
  udp: true
  skip-cert-verify: true
 
@@ -55,17 +47,17 @@ proxies:
 
  - name: "美国四线"
  type: trojan
- server: gous175.moldscience.cc
- port: 20012
- password: "89403995df6e471f"
+ server: uis183.pacemakere.com
+ port: 20001
+ password: "e93ba221569e4606"
  udp: true
  skip-cert-verify: true
 
  - name: "中国台湾"
  type: trojan
- server: uwt125.zxom.eu.org
- port: 20034
- password: "e7bad10769244d0c"
+ server: kw119.zxmm.eu.org
+ port: 20017
+ password: "c9ae4b585556432e"
  udp: true
  skip-cert-verify: true
 
@@ -79,17 +71,17 @@ proxies:
 
  - name: "中国香港"
  type: trojan
- server: tk160.moldscience.cc
- port: 20005
- password: "311303d855a3467b"
+ server: hik160.pacemakere.com
+ port: 20001
+ password: "5239f30cd499441f"
  udp: true
  skip-cert-verify: true
 
  - name: "香港二线"
  type: trojan
- server: khk9527.vision.jp.eu.org
- port: 99
- password: "58d09189ae4a4f91"
+ server: xz.pacemakere.com
+ port: 20001
+ password: "de12c3727bc745e3"
  udp: true
  skip-cert-verify: true
 
@@ -111,9 +103,9 @@ proxies:
 
  - name: "韩国"
  type: trojan
- server: ikr200.zxom.eu.org
- port: 20045
- password: "463f7453753f4d47"
+ server: ikr185.moldscience.cc
+ port: 20034
+ password: "8f51000562574b0c"
  udp: true
  skip-cert-verify: true
 
@@ -135,9 +127,9 @@ proxies:
 
  - name: "德国二线"
  type: trojan
- server: oge126.pacemakere.com
+ server: oge188.pacemakere.com
  port: 20015
- password: "6c7bc3a31a654c2e"
+ password: "380399761d5046a8"
  udp: true
  skip-cert-verify: true
 
@@ -167,9 +159,9 @@ proxies:
 
  - name: "视频专线"
  type: trojan
- server: su108.izzzzzi.com
+ server: su106.izzzzzi.com
  port: 20034
- password: "7de29a4813914d46"
+ password: "756c5e40f8db49e5"
  udp: true
  skip-cert-verify: true
 
@@ -186,7 +178,6 @@ proxy-groups:
  type: select
  proxies:
  - "新加坡"
- - "新加坡二线"
  - "新加坡三线"
  - "美国"
  - "美国二线"
@@ -216,7 +207,6 @@ proxy-groups:
  tolerance: 50
  proxies:
  - "新加坡"
- - "新加坡二线"
  - "新加坡三线"
  - "美国"
  - "美国二线"
