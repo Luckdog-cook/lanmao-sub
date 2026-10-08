@@ -8,7 +8,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20001
-  uuid: 09d327ef-feae-4ee9-8d57-00f652990644
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -22,7 +22,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20001
-  uuid: 09d327ef-feae-4ee9-8d57-00f652990644
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -36,7 +36,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20002
-  uuid: 2b2ec2d5-8961-473e-8b2b-5d926dc3ce5e
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -50,7 +50,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20002
-  uuid: 2b2ec2d5-8961-473e-8b2b-5d926dc3ce5e
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -64,7 +64,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20003
-  uuid: 52ac38da-c2fa-4f98-bef1-f3adef5d3ae9
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -78,7 +78,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20003
-  uuid: 52ac38da-c2fa-4f98-bef1-f3adef5d3ae9
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -92,7 +92,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20004
-  uuid: 5e6cd021-d3ac-48fc-b2fd-203862ed9712
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -106,7 +106,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20004
-  uuid: 5e6cd021-d3ac-48fc-b2fd-203862ed9712
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -120,7 +120,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20005
-  uuid: 73712dc9-c3de-4e46-9063-cdc88b7a45f6
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -134,7 +134,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20005
-  uuid: 73712dc9-c3de-4e46-9063-cdc88b7a45f6
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -148,7 +148,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20006
-  uuid: baf7b3e9-4844-4925-b4f0-4f51b66c153f
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -162,7 +162,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20006
-  uuid: baf7b3e9-4844-4925-b4f0-4f51b66c153f
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -176,7 +176,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20007
-  uuid: 4fcd1f98-0f62-467e-9516-8df807386953
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -190,7 +190,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20007
-  uuid: 4fcd1f98-0f62-467e-9516-8df807386953
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -204,7 +204,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20008
-  uuid: fcabb3d7-929a-4a22-9461-1c06d52b350b
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -218,7 +218,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20008
-  uuid: fcabb3d7-929a-4a22-9461-1c06d52b350b
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -232,7 +232,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20009
-  uuid: 635ae9d5-9043-4c2f-8487-60f5aa7a325b
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
@@ -246,7 +246,7 @@ proxies:
   type: vless
   server: relay.xiaomans.com
   port: 20009
-  uuid: 635ae9d5-9043-4c2f-8487-60f5aa7a325b
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
   tls: true
