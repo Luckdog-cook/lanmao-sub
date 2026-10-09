@@ -728,7 +728,7 @@
     {
       "type": "vless",
       "tag": "[CN]香港-vip-459",
-      "server": "dghk2610.supertoolify.com",
+      "server": "idh1kxx1-api.mateflora.com",
       "server_port": 28675,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "flow": "xtls-rprx-vision",
@@ -959,7 +959,7 @@
     {
       "type": "vless",
       "tag": "[CN]泰国-vip-470",
-      "server": "dghk2610.supertoolify.com",
+      "server": "idh1kxx1-api.mateflora.com",
       "server_port": 21033,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "flow": "xtls-rprx-vision",
@@ -1022,7 +1022,7 @@
     {
       "type": "vless",
       "tag": "[CN]越南-vip-473",
-      "server": "dghk2610.supertoolify.com",
+      "server": "idh1kxx1-api.mateflora.com",
       "server_port": 51279,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "flow": "xtls-rprx-vision",
