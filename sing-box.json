@@ -1084,6 +1084,48 @@
     },
     {
       "type": "vless",
+      "tag": "[CN]香港-vip-676",
+      "server": "apifunx.mate-fox.com",
+      "server_port": 28451,
+      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.lamer.com.hk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "VW9b1Lj_TPfa52PVrmLypSxQjRiV06sgG96uEd6oBRM",
+          "short_id": "551a216445"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "[CN]美国-vip-877",
+      "server": "iusapixx1.mateflora.com",
+      "server_port": 443,
+      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "us1p1.xn--ghq880n3na965a.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "I4wca_Bcv_3400hRPaXzOpYmu0ZuoEmIZnVjMB6AEj8",
+          "short_id": "7d2f3b1d17"
+        }
+      }
+    },
+    {
+      "type": "vless",
       "tag": "[Global]日本-vip-128",
       "server": "unamecf.xn--ghqu5fm27b67w.com",
       "server_port": 443,
@@ -2447,6 +2489,8 @@
         "[CN]越南-vip-473",
         "[CN]日本-vip-1074",
         "[CN]新加坡-vip-875",
+        "[CN]香港-vip-676",
+        "[CN]美国-vip-877",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
@@ -2573,6 +2617,8 @@
         "[CN]越南-vip-473",
         "[CN]日本-vip-1074",
         "[CN]新加坡-vip-875",
+        "[CN]香港-vip-676",
+        "[CN]美国-vip-877",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
