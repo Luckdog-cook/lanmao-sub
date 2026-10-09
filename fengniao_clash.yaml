@@ -8,96 +8,96 @@ proxies:
  - name: "新加坡"
  type: trojan
  server: it194.pacemakere.com
- port: 20004
- password: "5393ff5a762c42d2"
+ port: 20005
+ password: "aa2a99aedbb0487a"
  udp: true
  skip-cert-verify: true
 
  - name: "新加坡二线"
  type: trojan
  server: uwt125.zxom.eu.org
- port: 20034
- password: "e7bad10769244d0c"
+ port: 20035
+ password: "47d0ed035f5e498b"
  udp: true
  skip-cert-verify: true
 
  - name: "新加坡三线"
  type: trojan
  server: ip157i.moldscience.cc
- port: 20022
- password: "15b8515aaef947ab"
+ port: 20023
+ password: "ab93c2d117d6478f"
  udp: true
  skip-cert-verify: true
 
  - name: "美国"
  type: trojan
- server: su106.izzzzzi.com
- port: 20034
- password: "756c5e40f8db49e5"
+ server: su108.izzzzzi.com
+ port: 20035
+ password: "72fea99adbfa48b1"
  udp: true
  skip-cert-verify: true
 
  - name: "美国二线"
  type: trojan
  server: lisa3.pacemakere.com
- port: 20001
- password: "16554ff3e0874f2a"
+ port: 20002
+ password: "bea88de30701498d"
  udp: true
  skip-cert-verify: true
 
  - name: "美国三线"
  type: trojan
  server: jus134.pacemakere.com
- port: 20003
- password: "453f6647a34947bd"
+ port: 20004
+ password: "6577cf45db17444c"
  udp: true
  skip-cert-verify: true
 
  - name: "美国四线"
  type: trojan
  server: uis175.pacemakere.com
- port: 20001
- password: "316a6661a43d4188"
+ port: 20002
+ password: "d2175103c52a4aa7"
  udp: true
  skip-cert-verify: true
 
  - name: "中国台湾"
  type: trojan
  server: uwt125.zxom.eu.org
- port: 20034
- password: "e7bad10769244d0c"
+ port: 20035
+ password: "47d0ed035f5e498b"
  udp: true
  skip-cert-verify: true
 
  - name: "台湾二线"
  type: trojan
  server: gu232.izzzzzi.com
- port: 20037
- password: "395c4152ba6344ac"
+ port: 20038
+ password: "e31053bc0be44280"
  udp: true
  skip-cert-verify: true
 
  - name: "中国香港"
  type: trojan
  server: hik160.pacemakere.com
- port: 20001
- password: "5239f30cd499441f"
+ port: 20002
+ password: "84e7937427464404"
  udp: true
  skip-cert-verify: true
 
  - name: "香港二线"
  type: trojan
  server: xz.pacemakere.com
- port: 20001
- password: "de12c3727bc745e3"
+ port: 20002
+ password: "9ab9c057eae54558"
  udp: true
  skip-cert-verify: true
 
  - name: "日本"
  type: trojan
  server: ip157i.moldscience.cc
- port: 20022
- password: "15b8515aaef947ab"
+ port: 20023
+ password: "ab93c2d117d6478f"
  udp: true
  skip-cert-verify: true
 
@@ -111,73 +111,73 @@ proxies:
 
  - name: "韩国"
  type: trojan
- server: ikr200.zxom.eu.org
- port: 20045
- password: "463f7453753f4d47"
+ server: ikr100a.zxom.eu.org
+ port: 20047
+ password: "b976836d2a11426f"
  udp: true
  skip-cert-verify: true
 
  - name: "韩国二线"
  type: trojan
  server: akr187.moldscience.cc
- port: 20012
- password: "1435ddeaa4f64c6e"
+ port: 20013
+ password: "f9a23cce9d554e5c"
  udp: true
  skip-cert-verify: true
 
  - name: "德国"
  type: trojan
- server: lge179.zxmm.eu.org
- port: 20015
- password: "f12ddb442d824248"
+ server: lige51.zxmm.eu.org
+ port: 20013
+ password: "20d2679b5efc4a7c"
  udp: true
  skip-cert-verify: true
 
  - name: "德国二线"
  type: trojan
  server: oge188.pacemakere.com
- port: 20015
- password: "380399761d5046a8"
+ port: 20016
+ password: "09a4b2991fa74137"
  udp: true
  skip-cert-verify: true
 
  - name: "英国"
  type: trojan
  server: ikuk195.zxom.eu.org
- port: 20016
- password: "1791cc7f32c7450c"
+ port: 20017
+ password: "81f3002ac5944e81"
  udp: true
  skip-cert-verify: true
 
  - name: "泰国"
  type: trojan
  server: isg167.zxom.eu.org
- port: 20001
- password: "809b85b0a5df4b1e"
+ port: 20002
+ password: "0db31be761354f06"
  udp: true
  skip-cert-verify: true
 
  - name: "ChatGPT"
  type: trojan
  server: ip157i.moldscience.cc
- port: 20022
- password: "15b8515aaef947ab"
+ port: 20023
+ password: "ab93c2d117d6478f"
  udp: true
  skip-cert-verify: true
 
  - name: "视频专线"
  type: trojan
- server: su106.izzzzzi.com
- port: 20034
- password: "756c5e40f8db49e5"
+ server: su108.izzzzzi.com
+ port: 20035
+ password: "72fea99adbfa48b1"
  udp: true
  skip-cert-verify: true
 
  - name: "亚洲大区"
  type: trojan
  server: isg167.zxom.eu.org
- port: 20001
- password: "809b85b0a5df4b1e"
+ port: 20002
+ password: "0db31be761354f06"
  udp: true
  skip-cert-verify: true
 
