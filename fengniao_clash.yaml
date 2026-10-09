@@ -31,9 +31,9 @@ proxies:
 
  - name: "美国"
  type: trojan
- server: su108.izzzzzi.com
+ server: su106.izzzzzi.com
  port: 20034
- password: "7de29a4813914d46"
+ password: "756c5e40f8db49e5"
  udp: true
  skip-cert-verify: true
 
@@ -63,9 +63,9 @@ proxies:
 
  - name: "中国台湾"
  type: trojan
- server: uwt125.zxom.eu.org
- port: 20034
- password: "e7bad10769244d0c"
+ server: kw119.zxmm.eu.org
+ port: 20017
+ password: "c9ae4b585556432e"
  udp: true
  skip-cert-verify: true
 
@@ -111,9 +111,9 @@ proxies:
 
  - name: "韩国"
  type: trojan
- server: ikr200.zxom.eu.org
- port: 20045
- password: "463f7453753f4d47"
+ server: ikr185.moldscience.cc
+ port: 20034
+ password: "8f51000562574b0c"
  udp: true
  skip-cert-verify: true
 
@@ -143,17 +143,17 @@ proxies:
 
  - name: "英国"
  type: trojan
- server: ikuk204.zxom.eu.org
- port: 20021
- password: "5a38941831eb4c0c"
+ server: ikuk195.zxom.eu.org
+ port: 20016
+ password: "1791cc7f32c7450c"
  udp: true
  skip-cert-verify: true
 
  - name: "泰国"
  type: trojan
- server: isg247.moldscience.cc
- port: 20005
- password: "c75166dc070a455c"
+ server: isg167.zxom.eu.org
+ port: 20001
+ password: "809b85b0a5df4b1e"
  udp: true
  skip-cert-verify: true
 
@@ -175,9 +175,9 @@ proxies:
 
  - name: "亚洲大区"
  type: trojan
- server: isg247.moldscience.cc
- port: 20005
- password: "c75166dc070a455c"
+ server: isg167.zxom.eu.org
+ port: 20001
+ password: "809b85b0a5df4b1e"
  udp: true
  skip-cert-verify: true
 
