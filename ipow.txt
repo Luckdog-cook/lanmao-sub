@@ -26,8 +26,6 @@ vless://50cbda48-00ce-4688-8b3d-0177ab8f177c@34.142.207.152:443?encryption=none&
 hysteria2://2ced54afc9b45676d0019ad9d2fa41316e9f2e4f945764de5b3d29d8c5d6c5f5@34.142.207.152:443/?insecure=1#iPoW-SG-gcp-asia-southeast1-1-hy2
 vless://5567cac6-2a32-4318-83cd-7df3a9eebbd7@34.87.113.18:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=hJCcmOf_ECJ3GUfHUjsgfcFKcgGb22H7cz_m_FvcVm4&sid=eb97ce837da2f6ad&type=tcp#iPoW-SG-gcp-asia-southeast1-2
 hysteria2://23812365abc9432ccb8cbf6e3c294f785e0bd39a246cf94cc347c0d340541b98@34.87.113.18:443/?insecure=1#iPoW-SG-gcp-asia-southeast1-2-hy2
-vless://22a0b0bd-1cd0-43fa-a7c3-73b24eae44e2@35.236.142.6:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=PLslPQOBA3bfWO5hXLv7jioCTuNR8vCxa_axi0dC7C0&sid=32f66f37df3f58d2&type=tcp#iPoW-TW-gcp-asia-east1-1
-hysteria2://c9486a411ff3c9cbdc848808bb7ba1cae018885378ae633c809c069f0b160562@35.236.142.6:443/?insecure=1#iPoW-TW-gcp-asia-east1-1-hy2
 vless://31a40f42-4ad6-4a32-a760-71102b459584@34.81.16.9:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=qvekI7tKB1NDnZA6JcS_24aV4n8mlCbI3SFvkRr22wg&sid=d74a6321deec9f31&type=tcp#iPoW-TW-gcp-asia-east1-2
 hysteria2://397c7153c60c801a3dcf3f5d3f97c3cb69e7150f730be37bd92d354d147d70bb@34.81.16.9:443/?insecure=1#iPoW-TW-gcp-asia-east1-2-hy2
 vless://0106efd7-39bf-449d-b734-a4aa758d6480@34.31.93.173:443?encryption=none&flow=&security=reality&sni=www.cloudflare.com&fp=chrome&pbk=VL1ZiaWxae8teZWJeBAIHadbo7z1Ezu1KA2kIA1TDmk&sid=7dfdbf323c4ef0a8&type=tcp#iPoW-US-gcp-us-central1-1

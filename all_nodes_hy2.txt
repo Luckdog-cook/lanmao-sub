@@ -12,7 +12,6 @@ hysteria2://42e3d9e33334ac89115e227ae74b72c34d0a503a6efdb64d5f234f37319d1743@34.
 hysteria2://fcb22dd943f986f2f73f85dffdb1c5f44726623464dcaaa8e51349591da6bb1d@34.50.26.212:443/?insecure=1#iPoW-KR-gcp-asia-northeast3-2-hy2
 hysteria2://2ced54afc9b45676d0019ad9d2fa41316e9f2e4f945764de5b3d29d8c5d6c5f5@34.142.207.152:443/?insecure=1#iPoW-SG-gcp-asia-southeast1-1-hy2
 hysteria2://23812365abc9432ccb8cbf6e3c294f785e0bd39a246cf94cc347c0d340541b98@34.87.113.18:443/?insecure=1#iPoW-SG-gcp-asia-southeast1-2-hy2
-hysteria2://c9486a411ff3c9cbdc848808bb7ba1cae018885378ae633c809c069f0b160562@35.236.142.6:443/?insecure=1#iPoW-TW-gcp-asia-east1-1-hy2
 hysteria2://397c7153c60c801a3dcf3f5d3f97c3cb69e7150f730be37bd92d354d147d70bb@34.81.16.9:443/?insecure=1#iPoW-TW-gcp-asia-east1-2-hy2
 hysteria2://18f4ddc65a979071af79ed417ad295d1866257c4eb04c80d64bb5b96f967fb20@34.31.93.173:443/?insecure=1#iPoW-US-gcp-us-central1-1-hy2
 hysteria2://c64ae49c9ac4cf538121539fe2221a8e11f4732143d99214a43f0a6014f54c6c@136.65.145.234:443/?insecure=1#iPoW-US-gcp-us-central1-2-hy2
