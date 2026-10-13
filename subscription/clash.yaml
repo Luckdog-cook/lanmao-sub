@@ -88,6 +88,34 @@ proxies:
     public-key: OgcLHAAzQV0qTuXwHnz0huEueM5f3vRpYZHMH8JsjC4
     short-id: 09d75ddaf90d0ba5
   flow: xtls-rprx-vision
+- name: 日本 03
+  type: vless
+  server: 103.180.20.132
+  port: 20004
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
+  network: tcp
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: zVIESiLSczwOhE1qKC6yX-bIGMp5WrGGcKxE7X7_8TA
+    short-id: 686a51fda2f48e40
+  flow: xtls-rprx-vision
+- name: 🆓日本 03（1MB限速）
+  type: vless
+  server: 103.180.20.132
+  port: 20004
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
+  network: tcp
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: zVIESiLSczwOhE1qKC6yX-bIGMp5WrGGcKxE7X7_8TA
+    short-id: 686a51fda2f48e40
+  flow: xtls-rprx-vision
 - name: 日本 04
   type: vless
   server: 103.180.20.132
@@ -240,6 +268,8 @@ proxy-groups:
   - 🆓香港 04（1MB限速）
   - 香港 05
   - 🆓香港 05（1MB限速）
+  - 日本 03
+  - 🆓日本 03（1MB限速）
   - 日本 04
   - 🆓日本 04（1MB限速）
   - 台湾 01
@@ -261,6 +291,8 @@ proxy-groups:
   - 🆓香港 04（1MB限速）
   - 香港 05
   - 🆓香港 05（1MB限速）
+  - 日本 03
+  - 🆓日本 03（1MB限速）
   - 日本 04
   - 🆓日本 04（1MB限速）
   - 台湾 01
