@@ -6,7 +6,7 @@ external-controller: 127.0.0.1:9090
 proxies:
 - name: 香港 03
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20001
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -20,7 +20,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🆓香港 03（1MB限速）
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20001
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -34,7 +34,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 香港 04
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20002
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -48,7 +48,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🆓香港 04（1MB限速）
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20002
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -62,7 +62,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 香港 05
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20003
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -76,7 +76,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🆓香港 05（1MB限速）
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20003
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -88,37 +88,9 @@ proxies:
     public-key: OgcLHAAzQV0qTuXwHnz0huEueM5f3vRpYZHMH8JsjC4
     short-id: 09d75ddaf90d0ba5
   flow: xtls-rprx-vision
-- name: 日本 03
-  type: vless
-  server: relay.xiaomans.com
-  port: 20004
-  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
-  network: tcp
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: safari
-  reality-opts:
-    public-key: zVIESiLSczwOhE1qKC6yX-bIGMp5WrGGcKxE7X7_8TA
-    short-id: 686a51fda2f48e40
-  flow: xtls-rprx-vision
-- name: 🆓日本 03（1MB限速）
-  type: vless
-  server: relay.xiaomans.com
-  port: 20004
-  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
-  network: tcp
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: safari
-  reality-opts:
-    public-key: zVIESiLSczwOhE1qKC6yX-bIGMp5WrGGcKxE7X7_8TA
-    short-id: 686a51fda2f48e40
-  flow: xtls-rprx-vision
 - name: 日本 04
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20005
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -132,7 +104,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🆓日本 04（1MB限速）
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20005
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -146,7 +118,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 台湾 01
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20006
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -160,7 +132,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🆓台湾 01（1MB限速）
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20006
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -174,7 +146,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 新加坡 03
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20007
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -188,7 +160,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🆓新加坡 03（1MB限速）
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20007
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -202,7 +174,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 美国 03
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20008
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -216,7 +188,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🆓美国 03（1MB限速）
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20008
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -230,7 +202,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 英国 01
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20009
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -244,7 +216,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🆓英国 01（1MB限速）
   type: vless
-  server: relay.xiaomans.com
+  server: 103.180.20.132
   port: 20009
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -268,8 +240,6 @@ proxy-groups:
   - 🆓香港 04（1MB限速）
   - 香港 05
   - 🆓香港 05（1MB限速）
-  - 日本 03
-  - 🆓日本 03（1MB限速）
   - 日本 04
   - 🆓日本 04（1MB限速）
   - 台湾 01
@@ -291,8 +261,6 @@ proxy-groups:
   - 🆓香港 04（1MB限速）
   - 香港 05
   - 🆓香港 05（1MB限速）
-  - 日本 03
-  - 🆓日本 03（1MB限速）
   - 日本 04
   - 🆓日本 04（1MB限速）
   - 台湾 01
