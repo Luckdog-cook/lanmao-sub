@@ -18,7 +18,7 @@
         "vless-hk-05::free::xiaoman"
       ],
       "best_node_id": "vless-hk-03",
-      "latency_ms": 39,
+      "latency_ms": 38,
       "load_pct": 0,
       "free_speed_mbps": 1,
       "status": "online"
@@ -56,7 +56,7 @@
         "vless-tw-01::free::xiaoman"
       ],
       "best_node_id": "vless-tw-01",
-      "latency_ms": 42,
+      "latency_ms": 43,
       "load_pct": 0,
       "free_speed_mbps": 1,
       "status": "online"
@@ -92,7 +92,7 @@
         "vless-us-03::free::xiaoman"
       ],
       "best_node_id": "vless-us-03",
-      "latency_ms": 43,
+      "latency_ms": 39,
       "load_pct": 0,
       "free_speed_mbps": 1,
       "status": "online"
@@ -110,7 +110,7 @@
         "vless-uk-01::free::xiaoman"
       ],
       "best_node_id": "vless-uk-01",
-      "latency_ms": 38,
+      "latency_ms": 43,
       "load_pct": 0,
       "free_speed_mbps": 1,
       "status": "online"
@@ -192,7 +192,7 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 39,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -225,7 +225,7 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 39,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -259,7 +259,7 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 42,
+      "latency_ms": 38,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -292,7 +292,7 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 42,
+      "latency_ms": 38,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -326,7 +326,7 @@
       "country_code": "JP",
       "flag": "🇯🇵",
       "city": "Tokyo",
-      "latency_ms": 39,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -359,7 +359,7 @@
       "country_code": "JP",
       "flag": "🇯🇵",
       "city": "Tokyo",
-      "latency_ms": 39,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -460,7 +460,7 @@
       "country_code": "TW",
       "flag": "🇹🇼",
       "city": "Taipei",
-      "latency_ms": 42,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -493,7 +493,7 @@
       "country_code": "TW",
       "flag": "🇹🇼",
       "city": "Taipei",
-      "latency_ms": 42,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -594,7 +594,7 @@
       "country_code": "US",
       "flag": "🇺🇸",
       "city": "Los Angeles",
-      "latency_ms": 43,
+      "latency_ms": 39,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -627,7 +627,7 @@
       "country_code": "US",
       "flag": "🇺🇸",
       "city": "Los Angeles",
-      "latency_ms": 43,
+      "latency_ms": 39,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -661,7 +661,7 @@
       "country_code": "GB",
       "flag": "🇬🇧",
       "city": "London",
-      "latency_ms": 38,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -694,7 +694,7 @@
       "country_code": "GB",
       "flag": "🇬🇧",
       "city": "London",
-      "latency_ms": 38,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -766,7 +766,7 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 39,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -801,7 +801,7 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 42,
+      "latency_ms": 38,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -836,7 +836,7 @@
       "country_code": "JP",
       "flag": "🇯🇵",
       "city": "Tokyo",
-      "latency_ms": 39,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -906,7 +906,7 @@
       "country_code": "TW",
       "flag": "🇹🇼",
       "city": "Taipei",
-      "latency_ms": 42,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -976,7 +976,7 @@
       "country_code": "US",
       "flag": "🇺🇸",
       "city": "Los Angeles",
-      "latency_ms": 43,
+      "latency_ms": 39,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -1011,7 +1011,7 @@
       "country_code": "GB",
       "flag": "🇬🇧",
       "city": "London",
-      "latency_ms": 38,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -1079,7 +1079,7 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 39,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -1111,7 +1111,7 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 42,
+      "latency_ms": 38,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -1143,7 +1143,7 @@
       "country_code": "JP",
       "flag": "🇯🇵",
       "city": "Tokyo",
-      "latency_ms": 39,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -1207,7 +1207,7 @@
       "country_code": "TW",
       "flag": "🇹🇼",
       "city": "Taipei",
-      "latency_ms": 42,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -1271,7 +1271,7 @@
       "country_code": "US",
       "flag": "🇺🇸",
       "city": "Los Angeles",
-      "latency_ms": 43,
+      "latency_ms": 39,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -1303,7 +1303,7 @@
       "country_code": "GB",
       "flag": "🇬🇧",
       "city": "London",
-      "latency_ms": 38,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -1362,30 +1362,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-hk-03",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-hk-03",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-hk-03",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -1570,30 +1572,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-hk-03",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-hk-03",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-hk-03",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -1778,30 +1782,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-hk-04",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-hk-04",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-hk-04",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -1986,30 +1992,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-hk-04",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-hk-04",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-hk-04",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -2194,30 +2202,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-hk-05",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-hk-05",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-hk-05",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -2402,30 +2412,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-hk-05",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-hk-05",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-hk-05",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -2610,30 +2622,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-jp-03",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-jp-03",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-jp-03",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -2818,30 +2832,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-jp-03",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-jp-03",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-jp-03",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -3026,30 +3042,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-jp-04",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-jp-04",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-jp-04",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -3234,30 +3252,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-jp-04",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-jp-04",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-jp-04",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -3442,30 +3462,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-tw-01",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-tw-01",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-tw-01",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -3650,30 +3672,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-tw-01",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-tw-01",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-tw-01",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -3858,30 +3882,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-sg-03",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-sg-03",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-sg-03",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -4066,30 +4092,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-sg-03",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-sg-03",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-sg-03",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -4274,30 +4302,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-us-03",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-us-03",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-us-03",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -4482,30 +4512,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-us-03",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-us-03",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-us-03",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -4690,30 +4722,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-uk-01",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-uk-01",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-uk-01",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
@@ -4898,30 +4932,32 @@
         ],
         "servers": [
           {
-            "server": "223.5.5.5",
-            "server_port": 53,
-            "tag": "bootstrap-dns",
-            "type": "udp"
-          },
-          {
-            "detour": "vless-uk-01",
             "server": "1.1.1.1",
             "server_port": 53,
-            "tag": "remote-dns",
-            "type": "udp"
+            "tag": "bootstrap-dns",
+            "type": "tcp"
           },
           {
             "detour": "vless-uk-01",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-uk-01",
+            "path": "/dns-query",
             "server": "8.8.8.8",
-            "server_port": 53,
+            "server_port": 443,
             "tag": "fallback-dns",
-            "type": "udp"
+            "type": "https"
           },
           {
             "server": "223.5.5.5",
             "server_port": 53,
             "tag": "cn-direct-dns",
-            "type": "udp"
+            "type": "tcp"
           }
         ],
         "strategy": "ipv4_only"
