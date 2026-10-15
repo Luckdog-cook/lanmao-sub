@@ -4,6 +4,62 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
+- name: 香港主力
+  type: vless
+  server: 103-180-20-132.sslip.io
+  port: 20201
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
+  network: tcp
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: QTJCsEI6kStTp5vCNDl-M1QhDK5Ki2qgEYwCxpwst0E
+    short-id: c0196c432a03dcb5
+  flow: xtls-rprx-vision
+- name: 🆓香港主力（1MB限速）
+  type: vless
+  server: 103-180-20-132.sslip.io
+  port: 20201
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
+  network: tcp
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: QTJCsEI6kStTp5vCNDl-M1QhDK5Ki2qgEYwCxpwst0E
+    short-id: c0196c432a03dcb5
+  flow: xtls-rprx-vision
+- name: 日本主力
+  type: vless
+  server: 103-180-20-132.sslip.io
+  port: 20202
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
+  network: tcp
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: Xx0rOKvMlxtZbzf-OCWb44aJIS82PFv45l8jv4z7NHY
+    short-id: dc457a6253a55e7d
+  flow: xtls-rprx-vision
+- name: 🆓日本主力（1MB限速）
+  type: vless
+  server: 103-180-20-132.sslip.io
+  port: 20202
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
+  network: tcp
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: Xx0rOKvMlxtZbzf-OCWb44aJIS82PFv45l8jv4z7NHY
+    short-id: dc457a6253a55e7d
+  flow: xtls-rprx-vision
 - name: 香港 03
   type: vless
   server: 103.180.20.132
@@ -115,34 +171,6 @@ proxies:
   reality-opts:
     public-key: zVIESiLSczwOhE1qKC6yX-bIGMp5WrGGcKxE7X7_8TA
     short-id: 686a51fda2f48e40
-  flow: xtls-rprx-vision
-- name: 日本 04
-  type: vless
-  server: 103.180.20.132
-  port: 20005
-  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
-  network: tcp
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: safari
-  reality-opts:
-    public-key: NdpLwhOfALzPx26QT985xAncCWejWJBrcREI8I2lrHM
-    short-id: 2bd5ea1422613a24
-  flow: xtls-rprx-vision
-- name: 🆓日本 04（1MB限速）
-  type: vless
-  server: 103.180.20.132
-  port: 20005
-  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
-  network: tcp
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: safari
-  reality-opts:
-    public-key: NdpLwhOfALzPx26QT985xAncCWejWJBrcREI8I2lrHM
-    short-id: 2bd5ea1422613a24
   flow: xtls-rprx-vision
 - name: 台湾 01
   type: vless
@@ -262,6 +290,10 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
+  - 香港主力
+  - 🆓香港主力（1MB限速）
+  - 日本主力
+  - 🆓日本主力（1MB限速）
   - 香港 03
   - 🆓香港 03（1MB限速）
   - 香港 04
@@ -270,8 +302,6 @@ proxy-groups:
   - 🆓香港 05（1MB限速）
   - 日本 03
   - 🆓日本 03（1MB限速）
-  - 日本 04
-  - 🆓日本 04（1MB限速）
   - 台湾 01
   - 🆓台湾 01（1MB限速）
   - 新加坡 03
@@ -285,6 +315,10 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
+  - 香港主力
+  - 🆓香港主力（1MB限速）
+  - 日本主力
+  - 🆓日本主力（1MB限速）
   - 香港 03
   - 🆓香港 03（1MB限速）
   - 香港 04
@@ -293,8 +327,6 @@ proxy-groups:
   - 🆓香港 05（1MB限速）
   - 日本 03
   - 🆓日本 03（1MB限速）
-  - 日本 04
-  - 🆓日本 04（1MB限速）
   - 台湾 01
   - 🆓台湾 01（1MB限速）
   - 新加坡 03
