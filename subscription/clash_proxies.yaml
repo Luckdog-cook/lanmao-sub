@@ -112,34 +112,6 @@ proxies:
     public-key: OgcLHAAzQV0qTuXwHnz0huEueM5f3vRpYZHMH8JsjC4
     short-id: 09d75ddaf90d0ba5
   flow: xtls-rprx-vision
-- name: 台湾 01
-  type: vless
-  server: 103.180.20.132
-  port: 20006
-  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
-  network: tcp
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: safari
-  reality-opts:
-    public-key: EwpuwXSOb0jp7rsG7Gk_MBFc3bl8R5l9IJniRtmGgFE
-    short-id: d13ca00a58f42b85
-  flow: xtls-rprx-vision
-- name: 🆓台湾 01（1MB限速）
-  type: vless
-  server: 103.180.20.132
-  port: 20006
-  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
-  network: tcp
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: safari
-  reality-opts:
-    public-key: EwpuwXSOb0jp7rsG7Gk_MBFc3bl8R5l9IJniRtmGgFE
-    short-id: d13ca00a58f42b85
-  flow: xtls-rprx-vision
 - name: 新加坡 03
   type: vless
   server: 103.180.20.132
