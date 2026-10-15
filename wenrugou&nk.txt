@@ -1,6 +1,272 @@
 {
   "outbounds": [
     {
+      "tag": "HK-01-三网优化",
+      "server": "hk01.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "288c33ad-4c57-45fe-8e7b-22f6209980c1",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk01.node.qixi.best",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "hk01.node.qixi.best"
+        }
+      }
+    },
+    {
+      "tag": "HK-02-三网优化",
+      "server": "hk02.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "288c33ad-4c57-45fe-8e7b-22f6209980c1",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk02.node.qixi.best",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "hk02.node.qixi.best"
+        }
+      }
+    },
+    {
+      "tag": "HK-03-三网优化",
+      "server": "hk03.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "288c33ad-4c57-45fe-8e7b-22f6209980c1",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk03.node.qixi.best",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "hk03.node.qixi.best"
+        }
+      }
+    },
+    {
+      "tag": "HK-05-三网优化",
+      "server": "hk05.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "288c33ad-4c57-45fe-8e7b-22f6209980c1",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk05.node.qixi.best",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "hk05.node.qixi.best"
+        }
+      }
+    },
+    {
+      "tag": "HK-06-三网优化",
+      "server": "hk06.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "288c33ad-4c57-45fe-8e7b-22f6209980c1",
+      "tls": {
+        "enabled": true,
+        "server_name": "hk06.node.qixi.best",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "hk06.node.qixi.best"
+        }
+      }
+    },
+    {
+      "tag": "JP-01-三网优化",
+      "server": "JP01.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "288c33ad-4c57-45fe-8e7b-22f6209980c1",
+      "tls": {
+        "enabled": true,
+        "server_name": "jp01.node.qixi.best",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "jp01.node.qixi.best"
+        }
+      }
+    },
+    {
+      "tag": "JP-02-三网优化",
+      "server": "JP02.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "288c33ad-4c57-45fe-8e7b-22f6209980c1",
+      "tls": {
+        "enabled": true,
+        "server_name": "jp02.node.qixi.best",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "jp02.node.qixi.best"
+        }
+      }
+    },
+    {
+      "tag": "JP-03-三网优化",
+      "server": "JP03.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "288c33ad-4c57-45fe-8e7b-22f6209980c1",
+      "tls": {
+        "enabled": true,
+        "server_name": "jp03.node.qixi.best",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "jp03.node.qixi.best"
+        }
+      }
+    },
+    {
+      "tag": "JP-04-三网优化",
+      "server": "JP04.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "288c33ad-4c57-45fe-8e7b-22f6209980c1",
+      "tls": {
+        "enabled": true,
+        "server_name": "jp04.node.qixi.best",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "jp04.node.qixi.best"
+        }
+      }
+    },
+    {
+      "tag": "JP-05-三网优化",
+      "server": "216.23.120.16",
+      "server_port": 16606,
+      "type": "hysteria2",
+      "password": "288c33ad-4c57-45fe-8e7b-22f6209980c1",
+      "tls": {
+        "enabled": true,
+        "server_name": "bing.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "JP06-三网优化",
+      "server": "52.199.139.99",
+      "server_port": 16606,
+      "type": "hysteria2",
+      "password": "288c33ad-4c57-45fe-8e7b-22f6209980c1",
+      "tls": {
+        "enabled": true,
+        "server_name": "bing.com",
+        "insecure": true
+      }
+    },
+    {
+      "tag": "US-01-三网优化",
+      "server": "us01.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "288c33ad-4c57-45fe-8e7b-22f6209980c1",
+      "tls": {
+        "enabled": true,
+        "server_name": "us01.node.qixi.best",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "us01.node.qixi.best"
+        }
+      }
+    },
+    {
+      "tag": "DE-01-三网优化",
+      "server": "de01.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "288c33ad-4c57-45fe-8e7b-22f6209980c1",
+      "tls": {
+        "enabled": true,
+        "server_name": "de01.node.qixi.best",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "de01.node.qixi.best"
+        }
+      }
+    },
+    {
       "tag": "🇭🇰香港-Gemini-IEPL",
       "server": "gd.bjnet2.com",
       "server_port": 36602,
@@ -119,272 +385,6 @@
       "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
       "plugin": "obfs-local",
       "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "HK-01-三网优化",
-      "server": "hk01.node.qixi.best",
-      "server_port": 443,
-      "type": "trojan",
-      "password": "c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c",
-      "tls": {
-        "enabled": true,
-        "server_name": "hk01.node.qixi.best",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/download",
-        "headers": {
-          "Host": "hk01.node.qixi.best"
-        }
-      }
-    },
-    {
-      "tag": "HK-02-三网优化",
-      "server": "hk02.node.qixi.best",
-      "server_port": 443,
-      "type": "trojan",
-      "password": "c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c",
-      "tls": {
-        "enabled": true,
-        "server_name": "hk02.node.qixi.best",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/download",
-        "headers": {
-          "Host": "hk02.node.qixi.best"
-        }
-      }
-    },
-    {
-      "tag": "HK-03-三网优化",
-      "server": "hk03.node.qixi.best",
-      "server_port": 443,
-      "type": "trojan",
-      "password": "c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c",
-      "tls": {
-        "enabled": true,
-        "server_name": "hk03.node.qixi.best",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/download",
-        "headers": {
-          "Host": "hk03.node.qixi.best"
-        }
-      }
-    },
-    {
-      "tag": "HK-05-三网优化",
-      "server": "hk05.node.qixi.best",
-      "server_port": 443,
-      "type": "trojan",
-      "password": "c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c",
-      "tls": {
-        "enabled": true,
-        "server_name": "hk05.node.qixi.best",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/download",
-        "headers": {
-          "Host": "hk05.node.qixi.best"
-        }
-      }
-    },
-    {
-      "tag": "HK-06-三网优化",
-      "server": "hk06.node.qixi.best",
-      "server_port": 443,
-      "type": "trojan",
-      "password": "c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c",
-      "tls": {
-        "enabled": true,
-        "server_name": "hk06.node.qixi.best",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/download",
-        "headers": {
-          "Host": "hk06.node.qixi.best"
-        }
-      }
-    },
-    {
-      "tag": "JP-01-三网优化",
-      "server": "JP01.node.qixi.best",
-      "server_port": 443,
-      "type": "trojan",
-      "password": "c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c",
-      "tls": {
-        "enabled": true,
-        "server_name": "jp01.node.qixi.best",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/download",
-        "headers": {
-          "Host": "jp01.node.qixi.best"
-        }
-      }
-    },
-    {
-      "tag": "JP-02-三网优化",
-      "server": "JP02.node.qixi.best",
-      "server_port": 443,
-      "type": "trojan",
-      "password": "c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c",
-      "tls": {
-        "enabled": true,
-        "server_name": "jp02.node.qixi.best",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/download",
-        "headers": {
-          "Host": "jp02.node.qixi.best"
-        }
-      }
-    },
-    {
-      "tag": "JP-03-三网优化",
-      "server": "JP03.node.qixi.best",
-      "server_port": 443,
-      "type": "trojan",
-      "password": "c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c",
-      "tls": {
-        "enabled": true,
-        "server_name": "jp03.node.qixi.best",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/download",
-        "headers": {
-          "Host": "jp03.node.qixi.best"
-        }
-      }
-    },
-    {
-      "tag": "JP-04-三网优化",
-      "server": "JP04.node.qixi.best",
-      "server_port": 443,
-      "type": "trojan",
-      "password": "c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c",
-      "tls": {
-        "enabled": true,
-        "server_name": "jp04.node.qixi.best",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/download",
-        "headers": {
-          "Host": "jp04.node.qixi.best"
-        }
-      }
-    },
-    {
-      "tag": "JP-05-三网优化",
-      "server": "216.23.120.16",
-      "server_port": 16606,
-      "type": "hysteria2",
-      "password": "c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c",
-      "tls": {
-        "enabled": true,
-        "server_name": "bing.com",
-        "insecure": true
-      }
-    },
-    {
-      "tag": "JP06-三网优化",
-      "server": "52.199.139.99",
-      "server_port": 16606,
-      "type": "hysteria2",
-      "password": "c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c",
-      "tls": {
-        "enabled": true,
-        "server_name": "bing.com",
-        "insecure": true
-      }
-    },
-    {
-      "tag": "US-01-三网优化",
-      "server": "us01.node.qixi.best",
-      "server_port": 443,
-      "type": "trojan",
-      "password": "c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c",
-      "tls": {
-        "enabled": true,
-        "server_name": "us01.node.qixi.best",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/download",
-        "headers": {
-          "Host": "us01.node.qixi.best"
-        }
-      }
-    },
-    {
-      "tag": "DE-01-三网优化",
-      "server": "de01.node.qixi.best",
-      "server_port": 443,
-      "type": "trojan",
-      "password": "c7dc0a14-f479-4f3a-aaf8-3846a5d7a13c",
-      "tls": {
-        "enabled": true,
-        "server_name": "de01.node.qixi.best",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/download",
-        "headers": {
-          "Host": "de01.node.qixi.best"
-        }
-      }
     },
     {
       "tag": "🇯🇵日本20",
