@@ -720,6 +720,18 @@
       }
     },
     {
+      "type": "hysteria2",
+      "tag": "[CN]新加坡-vip-661",
+      "server": "zfapi.zalolink.com",
+      "server_port": 40009,
+      "password": "69b6b450-7905-471b-908a-00e38ed0ee4a",
+      "tls": {
+        "enabled": true,
+        "server_name": "psstatic.cdn.bcebos.com",
+        "insecure": true
+      }
+    },
+    {
       "type": "vless",
       "tag": "[Global]日本-vip-128",
       "server": "unamecf.xn--ghqu5fm27b67w.com",
@@ -2068,6 +2080,7 @@
         "[CN]香港-vip-458",
         "[CN]泰国-vip-459",
         "[CN]新加坡-vip-560",
+        "[CN]新加坡-vip-661",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
@@ -2178,6 +2191,7 @@
         "[CN]香港-vip-458",
         "[CN]泰国-vip-459",
         "[CN]新加坡-vip-560",
+        "[CN]新加坡-vip-661",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
