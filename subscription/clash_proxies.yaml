@@ -2,7 +2,7 @@
 proxies:
 - name: 香港主力
   type: vless
-  server: 103-180-20-132.sslip.io
+  server: 103-180-20-100.sslip.io
   port: 20201
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -16,7 +16,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🆓香港主力（1MB限速）
   type: vless
-  server: 103-180-20-132.sslip.io
+  server: 103-180-20-100.sslip.io
   port: 20201
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -30,7 +30,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 日本主力
   type: vless
-  server: 103-180-20-132.sslip.io
+  server: 103-180-20-100.sslip.io
   port: 20202
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -44,7 +44,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🆓日本主力（1MB限速）
   type: vless
-  server: 103-180-20-132.sslip.io
+  server: 103-180-20-100.sslip.io
   port: 20202
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -56,10 +56,10 @@ proxies:
     public-key: Xx0rOKvMlxtZbzf-OCWb44aJIS82PFv45l8jv4z7NHY
     short-id: dc457a6253a55e7d
   flow: xtls-rprx-vision
-- name: 香港 04
+- name: 香港 03
   type: vless
-  server: 103.180.20.132
-  port: 20002
+  server: 103.180.20.100
+  port: 20001
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -67,13 +67,13 @@ proxies:
   servername: www.cloudflare.com
   client-fingerprint: safari
   reality-opts:
-    public-key: QTJCsEI6kStTp5vCNDl-M1QhDK5Ki2qgEYwCxpwst0E
-    short-id: c0196c432a03dcb5
+    public-key: tJfMaYwHSX3YPmiPu0vNEgEFA2JqEDvn2jXdu0bL2n8
+    short-id: d0794b71a2b50f05
   flow: xtls-rprx-vision
-- name: 🆓香港 04（1MB限速）
+- name: 🆓香港 03（1MB限速）
   type: vless
-  server: 103.180.20.132
-  port: 20002
+  server: 103.180.20.100
+  port: 20001
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -81,12 +81,12 @@ proxies:
   servername: www.cloudflare.com
   client-fingerprint: safari
   reality-opts:
-    public-key: QTJCsEI6kStTp5vCNDl-M1QhDK5Ki2qgEYwCxpwst0E
-    short-id: c0196c432a03dcb5
+    public-key: tJfMaYwHSX3YPmiPu0vNEgEFA2JqEDvn2jXdu0bL2n8
+    short-id: d0794b71a2b50f05
   flow: xtls-rprx-vision
 - name: 香港 05
   type: vless
-  server: 103.180.20.132
+  server: 103.180.20.100
   port: 20003
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -100,7 +100,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🆓香港 05（1MB限速）
   type: vless
-  server: 103.180.20.132
+  server: 103.180.20.100
   port: 20003
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -112,9 +112,65 @@ proxies:
     public-key: OgcLHAAzQV0qTuXwHnz0huEueM5f3vRpYZHMH8JsjC4
     short-id: 09d75ddaf90d0ba5
   flow: xtls-rprx-vision
+- name: 日本 04
+  type: vless
+  server: 103.180.20.100
+  port: 20005
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
+  network: tcp
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: NdpLwhOfALzPx26QT985xAncCWejWJBrcREI8I2lrHM
+    short-id: 2bd5ea1422613a24
+  flow: xtls-rprx-vision
+- name: 🆓日本 04（1MB限速）
+  type: vless
+  server: 103.180.20.100
+  port: 20005
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
+  network: tcp
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: NdpLwhOfALzPx26QT985xAncCWejWJBrcREI8I2lrHM
+    short-id: 2bd5ea1422613a24
+  flow: xtls-rprx-vision
+- name: 台湾 01
+  type: vless
+  server: 103.180.20.100
+  port: 20006
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
+  network: tcp
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: EwpuwXSOb0jp7rsG7Gk_MBFc3bl8R5l9IJniRtmGgFE
+    short-id: d13ca00a58f42b85
+  flow: xtls-rprx-vision
+- name: 🆓台湾 01（1MB限速）
+  type: vless
+  server: 103.180.20.100
+  port: 20006
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
+  network: tcp
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: EwpuwXSOb0jp7rsG7Gk_MBFc3bl8R5l9IJniRtmGgFE
+    short-id: d13ca00a58f42b85
+  flow: xtls-rprx-vision
 - name: 美国 03
   type: vless
-  server: 103.180.20.132
+  server: 103.180.20.100
   port: 20008
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
@@ -128,7 +184,7 @@ proxies:
   flow: xtls-rprx-vision
 - name: 🆓美国 03（1MB限速）
   type: vless
-  server: 103.180.20.132
+  server: 103.180.20.100
   port: 20008
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
