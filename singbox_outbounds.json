@@ -5,7 +5,7 @@
       "tag": "iPoW-AU-gcp-australia-southeast1-1",
       "server": "34.40.216.97",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "325bc1be-0cb7-4cf7-bd35-a79ded91bbbd",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -16,8 +16,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "fsdIMU2apN1C_NbkL7mHTsBKEfhwbDhgCRcB8ICf03E",
+          "short_id": "d725f0dd8cce210f"
         }
       }
     },
@@ -37,7 +37,7 @@
       "tag": "iPoW-AU-gcp-australia-southeast1-2",
       "server": "34.87.236.166",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "4f865f35-cf47-4e7f-a7e6-8882511a1b36",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -48,8 +48,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "OgTkmAQdLjipA9oLloxbU5BAX3hPjzbvkEGHF4aZ8z4",
+          "short_id": "8a7d5e0248cdb1b1"
         }
       }
     },
@@ -69,7 +69,7 @@
       "tag": "iPoW-BR-gcp-southamerica-east1-1",
       "server": "35.199.90.53",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "5e517b94-e207-47ee-be3c-3020a57594e8",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -80,8 +80,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "pCImwRkTjx8OIUiu1WFelZQFt1p3Q0lUoPbvjVq8GTs",
+          "short_id": "b62a4da6cd1c4dd6"
         }
       }
     },
@@ -101,7 +101,7 @@
       "tag": "iPoW-BR-gcp-southamerica-east1-2",
       "server": "35.198.46.59",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "e9c2ed7f-79ab-40a8-8910-24468f5da712",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -112,8 +112,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "0WXz3PJQnr-KprrwiO5BlKVRdqA4ZS6U5jGHc_aeJnw",
+          "short_id": "4b414f69a06e1e81"
         }
       }
     },
@@ -133,7 +133,7 @@
       "tag": "iPoW-HK-gcp-asia-east2-1",
       "server": "34.92.19.135",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "90153538-ef08-4942-b8e1-41e7c523e659",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -144,8 +144,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "tSBJnEt6E1dy6UgX9gX5wUfvZ2KAXjGWVKsEq886OWM",
+          "short_id": "56d4e7ae4f86fa39"
         }
       }
     },
@@ -165,7 +165,7 @@
       "tag": "iPoW-HK-gcp-asia-east2-2",
       "server": "34.150.46.137",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "75d38591-267e-4d89-98bc-164f25b50880",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -176,8 +176,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "HV_4dmK3rwzqhWP1yOpC1L8BObd5lpZRYTzUflsi2x4",
+          "short_id": "64b3f192fc0669e1"
         }
       }
     },
@@ -197,7 +197,7 @@
       "tag": "iPoW-ID-gcp-asia-southeast2-1",
       "server": "34.101.37.72",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "e440fa81-fe9d-4ca1-b711-f7b72c3d79ed",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -208,8 +208,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "-9nhbWBjFTNIE5q0kg76hjyzCS2giPfZ-fbd8xvmRX0",
+          "short_id": "409192cee72716d7"
         }
       }
     },
@@ -261,7 +261,7 @@
       "tag": "iPoW-JP-gcp-asia-northeast1-2",
       "server": "34.146.91.83",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "0c4c6ebb-603f-4429-8682-beef6b65b80d",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -272,8 +272,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "Ti7zRkfweHdrQ5QHI9o_zEgHn39xRfMG2C2Gfp_AMHE",
+          "short_id": "8380ad05cd21a69f"
         }
       }
     },
@@ -293,7 +293,7 @@
       "tag": "iPoW-KR-gcp-asia-northeast3-1",
       "server": "34.22.111.30",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "cb2abff3-5fe6-4b5a-aa19-5739deb285b6",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -304,8 +304,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "M0QKczb2MzOH45qDViIAbb9LPrVVyCp880D4HlwIKnA",
+          "short_id": "8685f8b4d9f4f51e"
         }
       }
     },
@@ -325,7 +325,7 @@
       "tag": "iPoW-KR-gcp-asia-northeast3-2",
       "server": "34.50.26.212",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "700a7a0e-3f27-406c-81d1-aa1abe411af8",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -336,8 +336,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "kqIDhDhYFrXD-1GeurwjzFwbB0zWipgWmcbADXwmyy8",
+          "short_id": "3fd0a8ddef3ae5c6"
         }
       }
     },
@@ -357,7 +357,7 @@
       "tag": "iPoW-SG-gcp-asia-southeast1-1",
       "server": "34.142.207.152",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "50cbda48-00ce-4688-8b3d-0177ab8f177c",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -368,8 +368,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "GqyMciP_v8rJZKLJd-EgzQmWbi_Qx_c_n1f-nlPkaEA",
+          "short_id": "b1fef7a9181ea31d"
         }
       }
     },
@@ -389,7 +389,7 @@
       "tag": "iPoW-SG-gcp-asia-southeast1-2",
       "server": "34.87.113.18",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "5567cac6-2a32-4318-83cd-7df3a9eebbd7",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -400,8 +400,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "hJCcmOf_ECJ3GUfHUjsgfcFKcgGb22H7cz_m_FvcVm4",
+          "short_id": "eb97ce837da2f6ad"
         }
       }
     },
@@ -421,7 +421,7 @@
       "tag": "iPoW-TW-gcp-asia-east1-2",
       "server": "34.81.16.9",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "31a40f42-4ad6-4a32-a760-71102b459584",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -432,8 +432,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "qvekI7tKB1NDnZA6JcS_24aV4n8mlCbI3SFvkRr22wg",
+          "short_id": "d74a6321deec9f31"
         }
       }
     },
@@ -453,7 +453,7 @@
       "tag": "iPoW-US-gcp-us-central1-1",
       "server": "34.31.93.173",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "0106efd7-39bf-449d-b734-a4aa758d6480",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -464,8 +464,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "VL1ZiaWxae8teZWJeBAIHadbo7z1Ezu1KA2kIA1TDmk",
+          "short_id": "7dfdbf323c4ef0a8"
         }
       }
     },
@@ -485,7 +485,7 @@
       "tag": "iPoW-US-gcp-us-central1-2",
       "server": "136.65.145.234",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "3893f05b-9b24-4bb1-a1dc-ba55509b0a01",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -496,8 +496,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "Th2whwnn3zQaHdImi5B1wYn8hxXz3JQs3_AQCuHfanQ",
+          "short_id": "76d093d99ceaf06a"
         }
       }
     },
@@ -517,7 +517,7 @@
       "tag": "iPoW-US-gcp-us-east4-1",
       "server": "136.70.146.238",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "8ea1a178-2719-47b7-99d0-33d8dc361ba3",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -528,8 +528,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "cTwhlN0bIkprnzvGCMPmsdxk8XkqUz3LcCrS0FKnbVI",
+          "short_id": "c08efcd72d7e8389"
         }
       }
     },
@@ -549,7 +549,7 @@
       "tag": "iPoW-US-gcp-us-east4-2",
       "server": "136.107.170.196",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "d6d58f01-b5ce-4d47-bce0-b8a806155852",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -560,8 +560,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "L1S0DpFtHPBeyENZUvJPcrFZIct6kcHUPxuzNaGXIFY",
+          "short_id": "4c69c4b51c580d60"
         }
       }
     },
@@ -581,7 +581,7 @@
       "tag": "iPoW-US-gcp-us-west1-1",
       "server": "136.67.16.72",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "9d0395c0-016f-453e-b0be-fc66f1ee1d80",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -592,8 +592,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "aGm3egxU7SVqVw-oxqXbJ0u4ctldnmTjwaDh4Mao2EE",
+          "short_id": "bd4aa541e5306ba2"
         }
       }
     },
@@ -613,7 +613,7 @@
       "tag": "iPoW-US-gcp-us-west1-2",
       "server": "35.252.180.212",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "dffab367-7769-4c6c-86f2-66fc6bd03003",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -624,8 +624,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "LYnDDS0AkBwVeeTyIEE5MhrTV_PZO5f1qBAbMN6z4HM",
+          "short_id": "f1955f72763eb2fb"
         }
       }
     },
@@ -645,7 +645,7 @@
       "tag": "iPoW-ZA-gcp-africa-south1-za-1",
       "server": "34.35.189.111",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "4758aee6-6d1a-4306-b460-2398b5af4e35",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -656,8 +656,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "dcox8XXfkOCmKn3kgrloj6wY5o1_0brJOi2mczYmAT4",
+          "short_id": "5ced03e42cc31aab"
         }
       }
     },
@@ -677,7 +677,7 @@
       "tag": "iPoW-ZA-gcp-africa-south1-za-2",
       "server": "34.35.186.228",
       "server_port": 443,
-      "uuid": "",
+      "uuid": "8d65c8a7-4876-4556-bb6a-feccfb46ee81",
       "packet_encoding": "xudp",
       "tls": {
         "enabled": true,
@@ -688,8 +688,8 @@
         },
         "reality": {
           "enabled": true,
-          "public_key": "",
-          "short_id": ""
+          "public_key": "bSN0cv0VMxmYZsNsMkkLndOTHZu74C1htJ2M71QMaVE",
+          "short_id": "89b3a20484eb43ec"
         }
       }
     },
