@@ -32,15 +32,17 @@
       "country_code": "JP",
       "flag": "🇯🇵",
       "region": "Tokyo",
-      "node_count": 4,
+      "node_count": 6,
       "node_ids": [
         "vless-jp-primary",
         "vless-jp-primary::free::xiaoman",
+        "vless-jp-03",
+        "vless-jp-03::free::xiaoman",
         "vless-jp-04",
         "vless-jp-04::free::xiaoman"
       ],
       "best_node_id": "vless-jp-primary",
-      "latency_ms": 43,
+      "latency_ms": 38,
       "load_pct": 0,
       "free_speed_mbps": 1,
       "status": "online"
@@ -64,6 +66,24 @@
       "status": "online"
     },
     {
+      "id": "sg",
+      "name": "新加坡",
+      "country": "新加坡",
+      "country_code": "SG",
+      "flag": "🇸🇬",
+      "region": "Singapore",
+      "node_count": 2,
+      "node_ids": [
+        "vless-sg-03",
+        "vless-sg-03::free::xiaoman"
+      ],
+      "best_node_id": "vless-sg-03",
+      "latency_ms": 39,
+      "load_pct": 0,
+      "free_speed_mbps": 1,
+      "status": "online"
+    },
+    {
       "id": "us",
       "name": "美国",
       "country": "美国",
@@ -76,7 +96,25 @@
         "vless-us-03::free::xiaoman"
       ],
       "best_node_id": "vless-us-03",
-      "latency_ms": 42,
+      "latency_ms": 39,
+      "load_pct": 0,
+      "free_speed_mbps": 1,
+      "status": "online"
+    },
+    {
+      "id": "gb",
+      "name": "英国",
+      "country": "英国",
+      "country_code": "GB",
+      "flag": "🇬🇧",
+      "region": "London",
+      "node_count": 2,
+      "node_ids": [
+        "vless-uk-01",
+        "vless-uk-01::free::xiaoman"
+      ],
+      "best_node_id": "vless-uk-01",
+      "latency_ms": 39,
       "load_pct": 0,
       "free_speed_mbps": 1,
       "status": "online"
@@ -91,10 +129,10 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 182,
+      "latency_ms": 41,
       "load_pct": 0,
-      "quality_label": "优秀",
-      "quality_score": 80,
+      "quality_label": "极佳",
+      "quality_score": 100,
       "tags": [
         "主力",
         "同国家自动分流"
@@ -122,10 +160,10 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 182,
+      "latency_ms": 41,
       "load_pct": 0,
-      "quality_label": "优秀",
-      "quality_score": 80,
+      "quality_label": "极佳",
+      "quality_score": 100,
       "tags": [
         "主力",
         "同国家自动分流"
@@ -154,10 +192,10 @@
       "country_code": "JP",
       "flag": "🇯🇵",
       "city": "Tokyo",
-      "latency_ms": 45,
+      "latency_ms": 371,
       "load_pct": 0,
-      "quality_label": "极佳",
-      "quality_score": 100,
+      "quality_label": "良好",
+      "quality_score": 60,
       "tags": [
         "主力",
         "同国家自动分流"
@@ -185,10 +223,10 @@
       "country_code": "JP",
       "flag": "🇯🇵",
       "city": "Tokyo",
-      "latency_ms": 45,
+      "latency_ms": 371,
       "load_pct": 0,
-      "quality_label": "极佳",
-      "quality_score": 100,
+      "quality_label": "良好",
+      "quality_score": 60,
       "tags": [
         "主力",
         "同国家自动分流"
@@ -284,10 +322,10 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 420,
+      "latency_ms": 186,
       "load_pct": 0,
-      "quality_label": "良好",
-      "quality_score": 60,
+      "quality_label": "优秀",
+      "quality_score": 80,
       "tags": [
         "vless",
         "reality",
@@ -321,10 +359,10 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 420,
+      "latency_ms": 186,
       "load_pct": 0,
-      "quality_label": "良好",
-      "quality_score": 60,
+      "quality_label": "优秀",
+      "quality_score": 80,
       "tags": [
         "vless",
         "reality",
@@ -359,7 +397,7 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 39,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -392,7 +430,7 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 39,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -419,6 +457,73 @@
       "access_tier": "free"
     },
     {
+      "id": "vless-jp-03",
+      "name": "日本 03",
+      "region": "Tokyo",
+      "country": "日本",
+      "country_code": "JP",
+      "flag": "🇯🇵",
+      "city": "Tokyo",
+      "latency_ms": 38,
+      "load_pct": 0,
+      "quality_label": "极佳",
+      "quality_score": 100,
+      "tags": [
+        "vless",
+        "reality",
+        "tcp",
+        "jp"
+      ],
+      "featured": false,
+      "status": "online",
+      "outbound": {
+        "server": "103.180.20.100",
+        "server_port": 20004,
+        "tag": "vless-jp-03",
+        "tls": {
+          "enabled": true,
+          "server_name": "www.cloudflare.com"
+        },
+        "type": "vless"
+      },
+      "access_tier": "paid"
+    },
+    {
+      "id": "vless-jp-03::free::xiaoman",
+      "source_node_id": "vless-jp-03",
+      "name": "日本 03（1MB限速）",
+      "region": "Tokyo",
+      "country": "日本",
+      "country_code": "JP",
+      "flag": "🇯🇵",
+      "city": "Tokyo",
+      "latency_ms": 38,
+      "load_pct": 0,
+      "quality_label": "极佳",
+      "quality_score": 100,
+      "tags": [
+        "vless",
+        "reality",
+        "tcp",
+        "jp"
+      ],
+      "featured": false,
+      "status": "online",
+      "outbound": {
+        "server": "103.180.20.100",
+        "server_port": 20004,
+        "tag": "vless-jp-03",
+        "tls": {
+          "enabled": true,
+          "server_name": "www.cloudflare.com"
+        },
+        "type": "vless"
+      },
+      "free_speed_mbps": 1,
+      "is_free": true,
+      "access_tier": "free"
+    },
+    {
       "id": "vless-jp-04",
       "name": "日本 04",
       "region": "Tokyo",
@@ -426,7 +531,7 @@
       "country_code": "JP",
       "flag": "🇯🇵",
       "city": "Tokyo",
-      "latency_ms": 43,
+      "latency_ms": 38,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -459,7 +564,7 @@
       "country_code": "JP",
       "flag": "🇯🇵",
       "city": "Tokyo",
-      "latency_ms": 43,
+      "latency_ms": 38,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -553,6 +658,73 @@
       "access_tier": "free"
     },
     {
+      "id": "vless-sg-03",
+      "name": "新加坡 03",
+      "region": "Singapore",
+      "country": "新加坡",
+      "country_code": "SG",
+      "flag": "🇸🇬",
+      "city": "Singapore",
+      "latency_ms": 39,
+      "load_pct": 0,
+      "quality_label": "极佳",
+      "quality_score": 100,
+      "tags": [
+        "vless",
+        "reality",
+        "tcp",
+        "sg"
+      ],
+      "featured": false,
+      "status": "online",
+      "outbound": {
+        "server": "103.180.20.100",
+        "server_port": 20007,
+        "tag": "vless-sg-03",
+        "tls": {
+          "enabled": true,
+          "server_name": "www.cloudflare.com"
+        },
+        "type": "vless"
+      },
+      "access_tier": "paid"
+    },
+    {
+      "id": "vless-sg-03::free::xiaoman",
+      "source_node_id": "vless-sg-03",
+      "name": "新加坡 03（1MB限速）",
+      "region": "Singapore",
+      "country": "新加坡",
+      "country_code": "SG",
+      "flag": "🇸🇬",
+      "city": "Singapore",
+      "latency_ms": 39,
+      "load_pct": 0,
+      "quality_label": "极佳",
+      "quality_score": 100,
+      "tags": [
+        "vless",
+        "reality",
+        "tcp",
+        "sg"
+      ],
+      "featured": false,
+      "status": "online",
+      "outbound": {
+        "server": "103.180.20.100",
+        "server_port": 20007,
+        "tag": "vless-sg-03",
+        "tls": {
+          "enabled": true,
+          "server_name": "www.cloudflare.com"
+        },
+        "type": "vless"
+      },
+      "free_speed_mbps": 1,
+      "is_free": true,
+      "access_tier": "free"
+    },
+    {
       "id": "vless-us-03",
       "name": "美国 03",
       "region": "Los Angeles",
@@ -560,7 +732,7 @@
       "country_code": "US",
       "flag": "🇺🇸",
       "city": "Los Angeles",
-      "latency_ms": 42,
+      "latency_ms": 39,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -593,7 +765,7 @@
       "country_code": "US",
       "flag": "🇺🇸",
       "city": "Los Angeles",
-      "latency_ms": 42,
+      "latency_ms": 39,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -609,6 +781,73 @@
         "server": "103.180.20.100",
         "server_port": 20008,
         "tag": "vless-us-03",
+        "tls": {
+          "enabled": true,
+          "server_name": "www.cloudflare.com"
+        },
+        "type": "vless"
+      },
+      "free_speed_mbps": 1,
+      "is_free": true,
+      "access_tier": "free"
+    },
+    {
+      "id": "vless-uk-01",
+      "name": "英国 01",
+      "region": "London",
+      "country": "英国",
+      "country_code": "GB",
+      "flag": "🇬🇧",
+      "city": "London",
+      "latency_ms": 39,
+      "load_pct": 0,
+      "quality_label": "极佳",
+      "quality_score": 100,
+      "tags": [
+        "vless",
+        "reality",
+        "tcp",
+        "gb"
+      ],
+      "featured": false,
+      "status": "online",
+      "outbound": {
+        "server": "103.180.20.100",
+        "server_port": 20009,
+        "tag": "vless-uk-01",
+        "tls": {
+          "enabled": true,
+          "server_name": "www.cloudflare.com"
+        },
+        "type": "vless"
+      },
+      "access_tier": "paid"
+    },
+    {
+      "id": "vless-uk-01::free::xiaoman",
+      "source_node_id": "vless-uk-01",
+      "name": "英国 01（1MB限速）",
+      "region": "London",
+      "country": "英国",
+      "country_code": "GB",
+      "flag": "🇬🇧",
+      "city": "London",
+      "latency_ms": 39,
+      "load_pct": 0,
+      "quality_label": "极佳",
+      "quality_score": 100,
+      "tags": [
+        "vless",
+        "reality",
+        "tcp",
+        "gb"
+      ],
+      "featured": false,
+      "status": "online",
+      "outbound": {
+        "server": "103.180.20.100",
+        "server_port": 20009,
+        "tag": "vless-uk-01",
         "tls": {
           "enabled": true,
           "server_name": "www.cloudflare.com"
@@ -630,10 +869,10 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 182,
+      "latency_ms": 41,
       "load_pct": 0,
-      "quality_label": "优秀",
-      "quality_score": 80,
+      "quality_label": "极佳",
+      "quality_score": 100,
       "tags": [
         "主力",
         "同国家自动分流"
@@ -663,10 +902,10 @@
       "country_code": "JP",
       "flag": "🇯🇵",
       "city": "Tokyo",
-      "latency_ms": 45,
+      "latency_ms": 371,
       "load_pct": 0,
-      "quality_label": "极佳",
-      "quality_score": 100,
+      "quality_label": "良好",
+      "quality_score": 60,
       "tags": [
         "主力",
         "同国家自动分流"
@@ -731,10 +970,10 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 420,
+      "latency_ms": 186,
       "load_pct": 0,
-      "quality_label": "良好",
-      "quality_score": 60,
+      "quality_label": "优秀",
+      "quality_score": 80,
       "tags": [
         "vless",
         "reality",
@@ -770,7 +1009,7 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 39,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -797,6 +1036,41 @@
       "access_tier": "free"
     },
     {
+      "id": "vless-jp-03::free::xiaoman",
+      "source_node_id": "vless-jp-03",
+      "name": "日本 03（1MB限速）",
+      "region": "Tokyo",
+      "country": "日本",
+      "country_code": "JP",
+      "flag": "🇯🇵",
+      "city": "Tokyo",
+      "latency_ms": 38,
+      "load_pct": 0,
+      "quality_label": "极佳",
+      "quality_score": 100,
+      "tags": [
+        "vless",
+        "reality",
+        "tcp",
+        "jp"
+      ],
+      "featured": false,
+      "status": "online",
+      "outbound": {
+        "server": "103.180.20.100",
+        "server_port": 20004,
+        "tag": "vless-jp-03",
+        "tls": {
+          "enabled": true,
+          "server_name": "www.cloudflare.com"
+        },
+        "type": "vless"
+      },
+      "free_speed_mbps": 1,
+      "is_free": true,
+      "access_tier": "free"
+    },
+    {
       "id": "vless-jp-04::free::xiaoman",
       "source_node_id": "vless-jp-04",
       "name": "日本 04（1MB限速）",
@@ -805,7 +1079,7 @@
       "country_code": "JP",
       "flag": "🇯🇵",
       "city": "Tokyo",
-      "latency_ms": 43,
+      "latency_ms": 38,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -867,6 +1141,41 @@
       "access_tier": "free"
     },
     {
+      "id": "vless-sg-03::free::xiaoman",
+      "source_node_id": "vless-sg-03",
+      "name": "新加坡 03（1MB限速）",
+      "region": "Singapore",
+      "country": "新加坡",
+      "country_code": "SG",
+      "flag": "🇸🇬",
+      "city": "Singapore",
+      "latency_ms": 39,
+      "load_pct": 0,
+      "quality_label": "极佳",
+      "quality_score": 100,
+      "tags": [
+        "vless",
+        "reality",
+        "tcp",
+        "sg"
+      ],
+      "featured": false,
+      "status": "online",
+      "outbound": {
+        "server": "103.180.20.100",
+        "server_port": 20007,
+        "tag": "vless-sg-03",
+        "tls": {
+          "enabled": true,
+          "server_name": "www.cloudflare.com"
+        },
+        "type": "vless"
+      },
+      "free_speed_mbps": 1,
+      "is_free": true,
+      "access_tier": "free"
+    },
+    {
       "id": "vless-us-03::free::xiaoman",
       "source_node_id": "vless-us-03",
       "name": "美国 03（1MB限速）",
@@ -875,7 +1184,7 @@
       "country_code": "US",
       "flag": "🇺🇸",
       "city": "Los Angeles",
-      "latency_ms": 42,
+      "latency_ms": 39,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -900,6 +1209,41 @@
       "free_speed_mbps": 1,
       "is_free": true,
       "access_tier": "free"
+    },
+    {
+      "id": "vless-uk-01::free::xiaoman",
+      "source_node_id": "vless-uk-01",
+      "name": "英国 01（1MB限速）",
+      "region": "London",
+      "country": "英国",
+      "country_code": "GB",
+      "flag": "🇬🇧",
+      "city": "London",
+      "latency_ms": 39,
+      "load_pct": 0,
+      "quality_label": "极佳",
+      "quality_score": 100,
+      "tags": [
+        "vless",
+        "reality",
+        "tcp",
+        "gb"
+      ],
+      "featured": false,
+      "status": "online",
+      "outbound": {
+        "server": "103.180.20.100",
+        "server_port": 20009,
+        "tag": "vless-uk-01",
+        "tls": {
+          "enabled": true,
+          "server_name": "www.cloudflare.com"
+        },
+        "type": "vless"
+      },
+      "free_speed_mbps": 1,
+      "is_free": true,
+      "access_tier": "free"
     }
   ],
   "paid_items_meta": [
@@ -911,10 +1255,10 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 182,
+      "latency_ms": 41,
       "load_pct": 0,
-      "quality_label": "优秀",
-      "quality_score": 80,
+      "quality_label": "极佳",
+      "quality_score": 100,
       "tags": [
         "主力",
         "同国家自动分流"
@@ -941,10 +1285,10 @@
       "country_code": "JP",
       "flag": "🇯🇵",
       "city": "Tokyo",
-      "latency_ms": 45,
+      "latency_ms": 371,
       "load_pct": 0,
-      "quality_label": "极佳",
-      "quality_score": 100,
+      "quality_label": "良好",
+      "quality_score": 60,
       "tags": [
         "主力",
         "同国家自动分流"
@@ -1003,10 +1347,10 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 420,
+      "latency_ms": 186,
       "load_pct": 0,
-      "quality_label": "良好",
-      "quality_score": 60,
+      "quality_label": "优秀",
+      "quality_score": 80,
       "tags": [
         "vless",
         "reality",
@@ -1039,7 +1383,7 @@
       "country_code": "HK",
       "flag": "🇭🇰",
       "city": "Hong Kong",
-      "latency_ms": 39,
+      "latency_ms": 43,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -1064,6 +1408,38 @@
       "access_tier": "paid"
     },
     {
+      "id": "vless-jp-03",
+      "name": "日本 03",
+      "region": "Tokyo",
+      "country": "日本",
+      "country_code": "JP",
+      "flag": "🇯🇵",
+      "city": "Tokyo",
+      "latency_ms": 38,
+      "load_pct": 0,
+      "quality_label": "极佳",
+      "quality_score": 100,
+      "tags": [
+        "vless",
+        "reality",
+        "tcp",
+        "jp"
+      ],
+      "featured": false,
+      "status": "online",
+      "outbound": {
+        "server": "103.180.20.100",
+        "server_port": 20004,
+        "tag": "vless-jp-03",
+        "tls": {
+          "enabled": true,
+          "server_name": "www.cloudflare.com"
+        },
+        "type": "vless"
+      },
+      "access_tier": "paid"
+    },
+    {
       "id": "vless-jp-04",
       "name": "日本 04",
       "region": "Tokyo",
@@ -1071,7 +1447,7 @@
       "country_code": "JP",
       "flag": "🇯🇵",
       "city": "Tokyo",
-      "latency_ms": 43,
+      "latency_ms": 38,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -1128,6 +1504,38 @@
       "access_tier": "paid"
     },
     {
+      "id": "vless-sg-03",
+      "name": "新加坡 03",
+      "region": "Singapore",
+      "country": "新加坡",
+      "country_code": "SG",
+      "flag": "🇸🇬",
+      "city": "Singapore",
+      "latency_ms": 39,
+      "load_pct": 0,
+      "quality_label": "极佳",
+      "quality_score": 100,
+      "tags": [
+        "vless",
+        "reality",
+        "tcp",
+        "sg"
+      ],
+      "featured": false,
+      "status": "online",
+      "outbound": {
+        "server": "103.180.20.100",
+        "server_port": 20007,
+        "tag": "vless-sg-03",
+        "tls": {
+          "enabled": true,
+          "server_name": "www.cloudflare.com"
+        },
+        "type": "vless"
+      },
+      "access_tier": "paid"
+    },
+    {
       "id": "vless-us-03",
       "name": "美国 03",
       "region": "Los Angeles",
@@ -1135,7 +1543,7 @@
       "country_code": "US",
       "flag": "🇺🇸",
       "city": "Los Angeles",
-      "latency_ms": 42,
+      "latency_ms": 39,
       "load_pct": 0,
       "quality_label": "极佳",
       "quality_score": 100,
@@ -1151,6 +1559,38 @@
         "server": "103.180.20.100",
         "server_port": 20008,
         "tag": "vless-us-03",
+        "tls": {
+          "enabled": true,
+          "server_name": "www.cloudflare.com"
+        },
+        "type": "vless"
+      },
+      "access_tier": "paid"
+    },
+    {
+      "id": "vless-uk-01",
+      "name": "英国 01",
+      "region": "London",
+      "country": "英国",
+      "country_code": "GB",
+      "flag": "🇬🇧",
+      "city": "London",
+      "latency_ms": 39,
+      "load_pct": 0,
+      "quality_label": "极佳",
+      "quality_score": 100,
+      "tags": [
+        "vless",
+        "reality",
+        "tcp",
+        "gb"
+      ],
+      "featured": false,
+      "status": "online",
+      "outbound": {
+        "server": "103.180.20.100",
+        "server_port": 20009,
+        "tag": "vless-uk-01",
         "tls": {
           "enabled": true,
           "server_name": "www.cloudflare.com"
@@ -3259,6 +3699,426 @@
         ]
       }
     },
+    "vless-jp-03": {
+      "dns": {
+        "final": "remote-dns",
+        "independent_cache": true,
+        "rules": [
+          {
+            "action": "route",
+            "domain": [
+              "www.gstatic.com",
+              "connectivitycheck.gstatic.com",
+              "clients3.google.com",
+              "www.google.com",
+              "cp.cloudflare.com"
+            ],
+            "server": "remote-dns"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              ".cn"
+            ],
+            "server": "cn-direct-dns"
+          },
+          {
+            "action": "route",
+            "rule_set": [
+              "geosite-cn"
+            ],
+            "server": "cn-direct-dns"
+          }
+        ],
+        "servers": [
+          {
+            "server": "1.1.1.1",
+            "server_port": 53,
+            "tag": "bootstrap-dns",
+            "type": "tcp"
+          },
+          {
+            "detour": "vless-jp-03",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-jp-03",
+            "path": "/dns-query",
+            "server": "8.8.8.8",
+            "server_port": 443,
+            "tag": "fallback-dns",
+            "type": "https"
+          },
+          {
+            "server": "223.5.5.5",
+            "server_port": 53,
+            "tag": "cn-direct-dns",
+            "type": "tcp"
+          }
+        ],
+        "strategy": "ipv4_only"
+      },
+      "experimental": {
+        "cache_file": {
+          "enabled": true
+        },
+        "clash_api": {
+          "external_controller": "127.0.0.1:9097",
+          "external_ui": "ui",
+          "secret": "user_20260930105949_e01fa5-android"
+        }
+      },
+      "inbounds": [
+        {
+          "address": [
+            "172.19.0.1/30"
+          ],
+          "auto_route": true,
+          "interface_name": "tun0",
+          "mtu": 1380,
+          "stack": "mixed",
+          "strict_route": true,
+          "tag": "tun-in",
+          "type": "tun"
+        }
+      ],
+      "log": {
+        "level": "info"
+      },
+      "outbounds": [
+        {
+          "flow": "xtls-rprx-vision",
+          "server": "103.180.20.100",
+          "server_port": 20004,
+          "tag": "vless-jp-03",
+          "tls": {
+            "enabled": true,
+            "reality": {
+              "enabled": true,
+              "public_key": "zVIESiLSczwOhE1qKC6yX-bIGMp5WrGGcKxE7X7_8TA",
+              "short_id": "686a51fda2f48e40"
+            },
+            "server_name": "www.cloudflare.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "safari"
+            }
+          },
+          "type": "vless",
+          "uuid": "ad1d39b6-ff90-44c1-9439-b1d34cd3e196"
+        },
+        {
+          "tag": "direct",
+          "type": "direct"
+        },
+        {
+          "tag": "block",
+          "type": "block"
+        }
+      ],
+      "route": {
+        "auto_detect_interface": true,
+        "default_domain_resolver": "bootstrap-dns",
+        "final": "vless-jp-03",
+        "rule_set": [
+          {
+            "download_detour": "direct",
+            "format": "binary",
+            "tag": "geosite-cn",
+            "type": "remote",
+            "update_interval": "1d",
+            "url": "https://xiaomans.com/vela-api/assets/rules/geosite-cn.srs"
+          },
+          {
+            "download_detour": "direct",
+            "format": "binary",
+            "tag": "geoip-cn",
+            "type": "remote",
+            "update_interval": "1d",
+            "url": "https://xiaomans.com/vela-api/assets/rules/geoip-cn.srs"
+          }
+        ],
+        "rules": [
+          {
+            "action": "sniff"
+          },
+          {
+            "action": "hijack-dns",
+            "protocol": "dns"
+          },
+          {
+            "action": "route",
+            "domain": [
+              "www.gstatic.com",
+              "connectivitycheck.gstatic.com",
+              "clients3.google.com",
+              "www.google.com",
+              "cp.cloudflare.com"
+            ],
+            "outbound": "vless-jp-03"
+          },
+          {
+            "action": "route",
+            "ip_is_private": true,
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              "local",
+              "lan"
+            ],
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              ".cn"
+            ],
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "outbound": "direct",
+            "rule_set": [
+              "geosite-cn"
+            ]
+          },
+          {
+            "action": "route",
+            "outbound": "direct",
+            "rule_set": [
+              "geoip-cn"
+            ]
+          },
+          {
+            "action": "route",
+            "network": "udp",
+            "outbound": "block",
+            "port": [
+              3478,
+              3479,
+              3480,
+              3481
+            ]
+          }
+        ]
+      }
+    },
+    "vless-jp-03::free::xiaoman": {
+      "dns": {
+        "final": "remote-dns",
+        "independent_cache": true,
+        "rules": [
+          {
+            "action": "route",
+            "domain": [
+              "www.gstatic.com",
+              "connectivitycheck.gstatic.com",
+              "clients3.google.com",
+              "www.google.com",
+              "cp.cloudflare.com"
+            ],
+            "server": "remote-dns"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              ".cn"
+            ],
+            "server": "cn-direct-dns"
+          },
+          {
+            "action": "route",
+            "rule_set": [
+              "geosite-cn"
+            ],
+            "server": "cn-direct-dns"
+          }
+        ],
+        "servers": [
+          {
+            "server": "1.1.1.1",
+            "server_port": 53,
+            "tag": "bootstrap-dns",
+            "type": "tcp"
+          },
+          {
+            "detour": "vless-jp-03",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-jp-03",
+            "path": "/dns-query",
+            "server": "8.8.8.8",
+            "server_port": 443,
+            "tag": "fallback-dns",
+            "type": "https"
+          },
+          {
+            "server": "223.5.5.5",
+            "server_port": 53,
+            "tag": "cn-direct-dns",
+            "type": "tcp"
+          }
+        ],
+        "strategy": "ipv4_only"
+      },
+      "experimental": {
+        "cache_file": {
+          "enabled": true
+        },
+        "clash_api": {
+          "external_controller": "127.0.0.1:9097",
+          "external_ui": "ui",
+          "secret": "user_20260930105949_e01fa5-android"
+        }
+      },
+      "inbounds": [
+        {
+          "address": [
+            "172.19.0.1/30"
+          ],
+          "auto_route": true,
+          "interface_name": "tun0",
+          "mtu": 1380,
+          "stack": "mixed",
+          "strict_route": true,
+          "tag": "tun-in",
+          "type": "tun"
+        }
+      ],
+      "log": {
+        "level": "info"
+      },
+      "outbounds": [
+        {
+          "flow": "xtls-rprx-vision",
+          "server": "103.180.20.100",
+          "server_port": 20004,
+          "tag": "vless-jp-03",
+          "tls": {
+            "enabled": true,
+            "reality": {
+              "enabled": true,
+              "public_key": "zVIESiLSczwOhE1qKC6yX-bIGMp5WrGGcKxE7X7_8TA",
+              "short_id": "686a51fda2f48e40"
+            },
+            "server_name": "www.cloudflare.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "safari"
+            }
+          },
+          "type": "vless",
+          "uuid": "ad1d39b6-ff90-44c1-9439-b1d34cd3e196"
+        },
+        {
+          "tag": "direct",
+          "type": "direct"
+        },
+        {
+          "tag": "block",
+          "type": "block"
+        }
+      ],
+      "route": {
+        "auto_detect_interface": true,
+        "default_domain_resolver": "bootstrap-dns",
+        "final": "vless-jp-03",
+        "rule_set": [
+          {
+            "download_detour": "direct",
+            "format": "binary",
+            "tag": "geosite-cn",
+            "type": "remote",
+            "update_interval": "1d",
+            "url": "https://xiaomans.com/vela-api/assets/rules/geosite-cn.srs"
+          },
+          {
+            "download_detour": "direct",
+            "format": "binary",
+            "tag": "geoip-cn",
+            "type": "remote",
+            "update_interval": "1d",
+            "url": "https://xiaomans.com/vela-api/assets/rules/geoip-cn.srs"
+          }
+        ],
+        "rules": [
+          {
+            "action": "sniff"
+          },
+          {
+            "action": "hijack-dns",
+            "protocol": "dns"
+          },
+          {
+            "action": "route",
+            "domain": [
+              "www.gstatic.com",
+              "connectivitycheck.gstatic.com",
+              "clients3.google.com",
+              "www.google.com",
+              "cp.cloudflare.com"
+            ],
+            "outbound": "vless-jp-03"
+          },
+          {
+            "action": "route",
+            "ip_is_private": true,
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              "local",
+              "lan"
+            ],
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              ".cn"
+            ],
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "outbound": "direct",
+            "rule_set": [
+              "geosite-cn"
+            ]
+          },
+          {
+            "action": "route",
+            "outbound": "direct",
+            "rule_set": [
+              "geoip-cn"
+            ]
+          },
+          {
+            "action": "route",
+            "network": "udp",
+            "outbound": "block",
+            "port": [
+              3478,
+              3479,
+              3480,
+              3481
+            ]
+          }
+        ]
+      }
+    },
     "vless-jp-04": {
       "dns": {
         "final": "remote-dns",
@@ -4099,6 +4959,426 @@
         ]
       }
     },
+    "vless-sg-03": {
+      "dns": {
+        "final": "remote-dns",
+        "independent_cache": true,
+        "rules": [
+          {
+            "action": "route",
+            "domain": [
+              "www.gstatic.com",
+              "connectivitycheck.gstatic.com",
+              "clients3.google.com",
+              "www.google.com",
+              "cp.cloudflare.com"
+            ],
+            "server": "remote-dns"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              ".cn"
+            ],
+            "server": "cn-direct-dns"
+          },
+          {
+            "action": "route",
+            "rule_set": [
+              "geosite-cn"
+            ],
+            "server": "cn-direct-dns"
+          }
+        ],
+        "servers": [
+          {
+            "server": "1.1.1.1",
+            "server_port": 53,
+            "tag": "bootstrap-dns",
+            "type": "tcp"
+          },
+          {
+            "detour": "vless-sg-03",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-sg-03",
+            "path": "/dns-query",
+            "server": "8.8.8.8",
+            "server_port": 443,
+            "tag": "fallback-dns",
+            "type": "https"
+          },
+          {
+            "server": "223.5.5.5",
+            "server_port": 53,
+            "tag": "cn-direct-dns",
+            "type": "tcp"
+          }
+        ],
+        "strategy": "ipv4_only"
+      },
+      "experimental": {
+        "cache_file": {
+          "enabled": true
+        },
+        "clash_api": {
+          "external_controller": "127.0.0.1:9097",
+          "external_ui": "ui",
+          "secret": "user_20260930105949_e01fa5-android"
+        }
+      },
+      "inbounds": [
+        {
+          "address": [
+            "172.19.0.1/30"
+          ],
+          "auto_route": true,
+          "interface_name": "tun0",
+          "mtu": 1380,
+          "stack": "mixed",
+          "strict_route": true,
+          "tag": "tun-in",
+          "type": "tun"
+        }
+      ],
+      "log": {
+        "level": "info"
+      },
+      "outbounds": [
+        {
+          "flow": "xtls-rprx-vision",
+          "server": "103.180.20.100",
+          "server_port": 20007,
+          "tag": "vless-sg-03",
+          "tls": {
+            "enabled": true,
+            "reality": {
+              "enabled": true,
+              "public_key": "h67BY8lUGUOtatqfbLJ8pgxS-bYXqODnS_aBIRUrIDw",
+              "short_id": "22b82cf5d70ea10e"
+            },
+            "server_name": "www.cloudflare.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "safari"
+            }
+          },
+          "type": "vless",
+          "uuid": "ad1d39b6-ff90-44c1-9439-b1d34cd3e196"
+        },
+        {
+          "tag": "direct",
+          "type": "direct"
+        },
+        {
+          "tag": "block",
+          "type": "block"
+        }
+      ],
+      "route": {
+        "auto_detect_interface": true,
+        "default_domain_resolver": "bootstrap-dns",
+        "final": "vless-sg-03",
+        "rule_set": [
+          {
+            "download_detour": "direct",
+            "format": "binary",
+            "tag": "geosite-cn",
+            "type": "remote",
+            "update_interval": "1d",
+            "url": "https://xiaomans.com/vela-api/assets/rules/geosite-cn.srs"
+          },
+          {
+            "download_detour": "direct",
+            "format": "binary",
+            "tag": "geoip-cn",
+            "type": "remote",
+            "update_interval": "1d",
+            "url": "https://xiaomans.com/vela-api/assets/rules/geoip-cn.srs"
+          }
+        ],
+        "rules": [
+          {
+            "action": "sniff"
+          },
+          {
+            "action": "hijack-dns",
+            "protocol": "dns"
+          },
+          {
+            "action": "route",
+            "domain": [
+              "www.gstatic.com",
+              "connectivitycheck.gstatic.com",
+              "clients3.google.com",
+              "www.google.com",
+              "cp.cloudflare.com"
+            ],
+            "outbound": "vless-sg-03"
+          },
+          {
+            "action": "route",
+            "ip_is_private": true,
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              "local",
+              "lan"
+            ],
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              ".cn"
+            ],
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "outbound": "direct",
+            "rule_set": [
+              "geosite-cn"
+            ]
+          },
+          {
+            "action": "route",
+            "outbound": "direct",
+            "rule_set": [
+              "geoip-cn"
+            ]
+          },
+          {
+            "action": "route",
+            "network": "udp",
+            "outbound": "block",
+            "port": [
+              3478,
+              3479,
+              3480,
+              3481
+            ]
+          }
+        ]
+      }
+    },
+    "vless-sg-03::free::xiaoman": {
+      "dns": {
+        "final": "remote-dns",
+        "independent_cache": true,
+        "rules": [
+          {
+            "action": "route",
+            "domain": [
+              "www.gstatic.com",
+              "connectivitycheck.gstatic.com",
+              "clients3.google.com",
+              "www.google.com",
+              "cp.cloudflare.com"
+            ],
+            "server": "remote-dns"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              ".cn"
+            ],
+            "server": "cn-direct-dns"
+          },
+          {
+            "action": "route",
+            "rule_set": [
+              "geosite-cn"
+            ],
+            "server": "cn-direct-dns"
+          }
+        ],
+        "servers": [
+          {
+            "server": "1.1.1.1",
+            "server_port": 53,
+            "tag": "bootstrap-dns",
+            "type": "tcp"
+          },
+          {
+            "detour": "vless-sg-03",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-sg-03",
+            "path": "/dns-query",
+            "server": "8.8.8.8",
+            "server_port": 443,
+            "tag": "fallback-dns",
+            "type": "https"
+          },
+          {
+            "server": "223.5.5.5",
+            "server_port": 53,
+            "tag": "cn-direct-dns",
+            "type": "tcp"
+          }
+        ],
+        "strategy": "ipv4_only"
+      },
+      "experimental": {
+        "cache_file": {
+          "enabled": true
+        },
+        "clash_api": {
+          "external_controller": "127.0.0.1:9097",
+          "external_ui": "ui",
+          "secret": "user_20260930105949_e01fa5-android"
+        }
+      },
+      "inbounds": [
+        {
+          "address": [
+            "172.19.0.1/30"
+          ],
+          "auto_route": true,
+          "interface_name": "tun0",
+          "mtu": 1380,
+          "stack": "mixed",
+          "strict_route": true,
+          "tag": "tun-in",
+          "type": "tun"
+        }
+      ],
+      "log": {
+        "level": "info"
+      },
+      "outbounds": [
+        {
+          "flow": "xtls-rprx-vision",
+          "server": "103.180.20.100",
+          "server_port": 20007,
+          "tag": "vless-sg-03",
+          "tls": {
+            "enabled": true,
+            "reality": {
+              "enabled": true,
+              "public_key": "h67BY8lUGUOtatqfbLJ8pgxS-bYXqODnS_aBIRUrIDw",
+              "short_id": "22b82cf5d70ea10e"
+            },
+            "server_name": "www.cloudflare.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "safari"
+            }
+          },
+          "type": "vless",
+          "uuid": "ad1d39b6-ff90-44c1-9439-b1d34cd3e196"
+        },
+        {
+          "tag": "direct",
+          "type": "direct"
+        },
+        {
+          "tag": "block",
+          "type": "block"
+        }
+      ],
+      "route": {
+        "auto_detect_interface": true,
+        "default_domain_resolver": "bootstrap-dns",
+        "final": "vless-sg-03",
+        "rule_set": [
+          {
+            "download_detour": "direct",
+            "format": "binary",
+            "tag": "geosite-cn",
+            "type": "remote",
+            "update_interval": "1d",
+            "url": "https://xiaomans.com/vela-api/assets/rules/geosite-cn.srs"
+          },
+          {
+            "download_detour": "direct",
+            "format": "binary",
+            "tag": "geoip-cn",
+            "type": "remote",
+            "update_interval": "1d",
+            "url": "https://xiaomans.com/vela-api/assets/rules/geoip-cn.srs"
+          }
+        ],
+        "rules": [
+          {
+            "action": "sniff"
+          },
+          {
+            "action": "hijack-dns",
+            "protocol": "dns"
+          },
+          {
+            "action": "route",
+            "domain": [
+              "www.gstatic.com",
+              "connectivitycheck.gstatic.com",
+              "clients3.google.com",
+              "www.google.com",
+              "cp.cloudflare.com"
+            ],
+            "outbound": "vless-sg-03"
+          },
+          {
+            "action": "route",
+            "ip_is_private": true,
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              "local",
+              "lan"
+            ],
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              ".cn"
+            ],
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "outbound": "direct",
+            "rule_set": [
+              "geosite-cn"
+            ]
+          },
+          {
+            "action": "route",
+            "outbound": "direct",
+            "rule_set": [
+              "geoip-cn"
+            ]
+          },
+          {
+            "action": "route",
+            "network": "udp",
+            "outbound": "block",
+            "port": [
+              3478,
+              3479,
+              3480,
+              3481
+            ]
+          }
+        ]
+      }
+    },
     "vless-us-03": {
       "dns": {
         "final": "remote-dns",
@@ -4470,6 +5750,426 @@
               "cp.cloudflare.com"
             ],
             "outbound": "vless-us-03"
+          },
+          {
+            "action": "route",
+            "ip_is_private": true,
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              "local",
+              "lan"
+            ],
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              ".cn"
+            ],
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "outbound": "direct",
+            "rule_set": [
+              "geosite-cn"
+            ]
+          },
+          {
+            "action": "route",
+            "outbound": "direct",
+            "rule_set": [
+              "geoip-cn"
+            ]
+          },
+          {
+            "action": "route",
+            "network": "udp",
+            "outbound": "block",
+            "port": [
+              3478,
+              3479,
+              3480,
+              3481
+            ]
+          }
+        ]
+      }
+    },
+    "vless-uk-01": {
+      "dns": {
+        "final": "remote-dns",
+        "independent_cache": true,
+        "rules": [
+          {
+            "action": "route",
+            "domain": [
+              "www.gstatic.com",
+              "connectivitycheck.gstatic.com",
+              "clients3.google.com",
+              "www.google.com",
+              "cp.cloudflare.com"
+            ],
+            "server": "remote-dns"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              ".cn"
+            ],
+            "server": "cn-direct-dns"
+          },
+          {
+            "action": "route",
+            "rule_set": [
+              "geosite-cn"
+            ],
+            "server": "cn-direct-dns"
+          }
+        ],
+        "servers": [
+          {
+            "server": "1.1.1.1",
+            "server_port": 53,
+            "tag": "bootstrap-dns",
+            "type": "tcp"
+          },
+          {
+            "detour": "vless-uk-01",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-uk-01",
+            "path": "/dns-query",
+            "server": "8.8.8.8",
+            "server_port": 443,
+            "tag": "fallback-dns",
+            "type": "https"
+          },
+          {
+            "server": "223.5.5.5",
+            "server_port": 53,
+            "tag": "cn-direct-dns",
+            "type": "tcp"
+          }
+        ],
+        "strategy": "ipv4_only"
+      },
+      "experimental": {
+        "cache_file": {
+          "enabled": true
+        },
+        "clash_api": {
+          "external_controller": "127.0.0.1:9097",
+          "external_ui": "ui",
+          "secret": "user_20260930105949_e01fa5-android"
+        }
+      },
+      "inbounds": [
+        {
+          "address": [
+            "172.19.0.1/30"
+          ],
+          "auto_route": true,
+          "interface_name": "tun0",
+          "mtu": 1380,
+          "stack": "mixed",
+          "strict_route": true,
+          "tag": "tun-in",
+          "type": "tun"
+        }
+      ],
+      "log": {
+        "level": "info"
+      },
+      "outbounds": [
+        {
+          "flow": "xtls-rprx-vision",
+          "server": "103.180.20.100",
+          "server_port": 20009,
+          "tag": "vless-uk-01",
+          "tls": {
+            "enabled": true,
+            "reality": {
+              "enabled": true,
+              "public_key": "lKhzz-7fA5uyFxSoPPp3r-iIPk7D67bT-r6U-MB5kH8",
+              "short_id": "69a1fc81c267e44a"
+            },
+            "server_name": "www.cloudflare.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "safari"
+            }
+          },
+          "type": "vless",
+          "uuid": "ad1d39b6-ff90-44c1-9439-b1d34cd3e196"
+        },
+        {
+          "tag": "direct",
+          "type": "direct"
+        },
+        {
+          "tag": "block",
+          "type": "block"
+        }
+      ],
+      "route": {
+        "auto_detect_interface": true,
+        "default_domain_resolver": "bootstrap-dns",
+        "final": "vless-uk-01",
+        "rule_set": [
+          {
+            "download_detour": "direct",
+            "format": "binary",
+            "tag": "geosite-cn",
+            "type": "remote",
+            "update_interval": "1d",
+            "url": "https://xiaomans.com/vela-api/assets/rules/geosite-cn.srs"
+          },
+          {
+            "download_detour": "direct",
+            "format": "binary",
+            "tag": "geoip-cn",
+            "type": "remote",
+            "update_interval": "1d",
+            "url": "https://xiaomans.com/vela-api/assets/rules/geoip-cn.srs"
+          }
+        ],
+        "rules": [
+          {
+            "action": "sniff"
+          },
+          {
+            "action": "hijack-dns",
+            "protocol": "dns"
+          },
+          {
+            "action": "route",
+            "domain": [
+              "www.gstatic.com",
+              "connectivitycheck.gstatic.com",
+              "clients3.google.com",
+              "www.google.com",
+              "cp.cloudflare.com"
+            ],
+            "outbound": "vless-uk-01"
+          },
+          {
+            "action": "route",
+            "ip_is_private": true,
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              "local",
+              "lan"
+            ],
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              ".cn"
+            ],
+            "outbound": "direct"
+          },
+          {
+            "action": "route",
+            "outbound": "direct",
+            "rule_set": [
+              "geosite-cn"
+            ]
+          },
+          {
+            "action": "route",
+            "outbound": "direct",
+            "rule_set": [
+              "geoip-cn"
+            ]
+          },
+          {
+            "action": "route",
+            "network": "udp",
+            "outbound": "block",
+            "port": [
+              3478,
+              3479,
+              3480,
+              3481
+            ]
+          }
+        ]
+      }
+    },
+    "vless-uk-01::free::xiaoman": {
+      "dns": {
+        "final": "remote-dns",
+        "independent_cache": true,
+        "rules": [
+          {
+            "action": "route",
+            "domain": [
+              "www.gstatic.com",
+              "connectivitycheck.gstatic.com",
+              "clients3.google.com",
+              "www.google.com",
+              "cp.cloudflare.com"
+            ],
+            "server": "remote-dns"
+          },
+          {
+            "action": "route",
+            "domain_suffix": [
+              ".cn"
+            ],
+            "server": "cn-direct-dns"
+          },
+          {
+            "action": "route",
+            "rule_set": [
+              "geosite-cn"
+            ],
+            "server": "cn-direct-dns"
+          }
+        ],
+        "servers": [
+          {
+            "server": "1.1.1.1",
+            "server_port": 53,
+            "tag": "bootstrap-dns",
+            "type": "tcp"
+          },
+          {
+            "detour": "vless-uk-01",
+            "path": "/dns-query",
+            "server": "1.1.1.1",
+            "server_port": 443,
+            "tag": "remote-dns",
+            "type": "https"
+          },
+          {
+            "detour": "vless-uk-01",
+            "path": "/dns-query",
+            "server": "8.8.8.8",
+            "server_port": 443,
+            "tag": "fallback-dns",
+            "type": "https"
+          },
+          {
+            "server": "223.5.5.5",
+            "server_port": 53,
+            "tag": "cn-direct-dns",
+            "type": "tcp"
+          }
+        ],
+        "strategy": "ipv4_only"
+      },
+      "experimental": {
+        "cache_file": {
+          "enabled": true
+        },
+        "clash_api": {
+          "external_controller": "127.0.0.1:9097",
+          "external_ui": "ui",
+          "secret": "user_20260930105949_e01fa5-android"
+        }
+      },
+      "inbounds": [
+        {
+          "address": [
+            "172.19.0.1/30"
+          ],
+          "auto_route": true,
+          "interface_name": "tun0",
+          "mtu": 1380,
+          "stack": "mixed",
+          "strict_route": true,
+          "tag": "tun-in",
+          "type": "tun"
+        }
+      ],
+      "log": {
+        "level": "info"
+      },
+      "outbounds": [
+        {
+          "flow": "xtls-rprx-vision",
+          "server": "103.180.20.100",
+          "server_port": 20009,
+          "tag": "vless-uk-01",
+          "tls": {
+            "enabled": true,
+            "reality": {
+              "enabled": true,
+              "public_key": "lKhzz-7fA5uyFxSoPPp3r-iIPk7D67bT-r6U-MB5kH8",
+              "short_id": "69a1fc81c267e44a"
+            },
+            "server_name": "www.cloudflare.com",
+            "utls": {
+              "enabled": true,
+              "fingerprint": "safari"
+            }
+          },
+          "type": "vless",
+          "uuid": "ad1d39b6-ff90-44c1-9439-b1d34cd3e196"
+        },
+        {
+          "tag": "direct",
+          "type": "direct"
+        },
+        {
+          "tag": "block",
+          "type": "block"
+        }
+      ],
+      "route": {
+        "auto_detect_interface": true,
+        "default_domain_resolver": "bootstrap-dns",
+        "final": "vless-uk-01",
+        "rule_set": [
+          {
+            "download_detour": "direct",
+            "format": "binary",
+            "tag": "geosite-cn",
+            "type": "remote",
+            "update_interval": "1d",
+            "url": "https://xiaomans.com/vela-api/assets/rules/geosite-cn.srs"
+          },
+          {
+            "download_detour": "direct",
+            "format": "binary",
+            "tag": "geoip-cn",
+            "type": "remote",
+            "update_interval": "1d",
+            "url": "https://xiaomans.com/vela-api/assets/rules/geoip-cn.srs"
+          }
+        ],
+        "rules": [
+          {
+            "action": "sniff"
+          },
+          {
+            "action": "hijack-dns",
+            "protocol": "dns"
+          },
+          {
+            "action": "route",
+            "domain": [
+              "www.gstatic.com",
+              "connectivitycheck.gstatic.com",
+              "clients3.google.com",
+              "www.google.com",
+              "cp.cloudflare.com"
+            ],
+            "outbound": "vless-uk-01"
           },
           {
             "action": "route",
