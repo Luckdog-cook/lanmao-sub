@@ -4,15 +4,15 @@ proxies:
     type: vless
     server: 34.40.216.97
     port: 443
-    uuid: 325bc1be-0cb7-4cf7-bd35-a79ded91bbbd
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'fsdIMU2apN1C_NbkL7mHTsBKEfhwbDhgCRcB8ICf03E'
-      short-id: 'd725f0dd8cce210f'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-AU-gcp-australia-southeast1-1-hy2'
     type: hysteria2
     server: 34.40.216.97
@@ -24,15 +24,15 @@ proxies:
     type: vless
     server: 34.87.236.166
     port: 443
-    uuid: 4f865f35-cf47-4e7f-a7e6-8882511a1b36
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'OgTkmAQdLjipA9oLloxbU5BAX3hPjzbvkEGHF4aZ8z4'
-      short-id: '8a7d5e0248cdb1b1'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-AU-gcp-australia-southeast1-2-hy2'
     type: hysteria2
     server: 34.87.236.166
@@ -44,15 +44,15 @@ proxies:
     type: vless
     server: 35.199.90.53
     port: 443
-    uuid: 5e517b94-e207-47ee-be3c-3020a57594e8
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'pCImwRkTjx8OIUiu1WFelZQFt1p3Q0lUoPbvjVq8GTs'
-      short-id: 'b62a4da6cd1c4dd6'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-BR-gcp-southamerica-east1-1-hy2'
     type: hysteria2
     server: 35.199.90.53
@@ -64,15 +64,15 @@ proxies:
     type: vless
     server: 35.198.46.59
     port: 443
-    uuid: e9c2ed7f-79ab-40a8-8910-24468f5da712
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: '0WXz3PJQnr-KprrwiO5BlKVRdqA4ZS6U5jGHc_aeJnw'
-      short-id: '4b414f69a06e1e81'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-BR-gcp-southamerica-east1-2-hy2'
     type: hysteria2
     server: 35.198.46.59
@@ -84,15 +84,15 @@ proxies:
     type: vless
     server: 34.92.19.135
     port: 443
-    uuid: 90153538-ef08-4942-b8e1-41e7c523e659
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'tSBJnEt6E1dy6UgX9gX5wUfvZ2KAXjGWVKsEq886OWM'
-      short-id: '56d4e7ae4f86fa39'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-HK-gcp-asia-east2-1-hy2'
     type: hysteria2
     server: 34.92.19.135
@@ -104,15 +104,15 @@ proxies:
     type: vless
     server: 34.150.46.137
     port: 443
-    uuid: 75d38591-267e-4d89-98bc-164f25b50880
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'HV_4dmK3rwzqhWP1yOpC1L8BObd5lpZRYTzUflsi2x4'
-      short-id: '64b3f192fc0669e1'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-HK-gcp-asia-east2-2-hy2'
     type: hysteria2
     server: 34.150.46.137
@@ -124,15 +124,15 @@ proxies:
     type: vless
     server: 34.101.37.72
     port: 443
-    uuid: e440fa81-fe9d-4ca1-b711-f7b72c3d79ed
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: '-9nhbWBjFTNIE5q0kg76hjyzCS2giPfZ-fbd8xvmRX0'
-      short-id: '409192cee72716d7'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-ID-gcp-asia-southeast2-1-hy2'
     type: hysteria2
     server: 34.101.37.72
@@ -160,39 +160,19 @@ proxies:
     password: 416eac5091f877993bcd73cb5179dc5eb387363c9cfc07b7ae6a99c5ceebbb07
     skip-cert-verify: true
     udp: true
-  - name: 'iPoW-JP-gcp-asia-northeast1-1'
-    type: vless
-    server: 34.153.208.209
-    port: 443
-    uuid: 51a43b75-c84b-46eb-885e-c24e7819cd0b
-    network: tcp
-    tls: true
-    udp: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 'qMPnrSiXgWvw2ETefb46OfJKnYpfX6HfyGdWpWWxtVI'
-      short-id: '780152c21e234b5a'
-  - name: 'iPoW-JP-gcp-asia-northeast1-1-hy2'
-    type: hysteria2
-    server: 34.153.208.209
-    port: 443
-    password: 14f86701517cb06b9c0c4b71bb4ff13bcf7cb48590223aaa2ffb0dccbfe12003
-    skip-cert-verify: true
-    udp: true
   - name: 'iPoW-JP-gcp-asia-northeast1-2'
     type: vless
     server: 34.146.91.83
     port: 443
-    uuid: 0c4c6ebb-603f-4429-8682-beef6b65b80d
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'Ti7zRkfweHdrQ5QHI9o_zEgHn39xRfMG2C2Gfp_AMHE'
-      short-id: '8380ad05cd21a69f'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-JP-gcp-asia-northeast1-2-hy2'
     type: hysteria2
     server: 34.146.91.83
@@ -204,15 +184,15 @@ proxies:
     type: vless
     server: 34.22.111.30
     port: 443
-    uuid: cb2abff3-5fe6-4b5a-aa19-5739deb285b6
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'M0QKczb2MzOH45qDViIAbb9LPrVVyCp880D4HlwIKnA'
-      short-id: '8685f8b4d9f4f51e'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-KR-gcp-asia-northeast3-1-hy2'
     type: hysteria2
     server: 34.22.111.30
@@ -224,15 +204,15 @@ proxies:
     type: vless
     server: 34.50.26.212
     port: 443
-    uuid: 700a7a0e-3f27-406c-81d1-aa1abe411af8
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'kqIDhDhYFrXD-1GeurwjzFwbB0zWipgWmcbADXwmyy8'
-      short-id: '3fd0a8ddef3ae5c6'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-KR-gcp-asia-northeast3-2-hy2'
     type: hysteria2
     server: 34.50.26.212
@@ -244,15 +224,15 @@ proxies:
     type: vless
     server: 34.142.207.152
     port: 443
-    uuid: 50cbda48-00ce-4688-8b3d-0177ab8f177c
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'GqyMciP_v8rJZKLJd-EgzQmWbi_Qx_c_n1f-nlPkaEA'
-      short-id: 'b1fef7a9181ea31d'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-SG-gcp-asia-southeast1-1-hy2'
     type: hysteria2
     server: 34.142.207.152
@@ -264,15 +244,15 @@ proxies:
     type: vless
     server: 34.87.113.18
     port: 443
-    uuid: 5567cac6-2a32-4318-83cd-7df3a9eebbd7
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'hJCcmOf_ECJ3GUfHUjsgfcFKcgGb22H7cz_m_FvcVm4'
-      short-id: 'eb97ce837da2f6ad'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-SG-gcp-asia-southeast1-2-hy2'
     type: hysteria2
     server: 34.87.113.18
@@ -284,15 +264,15 @@ proxies:
     type: vless
     server: 34.81.16.9
     port: 443
-    uuid: 31a40f42-4ad6-4a32-a760-71102b459584
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'qvekI7tKB1NDnZA6JcS_24aV4n8mlCbI3SFvkRr22wg'
-      short-id: 'd74a6321deec9f31'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-TW-gcp-asia-east1-2-hy2'
     type: hysteria2
     server: 34.81.16.9
@@ -304,15 +284,15 @@ proxies:
     type: vless
     server: 34.31.93.173
     port: 443
-    uuid: 0106efd7-39bf-449d-b734-a4aa758d6480
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'VL1ZiaWxae8teZWJeBAIHadbo7z1Ezu1KA2kIA1TDmk'
-      short-id: '7dfdbf323c4ef0a8'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-US-gcp-us-central1-1-hy2'
     type: hysteria2
     server: 34.31.93.173
@@ -324,15 +304,15 @@ proxies:
     type: vless
     server: 136.65.145.234
     port: 443
-    uuid: 3893f05b-9b24-4bb1-a1dc-ba55509b0a01
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'Th2whwnn3zQaHdImi5B1wYn8hxXz3JQs3_AQCuHfanQ'
-      short-id: '76d093d99ceaf06a'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-US-gcp-us-central1-2-hy2'
     type: hysteria2
     server: 136.65.145.234
@@ -344,15 +324,15 @@ proxies:
     type: vless
     server: 136.70.146.238
     port: 443
-    uuid: 8ea1a178-2719-47b7-99d0-33d8dc361ba3
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'cTwhlN0bIkprnzvGCMPmsdxk8XkqUz3LcCrS0FKnbVI'
-      short-id: 'c08efcd72d7e8389'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-US-gcp-us-east4-1-hy2'
     type: hysteria2
     server: 136.70.146.238
@@ -364,15 +344,15 @@ proxies:
     type: vless
     server: 136.107.170.196
     port: 443
-    uuid: d6d58f01-b5ce-4d47-bce0-b8a806155852
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'L1S0DpFtHPBeyENZUvJPcrFZIct6kcHUPxuzNaGXIFY'
-      short-id: '4c69c4b51c580d60'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-US-gcp-us-east4-2-hy2'
     type: hysteria2
     server: 136.107.170.196
@@ -384,15 +364,15 @@ proxies:
     type: vless
     server: 136.67.16.72
     port: 443
-    uuid: 9d0395c0-016f-453e-b0be-fc66f1ee1d80
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'aGm3egxU7SVqVw-oxqXbJ0u4ctldnmTjwaDh4Mao2EE'
-      short-id: 'bd4aa541e5306ba2'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-US-gcp-us-west1-1-hy2'
     type: hysteria2
     server: 136.67.16.72
@@ -404,15 +384,15 @@ proxies:
     type: vless
     server: 35.252.180.212
     port: 443
-    uuid: dffab367-7769-4c6c-86f2-66fc6bd03003
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'LYnDDS0AkBwVeeTyIEE5MhrTV_PZO5f1qBAbMN6z4HM'
-      short-id: 'f1955f72763eb2fb'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-US-gcp-us-west1-2-hy2'
     type: hysteria2
     server: 35.252.180.212
@@ -424,15 +404,15 @@ proxies:
     type: vless
     server: 34.35.189.111
     port: 443
-    uuid: 4758aee6-6d1a-4306-b460-2398b5af4e35
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'dcox8XXfkOCmKn3kgrloj6wY5o1_0brJOi2mczYmAT4'
-      short-id: '5ced03e42cc31aab'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-ZA-gcp-africa-south1-za-1-hy2'
     type: hysteria2
     server: 34.35.189.111
@@ -444,15 +424,15 @@ proxies:
     type: vless
     server: 34.35.186.228
     port: 443
-    uuid: 8d65c8a7-4876-4556-bb6a-feccfb46ee81
+    uuid: 
     network: tcp
     tls: true
     udp: true
     servername: www.cloudflare.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 'bSN0cv0VMxmYZsNsMkkLndOTHZu74C1htJ2M71QMaVE'
-      short-id: '89b3a20484eb43ec'
+      public-key: ''
+      short-id: ''
   - name: 'iPoW-ZA-gcp-africa-south1-za-2-hy2'
     type: hysteria2
     server: 34.35.186.228

@@ -6,7 +6,6 @@ hysteria2://48c435e634c985d057b34b6e1ca1082abed4b0a757237f0e27a1fe800018e1b0@34.
 hysteria2://e7438b3190e185e1a0e529673fc0588efc85070295f51a893a44b8ce7812c235@34.150.46.137:443/?insecure=1#iPoW-HK-gcp-asia-east2-2-hy2
 hysteria2://377080bcfa607183b018df00f68263ca0ffbe449c500b0a5af464a8b270d85c4@34.101.37.72:443/?insecure=1#iPoW-ID-gcp-asia-southeast2-1-hy2
 hysteria2://416eac5091f877993bcd73cb5179dc5eb387363c9cfc07b7ae6a99c5ceebbb07@34.50.105.110:443/?insecure=1#iPoW-ID-gcp-asia-southeast2-2-hy2
-hysteria2://14f86701517cb06b9c0c4b71bb4ff13bcf7cb48590223aaa2ffb0dccbfe12003@34.153.208.209:443/?insecure=1#iPoW-JP-gcp-asia-northeast1-1-hy2
 hysteria2://19e3ca4398510853bb0607890979d93454cad625636c25d1eaeabce6e44cdb89@34.146.91.83:443/?insecure=1#iPoW-JP-gcp-asia-northeast1-2-hy2
 hysteria2://42e3d9e33334ac89115e227ae74b72c34d0a503a6efdb64d5f234f37319d1743@34.22.111.30:443/?insecure=1#iPoW-KR-gcp-asia-northeast3-1-hy2
 hysteria2://fcb22dd943f986f2f73f85dffdb1c5f44726623464dcaaa8e51349591da6bb1d@34.50.26.212:443/?insecure=1#iPoW-KR-gcp-asia-northeast3-2-hy2
