@@ -251,7 +251,7 @@
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "iosapps.itunes.apple.com",
+        "server_name": "psstatic.cdn.bcebos.com",
         "utls": {
           "enabled": true,
           "fingerprint": "ios"
@@ -723,7 +723,31 @@
       "type": "hysteria2",
       "tag": "[CN]新加坡-vip-661",
       "server": "zfapi.zalolink.com",
-      "server_port": 40009,
+      "server_port": 34430,
+      "password": "69b6b450-7905-471b-908a-00e38ed0ee4a",
+      "tls": {
+        "enabled": true,
+        "server_name": "psstatic.cdn.bcebos.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "[CN]香港-vip-562",
+      "server": "i6gyxh1k.supertoolify.com",
+      "server_port": 40100,
+      "password": "69b6b450-7905-471b-908a-00e38ed0ee4a",
+      "tls": {
+        "enabled": true,
+        "server_name": "psstatic.cdn.bcebos.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "[CN]日本-vip-663",
+      "server": "zfapi.zalolink.com",
+      "server_port": 40300,
       "password": "69b6b450-7905-471b-908a-00e38ed0ee4a",
       "tls": {
         "enabled": true,
@@ -2081,6 +2105,8 @@
         "[CN]泰国-vip-459",
         "[CN]新加坡-vip-560",
         "[CN]新加坡-vip-661",
+        "[CN]香港-vip-562",
+        "[CN]日本-vip-663",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
@@ -2192,6 +2218,8 @@
         "[CN]泰国-vip-459",
         "[CN]新加坡-vip-560",
         "[CN]新加坡-vip-661",
+        "[CN]香港-vip-562",
+        "[CN]日本-vip-663",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
