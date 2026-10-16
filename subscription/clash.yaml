@@ -116,34 +116,6 @@ proxies:
     public-key: OgcLHAAzQV0qTuXwHnz0huEueM5f3vRpYZHMH8JsjC4
     short-id: 09d75ddaf90d0ba5
   flow: xtls-rprx-vision
-- name: 新加坡 03
-  type: vless
-  server: 103.180.20.132
-  port: 20007
-  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
-  network: tcp
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: safari
-  reality-opts:
-    public-key: h67BY8lUGUOtatqfbLJ8pgxS-bYXqODnS_aBIRUrIDw
-    short-id: 22b82cf5d70ea10e
-  flow: xtls-rprx-vision
-- name: 🆓新加坡 03（1MB限速）
-  type: vless
-  server: 103.180.20.132
-  port: 20007
-  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
-  network: tcp
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: safari
-  reality-opts:
-    public-key: h67BY8lUGUOtatqfbLJ8pgxS-bYXqODnS_aBIRUrIDw
-    short-id: 22b82cf5d70ea10e
-  flow: xtls-rprx-vision
 - name: 美国 03
   type: vless
   server: 103.180.20.132
@@ -172,34 +144,6 @@ proxies:
     public-key: z3-XLw1M_HlLNPQ2vZ8mvbVY_xbrnIGAdpXEEk7RFQc
     short-id: 3c6b40a10d5beedd
   flow: xtls-rprx-vision
-- name: 英国 01
-  type: vless
-  server: 103.180.20.132
-  port: 20009
-  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
-  network: tcp
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: safari
-  reality-opts:
-    public-key: lKhzz-7fA5uyFxSoPPp3r-iIPk7D67bT-r6U-MB5kH8
-    short-id: 69a1fc81c267e44a
-  flow: xtls-rprx-vision
-- name: 🆓英国 01（1MB限速）
-  type: vless
-  server: 103.180.20.132
-  port: 20009
-  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
-  network: tcp
-  udp: true
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: safari
-  reality-opts:
-    public-key: lKhzz-7fA5uyFxSoPPp3r-iIPk7D67bT-r6U-MB5kH8
-    short-id: 69a1fc81c267e44a
-  flow: xtls-rprx-vision
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -214,12 +158,8 @@ proxy-groups:
   - 🆓香港 04（1MB限速）
   - 香港 05
   - 🆓香港 05（1MB限速）
-  - 新加坡 03
-  - 🆓新加坡 03（1MB限速）
   - 美国 03
   - 🆓美国 03（1MB限速）
-  - 英国 01
-  - 🆓英国 01（1MB限速）
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -233,12 +173,8 @@ proxy-groups:
   - 🆓香港 04（1MB限速）
   - 香港 05
   - 🆓香港 05（1MB限速）
-  - 新加坡 03
-  - 🆓新加坡 03（1MB限速）
   - 美国 03
   - 🆓美国 03（1MB限速）
-  - 英国 01
-  - 🆓英国 01（1MB限速）
 rules:
 - GEOIP,CN,DIRECT
 - MATCH,🚀 节点选择
