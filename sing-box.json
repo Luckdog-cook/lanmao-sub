@@ -646,19 +646,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]新加坡-vip-657",
-      "server": "zfapi.zalolink.com",
-      "server_port": 34430,
-      "password": "69b6b450-7905-471b-908a-00e38ed0ee4a",
-      "tls": {
-        "enabled": true,
-        "server_name": "psstatic.cdn.bcebos.com",
-        "insecure": true
-      }
-    },
-    {
-      "type": "hysteria2",
-      "tag": "[CN]香港-vip-558",
+      "tag": "[CN]香港-vip-557",
       "server": "i6gyxh1k.supertoolify.com",
       "server_port": 40100,
       "password": "69b6b450-7905-471b-908a-00e38ed0ee4a",
@@ -670,7 +658,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]日本-vip-559",
+      "tag": "[CN]日本-vip-558",
       "server": "dgrbx6.supertoolify.com",
       "server_port": 40100,
       "password": "69b6b450-7905-471b-908a-00e38ed0ee4a",
@@ -2025,9 +2013,8 @@
         "[CN]新加坡-vip-454",
         "[CN]香港-vip-455",
         "[CN]新加坡-vip-556",
-        "[CN]新加坡-vip-657",
-        "[CN]香港-vip-558",
-        "[CN]日本-vip-559",
+        "[CN]香港-vip-557",
+        "[CN]日本-vip-558",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
@@ -2134,9 +2121,8 @@
         "[CN]新加坡-vip-454",
         "[CN]香港-vip-455",
         "[CN]新加坡-vip-556",
-        "[CN]新加坡-vip-657",
-        "[CN]香港-vip-558",
-        "[CN]日本-vip-559",
+        "[CN]香港-vip-557",
+        "[CN]日本-vip-558",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
