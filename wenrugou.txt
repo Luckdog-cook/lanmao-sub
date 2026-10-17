@@ -4,138 +4,6 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: 🇭🇰香港-Gemini-IEPL
-  server: gd.bjnet2.com
-  port: 36602
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇭🇰香港2-IEPL
-  server: gd2.bjnet2.com
-  port: 36602
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇹🇼台湾-IEPL
-  server: gd.bjnet2.com
-  port: 36603
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇹🇼台湾2-IEPL
-  server: gd2.bjnet2.com
-  port: 36603
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇸🇬新加坡-Gemini-IEPL
-  server: gd.bjnet2.com
-  port: 36604
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇸🇬新加坡2-Gemini-IEPL
-  server: gd2.bjnet2.com
-  port: 36604
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇯🇵日本-IEPL-GPT
-  server: gd.bjnet2.com
-  port: 36609
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇯🇵日本2-IEPL-GPT
-  server: gd2.bjnet2.com
-  port: 36609
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇯🇵日本4-IEPL-家宽
-  server: gd2.bjnet2.com
-  port: 36610
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇺🇸美国-IEPL-GPT
-  server: gd.bjnet2.com
-  port: 36608
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇺🇸美国2-IEPL-GPT
-  server: gd2.bjnet2.com
-  port: 36608
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇩🇪德国-IEPL
-  server: gd.bjnet2.com
-  port: 36611
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: HK-01-三网优化
   server: hk01.node.qixi.best
   port: 443
@@ -304,6 +172,138 @@ proxies:
     path: /download
     headers:
       Host: de01.node.qixi.best
+- name: 🇭🇰香港-Gemini-IEPL
+  server: gd.bjnet2.com
+  port: 36602
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇭🇰香港2-IEPL
+  server: gd2.bjnet2.com
+  port: 36602
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇹🇼台湾-IEPL
+  server: gd.bjnet2.com
+  port: 36603
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇹🇼台湾2-IEPL
+  server: gd2.bjnet2.com
+  port: 36603
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇸🇬新加坡-Gemini-IEPL
+  server: gd.bjnet2.com
+  port: 36604
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇸🇬新加坡2-Gemini-IEPL
+  server: gd2.bjnet2.com
+  port: 36604
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇯🇵日本-IEPL-GPT
+  server: gd.bjnet2.com
+  port: 36609
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇯🇵日本2-IEPL-GPT
+  server: gd2.bjnet2.com
+  port: 36609
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇯🇵日本4-IEPL-家宽
+  server: gd2.bjnet2.com
+  port: 36610
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇺🇸美国-IEPL-GPT
+  server: gd.bjnet2.com
+  port: 36608
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇺🇸美国2-IEPL-GPT
+  server: gd2.bjnet2.com
+  port: 36608
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇩🇪德国-IEPL
+  server: gd.bjnet2.com
+  port: 36611
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本20
   server: jp01.wenrugou.uk
   port: 2053
@@ -323,18 +323,6 @@ proxy-groups:
   type: select
   proxies:
   - 自动优选
-  - 🇭🇰香港-Gemini-IEPL
-  - 🇭🇰香港2-IEPL
-  - 🇹🇼台湾-IEPL
-  - 🇹🇼台湾2-IEPL
-  - 🇸🇬新加坡-Gemini-IEPL
-  - 🇸🇬新加坡2-Gemini-IEPL
-  - 🇯🇵日本-IEPL-GPT
-  - 🇯🇵日本2-IEPL-GPT
-  - 🇯🇵日本4-IEPL-家宽
-  - 🇺🇸美国-IEPL-GPT
-  - 🇺🇸美国2-IEPL-GPT
-  - 🇩🇪德国-IEPL
   - HK-01-三网优化
   - HK-02-三网优化
   - HK-03-三网优化
@@ -348,23 +336,23 @@ proxy-groups:
   - JP06-三网优化
   - US-01-三网优化
   - DE-01-三网优化
+  - 🇭🇰香港-Gemini-IEPL
+  - 🇭🇰香港2-IEPL
+  - 🇹🇼台湾-IEPL
+  - 🇹🇼台湾2-IEPL
+  - 🇸🇬新加坡-Gemini-IEPL
+  - 🇸🇬新加坡2-Gemini-IEPL
+  - 🇯🇵日本-IEPL-GPT
+  - 🇯🇵日本2-IEPL-GPT
+  - 🇯🇵日本4-IEPL-家宽
+  - 🇺🇸美国-IEPL-GPT
+  - 🇺🇸美国2-IEPL-GPT
+  - 🇩🇪德国-IEPL
   - 🇯🇵日本20
   - DIRECT
 - name: 自动优选
   type: url-test
   proxies:
-  - 🇭🇰香港-Gemini-IEPL
-  - 🇭🇰香港2-IEPL
-  - 🇹🇼台湾-IEPL
-  - 🇹🇼台湾2-IEPL
-  - 🇸🇬新加坡-Gemini-IEPL
-  - 🇸🇬新加坡2-Gemini-IEPL
-  - 🇯🇵日本-IEPL-GPT
-  - 🇯🇵日本2-IEPL-GPT
-  - 🇯🇵日本4-IEPL-家宽
-  - 🇺🇸美国-IEPL-GPT
-  - 🇺🇸美国2-IEPL-GPT
-  - 🇩🇪德国-IEPL
   - HK-01-三网优化
   - HK-02-三网优化
   - HK-03-三网优化
@@ -378,6 +366,18 @@ proxy-groups:
   - JP06-三网优化
   - US-01-三网优化
   - DE-01-三网优化
+  - 🇭🇰香港-Gemini-IEPL
+  - 🇭🇰香港2-IEPL
+  - 🇹🇼台湾-IEPL
+  - 🇹🇼台湾2-IEPL
+  - 🇸🇬新加坡-Gemini-IEPL
+  - 🇸🇬新加坡2-Gemini-IEPL
+  - 🇯🇵日本-IEPL-GPT
+  - 🇯🇵日本2-IEPL-GPT
+  - 🇯🇵日本4-IEPL-家宽
+  - 🇺🇸美国-IEPL-GPT
+  - 🇺🇸美国2-IEPL-GPT
+  - 🇩🇪德国-IEPL
   - 🇯🇵日本20
   url: http://www.gstatic.com/generate_204
   interval: 300
