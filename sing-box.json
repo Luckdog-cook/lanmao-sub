@@ -619,6 +619,39 @@
     },
     {
       "type": "vless",
+      "tag": "[CN]日本-vip-657",
+      "server": "zfapi.zalolink.com",
+      "server_port": 40300,
+      "uuid": "69b6b450-7905-471b-908a-00e38ed0ee4a",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "psstatic.cdn.bcebos.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "HyqKpSHY4gS8aE65sGpvUkWNJj0JgGRBjsS4MFzVbhA",
+          "short_id": "6cdfb8b5878caf8d"
+        }
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "[CN]香港-vip-658",
+      "server": "45.153.130.131",
+      "server_port": 40050,
+      "password": "69b6b450-7905-471b-908a-00e38ed0ee4a",
+      "tls": {
+        "enabled": true,
+        "server_name": "psstatic.cdn.bcebos.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "vless",
       "tag": "[Global]日本-vip-128",
       "server": "unamecf.xn--ghqu5fm27b67w.com",
       "server_port": 443,
@@ -1962,6 +1995,8 @@
         "[CN]日本-vip-354",
         "[CN]日本-vip-455",
         "[CN]日本-vip-556",
+        "[CN]日本-vip-657",
+        "[CN]香港-vip-658",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
@@ -2068,6 +2103,8 @@
         "[CN]日本-vip-354",
         "[CN]日本-vip-455",
         "[CN]日本-vip-556",
+        "[CN]日本-vip-657",
+        "[CN]香港-vip-658",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
