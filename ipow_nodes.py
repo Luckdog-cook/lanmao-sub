@@ -493,6 +493,62 @@ def is_ipv4(addr):
             return False
     return True
 
+def is_private_ipv4(addr):
+    """10/8、172.16/12、192.168/16、127/8、169.254/16 视为不可直连。"""
+    if not is_ipv4(addr):
+        return False
+    a, b = [int(x) for x in addr.split('.')[:2]]
+    return (a == 10 or (a == 172 and 16 <= b <= 31) or (a == 192 and b == 168)
+            or a == 127 or (a == 169 and b == 254))
+
+def is_ipv6(addr):
+    return bool(addr) and ':' in str(addr)
+
+def server_kind(addr):
+    if not addr:
+        return 'empty'
+    if is_ipv4(addr):
+        return 'private-ipv4' if is_private_ipv4(addr) else 'public-ipv4'
+    if is_ipv6(addr):
+        return 'ipv6'
+    return 'domain'
+
+def summarize_servers(nodes):
+    from collections import Counter
+    c = Counter(server_kind(n.get('server')) for n in nodes)
+    if not c:
+        return
+    print('\n节点地址类型: ' + ', '.join('{}={}'.format(k, v) for k, v in c.items()))
+    if c.get('private-ipv4'):
+        print('  ⚠️ 存在私网 IP —— 这类地址只能在内网/隧道内直连，导入客户端必然超时')
+    if c.get('ipv6') and not c.get('public-ipv4'):
+        print('  ⚠️ 全部是 IPv6 —— 本地无 IPv6 出口时必然超时')
+    if c.get('domain'):
+        print('  ℹ️ 含域名节点 —— 若域名被污染/被墙，请先 ipow_check.py 看 DNS 层')
+
+def quick_check(nodes, timeout=4, limit=0):
+    """生成后立即做 TCP 抽测，避免拿到一堆连不上的节点。"""
+    items = nodes[:limit] if limit else nodes
+    if not items:
+        return
+    print('\n[连通性抽测] TCP {}s 超时'.format(timeout))
+    ok = 0
+    for n in items:
+        host, port = n.get('server'), n.get('port') or 443
+        if not host:
+            continue
+        t0 = time.time()
+        try:
+            sk = socket.create_connection((str(host).strip('[]'), int(port)), timeout=timeout)
+            sk.close()
+            ok += 1
+            print('  ✓ {:<42} {:<6} {}ms'.format(str(host)[:42], port, int((time.time()-t0)*1000)))
+        except Exception as e:
+            print('  ✗ {:<42} {:<6} {}'.format(str(host)[:42], port, type(e).__name__))
+    print('  可达 {}/{}'.format(ok, len(items)))
+    if ok == 0:
+        print('  → 全部 TCP 超时：优先怀疑落地 IP 被墙/已下线，而不是客户端配置问题')
+
 # ---------------------------------------------------------------------------
 # 网络客户端
 # ---------------------------------------------------------------------------
@@ -596,6 +652,12 @@ class IpowClient:
             'client_type': CLIENT_TYPE,
         })
 
+    def email_start(self, email):
+        return self._request('POST', '/v1/auth/email/start', {'email': email})
+
+    def email_verify(self, email, code):
+        return self._request('POST', '/v1/auth/email/verify', {'email': email, 'code': code})
+
     def session_start(self, token, device_id, device_name):
         return self._request('POST', '/p2p-lite/v2/vpn/sessions/start', {
             'client_type': CLIENT_TYPE,
@@ -625,6 +687,13 @@ class IpowClient:
 # 解密与配置生成
 # ---------------------------------------------------------------------------
 
+def _fmt_host(host):
+    """URL 中的 IPv6 必须加方括号，否则会被解析成 host:port 错位。"""
+    host = str(host or '')
+    if ':' in host and not host.startswith('['):
+        return '[' + host + ']'
+    return host
+
 def node_name(node):
     return "iPoW-{}-{}{}".format(node.get('country_code', 'XX'),
                                  node['node_id'], node.get('name_suffix', ''))
@@ -643,21 +712,21 @@ def build_vless_url(node):
         'type=tcp',
     ]
     return 'vless://{}@{}:{}?{}#{}'.format(
-        node['uuid'], node['server'], node['port'], '&'.join(parts), name)
+        node['uuid'], _fmt_host(node['server']), node['port'],
+        '&'.join(parts), urllib.parse.quote(str(name)))
 
 def build_hy2_url(node):
     hy2 = node.get('hy2') or {}
     server = hy2.get('server') or node['server']
     port = hy2.get('server_port') or node['port']
     sni = hy2.get('sni') or ''
-    if is_ipv4(sni):
-        sni = ''
     params = ['insecure=1']
     if sni:
         params.append('sni=' + urllib.parse.quote(str(sni)))
     query = '?' + '&'.join(params) if params else ''
     return 'hysteria2://{}@{}:{}/{}#{}'.format(
-        hy2.get('password') or '', server, port, query, node_name(node))
+        urllib.parse.quote(str(hy2.get('password') or '')), _fmt_host(server),
+        port, query, urllib.parse.quote(str(node_name(node))))
 
 def build_clash_yaml(nodes):
     lines = [
@@ -929,6 +998,8 @@ def register_new_wallet(client, verbose=False):
         'subscription_token': sub.get('token'),
         'subscription_url': sub.get('url'),
         'plan_id': sub.get('plan_id'),
+        'status': sub.get('status'),
+        'is_trial': sub.get('is_trial'),
         'expires_at': sub.get('expires_at'),
         'device_id': device_id,
         'device_name': device_name,
@@ -942,6 +1013,130 @@ def register_new_wallet(client, verbose=False):
             print('  ⚡ 已有钱包，复用登录')
 
     return state
+
+
+MAILTM_API = 'https://api.mail.tm'
+
+
+def _mailtm_create(timeout=15):
+    """创建一次性邮箱，返回 (address, mail_jwt)。纯标准库，无需注册。"""
+    def _j(url, method='GET', body=None, hdr=None):
+        r = urllib.request.Request(
+            url, data=json.dumps(body).encode() if body is not None else None,
+            method=method, headers={'Content-Type': 'application/json', **(hdr or {})})
+        with urllib.request.urlopen(r, timeout=timeout) as resp:
+            return json.loads(resp.read().decode() or '{}')
+
+    dom = _j(MAILTM_API + '/domains')['hydra:member'][0]['domain']
+    addr = 'ipow{}@{}'.format(random.randint(100000, 999999), dom)
+    pwd = 'Ip0w!' + str(random.randint(100000, 999999))
+    _j(MAILTM_API + '/accounts', 'POST', {'address': addr, 'password': pwd})
+    tok = _j(MAILTM_API + '/token', 'POST', {'address': addr, 'password': pwd}).get('token')
+    if not tok:
+        raise RuntimeError('mail.tm 取 token 失败')
+    return addr, tok
+
+
+def _mailtm_wait_code(mail_jwt, timeout=90):
+    """轮询收信并提取 6 位验证码。"""
+    deadline = time.time() + timeout
+    hdr = {'Authorization': 'Bearer ' + mail_jwt}
+    while time.time() < deadline:
+        time.sleep(3)
+        try:
+            r = urllib.request.Request(MAILTM_API + '/messages', headers=hdr)
+            with urllib.request.urlopen(r, timeout=15) as resp:
+                msgs = json.loads(resp.read().decode() or '{}')
+            items = msgs.get('hydra:member') or []
+            if items:
+                mid = items[0]['id']
+                r2 = urllib.request.Request(MAILTM_API + '/messages/' + mid, headers=hdr)
+                with urllib.request.urlopen(r2, timeout=15) as resp:
+                    text = resp.read().decode('utf-8', 'replace')
+                m = re.search(r'\b(\d{6})\b', text)
+                if m:
+                    return m.group(1)
+        except Exception:
+            continue
+    return None
+
+
+def register_by_email(client, verbose=False):
+    """邮箱注册通道：临时邮箱自动收码 → verify。返回与钱包注册同结构的 state。"""
+    addr, mail_jwt = _mailtm_create()
+    if verbose:
+        print('  邮箱通道: ' + addr)
+    client.email_start(addr)
+    code = _mailtm_wait_code(mail_jwt)
+    if not code:
+        raise RuntimeError('未收到验证码（可能被 IP 限流）')
+    res = client.email_verify(addr, code)
+    sub = res.get('subscription') or {}
+    device_id = random_device_id()
+    state = {
+        'private_key': None, 'address': addr, 'jwt': res.get('token'),
+        'user_id': sub.get('user_id'), 'subscription_token': sub.get('token'),
+        'subscription_url': sub.get('url'), 'plan_id': sub.get('plan_id'),
+        'status': sub.get('status'), 'is_trial': sub.get('is_trial'),
+        'expires_at': sub.get('expires_at'),
+        'device_id': device_id, 'device_name': random_device_name(),
+    }
+    if verbose:
+        print('  邮箱注册完成: status={} plan={}'.format(state['status'], state['plan_id']))
+    return state
+
+
+def register_until_active(client, verbose=False, max_attempts=10, interval=0.35, method='wallet', save_path=None):
+    """新钱包默认 plan=phase1/status=inactive（无试用）。
+
+    服务端对「试用账号」是按 IP 风控随机发放的（实测命中率 ~50%）：
+    同一网络下连续注册时，部分账号会直接拿到 plan_id=trial / status=active / 1 小时。
+    因此自动注册的正确姿势是——循环换新钱包，直到拿到 active 为止。
+    """
+    last = None
+    for i in range(1, max_attempts + 1):
+        # auto: 钱包 3 次未中后切邮箱通道（两条额度线独立，提高命中率）
+        use_email = method == 'email' or (method == 'auto' and i > 3)
+        try:
+            st = register_by_email(client, verbose=verbose) if use_email \
+                else register_new_wallet(client, verbose=False)
+        except Exception as exc:
+            if verbose:
+                print(f'  注册尝试 {i}/{max_attempts} 失败: {exc}')
+            time.sleep(interval * 2)
+            continue
+        last = st
+        status = st.get('status')
+        if verbose:
+            print('  注册 {}/{} [{}]: {} status={} plan={}'.format(
+                i, max_attempts, 'email' if use_email else 'wallet',
+                str(st['address'])[:18] + '…', status, st.get('plan_id')))
+        if status == 'active':
+            print('  ✅ 第 {} 次注册拿到试用账号（plan={}，到期 {}）'.format(
+                i, st.get('plan_id'), st.get('expires_at')))
+            save_state(st, save_path)
+            return st
+        time.sleep(interval)
+    if last:
+        print('  ⚠️ {} 次注册均未拿到试用（plan={}，status={}）'.format(
+            max_attempts, last.get('plan_id'), last.get('status')))
+    return last
+
+def save_state(state, path):
+    """把可用账号落盘，避免下次重复注册消耗 IP 试用配额。"""
+    if not path:
+        return
+    try:
+        data = {k: state.get(k) for k in (
+            'private_key', 'address', 'jwt', 'user_id', 'subscription_token',
+            'subscription_url', 'plan_id', 'status', 'is_trial', 'expires_at',
+            'device_id', 'device_name')}
+        with open(path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print('  💾 凭据已保存: {}（下次可用 --state-file 直接复用）'.format(path))
+    except Exception as exc:
+        print('  ⚠️ 保存凭据失败: {}'.format(exc))
+
 
 def get_custom_state(args):
     if args.state_file and os.path.exists(args.state_file):
@@ -1039,8 +1234,9 @@ def pull_live_hy2_from_subscription(client, state, session_id, ccs, cat_by_id, i
         if idx:
             time.sleep(interval)
         print(f'  [{idx+1}/{len(ccs)}] {cc} ...', end=' ', flush=True)
-        url = '{}?session_id={}&country={}'.format(
-            sub_url, urllib.parse.quote(str(session_id)),
+        sep = '&' if '?' in sub_url else '?'
+        url = '{}{}session_id={}&country={}'.format(
+            sub_url, sep, urllib.parse.quote(str(session_id)),
             urllib.parse.quote(str(cc)))
 
         cfg = None
@@ -1091,7 +1287,7 @@ def pull_live_hy2_from_subscription(client, state, session_id, ccs, cat_by_id, i
                             'password': o.get('password') or '',
                             'server': live_ip,
                             'server_port': o.get('server_port') or 443,
-                            'sni': '',
+                            'sni': tls.get('server_name') or '',
                         }
                     })
                     count += 1
@@ -1247,6 +1443,16 @@ def main(argv=None):
                     help='接口地址，默认 %(default)s')
     ap.add_argument('-o', '--out-dir', default=default_dir,
                     help='输出文件目录，默认保存在系统下载目录: %(default)s')
+    ap.add_argument('--save-state', default=os.path.join(os.getcwd(), '.ipow_state.json'),
+                    help='把拿到试用的账号保存到该文件（默认 ./.ipow_state.json，下次 --state-file 复用）')
+    ap.add_argument('--register-method', choices=['wallet', 'email', 'auto'], default='auto',
+                    help='自动注册通道：wallet=Web3钱包 / email=临时邮箱 / auto=钱包3次后切邮箱（默认）')
+    ap.add_argument('--register-attempts', type=int, default=10,
+                    help='自动注册最多尝试次数，直到拿到 trial 试用号（默认 10，命中率约 50%%）')
+    ap.add_argument('--check', action='store_true',
+                    help='生成后立即对节点做 TCP 连通性抽测（推荐）')
+    ap.add_argument('--check-limit', type=int, default=0,
+                    help='抽测节点数上限，0=全部')
     ap.add_argument('-v', '--verbose', action='store_true',
                     help='详细输出')
     ap.add_argument('--quiet', action='store_true',
@@ -1310,7 +1516,7 @@ def main(argv=None):
                 s_init = custom_state
                 print(f"  使用传入凭证: {s_init.get('address')}")
             else:
-                s_init = register_new_wallet(client, verbose=args.verbose)
+                s_init = register_until_active(client, verbose=args.verbose, max_attempts=args.register_attempts, method=args.register_method, save_path=args.save_state)
                 wallets_used.append(s_init['address'])
 
             sid_init = None
@@ -1343,7 +1549,7 @@ def main(argv=None):
                 print(f'  使用指定凭证: {state["address"]}')
             else:
                 try:
-                    state = register_new_wallet(client, verbose=args.verbose)
+                    state = register_until_active(client, verbose=args.verbose, max_attempts=args.register_attempts, method=args.register_method, save_path=args.save_state)
                     wallets_used.append(state['address'])
                     print(f'  新钱包: {state["address"]} (用户: {state["user_id"]})')
                 except Exception as exc:
@@ -1362,10 +1568,11 @@ def main(argv=None):
                     continue
             except QuotaExhausted as exc:
                 print(f'  ⚠️ 会话建立失败(402): {exc}')
-                print('  💡 官方当前状态：新注册钱包默认订阅未激活（Phase 1 计费模式）。')
-                print('  💡 若您持有有效账户或订阅链接，可通过参数直接解密:')
-                print('     python ipow_nodes.py --token <您的JWT>')
-                print('     python ipow_nodes.py --sub-url <您的订阅URL>')
+                print('  💡 该账号 subscription_inactive —— 本机 IP 的试用配额已用完。')
+                print('  💡 处理方式（按成本排序）:')
+                print('     1) 换网络出口再跑（手机流量/另一条宽带），新 IP 命中率约 50%')
+                print('     2) 用已订阅账号: --token <JWT> --sub-url <订阅URL>')
+                print('     3) 官方付费: $3.99/月  https://ipow.ai  → /v1/billing/options')
                 break
             except Exception as exc:
                 print(f'  ❌ 开启会话失败: {exc}')
@@ -1439,16 +1646,24 @@ def main(argv=None):
     print(f'  真实 Hysteria2 物理节点: {h_count} 个')
     print('=' * 60)
 
+    summarize_servers(all_nodes)
+    if args.check and all_nodes:
+        quick_check(all_nodes, limit=args.check_limit)
+
     # 明确报错：避免「静默 0 节点」被误判为成功
     if target_total > 0 and resolved_total == 0:
         if has_creds:
             print('⚠️ 已提供凭据但仍拉到 0 个节点：Token 可能已过期、订阅 URL 可能失效，或官方接口暂不可用。')
             print('   请重新获取有效的 --token 与 --sub-url 后重试。')
         else:
-            print('⚠️ 未提供任何有效凭据（--token / --sub-url / --state-file 均为空）。')
-            print('   新注册的空钱包会撞 402（Phase-1 计费模式），无法拉取任何节点。')
+            print('⚠️ 自动注册成功，但所有新号都是 subscription_inactive —— 本机 IP 的试用额度已耗尽。')
+            print('   机制：新账号默认 plan=phase1/inactive；只有服务端按 IP 风控随机放出的 trial 号')
+            print('         （plan=trial，1 小时）才能拉起会话。同一 IP 注册越多，命中率越低。')
+            print('   解决（按成本排序）：')
+            print('     1) 换出口 IP 再跑（手机流量 / 另一条宽带 / 代理），新 IP 命中率约 50%')
+            print('     2) 用已订阅账号：--token <JWT> --sub-url <订阅URL>')
+            print('     3) 官方付费：$3.99/月 https://ipow.ai')
             print('   CI 环境：在 GitHub Secrets 配置 IPOW_TOKEN 与 IPOW_SUB_URL。')
-            print('   本地运行：python ipow_nodes.py --token <JWT> --sub-url <订阅URL>')
         print('=' * 60)
         return 2
 
