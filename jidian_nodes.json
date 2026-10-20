@@ -1,25 +1,147 @@
 {
-  "updated": "2026-10-20T05:31:24Z",
-  "sub_uuid": "f4cfcf87-c8fe-4e25-b379-aa9577eca361",
-  "count": 2,
+  "updated": "2026-10-20T05:39:32Z",
+  "sub_uuid": "91d293cc-54bb-4823-a45a-1461a494e192",
+  "subject": "免费体验套餐",
+  "count": 11,
+  "skipped_anyconnect": [
+    {
+      "name": "香港普通线路(全局1)",
+      "protocol": "anyconnect"
+    },
+    {
+      "name": "香港普通线路(全局2)",
+      "protocol": "anyconnect"
+    },
+    {
+      "name": "日本普通线路(全局1)",
+      "protocol": "anyconnect"
+    },
+    {
+      "name": "美国普通线路(全局1)",
+      "protocol": "anyconnect"
+    }
+  ],
   "nodes": [
     {
-      "name": "极点-中转",
-      "live_type": 1,
+      "name": "香港普通线路1",
+      "lane": "直达",
       "protocol": "anytls",
       "server": "igt84kf48fk4hq3.haowanlink.com",
       "port": 16407,
       "sni": "jiasu5.jiasuwu.com",
-      "cipher": null
+      "method": null,
+      "speed_limit_mbps": 100,
+      "load_percent": 34.6
     },
     {
-      "name": "极点-直连",
-      "live_type": 2,
-      "protocol": "ss",
+      "name": "香港普通线路2",
+      "lane": "直达",
+      "protocol": "anytls",
+      "server": "kf32k23kfwdadgl.jietainetwork.com",
+      "port": 29239,
+      "sni": "iepl1.jiasuwu.com",
+      "method": null,
+      "speed_limit_mbps": 50,
+      "load_percent": 45.6
+    },
+    {
+      "name": "香港普通线路3",
+      "lane": "直达",
+      "protocol": "shadowsocks",
+      "server": "igt84kf48fk4hq3.haowanlink.com",
+      "port": 43393,
+      "sni": null,
+      "method": "2022-blake3-aes-256-gcm",
+      "speed_limit_mbps": 50,
+      "load_percent": 29.2
+    },
+    {
+      "name": "日本普通线路1",
+      "lane": "直达",
+      "protocol": "shadowsocks",
+      "server": "igt84kf48fk4hq3.haowanlink.com",
+      "port": 61180,
+      "sni": null,
+      "method": "2022-blake3-aes-256-gcm",
+      "speed_limit_mbps": 30,
+      "load_percent": 36.3
+    },
+    {
+      "name": "日本普通线路2",
+      "lane": "直达",
+      "protocol": "anytls",
+      "server": "kf32k23kfwdadgl.jietainetwork.com",
+      "port": 4851,
+      "sni": "jp2.jiasuwu.com",
+      "method": null,
+      "speed_limit_mbps": 30,
+      "load_percent": 30.9
+    },
+    {
+      "name": "美国普通线路1",
+      "lane": "直达",
+      "protocol": "shadowsocks",
+      "server": "igt84kf48fk4hq3.haowanlink.com",
+      "port": 38775,
+      "sni": null,
+      "method": "2022-blake3-aes-256-gcm",
+      "speed_limit_mbps": 0,
+      "load_percent": -1
+    },
+    {
+      "name": "美国普通线路2",
+      "lane": "直达",
+      "protocol": "anytls",
+      "server": "kf32k23kfwdadgl.jietainetwork.com",
+      "port": 24837,
+      "sni": "amrk1.jiasuwu.com",
+      "method": null,
+      "speed_limit_mbps": 0,
+      "load_percent": -1
+    },
+    {
+      "name": "香港中转1",
+      "lane": "中转",
+      "protocol": "shadowsocks",
       "server": "157.254.20.18",
       "port": 28142,
       "sni": null,
-      "cipher": "2022-blake3-aes-256-gcm"
+      "method": "2022-blake3-aes-256-gcm",
+      "speed_limit_mbps": 50,
+      "load_percent": -1
+    },
+    {
+      "name": "美国中转1",
+      "lane": "中转",
+      "protocol": "shadowsocks",
+      "server": "79.127.245.227",
+      "port": 7516,
+      "sni": null,
+      "method": "2022-blake3-aes-256-gcm",
+      "speed_limit_mbps": 0,
+      "load_percent": -1
+    },
+    {
+      "name": "日本中转1",
+      "lane": "中转",
+      "protocol": "shadowsocks",
+      "server": "178.249.213.81",
+      "port": 57822,
+      "sni": null,
+      "method": "2022-blake3-aes-256-gcm",
+      "speed_limit_mbps": 30,
+      "load_percent": -1
+    },
+    {
+      "name": "新加坡中转1",
+      "lane": "中转",
+      "protocol": "shadowsocks",
+      "server": "152.233.15.227",
+      "port": 38951,
+      "sni": null,
+      "method": "2022-blake3-aes-256-gcm",
+      "speed_limit_mbps": 30,
+      "load_percent": -1
     }
   ]
 }
