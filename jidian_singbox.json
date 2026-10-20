@@ -1,0 +1,108 @@
+{
+  "log": {
+    "level": "warn",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "remote",
+        "type": "https",
+        "server": "1.1.1.1",
+        "server_port": 443,
+        "path": "/dns-query",
+        "detour": "proxy"
+      },
+      {
+        "tag": "local",
+        "type": "local"
+      }
+    ],
+    "rules": [
+      {
+        "ip_is_private": true,
+        "server": "local"
+      }
+    ],
+    "final": "remote",
+    "strategy": "ipv4_only"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "address": [
+        "172.19.0.1/30"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "mixed"
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "anytls",
+      "tag": "jidian-1",
+      "server": "igt84kf48fk4hq3.haowanlink.com",
+      "server_port": 16407,
+      "password": "91d293cc-54bb-4823-a45a-1461a494e192",
+      "tls": {
+        "enabled": true,
+        "server_name": "jiasu5.jiasuwu.com"
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "jidian-2",
+      "server": "157.254.20.18",
+      "server_port": 28142,
+      "method": "2022-blake3-aes-256-gcm",
+      "password": "REtrSGtEYTUzeEc2MGg0NzRwcVZJbzZtZlcxS2Ryelo=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=",
+      "transport": {
+        "type": "ws",
+        "path": "/"
+      }
+    },
+    {
+      "type": "selector",
+      "tag": "proxy",
+      "outbounds": [
+        "jidian-1",
+        "jidian-2",
+        "direct"
+      ]
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "protocol": "dns",
+        "action": "hijack-dns"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct"
+      }
+    ],
+    "final": "proxy"
+  }
+}
