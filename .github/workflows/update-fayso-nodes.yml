@@ -1,0 +1,53 @@
+name: 更新飞梭加速器节点
+
+on:
+  schedule:
+    # 每天 04:00 UTC（北京时间 12:00）
+    - cron: "0 4 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fayso-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 设备令牌 JWT 有效期 30 天，缓存会话可避免每次都注册新设备
+      - name: 恢复设备会话
+        uses: actions/cache@v4
+        with:
+          path: .fayso_session.json
+          key: fayso-session-${{ github.run_id }}
+          restore-keys: |
+            fayso-session-
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 生成订阅
+        env:
+          # 三个都可选，留空则自动匿名注册设备
+          FAYSO_TOKEN: ${{ secrets.FAYSO_TOKEN }}
+          FAYSO_USERNAME: ${{ secrets.FAYSO_USERNAME }}
+          FAYSO_PASSWORD: ${{ secrets.FAYSO_PASSWORD }}
+        run: python fayso.py
+
+      - name: 提交更新
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fayso_sub.txt fayso_sub_b64.txt fayso_clash.yaml fayso_singbox.json fayso_nodes.json
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "auto update fayso nodes $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
