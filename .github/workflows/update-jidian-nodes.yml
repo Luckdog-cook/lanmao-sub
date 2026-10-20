@@ -1,0 +1,63 @@
+name: 更新极点加速器节点
+
+on:
+  schedule:
+    # 每 2 小时（UTC 偶数整点后 30 分，与飞梭任务错开）
+    - cron: "30 */2 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: jidian-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 设备标识复用同一游客账号，避免每次运行都新建用户
+      - name: 恢复设备会话
+        uses: actions/cache@v4
+        with:
+          path: .jidian_session.json
+          key: jidian-session-${{ github.run_id }}
+          restore-keys: |
+            jidian-session-
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install --no-cache-dir pyyaml
+
+      - name: 生成订阅
+        env:
+          JIDIAN_DEVICE_ID: ${{ secrets.JIDIAN_DEVICE_ID }}
+        run: python jidian.py
+
+      - name: 提交更新
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add jidian_clash.yaml jidian_singbox.json jidian_sub.txt jidian_sub_b64.txt jidian_nodes.json
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "auto update jidian nodes $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
+
+      - name: 刷新 jsDelivr 缓存
+        run: |
+          for f in jidian_clash.yaml jidian_singbox.json jidian_sub.txt jidian_sub_b64.txt jidian_nodes.json; do
+            if curl -s --max-time 20 "https://purge.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/$f" > /dev/null; then
+              echo "purged $f"
+            else
+              echo "purge failed $f (忽略)"
+            fi
+          done
