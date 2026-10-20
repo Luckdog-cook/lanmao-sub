@@ -168,3 +168,28 @@ base64 订阅     : https://gcore.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/f
 
 可选 Secrets（不配则每次自动匿名注册试用设备）：
 `FAYSO_TOKEN` / `FAYSO_USERNAME` / `FAYSO_PASSWORD`
+
+---
+
+## 极点加速器（jidianvpn.com）订阅
+
+由 `jidian.py` 抓取，GitHub Actions 每 2 小时自动更新（UTC 偶数整点 +30 分）。
+
+| 文件 | 适用客户端 |
+|------|------------|
+| `jidian_clash.yaml` | **Bettbox / FlClash / Clash Verge（Mihomo 内核）**，含官方 374 条分流规则 |
+| `jidian_singbox.json` | sing-box 系（anytls / ss-ws 按真实协议转换） |
+| `jidian_sub.txt` | 纯链接（anytls:// / ss://） |
+| `jidian_sub_b64.txt` | base64 订阅，v2rayN 等 |
+
+```
+Bettbox / Clash : https://gcore.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/jidian_clash.yaml
+sing-box        : https://gcore.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/jidian_singbox.json
+通用链接        : https://gcore.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/jidian_sub.txt
+base64 订阅     : https://gcore.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/jidian_sub_b64.txt
+```
+
+> 走的是游客（guest）账号，只有「免费体验套餐」的 2 条线路，流量额度为 0。
+> 想要完整节点列表（香港/日本/美国等线路）需要自己的付费账号：
+> 在仓库 Secrets 里配置 `JIDIAN_DEVICE_ID` 之外，还需把 `jidian.py` 的 `guest_login`
+> 换成 `/api/public/user/login` 并填入账号密码。
