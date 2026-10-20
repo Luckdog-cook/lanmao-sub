@@ -1,0 +1,93 @@
+# 飞梭加速器（FaysoVPN）订阅 - 由 fayso.py 自动生成
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  fallback:
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
+
+proxies:
+  - name: '🇸🇬新加坡'
+    type: hysteria2
+    server: '139.180.215.41'
+    port: 8443
+    password: 'sg2LBwSIYMeLCY48XPgldM6vgaJ3W_kbUq-6GJkd-yU'
+    sni: 'sg.magicnodes.materialcrate.com'
+    skip-cert-verify: false
+    up: '0'
+    down: '0'
+  - name: '🇺🇸美国'
+    type: hysteria2
+    server: '66.42.99.41'
+    port: 8443
+    password: 'EIwZ-VysmyoG-W-q0KMU6lHfS31qhqqTf1lvBxQmTCQ'
+    sni: 'us.magicnodes.hyperlink.us.com'
+    skip-cert-verify: false
+    up: '0'
+    down: '0'
+  - name: '🇯🇵日本'
+    type: hysteria2
+    server: '207.148.101.128'
+    port: 8443
+    password: 'Sd1wXSx7Z_mcRb_DIzZLBovL2ek60hO8SWMJfAwWVJI'
+    sni: 'jp.magicnodes.hyperlink.us.com'
+    skip-cert-verify: false
+    up: '0'
+    down: '0'
+  - name: '🇭🇰香港'
+    type: hysteria2
+    server: '20.189.123.104'
+    port: 8443
+    password: '_4w84vnXO9KgN-QK709obTfckbFArOPaMVk9a41RRDQ'
+    sni: 'hk-test.magicnodes.hyperlink.us.com'
+    skip-cert-verify: false
+    up: '0'
+    down: '0'
+  - name: '🇦🇪阿联酋'
+    type: hysteria2
+    server: '130.94.47.212'
+    port: 8443
+    password: 'mCff1WZ0QvFTrZl4cRZ_hbvBv0bxTxqCrld3mWq42eM'
+    sni: 'ae.magicnodes.hyperlink.us.com'
+    skip-cert-verify: false
+    up: '0'
+    down: '0'
+
+proxy-groups:
+  - name: 节点选择
+    type: select
+    proxies:
+      - 自动选择
+      - '🇸🇬新加坡'
+      - '🇺🇸美国'
+      - '🇯🇵日本'
+      - '🇭🇰香港'
+      - '🇦🇪阿联酋'
+  - name: 自动选择
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+    proxies:
+      - '🇸🇬新加坡'
+      - '🇺🇸美国'
+      - '🇯🇵日本'
+      - '🇭🇰香港'
+      - '🇦🇪阿联酋'
+
+rules:
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,节点选择
+
