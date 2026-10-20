@@ -640,8 +640,8 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]香港-vip-658",
-      "server": "45.153.130.131",
+      "tag": "[CN]新加坡-vip-658",
+      "server": "sgz1gyzf.mate-fox.com",
       "server_port": 40050,
       "password": "69b6b450-7905-471b-908a-00e38ed0ee4a",
       "tls": {
@@ -1996,7 +1996,7 @@
         "[CN]日本-vip-455",
         "[CN]日本-vip-556",
         "[CN]日本-vip-657",
-        "[CN]香港-vip-658",
+        "[CN]新加坡-vip-658",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
@@ -2104,7 +2104,7 @@
         "[CN]日本-vip-455",
         "[CN]日本-vip-556",
         "[CN]日本-vip-657",
-        "[CN]香港-vip-658",
+        "[CN]新加坡-vip-658",
         "[Global]日本-vip-128",
         "[Global]日本-vip-229",
         "[Global]日本-vip-330",
