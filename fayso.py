@@ -278,26 +278,48 @@ def to_clash_proxy(ob, name):
 
 
 def build_clash(named, nodes_by_tag):
+    """生成 Mihomo / Clash.Meta 配置（Bettbox、FlClash、Clash Verge 等通用）"""
     names = [n for n, _ in named]
+    grp_main, grp_auto, grp_dir = "🚀 节点选择", "♻️ 自动选择", "🎯 全球直连"
+
     out = [
-        "# 飞梭加速器（FaysoVPN）订阅 - 由 fayso.py 自动生成",
+        "# 飞梭加速器（FaysoVPN）— Mihomo / Clash.Meta 订阅",
+        "# 适配 Bettbox / FlClash / Clash Verge / Clash Meta for Android",
+        "# 由 fayso.py 自动生成，请勿手工修改",
+        "",
         "mixed-port: 7890",
         "allow-lan: false",
         "mode: rule",
         "log-level: info",
+        "ipv6: false",
         "external-controller: 127.0.0.1:9090",
+        "",
+        "profile:",
+        "  store-selected: true",
+        "  store-fake-ip: true",
         "",
         "dns:",
         "  enable: true",
         "  ipv6: false",
         "  enhanced-mode: fake-ip",
         "  fake-ip-range: 198.18.0.1/16",
-        "  nameserver:",
+        "  fake-ip-filter:",
+        "    - '*.lan'",
+        "    - '*.local'",
+        "    - 'localhost.ptlogin2.qq.com'",
+        "    - 'time.*.com'",
+        "  default-nameserver:",
         "    - 223.5.5.5",
         "    - 119.29.29.29",
+        "  nameserver:",
+        "    - https://doh.pub/dns-query",
+        "    - https://dns.alidns.com/dns-query",
         "  fallback:",
         "    - https://1.1.1.1/dns-query",
         "    - https://8.8.8.8/dns-query",
+        "  fallback-filter:",
+        "    geoip: true",
+        "    geoip-code: CN",
         "",
         "proxies:",
     ]
@@ -305,18 +327,30 @@ def build_clash(named, nodes_by_tag):
         block = to_clash_proxy(ob, name)
         if block:
             out.append(block)
-    out += ["", "proxy-groups:", "  - name: 节点选择", "    type: select",
-            "    proxies:", "      - 自动选择"] + [f"      - {yq(n)}" for n in names]
-    out += ["  - name: 自动选择", "    type: url-test",
+
+    out += ["", "proxy-groups:"]
+    out += [f"  - name: {yq(grp_main)}", "    type: select", "    proxies:"]
+    out += [f"      - {yq(grp_auto)}"] + [f"      - {yq(n)}" for n in names] + ["      - DIRECT"]
+
+    out += [f"  - name: {yq(grp_auto)}", "    type: url-test",
             "    url: http://www.gstatic.com/generate_204",
-            "    interval: 300", "    tolerance: 50", "    proxies:"]
+            "    interval: 300", "    tolerance: 50", "    lazy: false", "    proxies:"]
     out += [f"      - {yq(n)}" for n in names]
+
+    out += [f"  - name: {yq(grp_dir)}", "    type: select",
+            "    proxies:", "      - DIRECT"]
+
     out += [
         "",
         "rules:",
-        "  - DOMAIN-SUFFIX,cn,DIRECT",
-        "  - GEOIP,CN,DIRECT",
-        "  - MATCH,节点选择",
+        f"  - IP-CIDR,127.0.0.0/8,{grp_dir},no-resolve",
+        f"  - IP-CIDR,10.0.0.0/8,{grp_dir},no-resolve",
+        f"  - IP-CIDR,172.16.0.0/12,{grp_dir},no-resolve",
+        f"  - IP-CIDR,192.168.0.0/16,{grp_dir},no-resolve",
+        f"  - IP-CIDR,100.64.0.0/10,{grp_dir},no-resolve",
+        f"  - DOMAIN-SUFFIX,cn,{grp_dir}",
+        f"  - GEOIP,CN,{grp_dir},no-resolve",
+        f"  - MATCH,{grp_main}",
         "",
     ]
     return "\n".join(out)
@@ -354,8 +388,7 @@ def build_singbox(named):
              "listen_port": 7890},
         ],
         "outbounds": clean + [
-            {"type": "selector", "tag": "proxy", "outbounds": tags + ["direct"],
-             "default": tags[0] if tags else "direct"},
+            {"type": "selector", "tag": "proxy", "outbounds": tags + ["direct"]},
             {"type": "direct", "tag": "direct"},
             {"type": "block", "tag": "block"},
         ],
