@@ -655,7 +655,7 @@
       "tag": "[Global]日本-vip-128",
       "server": "unamecf.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "ujp1.xn--ghqu5fm27b67w.com",
@@ -675,7 +675,7 @@
       "tag": "[Global]日本-vip-229",
       "server": "unamecf.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "ujp2.xn--ghqu5fm27b67w.com",
@@ -695,7 +695,7 @@
       "tag": "[Global]日本-vip-330",
       "server": "unamecf.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "ujp3.xn--ghqu5fm27b67w.com",
@@ -715,7 +715,7 @@
       "tag": "[Global]日本-vip-431",
       "server": "unamecf.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "ujp4.xn--ghqu5fm27b67w.com",
@@ -735,7 +735,7 @@
       "tag": "[Global]日本-vip-532",
       "server": "unamecf.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "ujp5.xn--ghqu5fm27b67w.com",
@@ -755,7 +755,7 @@
       "tag": "[Global]日本-vip-633",
       "server": "unamecf2.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "ujp2.xn--ghqu5fm27b67w.com",
@@ -775,7 +775,7 @@
       "tag": "[Global]日本-vip-734",
       "server": "unamecf2.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "ujp3.xn--ghqu5fm27b67w.com",
@@ -795,7 +795,7 @@
       "tag": "[Global]日本-vip-835",
       "server": "unamecf2.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "ujp4.xn--ghqu5fm27b67w.com",
@@ -815,7 +815,7 @@
       "tag": "[Global]日本-vip-936",
       "server": "unamecf2.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "ujp5.xn--ghqu5fm27b67w.com",
@@ -835,7 +835,7 @@
       "tag": "[Global]新加坡-vip-137",
       "server": "downloadcfpro.xn--ghq880n3na965a.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "sgp1.xn--ghq880n3na965a.com",
@@ -855,7 +855,7 @@
       "tag": "[Global]新加坡-vip-238",
       "server": "downloadcfpro.xn--ghq880n3na965a.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "sgp1.xn--ghq880n3na965a.com",
@@ -875,7 +875,7 @@
       "tag": "[Global]日本-vip-1039",
       "server": "pq.aws48.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -896,7 +896,7 @@
       "tag": "[Global]日本-vip-1140",
       "server": "pq.aws49.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -917,7 +917,7 @@
       "tag": "[Global]日本-vip-1241",
       "server": "pq.aws50.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -938,7 +938,7 @@
       "tag": "[Global]日本-vip-1342",
       "server": "pq.aws51.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -959,7 +959,7 @@
       "tag": "[Global]日本-vip-1443",
       "server": "pq.aws52.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -980,7 +980,7 @@
       "tag": "[Global]日本-vip-1544",
       "server": "pq.aws53.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1001,7 +1001,7 @@
       "tag": "[Global]日本-vip-1645",
       "server": "pq.aws54.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1022,7 +1022,7 @@
       "tag": "[Global]日本-vip-1746",
       "server": "pq.aws55.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1043,7 +1043,7 @@
       "tag": "[Global]日本-vip-1847",
       "server": "pq.aws56.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1064,7 +1064,7 @@
       "tag": "[Global]日本-vip-1948",
       "server": "pq.aws57.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1085,7 +1085,7 @@
       "tag": "[Global]新加坡-vip-349",
       "server": "downloadcfpro.xn--ghq880n3na965a.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "sg1p1.xn--ghq880n3na965a.com",
@@ -1105,7 +1105,7 @@
       "tag": "[Global]新加坡-vip-450",
       "server": "downloadcfpro.xn--ghq880n3na965a.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "sg2p1.xn--ghq880n3na965a.com",
@@ -1125,7 +1125,7 @@
       "tag": "[Global]新加坡-vip-551",
       "server": "downloadcfpro.xn--ghq880n3na965a.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "sg3p1.xn--ghq880n3na965a.com",
@@ -1145,7 +1145,7 @@
       "tag": "[Global]新加坡-vip-652",
       "server": "downloadcfpro.xn--ghq880n3na965a.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "sg4p1.xn--ghq880n3na965a.com",
@@ -1165,7 +1165,7 @@
       "tag": "[Global]新加坡-vip-753",
       "server": "downloadcfpro.xn--ghq880n3na965a.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "sg5p1.xn--ghq880n3na965a.com",
@@ -1185,7 +1185,7 @@
       "tag": "[Global]新加坡-vip-854",
       "server": "pq.aws63.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1206,7 +1206,7 @@
       "tag": "[Global]新加坡-vip-955",
       "server": "pq.aws64.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1227,7 +1227,7 @@
       "tag": "[Global]新加坡-vip-1056",
       "server": "pq.aws65.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1248,7 +1248,7 @@
       "tag": "[Global]新加坡-vip-1157",
       "server": "pq.aws66.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1269,7 +1269,7 @@
       "tag": "[Global]新加坡-vip-1258",
       "server": "pq.aws67.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1290,7 +1290,7 @@
       "tag": "[Global]美国-vip-159",
       "server": "pq.us1.globals-download.com",
       "server_port": 35000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "www.apple.com",
@@ -1305,7 +1305,7 @@
       "tag": "[Global]美国-vip-260",
       "server": "pq.us2.globals-download.com",
       "server_port": 35000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "www.apple.com",
@@ -1320,7 +1320,7 @@
       "tag": "[Global]美国-vip-361",
       "server": "pq.us3.globals-download.com",
       "server_port": 35000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "tv.apple.com",
@@ -1335,7 +1335,7 @@
       "tag": "[Global]美国-vip-462",
       "server": "pq.us4.globals-download.com",
       "server_port": 35000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "www.apple.com",
@@ -1350,7 +1350,7 @@
       "tag": "[Global]美国-vip-563",
       "server": "pq.us5.globals-download.com",
       "server_port": 35000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "www.apple.com",
@@ -1365,7 +1365,7 @@
       "tag": "[Global]美国-vip-664",
       "server": "pq.us6.globals-download.com",
       "server_port": 35000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "www.apple.com",
@@ -1380,7 +1380,7 @@
       "tag": "[Global]美国-vip-765",
       "server": "pq.us7.globals-download.com",
       "server_port": 35000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "www.apple.com",
@@ -1395,7 +1395,7 @@
       "tag": "[Global]美国-vip-866",
       "server": "pq.us8.globals-download.com",
       "server_port": 35000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "www.apple.com",
@@ -1410,7 +1410,7 @@
       "tag": "[Global]新加坡-vip-1367",
       "server": "67.159.48.147",
       "server_port": 60000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "www.apple.com",
@@ -1425,7 +1425,7 @@
       "tag": "[Global]新加坡-vip-1468",
       "server": "67.159.48.147",
       "server_port": 60000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "www.apple.com",
@@ -1440,7 +1440,7 @@
       "tag": "[Global]新加坡-vip-1569",
       "server": "203.27.106.148",
       "server_port": 60000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "www.apple.com",
@@ -1455,7 +1455,7 @@
       "tag": "[Global]新加坡-vip-1670",
       "server": "203.27.106.148",
       "server_port": 60000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "www.apple.com",
@@ -1470,7 +1470,7 @@
       "tag": "[Global]新加坡-vip-1771",
       "server": "152.69.220.212",
       "server_port": 35000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "api.push.apple.com",
@@ -1485,7 +1485,7 @@
       "tag": "[Global]台湾-vip-172",
       "server": "pq-hinet.tw1.yydjc.top",
       "server_port": 60000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "www.apple.com",
@@ -1500,7 +1500,7 @@
       "tag": "[Global]台湾-vip-273",
       "server": "pq-hinet.tw2.yydjc.top",
       "server_port": 60000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "www.apple.com",
@@ -1515,7 +1515,7 @@
       "tag": "[Global]台湾-vip-374",
       "server": "pq-hinet.tw3.yydjc.top",
       "server_port": 60000,
-      "password": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "password": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "www.apple.com",
@@ -1530,7 +1530,7 @@
       "tag": "[Global]美国-vip-975",
       "server": "unamecf3.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "usa1s.xn--ghqu5fm27b67w.com",
@@ -1550,7 +1550,7 @@
       "tag": "[Global]美国-vip-1076",
       "server": "unamecf3.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "usa2.xn--ghqu5fm27b67w.com",
@@ -1570,7 +1570,7 @@
       "tag": "[Global]美国-vip-1177",
       "server": "unamecf3.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "usa3.xn--ghqu5fm27b67w.com",
@@ -1590,7 +1590,7 @@
       "tag": "[Global]美国-vip-1278",
       "server": "unamecf3.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "usa4.xn--ghqu5fm27b67w.com",
@@ -1610,7 +1610,7 @@
       "tag": "[Global]美国-vip-1379",
       "server": "unamecf3.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "usa5.xn--ghqu5fm27b67w.com",
@@ -1630,7 +1630,7 @@
       "tag": "[Global]美国-vip-1480",
       "server": "unamecf3.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "usa6.xn--ghqu5fm27b67w.com",
@@ -1650,7 +1650,7 @@
       "tag": "[Global]美国-vip-1581",
       "server": "unamecf3.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "usa7.xn--ghqu5fm27b67w.com",
@@ -1670,7 +1670,7 @@
       "tag": "[Global]美国-vip-1682",
       "server": "unamecf3.xn--ghqu5fm27b67w.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "usa8.xn--ghqu5fm27b67w.com",
@@ -1690,7 +1690,7 @@
       "tag": "[Global]美国-vip-1783",
       "server": "downloadcfpro.xn--ghq880n3na965a.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "us1p1.xn--ghq880n3na965a.com",
@@ -1710,7 +1710,7 @@
       "tag": "[Global]美国-vip-1884",
       "server": "downloadcfpro.xn--ghq880n3na965a.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "us2p1.xn--ghq880n3na965a.com",
@@ -1730,7 +1730,7 @@
       "tag": "[Global]美国-vip-1985",
       "server": "downloadcfpro.xn--ghq880n3na965a.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "us3p1.xn--ghq880n3na965a.com",
@@ -1750,7 +1750,7 @@
       "tag": "[Global]美国-vip-2086",
       "server": "downloadcfpro.xn--ghq880n3na965a.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "us4p1.xn--ghq880n3na965a.com",
@@ -1770,7 +1770,7 @@
       "tag": "[Global]美国-vip-2187",
       "server": "downloadcfpro.xn--ghq880n3na965a.com",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "tls": {
         "enabled": true,
         "server_name": "us5p1.xn--ghq880n3na965a.com",
@@ -1790,7 +1790,7 @@
       "tag": "[Global]美国-vip-2288",
       "server": "pq.us01.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1811,7 +1811,7 @@
       "tag": "[Global]美国-vip-2389",
       "server": "pq.us02.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1832,7 +1832,7 @@
       "tag": "[Global]美国-vip-2490",
       "server": "pq.us03.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1853,7 +1853,7 @@
       "tag": "[Global]美国-vip-2591",
       "server": "pq.us04.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1874,7 +1874,7 @@
       "tag": "[Global]美国-vip-2692",
       "server": "pq.us05.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1895,7 +1895,7 @@
       "tag": "[Global]美国-vip-2793",
       "server": "pq.us06.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1916,7 +1916,7 @@
       "tag": "[Global]美国-vip-2894",
       "server": "pq.us07.yydjc.top",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
@@ -1937,7 +1937,7 @@
       "tag": "[Global]美国-vip-2995",
       "server": "203.10.96.138",
       "server_port": 443,
-      "uuid": "0cf7bb7c-cf49-4e1c-aa98-f33cbe3cb156",
+      "uuid": "7d803fd2-d796-45b1-9306-3b789aee2d25",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
