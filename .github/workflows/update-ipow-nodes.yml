@@ -1,17 +1,22 @@
 name: 更新 iPoW 节点
 
 on:
+  # 每小时 59 分：注册一个号 → 拉 vless + hy2 → 健康检查 → 有效才提交
   schedule:
-    - cron: '0 0,5 * * *'
+    - cron: '59 * * * *'
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: ipow-update
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 30
 
     steps:
       - uses: actions/checkout@v4
@@ -21,34 +26,65 @@ jobs:
           python-version: '3.11'
 
       - name: Install deps
-        run: pip install -q requests eth-account cryptography
+        run: pip install -q requests eth-account cryptography 2>/dev/null || true
 
-      # 跑仓库里的 ipow_nodes.py（更新后的新脚本，融合 v2 全功能 + v1 订阅输出）
-      # -o . 把输出锁到仓库根目录（否则会落到 ~/Downloads 找不到文件）
-      # 不需要任何 Secrets：脚本会自动注册钱包拉取（与本地运行一致）
-      - name: Fetch iPoW nodes
+      # 一个号（--register-attempts 1），双协议（--mode all）
+      # --nekobox 内置：VLESS 健康检查 + 剔除失效 + 生成 urltest 自动测速组
+      # 全部失效时脚本返回 3 并输出 ok=0，用 || true 兜住，交给下一步判断
+      - name: 注册 / 拉取 / 健康检查
+        id: fetch
         run: |
           set -e
-          python ipow_nodes.py --quiet -o . || true
-          if [ -f ipow.txt ]; then
-            echo "订阅节点行数:"
-            wc -l ipow.txt
-            head -3 ipow.txt
-          else
-            echo "未生成 ipow.txt"
-            exit 1
-          fi
+          mkdir -p out
+          python ipow.py --mode all --register-attempts 1 --nekobox --quiet -o out || true
+          echo "--- 产物 ---"
+          ls -la out/ || true
+          [ -f out/ipow.txt ] && echo "订阅行数: $(wc -l < out/ipow.txt)" || echo "无 ipow.txt"
 
-      - name: Commit if changed
+      - name: 同步到仓库根目录
+        if: steps.fetch.outputs.ok == '1'
+        run: |
+          cp out/ipow.txt .
+          for f in all_nodes_vless.txt all_nodes_hy2.txt all_nodes.json \
+                   clash_proxies.yaml singbox_outbounds.json node_ip_map.json \
+                   nekobox_outbounds.json; do
+            [ -f "out/$f" ] && cp "out/$f" . || true
+          done
+
+      # 只有健康检查通过（至少 1 个可用节点）才提交
+      - name: Commit if valid
+        if: steps.fetch.outputs.ok == '1'
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ipow.txt
+          git add ipow.txt nekobox_outbounds.json
           git add all_nodes_vless.txt all_nodes_hy2.txt all_nodes.json \
                   clash_proxies.yaml singbox_outbounds.json node_ip_map.json 2>/dev/null || true
+
           if git diff --staged --quiet; then
-            echo "无变化，跳过提交"
+            echo "内容无变化，跳过提交"
             exit 0
           fi
-          git commit -m "chore: update ipow.txt"
+          git commit -m "chore: update ipow nodes (${{ steps.fetch.outputs.count }})"
           git push
+
+      # 全部失效：不提交，保留上一版订阅
+      - name: Skip (all nodes dead)
+        if: steps.fetch.outputs.ok != '1'
+        run: |
+          echo "::warning title=iPoW 全部失效::健康检查未通过，本次不提交（保留上一版订阅）"
+          exit 0
+
+      - name: 摘要
+        if: always()
+        run: |
+          {
+            echo "### iPoW 更新结果"
+            echo ""
+            echo "- 健康节点: ${{ steps.fetch.outputs.count }}"
+            echo "- 是否提交: ${{ steps.fetch.outputs.ok == '1' && '是' || '否（全部失效）' }}"
+            echo ""
+            echo '```'
+            [ -f out/ipow.txt ] && head -3 out/ipow.txt || echo '(无)'
+            echo '```'
+          } >> $GITHUB_STEP_SUMMARY
