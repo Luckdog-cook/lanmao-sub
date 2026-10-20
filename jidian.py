@@ -5,21 +5,24 @@
 =========================================
 
 Android 端是百度加固（libclash.so + baidup­rotect），无法静态分析；
-但 PC 端是 Wails(Go+Vue) 未加固程序，从中还原出整套接口：
+PC 端是 Wails(Go+Vue) 未加固程序，从中还原出完整接口：
 
-  POST /api/public/user/guestLogin   {"device_id": "<uuid>"} -> {"token","user"}
+  POST /api/public/user/guestLogin                       {"device_id"} -> {"token","user"}
   GET  /api/customer/customerService/getCustomerServiceList
-       -> [{sub_uuid, subject, service_status, ...}]
-  GET  /api/public/sub/<sub_uuid 去连字符>/JIDIAN?type=ClashX&live_type=<n>
-       -> 官方完整 Clash(Mihomo) 配置：3 个节点 + 374 条分流规则 + 8 个 rule-provider
+       -> [{id, sub_uuid, subject, ...}]
+  GET  /api/customer/customerService/getSubscribeNodeList?id=<id>&live_type=<1|2>
+       -> 节点清单（含 address/port/protocol/uuid/限速/负载/endpoint 链接）
+  GET  /api/public/sub/<sub_uuid>/JIDIAN?type=ClashX&live_type=<n>
+       -> 官方 Clash 配置骨架（374 条分流规则 + 8 个 rule-provider）
 
-live_type 对应线路：
-  1 = 域名中转  anytls  igt84kf48fk4hq3.haowanlink.com:16407
-  2 = IP 直连   ss-2022 (blake3-aes-256-gcm) + WebSocket
+关键点：订阅 YAML 只下发 1 个节点，但 getSubscribeNodeList 会返回**全部** 15 个：
+  live_type=1  直达线路：香港 5 / 日本 3 / 美国 3
+  live_type=2  中转线路：香港 / 日本 / 美国 / 新加坡
+其中 4 个 anyconnect「全局节点」Clash 与 sing-box 均不支持，会被跳过，实际可用 11 个。
 
 产物（当前目录）：
   jidian_clash.yaml     Mihomo / Bettbox（沿用官方全部规则）
-  jidian_singbox.json   sing-box（anytls 与 ss-ws 均按真实协议转换）
+  jidian_singbox.json   sing-box
   jidian_sub.txt        纯链接
   jidian_sub_b64.txt    base64 订阅
   jidian_nodes.json     节点元数据
@@ -45,7 +48,8 @@ import yaml
 BASE = "https://api.apiooo.com"
 SECTION = "JIDIAN"
 SESSION = ".jidian_session.json"
-LANES = [(1, "极点-中转"), (2, "极点-直连")]
+LANES = [(1, "直达"), (2, "中转")]
+SUPPORTED = ("anytls", "shadowsocks", "ss")
 
 
 # --------------------------------------------------------------------------- #
@@ -120,7 +124,8 @@ def guest_login(sess):
     return None
 
 
-def get_sub_uuid(token):
+def get_service(token):
+    """返回 (subscribe_id, sub_uuid, subject)"""
     code, text = http("GET", "/api/customer/customerService/getCustomerServiceList",
                       token=token)
     d = jload(text) or {}
@@ -128,14 +133,25 @@ def get_sub_uuid(token):
         print(f"[!] 订阅列表失败: {text[:160]}")
         return None
     for svc in d.get("data") or []:
-        if svc.get("sub_uuid"):
-            print(f"[+] 套餐「{svc.get('subject')}」 sub_uuid={svc['sub_uuid']}")
-            return svc["sub_uuid"]
+        if svc.get("sub_uuid") and svc.get("id"):
+            print(f"[+] 套餐「{svc.get('subject')}」 id={svc['id']}")
+            return svc["id"], svc["sub_uuid"], svc.get("subject")
     print("[!] 账号下没有订阅记录")
     return None
 
 
-def fetch_sub(sub_uuid, live_type, retries=3):
+def get_nodes(token, sid, live_type):
+    """完整的节点清单（这是 App 里真正用的接口）"""
+    path = f"/api/customer/customerService/getSubscribeNodeList?id={sid}&live_type={live_type}"
+    code, text = http("GET", path, token=token)
+    d = jload(text) or {}
+    if code != 200 or d.get("code") != 0:
+        return []
+    return d.get("data") or []
+
+
+def fetch_sub_yaml(sub_uuid, live_type, retries=3):
+    """官方 Clash 骨架（含全部分流规则），只用来取规则部分"""
     uid = sub_uuid.replace("-", "")
     path = f"/api/public/sub/{uid}/{SECTION}?type=ClashX&live_type={live_type}"
     for i in range(retries):
@@ -147,135 +163,81 @@ def fetch_sub(sub_uuid, live_type, retries=3):
 
 
 # --------------------------------------------------------------------------- #
-# 格式转换
+# 解析
 # --------------------------------------------------------------------------- #
-def q(s):
-    return urllib.parse.quote(str(s), safe="")
+def parse_endpoint(node):
+    """把 endpoint 链接解析成统一结构"""
+    ep = node.get("endpoint") or ""
+    proto = (node.get("protocol") or "").lower()
+    info = {"name": node.get("remarks") or "", "protocol": proto,
+            "server": node.get("address"), "port": int(node.get("port") or 0),
+            "sni": None, "method": None, "password": None,
+            "speed_limit": node.get("node_speed_limit"),
+            "load": node.get("load_percent"), "tags": node.get("tags"),
+            "raw": ep}
+
+    try:
+        u = urllib.parse.urlparse(ep)
+    except Exception:
+        return info
+
+    if proto == "anytls":
+        info["password"] = urllib.parse.unquote(u.username or "")
+        qs = urllib.parse.parse_qs(u.query)
+        info["sni"] = (qs.get("sni") or [None])[0]
+    elif proto in ("shadowsocks", "ss"):
+        user = urllib.parse.unquote(u.username or "")
+        try:
+            dec = base64.b64decode(user + "=" * (-len(user) % 4)).decode()
+            method, _, pwd = dec.partition(":")
+            info["method"], info["password"] = method, pwd
+        except Exception:
+            pass
+    return info
 
 
-def clean_proxy(p, name):
-    """去掉服务端塞进节点名的动态文案，换成稳定名字"""
-    p = dict(p)
-    p["name"] = name
-    return p
-
-
-def sb_outbound(p, tag):
-    """Clash proxy -> sing-box outbound"""
-    t = p.get("type")
-    o = {"type": t, "tag": tag, "server": p.get("server"),
-         "server_port": int(p.get("port") or 443)}
-
+def clash_proxy(info):
+    """生成 Mihomo proxy 条目"""
+    t = info["protocol"]
+    name = info["name"]
     if t == "anytls":
-        o["password"] = p.get("password", "")
-        o["tls"] = {"enabled": True,
-                    "server_name": p.get("sni") or p.get("servername") or ""}
-    elif t in ("ss", "shadowsocks"):
-        o["type"] = "shadowsocks"
-        o["method"] = p.get("cipher") or p.get("method")
-        o["password"] = p.get("password", "")
-        if (p.get("network") or "").lower() == "ws":
-            ws = p.get("ws-opts") or {}
-            tr = {"type": "ws", "path": ws.get("path") or "/"}
-            host = (ws.get("headers") or {}).get("Host")
-            if host:
-                tr["headers"] = {"Host": host}
-            o["transport"] = tr
-    elif t == "vless":
-        o["uuid"] = p.get("uuid")
-        tls_on = bool(p.get("tls"))
-        o["tls"] = {"enabled": tls_on,
-                    "server_name": p.get("servername") or p.get("sni") or ""}
-        if (p.get("network") or "").lower() == "ws":
-            ws = p.get("ws-opts") or {}
-            o["transport"] = {"type": "ws", "path": ws.get("path") or "/"}
-    elif t == "vmess":
-        o["uuid"] = p.get("uuid")
-        o["security"] = p.get("cipher") or "auto"
-        o["alter_id"] = int(p.get("alterId") or 0)
-        if p.get("tls"):
-            o["tls"] = {"enabled": True,
-                        "server_name": p.get("servername") or p.get("sni") or ""}
-        if (p.get("network") or "").lower() == "ws":
-            ws = p.get("ws-opts") or {}
-            o["transport"] = {"type": "ws", "path": ws.get("path") or "/"}
-    elif t == "trojan":
-        o["password"] = p.get("password", "")
-        o["tls"] = {"enabled": True,
-                    "server_name": p.get("sni") or p.get("servername") or ""}
+        return {"name": name, "type": "anytls", "server": info["server"],
+                "port": info["port"], "password": info["password"],
+                "udp": True, "sni": info["sni"], "tls": True,
+                "client-fingerprint": "chrome"}
+    if t in ("shadowsocks", "ss"):
+        return {"name": name, "type": "ss", "server": info["server"],
+                "port": info["port"], "cipher": info["method"],
+                "password": info["password"], "udp": True,
+                "network": "ws", "ws-opts": {"path": "/"}}
+    return None
+
+
+def sb_outbound(info, tag):
+    t = info["protocol"]
+    o = {"type": "anytls" if t == "anytls" else "shadowsocks", "tag": tag,
+         "server": info["server"], "server_port": info["port"]}
+    if t == "anytls":
+        o["password"] = info["password"]
+        o["tls"] = {"enabled": True, "server_name": info["sni"] or ""}
     else:
-        return None
+        o["method"] = info["method"]
+        o["password"] = info["password"]
+        o["transport"] = {"type": "ws", "path": "/"}
     return o
 
 
-def to_link(p, name):
-    t = p.get("type")
-    srv, port = p.get("server"), p.get("port")
+def to_link(info):
+    t = info["protocol"]
     if t == "anytls":
-        sni = p.get("sni") or p.get("servername") or ""
-        return f"anytls://{q(p.get('password',''))}@{srv}:{port}/?sni={q(sni)}#{q(name)}"
-    if t in ("ss", "shadowsocks"):
-        method = p.get("cipher") or p.get("method") or ""
-        userinfo = base64.urlsafe_b64encode(
-            f"{method}:{p.get('password','')}".encode()).decode().rstrip("=")
-        s = f"ss://{userinfo}@{srv}:{port}"
-        if (p.get("network") or "").lower() == "ws":
-            path = (p.get("ws-opts") or {}).get("path") or "/"
-            plugin = urllib.parse.quote(f"v2ray-plugin;mode=websocket;path={path};tls", safe="")
-            s += f"/?plugin={plugin}"
-        return s + "#" + q(name)
-    if t == "vless":
-        sni = p.get("servername") or p.get("sni") or ""
-        return (f"vless://{p.get('uuid')}@{srv}:{port}?encryption=none"
-                f"&security={'tls' if p.get('tls') else 'none'}&sni={q(sni)}#{q(name)}")
-    if t == "trojan":
-        sni = p.get("sni") or ""
-        return f"trojan://{q(p.get('password',''))}@{srv}:{port}?sni={q(sni)}#{q(name)}"
-    return json.dumps(p, ensure_ascii=False)
-
-
-def build_singbox(named):
-    tags, obs = [], []
-    for i, (name, p) in enumerate(named):
-        tag = f"jidian-{i+1}"
-        ob = sb_outbound(p, tag)
-        if not ob:
-            continue
-        obs.append(ob)
-        tags.append(tag)
-    return {
-        "log": {"level": "warn", "timestamp": True},
-        "dns": {
-            "servers": [
-                {"tag": "remote", "type": "https", "server": "1.1.1.1",
-                 "server_port": 443, "path": "/dns-query", "detour": "proxy"},
-                {"tag": "local", "type": "local"},
-            ],
-            "rules": [{"ip_is_private": True, "server": "local"}],
-            "final": "remote",
-            "strategy": "ipv4_only",
-        },
-        "inbounds": [
-            {"type": "tun", "tag": "tun-in", "address": ["172.19.0.1/30"],
-             "mtu": 9000, "auto_route": True, "strict_route": True, "stack": "mixed"},
-            {"type": "mixed", "tag": "mixed-in", "listen": "127.0.0.1",
-             "listen_port": 7890},
-        ],
-        "outbounds": obs + [
-            {"type": "selector", "tag": "proxy", "outbounds": tags + ["direct"]},
-            {"type": "direct", "tag": "direct"},
-            {"type": "block", "tag": "block"},
-        ],
-        "route": {
-            "auto_detect_interface": True,
-            "rules": [
-                {"action": "sniff"},
-                {"protocol": "dns", "action": "hijack-dns"},
-                {"ip_is_private": True, "outbound": "direct"},
-            ],
-            "final": "proxy",
-        },
-    }
+        return (f"anytls://{urllib.parse.quote(info['password'] or '', safe='')}"
+                f"@{info['server']}:{info['port']}/?sni={urllib.parse.quote(info['sni'] or '', safe='')}"
+                f"#{urllib.parse.quote(info['name'], safe='')}")
+    if t in ("shadowsocks", "ss"):
+        body = base64.urlsafe_b64encode(
+            f"{info['method']}:{info['password']}".encode()).decode().rstrip("=")
+        return f"ss://{body}@{info['server']}:{info['port']}#" + urllib.parse.quote(info["name"], safe="")
+    return ""
 
 
 # --------------------------------------------------------------------------- #
@@ -288,50 +250,52 @@ def main():
         print("[x] 登录失败")
         return 1
 
-    sub_uuid = get_sub_uuid(token)
-    if not sub_uuid:
+    svc = get_service(token)
+    if not svc:
         return 1
+    sid, sub_uuid, subject = svc
 
-    named, meta, origin = [], [], None
-    seen = set()
-    for lt, label in LANES:
-        text = fetch_sub(sub_uuid, lt)
-        if not text:
-            print(f"[!] live_type={lt} 拉取失败")
-            continue
-        try:
-            cfg = yaml.safe_load(text)
-        except Exception as e:
-            print(f"[!] live_type={lt} YAML 解析失败: {e}")
-            continue
-        proxies = cfg.get("proxies") or []
-        if not proxies:
-            print(f"[!] live_type={lt} 无节点")
-            continue
-        p = proxies[0]
-        key = (p.get("server"), p.get("port"))
-        if key in seen:
-            print(f"    - live_type={lt} 与已有线路重复，跳过")
-            continue
-        seen.add(key)
-        if origin is None:
-            origin = cfg          # 用第一份配置作骨架（含全部规则）
-        named.append((label, clean_proxy(p, label)))
-        meta.append({"name": label, "live_type": lt, "protocol": p.get("type"),
-                     "server": p.get("server"), "port": p.get("port"),
-                     "sni": p.get("sni") or p.get("servername"),
-                     "cipher": p.get("cipher") or p.get("method")})
-        print(f"    + {label} {p.get('type')} {p.get('server')}:{p.get('port')}")
+    # ---- 1. 收集全部节点 ----
+    infos, seen, skipped = [], set(), []
+    for lt, lane in LANES:
+        nodes = get_nodes(token, sid, lt)
+        print(f"[*] live_type={lt}（{lane}）返回 {len(nodes)} 个")
+        for n in nodes:
+            proto = (n.get("protocol") or "").lower()
+            if proto not in SUPPORTED:
+                skipped.append((n.get("remarks"), proto))
+                continue
+            info = parse_endpoint(n)
+            key = (info["server"], info["port"])
+            if key in seen:
+                continue
+            seen.add(key)
+            info["lane"] = lane
+            infos.append(info)
 
-    if not named or origin is None:
+    if not infos:
         print("[x] 没有可用节点")
         return 1
 
-    # ---- 1. Clash：沿用官方骨架，只替换 proxies / proxy-groups ----
-    clash = dict(origin)
-    clash["proxies"] = [p for _, p in named]
-    names = [n for n, _ in named]
-    # 官方规则引用的是 QIANLI / 自动选择 / 故障转移，组名保持不变
+    print(f"[+] 可用 {len(infos)} 个节点，跳过 {len(skipped)} 个不支持的协议"
+          f"（{', '.join(sorted({p for _, p in skipped}))}）")
+    for i in infos:
+        print(f"    {i['name']:<20} {i['protocol']:<12} {i['server']}:{i['port']}")
+
+    # ---- 2. Clash：官方骨架 + 自建 proxies ----
+    origin_text = fetch_sub_yaml(sub_uuid, 1) or fetch_sub_yaml(sub_uuid, 2)
+    names = [i["name"] for i in infos]
+    if origin_text:
+        try:
+            cfg = yaml.safe_load(origin_text)
+        except Exception:
+            cfg = {}
+    else:
+        cfg = {}
+
+    clash = dict(cfg) if cfg else {}
+    clash["proxies"] = [p for p in (clash_proxy(i) for i in infos) if p]
+    # 官方 374 条规则全部引用 QIANLI / 自动选择 / 故障转移，组名必须保持一致
     clash["proxy-groups"] = [
         {"name": "QIANLI", "type": "select", "proxies": names},
         {"name": "自动选择", "type": "url-test",
@@ -341,28 +305,78 @@ def main():
          "url": "http://www.gstatic.com/generate_204",
          "interval": 300, "proxies": names},
     ]
+    if not clash.get("rules"):
+        clash.update({
+            "mixed-port": 7890, "allow-lan": False, "mode": "rule",
+            "log-level": "info", "dns": {"enable": True, "ipv6": False,
+                                         "enhanced-mode": "fake-ip",
+                                         "nameserver": ["223.5.5.5", "119.29.29.29"]},
+            "rules": ["GEOIP,CN,DIRECT", "MATCH,QIANLI"],
+        })
+
     with open("jidian_clash.yaml", "w") as f:
         f.write("# 极点加速器（jidianvpn.com）订阅，规则沿用官方配置\n")
         yaml.safe_dump(clash, f, allow_unicode=True, sort_keys=False, width=4096)
 
-    # ---- 2. sing-box ----
+    # ---- 3. sing-box ----
+    tags, obs = [], []
+    for i, info in enumerate(infos):
+        tag = f"jidian-{i+1}"
+        obs.append(sb_outbound(info, tag))
+        tags.append(tag)
+    singbox = {
+        "log": {"level": "warn", "timestamp": True},
+        "dns": {
+            "servers": [
+                {"tag": "remote", "type": "https", "server": "1.1.1.1",
+                 "server_port": 443, "path": "/dns-query", "detour": "proxy"},
+                {"tag": "local", "type": "local"},
+            ],
+            "rules": [{"ip_is_private": True, "server": "local"}],
+            "final": "remote", "strategy": "ipv4_only",
+        },
+        "inbounds": [
+            {"type": "tun", "tag": "tun-in", "address": ["172.19.0.1/30"],
+             "mtu": 9000, "auto_route": True, "strict_route": True, "stack": "mixed"},
+            {"type": "mixed", "tag": "mixed-in", "listen": "127.0.0.1",
+             "listen_port": 7890},
+        ],
+        "outbounds": obs + [
+            {"type": "selector", "tag": "proxy", "outbounds": tags + ["direct"]},
+            {"type": "direct", "tag": "direct"},
+            {"type": "block", "tag": "block"},
+        ],
+        "route": {"auto_detect_interface": True,
+                  "rules": [{"action": "sniff"},
+                            {"protocol": "dns", "action": "hijack-dns"},
+                            {"ip_is_private": True, "outbound": "direct"}],
+                  "final": "proxy"},
+    }
     with open("jidian_singbox.json", "w") as f:
-        json.dump(build_singbox(named), f, ensure_ascii=False, indent=2)
+        json.dump(singbox, f, ensure_ascii=False, indent=2)
 
-    # ---- 3. 链接 ----
-    links = [to_link(p, n) for n, p in named]
+    # ---- 4. 链接 ----
+    links = [x for x in (to_link(i) for i in infos) if x]
     with open("jidian_sub.txt", "w") as f:
         f.write("\n".join(links) + "\n")
     with open("jidian_sub_b64.txt", "w") as f:
         f.write(base64.b64encode("\n".join(links).encode()).decode() + "\n")
 
-    # ---- 4. 元数据 ----
+    # ---- 5. 元数据 ----
     with open("jidian_nodes.json", "w") as f:
-        json.dump({"updated": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-                   "sub_uuid": sub_uuid, "count": len(meta), "nodes": meta},
-                  f, ensure_ascii=False, indent=2)
+        json.dump({
+            "updated": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            "sub_uuid": sub_uuid, "subject": subject,
+            "count": len(infos),
+            "skipped_anyconnect": [{"name": n, "protocol": p} for n, p in skipped],
+            "nodes": [{"name": i["name"], "lane": i["lane"], "protocol": i["protocol"],
+                       "server": i["server"], "port": i["port"], "sni": i["sni"],
+                       "method": i["method"], "speed_limit_mbps": i["speed_limit"],
+                       "load_percent": round(i["load"], 1) if isinstance(i["load"], (int, float)) else None}
+                      for i in infos],
+        }, f, ensure_ascii=False, indent=2)
 
-    print(f"[√] 生成 {len(named)} 个节点：jidian_clash.yaml / jidian_singbox.json / "
+    print(f"[√] 生成 {len(infos)} 个节点：jidian_clash.yaml / jidian_singbox.json / "
           f"jidian_sub.txt / jidian_sub_b64.txt / jidian_nodes.json")
     return 0
 
