@@ -210,6 +210,20 @@ proxies:
     public-key: h67BY8lUGUOtatqfbLJ8pgxS-bYXqODnS_aBIRUrIDw
     short-id: 22b82cf5d70ea10e
   flow: xtls-rprx-vision
+- name: 🆓新加坡 03（1MB限速）
+  type: vless
+  server: 103.180.20.100
+  port: 20007
+  uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
+  network: tcp
+  udp: true
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: h67BY8lUGUOtatqfbLJ8pgxS-bYXqODnS_aBIRUrIDw
+    short-id: 22b82cf5d70ea10e
+  flow: xtls-rprx-vision
 - name: 美国 03
   type: vless
   server: 103.180.20.100
