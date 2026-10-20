@@ -862,6 +862,164 @@ def expand_protocol_variants(nodes, with_vision=False):
             expanded.append(v)
     return expanded
 
+# ---------------------------------------------------------------------------
+# NekoBox 后处理：VLESS 健康检查 + 合并订阅 + urltest 自动测速组
+# ---------------------------------------------------------------------------
+NB_TIMEOUT = 4
+NB_WORKERS = 16
+
+
+def _nb_split_url(u):
+    scheme, _, rest = u.strip().partition('://')
+    rest, _, tag = rest.partition('#')
+    main, _, query = rest.partition('?')
+    q = {}
+    for kv in query.split('&'):
+        if '=' in kv:
+            k, v = kv.split('=', 1)
+            q[k] = urllib.parse.unquote(v)
+    return scheme, main, q, urllib.parse.unquote(tag)
+
+
+def _nb_parse_vless(u):
+    _, main, q, tag = _nb_split_url(u)
+    userinfo, _, hostport = main.rpartition('@')
+    host, _, port = hostport.rpartition(':')
+    host = host.strip('[]')
+    return {'kind': 'vless', 'uuid': urllib.parse.unquote(userinfo), 'server': host,
+            'port': int(port or 443), 'sni': q.get('sni', ''), 'fp': q.get('fp', 'chrome'),
+            'pbk': q.get('pbk', ''), 'sid': q.get('sid', ''), 'flow': q.get('flow', ''),
+            'tag': tag or host, 'raw': u}
+
+
+def _nb_parse_hy2(u):
+    _, main, q, tag = _nb_split_url(u)
+    userinfo, _, hostport = main.rpartition('@')
+    hostport = hostport.split('/')[0]
+    host, _, port = hostport.rpartition(':')
+    host = host.strip('[]')
+    return {'kind': 'hy2', 'password': urllib.parse.unquote(userinfo), 'server': host,
+            'port': int(port or 443), 'sni': q.get('sni', ''), 'tag': tag or host, 'raw': u}
+
+
+def _nb_tcp_ok(host, port, timeout=NB_TIMEOUT):
+    try:
+        with socket.create_connection((host, port), timeout=timeout):
+            return True
+    except Exception:
+        return False
+
+
+def _nb_to_singbox(n):
+    if n['kind'] == 'vless':
+        ob = {'type': 'vless', 'tag': n['tag'], 'server': n['server'],
+              'server_port': n['port'], 'uuid': n['uuid'],
+              'tls': {'enabled': True, 'server_name': n['sni'] or n['server'],
+                      'utls': {'enabled': True, 'fingerprint': n['fp'] or 'chrome'},
+                      'reality': {'enabled': True, 'public_key': n['pbk'],
+                                  'short_id': n['sid']}}}
+        if n['flow']:
+            ob['flow'] = n['flow']
+        return ob
+    ob = {'type': 'hysteria2', 'tag': n['tag'], 'server': n['server'],
+          'server_port': n['port'], 'password': n['password'],
+          'tls': {'enabled': True, 'insecure': True}}
+    if n['sni']:
+        ob['tls']['server_name'] = n['sni']
+    return ob
+
+
+def _gh_output(ok, count):
+    gh = os.environ.get('GITHUB_OUTPUT')
+    if gh:
+        try:
+            with open(gh, 'a', encoding='utf-8') as f:
+                f.write('ok=%d\ncount=%d\n' % (ok, count))
+        except Exception:
+            pass
+
+
+def post_nekobox(out_dir, quiet=False):
+    """健康检查并生成 NekoBox 配置。返回 (ok, total)。"""
+    from concurrent.futures import ThreadPoolExecutor
+    src = os.path.join(out_dir, 'ipow.txt')
+    if not os.path.exists(src):
+        print('!! ipow.txt 不存在，跳过 NekoBox 后处理')
+        _gh_output(0, 0)
+        return 0, 0
+
+    lines = [l.strip() for l in open(src, encoding='utf-8') if l.strip()]
+    vless, hy2, broken = [], [], 0
+    for u in lines:
+        try:
+            if u.startswith('vless://'):
+                n = _nb_parse_vless(u)
+                if n['uuid'] and n['pbk'] and n['server']:
+                    vless.append(n)
+                else:
+                    broken += 1
+            elif u.startswith(('hysteria2://', 'hy2://')):
+                n = _nb_parse_hy2(u)
+                if n['password'] and n['server']:
+                    hy2.append(n)
+                else:
+                    broken += 1
+        except Exception:
+            broken += 1
+
+    print('\n[NekoBox] 解析: vless=%d, hy2=%d, 异常=%d' % (len(vless), len(hy2), broken))
+
+    if vless:
+        with ThreadPoolExecutor(max_workers=NB_WORKERS) as ex:
+            res = list(ex.map(lambda n: _nb_tcp_ok(n['server'], n['port']), vless))
+        alive = [n for n, ok in zip(vless, res) if ok]
+        dead = [n for n, ok in zip(vless, res) if not ok]
+        print('[NekoBox] 健康检查: 可达 %d / 失效 %d' % (len(alive), len(dead)))
+        if not quiet:
+            for n in dead[:10]:
+                print('  ✗ %-24s %s:%s' % (n['tag'][:24], n['server'], n['port']))
+        vless = alive
+
+    total = len(vless) + len(hy2)
+    if total == 0:
+        print('[NekoBox] 无可用节点（VLESS 全失效且无 Hy2），不覆盖订阅')
+        _gh_output(0, 0)
+        return 0, 0
+
+    # 重写混排订阅（只留可用）
+    merged = [n['raw'] for n in vless] + [n['raw'] for n in hy2]
+    with open(src, 'w', encoding='utf-8', newline='\n') as f:
+        f.write('\n'.join(merged) + '\n')
+    print('[NekoBox] 订阅已更新: %d 条（vless %d + hy2 %d）' % (total, len(vless), len(hy2)))
+
+    outbounds = [_nb_to_singbox(n) for n in vless + hy2]
+    seen, uniq = set(), []
+    for o in outbounds:
+        t, i = o['tag'], 2
+        while t in seen:
+            t = '%s-%d' % (o['tag'], i)
+            i += 1
+        o['tag'] = t
+        seen.add(t)
+        uniq.append(o)
+
+    cfg = {'log': {'level': 'warn'},
+           'outbounds': uniq + [
+               {'type': 'urltest', 'tag': 'auto',
+                'outbounds': [o['tag'] for o in uniq],
+                'url': 'http://cp.cloudflare.com/generate_204',
+                'interval': '1m', 'tolerance': 50},
+               {'type': 'direct', 'tag': 'direct'}],
+           'route': {'final': 'auto'}}
+    nb_path = os.path.join(out_dir, 'nekobox_outbounds.json')
+    with open(nb_path, 'w', encoding='utf-8') as f:
+        json.dump(cfg, f, ensure_ascii=False, indent=2)
+    print('[NekoBox] 已生成 %s（urltest 自动测速组，%d 个节点）' % (nb_path, len(uniq)))
+
+    _gh_output(1, total)
+    return 1, total
+
+
 def write_configs(nodes, work_dir, with_vision=False, quiet=False):
     os.makedirs(work_dir, exist_ok=True)
     nodes = expand_protocol_variants(nodes, with_vision=with_vision)
@@ -1343,6 +1501,9 @@ def pull_live_vless_from_dht(client, state, session_id, remaining_ids, interval=
                 return vless_nodes, True, pulled, transient_fail, permanent_fail
             except IpowError as exc:
                 last_err = exc
+                if 'p2p_dht_capability_unavailable' in str(exc):
+                    # 节点离线（503）：重试和换钱包都没用，直接标记为不可用
+                    break
                 if attempt < MAX_INNER_RETRY - 1:
                     time.sleep(0.3)
                     continue
@@ -1374,7 +1535,10 @@ def pull_live_vless_from_dht(client, state, session_id, remaining_ids, interval=
             break
 
         if node is None:
-            # 瞬时失败：保留到 transient_fail，由主循环在下一钱包继续重试
+            if last_err and 'p2p_dht_capability_unavailable' in str(last_err):
+                print('节点离线(503)')
+                permanent_fail.append(node_id)
+                continue
             print('临时失败({})'.format(last_err))
             transient_fail.append(node_id)
             continue
@@ -1427,6 +1591,8 @@ def main(argv=None):
                     help='限制拉取物理节点数（默认全部）')
     ap.add_argument('--mode', choices=['all', 'vless', 'hy2'], default='all',
                     help='拉取模式: all=VLESS+Hy2均实时解密真IP(默认), vless=仅VLESS, hy2=仅Hy2')
+    ap.add_argument('--probe-only', action='store_true',
+                    help='只检查官方节点在线状态后退出（不注册、不消耗试用额度）')
     ap.add_argument('--no-merge', action='store_true',
                     help='不合并历史全量已知节点库，仅拉取官方当前公开的节点（默认会自动合并保全 47~62 个全量物理机）')
     ap.add_argument('--all-known', action='store_true',
@@ -1449,6 +1615,8 @@ def main(argv=None):
                     help='自动注册通道：wallet=Web3钱包 / email=临时邮箱 / auto=钱包3次后切邮箱（默认）')
     ap.add_argument('--register-attempts', type=int, default=10,
                     help='自动注册最多尝试次数，直到拿到 trial 试用号（默认 10，命中率约 50%%）')
+    ap.add_argument('--nekobox', action='store_true',
+                    help='生成 NekoBox/sing-box 配置（urltest 自动测速），并对 VLESS 做健康检查')
     ap.add_argument('--check', action='store_true',
                     help='生成后立即对节点做 TCP 连通性抽测（推荐）')
     ap.add_argument('--check-limit', type=int, default=0,
@@ -1479,7 +1647,36 @@ def main(argv=None):
     entries = cat_body.get('nodes') or cat_body.get('entries') or []
     usable = [e for e in entries if e.get('status') == 'online']
 
+    if args.probe_only:
+        from collections import Counter
+        st = Counter(e.get('status') for e in entries)
+        print('目录版本: %s | 节点 %d 个 | 状态: %s' % (
+            cat_body.get('catalog_version'), len(entries),
+            ', '.join('%s=%d' % kv for kv in st.items())))
+        for e in entries:
+            if e.get('status') == 'online':
+                print('  ✓ %-30s %s users=%s lat=%sms' % (
+                    e.get('id'), e.get('country_code'), e.get('online_users'), e.get('latency_ms')))
+        if not usable:
+            print('  ✗ 当前无在线节点，服务端未恢复（egress/健康检查均失败）')
+        return 0
+
     online_count = len(usable)
+    if online_count == 0 and not args.all_known:
+        print('⚠️ 官方目录当前 0 个在线节点（%d 个全部 status=offline）。' % len(entries))
+        if entries:
+            e0 = entries[0]
+            print('   节点自检结果: egress_ok=%s, protocol_health=%s' % (
+                e0.get('egress_ok'), (e0.get('protocol_health') or {}).get('vless-reality:no-flow')))
+            print('   recent_error: %s' % e0.get('recent_error'))
+        print('   这不是你的网络问题 —— 是官方节点自身出网探测失败(ipify_request_failed)。')
+        print('   继续拉取只会得到 503 p2p_dht_capability_unavailable，并白耗试用额度。')
+        print('   · 稍后重试: python ipow.py')
+        print('   · 强制用历史节点库尝试: python ipow.py --all-known（大概率仍不通）')
+        if args.nekobox:
+            _gh_output(0, 0)
+        return 3
+
     if not args.no_merge:
         existing_ids = {e.get('id') or e.get('node_id') for e in usable}
         added_known = 0
@@ -1490,7 +1687,9 @@ def main(argv=None):
                 existing_ids.add(kid)
                 added_known += 1
         if added_known:
-            print(f'💡 官方在线: {online_count} 个 | 自动合并全量节点库: +{added_known} 个 (总计 {len(usable)} 个物理机)')
+            print(f'💡 官方在线: {online_count} 个 | 合并历史节点库: +{added_known} 个 (总计 {len(usable)} 个物理机)')
+            if online_count == 0:
+                print('   ⚠️ 在线数为 0，以下全部为历史节点，503 概率极高（--all-known 强制模式）')
 
     cat_by_id = {e.get('id') or e.get('node_id'): e for e in usable}
     all_ids = [(e.get('id') or e.get('node_id'), e.get('country_code', 'AUTO'))
@@ -1631,6 +1830,13 @@ def main(argv=None):
         if not args.quiet:
             print(f'\n  已生成订阅文件: ipow.txt （{len(sub_urls)} 条，含 VLESS + Hysteria2）')
 
+    # NekoBox: 健康检查 + urltest 自动测速组（全失效则不覆盖，返回 3 让 CI 跳过提交）
+    if args.nekobox:
+        nb_ok, nb_count = post_nekobox(out_dir, quiet=args.quiet)
+        if nb_ok == 0:
+            print('⚠️ NekoBox 健康检查未通过：本次无可用节点，保留上一版订阅不提交')
+            return 3
+
     resolved_total = len(resolved_ids)
     target_total = len(all_ids)
     failed_total = max(target_total - resolved_total, 0)
@@ -1652,6 +1858,8 @@ def main(argv=None):
 
     # 明确报错：避免「静默 0 节点」被误判为成功
     if target_total > 0 and resolved_total == 0:
+        if args.nekobox:
+            _gh_output(0, 0)
         if has_creds:
             print('⚠️ 已提供凭据但仍拉到 0 个节点：Token 可能已过期、订阅 URL 可能失效，或官方接口暂不可用。')
             print('   请重新获取有效的 --token 与 --sub-url 后重试。')
