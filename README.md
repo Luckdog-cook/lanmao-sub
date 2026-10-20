@@ -140,7 +140,7 @@ A: 直接修改脚本末尾的保存逻辑，或通过环境变量控制输出�
 
 ## 飞梭加速器（FaysoVPN）订阅
 
-由 `fayso.py` 抓取，GitHub Actions 每天 04:00 UTC 自动更新。
+由 `fayso.py` 抓取，GitHub Actions 每 2 小时自动更新（UTC 偶数整点）。
 
 | 文件 | 用途 |
 |------|------|
