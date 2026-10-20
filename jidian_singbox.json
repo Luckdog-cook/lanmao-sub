@@ -52,7 +52,7 @@
       "tag": "jidian-1",
       "server": "igt84kf48fk4hq3.haowanlink.com",
       "server_port": 16407,
-      "password": "91d293cc-54bb-4823-a45a-1461a494e192",
+      "password": "f4cfcf87-c8fe-4e25-b379-aa9577eca361",
       "tls": {
         "enabled": true,
         "server_name": "jiasu5.jiasuwu.com"
@@ -64,7 +64,7 @@
       "server": "157.254.20.18",
       "server_port": 28142,
       "method": "2022-blake3-aes-256-gcm",
-      "password": "REtrSGtEYTUzeEc2MGg0NzRwcVZJbzZtZlcxS2Ryelo=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=",
+      "password": "REtrSGtEYTUzeEc2MGg0NzRwcVZJbzZtZlcxS2Ryelo=:ZjRjZmNmODctYzhmZS00ZTI1LWIzNzktYWE5NTc3ZWM=",
       "transport": {
         "type": "ws",
         "path": "/"
