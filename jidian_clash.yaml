@@ -50,38 +50,127 @@ ntp:
   port: 123
   interval: 30
 proxies:
-- name: 极点-中转
+- name: 香港普通线路1
   type: anytls
   server: igt84kf48fk4hq3.haowanlink.com
   port: 16407
+  password: 91d293cc-54bb-4823-a45a-1461a494e192
   udp: true
-  alterId: 0
-  password: f4cfcf87-c8fe-4e25-b379-aa9577eca361
-  tls: true
   sni: jiasu5.jiasuwu.com
+  tls: true
   client-fingerprint: chrome
-  servername: jiasu5.jiasuwu.com
-- name: 极点-直连
+- name: 香港普通线路2
+  type: anytls
+  server: kf32k23kfwdadgl.jietainetwork.com
+  port: 29239
+  password: 91d293cc-54bb-4823-a45a-1461a494e192
+  udp: true
+  sni: iepl1.jiasuwu.com
+  tls: true
+  client-fingerprint: chrome
+- name: 香港普通线路3
+  type: ss
+  server: igt84kf48fk4hq3.haowanlink.com
+  port: 43393
+  cipher: 2022-blake3-aes-256-gcm
+  password: REtrSGtEYTUzeEc2MGg0NzRwcVZJbzZtZlcxS2Ryelo=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+- name: 日本普通线路1
+  type: ss
+  server: igt84kf48fk4hq3.haowanlink.com
+  port: 61180
+  cipher: 2022-blake3-aes-256-gcm
+  password: ajd6ejdwdWZneTh4cnR2bjdlbnM4YmtnaTh5aHhpb3A=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+- name: 日本普通线路2
+  type: anytls
+  server: kf32k23kfwdadgl.jietainetwork.com
+  port: 4851
+  password: 91d293cc-54bb-4823-a45a-1461a494e192
+  udp: true
+  sni: jp2.jiasuwu.com
+  tls: true
+  client-fingerprint: chrome
+- name: 美国普通线路1
+  type: ss
+  server: igt84kf48fk4hq3.haowanlink.com
+  port: 38775
+  cipher: 2022-blake3-aes-256-gcm
+  password: ZmtuenN3aHJtY3ZycWE4bHk3ZXYxeDkzZ2hpZnM2NHA=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+- name: 美国普通线路2
+  type: anytls
+  server: kf32k23kfwdadgl.jietainetwork.com
+  port: 24837
+  password: 91d293cc-54bb-4823-a45a-1461a494e192
+  udp: true
+  sni: amrk1.jiasuwu.com
+  tls: true
+  client-fingerprint: chrome
+- name: 香港中转1
   type: ss
   server: 157.254.20.18
   port: 28142
-  network: ws
-  udp: true
-  alterId: 0
   cipher: 2022-blake3-aes-256-gcm
-  password: REtrSGtEYTUzeEc2MGg0NzRwcVZJbzZtZlcxS2Ryelo=:ZjRjZmNmODctYzhmZS00ZTI1LWIzNzktYWE5NTc3ZWM=
+  password: REtrSGtEYTUzeEc2MGg0NzRwcVZJbzZtZlcxS2Ryelo=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=
+  udp: true
+  network: ws
   ws-opts:
     path: /
-    headers:
-      Host: ''
-    max-early-data: 0
-    early-data-header-name: ''
+- name: 美国中转1
+  type: ss
+  server: 79.127.245.227
+  port: 7516
+  cipher: 2022-blake3-aes-256-gcm
+  password: ZmtuenN3aHJtY3ZycWE4bHk3ZXYxeDkzZ2hpZnM2NHA=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+- name: 日本中转1
+  type: ss
+  server: 178.249.213.81
+  port: 57822
+  cipher: 2022-blake3-aes-256-gcm
+  password: ajd6ejdwdWZneTh4cnR2bjdlbnM4YmtnaTh5aHhpb3A=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
+- name: 新加坡中转1
+  type: ss
+  server: 152.233.15.227
+  port: 38951
+  cipher: 2022-blake3-aes-256-gcm
+  password: b3NxZG9ubXBwdGU2cXMyd2t2aHZoZGU2dnh1czFmaWk=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=
+  udp: true
+  network: ws
+  ws-opts:
+    path: /
 proxy-groups:
 - name: QIANLI
   type: select
   proxies: &id001
-  - 极点-中转
-  - 极点-直连
+  - 香港普通线路1
+  - 香港普通线路2
+  - 香港普通线路3
+  - 日本普通线路1
+  - 日本普通线路2
+  - 美国普通线路1
+  - 美国普通线路2
+  - 香港中转1
+  - 美国中转1
+  - 日本中转1
+  - 新加坡中转1
 - name: 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
