@@ -153,14 +153,18 @@ A: 直接修改脚本末尾的保存逻辑，或通过环境变量控制输出�
 > 注意：**Bettbox 是基于 Mihomo 内核的 FlClash 分支，不是 sing-box 客户端**，
 > 导入 `fayso_singbox.json` 会显示无节点、无规则，请使用 `fayso_clash.yaml`。
 
-订阅地址（jsDelivr CDN，国内可访问）：
+订阅地址（国内可访问）：
 
 ```
-Bettbox / Clash : https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_clash.yaml
-sing-box        : https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_singbox.json
-通用链接        : https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_sub.txt
-base64 订阅     : https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_sub_b64.txt
+Bettbox / Clash : https://gcore.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_clash.yaml
+sing-box        : https://gcore.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_singbox.json
+通用链接        : https://gcore.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_sub.txt
+base64 订阅     : https://gcore.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_sub_b64.txt
 ```
+
+> jsDelivr 对分支引用有 12 小时 CDN 缓存（`s-maxage=43200`），工作流每次更新后会调用
+> purge 接口刷新，但边缘节点仍可能滞后。要求立即生效时，在地址末尾加 `?v=2` 换一个缓存键，
+> 或用 `cdn.jsdelivr.net` / `fastly.jsdelivr.net` 等镜像交叉验证。
 
 可选 Secrets（不配则每次自动匿名注册试用设备）：
 `FAYSO_TOKEN` / `FAYSO_USERNAME` / `FAYSO_PASSWORD`
