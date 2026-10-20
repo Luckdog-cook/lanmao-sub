@@ -135,3 +135,29 @@ A: 直接修改脚本末尾的保存逻辑，或通过环境变量控制输出�
 ---
 
 仅供学习与个人研究使用。
+
+---
+
+## 飞梭加速器（FaysoVPN）订阅
+
+由 `fayso.py` 抓取，GitHub Actions 每天 04:00 UTC 自动更新。
+
+| 文件 | 用途 |
+|------|------|
+| `fayso_singbox.json` | **sing-box / BetterBox 订阅**（完整配置，推荐） |
+| `fayso_sub.txt` | 纯 `hysteria2://` 链接，通用客户端 |
+| `fayso_sub_b64.txt` | base64 订阅，v2rayN / NekoBox 标准格式 |
+| `fayso_clash.yaml` | Mihomo / Clash Meta 配置 |
+| `fayso_nodes.json` | 节点元数据（含延迟、容量） |
+
+订阅地址（jsDelivr CDN，国内可访问）：
+
+```
+https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_singbox.json
+https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_sub.txt
+https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_clash.yaml
+https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_sub_b64.txt
+```
+
+可选 Secrets（不配则每次自动匿名注册试用设备）：
+`FAYSO_TOKEN` / `FAYSO_USERNAME` / `FAYSO_PASSWORD`
