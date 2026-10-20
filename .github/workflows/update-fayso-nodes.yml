@@ -51,3 +51,14 @@ jobs:
             git commit -m "auto update fayso nodes $(date -u +'%Y-%m-%d %H:%M UTC')"
             git push
           fi
+
+      # jsDelivr 对分支引用有 CDN 缓存，主动刷新让订阅立即生效
+      - name: 刷新 jsDelivr 缓存
+        run: |
+          for f in fayso_sub.txt fayso_sub_b64.txt fayso_clash.yaml fayso_singbox.json fayso_nodes.json; do
+            if curl -s --max-time 20 "https://purge.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/$f" > /dev/null; then
+              echo "purged $f"
+            else
+              echo "purge failed $f (忽略)"
+            fi
+          done
