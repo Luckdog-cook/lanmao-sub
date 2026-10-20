@@ -54,7 +54,7 @@ proxies:
   type: anytls
   server: igt84kf48fk4hq3.haowanlink.com
   port: 16407
-  password: 91d293cc-54bb-4823-a45a-1461a494e192
+  password: f4cfcf87-c8fe-4e25-b379-aa9577eca361
   udp: true
   sni: jiasu5.jiasuwu.com
   tls: true
@@ -63,7 +63,7 @@ proxies:
   type: anytls
   server: kf32k23kfwdadgl.jietainetwork.com
   port: 29239
-  password: 91d293cc-54bb-4823-a45a-1461a494e192
+  password: f4cfcf87-c8fe-4e25-b379-aa9577eca361
   udp: true
   sni: iepl1.jiasuwu.com
   tls: true
@@ -73,7 +73,7 @@ proxies:
   server: igt84kf48fk4hq3.haowanlink.com
   port: 43393
   cipher: 2022-blake3-aes-256-gcm
-  password: REtrSGtEYTUzeEc2MGg0NzRwcVZJbzZtZlcxS2Ryelo=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=
+  password: REtrSGtEYTUzeEc2MGg0NzRwcVZJbzZtZlcxS2Ryelo=:ZjRjZmNmODctYzhmZS00ZTI1LWIzNzktYWE5NTc3ZWM=
   udp: true
   network: ws
   ws-opts:
@@ -83,7 +83,7 @@ proxies:
   server: igt84kf48fk4hq3.haowanlink.com
   port: 61180
   cipher: 2022-blake3-aes-256-gcm
-  password: ajd6ejdwdWZneTh4cnR2bjdlbnM4YmtnaTh5aHhpb3A=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=
+  password: ajd6ejdwdWZneTh4cnR2bjdlbnM4YmtnaTh5aHhpb3A=:ZjRjZmNmODctYzhmZS00ZTI1LWIzNzktYWE5NTc3ZWM=
   udp: true
   network: ws
   ws-opts:
@@ -92,7 +92,7 @@ proxies:
   type: anytls
   server: kf32k23kfwdadgl.jietainetwork.com
   port: 4851
-  password: 91d293cc-54bb-4823-a45a-1461a494e192
+  password: f4cfcf87-c8fe-4e25-b379-aa9577eca361
   udp: true
   sni: jp2.jiasuwu.com
   tls: true
@@ -102,7 +102,7 @@ proxies:
   server: igt84kf48fk4hq3.haowanlink.com
   port: 38775
   cipher: 2022-blake3-aes-256-gcm
-  password: ZmtuenN3aHJtY3ZycWE4bHk3ZXYxeDkzZ2hpZnM2NHA=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=
+  password: ZmtuenN3aHJtY3ZycWE4bHk3ZXYxeDkzZ2hpZnM2NHA=:ZjRjZmNmODctYzhmZS00ZTI1LWIzNzktYWE5NTc3ZWM=
   udp: true
   network: ws
   ws-opts:
@@ -111,7 +111,7 @@ proxies:
   type: anytls
   server: kf32k23kfwdadgl.jietainetwork.com
   port: 24837
-  password: 91d293cc-54bb-4823-a45a-1461a494e192
+  password: f4cfcf87-c8fe-4e25-b379-aa9577eca361
   udp: true
   sni: amrk1.jiasuwu.com
   tls: true
@@ -121,7 +121,7 @@ proxies:
   server: 157.254.20.18
   port: 28142
   cipher: 2022-blake3-aes-256-gcm
-  password: REtrSGtEYTUzeEc2MGg0NzRwcVZJbzZtZlcxS2Ryelo=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=
+  password: REtrSGtEYTUzeEc2MGg0NzRwcVZJbzZtZlcxS2Ryelo=:ZjRjZmNmODctYzhmZS00ZTI1LWIzNzktYWE5NTc3ZWM=
   udp: true
   network: ws
   ws-opts:
@@ -131,7 +131,7 @@ proxies:
   server: 79.127.245.227
   port: 7516
   cipher: 2022-blake3-aes-256-gcm
-  password: ZmtuenN3aHJtY3ZycWE4bHk3ZXYxeDkzZ2hpZnM2NHA=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=
+  password: ZmtuenN3aHJtY3ZycWE4bHk3ZXYxeDkzZ2hpZnM2NHA=:ZjRjZmNmODctYzhmZS00ZTI1LWIzNzktYWE5NTc3ZWM=
   udp: true
   network: ws
   ws-opts:
@@ -141,7 +141,7 @@ proxies:
   server: 178.249.213.81
   port: 57822
   cipher: 2022-blake3-aes-256-gcm
-  password: ajd6ejdwdWZneTh4cnR2bjdlbnM4YmtnaTh5aHhpb3A=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=
+  password: ajd6ejdwdWZneTh4cnR2bjdlbnM4YmtnaTh5aHhpb3A=:ZjRjZmNmODctYzhmZS00ZTI1LWIzNzktYWE5NTc3ZWM=
   udp: true
   network: ws
   ws-opts:
@@ -151,7 +151,7 @@ proxies:
   server: 152.233.15.227
   port: 38951
   cipher: 2022-blake3-aes-256-gcm
-  password: b3NxZG9ubXBwdGU2cXMyd2t2aHZoZGU2dnh1czFmaWk=:OTFkMjkzY2MtNTRiYi00ODIzLWE0NWEtMTQ2MWE0OTQ=
+  password: b3NxZG9ubXBwdGU2cXMyd2t2aHZoZGU2dnh1czFmaWk=:ZjRjZmNmODctYzhmZS00ZTI1LWIzNzktYWE5NTc3ZWM=
   udp: true
   network: ws
   ws-opts:
