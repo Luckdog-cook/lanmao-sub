@@ -1,0 +1,71 @@
+{
+  "updated": "2026-10-20T05:01:22Z",
+  "count": 5,
+  "nodes": [
+    {
+      "name": "🇸🇬新加坡",
+      "value": "singapore",
+      "protocol": "hysteria2",
+      "server": "139.180.215.41",
+      "port": 8443,
+      "sni": "sg.magicnodes.materialcrate.com",
+      "capacity": "available",
+      "probe": [
+        "139.180.215.41",
+        8443
+      ]
+    },
+    {
+      "name": "🇺🇸美国",
+      "value": "us-west",
+      "protocol": "hysteria2",
+      "server": "66.42.99.41",
+      "port": 8443,
+      "sni": "us.magicnodes.hyperlink.us.com",
+      "capacity": "available",
+      "probe": [
+        "66.42.99.41",
+        8443
+      ]
+    },
+    {
+      "name": "🇯🇵日本",
+      "value": "tokyo",
+      "protocol": "hysteria2",
+      "server": "207.148.101.128",
+      "port": 8443,
+      "sni": "jp.magicnodes.hyperlink.us.com",
+      "capacity": "available",
+      "probe": [
+        "207.148.101.128",
+        8443
+      ]
+    },
+    {
+      "name": "🇭🇰香港",
+      "value": "hong-kong",
+      "protocol": "hysteria2",
+      "server": "20.189.123.104",
+      "port": 8443,
+      "sni": "hk-test.magicnodes.hyperlink.us.com",
+      "capacity": "available",
+      "probe": [
+        "20.189.123.104",
+        8443
+      ]
+    },
+    {
+      "name": "🇦🇪阿联酋",
+      "value": "united-arab-emirates",
+      "protocol": "hysteria2",
+      "server": "130.94.47.212",
+      "port": 8443,
+      "sni": "ae.magicnodes.hyperlink.us.com",
+      "capacity": "available",
+      "probe": [
+        "130.94.47.212",
+        8443
+      ]
+    }
+  ]
+}
