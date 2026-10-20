@@ -1,0 +1,25 @@
+{
+  "updated": "2026-10-20T05:30:20Z",
+  "sub_uuid": "91d293cc-54bb-4823-a45a-1461a494e192",
+  "count": 2,
+  "nodes": [
+    {
+      "name": "极点-中转",
+      "live_type": 1,
+      "protocol": "anytls",
+      "server": "igt84kf48fk4hq3.haowanlink.com",
+      "port": 16407,
+      "sni": "jiasu5.jiasuwu.com",
+      "cipher": null
+    },
+    {
+      "name": "极点-直连",
+      "live_type": 2,
+      "protocol": "ss",
+      "server": "157.254.20.18",
+      "port": 28142,
+      "sni": null,
+      "cipher": "2022-blake3-aes-256-gcm"
+    }
+  ]
+}
