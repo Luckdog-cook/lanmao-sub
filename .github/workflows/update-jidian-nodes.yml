@@ -48,10 +48,21 @@ jobs:
           git add jidian_clash.yaml jidian_singbox.json jidian_sub.txt jidian_sub_b64.txt jidian_nodes.json
           if git diff --cached --quiet; then
             echo "no changes"
-          else
-            git commit -m "auto update jidian nodes $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git push
+            exit 0
           fi
+          git commit -m "auto update jidian nodes $(date -u +'%Y-%m-%d %H:%M UTC')"
+          # 仓库里有 20 个工作流同时推送，冲突就 rebase 重试
+          for i in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "pushed on try $i"
+              exit 0
+            fi
+            echo "push 冲突，第 $i 次重试"
+            git pull --rebase --autostash origin main || true
+            sleep 3
+          done
+          echo "push 连续失败"
+          exit 1
 
       - name: 刷新 jsDelivr 缓存
         run: |
