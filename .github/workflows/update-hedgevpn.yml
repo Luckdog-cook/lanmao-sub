@@ -24,7 +24,7 @@ jobs:
           python-version: "3.12"
 
       - name: 安装依赖
-        run: pip install --quiet pycryptodome pyyaml
+        run: pip install --quiet pycryptodome pyyaml requests
 
       - name: 抓取节点（自动注册试用号）
         env:
