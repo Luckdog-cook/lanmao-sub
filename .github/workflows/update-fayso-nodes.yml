@@ -2,8 +2,9 @@ name: 更新飞梭加速器节点
 
 on:
   schedule:
-    # 每 2 小时整点（UTC）
-    - cron: "0 */2 * * *"
+    # 每 2 小时触发两次（GitHub 调度经常延迟/丢弃，双份兜底）
+    - cron: "7 */2 * * *"
+    - cron: "37 */2 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -19,14 +20,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 设备令牌 JWT 有效期 30 天，缓存会话可避免每次都注册新设备
-      - name: 恢复设备会话
-        uses: actions/cache@v4
-        with:
-          path: .fayso_session.json
-          key: fayso-session-${{ github.run_id }}
-          restore-keys: |
-            fayso-session-
+      # 飞梭的节点密码按设备生成，且每个设备只有 2 小时试用额度。
+      # 复用旧设备会让订阅里的凭据一直不变、额度被耗尽，所以每次强制换新设备。
+      - name: 清理旧设备会话
+        run: rm -f .fayso_session.json
 
       - uses: actions/setup-python@v5
         with:
