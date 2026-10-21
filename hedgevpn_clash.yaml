@@ -1,0 +1,707 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+proxies:
+  - name: "Australia-8.210.116.82"
+    type: vless
+    server: 8.210.116.82
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "aws.amazon.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: nZmjWZ-B7bqBfLEciFv8jsj1vSabkdXbgEQZYINS0yY
+      short-id: ""
+    network: tcp
+  - name: "Australia-8.210.116.82-kcp"
+    type: vless
+    server: 8.210.116.82
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 011b9fcc443d55ee58f9086eb9924ca0
+      header:
+        type: none
+  - name: "Korea-47.239.106.202"
+    type: vless
+    server: 47.239.106.202
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.samsung.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: fDjbbgiH1aQ1RVnEymxWjzlmSxgb343L7MhAYH9xvQ4
+      short-id: ""
+    network: tcp
+  - name: "Korea-47.239.106.202-kcp"
+    type: vless
+    server: 47.239.106.202
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 45296ba457d26b92b45c1714991d1535
+      header:
+        type: none
+  - name: "Malaysia-8.218.122.175"
+    type: vless
+    server: 8.218.122.175
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.cisco.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: UnOMxSW0yimhjZGLRuz9f11I6ryyJ8LYMmrZ94k8YVw
+      short-id: ""
+    network: tcp
+  - name: "Malaysia-8.218.122.175-kcp"
+    type: vless
+    server: 8.218.122.175
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 0365b98e19dc50f04314455f809dc906
+      header:
+        type: none
+  - name: "Japan-8.218.212.135"
+    type: vless
+    server: 8.218.212.135
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.python.org"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: iPAOwmhhJZZvPBNp3R0b8s6X_ll1SSlzQweJYSbT8iI
+      short-id: ""
+    network: tcp
+  - name: "Japan-8.218.212.135-kcp"
+    type: vless
+    server: 8.218.212.135
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 83762935bfa83459bbc8158d7230d852
+      header:
+        type: none
+  - name: "Tai Wan-47.86.231.65"
+    type: vless
+    server: 47.86.231.65
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "itunes.apple.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: rz72eccFL6gKhumpTtwCaZKKj0fVtO7rJ9S2Q11-sjY
+      short-id: ""
+    network: tcp
+  - name: "Tai Wan-47.86.231.65-kcp"
+    type: vless
+    server: 47.86.231.65
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 77cad78afced89e6cd0e3933a1ef2a7e
+      header:
+        type: none
+  - name: "Singapore-47.86.82.250"
+    type: vless
+    server: 47.86.82.250
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.iqiyi.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: v8PYBLebXdkSE_StlbFWZg2tgI8QV7HmApgeTT2ypUs
+      short-id: ""
+    network: tcp
+  - name: "Singapore-47.86.82.250-kcp"
+    type: vless
+    server: 47.86.82.250
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 4de735696379de3b5c2ad90a44d0e636
+      header:
+        type: none
+  - name: "Hong Kong-47.242.183.157"
+    type: vless
+    server: 47.242.183.157
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.cisco.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: cDbHhMVtWqRkDR0CMUKm-zQDtgJKS7M6Es-vlHmvARE
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-47.242.183.157-kcp"
+    type: vless
+    server: 47.242.183.157
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 422fe788fae17b8eb05b387d9c6e4ed4
+      header:
+        type: none
+  - name: "Hong Kong-47.76.244.128"
+    type: vless
+    server: 47.76.244.128
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.iqiyi.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: Nd47esvqEk7yJd0oHdiCI6x1IW4KpEoTjSxR8Sq56RA
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-47.76.244.128-kcp"
+    type: vless
+    server: 47.76.244.128
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 48f0db2b562c63e0f673a784c6476508
+      header:
+        type: none
+  - name: "Hong Kong-47.86.216.117"
+    type: vless
+    server: 47.86.216.117
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.amazon.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: 3liREIK7VH_8KG6UQdlZD6ybX1MdEmCNrKp9UI7IXGU
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-47.86.216.117-kcp"
+    type: vless
+    server: 47.86.216.117
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 6338bffcd495772bc67aabc583d956c4
+      header:
+        type: none
+  - name: "Hong Kong-47.86.215.69"
+    type: vless
+    server: 47.86.215.69
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.iqiyi.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: sbRE_ZiYPGFOWZ0_Fu5aGGtj9aHT3odyBo4pTr4Oi2Q
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-47.86.215.69-kcp"
+    type: vless
+    server: 47.86.215.69
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 4ee0ff9341f9b4bee2b1bf658a594d9a
+      header:
+        type: none
+  - name: "Hong Kong-8.218.236.95"
+    type: vless
+    server: 8.218.236.95
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "gateway.icloud.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: TPeyBhmV6X1hNw00ok58jvPo6HUotRZxo8UO94NCgzA
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-8.218.236.95-kcp"
+    type: vless
+    server: 8.218.236.95
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 64b00c41783f8a04ee86b1bb98debf11
+      header:
+        type: none
+  - name: "Hong Kong-47.83.186.40"
+    type: vless
+    server: 47.83.186.40
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.iqiyi.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: ISj8Hrxy2_MX8J-rBUor3RgsvfP7tddSwM3uzjjg1lc
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-47.83.186.40-kcp"
+    type: vless
+    server: 47.83.186.40
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: f93c01659ebae0110e730b43baaa519a
+      header:
+        type: none
+  - name: "Hong Kong-8.218.81.72"
+    type: vless
+    server: 8.218.81.72
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.amd.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: G2knnGrUpndLRiTG__EU-iPONW938Y-1PfQ7RK5Wmws
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-8.218.81.72-kcp"
+    type: vless
+    server: 8.218.81.72
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 963f4c27b3b9b3b57ea3a2db27f705b7
+      header:
+        type: none
+  - name: "Indonesia-8.217.217.29"
+    type: vless
+    server: 8.217.217.29
+    port: 8443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.amazon.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: m9X6rtzxoEXNlwGk9YAf9TCy66rDQ0EkmMKIQAeehVQ
+      short-id: ""
+    network: tcp
+  - name: "Indonesia-8.217.217.29-kcp"
+    type: vless
+    server: 8.217.217.29
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 0ea4a7c7fd154b21f6b39e9f9e2d43dd
+      header:
+        type: none
+  - name: "India-47.243.195.107"
+    type: vless
+    server: 47.243.195.107
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.iqiyi.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: ja946rzJULKnKSaVZUBgbMyEzh5A7GvXmY7y-zlKo0Y
+      short-id: ""
+    network: tcp
+  - name: "India-47.243.195.107-kcp"
+    type: vless
+    server: 47.243.195.107
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 66a228875f417c4d196cc93fc8b5a07b
+      header:
+        type: none
+  - name: "Austria-47.243.135.108"
+    type: vless
+    server: 47.243.135.108
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.amd.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: 1iM2K5HxfMntQFMY0I0blx2PE1bYbymYpcLACUhZjA8
+      short-id: ""
+    network: tcp
+  - name: "Austria-47.243.135.108-kcp"
+    type: vless
+    server: 47.243.135.108
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 139bc448426ea5db1a57594a095f37b8
+      header:
+        type: none
+  - name: "Poland-47.76.72.183"
+    type: vless
+    server: 47.76.72.183
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "itunes.apple.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: ZLrsBcct1cGhrMF8YB0u6t_DdWKsRObh28e6jMmaXkE
+      short-id: ""
+    network: tcp
+  - name: "Poland-47.76.72.183-kcp"
+    type: vless
+    server: 47.76.72.183
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: d46da17c4c1ecccb5bd6b84c9e50c48b
+      header:
+        type: none
+  - name: "Germany-8.210.237.247"
+    type: vless
+    server: 8.210.237.247
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.amd.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: MkwfQ2dXXePfnfs3ZfF5kTZzSvKyVzC-GqTHJlG5ZSc
+      short-id: ""
+    network: tcp
+  - name: "Germany-8.210.237.247-kcp"
+    type: vless
+    server: 8.210.237.247
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 462ce326c17709dfd5ec9c1efafc9a66
+      header:
+        type: none
+  - name: "France-8.218.155.134"
+    type: vless
+    server: 8.218.155.134
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "dl.google.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: F-y1K4w1DZeOZ6iiiuCxqsOz_8Hc8_mpx-moI3qL-zE
+      short-id: ""
+    network: tcp
+  - name: "France-8.218.155.134-kcp"
+    type: vless
+    server: 8.218.155.134
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 0e29c4562f066abe99449619cbef24da
+      header:
+        type: none
+  - name: "Netherlands-8.218.116.226"
+    type: vless
+    server: 8.218.116.226
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.nvidia.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: 22TEa323n_10tUF75lvWv_8YsMDp6UWsi8e7vXxslSU
+      short-id: ""
+    network: tcp
+  - name: "Netherlands-8.218.116.226-kcp"
+    type: vless
+    server: 8.218.116.226
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 1cdbad5cc2f26559b6c9aee145f91582
+      header:
+        type: none
+  - name: "Latvia-47.243.164.36"
+    type: vless
+    server: 47.243.164.36
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.icloud.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: nhvDtJUeFo6iolAyR8Od5OUfPnczGleF8V9fuP8YDmo
+      short-id: ""
+    network: tcp
+  - name: "Latvia-47.243.164.36-kcp"
+    type: vless
+    server: 47.243.164.36
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 8641029e00589e928b9061388114ad8f
+      header:
+        type: none
+  - name: "Norway-8.210.107.179"
+    type: vless
+    server: 8.210.107.179
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.nvidia.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: sp4T5f-SDzlQy6SIymKXiBuSCngL4Hou9BqRj1diFz8
+      short-id: ""
+    network: tcp
+  - name: "Norway-8.210.107.179-kcp"
+    type: vless
+    server: 8.210.107.179
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 9558714bbc734824c0c5f708ab0218a3
+      header:
+        type: none
+  - name: "Sweden-8.218.47.98"
+    type: vless
+    server: 8.218.47.98
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.cisco.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: HsO3lz1CkGS96pkl6ImNGuy6edEuL4-PxHmd5eo3NQE
+      short-id: ""
+    network: tcp
+  - name: "Sweden-8.218.47.98-kcp"
+    type: vless
+    server: 8.218.47.98
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 7d830d1454578197ea6b4d5a72c8b380
+      header:
+        type: none
+  - name: "England-8.217.179.183"
+    type: vless
+    server: 8.217.179.183
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.douyin.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: te2Fe7FxDFrnPwXZ5dD0p_TRVa2i46S7nxDufbK9n0k
+      short-id: ""
+    network: tcp
+  - name: "England-8.217.179.183-kcp"
+    type: vless
+    server: 8.217.179.183
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: e5cac33d57d7c9a6eefbd93188dd284b
+      header:
+        type: none
+  - name: "Canada-47.76.57.115"
+    type: vless
+    server: 47.76.57.115
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "swdist.apple.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: C_D4ErxrhhiImWLiFqy_E4mF5tFIqxZeKvAiwXc_Lw8
+      short-id: ""
+    network: tcp
+  - name: "Canada-47.76.57.115-kcp"
+    type: vless
+    server: 47.76.57.115
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 28990181f523513c146a456e2b1b5aa7
+      header:
+        type: none
+  - name: "USA2-82.158.91.108-kcp"
+    type: vless
+    server: 82.158.91.108
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: aeaf86e149abc024248361180784724b
+      header:
+        type: none
+  - name: "USA-8.217.214.29"
+    type: vless
+    server: 8.217.214.29
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.apple.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: VOZwu7PUA0qf0nT_ljSCZIUDkARZdC8RDmhrwnPhWic
+      short-id: ""
+    network: tcp
+  - name: "USA-8.217.214.29-kcp"
+    type: vless
+    server: 8.217.214.29
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: a827ebc2e40c49484f6819ce3f1074a4
+      header:
+        type: none
+  - name: "USA-47.243.9.190"
+    type: vless
+    server: 47.243.9.190
+    port: 443
+    uuid: 4740072728629723686
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "addons.mozilla.org"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: 2zF3KYnwnwHikCXhGC1eSDwGaB4HMaOvg41iQbEGHzo
+      short-id: ""
+    network: tcp
+  - name: "USA-47.243.9.190-kcp"
+    type: vless
+    server: 47.243.9.190
+    port: 39523
+    uuid: 4740072728629723686
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: cc681e8d3b362045d9c271bf0433f0de
+      header:
+        type: none
+
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies: [AUTO, "Australia-8.210.116.82", "Australia-8.210.116.82-kcp", "Korea-47.239.106.202", "Korea-47.239.106.202-kcp", "Malaysia-8.218.122.175", "Malaysia-8.218.122.175-kcp", "Japan-8.218.212.135", "Japan-8.218.212.135-kcp", "Tai Wan-47.86.231.65", "Tai Wan-47.86.231.65-kcp", "Singapore-47.86.82.250", "Singapore-47.86.82.250-kcp", "Hong Kong-47.242.183.157", "Hong Kong-47.242.183.157-kcp", "Hong Kong-47.76.244.128", "Hong Kong-47.76.244.128-kcp", "Hong Kong-47.86.216.117", "Hong Kong-47.86.216.117-kcp", "Hong Kong-47.86.215.69", "Hong Kong-47.86.215.69-kcp", "Hong Kong-8.218.236.95", "Hong Kong-8.218.236.95-kcp", "Hong Kong-47.83.186.40", "Hong Kong-47.83.186.40-kcp", "Hong Kong-8.218.81.72", "Hong Kong-8.218.81.72-kcp", "Indonesia-8.217.217.29", "Indonesia-8.217.217.29-kcp", "India-47.243.195.107", "India-47.243.195.107-kcp", "Austria-47.243.135.108", "Austria-47.243.135.108-kcp", "Poland-47.76.72.183", "Poland-47.76.72.183-kcp", "Germany-8.210.237.247", "Germany-8.210.237.247-kcp", "France-8.218.155.134", "France-8.218.155.134-kcp", "Netherlands-8.218.116.226", "Netherlands-8.218.116.226-kcp", "Latvia-47.243.164.36", "Latvia-47.243.164.36-kcp", "Norway-8.210.107.179", "Norway-8.210.107.179-kcp", "Sweden-8.218.47.98", "Sweden-8.218.47.98-kcp", "England-8.217.179.183", "England-8.217.179.183-kcp", "Canada-47.76.57.115", "Canada-47.76.57.115-kcp", "USA2-82.158.91.108-kcp", "USA-8.217.214.29", "USA-8.217.214.29-kcp", "USA-47.243.9.190", "USA-47.243.9.190-kcp"]
+  - name: AUTO
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    proxies: ["Australia-8.210.116.82", "Australia-8.210.116.82-kcp", "Korea-47.239.106.202", "Korea-47.239.106.202-kcp", "Malaysia-8.218.122.175", "Malaysia-8.218.122.175-kcp", "Japan-8.218.212.135", "Japan-8.218.212.135-kcp", "Tai Wan-47.86.231.65", "Tai Wan-47.86.231.65-kcp", "Singapore-47.86.82.250", "Singapore-47.86.82.250-kcp", "Hong Kong-47.242.183.157", "Hong Kong-47.242.183.157-kcp", "Hong Kong-47.76.244.128", "Hong Kong-47.76.244.128-kcp", "Hong Kong-47.86.216.117", "Hong Kong-47.86.216.117-kcp", "Hong Kong-47.86.215.69", "Hong Kong-47.86.215.69-kcp", "Hong Kong-8.218.236.95", "Hong Kong-8.218.236.95-kcp", "Hong Kong-47.83.186.40", "Hong Kong-47.83.186.40-kcp", "Hong Kong-8.218.81.72", "Hong Kong-8.218.81.72-kcp", "Indonesia-8.217.217.29", "Indonesia-8.217.217.29-kcp", "India-47.243.195.107", "India-47.243.195.107-kcp", "Austria-47.243.135.108", "Austria-47.243.135.108-kcp", "Poland-47.76.72.183", "Poland-47.76.72.183-kcp", "Germany-8.210.237.247", "Germany-8.210.237.247-kcp", "France-8.218.155.134", "France-8.218.155.134-kcp", "Netherlands-8.218.116.226", "Netherlands-8.218.116.226-kcp", "Latvia-47.243.164.36", "Latvia-47.243.164.36-kcp", "Norway-8.210.107.179", "Norway-8.210.107.179-kcp", "Sweden-8.218.47.98", "Sweden-8.218.47.98-kcp", "England-8.217.179.183", "England-8.217.179.183-kcp", "Canada-47.76.57.115", "Canada-47.76.57.115-kcp", "USA2-82.158.91.108-kcp", "USA-8.217.214.29", "USA-8.217.214.29-kcp", "USA-47.243.9.190", "USA-47.243.9.190-kcp"]
+
+rules:
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - MATCH,PROXY
