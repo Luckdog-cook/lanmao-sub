@@ -51,7 +51,26 @@ jobs:
 
       - name: 刷新 jsDelivr 缓存
         run: |
-          for f in hedgevpn_nodes.txt hedgevpn_sub_b64.txt hedgevpn_singbox.json hedgevpn_clash.yaml hedgevpn_meta.json; do
-            curl -s --max-time 20 "https://purge.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/$f" > /dev/null \
-              && echo "purged $f" || echo "purge failed $f (忽略)"
+          FILES="hedgevpn_nodes.txt hedgevpn_sub_b64.txt hedgevpn_singbox.json hedgevpn_clash.yaml hedgevpn_meta.json"
+          # jsDelivr 的 @main 是分支引用，缓存很顽固：单次 purge 往往刷不掉，
+          # 必须多轮 + 间隔，最后再校验一次。
+          for round in 1 2 3; do
+            for f in $FILES; do
+              curl -s --max-time 20 "https://purge.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/$f" > /dev/null || true
+            done
+            echo "purge round $round done"
+            sleep 8
           done
+
+          EXPECT=$(python3 -c "import json;print(json.load(open('hedgevpn_meta.json'))['updated'])")
+          for i in 1 2 3 4 5 6; do
+            GOT=$(curl -s --max-time 15 "https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/hedgevpn_meta.json" \
+                  | python3 -c "import sys,json;print(json.load(sys.stdin)['updated'])" 2>/dev/null || echo "")
+            if [ "$GOT" = "$EXPECT" ]; then
+              echo "✔ jsDelivr 已刷新: $GOT"
+              exit 0
+            fi
+            echo "缓存仍是 [$GOT]，期望 [$EXPECT]，20s 后重试"
+            sleep 20
+          done
+          echo "::warning::jsDelivr 缓存未在预期时间内刷新，GitHub Pages / raw 通道不受影响"
