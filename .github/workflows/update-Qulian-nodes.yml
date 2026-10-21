@@ -48,7 +48,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add nodes.txt qulian_nodes_base64 qulian_clash.yaml subscription_info.txt 2>/dev/null || true
+          git add qulian_nodes.txt qulian_nodes_base64 qulian_clash.yaml subscription_info.txt 2>/dev/null || true
 
           if git diff --staged --quiet; then
             echo "内容无变化，跳过提交"
