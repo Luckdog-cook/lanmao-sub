@@ -12,6 +12,8 @@ import os
 import random
 import string
 import sys
+import socket
+import ssl
 import threading
 import time
 import urllib.parse
@@ -32,13 +34,14 @@ if sys.platform == "win32":
 USE_OCR_ENGINE = None
 _DDDD_OCR_INSTANCE = None
 
+# 优先 ddddocr：对这类 5 位动图验证码准确率明显高于 tesseract
 try:
-    import pytesseract
-    USE_OCR_ENGINE = "tesseract"
+    import ddddocr
+    USE_OCR_ENGINE = "ddddocr"
 except ImportError:
     try:
-        import ddddocr
-        USE_OCR_ENGINE = "ddddocr"
+        import pytesseract
+        USE_OCR_ENGINE = "tesseract"
     except ImportError:
         pass
 
@@ -371,18 +374,22 @@ def parse_config(cfg: str):
 # ---------- 链接生成 ----------
 
 def make_vless_link(server, port, uuid, flow, sni, fp, pbk, sid, name) -> str:
-    params = {"encryption": "none", "security": "reality", "type": "tcp"}
+    # 服务端下发两种 vless：带 reality-opts（有 pbk）或普通 TLS（无 pbk）。
+    # 旧版无条件写 security=reality 且不带 pbk，会导致所有 vless 节点连不上。
+    params = {"encryption": "none", "security": "reality" if pbk else "tls", "type": "tcp"}
     if sni: params["sni"] = sni
     if fp: params["fp"] = fp
-    if pbk: params["pbk"] = pbk
-    if sid: params["sid"] = sid
+    if pbk:
+        params["pbk"] = pbk
+        if sid: params["sid"] = sid
     if flow: params["flow"] = flow
     q = urllib.parse.urlencode(params)
     return f"vless://{uuid}@{server}:{port}?{q}#{urllib.parse.quote(name)}"
 
 
 def make_trojan_link(name, host, port, password, sni) -> str:
-    q = urllib.parse.urlencode({"sni": sni or host, "security": "tls", "type": "tcp"})
+    q = urllib.parse.urlencode({"sni": sni or host, "security": "tls", "type": "tcp",
+                                "allowInsecure": "1"})
     return f"trojan://{urllib.parse.quote(password or '', safe='')}@{host}:{port}?{q}#{urllib.parse.quote(name)}"
 
 
@@ -405,7 +412,7 @@ def make_clash_proxy(d: dict, name: str) -> dict:
             "port": int(d["port"]),
             "password": d.get("password") or "",
             "udp": True,
-            "skip-cert-verify": False,
+            "skip-cert-verify": True,
         }
         if d.get("sni"):
             p["sni"] = d["sni"]
@@ -521,6 +528,23 @@ def build_clash_yaml(proxies: list) -> str:
 
 # ---------- 节点抓取 ----------
 
+def probe_node(d: dict, timeout: int = 6) -> bool:
+    """TLS 握手探测：过滤掉端口不通/服务已停的节点。
+    不校验证书（服务端证书普遍过期），只确认端点还在说 TLS。"""
+    host = d.get("host")
+    if not host:
+        return False
+    try:
+        ctx = ssl.create_default_context()
+        ctx.check_hostname = False
+        ctx.verify_mode = ssl.CERT_NONE
+        with socket.create_connection((host, int(d.get("port") or 443)), timeout=timeout) as raw:
+            with ctx.wrap_socket(raw, server_hostname=d.get("sni") or host):
+                return True
+    except Exception:
+        return False
+
+
 def fetch_one_node(nd: dict, token: str, imei: str, idx: int, total: int):
     node_id = nd.get("nodeId")
     cc = nd.get("countryCode", "XX")
@@ -563,6 +587,8 @@ def fetch_one_node(nd: dict, token: str, imei: str, idx: int, total: int):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-v", "--verbose", action="store_true")
+    parser.add_argument("--no-check", action="store_true",
+                        help="跳过节点健康检查（默认会剔除 TLS 握手失败的节点）")
     args = parser.parse_args()
     setup_logging(args.verbose)
 
@@ -615,6 +641,14 @@ def main():
     print()
     logger.info("[4/4] 成功解析 %d 个节点", len(details))
 
+    # 健康检查：剔除端口不通/服务停掉的节点（默认开启，--no-check 可关闭）
+    if details and not args.no_check:
+        with ThreadPoolExecutor(max_workers=16) as executor:
+            alive = list(executor.map(probe_node, details))
+        before = len(details)
+        details = [d for d, ok in zip(details, alive) if ok]
+        logger.info("健康检查: 可用 %d / %d（剔除 %d）", len(details), before, before - len(details))
+
     # 明文链接（使用 App 原始名称）
     links = []
     for d in details:
@@ -625,7 +659,7 @@ def main():
             elif d["kind"] == "vless":
                 links.append(make_vless_link(
                     d["host"], d["port"], d["uuid"],
-                    d.get("flow") or "xtls-rprx-vision",
+                    d.get("flow") or "",
                     d.get("sni") or d["host"],
                     d.get("fp") or "chrome",
                     d.get("pbk"), d.get("sid"), name
