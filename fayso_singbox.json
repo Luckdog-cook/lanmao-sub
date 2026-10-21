@@ -52,7 +52,7 @@
       "tag": "fayso-1",
       "server": "139.180.215.41",
       "server_port": 8443,
-      "password": "kpsojtysYB7f7uYhdcevJx8iv0Ue4JfVgPjLwm70e9I",
+      "password": "8l5gHaM8eIrP4-MV7AU3htvlITClOfp8CxRVf_Atm1I",
       "tls": {
         "enabled": true,
         "server_name": "sg.magicnodes.materialcrate.com"
@@ -63,7 +63,7 @@
       "tag": "fayso-2",
       "server": "66.42.99.41",
       "server_port": 8443,
-      "password": "fBO5bUhHJV_HQa0JmgwfmUk9c9iyRVDBUoQ2M3a4smg",
+      "password": "PuDoNH71c-OrJv-pTrAd-lvq_5m6YFowFaFMrODpBZw",
       "tls": {
         "enabled": true,
         "server_name": "us.magicnodes.hyperlink.us.com"
@@ -74,7 +74,7 @@
       "tag": "fayso-3",
       "server": "66.135.5.107",
       "server_port": 8443,
-      "password": "hfjHjc0Nddzi6EA5HdbJtifGnKEYtbRPispGgs2uhM0",
+      "password": "zge8bOwuAae6WI-7E1Uo-uFq_giuleHR3YEE-t2UcBQ",
       "tls": {
         "enabled": true,
         "server_name": "us-east.magicnodes.hyperlink.us.com"
@@ -85,7 +85,7 @@
       "tag": "fayso-4",
       "server": "207.148.101.128",
       "server_port": 8443,
-      "password": "8S4kQgY5-LqEm6qmylkUAZyR_DxDqJvbKXbaAPIyflU",
+      "password": "eBb-g3NWJuStBbzCUCEMGeuCYafsAQTBR1K-_rOENWg",
       "tls": {
         "enabled": true,
         "server_name": "jp.magicnodes.hyperlink.us.com"
@@ -96,7 +96,7 @@
       "tag": "fayso-5",
       "server": "141.164.38.89",
       "server_port": 8443,
-      "password": "IkVXVtEFOeven49K5AOH3vLDo5G7c7jdOQnt8NGVhjs",
+      "password": "jVGWoNXblGKxpCLLfYDQZd1jYFrRvkgdhy7G270gJoA",
       "tls": {
         "enabled": true,
         "server_name": "kr.magicnodes.hyperlink.us.com"
@@ -107,7 +107,7 @@
       "tag": "fayso-6",
       "server": "20.189.123.104",
       "server_port": 8443,
-      "password": "faZzpJubdN5fMRERAK1LVC4WIqatlIXKTsv_1UxujGo",
+      "password": "9sxGhxbMsBcNRprWTSveu3Cf73sVq7GhOgqCDT3m4JY",
       "tls": {
         "enabled": true,
         "server_name": "hk-test.magicnodes.hyperlink.us.com"
@@ -118,7 +118,7 @@
       "tag": "fayso-7",
       "server": "130.94.47.212",
       "server_port": 8443,
-      "password": "62ktzqfnJnrQOouZCuQgggVguJIWUCwUIG6dzC_rQzg",
+      "password": "Gan_vUfKN5jAAui8_QrAWl_sPH4Faw2zQU9HAVVT05k",
       "tls": {
         "enabled": true,
         "server_name": "ae.magicnodes.hyperlink.us.com"
@@ -129,7 +129,7 @@
       "tag": "fayso-8",
       "server": "104.238.176.45",
       "server_port": 8443,
-      "password": "9mNE8hGOQGE0EmNuZIdb9mMEvMZ5oefdHKSpT1VS3wM",
+      "password": "UYvXCmJprNsgXdFwNi8k7EZxx0iNesIYZrYP-Alwnwc",
       "tls": {
         "enabled": true,
         "server_name": "de.magicnodes.hyperlink.us.com"
