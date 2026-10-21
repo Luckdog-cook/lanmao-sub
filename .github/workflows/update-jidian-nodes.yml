@@ -2,8 +2,9 @@ name: 更新极点加速器节点
 
 on:
   schedule:
-    # 每 2 小时（UTC 偶数整点后 30 分，与飞梭任务错开）
-    - cron: "30 */2 * * *"
+    # 每 2 小时触发两次（GitHub 调度经常延迟/丢弃，双份兜底）
+    - cron: "22 */2 * * *"
+    - cron: "52 */2 * * *"
   workflow_dispatch: {}
 
 permissions:
