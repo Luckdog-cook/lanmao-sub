@@ -1,3 +1,12 @@
+> ## ⚠️ 刺猬VPN（HedgeVPN）分区：节点无法在第三方客户端使用
+>
+> 服务端在 VLESS 协议层加入了 **HedgeAuth 设备认证**（定制 xray 分支 `Xray-core-26.5.3`，
+> `proxy/vless.IsHedgeAuthEnabled` + `libxray.SetHedgeDeviceId` + 本地 XHTTP/UNIX socket 隧道，
+> 需要 device secret）。**标准客户端（Clash Meta / sing-box / Bettbox / v2rayN / 原版 xray）
+> 无法通过认证，连接必然超时**，与配置无关。
+>
+> 下面的脚本与订阅文件仅作协议研究留存，**实际不可连接**。定时任务已停用。
+
 # 星链 VPN 订阅自动更新
 
 自动从星连 VPN API 实时抓取最新国内 + 国际节点，生成三种格式的配置文件，并通过 GitHub Actions 定时更新。
