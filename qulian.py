@@ -73,7 +73,7 @@ MAX_NODES = 80
 CAPTCHA_MAX_RETRIES = 10
 
 OUT_DIR = Path(os.getenv("OUT_DIR", Path.cwd()))
-NODES_FILE = OUT_DIR / "nodes.txt"
+NODES_FILE = OUT_DIR / "qulian_nodes.txt"
 SUB64_FILE = OUT_DIR / "qulian_nodes_base64"
 CLASH_FILE = OUT_DIR / "qulian_clash.yaml"
 INFO_FILE = OUT_DIR / "subscription_info.txt"
