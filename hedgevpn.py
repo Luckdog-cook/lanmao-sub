@@ -271,6 +271,7 @@ def parse_vless(u: str) -> Optional[Dict[str, Any]]:
 # ---------------------------------------------------------------- 输出格式
 
 def to_singbox(nodes: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """生成 sing-box 配置：tun + 详细分流（Bettbox / SFI 可直接导入）"""
     outs = []
     for n in nodes:
         ob = {
@@ -305,37 +306,124 @@ def to_singbox(nodes: List[Dict[str, Any]]) -> Dict[str, Any]:
         outs.append(ob)
 
     tags = [o["tag"] for o in outs]
-    outs.append({"type": "selector", "tag": "PROXY", "outbounds": ["AUTO"] + tags, "default": "AUTO"})
-    outs.append({"type": "urltest", "tag": "AUTO", "outbounds": tags,
-                 "url": "https://www.gstatic.com/generate_204", "interval": "3m",
-                 "tolerance": 50})
-    outs.append({"type": "direct", "tag": "DIRECT"})
+    all_sel = ["PROXY", "AUTO"] + tags
+
+    outs += [
+        {"type": "selector", "tag": "PROXY", "outbounds": ["AUTO"] + tags, "default": "AUTO"},
+        {"type": "urltest", "tag": "AUTO", "outbounds": tags,
+         "url": "https://www.gstatic.com/generate_204", "interval": "3m", "tolerance": 50},
+        {"type": "selector", "tag": "STREAMING", "outbounds": ["PROXY", "AUTO"] + tags,
+         "default": "PROXY"},
+        {"type": "selector", "tag": "AI", "outbounds": ["PROXY", "AUTO"] + tags, "default": "PROXY"},
+        {"type": "selector", "tag": "TELEGRAM", "outbounds": ["PROXY", "AUTO"] + tags,
+         "default": "PROXY"},
+        {"type": "selector", "tag": "GAME", "outbounds": ["DIRECT", "PROXY"] + tags,
+         "default": "DIRECT"},
+        {"type": "direct", "tag": "DIRECT"},
+        {"type": "block", "tag": "REJECT"},
+        {"type": "dns", "tag": "dns-out"},
+    ]
+
+    # ---- 规则集（jsDelivr 镜像，国内可直连）----
+    def rs(kind: str, name: str, tag: str) -> Dict[str, Any]:
+        return {
+            "type": "remote", "tag": tag, "format": "binary",
+            "url": f"https://cdn.jsdelivr.net/gh/SagerNet/sing-{kind}@rule-set/{name}.srs",
+            "download_detour": "PROXY", "update_interval": "1d",
+        }
+
+    rule_sets = [
+        rs("geosite", "geosite-category-ads-all", "ads"),
+        rs("geosite", "geosite-cn", "cn-domain"),
+        rs("geosite", "geosite-geolocation-cn", "cn-domain-2"),
+        rs("geosite", "geosite-geolocation-!cn", "global-domain"),
+        rs("geoip", "geoip-cn", "cn-ip"),
+        rs("geosite", "geosite-apple", "apple"),
+        rs("geosite", "geosite-microsoft", "microsoft"),
+        rs("geosite", "geosite-google", "google"),
+        rs("geosite", "geosite-youtube", "youtube"),
+        rs("geosite", "geosite-netflix", "netflix"),
+        rs("geosite", "geosite-disney", "disney"),
+        rs("geosite", "geosite-hbo", "hbo"),
+        rs("geosite", "geosite-primevideo", "primevideo"),
+        rs("geosite", "geosite-spotify", "spotify"),
+        rs("geosite", "geosite-tiktok", "tiktok"),
+        rs("geosite", "geosite-openai", "openai"),
+        rs("geosite", "geosite-anthropic", "anthropic"),
+        rs("geosite", "geosite-google-gemini", "gemini"),
+        rs("geosite", "geosite-telegram", "telegram-domain"),
+        rs("geosite", "geosite-category-games", "games"),
+    ]
+
+    route_rules = [
+        # DNS 流量交给内部 dns 出站
+        {"protocol": "dns", "outbound": "dns-out"},
+        # 私有 / 局域网 / 链路本地
+        {"ip_is_private": True, "outbound": "DIRECT"},
+        # 广告与跟踪
+        {"rule_set": "ads", "outbound": "REJECT"},
+        # 本地服务（国内常见 App 推送、NTP 等）
+        {"port": [123], "outbound": "DIRECT"},
+        # 国内域名 / IP 直连
+        {"rule_set": ["cn-domain", "cn-domain-2"], "outbound": "DIRECT"},
+        {"rule_set": "cn-ip", "outbound": "DIRECT"},
+        # 苹果 / 微软国内 CDN 直连（速度更好）
+        {"rule_set": "apple", "outbound": "DIRECT"},
+        {"rule_set": "microsoft", "outbound": "DIRECT"},
+        # 流媒体
+        {"rule_set": ["netflix", "disney", "hbo", "primevideo", "spotify", "tiktok"],
+         "outbound": "STREAMING"},
+        {"rule_set": "youtube", "outbound": "STREAMING"},
+        # AI 服务
+        {"rule_set": ["openai", "anthropic", "gemini"], "outbound": "AI"},
+        # Telegram 走独立出口（UDP 需代理）
+        {"rule_set": "telegram-domain", "outbound": "TELEGRAM"},
+        # 游戏平台
+        {"rule_set": "games", "outbound": "GAME"},
+        # 其余境外域名
+        {"rule_set": "google", "outbound": "PROXY"},
+        {"rule_set": "global-domain", "outbound": "PROXY"},
+    ]
 
     return {
         "log": {"level": "warn", "timestamp": True},
         "dns": {
             "servers": [
-                {"tag": "remote", "type": "https", "server": "1.1.1.1", "server_port": 443,
-                 "path": "/dns-query", "detour": "PROXY"},
-                {"tag": "local", "type": "local"},
+                {"tag": "dns-cn", "type": "udp", "server": "223.5.5.5"},
+                {"tag": "dns-cn2", "type": "udp", "server": "119.29.29.29"},
+                {"tag": "dns-remote", "type": "https", "server": "1.1.1.1",
+                 "server_port": 443, "path": "/dns-query", "detour": "PROXY"},
             ],
-            "rules": [{"ip_is_private": True, "server": "local"}],
-            "final": "remote",
-            "strategy": "ipv4_only",
+            "rules": [
+                {"rule_set": "ads", "action": "reject"},
+                {"rule_set": ["cn-domain", "cn-domain-2"], "server": "dns-cn"},
+                {"rule_set": "cn-ip", "server": "dns-cn"},
+                {"rule_set": ["netflix", "disney", "hbo", "primevideo", "youtube"],
+                 "server": "dns-remote"},
+                {"rule_set": ["openai", "anthropic", "gemini", "telegram-domain"],
+                 "server": "dns-remote"},
+            ],
+            "final": "dns-remote",
+            "strategy": "prefer_ipv4",
+            "disable_cache": False,
         },
         "inbounds": [
             {"type": "tun", "tag": "tun-in", "address": ["172.19.0.1/30"], "mtu": 9000,
-             "auto_route": True, "strict_route": True, "stack": "mixed"},
-            {"type": "mixed", "tag": "mixed-in", "listen": "127.0.0.1", "listen_port": 2080},
+             "auto_route": True, "strict_route": True, "stack": "mixed",
+             "sniff": True, "sniff_override_destination": False},
+            {"type": "mixed", "tag": "mixed-in", "listen": "127.0.0.1", "listen_port": 2080,
+             "sniff": True},
         ],
         "outbounds": outs,
         "route": {
-            "rules": [
-                {"protocol": "dns", "outbound": "dns-out"},
-                {"ip_is_private": True, "outbound": "DIRECT"},
-            ],
+            "rules": route_rules,
+            "rule_set": rule_sets,
             "final": "PROXY",
             "auto_detect_interface": True,
+        },
+        "experimental": {
+            "cache_file": {"enabled": True},
+            "clash_api": {"external_controller": "127.0.0.1:9090"},
         },
     }
 
