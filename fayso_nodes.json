@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-21T08:28:59Z",
-  "count": 5,
+  "updated": "2026-10-21T11:39:44Z",
+  "count": 8,
   "nodes": [
     {
       "name": "🇸🇬新加坡",
@@ -16,7 +16,7 @@
       ]
     },
     {
-      "name": "🇺🇸美国",
+      "name": "🇺🇸美国 1",
       "value": "us-west",
       "protocol": "hysteria2",
       "server": "66.42.99.41",
@@ -25,6 +25,19 @@
       "capacity": "available",
       "probe": [
         "66.42.99.41",
+        8443
+      ]
+    },
+    {
+      "name": "🇺🇸美国 2",
+      "value": "us-east",
+      "protocol": "hysteria2",
+      "server": "66.135.5.107",
+      "port": 8443,
+      "sni": "us-east.magicnodes.hyperlink.us.com",
+      "capacity": "available",
+      "probe": [
+        "66.135.5.107",
         8443
       ]
     },
@@ -38,6 +51,19 @@
       "capacity": "available",
       "probe": [
         "207.148.101.128",
+        8443
+      ]
+    },
+    {
+      "name": "🇰🇷韩国",
+      "value": "south-korea",
+      "protocol": "hysteria2",
+      "server": "158.247.249.174",
+      "port": 8443,
+      "sni": "kr.magicnodes.hyperlink.us.com",
+      "capacity": "available",
+      "probe": [
+        "158.247.249.174",
         8443
       ]
     },
@@ -64,6 +90,19 @@
       "capacity": "available",
       "probe": [
         "130.94.47.212",
+        8443
+      ]
+    },
+    {
+      "name": "🇩🇪德国",
+      "value": "germany",
+      "protocol": "hysteria2",
+      "server": "104.238.176.45",
+      "port": 8443,
+      "sni": "de.magicnodes.hyperlink.us.com",
+      "capacity": "available",
+      "probe": [
+        "104.238.176.45",
         8443
       ]
     }

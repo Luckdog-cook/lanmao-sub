@@ -52,7 +52,7 @@
       "tag": "fayso-1",
       "server": "139.180.215.41",
       "server_port": 8443,
-      "password": "oqIunPNSyA0zQLSa1T9ztQvIbqBrnZDR2ERlejnpwWM",
+      "password": "bUzZxE0LIHkSyAwVAKU7yMxTYiCx2KyGpucvPebeOnQ",
       "tls": {
         "enabled": true,
         "server_name": "sg.magicnodes.materialcrate.com"
@@ -63,7 +63,7 @@
       "tag": "fayso-2",
       "server": "66.42.99.41",
       "server_port": 8443,
-      "password": "FPKniPjpnEAotiat84P21DDa2YkCCpkJz_9AS-isCPM",
+      "password": "3n3fBGuPlE4IBCLzW7vUlkInfnL2vSZ4tn_3razhRPQ",
       "tls": {
         "enabled": true,
         "server_name": "us.magicnodes.hyperlink.us.com"
@@ -72,9 +72,20 @@
     {
       "type": "hysteria2",
       "tag": "fayso-3",
+      "server": "66.135.5.107",
+      "server_port": 8443,
+      "password": "q-a1Ij3WfZabP0kx8k2f3qiIrhhHKeQoT34aDzynhXo",
+      "tls": {
+        "enabled": true,
+        "server_name": "us-east.magicnodes.hyperlink.us.com"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "fayso-4",
       "server": "207.148.101.128",
       "server_port": 8443,
-      "password": "GNvfgZUBP2wTtK5gdyhAaMkZioCH-F3KQiaw9-qokQA",
+      "password": "v6Gwm425Rkh0b3K2pZ6ev1-8K8gwRekar7JeYXyQrpk",
       "tls": {
         "enabled": true,
         "server_name": "jp.magicnodes.hyperlink.us.com"
@@ -82,10 +93,21 @@
     },
     {
       "type": "hysteria2",
-      "tag": "fayso-4",
+      "tag": "fayso-5",
+      "server": "158.247.249.174",
+      "server_port": 8443,
+      "password": "ix4Ghsiaxdat_Hv0ZdyCLtPydg5RascGTAyVHdq3RcI",
+      "tls": {
+        "enabled": true,
+        "server_name": "kr.magicnodes.hyperlink.us.com"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "fayso-6",
       "server": "20.189.123.104",
       "server_port": 8443,
-      "password": "Hr2zdYcLL3IFKD95wCEWw79USk6zNttRC4gWh4WTMeo",
+      "password": "bVL-V6kD14hsBFBmwpACm50Na07-mITMfuyW9l6O_OY",
       "tls": {
         "enabled": true,
         "server_name": "hk-test.magicnodes.hyperlink.us.com"
@@ -93,13 +115,24 @@
     },
     {
       "type": "hysteria2",
-      "tag": "fayso-5",
+      "tag": "fayso-7",
       "server": "130.94.47.212",
       "server_port": 8443,
-      "password": "5FePPORwDgfmQwKgkfDz41QCGfbyis2EM6MEtLDnf-Y",
+      "password": "Wm8p448C4MX4rNgoNRgoOeE8_zlZi_5aTnO2Gd-KyGI",
       "tls": {
         "enabled": true,
         "server_name": "ae.magicnodes.hyperlink.us.com"
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "fayso-8",
+      "server": "104.238.176.45",
+      "server_port": 8443,
+      "password": "Ca5Vx7nYeWpYnYfB0JVZwRXqK_wrnqV_n6oOW4KA_Eo",
+      "tls": {
+        "enabled": true,
+        "server_name": "de.magicnodes.hyperlink.us.com"
       }
     },
     {
@@ -111,6 +144,9 @@
         "fayso-3",
         "fayso-4",
         "fayso-5",
+        "fayso-6",
+        "fayso-7",
+        "fayso-8",
         "direct"
       ]
     },
