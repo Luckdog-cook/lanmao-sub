@@ -2,8 +2,10 @@ name: 更新刺猬VPN节点
 
 on:
   schedule:
-    # 试用期 60 分钟，每 40 分钟重新注册一次，留 20 分钟余量
-    - cron: "*/40 * * * *"
+    # 试用期 60 分钟，每 30 分钟重新注册一次，留 30 分钟重叠量。
+    # 注意：不能用 */40 —— GitHub 的调度器对不能整除 60 的 */N 会直接不触发，
+    # 必须显式列举分钟；错开整点（0 分是全网最拥堵时刻）用 5 分和 35 分。
+    - cron: "5,35 * * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -16,6 +18,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
 
