@@ -318,3 +318,26 @@ https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/hedgevpn_clash.yaml
 **geodata**：自动从 jsDelivr 下载 `geosite.dat` / `geoip.dat` / `country.mmdb`，24 小时自动更新。
 
 **节点**：55 条（27 个 Reality-TCP + 28 个 mKCP），按地区命名（`Hong Kong-1.2.3.4`）。
+
+### ⚠️ 订阅地址选择（重要）
+
+jsDelivr 对 `@main` 这类**分支引用**的缓存极难刷新（官方策略最长 12 小时，purge 只清部分边缘节点，
+实测会出现不同请求返回不同版本）。节点 UUID 每 30 分钟轮换，所以**不要用 jsDelivr 做订阅源**。
+
+| 通道 | 地址 | 更新时效 | 建议 |
+|------|------|---------|------|
+| **GitHub Pages** | `https://luckdog-cook.github.io/lanmao-sub/hedgevpn_clash.yaml` | 提交后 1–2 分钟 | ✅ 首选 |
+| raw | `https://raw.githubusercontent.com/Luckdog-cook/lanmao-sub/main/hedgevpn_clash.yaml` | 实时 | ✅ 备用 |
+| jsDelivr | `https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/hedgevpn_clash.yaml` | 数十分钟~数小时 | ⚠️ 仅应急 |
+
+完整路径（把文件名替换即可）：
+
+```
+hedgevpn_clash.yaml       Clash Meta 配置
+hedgevpn_sub_b64.txt      Base64 订阅
+hedgevpn_nodes.txt        明文链接
+hedgevpn_singbox.json     sing-box 配置
+hedgevpn_meta.json        当前账号与更新时间（可用于自查是否更新）
+```
+
+**自查方法**：拉 `hedgevpn_meta.json`，看 `updated` 是否是最近 30 分钟内。
