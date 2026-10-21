@@ -1,0 +1,1155 @@
+{
+  "log": {
+    "level": "warn",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "remote",
+        "type": "https",
+        "server": "1.1.1.1",
+        "server_port": 443,
+        "path": "/dns-query",
+        "detour": "PROXY"
+      },
+      {
+        "tag": "local",
+        "type": "local"
+      }
+    ],
+    "rules": [
+      {
+        "ip_is_private": true,
+        "server": "local"
+      }
+    ],
+    "final": "remote",
+    "strategy": "ipv4_only"
+  },
+  "inbounds": [
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "address": [
+        "172.19.0.1/30"
+      ],
+      "mtu": 9000,
+      "auto_route": true,
+      "strict_route": true,
+      "stack": "mixed"
+    },
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "127.0.0.1",
+      "listen_port": 2080
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "vless",
+      "tag": "Australia-8.210.116.82",
+      "server": "8.210.116.82",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "aws.amazon.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "nZmjWZ-B7bqBfLEciFv8jsj1vSabkdXbgEQZYINS0yY",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Australia-8.210.116.82-kcp",
+      "server": "8.210.116.82",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "011b9fcc443d55ee58f9086eb9924ca0",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Korea-47.239.106.202",
+      "server": "47.239.106.202",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.samsung.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "fDjbbgiH1aQ1RVnEymxWjzlmSxgb343L7MhAYH9xvQ4",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Korea-47.239.106.202-kcp",
+      "server": "47.239.106.202",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "45296ba457d26b92b45c1714991d1535",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Malaysia-8.218.122.175",
+      "server": "8.218.122.175",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.cisco.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "UnOMxSW0yimhjZGLRuz9f11I6ryyJ8LYMmrZ94k8YVw",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Malaysia-8.218.122.175-kcp",
+      "server": "8.218.122.175",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "0365b98e19dc50f04314455f809dc906",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Japan-8.218.212.135",
+      "server": "8.218.212.135",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.python.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "iPAOwmhhJZZvPBNp3R0b8s6X_ll1SSlzQweJYSbT8iI",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Japan-8.218.212.135-kcp",
+      "server": "8.218.212.135",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "83762935bfa83459bbc8158d7230d852",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Tai Wan-47.86.231.65",
+      "server": "47.86.231.65",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "itunes.apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "rz72eccFL6gKhumpTtwCaZKKj0fVtO7rJ9S2Q11-sjY",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Tai Wan-47.86.231.65-kcp",
+      "server": "47.86.231.65",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "77cad78afced89e6cd0e3933a1ef2a7e",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Singapore-47.86.82.250",
+      "server": "47.86.82.250",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.iqiyi.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "v8PYBLebXdkSE_StlbFWZg2tgI8QV7HmApgeTT2ypUs",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Singapore-47.86.82.250-kcp",
+      "server": "47.86.82.250",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "4de735696379de3b5c2ad90a44d0e636",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Hong Kong-47.242.183.157",
+      "server": "47.242.183.157",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.cisco.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "cDbHhMVtWqRkDR0CMUKm-zQDtgJKS7M6Es-vlHmvARE",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Hong Kong-47.242.183.157-kcp",
+      "server": "47.242.183.157",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "422fe788fae17b8eb05b387d9c6e4ed4",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Hong Kong-47.76.244.128",
+      "server": "47.76.244.128",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.iqiyi.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "Nd47esvqEk7yJd0oHdiCI6x1IW4KpEoTjSxR8Sq56RA",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Hong Kong-47.76.244.128-kcp",
+      "server": "47.76.244.128",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "48f0db2b562c63e0f673a784c6476508",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Hong Kong-47.86.216.117",
+      "server": "47.86.216.117",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amazon.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "3liREIK7VH_8KG6UQdlZD6ybX1MdEmCNrKp9UI7IXGU",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Hong Kong-47.86.216.117-kcp",
+      "server": "47.86.216.117",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "6338bffcd495772bc67aabc583d956c4",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Hong Kong-47.86.215.69",
+      "server": "47.86.215.69",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.iqiyi.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "sbRE_ZiYPGFOWZ0_Fu5aGGtj9aHT3odyBo4pTr4Oi2Q",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Hong Kong-47.86.215.69-kcp",
+      "server": "47.86.215.69",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "4ee0ff9341f9b4bee2b1bf658a594d9a",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Hong Kong-8.218.236.95",
+      "server": "8.218.236.95",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "gateway.icloud.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "TPeyBhmV6X1hNw00ok58jvPo6HUotRZxo8UO94NCgzA",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Hong Kong-8.218.236.95-kcp",
+      "server": "8.218.236.95",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "64b00c41783f8a04ee86b1bb98debf11",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Hong Kong-47.83.186.40",
+      "server": "47.83.186.40",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.iqiyi.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ISj8Hrxy2_MX8J-rBUor3RgsvfP7tddSwM3uzjjg1lc",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Hong Kong-47.83.186.40-kcp",
+      "server": "47.83.186.40",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "f93c01659ebae0110e730b43baaa519a",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Hong Kong-8.218.81.72",
+      "server": "8.218.81.72",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amd.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "G2knnGrUpndLRiTG__EU-iPONW938Y-1PfQ7RK5Wmws",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Hong Kong-8.218.81.72-kcp",
+      "server": "8.218.81.72",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "963f4c27b3b9b3b57ea3a2db27f705b7",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Indonesia-8.217.217.29",
+      "server": "8.217.217.29",
+      "server_port": 8443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amazon.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "m9X6rtzxoEXNlwGk9YAf9TCy66rDQ0EkmMKIQAeehVQ",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Indonesia-8.217.217.29-kcp",
+      "server": "8.217.217.29",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "0ea4a7c7fd154b21f6b39e9f9e2d43dd",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "India-47.243.195.107",
+      "server": "47.243.195.107",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.iqiyi.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ja946rzJULKnKSaVZUBgbMyEzh5A7GvXmY7y-zlKo0Y",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "India-47.243.195.107-kcp",
+      "server": "47.243.195.107",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "66a228875f417c4d196cc93fc8b5a07b",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Austria-47.243.135.108",
+      "server": "47.243.135.108",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amd.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "1iM2K5HxfMntQFMY0I0blx2PE1bYbymYpcLACUhZjA8",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Austria-47.243.135.108-kcp",
+      "server": "47.243.135.108",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "139bc448426ea5db1a57594a095f37b8",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Poland-47.76.72.183",
+      "server": "47.76.72.183",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "itunes.apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ZLrsBcct1cGhrMF8YB0u6t_DdWKsRObh28e6jMmaXkE",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Poland-47.76.72.183-kcp",
+      "server": "47.76.72.183",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "d46da17c4c1ecccb5bd6b84c9e50c48b",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Germany-8.210.237.247",
+      "server": "8.210.237.247",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.amd.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "MkwfQ2dXXePfnfs3ZfF5kTZzSvKyVzC-GqTHJlG5ZSc",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Germany-8.210.237.247-kcp",
+      "server": "8.210.237.247",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "462ce326c17709dfd5ec9c1efafc9a66",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "France-8.218.155.134",
+      "server": "8.218.155.134",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "dl.google.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "F-y1K4w1DZeOZ6iiiuCxqsOz_8Hc8_mpx-moI3qL-zE",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "France-8.218.155.134-kcp",
+      "server": "8.218.155.134",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "0e29c4562f066abe99449619cbef24da",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Netherlands-8.218.116.226",
+      "server": "8.218.116.226",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "22TEa323n_10tUF75lvWv_8YsMDp6UWsi8e7vXxslSU",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Netherlands-8.218.116.226-kcp",
+      "server": "8.218.116.226",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "1cdbad5cc2f26559b6c9aee145f91582",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Latvia-47.243.164.36",
+      "server": "47.243.164.36",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.icloud.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "nhvDtJUeFo6iolAyR8Od5OUfPnczGleF8V9fuP8YDmo",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Latvia-47.243.164.36-kcp",
+      "server": "47.243.164.36",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "8641029e00589e928b9061388114ad8f",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Norway-8.210.107.179",
+      "server": "8.210.107.179",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.nvidia.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "sp4T5f-SDzlQy6SIymKXiBuSCngL4Hou9BqRj1diFz8",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Norway-8.210.107.179-kcp",
+      "server": "8.210.107.179",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "9558714bbc734824c0c5f708ab0218a3",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Sweden-8.218.47.98",
+      "server": "8.218.47.98",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.cisco.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "HsO3lz1CkGS96pkl6ImNGuy6edEuL4-PxHmd5eo3NQE",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Sweden-8.218.47.98-kcp",
+      "server": "8.218.47.98",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "7d830d1454578197ea6b4d5a72c8b380",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "England-8.217.179.183",
+      "server": "8.217.179.183",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.douyin.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "te2Fe7FxDFrnPwXZ5dD0p_TRVa2i46S7nxDufbK9n0k",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "England-8.217.179.183-kcp",
+      "server": "8.217.179.183",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "e5cac33d57d7c9a6eefbd93188dd284b",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Canada-47.76.57.115",
+      "server": "47.76.57.115",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "swdist.apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "C_D4ErxrhhiImWLiFqy_E4mF5tFIqxZeKvAiwXc_Lw8",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "Canada-47.76.57.115-kcp",
+      "server": "47.76.57.115",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "28990181f523513c146a456e2b1b5aa7",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "USA2-82.158.91.108-kcp",
+      "server": "82.158.91.108",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "aeaf86e149abc024248361180784724b",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "USA-8.217.214.29",
+      "server": "8.217.214.29",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "VOZwu7PUA0qf0nT_ljSCZIUDkARZdC8RDmhrwnPhWic",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "USA-8.217.214.29-kcp",
+      "server": "8.217.214.29",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "a827ebc2e40c49484f6819ce3f1074a4",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "USA-47.243.9.190",
+      "server": "47.243.9.190",
+      "server_port": 443,
+      "uuid": "4740072728629723686",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "addons.mozilla.org",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "2zF3KYnwnwHikCXhGC1eSDwGaB4HMaOvg41iQbEGHzo",
+          "short_id": ""
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "USA-47.243.9.190-kcp",
+      "server": "47.243.9.190",
+      "server_port": 39523,
+      "uuid": "4740072728629723686",
+      "transport": {
+        "type": "kcp",
+        "seed": "cc681e8d3b362045d9c271bf0433f0de",
+        "header": {
+          "type": "none"
+        }
+      }
+    },
+    {
+      "type": "selector",
+      "tag": "PROXY",
+      "outbounds": [
+        "AUTO",
+        "Australia-8.210.116.82",
+        "Australia-8.210.116.82-kcp",
+        "Korea-47.239.106.202",
+        "Korea-47.239.106.202-kcp",
+        "Malaysia-8.218.122.175",
+        "Malaysia-8.218.122.175-kcp",
+        "Japan-8.218.212.135",
+        "Japan-8.218.212.135-kcp",
+        "Tai Wan-47.86.231.65",
+        "Tai Wan-47.86.231.65-kcp",
+        "Singapore-47.86.82.250",
+        "Singapore-47.86.82.250-kcp",
+        "Hong Kong-47.242.183.157",
+        "Hong Kong-47.242.183.157-kcp",
+        "Hong Kong-47.76.244.128",
+        "Hong Kong-47.76.244.128-kcp",
+        "Hong Kong-47.86.216.117",
+        "Hong Kong-47.86.216.117-kcp",
+        "Hong Kong-47.86.215.69",
+        "Hong Kong-47.86.215.69-kcp",
+        "Hong Kong-8.218.236.95",
+        "Hong Kong-8.218.236.95-kcp",
+        "Hong Kong-47.83.186.40",
+        "Hong Kong-47.83.186.40-kcp",
+        "Hong Kong-8.218.81.72",
+        "Hong Kong-8.218.81.72-kcp",
+        "Indonesia-8.217.217.29",
+        "Indonesia-8.217.217.29-kcp",
+        "India-47.243.195.107",
+        "India-47.243.195.107-kcp",
+        "Austria-47.243.135.108",
+        "Austria-47.243.135.108-kcp",
+        "Poland-47.76.72.183",
+        "Poland-47.76.72.183-kcp",
+        "Germany-8.210.237.247",
+        "Germany-8.210.237.247-kcp",
+        "France-8.218.155.134",
+        "France-8.218.155.134-kcp",
+        "Netherlands-8.218.116.226",
+        "Netherlands-8.218.116.226-kcp",
+        "Latvia-47.243.164.36",
+        "Latvia-47.243.164.36-kcp",
+        "Norway-8.210.107.179",
+        "Norway-8.210.107.179-kcp",
+        "Sweden-8.218.47.98",
+        "Sweden-8.218.47.98-kcp",
+        "England-8.217.179.183",
+        "England-8.217.179.183-kcp",
+        "Canada-47.76.57.115",
+        "Canada-47.76.57.115-kcp",
+        "USA2-82.158.91.108-kcp",
+        "USA-8.217.214.29",
+        "USA-8.217.214.29-kcp",
+        "USA-47.243.9.190",
+        "USA-47.243.9.190-kcp"
+      ],
+      "default": "AUTO"
+    },
+    {
+      "type": "urltest",
+      "tag": "AUTO",
+      "outbounds": [
+        "Australia-8.210.116.82",
+        "Australia-8.210.116.82-kcp",
+        "Korea-47.239.106.202",
+        "Korea-47.239.106.202-kcp",
+        "Malaysia-8.218.122.175",
+        "Malaysia-8.218.122.175-kcp",
+        "Japan-8.218.212.135",
+        "Japan-8.218.212.135-kcp",
+        "Tai Wan-47.86.231.65",
+        "Tai Wan-47.86.231.65-kcp",
+        "Singapore-47.86.82.250",
+        "Singapore-47.86.82.250-kcp",
+        "Hong Kong-47.242.183.157",
+        "Hong Kong-47.242.183.157-kcp",
+        "Hong Kong-47.76.244.128",
+        "Hong Kong-47.76.244.128-kcp",
+        "Hong Kong-47.86.216.117",
+        "Hong Kong-47.86.216.117-kcp",
+        "Hong Kong-47.86.215.69",
+        "Hong Kong-47.86.215.69-kcp",
+        "Hong Kong-8.218.236.95",
+        "Hong Kong-8.218.236.95-kcp",
+        "Hong Kong-47.83.186.40",
+        "Hong Kong-47.83.186.40-kcp",
+        "Hong Kong-8.218.81.72",
+        "Hong Kong-8.218.81.72-kcp",
+        "Indonesia-8.217.217.29",
+        "Indonesia-8.217.217.29-kcp",
+        "India-47.243.195.107",
+        "India-47.243.195.107-kcp",
+        "Austria-47.243.135.108",
+        "Austria-47.243.135.108-kcp",
+        "Poland-47.76.72.183",
+        "Poland-47.76.72.183-kcp",
+        "Germany-8.210.237.247",
+        "Germany-8.210.237.247-kcp",
+        "France-8.218.155.134",
+        "France-8.218.155.134-kcp",
+        "Netherlands-8.218.116.226",
+        "Netherlands-8.218.116.226-kcp",
+        "Latvia-47.243.164.36",
+        "Latvia-47.243.164.36-kcp",
+        "Norway-8.210.107.179",
+        "Norway-8.210.107.179-kcp",
+        "Sweden-8.218.47.98",
+        "Sweden-8.218.47.98-kcp",
+        "England-8.217.179.183",
+        "England-8.217.179.183-kcp",
+        "Canada-47.76.57.115",
+        "Canada-47.76.57.115-kcp",
+        "USA2-82.158.91.108-kcp",
+        "USA-8.217.214.29",
+        "USA-8.217.214.29-kcp",
+        "USA-47.243.9.190",
+        "USA-47.243.9.190-kcp"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "3m",
+      "tolerance": 50
+    },
+    {
+      "type": "direct",
+      "tag": "DIRECT"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "protocol": "dns",
+        "outbound": "dns-out"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "DIRECT"
+      }
+    ],
+    "final": "PROXY",
+    "auto_detect_interface": true
+  }
+}
