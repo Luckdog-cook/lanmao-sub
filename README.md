@@ -165,10 +165,11 @@ A: 直接修改脚本末尾的保存逻辑，或通过环境变量控制输出�
 订阅地址（国内可访问）：
 
 ```
-Bettbox / Clash : https://gcore.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_clash.yaml
-sing-box        : https://gcore.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_singbox.json
-通用链接        : https://gcore.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_sub.txt
-base64 订阅     : https://gcore.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_sub_b64.txt
+Bettbox / Clash : https://fastly.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_clash.yaml
+sing-box        : https://fastly.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_singbox.json
+通用链接        : https://fastly.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_sub.txt
+base64 订阅     : https://fastly.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/fayso_sub_b64.txt
+GitHub Pages    : https://luckdog-cook.github.io/lanmao-sub/fayso_clash.yaml
 ```
 
 > jsDelivr 对分支引用有 12 小时 CDN 缓存（`s-maxage=43200`），工作流每次更新后会调用
