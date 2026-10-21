@@ -225,3 +225,47 @@ https://luckdog-cook.github.io/lanmao-sub/hedgevpn_clash.yaml
 - 试用期内 `vipLevel` 仍为 0，判据是 `vipExpireAt > now`
 - 想用固定账号：仓库 Secrets 里配 `HEDGE_ACCOUNT` / `HEDGE_PASSWORD`
 - 节点 UUID 随账号轮换，**订阅每 40 分钟自动更新，客户端设为定时更新即可**
+
+### sing-box 分流规则（Bettbox）
+
+导入 `hedgevpn_singbox.json` 后内置以下分流，无需手动配置：
+
+**策略组**
+
+| 组名 | 类型 | 用途 |
+|------|------|------|
+| `PROXY` | selector | 总出口，默认跟随 AUTO |
+| `AUTO` | urltest | 自动测速择优（3 分钟一次，容差 50ms） |
+| `STREAMING` | selector | Netflix / Disney / HBO / PrimeVideo / Spotify / TikTok / YouTube |
+| `AI` | selector | OpenAI / Anthropic / Gemini |
+| `TELEGRAM` | selector | Telegram 专用出口 |
+| `GAME` | selector | 游戏平台，默认直连 |
+
+**分流顺序（15 条规则）**
+
+1. `protocol=dns` → 内部 dns 出站
+2. `ip_is_private` → DIRECT（局域网/私有地址）
+3. `geosite-category-ads-all` → REJECT（广告拦截）
+4. 端口 123（NTP）→ DIRECT
+5. `geosite-cn` + `geosite-geolocation-cn` → DIRECT
+6. `geoip-cn` → DIRECT
+7. `geosite-apple` → DIRECT（国内 CDN 更快）
+8. `geosite-microsoft` → DIRECT
+9. Netflix / Disney / HBO / PrimeVideo / Spotify / TikTok → STREAMING
+10. `geosite-youtube` → STREAMING
+11. OpenAI / Anthropic / Gemini → AI
+12. `geosite-telegram` → TELEGRAM
+13. `geosite-category-games` → GAME
+14. `geosite-google` → PROXY
+15. `geosite-geolocation-!cn` → PROXY
+16. 兜底 → PROXY
+
+**DNS 分流**
+
+- 国内域名/IP → `223.5.5.5`（UDP）
+- 流媒体 / AI / Telegram → `https://1.1.1.1/dns-query`（走代理 DoH）
+- 广告域名 → 直接 reject
+- 其余 → 远程 DoH
+
+规则集全部走 jsDelivr 镜像（`SagerNet/sing-geosite`、`sing-geoip` 的 `.srs` 二进制格式），
+国内可直连，20 个规则集均实测可下载；本地有 `cache_file` 缓存，规则集每天更新一次。
