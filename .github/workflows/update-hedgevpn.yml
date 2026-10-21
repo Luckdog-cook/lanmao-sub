@@ -1,0 +1,54 @@
+name: 更新刺猬VPN节点
+
+on:
+  schedule:
+    # 试用期 60 分钟，每 40 分钟重新注册一次，留 20 分钟余量
+    - cron: "*/40 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: hedgevpn-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install --quiet pycryptodome pyyaml
+
+      - name: 抓取节点（自动注册试用号）
+        env:
+          # 可选：留空则每次自动注册新号（60 分钟全地区试用）
+          HEDGE_ACCOUNT: ${{ secrets.HEDGE_ACCOUNT }}
+          HEDGE_PASSWORD: ${{ secrets.HEDGE_PASSWORD }}
+          OUT_DIR: .
+        run: python hedgevpn.py
+
+      - name: 提交更新
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add hedgevpn_nodes.txt hedgevpn_sub_b64.txt hedgevpn_singbox.json hedgevpn_clash.yaml hedgevpn_meta.json
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "auto update hedgevpn nodes $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
+
+      - name: 刷新 jsDelivr 缓存
+        run: |
+          for f in hedgevpn_nodes.txt hedgevpn_sub_b64.txt hedgevpn_singbox.json hedgevpn_clash.yaml hedgevpn_meta.json; do
+            curl -s --max-time 20 "https://purge.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/$f" > /dev/null \
+              && echo "purged $f" || echo "purge failed $f (忽略)"
+          done
