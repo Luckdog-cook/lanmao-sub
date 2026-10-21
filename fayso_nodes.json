@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-21T12:19:31Z",
+  "updated": "2026-10-21T17:05:40Z",
   "count": 8,
   "nodes": [
     {
@@ -58,12 +58,12 @@
       "name": "🇰🇷韩国",
       "value": "south-korea",
       "protocol": "hysteria2",
-      "server": "158.247.249.174",
+      "server": "141.164.38.89",
       "port": 8443,
       "sni": "kr.magicnodes.hyperlink.us.com",
       "capacity": "available",
       "probe": [
-        "158.247.249.174",
+        "141.164.38.89",
         8443
       ]
     },
