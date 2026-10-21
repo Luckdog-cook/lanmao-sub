@@ -193,3 +193,35 @@ base64 订阅     : https://gcore.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/j
 > 想要完整节点列表（香港/日本/美国等线路）需要自己的付费账号：
 > 在仓库 Secrets 里配置 `JIDIAN_DEVICE_ID` 之外，还需把 `jidian.py` 的 `guest_login`
 > 换成 `/api/public/user/login` 并填入账号密码。
+
+---
+
+## 刺猬VPN（HedgeVPN）
+
+自动注册 60 分钟试用账号，抓取全部 21 个地区的节点（28 个节点 / 55 条链路，每个节点含
+Reality-TCP 与 mKCP 两种传输），每 40 分钟刷新一次。
+
+**订阅链接（固定）：**
+
+| 格式 | 链接 |
+|------|------|
+| Base64 订阅（通用 / Bettbox） | `https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/hedgevpn_sub_b64.txt` |
+| 明文链接 | `https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/hedgevpn_nodes.txt` |
+| sing-box（Bettbox 内核） | `https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/hedgevpn_singbox.json` |
+| Clash Meta | `https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/hedgevpn_clash.yaml` |
+
+GitHub Pages 备份：
+
+```
+https://luckdog-cook.github.io/lanmao-sub/hedgevpn_sub_b64.txt
+https://luckdog-cook.github.io/lanmao-sub/hedgevpn_singbox.json
+https://luckdog-cook.github.io/lanmao-sub/hedgevpn_clash.yaml
+```
+
+**说明：**
+
+- 脚本 `hedgevpn.py`，工作流 `.github/workflows/update-hedgevpn.yml`
+- 每次运行自动注册新号（无需邮箱、无验证码），试用期 60 分钟全地区可用
+- 试用期内 `vipLevel` 仍为 0，判据是 `vipExpireAt > now`
+- 想用固定账号：仓库 Secrets 里配 `HEDGE_ACCOUNT` / `HEDGE_PASSWORD`
+- 节点 UUID 随账号轮换，**订阅每 40 分钟自动更新，客户端设为定时更新即可**
