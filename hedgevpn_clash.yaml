@@ -3,11 +3,11 @@ allow-lan: false
 mode: rule
 log-level: info
 proxies:
-  - name: "Australia-45.77.51.67"
+  - name: "Australia-8.210.116.82"
     type: vless
-    server: 45.77.51.67
+    server: 8.210.116.82
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -17,22 +17,22 @@ proxies:
       public-key: nZmjWZ-B7bqBfLEciFv8jsj1vSabkdXbgEQZYINS0yY
       short-id: ""
     network: tcp
-  - name: "Australia-45.77.51.67-kcp"
+  - name: "Australia-8.210.116.82-kcp"
     type: vless
-    server: 45.77.51.67
+    server: 8.210.116.82
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 011b9fcc443d55ee58f9086eb9924ca0
       header:
         type: none
-  - name: "Korea-141.164.45.212"
+  - name: "Korea-47.239.106.202"
     type: vless
-    server: 141.164.45.212
+    server: 47.239.106.202
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -42,22 +42,22 @@ proxies:
       public-key: fDjbbgiH1aQ1RVnEymxWjzlmSxgb343L7MhAYH9xvQ4
       short-id: ""
     network: tcp
-  - name: "Korea-141.164.45.212-kcp"
+  - name: "Korea-47.239.106.202-kcp"
     type: vless
-    server: 141.164.45.212
+    server: 47.239.106.202
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 45296ba457d26b92b45c1714991d1535
       header:
         type: none
-  - name: "Malaysia-45.194.27.233"
+  - name: "Malaysia-8.218.122.175"
     type: vless
-    server: 45.194.27.233
+    server: 8.218.122.175
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -67,22 +67,22 @@ proxies:
       public-key: UnOMxSW0yimhjZGLRuz9f11I6ryyJ8LYMmrZ94k8YVw
       short-id: ""
     network: tcp
-  - name: "Malaysia-45.194.27.233-kcp"
+  - name: "Malaysia-8.218.122.175-kcp"
     type: vless
-    server: 45.194.27.233
+    server: 8.218.122.175
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 0365b98e19dc50f04314455f809dc906
       header:
         type: none
-  - name: "Japan-151.242.36.88"
+  - name: "Japan-8.218.212.135"
     type: vless
-    server: 151.242.36.88
+    server: 8.218.212.135
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -92,22 +92,22 @@ proxies:
       public-key: iPAOwmhhJZZvPBNp3R0b8s6X_ll1SSlzQweJYSbT8iI
       short-id: ""
     network: tcp
-  - name: "Japan-151.242.36.88-kcp"
+  - name: "Japan-8.218.212.135-kcp"
     type: vless
-    server: 151.242.36.88
+    server: 8.218.212.135
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 83762935bfa83459bbc8158d7230d852
       header:
         type: none
-  - name: "Tai Wan-2.27.149.185"
+  - name: "Tai Wan-47.86.231.65"
     type: vless
-    server: 2.27.149.185
+    server: 47.86.231.65
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -117,22 +117,22 @@ proxies:
       public-key: rz72eccFL6gKhumpTtwCaZKKj0fVtO7rJ9S2Q11-sjY
       short-id: ""
     network: tcp
-  - name: "Tai Wan-2.27.149.185-kcp"
+  - name: "Tai Wan-47.86.231.65-kcp"
     type: vless
-    server: 2.27.149.185
+    server: 47.86.231.65
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 77cad78afced89e6cd0e3933a1ef2a7e
       header:
         type: none
-  - name: "Singapore-141.11.43.13"
+  - name: "Singapore-47.86.82.250"
     type: vless
-    server: 141.11.43.13
+    server: 47.86.82.250
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -142,22 +142,47 @@ proxies:
       public-key: v8PYBLebXdkSE_StlbFWZg2tgI8QV7HmApgeTT2ypUs
       short-id: ""
     network: tcp
-  - name: "Singapore-141.11.43.13-kcp"
+  - name: "Singapore-47.86.82.250-kcp"
     type: vless
-    server: 141.11.43.13
+    server: 47.86.82.250
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 4de735696379de3b5c2ad90a44d0e636
       header:
         type: none
-  - name: "Hong Kong-45.39.190.150"
+  - name: "Hong Kong-8.218.236.95"
     type: vless
-    server: 45.39.190.150
+    server: 8.218.236.95
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "gateway.icloud.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: TPeyBhmV6X1hNw00ok58jvPo6HUotRZxo8UO94NCgzA
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-8.218.236.95-kcp"
+    type: vless
+    server: 8.218.236.95
+    port: 39523
+    uuid: 13284659006327924479
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 64b00c41783f8a04ee86b1bb98debf11
+      header:
+        type: none
+  - name: "Hong Kong-8.218.81.72"
+    type: vless
+    server: 8.218.81.72
+    port: 443
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -167,11 +192,11 @@ proxies:
       public-key: G2knnGrUpndLRiTG__EU-iPONW938Y-1PfQ7RK5Wmws
       short-id: ""
     network: tcp
-  - name: "Hong Kong-45.39.190.150-kcp"
+  - name: "Hong Kong-8.218.81.72-kcp"
     type: vless
-    server: 45.39.190.150
+    server: 8.218.81.72
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
@@ -182,7 +207,7 @@ proxies:
     type: vless
     server: 47.76.244.128
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -196,43 +221,18 @@ proxies:
     type: vless
     server: 47.76.244.128
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 48f0db2b562c63e0f673a784c6476508
       header:
         type: none
-  - name: "Hong Kong-47.86.215.69"
-    type: vless
-    server: 47.86.215.69
-    port: 443
-    uuid: 11440749944492823889
-    udp: true
-    flow: xtls-rprx-vision
-    tls: true
-    servername: "www.iqiyi.com"
-    client-fingerprint: ios
-    reality-opts:
-      public-key: sbRE_ZiYPGFOWZ0_Fu5aGGtj9aHT3odyBo4pTr4Oi2Q
-      short-id: ""
-    network: tcp
-  - name: "Hong Kong-47.86.215.69-kcp"
-    type: vless
-    server: 47.86.215.69
-    port: 39523
-    uuid: 11440749944492823889
-    udp: true
-    network: kcp
-    kcp-opts:
-      seed: 4ee0ff9341f9b4bee2b1bf658a594d9a
-      header:
-        type: none
   - name: "Hong Kong-47.83.186.40"
     type: vless
     server: 47.83.186.40
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -246,43 +246,18 @@ proxies:
     type: vless
     server: 47.83.186.40
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: f93c01659ebae0110e730b43baaa519a
       header:
         type: none
-  - name: "Hong Kong-45.38.60.198"
-    type: vless
-    server: 45.38.60.198
-    port: 443
-    uuid: 11440749944492823889
-    udp: true
-    flow: xtls-rprx-vision
-    tls: true
-    servername: "gateway.icloud.com"
-    client-fingerprint: ios
-    reality-opts:
-      public-key: TPeyBhmV6X1hNw00ok58jvPo6HUotRZxo8UO94NCgzA
-      short-id: ""
-    network: tcp
-  - name: "Hong Kong-45.38.60.198-kcp"
-    type: vless
-    server: 45.38.60.198
-    port: 39523
-    uuid: 11440749944492823889
-    udp: true
-    network: kcp
-    kcp-opts:
-      seed: 64b00c41783f8a04ee86b1bb98debf11
-      header:
-        type: none
   - name: "Hong Kong-47.86.216.117"
     type: vless
     server: 47.86.216.117
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -296,18 +271,43 @@ proxies:
     type: vless
     server: 47.86.216.117
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 6338bffcd495772bc67aabc583d956c4
       header:
         type: none
+  - name: "Hong Kong-47.86.215.69"
+    type: vless
+    server: 47.86.215.69
+    port: 443
+    uuid: 13284659006327924479
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.iqiyi.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: sbRE_ZiYPGFOWZ0_Fu5aGGtj9aHT3odyBo4pTr4Oi2Q
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-47.86.215.69-kcp"
+    type: vless
+    server: 47.86.215.69
+    port: 39523
+    uuid: 13284659006327924479
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: 4ee0ff9341f9b4bee2b1bf658a594d9a
+      header:
+        type: none
   - name: "Hong Kong-47.242.183.157"
     type: vless
     server: 47.242.183.157
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -321,18 +321,18 @@ proxies:
     type: vless
     server: 47.242.183.157
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 422fe788fae17b8eb05b387d9c6e4ed4
       header:
         type: none
-  - name: "Indonesia-142.111.15.237"
+  - name: "Indonesia-8.217.217.29"
     type: vless
-    server: 142.111.15.237
+    server: 8.217.217.29
     port: 8443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -342,22 +342,22 @@ proxies:
       public-key: m9X6rtzxoEXNlwGk9YAf9TCy66rDQ0EkmMKIQAeehVQ
       short-id: ""
     network: tcp
-  - name: "Indonesia-142.111.15.237-kcp"
+  - name: "Indonesia-8.217.217.29-kcp"
     type: vless
-    server: 142.111.15.237
+    server: 8.217.217.29
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 0ea4a7c7fd154b21f6b39e9f9e2d43dd
       header:
         type: none
-  - name: "India-139.84.173.243"
+  - name: "India-47.243.195.107"
     type: vless
-    server: 139.84.173.243
+    server: 47.243.195.107
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -367,22 +367,22 @@ proxies:
       public-key: ja946rzJULKnKSaVZUBgbMyEzh5A7GvXmY7y-zlKo0Y
       short-id: ""
     network: tcp
-  - name: "India-139.84.173.243-kcp"
+  - name: "India-47.243.195.107-kcp"
     type: vless
-    server: 139.84.173.243
+    server: 47.243.195.107
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 66a228875f417c4d196cc93fc8b5a07b
       header:
         type: none
-  - name: "Austria-167.104.110.151"
+  - name: "Austria-47.243.135.108"
     type: vless
-    server: 167.104.110.151
+    server: 47.243.135.108
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -392,22 +392,22 @@ proxies:
       public-key: 1iM2K5HxfMntQFMY0I0blx2PE1bYbymYpcLACUhZjA8
       short-id: ""
     network: tcp
-  - name: "Austria-167.104.110.151-kcp"
+  - name: "Austria-47.243.135.108-kcp"
     type: vless
-    server: 167.104.110.151
+    server: 47.243.135.108
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 139bc448426ea5db1a57594a095f37b8
       header:
         type: none
-  - name: "Poland-54.38.196.64"
+  - name: "Poland-47.76.72.183"
     type: vless
-    server: 54.38.196.64
+    server: 47.76.72.183
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -417,22 +417,22 @@ proxies:
       public-key: ZLrsBcct1cGhrMF8YB0u6t_DdWKsRObh28e6jMmaXkE
       short-id: ""
     network: tcp
-  - name: "Poland-54.38.196.64-kcp"
+  - name: "Poland-47.76.72.183-kcp"
     type: vless
-    server: 54.38.196.64
+    server: 47.76.72.183
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: d46da17c4c1ecccb5bd6b84c9e50c48b
       header:
         type: none
-  - name: "Germany-57.131.138.156"
+  - name: "Germany-8.210.237.247"
     type: vless
-    server: 57.131.138.156
+    server: 8.210.237.247
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -442,22 +442,22 @@ proxies:
       public-key: MkwfQ2dXXePfnfs3ZfF5kTZzSvKyVzC-GqTHJlG5ZSc
       short-id: ""
     network: tcp
-  - name: "Germany-57.131.138.156-kcp"
+  - name: "Germany-8.210.237.247-kcp"
     type: vless
-    server: 57.131.138.156
+    server: 8.210.237.247
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 462ce326c17709dfd5ec9c1efafc9a66
       header:
         type: none
-  - name: "France-95.182.82.21"
+  - name: "France-8.218.155.134"
     type: vless
-    server: 95.182.82.21
+    server: 8.218.155.134
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -467,22 +467,22 @@ proxies:
       public-key: F-y1K4w1DZeOZ6iiiuCxqsOz_8Hc8_mpx-moI3qL-zE
       short-id: ""
     network: tcp
-  - name: "France-95.182.82.21-kcp"
+  - name: "France-8.218.155.134-kcp"
     type: vless
-    server: 95.182.82.21
+    server: 8.218.155.134
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 0e29c4562f066abe99449619cbef24da
       header:
         type: none
-  - name: "Netherlands-31.58.181.185"
+  - name: "Netherlands-8.218.116.226"
     type: vless
-    server: 31.58.181.185
+    server: 8.218.116.226
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -492,22 +492,22 @@ proxies:
       public-key: 22TEa323n_10tUF75lvWv_8YsMDp6UWsi8e7vXxslSU
       short-id: ""
     network: tcp
-  - name: "Netherlands-31.58.181.185-kcp"
+  - name: "Netherlands-8.218.116.226-kcp"
     type: vless
-    server: 31.58.181.185
+    server: 8.218.116.226
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 1cdbad5cc2f26559b6c9aee145f91582
       header:
         type: none
-  - name: "Latvia-217.60.3.141"
+  - name: "Latvia-47.243.164.36"
     type: vless
-    server: 217.60.3.141
+    server: 47.243.164.36
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -517,22 +517,22 @@ proxies:
       public-key: nhvDtJUeFo6iolAyR8Od5OUfPnczGleF8V9fuP8YDmo
       short-id: ""
     network: tcp
-  - name: "Latvia-217.60.3.141-kcp"
+  - name: "Latvia-47.243.164.36-kcp"
     type: vless
-    server: 217.60.3.141
+    server: 47.243.164.36
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 8641029e00589e928b9061388114ad8f
       header:
         type: none
-  - name: "Norway-167.104.108.108"
+  - name: "Norway-8.210.107.179"
     type: vless
-    server: 167.104.108.108
+    server: 8.210.107.179
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -542,22 +542,22 @@ proxies:
       public-key: sp4T5f-SDzlQy6SIymKXiBuSCngL4Hou9BqRj1diFz8
       short-id: ""
     network: tcp
-  - name: "Norway-167.104.108.108-kcp"
+  - name: "Norway-8.210.107.179-kcp"
     type: vless
-    server: 167.104.108.108
+    server: 8.210.107.179
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 9558714bbc734824c0c5f708ab0218a3
       header:
         type: none
-  - name: "Sweden-167.104.104.25"
+  - name: "Sweden-8.218.47.98"
     type: vless
-    server: 167.104.104.25
+    server: 8.218.47.98
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -567,22 +567,22 @@ proxies:
       public-key: HsO3lz1CkGS96pkl6ImNGuy6edEuL4-PxHmd5eo3NQE
       short-id: ""
     network: tcp
-  - name: "Sweden-167.104.104.25-kcp"
+  - name: "Sweden-8.218.47.98-kcp"
     type: vless
-    server: 167.104.104.25
+    server: 8.218.47.98
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: 7d830d1454578197ea6b4d5a72c8b380
       header:
         type: none
-  - name: "England-198.244.149.84"
+  - name: "England-8.217.179.183"
     type: vless
-    server: 198.244.149.84
+    server: 8.217.179.183
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -592,22 +592,22 @@ proxies:
       public-key: te2Fe7FxDFrnPwXZ5dD0p_TRVa2i46S7nxDufbK9n0k
       short-id: ""
     network: tcp
-  - name: "England-198.244.149.84-kcp"
+  - name: "England-8.217.179.183-kcp"
     type: vless
-    server: 198.244.149.84
+    server: 8.217.179.183
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: e5cac33d57d7c9a6eefbd93188dd284b
       header:
         type: none
-  - name: "Canada-192.99.42.110"
+  - name: "Canada-47.76.57.115"
     type: vless
-    server: 192.99.42.110
+    server: 47.76.57.115
     port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -617,11 +617,11 @@ proxies:
       public-key: C_D4ErxrhhiImWLiFqy_E4mF5tFIqxZeKvAiwXc_Lw8
       short-id: ""
     network: tcp
-  - name: "Canada-192.99.42.110-kcp"
+  - name: "Canada-47.76.57.115-kcp"
     type: vless
-    server: 192.99.42.110
+    server: 47.76.57.115
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
@@ -632,43 +632,18 @@ proxies:
     type: vless
     server: 82.158.91.108
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: aeaf86e149abc024248361180784724b
       header:
         type: none
-  - name: "USA-15.204.121.61"
+  - name: "USA-47.243.9.190"
     type: vless
-    server: 15.204.121.61
+    server: 47.243.9.190
     port: 443
-    uuid: 11440749944492823889
-    udp: true
-    flow: xtls-rprx-vision
-    tls: true
-    servername: "www.apple.com"
-    client-fingerprint: ios
-    reality-opts:
-      public-key: VOZwu7PUA0qf0nT_ljSCZIUDkARZdC8RDmhrwnPhWic
-      short-id: ""
-    network: tcp
-  - name: "USA-15.204.121.61-kcp"
-    type: vless
-    server: 15.204.121.61
-    port: 39523
-    uuid: 11440749944492823889
-    udp: true
-    network: kcp
-    kcp-opts:
-      seed: a827ebc2e40c49484f6819ce3f1074a4
-      header:
-        type: none
-  - name: "USA-95.182.91.170"
-    type: vless
-    server: 95.182.91.170
-    port: 443
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     flow: xtls-rprx-vision
     tls: true
@@ -678,27 +653,52 @@ proxies:
       public-key: 2zF3KYnwnwHikCXhGC1eSDwGaB4HMaOvg41iQbEGHzo
       short-id: ""
     network: tcp
-  - name: "USA-95.182.91.170-kcp"
+  - name: "USA-47.243.9.190-kcp"
     type: vless
-    server: 95.182.91.170
+    server: 47.243.9.190
     port: 39523
-    uuid: 11440749944492823889
+    uuid: 13284659006327924479
     udp: true
     network: kcp
     kcp-opts:
       seed: cc681e8d3b362045d9c271bf0433f0de
       header:
         type: none
+  - name: "USA-8.217.214.29"
+    type: vless
+    server: 8.217.214.29
+    port: 443
+    uuid: 13284659006327924479
+    udp: true
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.apple.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: VOZwu7PUA0qf0nT_ljSCZIUDkARZdC8RDmhrwnPhWic
+      short-id: ""
+    network: tcp
+  - name: "USA-8.217.214.29-kcp"
+    type: vless
+    server: 8.217.214.29
+    port: 39523
+    uuid: 13284659006327924479
+    udp: true
+    network: kcp
+    kcp-opts:
+      seed: a827ebc2e40c49484f6819ce3f1074a4
+      header:
+        type: none
 
 proxy-groups:
   - name: PROXY
     type: select
-    proxies: [AUTO, "Australia-45.77.51.67", "Australia-45.77.51.67-kcp", "Korea-141.164.45.212", "Korea-141.164.45.212-kcp", "Malaysia-45.194.27.233", "Malaysia-45.194.27.233-kcp", "Japan-151.242.36.88", "Japan-151.242.36.88-kcp", "Tai Wan-2.27.149.185", "Tai Wan-2.27.149.185-kcp", "Singapore-141.11.43.13", "Singapore-141.11.43.13-kcp", "Hong Kong-45.39.190.150", "Hong Kong-45.39.190.150-kcp", "Hong Kong-47.76.244.128", "Hong Kong-47.76.244.128-kcp", "Hong Kong-47.86.215.69", "Hong Kong-47.86.215.69-kcp", "Hong Kong-47.83.186.40", "Hong Kong-47.83.186.40-kcp", "Hong Kong-45.38.60.198", "Hong Kong-45.38.60.198-kcp", "Hong Kong-47.86.216.117", "Hong Kong-47.86.216.117-kcp", "Hong Kong-47.242.183.157", "Hong Kong-47.242.183.157-kcp", "Indonesia-142.111.15.237", "Indonesia-142.111.15.237-kcp", "India-139.84.173.243", "India-139.84.173.243-kcp", "Austria-167.104.110.151", "Austria-167.104.110.151-kcp", "Poland-54.38.196.64", "Poland-54.38.196.64-kcp", "Germany-57.131.138.156", "Germany-57.131.138.156-kcp", "France-95.182.82.21", "France-95.182.82.21-kcp", "Netherlands-31.58.181.185", "Netherlands-31.58.181.185-kcp", "Latvia-217.60.3.141", "Latvia-217.60.3.141-kcp", "Norway-167.104.108.108", "Norway-167.104.108.108-kcp", "Sweden-167.104.104.25", "Sweden-167.104.104.25-kcp", "England-198.244.149.84", "England-198.244.149.84-kcp", "Canada-192.99.42.110", "Canada-192.99.42.110-kcp", "USA2-82.158.91.108-kcp", "USA-15.204.121.61", "USA-15.204.121.61-kcp", "USA-95.182.91.170", "USA-95.182.91.170-kcp"]
+    proxies: [AUTO, "Australia-8.210.116.82", "Australia-8.210.116.82-kcp", "Korea-47.239.106.202", "Korea-47.239.106.202-kcp", "Malaysia-8.218.122.175", "Malaysia-8.218.122.175-kcp", "Japan-8.218.212.135", "Japan-8.218.212.135-kcp", "Tai Wan-47.86.231.65", "Tai Wan-47.86.231.65-kcp", "Singapore-47.86.82.250", "Singapore-47.86.82.250-kcp", "Hong Kong-8.218.236.95", "Hong Kong-8.218.236.95-kcp", "Hong Kong-8.218.81.72", "Hong Kong-8.218.81.72-kcp", "Hong Kong-47.76.244.128", "Hong Kong-47.76.244.128-kcp", "Hong Kong-47.83.186.40", "Hong Kong-47.83.186.40-kcp", "Hong Kong-47.86.216.117", "Hong Kong-47.86.216.117-kcp", "Hong Kong-47.86.215.69", "Hong Kong-47.86.215.69-kcp", "Hong Kong-47.242.183.157", "Hong Kong-47.242.183.157-kcp", "Indonesia-8.217.217.29", "Indonesia-8.217.217.29-kcp", "India-47.243.195.107", "India-47.243.195.107-kcp", "Austria-47.243.135.108", "Austria-47.243.135.108-kcp", "Poland-47.76.72.183", "Poland-47.76.72.183-kcp", "Germany-8.210.237.247", "Germany-8.210.237.247-kcp", "France-8.218.155.134", "France-8.218.155.134-kcp", "Netherlands-8.218.116.226", "Netherlands-8.218.116.226-kcp", "Latvia-47.243.164.36", "Latvia-47.243.164.36-kcp", "Norway-8.210.107.179", "Norway-8.210.107.179-kcp", "Sweden-8.218.47.98", "Sweden-8.218.47.98-kcp", "England-8.217.179.183", "England-8.217.179.183-kcp", "Canada-47.76.57.115", "Canada-47.76.57.115-kcp", "USA2-82.158.91.108-kcp", "USA-47.243.9.190", "USA-47.243.9.190-kcp", "USA-8.217.214.29", "USA-8.217.214.29-kcp"]
   - name: AUTO
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
-    proxies: ["Australia-45.77.51.67", "Australia-45.77.51.67-kcp", "Korea-141.164.45.212", "Korea-141.164.45.212-kcp", "Malaysia-45.194.27.233", "Malaysia-45.194.27.233-kcp", "Japan-151.242.36.88", "Japan-151.242.36.88-kcp", "Tai Wan-2.27.149.185", "Tai Wan-2.27.149.185-kcp", "Singapore-141.11.43.13", "Singapore-141.11.43.13-kcp", "Hong Kong-45.39.190.150", "Hong Kong-45.39.190.150-kcp", "Hong Kong-47.76.244.128", "Hong Kong-47.76.244.128-kcp", "Hong Kong-47.86.215.69", "Hong Kong-47.86.215.69-kcp", "Hong Kong-47.83.186.40", "Hong Kong-47.83.186.40-kcp", "Hong Kong-45.38.60.198", "Hong Kong-45.38.60.198-kcp", "Hong Kong-47.86.216.117", "Hong Kong-47.86.216.117-kcp", "Hong Kong-47.242.183.157", "Hong Kong-47.242.183.157-kcp", "Indonesia-142.111.15.237", "Indonesia-142.111.15.237-kcp", "India-139.84.173.243", "India-139.84.173.243-kcp", "Austria-167.104.110.151", "Austria-167.104.110.151-kcp", "Poland-54.38.196.64", "Poland-54.38.196.64-kcp", "Germany-57.131.138.156", "Germany-57.131.138.156-kcp", "France-95.182.82.21", "France-95.182.82.21-kcp", "Netherlands-31.58.181.185", "Netherlands-31.58.181.185-kcp", "Latvia-217.60.3.141", "Latvia-217.60.3.141-kcp", "Norway-167.104.108.108", "Norway-167.104.108.108-kcp", "Sweden-167.104.104.25", "Sweden-167.104.104.25-kcp", "England-198.244.149.84", "England-198.244.149.84-kcp", "Canada-192.99.42.110", "Canada-192.99.42.110-kcp", "USA2-82.158.91.108-kcp", "USA-15.204.121.61", "USA-15.204.121.61-kcp", "USA-95.182.91.170", "USA-95.182.91.170-kcp"]
+    proxies: ["Australia-8.210.116.82", "Australia-8.210.116.82-kcp", "Korea-47.239.106.202", "Korea-47.239.106.202-kcp", "Malaysia-8.218.122.175", "Malaysia-8.218.122.175-kcp", "Japan-8.218.212.135", "Japan-8.218.212.135-kcp", "Tai Wan-47.86.231.65", "Tai Wan-47.86.231.65-kcp", "Singapore-47.86.82.250", "Singapore-47.86.82.250-kcp", "Hong Kong-8.218.236.95", "Hong Kong-8.218.236.95-kcp", "Hong Kong-8.218.81.72", "Hong Kong-8.218.81.72-kcp", "Hong Kong-47.76.244.128", "Hong Kong-47.76.244.128-kcp", "Hong Kong-47.83.186.40", "Hong Kong-47.83.186.40-kcp", "Hong Kong-47.86.216.117", "Hong Kong-47.86.216.117-kcp", "Hong Kong-47.86.215.69", "Hong Kong-47.86.215.69-kcp", "Hong Kong-47.242.183.157", "Hong Kong-47.242.183.157-kcp", "Indonesia-8.217.217.29", "Indonesia-8.217.217.29-kcp", "India-47.243.195.107", "India-47.243.195.107-kcp", "Austria-47.243.135.108", "Austria-47.243.135.108-kcp", "Poland-47.76.72.183", "Poland-47.76.72.183-kcp", "Germany-8.210.237.247", "Germany-8.210.237.247-kcp", "France-8.218.155.134", "France-8.218.155.134-kcp", "Netherlands-8.218.116.226", "Netherlands-8.218.116.226-kcp", "Latvia-47.243.164.36", "Latvia-47.243.164.36-kcp", "Norway-8.210.107.179", "Norway-8.210.107.179-kcp", "Sweden-8.218.47.98", "Sweden-8.218.47.98-kcp", "England-8.217.179.183", "England-8.217.179.183-kcp", "Canada-47.76.57.115", "Canada-47.76.57.115-kcp", "USA2-82.158.91.108-kcp", "USA-47.243.9.190", "USA-47.243.9.190-kcp", "USA-8.217.214.29", "USA-8.217.214.29-kcp"]
 
 rules:
   - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
