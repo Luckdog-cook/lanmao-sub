@@ -75,7 +75,7 @@ proxies:
     type: vless
     server: 45.77.51.67
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -91,7 +91,7 @@ proxies:
     type: vless
     server: 45.77.51.67
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -104,7 +104,7 @@ proxies:
     type: vless
     server: 141.164.45.212
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -120,7 +120,7 @@ proxies:
     type: vless
     server: 141.164.45.212
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -133,7 +133,7 @@ proxies:
     type: vless
     server: 45.194.27.233
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -149,7 +149,7 @@ proxies:
     type: vless
     server: 45.194.27.233
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -162,7 +162,7 @@ proxies:
     type: vless
     server: 151.242.36.88
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -178,7 +178,7 @@ proxies:
     type: vless
     server: 151.242.36.88
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -191,7 +191,7 @@ proxies:
     type: vless
     server: 2.27.149.185
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -207,7 +207,7 @@ proxies:
     type: vless
     server: 2.27.149.185
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -220,7 +220,7 @@ proxies:
     type: vless
     server: 141.11.43.13
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -236,7 +236,7 @@ proxies:
     type: vless
     server: 141.11.43.13
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -245,185 +245,11 @@ proxies:
       seed: "4de735696379de3b5c2ad90a44d0e636"
       header:
         type: none
-  - name: "Hong Kong-45.38.60.198"
-    type: vless
-    server: 45.38.60.198
-    port: 443
-    uuid: "10926572328840668165"
-    udp: true
-    tfo: false
-    skip-cert-verify: false
-    flow: xtls-rprx-vision
-    tls: true
-    servername: "gateway.icloud.com"
-    client-fingerprint: ios
-    reality-opts:
-      public-key: "TPeyBhmV6X1hNw00ok58jvPo6HUotRZxo8UO94NCgzA"
-      short-id: ""
-    network: tcp
-  - name: "Hong Kong-45.38.60.198-kcp"
-    type: vless
-    server: 45.38.60.198
-    port: 39523
-    uuid: "10926572328840668165"
-    udp: true
-    tfo: false
-    skip-cert-verify: false
-    network: kcp
-    kcp-opts:
-      seed: "64b00c41783f8a04ee86b1bb98debf11"
-      header:
-        type: none
-  - name: "Hong Kong-47.76.244.128"
-    type: vless
-    server: 47.76.244.128
-    port: 443
-    uuid: "10926572328840668165"
-    udp: true
-    tfo: false
-    skip-cert-verify: false
-    flow: xtls-rprx-vision
-    tls: true
-    servername: "www.iqiyi.com"
-    client-fingerprint: ios
-    reality-opts:
-      public-key: "Nd47esvqEk7yJd0oHdiCI6x1IW4KpEoTjSxR8Sq56RA"
-      short-id: ""
-    network: tcp
-  - name: "Hong Kong-47.76.244.128-kcp"
-    type: vless
-    server: 47.76.244.128
-    port: 39523
-    uuid: "10926572328840668165"
-    udp: true
-    tfo: false
-    skip-cert-verify: false
-    network: kcp
-    kcp-opts:
-      seed: "48f0db2b562c63e0f673a784c6476508"
-      header:
-        type: none
-  - name: "Hong Kong-45.39.190.150"
-    type: vless
-    server: 45.39.190.150
-    port: 443
-    uuid: "10926572328840668165"
-    udp: true
-    tfo: false
-    skip-cert-verify: false
-    flow: xtls-rprx-vision
-    tls: true
-    servername: "www.amd.com"
-    client-fingerprint: ios
-    reality-opts:
-      public-key: "G2knnGrUpndLRiTG__EU-iPONW938Y-1PfQ7RK5Wmws"
-      short-id: ""
-    network: tcp
-  - name: "Hong Kong-45.39.190.150-kcp"
-    type: vless
-    server: 45.39.190.150
-    port: 39523
-    uuid: "10926572328840668165"
-    udp: true
-    tfo: false
-    skip-cert-verify: false
-    network: kcp
-    kcp-opts:
-      seed: "963f4c27b3b9b3b57ea3a2db27f705b7"
-      header:
-        type: none
-  - name: "Hong Kong-47.86.215.69"
-    type: vless
-    server: 47.86.215.69
-    port: 443
-    uuid: "10926572328840668165"
-    udp: true
-    tfo: false
-    skip-cert-verify: false
-    flow: xtls-rprx-vision
-    tls: true
-    servername: "www.iqiyi.com"
-    client-fingerprint: ios
-    reality-opts:
-      public-key: "sbRE_ZiYPGFOWZ0_Fu5aGGtj9aHT3odyBo4pTr4Oi2Q"
-      short-id: ""
-    network: tcp
-  - name: "Hong Kong-47.86.215.69-kcp"
-    type: vless
-    server: 47.86.215.69
-    port: 39523
-    uuid: "10926572328840668165"
-    udp: true
-    tfo: false
-    skip-cert-verify: false
-    network: kcp
-    kcp-opts:
-      seed: "4ee0ff9341f9b4bee2b1bf658a594d9a"
-      header:
-        type: none
-  - name: "Hong Kong-47.83.186.40"
-    type: vless
-    server: 47.83.186.40
-    port: 443
-    uuid: "10926572328840668165"
-    udp: true
-    tfo: false
-    skip-cert-verify: false
-    flow: xtls-rprx-vision
-    tls: true
-    servername: "www.iqiyi.com"
-    client-fingerprint: ios
-    reality-opts:
-      public-key: "ISj8Hrxy2_MX8J-rBUor3RgsvfP7tddSwM3uzjjg1lc"
-      short-id: ""
-    network: tcp
-  - name: "Hong Kong-47.83.186.40-kcp"
-    type: vless
-    server: 47.83.186.40
-    port: 39523
-    uuid: "10926572328840668165"
-    udp: true
-    tfo: false
-    skip-cert-verify: false
-    network: kcp
-    kcp-opts:
-      seed: "f93c01659ebae0110e730b43baaa519a"
-      header:
-        type: none
-  - name: "Hong Kong-47.86.216.117"
-    type: vless
-    server: 47.86.216.117
-    port: 443
-    uuid: "10926572328840668165"
-    udp: true
-    tfo: false
-    skip-cert-verify: false
-    flow: xtls-rprx-vision
-    tls: true
-    servername: "www.amazon.com"
-    client-fingerprint: ios
-    reality-opts:
-      public-key: "3liREIK7VH_8KG6UQdlZD6ybX1MdEmCNrKp9UI7IXGU"
-      short-id: ""
-    network: tcp
-  - name: "Hong Kong-47.86.216.117-kcp"
-    type: vless
-    server: 47.86.216.117
-    port: 39523
-    uuid: "10926572328840668165"
-    udp: true
-    tfo: false
-    skip-cert-verify: false
-    network: kcp
-    kcp-opts:
-      seed: "6338bffcd495772bc67aabc583d956c4"
-      header:
-        type: none
   - name: "Hong Kong-47.242.183.157"
     type: vless
     server: 47.242.183.157
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -439,7 +265,7 @@ proxies:
     type: vless
     server: 47.242.183.157
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -448,11 +274,185 @@ proxies:
       seed: "422fe788fae17b8eb05b387d9c6e4ed4"
       header:
         type: none
+  - name: "Hong Kong-47.76.244.128"
+    type: vless
+    server: 47.76.244.128
+    port: 443
+    uuid: "10745996264903494576"
+    udp: true
+    tfo: false
+    skip-cert-verify: false
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.iqiyi.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: "Nd47esvqEk7yJd0oHdiCI6x1IW4KpEoTjSxR8Sq56RA"
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-47.76.244.128-kcp"
+    type: vless
+    server: 47.76.244.128
+    port: 39523
+    uuid: "10745996264903494576"
+    udp: true
+    tfo: false
+    skip-cert-verify: false
+    network: kcp
+    kcp-opts:
+      seed: "48f0db2b562c63e0f673a784c6476508"
+      header:
+        type: none
+  - name: "Hong Kong-45.39.190.150"
+    type: vless
+    server: 45.39.190.150
+    port: 443
+    uuid: "10745996264903494576"
+    udp: true
+    tfo: false
+    skip-cert-verify: false
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.amd.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: "G2knnGrUpndLRiTG__EU-iPONW938Y-1PfQ7RK5Wmws"
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-45.39.190.150-kcp"
+    type: vless
+    server: 45.39.190.150
+    port: 39523
+    uuid: "10745996264903494576"
+    udp: true
+    tfo: false
+    skip-cert-verify: false
+    network: kcp
+    kcp-opts:
+      seed: "963f4c27b3b9b3b57ea3a2db27f705b7"
+      header:
+        type: none
+  - name: "Hong Kong-47.86.215.69"
+    type: vless
+    server: 47.86.215.69
+    port: 443
+    uuid: "10745996264903494576"
+    udp: true
+    tfo: false
+    skip-cert-verify: false
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.iqiyi.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: "sbRE_ZiYPGFOWZ0_Fu5aGGtj9aHT3odyBo4pTr4Oi2Q"
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-47.86.215.69-kcp"
+    type: vless
+    server: 47.86.215.69
+    port: 39523
+    uuid: "10745996264903494576"
+    udp: true
+    tfo: false
+    skip-cert-verify: false
+    network: kcp
+    kcp-opts:
+      seed: "4ee0ff9341f9b4bee2b1bf658a594d9a"
+      header:
+        type: none
+  - name: "Hong Kong-47.83.186.40"
+    type: vless
+    server: 47.83.186.40
+    port: 443
+    uuid: "10745996264903494576"
+    udp: true
+    tfo: false
+    skip-cert-verify: false
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.iqiyi.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: "ISj8Hrxy2_MX8J-rBUor3RgsvfP7tddSwM3uzjjg1lc"
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-47.83.186.40-kcp"
+    type: vless
+    server: 47.83.186.40
+    port: 39523
+    uuid: "10745996264903494576"
+    udp: true
+    tfo: false
+    skip-cert-verify: false
+    network: kcp
+    kcp-opts:
+      seed: "f93c01659ebae0110e730b43baaa519a"
+      header:
+        type: none
+  - name: "Hong Kong-47.86.216.117"
+    type: vless
+    server: 47.86.216.117
+    port: 443
+    uuid: "10745996264903494576"
+    udp: true
+    tfo: false
+    skip-cert-verify: false
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "www.amazon.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: "3liREIK7VH_8KG6UQdlZD6ybX1MdEmCNrKp9UI7IXGU"
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-47.86.216.117-kcp"
+    type: vless
+    server: 47.86.216.117
+    port: 39523
+    uuid: "10745996264903494576"
+    udp: true
+    tfo: false
+    skip-cert-verify: false
+    network: kcp
+    kcp-opts:
+      seed: "6338bffcd495772bc67aabc583d956c4"
+      header:
+        type: none
+  - name: "Hong Kong-45.38.60.198"
+    type: vless
+    server: 45.38.60.198
+    port: 443
+    uuid: "10745996264903494576"
+    udp: true
+    tfo: false
+    skip-cert-verify: false
+    flow: xtls-rprx-vision
+    tls: true
+    servername: "gateway.icloud.com"
+    client-fingerprint: ios
+    reality-opts:
+      public-key: "TPeyBhmV6X1hNw00ok58jvPo6HUotRZxo8UO94NCgzA"
+      short-id: ""
+    network: tcp
+  - name: "Hong Kong-45.38.60.198-kcp"
+    type: vless
+    server: 45.38.60.198
+    port: 39523
+    uuid: "10745996264903494576"
+    udp: true
+    tfo: false
+    skip-cert-verify: false
+    network: kcp
+    kcp-opts:
+      seed: "64b00c41783f8a04ee86b1bb98debf11"
+      header:
+        type: none
   - name: "Indonesia-142.111.15.237"
     type: vless
     server: 142.111.15.237
     port: 8443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -468,7 +468,7 @@ proxies:
     type: vless
     server: 142.111.15.237
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -481,7 +481,7 @@ proxies:
     type: vless
     server: 139.84.173.243
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -497,7 +497,7 @@ proxies:
     type: vless
     server: 139.84.173.243
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -510,7 +510,7 @@ proxies:
     type: vless
     server: 167.104.110.151
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -526,7 +526,7 @@ proxies:
     type: vless
     server: 167.104.110.151
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -539,7 +539,7 @@ proxies:
     type: vless
     server: 54.38.196.64
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -555,7 +555,7 @@ proxies:
     type: vless
     server: 54.38.196.64
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -568,7 +568,7 @@ proxies:
     type: vless
     server: 57.131.138.156
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -584,7 +584,7 @@ proxies:
     type: vless
     server: 57.131.138.156
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -597,7 +597,7 @@ proxies:
     type: vless
     server: 95.182.82.21
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -613,7 +613,7 @@ proxies:
     type: vless
     server: 95.182.82.21
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -626,7 +626,7 @@ proxies:
     type: vless
     server: 31.58.181.185
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -642,7 +642,7 @@ proxies:
     type: vless
     server: 31.58.181.185
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -655,7 +655,7 @@ proxies:
     type: vless
     server: 217.60.3.141
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -671,7 +671,7 @@ proxies:
     type: vless
     server: 217.60.3.141
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -684,7 +684,7 @@ proxies:
     type: vless
     server: 167.104.108.108
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -700,7 +700,7 @@ proxies:
     type: vless
     server: 167.104.108.108
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -713,7 +713,7 @@ proxies:
     type: vless
     server: 167.104.104.25
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -729,7 +729,7 @@ proxies:
     type: vless
     server: 167.104.104.25
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -742,7 +742,7 @@ proxies:
     type: vless
     server: 198.244.149.84
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -758,7 +758,7 @@ proxies:
     type: vless
     server: 198.244.149.84
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -771,7 +771,7 @@ proxies:
     type: vless
     server: 192.99.42.110
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -787,7 +787,7 @@ proxies:
     type: vless
     server: 192.99.42.110
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -800,7 +800,7 @@ proxies:
     type: vless
     server: 82.158.91.108
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -813,7 +813,7 @@ proxies:
     type: vless
     server: 95.182.91.170
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -829,7 +829,7 @@ proxies:
     type: vless
     server: 95.182.91.170
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -842,7 +842,7 @@ proxies:
     type: vless
     server: 15.204.121.61
     port: 443
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -858,7 +858,7 @@ proxies:
     type: vless
     server: 15.204.121.61
     port: 39523
-    uuid: "10926572328840668165"
+    uuid: "10745996264903494576"
     udp: true
     tfo: false
     skip-cert-verify: false
@@ -890,8 +890,8 @@ proxy-groups:
       - "Tai Wan-2.27.149.185-kcp"
       - "Singapore-141.11.43.13"
       - "Singapore-141.11.43.13-kcp"
-      - "Hong Kong-45.38.60.198"
-      - "Hong Kong-45.38.60.198-kcp"
+      - "Hong Kong-47.242.183.157"
+      - "Hong Kong-47.242.183.157-kcp"
       - "Hong Kong-47.76.244.128"
       - "Hong Kong-47.76.244.128-kcp"
       - "Hong Kong-45.39.190.150"
@@ -902,8 +902,8 @@ proxy-groups:
       - "Hong Kong-47.83.186.40-kcp"
       - "Hong Kong-47.86.216.117"
       - "Hong Kong-47.86.216.117-kcp"
-      - "Hong Kong-47.242.183.157"
-      - "Hong Kong-47.242.183.157-kcp"
+      - "Hong Kong-45.38.60.198"
+      - "Hong Kong-45.38.60.198-kcp"
       - "Indonesia-142.111.15.237"
       - "Indonesia-142.111.15.237-kcp"
       - "India-139.84.173.243"
@@ -953,8 +953,8 @@ proxy-groups:
       - "Tai Wan-2.27.149.185-kcp"
       - "Singapore-141.11.43.13"
       - "Singapore-141.11.43.13-kcp"
-      - "Hong Kong-45.38.60.198"
-      - "Hong Kong-45.38.60.198-kcp"
+      - "Hong Kong-47.242.183.157"
+      - "Hong Kong-47.242.183.157-kcp"
       - "Hong Kong-47.76.244.128"
       - "Hong Kong-47.76.244.128-kcp"
       - "Hong Kong-45.39.190.150"
@@ -965,8 +965,8 @@ proxy-groups:
       - "Hong Kong-47.83.186.40-kcp"
       - "Hong Kong-47.86.216.117"
       - "Hong Kong-47.86.216.117-kcp"
-      - "Hong Kong-47.242.183.157"
-      - "Hong Kong-47.242.183.157-kcp"
+      - "Hong Kong-45.38.60.198"
+      - "Hong Kong-45.38.60.198-kcp"
       - "Indonesia-142.111.15.237"
       - "Indonesia-142.111.15.237-kcp"
       - "India-139.84.173.243"
@@ -1013,8 +1013,8 @@ proxy-groups:
       - "Tai Wan-2.27.149.185-kcp"
       - "Singapore-141.11.43.13"
       - "Singapore-141.11.43.13-kcp"
-      - "Hong Kong-45.38.60.198"
-      - "Hong Kong-45.38.60.198-kcp"
+      - "Hong Kong-47.242.183.157"
+      - "Hong Kong-47.242.183.157-kcp"
       - "Hong Kong-47.76.244.128"
       - "Hong Kong-47.76.244.128-kcp"
       - "Hong Kong-45.39.190.150"
@@ -1025,8 +1025,8 @@ proxy-groups:
       - "Hong Kong-47.83.186.40-kcp"
       - "Hong Kong-47.86.216.117"
       - "Hong Kong-47.86.216.117-kcp"
-      - "Hong Kong-47.242.183.157"
-      - "Hong Kong-47.242.183.157-kcp"
+      - "Hong Kong-45.38.60.198"
+      - "Hong Kong-45.38.60.198-kcp"
       - "Indonesia-142.111.15.237"
       - "Indonesia-142.111.15.237-kcp"
       - "India-139.84.173.243"
@@ -1073,8 +1073,8 @@ proxy-groups:
       - "Tai Wan-2.27.149.185-kcp"
       - "Singapore-141.11.43.13"
       - "Singapore-141.11.43.13-kcp"
-      - "Hong Kong-45.38.60.198"
-      - "Hong Kong-45.38.60.198-kcp"
+      - "Hong Kong-47.242.183.157"
+      - "Hong Kong-47.242.183.157-kcp"
       - "Hong Kong-47.76.244.128"
       - "Hong Kong-47.76.244.128-kcp"
       - "Hong Kong-45.39.190.150"
@@ -1085,8 +1085,8 @@ proxy-groups:
       - "Hong Kong-47.83.186.40-kcp"
       - "Hong Kong-47.86.216.117"
       - "Hong Kong-47.86.216.117-kcp"
-      - "Hong Kong-47.242.183.157"
-      - "Hong Kong-47.242.183.157-kcp"
+      - "Hong Kong-45.38.60.198"
+      - "Hong Kong-45.38.60.198-kcp"
       - "Indonesia-142.111.15.237"
       - "Indonesia-142.111.15.237-kcp"
       - "India-139.84.173.243"
@@ -1133,8 +1133,8 @@ proxy-groups:
       - "Tai Wan-2.27.149.185-kcp"
       - "Singapore-141.11.43.13"
       - "Singapore-141.11.43.13-kcp"
-      - "Hong Kong-45.38.60.198"
-      - "Hong Kong-45.38.60.198-kcp"
+      - "Hong Kong-47.242.183.157"
+      - "Hong Kong-47.242.183.157-kcp"
       - "Hong Kong-47.76.244.128"
       - "Hong Kong-47.76.244.128-kcp"
       - "Hong Kong-45.39.190.150"
@@ -1145,8 +1145,8 @@ proxy-groups:
       - "Hong Kong-47.83.186.40-kcp"
       - "Hong Kong-47.86.216.117"
       - "Hong Kong-47.86.216.117-kcp"
-      - "Hong Kong-47.242.183.157"
-      - "Hong Kong-47.242.183.157-kcp"
+      - "Hong Kong-45.38.60.198"
+      - "Hong Kong-45.38.60.198-kcp"
       - "Indonesia-142.111.15.237"
       - "Indonesia-142.111.15.237-kcp"
       - "India-139.84.173.243"
@@ -1194,8 +1194,8 @@ proxy-groups:
       - "Tai Wan-2.27.149.185-kcp"
       - "Singapore-141.11.43.13"
       - "Singapore-141.11.43.13-kcp"
-      - "Hong Kong-45.38.60.198"
-      - "Hong Kong-45.38.60.198-kcp"
+      - "Hong Kong-47.242.183.157"
+      - "Hong Kong-47.242.183.157-kcp"
       - "Hong Kong-47.76.244.128"
       - "Hong Kong-47.76.244.128-kcp"
       - "Hong Kong-45.39.190.150"
@@ -1206,8 +1206,8 @@ proxy-groups:
       - "Hong Kong-47.83.186.40-kcp"
       - "Hong Kong-47.86.216.117"
       - "Hong Kong-47.86.216.117-kcp"
-      - "Hong Kong-47.242.183.157"
-      - "Hong Kong-47.242.183.157-kcp"
+      - "Hong Kong-45.38.60.198"
+      - "Hong Kong-45.38.60.198-kcp"
       - "Indonesia-142.111.15.237"
       - "Indonesia-142.111.15.237-kcp"
       - "India-139.84.173.243"
@@ -1254,8 +1254,8 @@ proxy-groups:
       - "Tai Wan-2.27.149.185-kcp"
       - "Singapore-141.11.43.13"
       - "Singapore-141.11.43.13-kcp"
-      - "Hong Kong-45.38.60.198"
-      - "Hong Kong-45.38.60.198-kcp"
+      - "Hong Kong-47.242.183.157"
+      - "Hong Kong-47.242.183.157-kcp"
       - "Hong Kong-47.76.244.128"
       - "Hong Kong-47.76.244.128-kcp"
       - "Hong Kong-45.39.190.150"
@@ -1266,8 +1266,8 @@ proxy-groups:
       - "Hong Kong-47.83.186.40-kcp"
       - "Hong Kong-47.86.216.117"
       - "Hong Kong-47.86.216.117-kcp"
-      - "Hong Kong-47.242.183.157"
-      - "Hong Kong-47.242.183.157-kcp"
+      - "Hong Kong-45.38.60.198"
+      - "Hong Kong-45.38.60.198-kcp"
       - "Indonesia-142.111.15.237"
       - "Indonesia-142.111.15.237-kcp"
       - "India-139.84.173.243"
