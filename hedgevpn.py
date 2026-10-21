@@ -429,68 +429,302 @@ def to_singbox(nodes: List[Dict[str, Any]]) -> Dict[str, Any]:
 
 
 def to_clash(nodes: List[Dict[str, Any]]) -> str:
-    lines = [
-        "mixed-port: 7890",
-        "allow-lan: false",
-        "mode: rule",
-        "log-level: info",
-        "proxies:",
-    ]
-    for n in nodes:
-        lines.append(f"  - name: {json.dumps(n['name'], ensure_ascii=False)}")
-        lines.append("    type: vless")
-        lines.append(f"    server: {n['server']}")
-        lines.append(f"    port: {n['port']}")
-        lines.append(f"    uuid: {n['uuid']}")
-        lines.append("    udp: true")
-        if n["flow"]:
-            lines.append(f"    flow: {n['flow']}")
-        if n["security"] in ("reality", "tls"):
-            lines.append("    tls: true")
-            lines.append(f"    servername: {json.dumps(n['sni'] or n['server'], ensure_ascii=False)}")
-            if n["fp"]:
-                lines.append(f"    client-fingerprint: {n['fp']}")
-            if n["security"] == "reality" and n["pbk"]:
-                lines.append("    reality-opts:")
-                lines.append(f"      public-key: {n['pbk']}")
-                lines.append(f"      short-id: {json.dumps(n['sid'])}")
-        lines.append(f"    network: {n['net']}")
-        if n["net"] == "kcp" and n["seed"]:
-            lines.append("    kcp-opts:")
-            lines.append(f"      seed: {n['seed']}")
-            lines.append("      header:")
-            lines.append(f"        type: {n['header'] or 'none'}")
-        if n["net"] == "ws":
-            lines.append("    ws-opts:")
-            lines.append(f"      path: {json.dumps(n['q'].get('path', '/'))}")
-            if n["q"].get("host"):
-                lines.append("      headers:")
-                lines.append(f"        Host: {n['q']['host']}")
-        if n["net"] == "grpc":
-            lines.append("    grpc-opts:")
-            lines.append(f"      grpc-service-name: {json.dumps(n['q'].get('serviceName',''))}")
+    """生成完整 Clash Meta (mihomo) 配置：节点 + 策略组 + 详细分流 + DNS"""
+    L: List[str] = []
+    a = L.append
 
-    names = [json.dumps(n["name"], ensure_ascii=False) for n in nodes]
-    lines += [
-        "",
-        "proxy-groups:",
-        "  - name: PROXY",
-        "    type: select",
-        "    proxies: [AUTO, " + ", ".join(names) + "]",
-        "  - name: AUTO",
-        "    type: url-test",
-        "    url: http://www.gstatic.com/generate_204",
-        "    interval: 300",
-        "    proxies: [" + ", ".join(names) + "]",
-        "",
-        "rules:",
-        "  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve",
-        "  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve",
-        "  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve",
-        "  - MATCH,PROXY",
-        "",
+    a("# HedgeVPN / Clash Meta (mihomo) 配置 - 自动生成")
+    a("# 适用：Clash Verge Rev / Mihomo Party / Clash Meta for Android / FlClash / OpenClash")
+    a("")
+    a("mixed-port: 7890")
+    a("socks-port: 7891")
+    a("port: 7892")
+    a("allow-lan: false")
+    a("bind-address: '*'")
+    a("mode: rule")
+    a("log-level: info")
+    a("ipv6: true")
+    a("unified-delay: true")
+    a("tcp-concurrent: true")
+    a("find-process-mode: 'off'")
+    a("global-client-fingerprint: chrome")
+    a("external-controller: 127.0.0.1:9090")
+    a("")
+    a("profile:")
+    a("  store-selected: true")
+    a("  store-fake-ip: true")
+    a("")
+
+    # ---------------- geodata（jsDelivr 镜像，国内外均可下载） ----------------
+    a("geodata-mode: true")
+    a("geodata-loader: standard")
+    a("geo-auto-update: true")
+    a("geo-update-interval: 24")
+    a("geox-url:")
+    a("  geoip: 'https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat'")
+    a("  geosite: 'https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat'")
+    a("  mmdb: 'https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb'")
+    a("")
+
+    # ---------------- DNS 分流 ----------------
+    a("dns:")
+    a("  enable: true")
+    a("  listen: 0.0.0.0:1053")
+    a("  ipv6: true")
+    a("  prefer-h3: false")
+    a("  respect-rules: false")
+    a("  enhanced-mode: fake-ip")
+    a("  fake-ip-range: 198.18.0.1/16")
+    a("  fake-ip-filter-mode: blacklist")
+    a("  fake-ip-filter:")
+    for x in ["'*.lan'", "'*.local'", "'*.localdomain'", "'localhost.ptlogin2.qq.com'",
+              "'+.msftconnecttest.com'", "'+.msftncsi.com'", "'time.*.com'",
+              "'ntp.*.com'", "'+.pool.ntp.org'", "'stun.*.*'", "'+.stun.*.*'"]:
+        a("    - " + x)
+    a("  default-nameserver:")
+    a("    - 223.5.5.5")
+    a("    - 119.29.29.29")
+    a("  proxy-server-nameserver:")
+    a("    - 'https://dns.alidns.com/dns-query'")
+    a("    - 'https://doh.pub/dns-query'")
+    a("  nameserver:")
+    a("    - 'https://dns.alidns.com/dns-query'")
+    a("    - 'https://doh.pub/dns-query'")
+    a("    - 'https://223.5.5.5/dns-query'")
+    a("  nameserver-policy:")
+    a("    'geosite:cn,private':")
+    a("      - 'https://dns.alidns.com/dns-query'")
+    a("      - 'https://doh.pub/dns-query'")
+    a("    'geosite:netflix,disney,hbo,primevideo,youtube,tiktok,spotify':")
+    a("      - 'https://1.1.1.1/dns-query'")
+    a("      - 'https://8.8.8.8/dns-query'")
+    a("    'geosite:openai,anthropic,telegram':")
+    a("      - 'https://1.1.1.1/dns-query'")
+    a("      - 'https://8.8.8.8/dns-query'")
+    a("")
+
+    # ---------------- 节点 ----------------
+    a("proxies:")
+    names: List[str] = []
+    used: Dict[str, int] = {}
+    for n in nodes:
+        nm = n["name"]
+        if nm in used:
+            used[nm] += 1
+            nm = f"{nm} #{used[nm]}"
+        else:
+            used[nm] = 1
+        names.append(nm)
+
+        a(f"  - name: {json.dumps(nm, ensure_ascii=False)}")
+        a("    type: vless")
+        a(f"    server: {n['server']}")
+        a(f"    port: {n['port']}")
+        a(f"    uuid: {json.dumps(str(n['uuid']))}")
+        a("    udp: true")
+        a("    tfo: false")
+        a("    skip-cert-verify: false")
+        if n["flow"]:
+            a(f"    flow: {n['flow']}")
+        if n["security"] in ("reality", "tls"):
+            a("    tls: true")
+            a(f"    servername: {json.dumps(n['sni'] or n['server'], ensure_ascii=False)}")
+            if n["fp"]:
+                a(f"    client-fingerprint: {n['fp']}")
+            else:
+                a("    client-fingerprint: chrome")
+            if n["security"] == "reality" and n["pbk"]:
+                a("    reality-opts:")
+                a(f"      public-key: {json.dumps(n['pbk'])}")
+                a(f"      short-id: {json.dumps(n['sid'] or '')}")
+        a(f"    network: {n['net']}")
+        if n["net"] == "kcp":
+            a("    kcp-opts:")
+            if n["seed"]:
+                a(f"      seed: {json.dumps(n['seed'])}")
+            a("      header:")
+            a(f"        type: {n['header'] or 'none'}")
+        if n["net"] == "ws":
+            a("    ws-opts:")
+            a(f"      path: {json.dumps(n['q'].get('path', '/'))}")
+            if n["q"].get("host"):
+                a("      headers:")
+                a(f"        Host: {json.dumps(n['q']['host'])}")
+        if n["net"] == "grpc":
+            a("    grpc-opts:")
+            a(f"      grpc-service-name: {json.dumps(n['q'].get('serviceName', ''))}")
+        if n["net"] in ("http", "h2"):
+            a("    h2-opts:")
+            a(f"      path: {json.dumps(n['q'].get('path', '/'))}")
+            if n["q"].get("host"):
+                a("      host:")
+                a(f"        - {json.dumps(n['q']['host'])}")
+    a("")
+
+    # ---------------- 策略组 ----------------
+    all_nodes = ", ".join(json.dumps(x, ensure_ascii=False) for x in names)
+    a("proxy-groups:")
+    a("  - name: '🚀 节点选择'")
+    a("    type: select")
+    a("    proxies:")
+    for g in ["♻️ 自动选择", "🎬 流媒体", "🤖 AI服务", "📲 电报消息", "🎮 游戏平台", "🎯 直连"]:
+        a(f"      - '{g}'")
+    for x in names:
+        a(f"      - {json.dumps(x, ensure_ascii=False)}")
+    a("")
+    a("  - name: '♻️ 自动选择'")
+    a("    type: url-test")
+    a("    url: 'http://www.gstatic.com/generate_204'")
+    a("    interval: 300")
+    a("    tolerance: 50")
+    a("    lazy: false")
+    a("    proxies:")
+    for x in names:
+        a(f"      - {json.dumps(x, ensure_ascii=False)}")
+    a("")
+    a("  - name: '🎬 流媒体'")
+    a("    type: select")
+    a("    proxies:")
+    for g in ["♻️ 自动选择"]:
+        a(f"      - '{g}'")
+    for x in names:
+        a(f"      - {json.dumps(x, ensure_ascii=False)}")
+    a("")
+    a("  - name: '🤖 AI服务'")
+    a("    type: select")
+    a("    proxies:")
+    for g in ["♻️ 自动选择"]:
+        a(f"      - '{g}'")
+    for x in names:
+        a(f"      - {json.dumps(x, ensure_ascii=False)}")
+    a("")
+    a("  - name: '📲 电报消息'")
+    a("    type: select")
+    a("    proxies:")
+    for g in ["♻️ 自动选择"]:
+        a(f"      - '{g}'")
+    for x in names:
+        a(f"      - {json.dumps(x, ensure_ascii=False)}")
+    a("")
+    a("  - name: '🎮 游戏平台'")
+    a("    type: select")
+    a("    proxies:")
+    for g in ["🎯 直连", "♻️ 自动选择"]:
+        a(f"      - '{g}'")
+    for x in names:
+        a(f"      - {json.dumps(x, ensure_ascii=False)}")
+    a("")
+    a("  - name: '🎯 直连'")
+    a("    type: select")
+    a("    proxies:")
+    a("      - DIRECT")
+    for x in names:
+        a(f"      - {json.dumps(x, ensure_ascii=False)}")
+    a("")
+    a("  - name: '🛑 广告拦截'")
+    a("    type: select")
+    a("    proxies:")
+    a("      - REJECT")
+    a("      - DIRECT")
+    a("")
+
+    # ---------------- 规则 ----------------
+    rules: List[str] = []
+    # 本地 / 私有网段
+    rules += [
+        "DOMAIN-SUFFIX,local,DIRECT",
+        "DOMAIN-SUFFIX,lan,DIRECT",
+        "IP-CIDR,127.0.0.0/8,DIRECT,no-resolve",
+        "IP-CIDR,10.0.0.0/8,DIRECT,no-resolve",
+        "IP-CIDR,172.16.0.0/12,DIRECT,no-resolve",
+        "IP-CIDR,192.168.0.0/16,DIRECT,no-resolve",
+        "IP-CIDR,100.64.0.0/10,DIRECT,no-resolve",
+        "IP-CIDR,169.254.0.0/16,DIRECT,no-resolve",
+        "IP-CIDR6,fc00::/7,DIRECT,no-resolve",
+        "IP-CIDR6,fe80::/10,DIRECT,no-resolve",
+        "DST-PORT,123,DIRECT",
     ]
-    return "\n".join(lines)
+    # 广告
+    rules += [
+        "GEOSITE,category-ads-all,🛑 广告拦截",
+    ]
+    # AI（gemini 必须先于 google）
+    rules += [
+        "DOMAIN-SUFFIX,gemini.google.com,🤖 AI服务",
+        "DOMAIN-SUFFIX,bard.google.com,🤖 AI服务",
+        "DOMAIN-SUFFIX,openai.com,🤖 AI服务",
+        "DOMAIN-SUFFIX,chatgpt.com,🤖 AI服务",
+        "DOMAIN-SUFFIX,oaistatic.com,🤖 AI服务",
+        "DOMAIN-SUFFIX,oaiusercontent.com,🤖 AI服务",
+        "DOMAIN-SUFFIX,sora.com,🤖 AI服务",
+        "DOMAIN-SUFFIX,anthropic.com,🤖 AI服务",
+        "DOMAIN-SUFFIX,claude.ai,🤖 AI服务",
+        "DOMAIN-SUFFIX,perplexity.ai,🤖 AI服务",
+        "DOMAIN-SUFFIX,midjourney.com,🤖 AI服务",
+        "DOMAIN-SUFFIX,poe.com,🤖 AI服务",
+        "GEOSITE,openai,🤖 AI服务",
+        "GEOSITE,anthropic,🤖 AI服务",
+    ]
+    # 流媒体
+    rules += [
+        "DOMAIN-SUFFIX,netflix.com,🎬 流媒体",
+        "DOMAIN-SUFFIX,nflxvideo.net,🎬 流媒体",
+        "DOMAIN-SUFFIX,nflximg.net,🎬 流媒体",
+        "DOMAIN-SUFFIX,nflxso.net,🎬 流媒体",
+        "DOMAIN-SUFFIX,disneyplus.com,🎬 流媒体",
+        "DOMAIN-SUFFIX,dssott.com,🎬 流媒体",
+        "DOMAIN-SUFFIX,hbomax.com,🎬 流媒体",
+        "DOMAIN-SUFFIX,hbomaxcdn.com,🎬 流媒体",
+        "DOMAIN-SUFFIX,primevideo.com,🎬 流媒体",
+        "DOMAIN-SUFFIX,spotify.com,🎬 流媒体",
+        "DOMAIN-SUFFIX,scdn.co,🎬 流媒体",
+        "DOMAIN-SUFFIX,tiktok.com,🎬 流媒体",
+        "DOMAIN-SUFFIX,tiktokv.com,🎬 流媒体",
+        "DOMAIN-SUFFIX,ibytedtos.com,🎬 流媒体",
+        "DOMAIN-SUFFIX,youtube.com,🎬 流媒体",
+        "DOMAIN-SUFFIX,youtu.be,🎬 流媒体",
+        "DOMAIN-SUFFIX,googlevideo.com,🎬 流媒体",
+        "DOMAIN-SUFFIX,ytimg.com,🎬 流媒体",
+        "DOMAIN-SUFFIX,ggpht.com,🎬 流媒体",
+        "GEOSITE,netflix,🎬 流媒体",
+        "GEOSITE,disney,🎬 流媒体",
+        "GEOSITE,hbo,🎬 流媒体",
+        "GEOSITE,primevideo,🎬 流媒体",
+        "GEOSITE,spotify,🎬 流媒体",
+        "GEOSITE,tiktok,🎬 流媒体",
+        "GEOSITE,youtube,🎬 流媒体",
+    ]
+    # Telegram
+    rules += [
+        "DOMAIN-SUFFIX,t.me,📲 电报消息",
+        "DOMAIN-SUFFIX,telegram.org,📲 电报消息",
+        "DOMAIN-SUFFIX,telegram.me,📲 电报消息",
+        "DOMAIN-SUFFIX,telesco.pe,📲 电报消息",
+        "DOMAIN-SUFFIX,tdesktop.com,📲 电报消息",
+        "GEOSITE,telegram,📲 电报消息",
+    ]
+    # 游戏
+    rules += [
+        "GEOSITE,category-games,🎮 游戏平台",
+    ]
+    # 国内直连
+    rules += [
+        "GEOSITE,apple,DIRECT",
+        "GEOSITE,microsoft,DIRECT",
+        "DOMAIN-SUFFIX,cn,DIRECT",
+        "GEOSITE,cn,DIRECT",
+        "GEOSITE,geolocation-cn,DIRECT",
+        "GEOIP,CN,DIRECT",
+        "GEOSITE,google,🚀 节点选择",
+        "GEOSITE,geolocation-!cn,🚀 节点选择",
+        "MATCH,🚀 节点选择",
+    ]
+
+    a("rules:")
+    for r in rules:
+        a(f"  - {r}")
+    a("")
+    return "\n".join(L)
 
 
 # ---------------------------------------------------------------- 主流程
