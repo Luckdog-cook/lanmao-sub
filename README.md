@@ -269,3 +269,52 @@ https://luckdog-cook.github.io/lanmao-sub/hedgevpn_clash.yaml
 
 规则集全部走 jsDelivr 镜像（`SagerNet/sing-geosite`、`sing-geoip` 的 `.srs` 二进制格式），
 国内可直连，20 个规则集均实测可下载；本地有 `cache_file` 缓存，规则集每天更新一次。
+
+### Clash 配置（mihomo 内核，推荐）
+
+完整配置，**直接导入即用**，已通过 `mihomo -t` 官方二进制校验：
+
+```
+https://cdn.jsdelivr.net/gh/Luckdog-cook/lanmao-sub@main/hedgevpn_clash.yaml
+```
+
+适用客户端：**Clash Verge Rev / Mihomo Party / Clash Meta for Android / FlClash / OpenClash / ClashX Meta**
+
+> 注意：必须用 Meta 系内核（支持 VLESS + Reality），原版 Clash / Clash for Windows 不支持。
+
+**8 个策略组**
+
+| 组名 | 类型 | 说明 |
+|------|------|------|
+| 🚀 节点选择 | select | 总出口，默认 ♻️ 自动选择 |
+| ♻️ 自动选择 | url-test | 每 5 分钟测速，容差 50ms |
+| 🎬 流媒体 | select | Netflix / Disney / HBO / PrimeVideo / Spotify / TikTok / YouTube |
+| 🤖 AI服务 | select | OpenAI / ChatGPT / Claude / Gemini / Perplexity / Midjourney |
+| 📲 电报消息 | select | Telegram |
+| 🎮 游戏平台 | select | 游戏平台，默认直连 |
+| 🎯 直连 | select | 强制直连 |
+| 🛑 广告拦截 | select | REJECT / DIRECT 可切换 |
+
+**68 条分流规则**（按顺序）
+
+1. 本地域名 + 7 个私有网段 → DIRECT
+2. NTP（UDP 123）→ DIRECT
+3. `GEOSITE,category-ads-all` → 🛑 广告拦截
+4. AI 全套（含 `gemini.google.com` 前置，避免被 google 规则抢走）→ 🤖 AI服务
+5. 流媒体全套（域名 + GEOSITE 双保险）→ 🎬 流媒体
+6. Telegram → 📲 电报消息
+7. `GEOSITE,category-games` → 🎮 游戏平台
+8. Apple / Microsoft → DIRECT（国内 CDN 更快）
+9. `GEOSITE,cn` + `geolocation-cn` + `GEOIP,CN` → DIRECT
+10. Google / `geolocation-!cn` → 🚀 节点选择
+11. `MATCH` → 🚀 节点选择
+
+**DNS 分流**
+
+- 国内域名 / 私有域 → 阿里 DoH + 腾讯 DoH
+- 流媒体 / AI / Telegram → `1.1.1.1` + `8.8.8.8` DoH（走代理解析，避免拿到国内 CDN）
+- fake-ip 模式，`198.18.0.1/16`，局域网与 NTP 域名加入白名单
+
+**geodata**：自动从 jsDelivr 下载 `geosite.dat` / `geoip.dat` / `country.mmdb`，24 小时自动更新。
+
+**节点**：55 条（27 个 Reality-TCP + 28 个 mKCP），按地区命名（`Hong Kong-1.2.3.4`）。
