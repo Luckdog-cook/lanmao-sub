@@ -360,8 +360,40 @@ def parse_vless_config(cfg: str):
     return {**d, "reality": reality} if d.get("type") == "vless" and d.get("server") else None
 
 
+def parse_singbox_json(cfg: str):
+    """解析服务端下发的 sing-box JSON（形如 {"outbounds":[{"tag":"Proxy",...}]}）"""
+    try:
+        j = json.loads(cfg)
+    except Exception:
+        return None
+    for o in (j.get("outbounds") or []):
+        t = str(o.get("type") or "").lower()
+        tls = o.get("tls") or {}
+        reality = tls.get("reality") or {}
+        if t == "vless":
+            return {"kind": "vless", "data": {
+                "server": o.get("server"),
+                "port": o.get("server_port") or 443,
+                "uuid": o.get("uuid"),
+                "flow": o.get("flow") or "",
+                "servername": tls.get("server_name") or o.get("server"),
+                "client-fingerprint": (tls.get("utls") or {}).get("fingerprint") or "chrome",
+                "reality": {"public_key": reality.get("public_key") or "",
+                            "short_id": reality.get("short_id") or ""},
+            }}
+        if t == "trojan":
+            return {"kind": "trojan", "data": {
+                "host": o.get("server"), "port": o.get("server_port") or 443,
+                "password": o.get("password") or "",
+                "sni": tls.get("server_name") or o.get("server"),
+            }}
+    return None
+
+
 def parse_config(cfg: str):
     if not cfg: return None
+    if cfg.lstrip().startswith("{"):
+        if j := parse_singbox_json(cfg): return j
     low = cfg.lower()
     if "type: vless" in low:
         if v := parse_vless_config(cfg): return {"kind": "vless", "data": v}
