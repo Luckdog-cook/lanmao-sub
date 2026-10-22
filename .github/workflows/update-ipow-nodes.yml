@@ -36,7 +36,7 @@ jobs:
         run: |
           set -e
           mkdir -p out
-          python ipow.py --mode all --register-attempts 1 --nekobox --quiet -o out || true
+          python ipow_nodes.py --mode all --register-attempts 1 --nekobox --quiet -o out || true
           echo "--- 产物 ---"
           ls -la out/ || true
           [ -f out/ipow.txt ] && echo "订阅行数: $(wc -l < out/ipow.txt)" || echo "无 ipow.txt"
