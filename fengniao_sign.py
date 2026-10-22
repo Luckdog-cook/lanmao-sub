@@ -306,13 +306,13 @@ def _temp_mailbox():
     return addr, pwd, mtok, jreq
 
 
-def bind_email(serial: str, token: str, wait: int = 90) -> bool:
+def bind_email(serial: str, token: str, wait: int = 90):
     """首次绑定邮箱：服务端送 2 小时会员时长，绑完账号才被判定为会员，签到才放行"""
     try:
         addr, pwd, mtok, jreq = _temp_mailbox()
     except Exception as e:
         print(f"  创建临时邮箱失败: {type(e).__name__} {str(e)[:80]}")
-        return False
+        return None
     print(f"  临时邮箱: {addr}")
     try:
         r = request("/user/apply/binding/email", {"email": addr, "password": pwd},
@@ -320,7 +320,7 @@ def bind_email(serial: str, token: str, wait: int = 90) -> bool:
         print(f"  申请绑定: {r['body'][:120]}")
     except Exception as e:
         print(f"  申请绑定失败: {str(e)[:80]}")
-        return False
+        return None
 
     code, deadline = None, time.time() + wait
     while time.time() < deadline and not code:
@@ -341,14 +341,14 @@ def bind_email(serial: str, token: str, wait: int = 90) -> bool:
             continue
     if not code:
         print("  未收到验证码，跳过绑定")
-        return False
+        return None
     try:
         r = request("/user/binding/email", {"code": code}, token=token, serial=serial)
         print(f"  确认绑定: {r['body'][:120]}")
-        return True
+        return addr, pwd
     except Exception as e:
         print(f"  确认绑定失败: {str(e)[:80]}")
-        return False
+        return None
 
 
 def fetch_all_nodes(serial: str, delay: float = 2.0, max_login_retry: int = 2) -> tuple:
@@ -414,9 +414,12 @@ def fetch_all_nodes(serial: str, delay: float = 2.0, max_login_retry: int = 2) -
         pass
 
     # ===== 首次绑定邮箱：送会员时长，顺便获得签到资格 =====
+    acct_extra = {"registerGift": register_gift}
     if not info.get("vipValid"):
         print("== 绑定邮箱（首次送会员时长）==")
-        bind_email(serial, token)
+        bound = bind_email(serial, token)
+        if bound:
+            acct_extra["email"], acct_extra["password"] = bound
 
     # ===== 每日签到（注册送时长 + 签到送时长都靠这一步）=====
     print("== order/user/signin ==")
@@ -435,7 +438,7 @@ def fetch_all_nodes(serial: str, delay: float = 2.0, max_login_retry: int = 2) -
         pass
 
     # 即使没拿到 vipEndTime，也把 serial + 已知信息存下来
-    save_account(serial, vip_end, account_name, {"registerGift": register_gift})
+    save_account(serial, vip_end, account_name, acct_extra)
 
     print("== user/fetch/node/list ==")
     r = request("/user/fetch/node/list", {"vipType": "vip"}, token=token, serial=serial)
