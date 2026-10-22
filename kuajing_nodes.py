@@ -115,22 +115,144 @@ def decrypt_cfg(enc_json: str) -> str:
     return cipher.decrypt(ct).decode("utf-8", "replace")
 
 
+# ---------- 临时邮箱（绑定邮箱送 VIP 天数） ----------
+def _mail_client():
+    import urllib.request as _u
+    UA_M = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
+
+    def jreq(url, data=None, headers=None):
+        h = {"Content-Type": "application/json", "Accept": "application/json", "User-Agent": UA_M}
+        if headers:
+            h.update(headers)
+        req = _u.Request(url, data=json.dumps(data).encode() if data else None,
+                         headers=h, method="POST" if data else "GET")
+        with _u.urlopen(req, timeout=25, context=CTX) as r:
+            return json.loads(r.read().decode())
+    return jreq
+
+
+def _make_mailbox(retries=3):
+    """创建临时邮箱，mail.tm 限流时换域名/重试"""
+    jreq = _mail_client()
+    for attempt in range(retries):
+        try:
+            doms = jreq("https://api.mail.tm/domains")
+            doms = doms["hydra:member"] if isinstance(doms, dict) else doms
+            # 优先用 active 域名，且轮换
+            cand = [d["domain"] for d in doms if d.get("isActive", True)] or [d["domain"] for d in doms]
+            dom = cand[attempt % len(cand)]
+            addr = "kj" + "".join(random.choices(string.ascii_lowercase + string.digits, k=9)) + "@" + dom
+            mpw = "Kj" + "".join(random.choices(string.digits, k=8))
+            jreq("https://api.mail.tm/accounts", {"address": addr, "password": mpw})
+            mtok = jreq("https://api.mail.tm/token", {"address": addr, "password": mpw})["token"]
+            return jreq, addr, mpw, mtok
+        except Exception as e:
+            print(f"  邮箱创建第 {attempt+1} 次失败: {type(e).__name__}")
+            time.sleep(4)
+    return None, None, None, None
+
+
+def bind_email(token, dev, wait=90):
+    """注册后绑邮箱：服务端给 vipEmailBindDays 天 VIP（通常 1 天）"""
+    jreq, addr, mpw, mtok = _make_mailbox()
+    if not jreq:
+        print("  临时邮箱创建失败（多次重试），跳过绑邮箱")
+        return None, None
+
+    print(f"  临时邮箱: {addr}")
+    r = api("/app/users/email/send-code",
+            {"email": addr, "deviceId": dev, "platform": "ANDROID"}, token=token, dev=dev)
+    if r.get("status") != 0:
+        print(f"  发码失败: {r.get('message')}")
+        return addr, None
+
+    code, deadline = None, time.time() + wait
+    while time.time() < deadline and not code:
+        time.sleep(6)
+        try:
+            msgs = jreq("https://api.mail.tm/messages", headers={"Authorization": "Bearer " + mtok})
+            msgs = msgs["hydra:member"] if isinstance(msgs, dict) else msgs
+            for m in msgs:
+                d = jreq("https://api.mail.tm/messages/" + m["id"],
+                         headers={"Authorization": "Bearer " + mtok})
+                t = " ".join([d.get("subject") or "", d.get("text") or ""])
+                dg = "".join(ch for ch in t if ch.isdigit())
+                if 4 <= len(dg) <= 8:
+                    code = dg[:6]
+                    break
+        except Exception:
+            continue
+    if not code:
+        print("  未收到验证码")
+        return addr, None
+
+    rb = api("/app/users/email/bind",
+             {"email": addr, "code": code, "deviceId": dev, "platform": "ANDROID"},
+             token=token, dev=dev)
+    if rb.get("status") == 0:
+        print(f"  绑邮箱成功 +{rb.get('vipDays')} 天 -> {rb.get('vipExpireTime')}")
+        return addr, mpw
+    print(f"  绑定失败: {rb.get('message')}")
+    return addr, mpw
+
+
+def do_checkin(token, dev):
+    r = api("/app/checkin/do", {"deviceId": dev}, token=token, dev=dev)
+    if r.get("status") == 0:
+        d = r.get("data") or {}
+        print(f"  签到: {d.get('rewardText')} 连续{d.get('continuousDays')}天")
+    elif "已签到" in str(r.get("message")):
+        print("  签到: 今日已签")
+    return r
+
+
+def do_lottery(token, dev):
+    home = api("/app/lottery/home", token=token, dev=dev)
+    remain = (home.get("data") or {}).get("remainingChances", 0)
+    won = []
+    for _ in range(min(int(remain or 0), 3)):
+        r = api("/app/lottery/draw", {}, token=token, dev=dev)
+        if r.get("status") == 0:
+            won.append((r.get("data") or {}).get("prizeName"))
+        else:
+            break
+    if won:
+        print(f"  抽奖: {', '.join(str(x) for x in won)}")
+    return won
+
+
 def rand_account():
     u = "kj" + "".join(random.choices(string.digits, k=8))
     p = "Aa" + "".join(random.choices(string.digits, k=8))
     return u, p
 
 
-def load_account():
+def load_account(min_hours=12):
+    """只有 VIP 剩余时间超过 min_hours 才复用，否则换新号（新号能再拿注册+绑邮箱的时长）"""
     if not os.path.exists(ACC_FILE):
         return None
     try:
         d = json.load(open(ACC_FILE))
-        if d.get("username") and d.get("password"):
-            return d
+        if not (d.get("username") and d.get("password")):
+            return None
+        exp = d.get("vipExpireTime") or ""
+        if exp:
+            from datetime import datetime
+            dt = None
+            for fmt in ("%Y-%m-%dT%H:%M:%S.%f", "%Y-%m-%dT%H:%M:%S"):
+                try:
+                    dt = datetime.strptime(exp.split("+")[0][:26], fmt)
+                    break
+                except ValueError:
+                    continue
+            if dt:
+                left = (dt - datetime.now()).total_seconds() / 3600
+                if left < min_hours:
+                    print(f"旧账号剩余 {left:.1f}h < {min_hours}h，换新号")
+                    return None
     except Exception:
         pass
-    return None
+    return d
 
 
 def save_account(d):
@@ -164,7 +286,19 @@ def login_or_register(reuse: bool):
     tok = lr.get("token")
     data = lr.get("data") or {}
     print(f"注册新账号 {u} / {p}  VIP={data.get('vipType')} 到期={data.get('vipExpireTime')}")
+
+    # 绑邮箱再 +N 天（这是延长有效期最实在的一步）
+    email, epw = bind_email(tok, dev)
+    info2 = api("/app/users/info", token=tok, dev=dev).get("data") or {}
+    if info2.get("vipExpireTime"):
+        data["vipExpireTime"] = info2["vipExpireTime"]
+        data["vipType"] = info2.get("vipType") or data.get("vipType")
+
+    do_checkin(tok, dev)
+    do_lottery(tok, dev)
+
     save_account({"username": u, "password": p, "deviceId": dev, "token": tok,
+                  "email": email, "emailPassword": epw,
                   "vipType": data.get("vipType"), "vipExpireTime": data.get("vipExpireTime")})
     return u, p, dev, tok, data
 
