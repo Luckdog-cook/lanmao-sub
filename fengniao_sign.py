@@ -64,7 +64,9 @@ def build_key(ts_str: str, rid: str, token: str) -> str:
     return k8
 
 def gen_serial() -> str:
-    return base64.b64encode(uuid.uuid4().bytes + uuid.uuid4().bytes[:16]).decode()
+    # 与官方 App 一致：UUID 去掉横线的 32 位十六进制
+    # （App 里是 uuid.replaceAll("-", "")，旧版 base64 格式服务端不认，注册不送时长）
+    return uuid.uuid4().hex
 
 def make_sign(params: dict, token: str, serial: str) -> tuple:
     now = int(time.time() * 1000)
@@ -286,7 +288,9 @@ def fetch_all_nodes(serial: str, delay: float = 2.0, max_login_retry: int = 2) -
 
         print("== user/auto/login ==")
         try:
-            r = request("/user/auto/login", {}, serial=serial)
+            invite = os.environ.get("FENGNIAO_INVITE", "").strip()
+            login_params = {"clipBoard": invite} if invite else {}
+            r = request("/user/auto/login", login_params, serial=serial)
             body = json.loads(r["body"])
         except Exception as e:
             print(f"登录请求失败: {e}")
