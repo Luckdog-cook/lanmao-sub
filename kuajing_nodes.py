@@ -196,28 +196,6 @@ def bind_email(token, dev, wait=90):
     return addr, mpw
 
 
-def do_exchange(token, dev):
-    """积分 >= 20 就兑换抽奖次数：奖池里 VIP 天数合计权重约 61/361 ≈ 17%"""
-    for _ in range(3):
-        bal = api("/app/users/balance", token=token, dev=dev).get("data") or 0
-        if not bal or bal < 20:
-            return
-        r = api("/app/lottery/exchange-chance", {"count": 1}, token=token, dev=dev)
-        if r.get("status") != 0:
-            print(f"  兑换失败: {r.get('message')}")
-            return
-        print(f"  兑换: 20积分 -> 1次抽奖 (余额 {bal})")
-        d = api("/app/lottery/draw", {}, token=token, dev=dev)
-        if d.get("status") == 0:
-            dd = d.get("data") or {}
-            print(f"  抽奖: {dd.get('prizeName')} (type={dd.get('prizeType')})")
-            if dd.get("prizeType") == "VIP":
-                info = api("/app/users/info", token=token, dev=dev).get("data") or {}
-                print(f"  VIP 延长至 {info.get('vipExpireTime')}")
-        else:
-            return
-
-
 def do_lottery(token, dev):
     home = api("/app/lottery/home", token=token, dev=dev)
     remain = (home.get("data") or {}).get("remainingChances", 0)
@@ -239,7 +217,7 @@ def rand_account():
     return u, p
 
 
-def load_account(min_hours=12):
+def load_account(min_hours=6):
     """只有 VIP 剩余时间超过 min_hours 才复用，否则换新号（新号能再拿注册+绑邮箱的时长）"""
     if not os.path.exists(ACC_FILE):
         return None
@@ -283,7 +261,6 @@ def login_or_register(reuse: bool):
             print(f"复用账号 {acc['username']}  VIP={((r.get('data') or {}).get('vipType'))} 到期={acc.get('vipExpireTime')}")
             tok = r["token"]
             do_lottery(tok, acc["deviceId"])
-            do_exchange(tok, acc["deviceId"])
             info = api("/app/users/info", token=tok, dev=acc["deviceId"]).get("data") or {}
             save_account({**acc, "token": tok,
                           "vipType": info.get("vipType"), "vipExpireTime": info.get("vipExpireTime")})
@@ -313,7 +290,6 @@ def login_or_register(reuse: bool):
         data["vipType"] = info2.get("vipType") or data.get("vipType")
 
     do_lottery(tok, dev)
-    do_exchange(tok, dev)
 
     save_account({"username": u, "password": p, "deviceId": dev, "token": tok,
                   "email": email, "emailPassword": epw,
