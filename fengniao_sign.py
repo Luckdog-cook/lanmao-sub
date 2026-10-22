@@ -24,7 +24,7 @@ ACCOUNT_FILE = os.path.join(OUTPUT_DIR, "fengniao_account.json")
 # VIP 过期前多久换号（秒）
 # 设 1 小时 = 3600 秒：如果距离 vipEndTime 不到 1 小时，就提前换号
 # 这样即使 Actions 每 3 小时跑一次，也不会出现"刚好过期"的空窗
-VIP_RENEW_MARGIN = 3600
+VIP_RENEW_MARGIN = 1800
 
 
 def md5(s: str) -> str:
@@ -446,7 +446,7 @@ def fetch_all_nodes(serial: str, delay: float = 2.0, max_login_retry: int = 2) -
         nodes = json.loads(r["body"])["data"]
     except Exception:
         print("获取节点列表失败:", r["body"][:200])
-        return token, vip_end, account_name
+        return token, vip_end, account_name, 0
 
     print(f"共 {len(nodes)} 个节点（详情间隔 {delay}s）")
 
@@ -495,6 +495,10 @@ def fetch_all_nodes(serial: str, delay: float = 2.0, max_login_retry: int = 2) -
 
     print(f"\n成功解密节点: {len(success_nodes)} / {len(nodes)}")
 
+    if not success_nodes:
+        print("⚠️ 本次 0 节点（账号时长可能已耗尽），保留上一份订阅文件不覆盖")
+        return token, vip_end, account_name, 0
+
     # ========== 保存文件 ==========
     # 不管有没有节点，都先创建/清空文件，防止旧的过期节点残留
     json_path = os.path.join(OUTPUT_DIR, "fengniao_nodes.json")
@@ -524,7 +528,7 @@ def fetch_all_nodes(serial: str, delay: float = 2.0, max_login_retry: int = 2) -
         f.write(clash_content)
         print(f"Clash 配置已保存至 {clash_path}（共 {len(clash_proxies)} 个节点）")
 
-    return token, vip_end, account_name
+    return token, vip_end, account_name, len(success_nodes)
 
 
 def main():
@@ -563,9 +567,11 @@ def main():
         print(f"使用指定序列号: {serial}")
 
     # ====== 拉取节点 ======
-    token, vip_end, account_name = fetch_all_nodes(serial, delay)
+    token, vip_end, account_name, ok_nodes = fetch_all_nodes(serial, delay)
 
-    if token:
+    if token and ok_nodes == 0:
+        print("\n⚠️ 未获取到可用节点，本轮不更新订阅文件")
+    elif token:
         print(f"\n✅ 注册 + 节点拉取完成。VIP {format_vip_remain(vip_end)}")
     else:
         print("\n❌ 本次未成功获取节点。")
