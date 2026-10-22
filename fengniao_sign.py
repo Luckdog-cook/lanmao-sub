@@ -324,7 +324,25 @@ def fetch_all_nodes(serial: str, delay: float = 2.0, max_login_retry: int = 2) -
         info = json.loads(r["body"])["data"]
         vip_end = info.get("vipEndTime", 0) or 0
         account_name = info.get("account", "") or ""
-        print(f" 账号 {account_name} vipEndTime={vip_end} ({format_vip_remain(vip_end)}) recommenderId={info.get('recommenderId')}")
+        print(f" 账号 {account_name} vipEndTime={vip_end} ({format_vip_remain(vip_end)}) "
+              f"vipValid={info.get('vipValid')} leftFlow={info.get('leftFlow')} "
+              f"hasSignin={info.get('hasSignin')} recommenderId={info.get('recommenderId')}")
+    except Exception:
+        pass
+
+    # ===== 每日签到（注册送时长 + 签到送时长都靠这一步）=====
+    print("== order/user/signin ==")
+    try:
+        sr = request("/order/user/signin", {}, token=token, serial=serial)
+        print(f" 签到返回: {sr['body'][:200]}")
+    except Exception as e:
+        print(f" 签到请求异常: {type(e).__name__} {str(e)[:80]}")
+    try:
+        r2 = request("/user/my/info", {}, token=token, serial=serial)
+        i2 = json.loads(r2["body"]).get("data") or {}
+        vip_end = i2.get("vipEndTime", vip_end) or vip_end
+        print(f" 签到后 vipEndTime={vip_end} vipValid={i2.get('vipValid')} "
+              f"leftFlow={i2.get('leftFlow')} hasSignin={i2.get('hasSignin')}")
     except Exception:
         pass
 
