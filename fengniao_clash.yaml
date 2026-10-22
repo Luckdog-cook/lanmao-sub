@@ -55,17 +55,17 @@ proxies:
 
  - name: "美国四线"
  type: trojan
- server: uis183.pacemakere.com
- port: 20014
- password: "f4e049f55a0045d1"
+ server: uis175.pacemakere.com
+ port: 20004
+ password: "2c8b79c3514041e2"
  udp: true
  skip-cert-verify: true
 
  - name: "中国台湾"
  type: trojan
- server: uwt125.zxom.eu.org
- port: 20047
- password: "371fb52c59844e47"
+ server: kw119.zxmm.eu.org
+ port: 20030
+ password: "0be8e2e563ee47f8"
  udp: true
  skip-cert-verify: true
 
@@ -167,9 +167,9 @@ proxies:
 
  - name: "视频专线"
  type: trojan
- server: su106.izzzzzi.com
+ server: ui108.pacemakere.com
  port: 20007
- password: "b92aa2a047e64a58"
+ password: "b14210ba84ba4754"
  udp: true
  skip-cert-verify: true
 
