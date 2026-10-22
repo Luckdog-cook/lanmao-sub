@@ -241,12 +241,14 @@ def _to_vip_seconds(vip_end_ts) -> int:
         try:
             vip_end_ts = float(vip_end_ts)
         except ValueError:
-            # 服务端返回形如 "2026-10-22 20:29" 的日期字符串
+            # 服务端返回形如 "2026-10-22 20:29" 的日期字符串，按东八区解析
+            import calendar
             from datetime import datetime
             for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M",
                         "%Y/%m/%d %H:%M:%S", "%Y/%m/%d %H:%M"):
                 try:
-                    return int(time.mktime(datetime.strptime(vip_end_ts, fmt).timetuple()))
+                    dt = datetime.strptime(vip_end_ts, fmt)
+                    return int(calendar.timegm(dt.timetuple())) - 8 * 3600
                 except ValueError:
                     continue
             return 0
