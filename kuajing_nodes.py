@@ -196,14 +196,26 @@ def bind_email(token, dev, wait=90):
     return addr, mpw
 
 
-def do_checkin(token, dev):
-    r = api("/app/checkin/do", {"deviceId": dev}, token=token, dev=dev)
-    if r.get("status") == 0:
-        d = r.get("data") or {}
-        print(f"  签到: {d.get('rewardText')} 连续{d.get('continuousDays')}天")
-    elif "已签到" in str(r.get("message")):
-        print("  签到: 今日已签")
-    return r
+def do_exchange(token, dev):
+    """积分 >= 20 就兑换抽奖次数：奖池里 VIP 天数合计权重约 61/361 ≈ 17%"""
+    for _ in range(3):
+        bal = api("/app/users/balance", token=token, dev=dev).get("data") or 0
+        if not bal or bal < 20:
+            return
+        r = api("/app/lottery/exchange-chance", {"count": 1}, token=token, dev=dev)
+        if r.get("status") != 0:
+            print(f"  兑换失败: {r.get('message')}")
+            return
+        print(f"  兑换: 20积分 -> 1次抽奖 (余额 {bal})")
+        d = api("/app/lottery/draw", {}, token=token, dev=dev)
+        if d.get("status") == 0:
+            dd = d.get("data") or {}
+            print(f"  抽奖: {dd.get('prizeName')} (type={dd.get('prizeType')})")
+            if dd.get("prizeType") == "VIP":
+                info = api("/app/users/info", token=token, dev=dev).get("data") or {}
+                print(f"  VIP 延长至 {info.get('vipExpireTime')}")
+        else:
+            return
 
 
 def do_lottery(token, dev):
@@ -268,8 +280,14 @@ def login_or_register(reuse: bool):
             "deviceId": acc["deviceId"], "platform": "ANDROID",
         }, dev=acc["deviceId"])
         if r.get("token"):
-            print(f"复用账号 {acc['username']}  VIP={((r.get('data') or {}).get('vipType'))}")
-            return acc["username"], acc["password"], acc["deviceId"], r["token"], r.get("data") or {}
+            print(f"复用账号 {acc['username']}  VIP={((r.get('data') or {}).get('vipType'))} 到期={acc.get('vipExpireTime')}")
+            tok = r["token"]
+            do_lottery(tok, acc["deviceId"])
+            do_exchange(tok, acc["deviceId"])
+            info = api("/app/users/info", token=tok, dev=acc["deviceId"]).get("data") or {}
+            save_account({**acc, "token": tok,
+                          "vipType": info.get("vipType"), "vipExpireTime": info.get("vipExpireTime")})
+            return acc["username"], acc["password"], acc["deviceId"], tok, info
 
     dev = uuid.uuid4().hex
     u, p = rand_account()
@@ -294,8 +312,8 @@ def login_or_register(reuse: bool):
         data["vipExpireTime"] = info2["vipExpireTime"]
         data["vipType"] = info2.get("vipType") or data.get("vipType")
 
-    do_checkin(tok, dev)
     do_lottery(tok, dev)
+    do_exchange(tok, dev)
 
     save_account({"username": u, "password": p, "deviceId": dev, "token": tok,
                   "email": email, "emailPassword": epw,
