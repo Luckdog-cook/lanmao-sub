@@ -1,0 +1,22 @@
+name: probe-jumpjump
+on:
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: DNS
+        run: |
+          getent ahostsv4 jumpjumpvpn-59b99.appspot.com | head -3 || echo "DNS FAIL"
+      - name: status
+        run: |
+          curl -sS -m 25 -o /tmp/s -w "HTTP=%{http_code}\n" "https://jumpjumpvpn-59b99.appspot.com/api/v1.0/status" -H "User-Agent: JumpJump/3.3.0" || true
+          head -c 600 /tmp/s 2>/dev/null; echo
+      - name: data
+        run: |
+          curl -sS -m 25 -o /tmp/d -w "HTTP=%{http_code}\n" "https://jumpjumpvpn-59b99.appspot.com/api/v1.0/data" -H "User-Agent: JumpJump/3.3.0" || true
+          head -c 600 /tmp/d 2>/dev/null; echo
+      - name: guestLogin
+        run: |
+          curl -sS -m 25 -X POST -o /tmp/g -w "HTTP=%{http_code}\n" "https://jumpjumpvpn-59b99.appspot.com/api/v1.0/guestLogin" -H "Content-Type: application/json" -H "User-Agent: JumpJump/3.3.0" -d '{}' || true
+          head -c 800 /tmp/g 2>/dev/null; echo
