@@ -24,7 +24,7 @@ ACCOUNT_FILE = os.path.join(OUTPUT_DIR, "fengniao_account.json")
 # VIP 过期前多久换号（秒）
 # 设 1 小时 = 3600 秒：如果距离 vipEndTime 不到 1 小时，就提前换号
 # 这样即使 Actions 每 3 小时跑一次，也不会出现"刚好过期"的空窗
-VIP_RENEW_MARGIN = 1800
+VIP_RENEW_MARGIN = 120
 
 
 def md5(s: str) -> str:
@@ -402,6 +402,7 @@ def fetch_all_nodes(serial: str, delay: float = 2.0, max_login_retry: int = 2) -
         return "", 0, ""
 
     print("== user/my/info ==")
+    info = {}
     try:
         r = request("/user/my/info", {}, token=token, serial=serial)
         info = json.loads(r["body"])["data"]
@@ -415,7 +416,7 @@ def fetch_all_nodes(serial: str, delay: float = 2.0, max_login_retry: int = 2) -
 
     # ===== 首次绑定邮箱：送会员时长，顺便获得签到资格 =====
     acct_extra = {"registerGift": register_gift}
-    if not info.get("vipValid"):
+    if not info.get("vipValid") and not info.get("email"):
         print("== 绑定邮箱（首次送会员时长）==")
         bound = bind_email(serial, token)
         if bound:
