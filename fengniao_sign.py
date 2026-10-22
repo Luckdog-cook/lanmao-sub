@@ -241,6 +241,14 @@ def _to_vip_seconds(vip_end_ts) -> int:
         try:
             vip_end_ts = float(vip_end_ts)
         except ValueError:
+            # 服务端返回形如 "2026-10-22 20:29" 的日期字符串
+            from datetime import datetime
+            for fmt in ("%Y-%m-%d %H:%M:%S", "%Y-%m-%d %H:%M",
+                        "%Y/%m/%d %H:%M:%S", "%Y/%m/%d %H:%M"):
+                try:
+                    return int(time.mktime(datetime.strptime(vip_end_ts, fmt).timetuple()))
+                except ValueError:
+                    continue
             return 0
     if not isinstance(vip_end_ts, (int, float)):
         return 0
@@ -270,6 +278,75 @@ def format_vip_remain(vip_end_ts) -> str:
     h = int(remain // 3600)
     m = int((remain % 3600) // 60)
     return f"还剩 {h}h{m}m"
+
+
+# ---------- 临时邮箱 + 绑定邮箱（首次绑定送会员时长，绑完才能签到）----------
+def _temp_mailbox():
+    import ssl
+    from urllib.request import Request, urlopen
+    ctx = ssl.create_default_context(); ctx.check_hostname = False; ctx.verify_mode = ssl.CERT_NONE
+
+    def jreq(url, data=None, headers=None):
+        h = {"Content-Type": "application/json", "Accept": "application/json"}
+        if headers:
+            h.update(headers)
+        body = json.dumps(data).encode() if data else None
+        req = Request(url, data=body, headers=h, method="POST" if data else "GET")
+        with urlopen(req, timeout=25, context=ctx) as r:
+            return json.loads(r.read().decode())
+
+    doms = jreq("https://api.mail.tm/domains")
+    doms = doms["hydra:member"] if isinstance(doms, dict) else doms
+    addr = "fn" + uuid.uuid4().hex[:10] + "@" + doms[0]["domain"]
+    pwd = "Mx" + uuid.uuid4().hex[:8]
+    jreq("https://api.mail.tm/accounts", {"address": addr, "password": pwd})
+    mtok = jreq("https://api.mail.tm/token", {"address": addr, "password": pwd})["token"]
+    return addr, pwd, mtok, jreq
+
+
+def bind_email(serial: str, token: str, wait: int = 90) -> bool:
+    """首次绑定邮箱：服务端送 2 小时会员时长，绑完账号才被判定为会员，签到才放行"""
+    try:
+        addr, pwd, mtok, jreq = _temp_mailbox()
+    except Exception as e:
+        print(f"  创建临时邮箱失败: {type(e).__name__} {str(e)[:80]}")
+        return False
+    print(f"  临时邮箱: {addr}")
+    try:
+        r = request("/user/apply/binding/email", {"email": addr, "password": pwd},
+                    token=token, serial=serial)
+        print(f"  申请绑定: {r['body'][:120]}")
+    except Exception as e:
+        print(f"  申请绑定失败: {str(e)[:80]}")
+        return False
+
+    code, deadline = None, time.time() + wait
+    while time.time() < deadline and not code:
+        time.sleep(6)
+        try:
+            msgs = jreq("https://api.mail.tm/messages",
+                        headers={"Authorization": "Bearer " + mtok})
+            msgs = msgs["hydra:member"] if isinstance(msgs, dict) else msgs
+            for m in msgs:
+                d = jreq("https://api.mail.tm/messages/" + m["id"],
+                         headers={"Authorization": "Bearer " + mtok})
+                text = (d.get("text") or "") + " " + (d.get("subject") or "")
+                digits = "".join(ch for ch in text if ch.isdigit())
+                if len(digits) >= 4:
+                    code = digits[:6]
+                    break
+        except Exception:
+            continue
+    if not code:
+        print("  未收到验证码，跳过绑定")
+        return False
+    try:
+        r = request("/user/binding/email", {"code": code}, token=token, serial=serial)
+        print(f"  确认绑定: {r['body'][:120]}")
+        return True
+    except Exception as e:
+        print(f"  确认绑定失败: {str(e)[:80]}")
+        return False
 
 
 def fetch_all_nodes(serial: str, delay: float = 2.0, max_login_retry: int = 2) -> tuple:
@@ -333,6 +410,11 @@ def fetch_all_nodes(serial: str, delay: float = 2.0, max_login_retry: int = 2) -
               f"hasSignin={info.get('hasSignin')} recommenderId={info.get('recommenderId')}")
     except Exception:
         pass
+
+    # ===== 首次绑定邮箱：送会员时长，顺便获得签到资格 =====
+    if not info.get("vipValid"):
+        print("== 绑定邮箱（首次送会员时长）==")
+        bind_email(serial, token)
 
     # ===== 每日签到（注册送时长 + 签到送时长都靠这一步）=====
     print("== order/user/signin ==")
