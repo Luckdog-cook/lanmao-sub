@@ -1,5 +1,5 @@
 # 趣连自动订阅 (Clash Meta / mihomo)
-# 更新时间: 2026-10-22 05:01:41 UTC
+# 更新时间: 2026-10-22 11:30:21 UTC
 # 节点数: 14
 
 mixed-port: 7890
@@ -15,6 +15,20 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "br.tronsg.com"
+  - name: "AU-au.tronsg.com"
+    type: trojan
+    server: "au.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "au.tronsg.com"
+  - name: "FR-fr.tronsg.com"
+    type: trojan
+    server: "fr.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "fr.tronsg.com"
   - name: "HK-hk013.zestapp778.com"
     type: vless
     server: "hk013.zestapp778.com"
@@ -25,20 +39,6 @@ proxies:
     network: tcp
     servername: "hk013.zestapp778.com"
     client-fingerprint: ios
-  - name: "FR-fr.tronsg.com"
-    type: trojan
-    server: "fr.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "fr.tronsg.com"
-  - name: "AU-au.tronsg.com"
-    type: trojan
-    server: "au.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "au.tronsg.com"
   - name: "HK-152.175.8.61"
     type: vless
     server: "152.175.8.61"
@@ -63,13 +63,6 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "kr.tronsg.com"
-  - name: "NG-hk-02.tronsg.com"
-    type: trojan
-    server: "hk-02.tronsg.com"
-    port: 443
-    password: "9daT1DW2Jp"
-    udp: true
-    sni: "hk-02.tronsg.com"
   - name: "JP-jp1.zestapp778.com"
     type: trojan
     server: "jp1.zestapp778.com"
@@ -84,6 +77,13 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "my.tronsg.com"
+  - name: "NG-hk-02.tronsg.com"
+    type: trojan
+    server: "hk-02.tronsg.com"
+    port: 443
+    password: "9daT1DW2Jp"
+    udp: true
+    sni: "hk-02.tronsg.com"
   - name: "SG-45.77.40.28"
     type: vless
     server: "45.77.40.28"
@@ -94,13 +94,6 @@ proxies:
     network: tcp
     servername: "45.77.40.28"
     client-fingerprint: chrome
-  - name: "RU-ru.tronsg.com"
-    type: trojan
-    server: "ru.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "ru.tronsg.com"
   - name: "TR-tr.tronsg.com"
     type: trojan
     server: "tr.tronsg.com"
@@ -108,6 +101,13 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "tr.tronsg.com"
+  - name: "RU-ru.tronsg.com"
+    type: trojan
+    server: "ru.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "ru.tronsg.com"
   - name: "TW-tw.tronsg.com"
     type: trojan
     server: "tw.tronsg.com"
@@ -124,18 +124,18 @@ proxy-groups:
     tolerance: 50
     proxies:
       - "BR-br.tronsg.com"
-      - "HK-hk013.zestapp778.com"
-      - "FR-fr.tronsg.com"
       - "AU-au.tronsg.com"
+      - "FR-fr.tronsg.com"
+      - "HK-hk013.zestapp778.com"
       - "HK-152.175.8.61"
       - "IN-in.tronsg.com"
       - "KR-kr.tronsg.com"
-      - "NG-hk-02.tronsg.com"
       - "JP-jp1.zestapp778.com"
       - "MY-my.tronsg.com"
+      - "NG-hk-02.tronsg.com"
       - "SG-45.77.40.28"
-      - "RU-ru.tronsg.com"
       - "TR-tr.tronsg.com"
+      - "RU-ru.tronsg.com"
       - "TW-tw.tronsg.com"
   - name: "节点选择"
     type: select
@@ -143,18 +143,18 @@ proxy-groups:
       - "自动选择"
       - "DIRECT"
       - "BR-br.tronsg.com"
-      - "HK-hk013.zestapp778.com"
-      - "FR-fr.tronsg.com"
       - "AU-au.tronsg.com"
+      - "FR-fr.tronsg.com"
+      - "HK-hk013.zestapp778.com"
       - "HK-152.175.8.61"
       - "IN-in.tronsg.com"
       - "KR-kr.tronsg.com"
-      - "NG-hk-02.tronsg.com"
       - "JP-jp1.zestapp778.com"
       - "MY-my.tronsg.com"
+      - "NG-hk-02.tronsg.com"
       - "SG-45.77.40.28"
-      - "RU-ru.tronsg.com"
       - "TR-tr.tronsg.com"
+      - "RU-ru.tronsg.com"
       - "TW-tw.tronsg.com"
 
 rules:
