@@ -552,9 +552,20 @@ def fetch_one_node(nd: dict, token: str, imei: str, idx: int, total: int):
     try:
         d = api_request("/nodes/vipConnect", "POST", {"nodeId": node_id}, token, imei, timeout=12)
         if not isinstance(d, dict) or not d.get("configFile"):
+            with _PRINT_LOCK:
+                why = "无 configFile"
+                if isinstance(d, dict):
+                    msg = d.get("msg") or d.get("message") or d.get("error") or d.get("code")
+                    if msg:
+                        why += f"（{msg}）"
+                print(f"\n  [跳过] {idx}/{total} {cc} {app_name} | {why}")
             return None
         cfg = parse_config(d.get("configFile", ""))
-        if not cfg: return None
+        if not cfg:
+            with _PRINT_LOCK:
+                head = (d.get("configFile") or "").strip().splitlines()[:3]
+                print(f"\n  [解析失败] {idx}/{total} {cc} {app_name} | 配置头: {head}")
+            return None
         c = cfg["data"]
         rec = {"kind": cfg["kind"], "countryCode": cc}
         if cfg["kind"] == "trojan":
