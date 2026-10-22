@@ -90,67 +90,107 @@ def fetch(is_cn: bool) -> dict:
 
 
 # ==================== 生成纯链接 ====================
+def _vless_parts(n: dict):
+    """拆出 vless 节点真正需要的字段：传输方式 / TLS 类型 / reality 参数"""
+    t = n.get("tls") or {}
+    r = t.get("reality") or {}
+    reality = bool(r.get("enabled") or r.get("public_key"))
+    tr = n.get("transport") or {}
+    net = str(tr.get("type") or "tcp").lower()
+    host_hdr = (tr.get("headers") or {}).get("Host") or ""
+    return {
+        "tls": t, "reality": r, "is_reality": reality, "net": net,
+        "fp": (t.get("utls") or {}).get("fingerprint") or "chrome",
+        "sni": t.get("server_name") or "",
+        "path": tr.get("path") or "",
+        "host": host_hdr,
+        "service": tr.get("service_name") or tr.get("serviceName") or "",
+    }
+
+
 def make_uri(n: dict, prefix: str) -> Optional[str]:
     typ = n.get("type")
     tag = f"{prefix}{n.get('tag', 'node')}"
     if typ == "vless":
-        t = n.get("tls", {})
-        r = t.get("reality", {})
+        v = _vless_parts(n)
         params = {
             "encryption": "none",
-            "flow": n.get("flow", ""),
-            "security": "reality",
-            "sni": t.get("server_name", ""),
-            "fp": t.get("utls", {}).get("fingerprint", "chrome"),
-            "pbk": r.get("public_key", ""),
-            "sid": r.get("short_id", ""),
-            "type": "tcp",
-            "headerType": "none",
+            "security": "reality" if v["is_reality"] else "tls",
+            "sni": v["sni"],
+            "fp": v["fp"],
+            "type": v["net"],
         }
-        q = urllib.parse.urlencode({k: v for k, v in params.items() if v})
+        if v["is_reality"]:
+            params["pbk"] = v["reality"].get("public_key", "")
+            params["sid"] = v["reality"].get("short_id", "")
+        if n.get("flow"):
+            params["flow"] = n["flow"]
+        if v["net"] == "ws":
+            params["path"] = v["path"] or "/"
+            if v["host"]:
+                params["host"] = v["host"]
+        elif v["net"] == "grpc":
+            params["serviceName"] = v["service"]
+        alpn = v["tls"].get("alpn")
+        if alpn:
+            params["alpn"] = ",".join(alpn) if isinstance(alpn, list) else str(alpn)
+        q = urllib.parse.urlencode({k: x for k, x in params.items() if x not in ("", None)})
         return f"vless://{n['uuid']}@{n['server']}:{n['server_port']}?{q}#{urllib.parse.quote(tag)}"
     elif typ == "hysteria2":
-        t = n.get("tls", {})
+        t = n.get("tls") or {}
         p = n.get("password") or n.get("uuid", "")
         params = {
             "insecure": "1" if t.get("insecure") else "0",
             "sni": t.get("server_name", ""),
-            "alpn": (t.get("alpn") or [""])[0],
         }
-        q = urllib.parse.urlencode({k: v for k, v in params.items() if v})
+        alpn = t.get("alpn")
+        if alpn:
+            params["alpn"] = alpn[0] if isinstance(alpn, list) and alpn else alpn
+        q = urllib.parse.urlencode({k: v for k, v in params.items() if v not in ("", None)})
         return f"hysteria2://{p}@{n['server']}:{n['server_port']}?{q}#{urllib.parse.quote(tag)}"
     return None
 
 
 # ==================== Clash Meta 配置 ====================
+
 def to_clash_proxy(n: dict, prefix: str) -> Optional[Dict[str, Any]]:
     typ = n.get("type")
     name = f"{prefix}{n.get('tag', 'node')}"
     if typ == "vless":
-        t = n.get("tls", {})
-        r = t.get("reality", {})
+        v = _vless_parts(n)
         proxy = {
             "name": name,
             "type": "vless",
             "server": n["server"],
             "port": n["server_port"],
             "uuid": n["uuid"],
-            "network": "tcp",
+            "network": v["net"],
             "tls": True,
             "udp": True,
-            "flow": n.get("flow") or "",
-            "servername": t.get("server_name", ""),
-            "client-fingerprint": t.get("utls", {}).get("fingerprint", "chrome"),
-            "reality-opts": {
-                "public-key": r.get("public_key", ""),
-                "short-id": r.get("short_id", ""),
-            },
+            "servername": v["sni"],
+            "client-fingerprint": v["fp"],
+            "skip-cert-verify": bool(v["tls"].get("insecure")),
         }
-        if not proxy["flow"]:
-            del proxy["flow"]
+        if n.get("flow") and v["net"] == "tcp":
+            proxy["flow"] = n["flow"]
+        if v["is_reality"]:
+            proxy["reality-opts"] = {
+                "public-key": v["reality"].get("public_key", ""),
+                "short-id": v["reality"].get("short_id", ""),
+            }
+        if v["net"] == "ws":
+            opts = {"path": v["path"] or "/"}
+            if v["host"]:
+                opts["headers"] = {"Host": v["host"]}
+            proxy["ws-opts"] = opts
+        elif v["net"] == "grpc":
+            proxy["grpc-opts"] = {"grpc-service-name": v["service"]}
+        alpn = v["tls"].get("alpn")
+        if alpn:
+            proxy["alpn"] = alpn if isinstance(alpn, list) else [alpn]
         return proxy
     elif typ == "hysteria2":
-        t = n.get("tls", {})
+        t = n.get("tls") or {}
         p = n.get("password") or n.get("uuid", "")
         proxy = {
             "name": name,
@@ -238,51 +278,59 @@ def to_singbox_outbound(n: dict, prefix: str) -> Optional[Dict[str, Any]]:
     typ = n.get("type")
     tag = f"{prefix}{n.get('tag', 'node')}"
     if typ == "vless":
-        t = n.get("tls", {})
-        r = t.get("reality", {})
+        v = _vless_parts(n)
+        tls = {
+            "enabled": True,
+            "server_name": v["sni"],
+            "utls": {"enabled": True, "fingerprint": v["fp"]},
+            "insecure": bool(v["tls"].get("insecure")),
+        }
+        if v["is_reality"]:
+            tls["reality"] = {
+                "enabled": True,
+                "public_key": v["reality"].get("public_key", ""),
+                "short_id": v["reality"].get("short_id", ""),
+            }
+        alpn = v["tls"].get("alpn")
+        if alpn:
+            tls["alpn"] = alpn if isinstance(alpn, list) else [alpn]
         outbound = {
             "type": "vless",
             "tag": tag,
             "server": n["server"],
             "server_port": n["server_port"],
             "uuid": n["uuid"],
-            "flow": n.get("flow") or "",
-            "tls": {
-                "enabled": True,
-                "server_name": t.get("server_name", ""),
-                "utls": {
-                    "enabled": True,
-                    "fingerprint": t.get("utls", {}).get("fingerprint", "chrome"),
-                },
-                "reality": {
-                    "enabled": True,
-                    "public_key": r.get("public_key", ""),
-                    "short_id": r.get("short_id", ""),
-                },
-            },
+            "tls": tls,
         }
-        if not outbound["flow"]:
-            del outbound["flow"]
+        if n.get("flow") and v["net"] == "tcp":
+            outbound["flow"] = n["flow"]
+        if v["net"] == "ws":
+            tr = {"type": "ws", "path": v["path"] or "/"}
+            if v["host"]:
+                tr["headers"] = {"Host": v["host"]}
+            outbound["transport"] = tr
+        elif v["net"] == "grpc":
+            outbound["transport"] = {"type": "grpc", "service_name": v["service"]}
         return outbound
     elif typ == "hysteria2":
-        t = n.get("tls", {})
+        t = n.get("tls") or {}
         p = n.get("password") or n.get("uuid", "")
-        outbound = {
+        tls = {
+            "enabled": True,
+            "server_name": t.get("server_name", ""),
+            "insecure": bool(t.get("insecure")),
+        }
+        alpn = t.get("alpn")
+        if alpn:
+            tls["alpn"] = alpn if isinstance(alpn, list) else [alpn]
+        return {
             "type": "hysteria2",
             "tag": tag,
             "server": n["server"],
             "server_port": n["server_port"],
             "password": p,
-            "tls": {
-                "enabled": True,
-                "server_name": t.get("server_name", ""),
-                "insecure": bool(t.get("insecure")),
-            },
+            "tls": tls,
         }
-        alpn = t.get("alpn")
-        if alpn:
-            outbound["tls"]["alpn"] = alpn if isinstance(alpn, list) else [alpn]
-        return outbound
     return None
 
 
