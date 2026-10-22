@@ -1,0 +1,37 @@
+name: probe-kjkj
+on:
+  workflow_dispatch:
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run
+        run: |
+          python3 - <<'PY'
+          import hashlib, hmac, base64, json, time, uuid, urllib.request, ssl
+          BASE="K9mN7pQ2vX8bE4wR6jL3nA5sD9gH2kP7uY1tI6oE8rQ4mN9vX3bK7sA2wE5gL8pU"
+          W=180000
+          def sha(s): return hashlib.sha256(s.encode()).hexdigest()
+          def derive(ts,dev): return sha("|".join([sha(BASE+sha(dev[:40])), str(ts//W), dev]))
+          def sign(m,p,b,ts,dev):
+              raw=hmac.new(derive(ts,dev).encode(), "|".join([m.upper(),p,b,str(ts),dev]).encode(), hashlib.sha256).digest()
+              return base64.b64encode(raw).decode()
+          def call(base,path,body=None,token=None):
+              dev=str(uuid.uuid4()); ts=int(time.time()*1000)
+              bs=json.dumps(body,separators=(",",":")) if body is not None else ""
+              h={"Accept":"application/json","X-Timestamp":str(ts),"X-Device-Id":dev,
+                 "X-Signature":sign("POST" if body is not None else "GET",path,bs,ts,dev),
+                 "X-Client-Type":"WEB"}
+              if body is not None: h["Content-Type"]="application/json"
+              if token: h["Authorization"]="Bearer "+token
+              req=urllib.request.Request(base+path,data=bs.encode() if bs else None,headers=h,
+                                         method="POST" if body is not None else "GET")
+              try:
+                  with urllib.request.urlopen(req,timeout=20,context=ssl._create_unverified_context()) as r:
+                      return r.status, r.read().decode()[:300]
+              except Exception as e:
+                  return "ERR", str(e)[:200]
+          for base in ("https://interface.kuajingkeji.top/api","https://jiguang666.top/api","https://jiguang888.top/api"):
+              print(base, call(base,"/app/system/settings"))
+          print("ip:", urllib.request.urlopen("https://api.ipify.org",timeout=10).read().decode())
+          PY
