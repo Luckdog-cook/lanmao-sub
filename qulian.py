@@ -560,28 +560,31 @@ def build_clash_yaml(proxies: list) -> str:
 
 # ---------- 节点抓取 ----------
 
-def probe_node(d: dict, timeout: int = 6, retries: int = 2) -> bool:
-    """端口存活探测（TCP + TLS ClientHello）
+def probe_node(d: dict, budget: float = 6.0) -> bool:
+    """端口存活探测（TCP + TLS ClientHello），**总耗时不超过 budget 秒**
 
-    判定规则：
-      1. TCP 连不上 / 超时            → 死节点，剔除
+    判定：
+      1. TCP 连不上 / 超时            → 死节点
       2. TCP 通 + TLS 握手成功        → 活节点
-      3. TCP 通 + TLS 报错（ALPN/证书/协议不匹配）→ 仍算活节点
-         这类是"服务在，但配置细节对不上"，直接剔除会误杀
-      4. TCP 通 + 完全没回 TLS 记录   → 死节点
+      3. TCP 通 + TLS 报错（ALPN/证书/协议不匹配）→ 仍算活节点（服务在，只是细节对不上）
+      4. TCP 通 + 没回任何 TLS 记录   → 死节点
 
-    带重试，避免单次网络抖动把好节点剔掉；ALPN 与客户端保持一致（h2 / http1.1）。
+    重试共享同一个时间预算：每次尝试只用"剩余时间"，不会叠加成 12 秒。
     """
     host = d.get("host")
     if not host:
         return False
     port = int(d.get("port") or 443)
     sni = d.get("sni") or host
+    deadline = time.time() + budget
 
-    for attempt in range(retries):
+    for attempt in range(2):
+        remain = deadline - time.time()
+        if remain <= 0.5:
+            return False
         try:
-            with socket.create_connection((host, port), timeout=timeout) as raw:
-                raw.settimeout(timeout)
+            with socket.create_connection((host, port), timeout=remain) as raw:
+                raw.settimeout(max(0.5, deadline - time.time()))
                 ctx = ssl.create_default_context()
                 ctx.check_hostname = False
                 ctx.verify_mode = ssl.CERT_NONE
@@ -593,14 +596,11 @@ def probe_node(d: dict, timeout: int = 6, retries: int = 2) -> bool:
                     with ctx.wrap_socket(raw, server_hostname=sni):
                         return True
                 except ssl.SSLError:
-                    # 服务端确实回了 TLS 响应（alert/handshake failure），端口是活的
                     return True
                 except (ssl.SSLEOFError, ConnectionResetError, socket.timeout):
                     return False
         except (socket.timeout, ConnectionRefusedError, OSError):
-            if attempt == retries - 1:
-                return False
-            time.sleep(0.8)
+            continue
         except Exception:
             return False
     return False
