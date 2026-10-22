@@ -288,7 +288,7 @@ def fetch_all_nodes(serial: str, delay: float = 2.0, max_login_retry: int = 2) -
 
         print("== user/auto/login ==")
         try:
-            invite = os.environ.get("FENGNIAO_INVITE", "").strip()
+            invite = os.environ.get("FENGNIAO_INVITE", "").strip() or "18359796"
             login_params = {"clipBoard": invite} if invite else {}
             r = request("/user/auto/login", login_params, serial=serial)
             body = json.loads(r["body"])
