@@ -7,17 +7,17 @@ external-controller: 127.0.0.1:9090
 proxies:
  - name: "新加坡"
  type: trojan
- server: it193k.zxom.eu.org
- port: 20038
- password: "5bcd2976733246fa"
+ server: iwt196.zxom.eu.org
+ port: 20014
+ password: "ec386ae4f3714174"
  udp: true
  skip-cert-verify: true
 
  - name: "新加坡二线"
  type: trojan
- server: kw119.zxmm.eu.org
- port: 20030
- password: "0be8e2e563ee47f8"
+ server: uwt125.zxom.eu.org
+ port: 20047
+ password: "371fb52c59844e47"
  udp: true
  skip-cert-verify: true
 
@@ -31,9 +31,9 @@ proxies:
 
  - name: "美国"
  type: trojan
- server: su106.izzzzzi.com
+ server: ui108.pacemakere.com
  port: 20007
- password: "b92aa2a047e64a58"
+ password: "b14210ba84ba4754"
  udp: true
  skip-cert-verify: true
 
@@ -63,9 +63,9 @@ proxies:
 
  - name: "中国台湾"
  type: trojan
- server: uwt125.zxom.eu.org
- port: 20047
- password: "371fb52c59844e47"
+ server: kw119.zxmm.eu.org
+ port: 20030
+ password: "0be8e2e563ee47f8"
  udp: true
  skip-cert-verify: true
 
@@ -111,9 +111,9 @@ proxies:
 
  - name: "韩国"
  type: trojan
- server: ikr200.zxom.eu.org
- port: 20058
- password: "bb415a79de4b4037"
+ server: ikr185.moldscience.cc
+ port: 20047
+ password: "75ab918f28884868"
  udp: true
  skip-cert-verify: true
 
@@ -143,17 +143,17 @@ proxies:
 
  - name: "英国"
  type: trojan
- server: ikuk195.zxom.eu.org
- port: 20029
- password: "b3cc2a40265d467f"
+ server: ikuk204.zxom.eu.org
+ port: 20038
+ password: "1f8d64908fce438c"
  udp: true
  skip-cert-verify: true
 
  - name: "泰国"
  type: trojan
  server: tai12.pacemakere.com
- port: 20006
- password: "1f9337b745924fa0"
+ port: 20008
+ password: "afa69db039414d25"
  udp: true
  skip-cert-verify: true
 
@@ -167,17 +167,17 @@ proxies:
 
  - name: "视频专线"
  type: trojan
- server: ui108.pacemakere.com
+ server: su106.izzzzzi.com
  port: 20007
- password: "b14210ba84ba4754"
+ password: "b92aa2a047e64a58"
  udp: true
  skip-cert-verify: true
 
  - name: "亚洲大区"
  type: trojan
  server: tai12.pacemakere.com
- port: 20006
- password: "1f9337b745924fa0"
+ port: 20008
+ password: "afa69db039414d25"
  udp: true
  skip-cert-verify: true
 
