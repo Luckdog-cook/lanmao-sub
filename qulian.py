@@ -560,21 +560,50 @@ def build_clash_yaml(proxies: list) -> str:
 
 # ---------- 节点抓取 ----------
 
-def probe_node(d: dict, timeout: int = 6) -> bool:
-    """TLS 握手探测：过滤掉端口不通/服务已停的节点。
-    不校验证书（服务端证书普遍过期），只确认端点还在说 TLS。"""
+def probe_node(d: dict, timeout: int = 6, retries: int = 2) -> bool:
+    """端口存活探测（TCP + TLS ClientHello）
+
+    判定规则：
+      1. TCP 连不上 / 超时            → 死节点，剔除
+      2. TCP 通 + TLS 握手成功        → 活节点
+      3. TCP 通 + TLS 报错（ALPN/证书/协议不匹配）→ 仍算活节点
+         这类是"服务在，但配置细节对不上"，直接剔除会误杀
+      4. TCP 通 + 完全没回 TLS 记录   → 死节点
+
+    带重试，避免单次网络抖动把好节点剔掉；ALPN 与客户端保持一致（h2 / http1.1）。
+    """
     host = d.get("host")
     if not host:
         return False
-    try:
-        ctx = ssl.create_default_context()
-        ctx.check_hostname = False
-        ctx.verify_mode = ssl.CERT_NONE
-        with socket.create_connection((host, int(d.get("port") or 443)), timeout=timeout) as raw:
-            with ctx.wrap_socket(raw, server_hostname=d.get("sni") or host):
-                return True
-    except Exception:
-        return False
+    port = int(d.get("port") or 443)
+    sni = d.get("sni") or host
+
+    for attempt in range(retries):
+        try:
+            with socket.create_connection((host, port), timeout=timeout) as raw:
+                raw.settimeout(timeout)
+                ctx = ssl.create_default_context()
+                ctx.check_hostname = False
+                ctx.verify_mode = ssl.CERT_NONE
+                try:
+                    ctx.set_alpn_protocols(["h2", "http/1.1"])
+                except Exception:
+                    pass
+                try:
+                    with ctx.wrap_socket(raw, server_hostname=sni):
+                        return True
+                except ssl.SSLError:
+                    # 服务端确实回了 TLS 响应（alert/handshake failure），端口是活的
+                    return True
+                except (ssl.SSLEOFError, ConnectionResetError, socket.timeout):
+                    return False
+        except (socket.timeout, ConnectionRefusedError, OSError):
+            if attempt == retries - 1:
+                return False
+            time.sleep(0.8)
+        except Exception:
+            return False
+    return False
 
 
 def fetch_one_node(nd: dict, token: str, imei: str, idx: int, total: int):
