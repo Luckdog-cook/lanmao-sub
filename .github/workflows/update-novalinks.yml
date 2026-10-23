@@ -1,0 +1,59 @@
+name: update-novalinks
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: novalinks
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖
+        run: pip install --quiet pyyaml
+
+      - name: 下载 xray (用于节点实测)
+        run: |
+          curl -sL --retry 3 -o xray.zip \
+            https://github.com/XTLS/Xray-core/releases/download/v25.9.11/Xray-linux-64.zip
+          unzip -oq xray.zip xray
+          chmod +x xray
+          ./xray version | head -1
+
+      - name: 抓取订阅
+        env:
+          XRAY_BIN: ./xray
+        run: python3 novalinks.py --probe
+
+      - name: 提交
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -f novalinks_sub.yaml novalinks_nodes.txt
+          if git diff --cached --quiet; then
+            echo "无变化"
+            exit 0
+          fi
+          git commit -m "novalinks: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          for i in 1 2 3; do
+            git fetch origin main
+            git rebase origin/main || git rebase --abort
+            git push && break
+            sleep 8
+          done
