@@ -484,18 +484,17 @@ def main():
     # ---- 输出 ----
     # 用自建模板生成: 详细分流规则 + 地区策略组 (节点全保留)
     try:
-        from clash_template import build_config
-        yml_out = build_config(yml, proxies)
+        from clash_template import build_config, rename_flag
+        fproxies = rename_flag(proxies)
+        yml_out = build_config(yml, fproxies)
     except Exception as e:
         log(f"    模板生成失败({e}), 回退原文")
+        fproxies = proxies
         yml_out = yml
     with open(OUT_YAML, "w") as f:
         f.write(yml_out)
 
-    uris = []
-    for i, p in enumerate(proxies):
-        tag = tag_name(p, i)
-        uris.append(to_vless_uri(p, tag))
+    uris = [to_vless_uri(p, p["name"]) for p in fproxies]
     with open(OUT_TXT, "w") as f:
         f.write("\n".join(uris) + "\n")
 
