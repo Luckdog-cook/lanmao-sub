@@ -37,6 +37,7 @@ UA = "okhttp/4.12.0"
 STATE = os.environ.get("NOVA_STATE", "novalinks_state.json")
 OUT_YAML = os.environ.get("NOVA_YAML", "novalinks_sub.yaml")
 OUT_TXT = os.environ.get("NOVA_TXT", "novalinks_nodes.txt")
+OUT_SB = os.environ.get("NOVA_SB", "novalinks_singbox.json")
 XRAY_BIN = os.environ.get("XRAY_BIN", "xray")
 # 距离过期多少小时就重新注册 (试用 24h)
 REFRESH_HOURS = float(os.environ.get("NOVA_REFRESH_HOURS", "8"))
@@ -343,6 +344,30 @@ def _to_outbound(p):
             "streamSettings": ss}
 
 
+def to_singbox_outbound(p, tag):
+    """NekoBox (sing-box 内核) 用的 vless outbound"""
+    o = {"type": "vless", "tag": tag, "server": p["server"], "server_port": int(p["port"]),
+         "uuid": p["uuid"]}
+    if p.get("flow"):
+        o["flow"] = p["flow"]
+    sni = p.get("servername") or p.get("sni") or p["server"]
+    tls = {"enabled": True, "server_name": sni,
+           "utls": {"enabled": True, "fingerprint": p.get("client-fingerprint", "chrome")}}
+    ro = p.get("reality-opts") or {}
+    if ro.get("public-key"):
+        tls["reality"] = {"enabled": True, "public_key": ro["public-key"],
+                          "short_id": ro.get("short-id", "")}
+    o["tls"] = tls
+    if p.get("network") == "ws":
+        wo = p.get("ws-opts") or {}
+        tr = {"type": "ws", "path": wo.get("path", "/")}
+        h = (wo.get("headers") or {}).get("Host")
+        if h:
+            tr["headers"] = {"Host": h}
+        o["transport"] = tr
+    return o
+
+
 def tag_name(p, idx):
     cc = (p.get("country_code") or "").upper()
     n = p.get("name", f"node{idx}")
@@ -498,9 +523,16 @@ def main():
     with open(OUT_TXT, "w") as f:
         f.write("\n".join(uris) + "\n")
 
-    log(f"[5] 已写出 {OUT_YAML} / {OUT_TXT}: {len(proxies)} 个节点")
-    for i, p in enumerate(proxies):
-        log(f"    - {tag_name(p, i):<22} {p.get('server')}:{p.get('port')}")
+    try:
+        sb = {"outbounds": [to_singbox_outbound(p, p["name"]) for p in fproxies]}
+        with open(OUT_SB, "w") as f:
+            json.dump(sb, f, ensure_ascii=False, indent=1)
+    except Exception as e:
+        log(f"    sing-box 生成失败: {e}")
+
+    log(f"[5] 已写出 {OUT_YAML} / {OUT_TXT} / {OUT_SB}: {len(fproxies)} 个节点")
+    for p in fproxies:
+        log(f"    - {p['name']:<28} {p.get('server')}:{p.get('port')}")
     return 0
 
 
