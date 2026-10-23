@@ -7,17 +7,17 @@ external-controller: 127.0.0.1:9090
 proxies:
  - name: "新加坡"
  type: trojan
- server: iwt196.zxom.eu.org
- port: 20015
- password: "82f1c096fc0d4b1a"
+ server: it193k.zxom.eu.org
+ port: 20039
+ password: "f01f7d24f6f44ca8"
  udp: true
  skip-cert-verify: true
 
  - name: "新加坡二线"
  type: trojan
- server: uwt125.zxom.eu.org
- port: 20048
- password: "ecd60990030740a2"
+ server: kw119.zxmm.eu.org
+ port: 20031
+ password: "00a72bf349e6479b"
  udp: true
  skip-cert-verify: true
 
@@ -31,9 +31,9 @@ proxies:
 
  - name: "美国"
  type: trojan
- server: ui108.pacemakere.com
+ server: su106.izzzzzi.com
  port: 20008
- password: "6ab93ec68bd94b76"
+ password: "4fd2b10b6a754019"
  udp: true
  skip-cert-verify: true
 
@@ -47,9 +47,9 @@ proxies:
 
  - name: "美国三线"
  type: trojan
- server: sa175.moldscience.cc
- port: 20048
- password: "9a9f31bd3b434312"
+ server: jus134.pacemakere.com
+ port: 20017
+ password: "ee844c5ef7504bcf"
  udp: true
  skip-cert-verify: true
 
@@ -111,9 +111,9 @@ proxies:
 
  - name: "韩国"
  type: trojan
- server: ikr200.zxom.eu.org
- port: 20059
- password: "2867b0b25bc74d57"
+ server: ikr100b.zxom.eu.org
+ port: 20005
+ password: "b4453f5ff3af4873"
  udp: true
  skip-cert-verify: true
 
@@ -143,9 +143,9 @@ proxies:
 
  - name: "英国"
  type: trojan
- server: ikuk195.zxom.eu.org
- port: 20030
- password: "43a520f6554b4cdc"
+ server: ikuk204.zxom.eu.org
+ port: 20039
+ password: "014e6618af4b4cff"
  udp: true
  skip-cert-verify: true
 
@@ -167,9 +167,9 @@ proxies:
 
  - name: "视频专线"
  type: trojan
- server: su106.izzzzzi.com
+ server: ui108.pacemakere.com
  port: 20008
- password: "4fd2b10b6a754019"
+ password: "6ab93ec68bd94b76"
  udp: true
  skip-cert-verify: true
 
