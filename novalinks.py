@@ -346,12 +346,25 @@ def main():
 
     # ---- 时长兜底: 试用将尽 -> 免广告领 30 分钟 ----
     force_ad = "--ad" in args
+    boost = 0
+    for i, a in enumerate(args):
+        if a == "--boost" and i + 1 < len(args):
+            try:
+                boost = int(args[i + 1])
+            except ValueError:
+                boost = 0
     stt = account_status(token)
     remain = stt.get("remainingTrialSeconds") or 0
-    if force_ad or (not stt.get("canUseVpn")) or (0 < remain < 1800):
+    if force_ad or boost > 0 or (not stt.get("canUseVpn")) or (0 < remain < 1800):
         r = claim_ad_reward(token)
         log(f"[1b] 免广告领时长: {r.get('outcome')} {r.get('adRewardMinutes')}min "
             f"canUseVpn={r.get('canUseVpn')}")
+        if boost > 0:
+            log(f"    连刷 {boost} 次 (每次 +30min, 间隔 32s)")
+            for k in range(boost):
+                time.sleep(32)
+                rr = claim_ad_reward(token)
+                log(f"      #{k + 1} {rr.get('outcome')} exp={rr.get('adRewardExpiresAt')}")
         if not r.get("canUseVpn") and not stt.get("canUseVpn"):
             log("    广告额度也没了, 换新账号")
             token, dev, resp = register_guest()
