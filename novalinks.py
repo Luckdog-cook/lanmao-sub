@@ -26,6 +26,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import math
 import uuid
 import urllib.error
 import urllib.request
@@ -120,15 +121,46 @@ def fetch_sub_url(token):
     return None
 
 
+def boost_to(token, target_hours, st=None, gap=31, max_calls=3000):
+    """把 adAccess 堆到 target_hours 小时 (每次 +30min, 31s 防抖)"""
+    stt = account_status(token)
+    cur = stt.get("remainingAdSeconds") or 0
+    target = int(target_hours * 3600)
+    if cur >= target:
+        log(f"    当前 {cur / 3600:.1f}h 已达标, 跳过")
+        return cur
+    n = int(math.ceil((target - cur) / 1800.0))
+    log(f"    {cur / 3600:.1f}h -> {target_hours:.0f}h, 需 {n} 次 (约 {n * gap / 60:.0f} 分钟)")
+    ok = 0
+    for k in range(1, min(n, max_calls) + 1):
+        time.sleep(gap)
+        r = claim_ad_reward(token)
+        oc = r.get("outcome")
+        if oc == "granted":
+            ok += 1
+        if k % 20 == 0 or oc != "granted":
+            e = r.get("adRewardExpiresAt") or 0
+            left = max(0, e / 1000 - time.time()) / 3600
+            log(f"      #{k} {oc} 累计 {left:.1f}h 成功 {ok}")
+        if oc not in ("granted", "window_dedup"):
+            log(f"      中断: {json.dumps(r, ensure_ascii=False)[:200]}")
+            break
+        if st is not None and k % 40 == 0:
+            st["ad_expires_at"] = int(e / 1000) if e else 0
+            save_state(st)
+    stt = account_status(token)
+    return stt.get("remainingAdSeconds") or 0
+
+
 def account_status(token):
-    """GET /api/v1/subscription -> 状态字典"""
+    """GET /api/v1/subscription -> 状态字典 (失败时带 _code)"""
     code, txt = http(API + "/api/v1/subscription", headers={"Authorization": "Bearer " + token})
     if code == 200:
         try:
             return json.loads(txt)
         except Exception:
-            pass
-    return {}
+            return {"_code": code}
+    return {"_code": code}
 
 
 def claim_ad_reward(token, unit="ca-app-pub-3940256099942544/5224354917"):
@@ -324,12 +356,34 @@ def main():
     stats_only = "--stats" in args
     st = load_state()
 
-    # ---- 账号 ----
+    # ---- 参数 ----
+    force_ad = "--ad" in args
+    boost_arg = 0
+    for i, a in enumerate(args):
+        if a == "--boost" and i + 1 < len(args):
+            try:
+                boost_arg = int(args[i + 1])
+            except ValueError:
+                boost_arg = 0
+    # 目标时长 = 注册送的 24h 试用 + 广告刷 168h(7天) = 192h(8天)
+    target_h = 192.0
+    below_h = 12.0            # 剩余低于此才续刷/换号
+    for i, a in enumerate(args):
+        if a == "--target" and i + 1 < len(args):
+            target_h = float(args[i + 1])
+        if a == "--refresh-below" and i + 1 < len(args):
+            below_h = float(args[i + 1])
+
+    # ---- 账号: 一个号靠广告堆到 7 天, 快到期才换 ----
     token = st.get("token")
-    exp = st.get("expires_at", 0)
-    need_new = (not token) or (exp - time.time() < REFRESH_HOURS * 3600)
-    if need_new:
-        log("[1] 游客注册 (24h 试用)")
+    stt = account_status(token) if token else {}
+    dead = (not token) or stt.get("_code") in (401, 403) or \
+           stt.get("subscriptionStatus") in ("BLOCKED", "EXPIRED")
+    created = st.get("account_created_at") or st.get("created_at") or time.time()
+    age_h = (time.time() - created) / 3600
+    if dead:
+        if token:
+            log("[1] 旧账号失效 -> 换新号")
         token, dev, resp = register_guest()
         if not token:
             log("注册失败, 退出")
@@ -337,46 +391,51 @@ def main():
         sub = (resp or {}).get("subscription") or {}
         trial_min = sub.get("trial_minutes_remaining") or 1440
         st = {"token": token, "device_id": dev, "user_id": resp.get("user_id"),
-              "trial_minutes": trial_min, "expires_at": int(time.time()) + trial_min * 60,
-              "created_at": int(time.time())}
+              "trial_minutes": trial_min,
+              "trial_expires_at": int(time.time()) + trial_min * 60,
+              "account_created_at": int(time.time())}
         save_state(st)
-        log(f"    user_id={st['user_id']} 试用 {trial_min} 分钟")
+        log(f"[1] 新游客号 user_id={st['user_id']} 试用 {trial_min} 分钟")
+        stt = account_status(token)
     else:
-        log(f"[1] 复用账号 user_id={st.get('user_id')} 剩余 {(exp - time.time()) / 3600:.1f}h")
+        log(f"[1] 复用账号 user_id={st.get('user_id')} 已建 {age_h:.1f}h")
 
-    # ---- 时长兜底: 试用将尽 -> 免广告领 30 分钟 ----
-    force_ad = "--ad" in args
-    boost = 0
-    for i, a in enumerate(args):
-        if a == "--boost" and i + 1 < len(args):
-            try:
-                boost = int(args[i + 1])
-            except ValueError:
-                boost = 0
-    stt = account_status(token)
-    remain = stt.get("remainingTrialSeconds") or 0
-    if force_ad or boost > 0 or (not stt.get("canUseVpn")) or (0 < remain < 1800):
-        r = claim_ad_reward(token)
-        log(f"[1b] 免广告领时长: {r.get('outcome')} {r.get('adRewardMinutes')}min "
-            f"canUseVpn={r.get('canUseVpn')}")
-        if boost > 0:
-            log(f"    连刷 {boost} 次 (每次 +30min, 间隔 32s)")
-            for k in range(boost):
-                time.sleep(32)
-                rr = claim_ad_reward(token)
-                log(f"      #{k + 1} {rr.get('outcome')} exp={rr.get('adRewardExpiresAt')}")
-        if not r.get("canUseVpn") and not stt.get("canUseVpn"):
-            log("    广告额度也没了, 换新账号")
+    ad_rem = stt.get("remainingAdSeconds") or 0
+    trial_rem = stt.get("remainingTrialSeconds") or 0
+    life_h = ad_rem / 3600.0
+    log(f"    时长: 广告 {life_h:.1f}h / 试用字段 {trial_rem / 3600:.1f}h "
+        f"canUseVpn={stt.get('canUseVpn')}")
+
+    if life_h < below_h:
+        # 账号满 7 天且已到期 -> 直接换号, 否则继续刷广告续命
+        if age_h >= target_h:
+            log(f"[1b] 账号已用满 {age_h:.0f}h -> 注册新号")
             token, dev, resp = register_guest()
             if token:
                 sub = (resp or {}).get("subscription") or {}
                 trial_min = sub.get("trial_minutes_remaining") or 1440
                 st = {"token": token, "device_id": dev, "user_id": resp.get("user_id"),
                       "trial_minutes": trial_min,
-                      "expires_at": int(time.time()) + trial_min * 60,
-                      "created_at": int(time.time())}
+                      "trial_expires_at": int(time.time()) + trial_min * 60,
+                      "account_created_at": int(time.time())}
                 save_state(st)
-                log(f"    新账号 user_id={st['user_id']} 试用 {trial_min} 分钟")
+                stt = account_status(token)
+                log(f"    新号 user_id={st['user_id']}")
+        log(f"[1b] 刷广告到 {target_h:.0f}h (每次 +30min, 间隔 31s)")
+        boost_to(token, target_h, st)
+        save_state(st)
+        stt = account_status(token)
+        ad_rem = stt.get("remainingAdSeconds") or 0
+        log(f"    刷完: 广告 {ad_rem / 3600:.1f}h canUseVpn={stt.get('canUseVpn')}")
+    else:
+        log(f"[1b] 剩余 {life_h:.1f}h > {below_h:.0f}h, 不刷时长")
+
+    if boost_arg > 0:
+        log(f"[1c] 手动连刷 {boost_arg} 次")
+        for k in range(boost_arg):
+            time.sleep(31)
+            rr = claim_ad_reward(token)
+            log(f"      #{k + 1} {rr.get('outcome')}")
 
     # ---- 订阅链接 ----
     sub_url = st.get("sub_url")
