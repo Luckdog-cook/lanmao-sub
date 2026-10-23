@@ -32,7 +32,7 @@ dns:
     - https://1.1.1.1/dns-query
     - https://dns.google/dns-query
 proxies:
-- name: Novalinks-UC-TW01
+- name: 🇹🇼 Novalinks-UC-TW01
   type: vless
   server: tw1.nova-26226.site
   port: 443
@@ -45,7 +45,7 @@ proxies:
     path: /nvl-tw1-ws
     headers:
       Host: tw1.nova-26226.site
-- name: Novalinks-BV-US01
+- name: 🇺🇸 Novalinks-BV-US01
   type: vless
   server: 173.242.119.115
   port: 443
@@ -58,7 +58,7 @@ proxies:
     public-key: Ig8U3RBUF3X7KPeM13EvQwbqxkZMTKL4VHQrzJl1AWA
     short-id: ff052ade
   client-fingerprint: chrome
-- name: Novalinks-UC-HK00
+- name: 🇭🇰 Novalinks-UC-HK00
   type: vless
   server: 165.154.63.139
   port: 443
@@ -71,7 +71,7 @@ proxies:
     public-key: AE81BrwMc8-kwGEIA1LhzaL03er0Qwt2V-fFy76F5jQ
     short-id: ca4aedd4
   client-fingerprint: chrome
-- name: US Relay 01
+- name: 🇺🇸 US Relay 01
   server: 8.35.211.169
   port: 2053
   type: vless
@@ -85,7 +85,7 @@ proxies:
     path: /proxyip=ProxyIP.US.CMLiussss.Net
     headers:
       Host: nvl-edge-dr-141026.pages.dev
-- name: CA Relay 02
+- name: 🇨🇦 CA Relay 02
   server: 104.17.50.26
   port: 2053
   type: vless
@@ -99,7 +99,7 @@ proxies:
     path: /proxyip=ProxyIP.CA.CMLiussss.Net
     headers:
       Host: nvl-edge-dr-141026.pages.dev
-- name: GB Relay 03
+- name: 🇬🇧 GB Relay 03
   server: 104.16.150.212
   port: 2083
   type: vless
@@ -113,7 +113,7 @@ proxies:
     path: /proxyip=ProxyIP.GB.CMLiussss.Net
     headers:
       Host: nvl-edge-dr-141026.pages.dev
-- name: HK Relay 06
+- name: 🇭🇰 HK Relay 06
   server: 172.67.77.65
   port: 2096
   type: vless
@@ -127,7 +127,7 @@ proxies:
     path: /proxyip=ProxyIP.HK.CMLiussss.Net
     headers:
       Host: nvl-edge-dr-141026.pages.dev
-- name: JP Relay 07
+- name: 🇯🇵 JP Relay 07
   server: 104.17.112.44
   port: 443
   type: vless
@@ -141,7 +141,7 @@ proxies:
     path: /proxyip=ProxyIP.JP.CMLiussss.Net
     headers:
       Host: nvl-edge-dr-141026.pages.dev
-- name: KR Relay 08
+- name: 🇰🇷 KR Relay 08
   server: 104.17.56.44
   port: 2083
   type: vless
@@ -155,7 +155,7 @@ proxies:
     path: /proxyip=ProxyIP.KR.CMLiussss.Net
     headers:
       Host: nvl-edge-dr-141026.pages.dev
-- name: US Relay 10
+- name: 🇺🇸 US Relay 10
   server: 188.164.248.24
   port: 2083
   type: vless
@@ -175,318 +175,248 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - 🔯 故障转移
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 - name: 🔯 故障转移
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
-- name: 🇭🇰 香港
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - Novalinks-UC-HK00
-  - HK Relay 06
-- name: 🇹🇼 台湾
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - Novalinks-UC-TW01
-- name: 🇯🇵 日本
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - JP Relay 07
-- name: 🇰🇷 韩国
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - KR Relay 08
-- name: 🇺🇸 美国
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - Novalinks-BV-US01
-  - US Relay 01
-  - US Relay 10
-- name: 🇬🇧 英国
-  type: url-test
-  url: http://www.gstatic.com/generate_204
-  interval: 300
-  tolerance: 50
-  proxies:
-  - GB Relay 03
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 - name: 📲 Telegram
   type: select
   proxies:
   - 🚀 节点选择
-  - 🇺🇸 美国
-  - 🇭🇰 香港
   - ♻️ 自动选择
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 - name: 🤖 AI 服务
   type: select
   proxies:
-  - 🇺🇸 美国
-  - 🇯🇵 日本
-  - 🇬🇧 英国
   - 🚀 节点选择
   - ♻️ 自动选择
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 - name: 🎬 国际媒体
   type: select
   proxies:
-  - 🇭🇰 香港
-  - 🇹🇼 台湾
-  - 🇺🇸 美国
-  - 🇯🇵 日本
   - 🚀 节点选择
   - ♻️ 自动选择
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 - name: 📺 巴哈姆特
   type: select
   proxies:
-  - 🇹🇼 台湾
-  - 🇭🇰 香港
   - 🚀 节点选择
   - ♻️ 自动选择
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 - name: 🎵 音乐流媒体
   type: select
   proxies:
-  - 🇭🇰 香港
-  - 🇹🇼 台湾
-  - 🇺🇸 美国
   - 🚀 节点选择
   - ♻️ 自动选择
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
+- name: 🌏 谷歌服务
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 - name: 🍎 苹果服务
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
-  - ♻️ 自动选择
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
-  - ♻️ 自动选择
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 - name: 🎮 游戏平台
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
-- name: 🌏 谷歌服务
-  type: select
-  proxies:
-  - 🚀 节点选择
-  - ♻️ 自动选择
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 - name: 📢 社交媒体
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 - name: 🐟 兜底分流
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
+  - DIRECT
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
-  - 🚀 节点选择
-  - ♻️ 自动选择
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 - name: 🛑 广告拦截
   type: select
   proxies:
   - REJECT
-  - 🚀 节点选择
-  - ♻️ 自动选择
-  - Novalinks-UC-TW01
-  - Novalinks-BV-US01
-  - Novalinks-UC-HK00
-  - US Relay 01
-  - CA Relay 02
-  - GB Relay 03
-  - HK Relay 06
-  - JP Relay 07
-  - KR Relay 08
-  - US Relay 10
+  - 🇹🇼 Novalinks-UC-TW01
+  - 🇺🇸 Novalinks-BV-US01
+  - 🇭🇰 Novalinks-UC-HK00
+  - 🇺🇸 US Relay 01
+  - 🇨🇦 CA Relay 02
+  - 🇬🇧 GB Relay 03
+  - 🇭🇰 HK Relay 06
+  - 🇯🇵 JP Relay 07
+  - 🇰🇷 KR Relay 08
+  - 🇺🇸 US Relay 10
 rules:
 - GEOSITE,category-ads-all,🛑 广告拦截
 - DOMAIN-SUFFIX,doubleclick.net,🛑 广告拦截
 - DOMAIN-SUFFIX,googlesyndication.com,🛑 广告拦截
 - DOMAIN-SUFFIX,googleadservices.com,🛑 广告拦截
-- DOMAIN-SUFFIX,adservice.google.com,🛑 广告拦截
-- DOMAIN-SUFFIX,adcolony.com,🛑 广告拦截
 - DOMAIN-SUFFIX,applovin.com,🛑 广告拦截
-- DOMAIN-SUFFIX,unityads.unity3d.com,🛑 广告拦截
-- DOMAIN-SUFFIX,inmobi.com,🛑 广告拦截
 - DOMAIN-SUFFIX,umeng.com,🛑 广告拦截
-- DOMAIN-SUFFIX,cnzz.com,🛑 广告拦截
-- DOMAIN-SUFFIX,mmstat.com,🛑 广告拦截
 - DOMAIN-SUFFIX,local,🎯 全球直连
 - DOMAIN-SUFFIX,lan,🎯 全球直连
 - IP-CIDR,0.0.0.0/8,🎯 全球直连,no-resolve
@@ -503,49 +433,36 @@ rules:
 - GEOSITE,private,🎯 全球直连
 - GEOSITE,openai,🤖 AI 服务
 - DOMAIN-SUFFIX,chatgpt.com,🤖 AI 服务
-- DOMAIN-SUFFIX,chat.openai.com,🤖 AI 服务
 - DOMAIN-SUFFIX,openai.com,🤖 AI 服务
 - DOMAIN-SUFFIX,oaistatic.com,🤖 AI 服务
 - DOMAIN-SUFFIX,oaiusercontent.com,🤖 AI 服务
 - DOMAIN-SUFFIX,sora.com,🤖 AI 服务
 - DOMAIN-SUFFIX,anthropic.com,🤖 AI 服务
 - DOMAIN-SUFFIX,claude.ai,🤖 AI 服务
-- GEOSITE,google-gemini,🤖 AI 服务
 - DOMAIN-SUFFIX,gemini.google.com,🤖 AI 服务
-- DOMAIN-SUFFIX,bard.google.com,🤖 AI 服务
 - DOMAIN-SUFFIX,generativelanguage.googleapis.com,🤖 AI 服务
 - DOMAIN-SUFFIX,aistudio.google.com,🤖 AI 服务
 - DOMAIN-SUFFIX,perplexity.ai,🤖 AI 服务
 - DOMAIN-SUFFIX,poe.com,🤖 AI 服务
 - DOMAIN-SUFFIX,midjourney.com,🤖 AI 服务
-- DOMAIN-SUFFIX,replicate.com,🤖 AI 服务
 - DOMAIN-SUFFIX,huggingface.co,🤖 AI 服务
 - DOMAIN-SUFFIX,copilot.microsoft.com,🤖 AI 服务
-- DOMAIN-SUFFIX,x.ai,🤖 AI 服务
 - DOMAIN-SUFFIX,grok.com,🤖 AI 服务
 - GEOSITE,telegram,📲 Telegram
 - DOMAIN-SUFFIX,t.me,📲 Telegram
 - DOMAIN-SUFFIX,telegram.org,📲 Telegram
-- DOMAIN-SUFFIX,telegram.me,📲 Telegram
-- DOMAIN-SUFFIX,telesco.pe,📲 Telegram
 - IP-CIDR,91.108.4.0/22,📲 Telegram,no-resolve
 - IP-CIDR,91.108.8.0/22,📲 Telegram,no-resolve
 - IP-CIDR,91.108.12.0/22,📲 Telegram,no-resolve
 - IP-CIDR,91.108.16.0/22,📲 Telegram,no-resolve
 - IP-CIDR,91.108.56.0/22,📲 Telegram,no-resolve
 - IP-CIDR,149.154.160.0/20,📲 Telegram,no-resolve
-- IP-CIDR,95.161.76.0/24,📲 Telegram,no-resolve
 - GEOSITE,netflix,🎬 国际媒体
 - DOMAIN-SUFFIX,netflix.com,🎬 国际媒体
 - DOMAIN-SUFFIX,nflxvideo.net,🎬 国际媒体
-- DOMAIN-SUFFIX,nflximg.net,🎬 国际媒体
-- DOMAIN-SUFFIX,nflxso.net,🎬 国际媒体
 - GEOSITE,disney,🎬 国际媒体
 - DOMAIN-SUFFIX,disneyplus.com,🎬 国际媒体
-- DOMAIN-SUFFIX,dssott.com,🎬 国际媒体
-- DOMAIN-SUFFIX,bamgrid.com,🎬 国际媒体
 - GEOSITE,hbo,🎬 国际媒体
-- DOMAIN-SUFFIX,hbomax.com,🎬 国际媒体
 - DOMAIN-SUFFIX,max.com,🎬 国际媒体
 - GEOSITE,primevideo,🎬 国际媒体
 - DOMAIN-SUFFIX,primevideo.com,🎬 国际媒体
@@ -554,80 +471,56 @@ rules:
 - DOMAIN-SUFFIX,youtu.be,🎬 国际媒体
 - DOMAIN-SUFFIX,ytimg.com,🎬 国际媒体
 - DOMAIN-SUFFIX,googlevideo.com,🎬 国际媒体
-- DOMAIN-SUFFIX,phncdn.com,🎬 国际媒体
 - GEOSITE,bahamut,📺 巴哈姆特
 - DOMAIN-SUFFIX,gamer.com.tw,📺 巴哈姆特
-- DOMAIN-SUFFIX,bahamut.com.tw,📺 巴哈姆特
 - DOMAIN-SUFFIX,spotify.com,🎵 音乐流媒体
 - DOMAIN-SUFFIX,scdn.co,🎵 音乐流媒体
-- DOMAIN-SUFFIX,deezer.com,🎵 音乐流媒体
 - DOMAIN-SUFFIX,soundcloud.com,🎵 音乐流媒体
-- DOMAIN-SUFFIX,music.apple.com,🎵 音乐流媒体
 - GEOSITE,twitter,📢 社交媒体
 - DOMAIN-SUFFIX,x.com,📢 社交媒体
-- DOMAIN-SUFFIX,twitter.com,📢 社交媒体
 - DOMAIN-SUFFIX,twimg.com,📢 社交媒体
 - GEOSITE,facebook,📢 社交媒体
-- DOMAIN-SUFFIX,facebook.com,📢 社交媒体
-- DOMAIN-SUFFIX,fbcdn.net,📢 社交媒体
 - DOMAIN-SUFFIX,instagram.com,📢 社交媒体
-- DOMAIN-SUFFIX,cdninstagram.com,📢 社交媒体
 - DOMAIN-SUFFIX,whatsapp.com,📢 社交媒体
-- DOMAIN-SUFFIX,whatsapp.net,📢 社交媒体
 - DOMAIN-SUFFIX,tiktok.com,📢 社交媒体
-- DOMAIN-SUFFIX,tiktokcdn.com,📢 社交媒体
 - DOMAIN-SUFFIX,discord.com,📢 社交媒体
 - DOMAIN-SUFFIX,discordapp.com,📢 社交媒体
-- DOMAIN-SUFFIX,discord.gg,📢 社交媒体
 - DOMAIN-SUFFIX,reddit.com,📢 社交媒体
-- DOMAIN-SUFFIX,redd.it,📢 社交媒体
 - GEOSITE,google,🌏 谷歌服务
-- DOMAIN-SUFFIX,google.com,🌏 谷歌服务
-- DOMAIN-SUFFIX,googleapis.com,🌏 谷歌服务
 - DOMAIN-SUFFIX,gstatic.com,🌏 谷歌服务
 - DOMAIN-SUFFIX,googleusercontent.com,🌏 谷歌服务
-- DOMAIN-SUFFIX,gmail.com,🌏 谷歌服务
-- DOMAIN-SUFFIX,gvt1.com,🌏 谷歌服务
 - GEOSITE,apple-cn,🍎 苹果服务
 - DOMAIN-SUFFIX,apple.com,🍎 苹果服务
 - DOMAIN-SUFFIX,icloud.com,🍎 苹果服务
-- DOMAIN-SUFFIX,mzstatic.com,🍎 苹果服务
-- DOMAIN-SUFFIX,cdn-apple.com,🍎 苹果服务
 - GEOSITE,microsoft,Ⓜ️ 微软服务
 - DOMAIN-SUFFIX,microsoft.com,Ⓜ️ 微软服务
 - DOMAIN-SUFFIX,windowsupdate.com,Ⓜ️ 微软服务
 - DOMAIN-SUFFIX,live.com,Ⓜ️ 微软服务
-- DOMAIN-SUFFIX,office.com,Ⓜ️ 微软服务
 - DOMAIN-SUFFIX,xboxlive.com,Ⓜ️ 微软服务
 - DOMAIN-SUFFIX,steampowered.com,🎮 游戏平台
 - DOMAIN-SUFFIX,steamstatic.com,🎮 游戏平台
-- DOMAIN-SUFFIX,steamcommunity.com,🎮 游戏平台
 - DOMAIN-SUFFIX,epicgames.com,🎮 游戏平台
-- DOMAIN-SUFFIX,ea.com,🎮 游戏平台
 - DOMAIN-SUFFIX,playstation.com,🎮 游戏平台
 - DOMAIN-SUFFIX,nintendo.com,🎮 游戏平台
 - DOMAIN-SUFFIX,battle.net,🎮 游戏平台
 - DOMAIN-SUFFIX,riotgames.com,🎮 游戏平台
 - DOMAIN-SUFFIX,github.com,🚀 节点选择
 - DOMAIN-SUFFIX,githubusercontent.com,🚀 节点选择
-- DOMAIN-SUFFIX,github.io,🚀 节点选择
-- DOMAIN-SUFFIX,ghcr.io,🚀 节点选择
 - DOMAIN-SUFFIX,docker.com,🚀 节点选择
-- DOMAIN-SUFFIX,npmjs.org,🚀 节点选择
 - DOMAIN-SUFFIX,pypi.org,🚀 节点选择
-- DOMAIN-SUFFIX,vercel.app,🚀 节点选择
-- DOMAIN-SUFFIX,cloudflare.com,🚀 节点选择
 - DOMAIN-SUFFIX,pages.dev,🚀 节点选择
 - GEOSITE,cn,🎯 全球直连
 - GEOSITE,geolocation-!cn,🐟 兜底分流
 - GEOIP,CN,🎯 全球直连
-- IP-CIDR,1.0.1.0/24,🎯 全球直连,no-resolve
-- IP-CIDR,1.0.2.0/23,🎯 全球直连,no-resolve
-- IP-CIDR,1.0.8.0/21,🎯 全球直连,no-resolve
 - IP-CIDR,223.5.5.5/32,🎯 全球直连,no-resolve
 - IP-CIDR,119.29.29.29/32,🎯 全球直连,no-resolve
-- IP-CIDR,180.76.76.76/32,🎯 全球直连,no-resolve
 - MATCH,🐟 兜底分流
+geodata-mode: true
+geox-url:
+  geoip: https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.dat
+  geosite: https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+  mmdb: https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/country.mmdb
+  asn: https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/GeoLite2-ASN.mmdb
 unified-delay: true
 tcp-concurrent: true
 find-process-mode: 'off'
