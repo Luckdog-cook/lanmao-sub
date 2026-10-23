@@ -66,155 +66,43 @@
   },
   {
    "type": "vless",
-   "tag": "🇺🇸 US Relay 01",
-   "server": "8.35.211.169",
-   "server_port": 2053,
-   "uuid": "ed0b0682-5734-4a50-8728-db68d44a1b94",
-   "tls": {
-    "enabled": true,
-    "server_name": "nvl-edge-dr-141026.pages.dev",
-    "utls": {
-     "enabled": true,
-     "fingerprint": "chrome"
-    }
-   },
-   "transport": {
-    "type": "ws",
-    "path": "/proxyip=ProxyIP.US.CMLiussss.Net",
-    "headers": {
-     "Host": "nvl-edge-dr-141026.pages.dev"
-    }
-   }
-  },
-  {
-   "type": "vless",
-   "tag": "🇨🇦 CA Relay 02",
-   "server": "104.17.50.26",
-   "server_port": 2053,
-   "uuid": "ed0b0682-5734-4a50-8728-db68d44a1b94",
-   "tls": {
-    "enabled": true,
-    "server_name": "nvl-edge-dr-141026.pages.dev",
-    "utls": {
-     "enabled": true,
-     "fingerprint": "chrome"
-    }
-   },
-   "transport": {
-    "type": "ws",
-    "path": "/proxyip=ProxyIP.CA.CMLiussss.Net",
-    "headers": {
-     "Host": "nvl-edge-dr-141026.pages.dev"
-    }
-   }
-  },
-  {
-   "type": "vless",
-   "tag": "🇬🇧 GB Relay 03",
-   "server": "104.16.150.212",
-   "server_port": 2083,
-   "uuid": "ed0b0682-5734-4a50-8728-db68d44a1b94",
-   "tls": {
-    "enabled": true,
-    "server_name": "nvl-edge-dr-141026.pages.dev",
-    "utls": {
-     "enabled": true,
-     "fingerprint": "chrome"
-    }
-   },
-   "transport": {
-    "type": "ws",
-    "path": "/proxyip=ProxyIP.GB.CMLiussss.Net",
-    "headers": {
-     "Host": "nvl-edge-dr-141026.pages.dev"
-    }
-   }
-  },
-  {
-   "type": "vless",
-   "tag": "🇭🇰 HK Relay 06",
-   "server": "172.67.77.65",
-   "server_port": 2096,
-   "uuid": "ed0b0682-5734-4a50-8728-db68d44a1b94",
-   "tls": {
-    "enabled": true,
-    "server_name": "nvl-edge-dr-141026.pages.dev",
-    "utls": {
-     "enabled": true,
-     "fingerprint": "chrome"
-    }
-   },
-   "transport": {
-    "type": "ws",
-    "path": "/proxyip=ProxyIP.HK.CMLiussss.Net",
-    "headers": {
-     "Host": "nvl-edge-dr-141026.pages.dev"
-    }
-   }
-  },
-  {
-   "type": "vless",
-   "tag": "🇯🇵 JP Relay 07",
-   "server": "104.17.112.44",
+   "tag": "🇺🇸 Novalinks-BV-US00-v6",
+   "server": "2605:52c0:2:4a25:4a:48ff:fed0:f52a",
    "server_port": 443,
-   "uuid": "ed0b0682-5734-4a50-8728-db68d44a1b94",
+   "uuid": "91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a",
+   "flow": "xtls-rprx-vision",
    "tls": {
     "enabled": true,
-    "server_name": "nvl-edge-dr-141026.pages.dev",
+    "server_name": "www.amazon.com",
     "utls": {
      "enabled": true,
      "fingerprint": "chrome"
-    }
-   },
-   "transport": {
-    "type": "ws",
-    "path": "/proxyip=ProxyIP.JP.CMLiussss.Net",
-    "headers": {
-     "Host": "nvl-edge-dr-141026.pages.dev"
+    },
+    "reality": {
+     "enabled": true,
+     "public_key": "Njwb7fCl8PXKOs3owDB-gjzbmEyEewlL6JlMKwMTUQc",
+     "short_id": "b46b142b"
     }
    }
   },
   {
    "type": "vless",
-   "tag": "🇰🇷 KR Relay 08",
-   "server": "104.17.56.44",
-   "server_port": 2083,
-   "uuid": "ed0b0682-5734-4a50-8728-db68d44a1b94",
+   "tag": "🇺🇸 Novalinks-DMIT-US02",
+   "server": "179.255.103.55",
+   "server_port": 443,
+   "uuid": "91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a",
+   "flow": "xtls-rprx-vision",
    "tls": {
     "enabled": true,
-    "server_name": "nvl-edge-dr-141026.pages.dev",
+    "server_name": "gateway.icloud.com",
     "utls": {
      "enabled": true,
      "fingerprint": "chrome"
-    }
-   },
-   "transport": {
-    "type": "ws",
-    "path": "/proxyip=ProxyIP.KR.CMLiussss.Net",
-    "headers": {
-     "Host": "nvl-edge-dr-141026.pages.dev"
-    }
-   }
-  },
-  {
-   "type": "vless",
-   "tag": "🇺🇸 US Relay 10",
-   "server": "188.164.248.24",
-   "server_port": 2083,
-   "uuid": "ed0b0682-5734-4a50-8728-db68d44a1b94",
-   "tls": {
-    "enabled": true,
-    "server_name": "nvl-edge-dr-141026.pages.dev",
-    "utls": {
+    },
+    "reality": {
      "enabled": true,
-     "fingerprint": "chrome"
-    }
-   },
-   "transport": {
-    "type": "ws",
-    "path": "/proxyip=ProxyIP.US.CMLiussss.Net",
-    "headers": {
-     "Host": "nvl-edge-dr-141026.pages.dev"
+     "public_key": "7GnfF1aT2891M9ulxqMKTNFt1lpbcEiVQElH_iwrg0A",
+     "short_id": "6bead06685c7c50a"
     }
    }
   }

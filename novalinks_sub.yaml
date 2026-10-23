@@ -71,104 +71,32 @@ proxies:
     public-key: AE81BrwMc8-kwGEIA1LhzaL03er0Qwt2V-fFy76F5jQ
     short-id: ca4aedd4
   client-fingerprint: chrome
-- name: 🇺🇸 US Relay 01
-  server: 8.35.211.169
-  port: 2053
+- name: 🇺🇸 Novalinks-BV-US00-v6
   type: vless
-  uuid: ed0b0682-5734-4a50-8728-db68d44a1b94
-  tls: true
-  skip-cert-verify: false
-  servername: nvl-edge-dr-141026.pages.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /proxyip=ProxyIP.US.CMLiussss.Net
-    headers:
-      Host: nvl-edge-dr-141026.pages.dev
-- name: 🇨🇦 CA Relay 02
-  server: 104.17.50.26
-  port: 2053
-  type: vless
-  uuid: ed0b0682-5734-4a50-8728-db68d44a1b94
-  tls: true
-  skip-cert-verify: false
-  servername: nvl-edge-dr-141026.pages.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /proxyip=ProxyIP.CA.CMLiussss.Net
-    headers:
-      Host: nvl-edge-dr-141026.pages.dev
-- name: 🇬🇧 GB Relay 03
-  server: 104.16.150.212
-  port: 2083
-  type: vless
-  uuid: ed0b0682-5734-4a50-8728-db68d44a1b94
-  tls: true
-  skip-cert-verify: false
-  servername: nvl-edge-dr-141026.pages.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /proxyip=ProxyIP.GB.CMLiussss.Net
-    headers:
-      Host: nvl-edge-dr-141026.pages.dev
-- name: 🇭🇰 HK Relay 06
-  server: 172.67.77.65
-  port: 2096
-  type: vless
-  uuid: ed0b0682-5734-4a50-8728-db68d44a1b94
-  tls: true
-  skip-cert-verify: false
-  servername: nvl-edge-dr-141026.pages.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /proxyip=ProxyIP.HK.CMLiussss.Net
-    headers:
-      Host: nvl-edge-dr-141026.pages.dev
-- name: 🇯🇵 JP Relay 07
-  server: 104.17.112.44
+  server: 2605:52c0:2:4a25:4a:48ff:fed0:f52a
   port: 443
-  type: vless
-  uuid: ed0b0682-5734-4a50-8728-db68d44a1b94
+  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
+  network: tcp
+  flow: xtls-rprx-vision
   tls: true
-  skip-cert-verify: false
-  servername: nvl-edge-dr-141026.pages.dev
+  servername: www.amazon.com
+  reality-opts:
+    public-key: Njwb7fCl8PXKOs3owDB-gjzbmEyEewlL6JlMKwMTUQc
+    short-id: b46b142b
   client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /proxyip=ProxyIP.JP.CMLiussss.Net
-    headers:
-      Host: nvl-edge-dr-141026.pages.dev
-- name: 🇰🇷 KR Relay 08
-  server: 104.17.56.44
-  port: 2083
+- name: 🇺🇸 Novalinks-DMIT-US02
   type: vless
-  uuid: ed0b0682-5734-4a50-8728-db68d44a1b94
+  server: 179.255.103.55
+  port: 443
+  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
+  network: tcp
+  flow: xtls-rprx-vision
   tls: true
-  skip-cert-verify: false
-  servername: nvl-edge-dr-141026.pages.dev
+  servername: gateway.icloud.com
+  reality-opts:
+    public-key: 7GnfF1aT2891M9ulxqMKTNFt1lpbcEiVQElH_iwrg0A
+    short-id: 6bead06685c7c50a
   client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /proxyip=ProxyIP.KR.CMLiussss.Net
-    headers:
-      Host: nvl-edge-dr-141026.pages.dev
-- name: 🇺🇸 US Relay 10
-  server: 188.164.248.24
-  port: 2083
-  type: vless
-  uuid: ed0b0682-5734-4a50-8728-db68d44a1b94
-  tls: true
-  skip-cert-verify: false
-  servername: nvl-edge-dr-141026.pages.dev
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /proxyip=ProxyIP.US.CMLiussss.Net
-    headers:
-      Host: nvl-edge-dr-141026.pages.dev
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -178,13 +106,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -194,13 +117,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: 🔯 故障转移
   type: fallback
   url: http://www.gstatic.com/generate_204
@@ -209,13 +127,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: 📲 Telegram
   type: select
   proxies:
@@ -224,13 +137,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: 🤖 AI 服务
   type: select
   proxies:
@@ -239,13 +147,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: 🎬 国际媒体
   type: select
   proxies:
@@ -254,13 +157,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: 📺 巴哈姆特
   type: select
   proxies:
@@ -269,13 +167,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: 🎵 音乐流媒体
   type: select
   proxies:
@@ -284,13 +177,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: 🌏 谷歌服务
   type: select
   proxies:
@@ -299,13 +187,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: 🍎 苹果服务
   type: select
   proxies:
@@ -314,13 +197,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
@@ -329,13 +207,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: 🎮 游戏平台
   type: select
   proxies:
@@ -344,13 +217,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: 📢 社交媒体
   type: select
   proxies:
@@ -359,13 +227,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: 🐟 兜底分流
   type: select
   proxies:
@@ -375,13 +238,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -389,13 +247,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 - name: 🛑 广告拦截
   type: select
   proxies:
@@ -403,13 +256,8 @@ proxy-groups:
   - 🇹🇼 Novalinks-UC-TW01
   - 🇺🇸 Novalinks-BV-US01
   - 🇭🇰 Novalinks-UC-HK00
-  - 🇺🇸 US Relay 01
-  - 🇨🇦 CA Relay 02
-  - 🇬🇧 GB Relay 03
-  - 🇭🇰 HK Relay 06
-  - 🇯🇵 JP Relay 07
-  - 🇰🇷 KR Relay 08
-  - 🇺🇸 US Relay 10
+  - 🇺🇸 Novalinks-BV-US00-v6
+  - 🇺🇸 Novalinks-DMIT-US02
 rules:
 - GEOSITE,category-ads-all,🛑 广告拦截
 - DOMAIN-SUFFIX,doubleclick.net,🛑 广告拦截
