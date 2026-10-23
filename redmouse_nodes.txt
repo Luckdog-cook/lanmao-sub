@@ -1,0 +1,9 @@
+vless://eb85c7e6-923b-4808-98ff-52d1fc826550@47.83.179.144:30011?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=SSFIkykW4mCy8Kn4ni7kX7QA9_DX1TX8YWM1ufLplkU&security=reality&sni=www.figma.com&type=tcp#HK-A1
+vless://eb85c7e6-923b-4808-98ff-52d1fc826550@47.83.179.144:31012?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=LvCIGI5QVMfY3lmEN7LM_WVLHF43ypZkeqMqvyOAax0&security=reality&sni=www.amazon.com&type=tcp#HK-A2
+vless://eb85c7e6-923b-4808-98ff-52d1fc826550@47.83.179.144:30013?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=MPEowms2A7dWKLyN2RflXZkcjkW8mD9q5T-xSS8zoVo&security=reality&sni=www.ietf.org&type=tcp#HK-A3
+vless://eb85c7e6-923b-4808-98ff-52d1fc826550@47.83.179.144:30014?encryption=none&flow=xtls-rprx-vision&fp=safari&pbk=AGjEzFwkAaf7xZIlJaygQnYGB-yzYHqLMvfJFcV8ZFY&security=reality&sni=www.salesforce.com&type=tcp#SG-A1
+vless://eb85c7e6-923b-4808-98ff-52d1fc826550@47.83.179.144:30015?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=JNuuUc30PLQGDflj6EQnl5VHoEvO4_fJy-UZWUne40A&security=reality&sni=addons.mozilla.org&type=tcp#SG-A2
+vless://eb85c7e6-923b-4808-98ff-52d1fc826550@47.83.179.144:30016?encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=aknHJR7W2yhllqpRsvKlhdukdWLlSCp293Q2JFcg-wc&security=reality&sni=dl.google.com&type=tcp#SG-A3
+vless://eb85c7e6-923b-4808-98ff-52d1fc826550@64.186.230.166:30021?encryption=none&flow=xtls-rprx-vision&fp=ios&pbk=X7QT4Hb32qRm8E7omXwxUjKn9oFvy597Xqvzbos_0iY&security=reality&sni=www.intel.com&type=tcp#US-E1
+vless://eb85c7e6-923b-4808-98ff-52d1fc826550@64.186.230.166:30022?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=a2zUU8zpDgat2hXkCh1ZfvrKC-ByffLTWjYxEDyMKkg&security=reality&sni=www.nvidia.com&type=tcp#US-E2
+vless://eb85c7e6-923b-4808-98ff-52d1fc826550@64.186.230.166:30023?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=cbwVEvmTvqUEWyMn_YgSXlf6-xctYp8-C0X0IRAuPCM&security=reality&sni=www.spotify.com&type=tcp#US-E3
