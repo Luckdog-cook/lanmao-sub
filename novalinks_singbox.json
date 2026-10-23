@@ -1,0 +1,222 @@
+{
+ "outbounds": [
+  {
+   "type": "vless",
+   "tag": "🇹🇼 Novalinks-UC-TW01",
+   "server": "tw1.nova-26226.site",
+   "server_port": 443,
+   "uuid": "91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a",
+   "tls": {
+    "enabled": true,
+    "server_name": "tw1.nova-26226.site",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/nvl-tw1-ws",
+    "headers": {
+     "Host": "tw1.nova-26226.site"
+    }
+   }
+  },
+  {
+   "type": "vless",
+   "tag": "🇺🇸 Novalinks-BV-US01",
+   "server": "173.242.119.115",
+   "server_port": 443,
+   "uuid": "91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a",
+   "flow": "xtls-rprx-vision",
+   "tls": {
+    "enabled": true,
+    "server_name": "www.amazon.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    },
+    "reality": {
+     "enabled": true,
+     "public_key": "Ig8U3RBUF3X7KPeM13EvQwbqxkZMTKL4VHQrzJl1AWA",
+     "short_id": "ff052ade"
+    }
+   }
+  },
+  {
+   "type": "vless",
+   "tag": "🇭🇰 Novalinks-UC-HK00",
+   "server": "165.154.63.139",
+   "server_port": 443,
+   "uuid": "91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a",
+   "flow": "xtls-rprx-vision",
+   "tls": {
+    "enabled": true,
+    "server_name": "www.amazon.com",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    },
+    "reality": {
+     "enabled": true,
+     "public_key": "AE81BrwMc8-kwGEIA1LhzaL03er0Qwt2V-fFy76F5jQ",
+     "short_id": "ca4aedd4"
+    }
+   }
+  },
+  {
+   "type": "vless",
+   "tag": "🇺🇸 US Relay 01",
+   "server": "8.35.211.169",
+   "server_port": 2053,
+   "uuid": "ed0b0682-5734-4a50-8728-db68d44a1b94",
+   "tls": {
+    "enabled": true,
+    "server_name": "nvl-edge-dr-141026.pages.dev",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/proxyip=ProxyIP.US.CMLiussss.Net",
+    "headers": {
+     "Host": "nvl-edge-dr-141026.pages.dev"
+    }
+   }
+  },
+  {
+   "type": "vless",
+   "tag": "🇨🇦 CA Relay 02",
+   "server": "104.17.50.26",
+   "server_port": 2053,
+   "uuid": "ed0b0682-5734-4a50-8728-db68d44a1b94",
+   "tls": {
+    "enabled": true,
+    "server_name": "nvl-edge-dr-141026.pages.dev",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/proxyip=ProxyIP.CA.CMLiussss.Net",
+    "headers": {
+     "Host": "nvl-edge-dr-141026.pages.dev"
+    }
+   }
+  },
+  {
+   "type": "vless",
+   "tag": "🇬🇧 GB Relay 03",
+   "server": "104.16.150.212",
+   "server_port": 2083,
+   "uuid": "ed0b0682-5734-4a50-8728-db68d44a1b94",
+   "tls": {
+    "enabled": true,
+    "server_name": "nvl-edge-dr-141026.pages.dev",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/proxyip=ProxyIP.GB.CMLiussss.Net",
+    "headers": {
+     "Host": "nvl-edge-dr-141026.pages.dev"
+    }
+   }
+  },
+  {
+   "type": "vless",
+   "tag": "🇭🇰 HK Relay 06",
+   "server": "172.67.77.65",
+   "server_port": 2096,
+   "uuid": "ed0b0682-5734-4a50-8728-db68d44a1b94",
+   "tls": {
+    "enabled": true,
+    "server_name": "nvl-edge-dr-141026.pages.dev",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/proxyip=ProxyIP.HK.CMLiussss.Net",
+    "headers": {
+     "Host": "nvl-edge-dr-141026.pages.dev"
+    }
+   }
+  },
+  {
+   "type": "vless",
+   "tag": "🇯🇵 JP Relay 07",
+   "server": "104.17.112.44",
+   "server_port": 443,
+   "uuid": "ed0b0682-5734-4a50-8728-db68d44a1b94",
+   "tls": {
+    "enabled": true,
+    "server_name": "nvl-edge-dr-141026.pages.dev",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/proxyip=ProxyIP.JP.CMLiussss.Net",
+    "headers": {
+     "Host": "nvl-edge-dr-141026.pages.dev"
+    }
+   }
+  },
+  {
+   "type": "vless",
+   "tag": "🇰🇷 KR Relay 08",
+   "server": "104.17.56.44",
+   "server_port": 2083,
+   "uuid": "ed0b0682-5734-4a50-8728-db68d44a1b94",
+   "tls": {
+    "enabled": true,
+    "server_name": "nvl-edge-dr-141026.pages.dev",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/proxyip=ProxyIP.KR.CMLiussss.Net",
+    "headers": {
+     "Host": "nvl-edge-dr-141026.pages.dev"
+    }
+   }
+  },
+  {
+   "type": "vless",
+   "tag": "🇺🇸 US Relay 10",
+   "server": "188.164.248.24",
+   "server_port": 2083,
+   "uuid": "ed0b0682-5734-4a50-8728-db68d44a1b94",
+   "tls": {
+    "enabled": true,
+    "server_name": "nvl-edge-dr-141026.pages.dev",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/proxyip=ProxyIP.US.CMLiussss.Net",
+    "headers": {
+     "Host": "nvl-edge-dr-141026.pages.dev"
+    }
+   }
+  }
+ ]
+}
