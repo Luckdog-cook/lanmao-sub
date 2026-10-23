@@ -290,6 +290,20 @@ proxies:
   password: 288c33ad-4c57-45fe-8e7b-22f6209980c1
   sni: bing.com
   skip-cert-verify: true
+- name: JP-07-三网优化
+  server: jp07.node.qixi.best
+  port: 443
+  type: trojan
+  password: 288c33ad-4c57-45fe-8e7b-22f6209980c1
+  network: ws
+  udp: true
+  tls: true
+  servername: jp07.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp07.node.qixi.best
 - name: US-01-三网优化
   server: us01.node.qixi.best
   port: 443
@@ -347,6 +361,7 @@ proxy-groups:
   - JP-04-三网优化
   - JP-05-三网优化
   - JP06-三网优化
+  - JP-07-三网优化
   - US-01-三网优化
   - DE-01-三网优化
   - DIRECT
@@ -377,6 +392,7 @@ proxy-groups:
   - JP-04-三网优化
   - JP-05-三网优化
   - JP06-三网优化
+  - JP-07-三网优化
   - US-01-三网优化
   - DE-01-三网优化
   url: http://www.gstatic.com/generate_204
