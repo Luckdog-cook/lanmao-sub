@@ -482,12 +482,15 @@ def main():
         return 4
 
     # ---- 输出 ----
-    # yaml 原样落盘 (服务端配置本身合法, 重写容易引入缩进/类型问题)
-    if do_probe and len(proxies) < len(parse_yaml_proxies(yml)):
-        # 实测有剔除时, 需要过滤 proxies 段, 交给 yaml 库处理
-        yml = _filter_yaml(yml, proxies)
+    # 用自建模板生成: 详细分流规则 + 地区策略组 (节点全保留)
+    try:
+        from clash_template import build_config
+        yml_out = build_config(yml, proxies)
+    except Exception as e:
+        log(f"    模板生成失败({e}), 回退原文")
+        yml_out = yml
     with open(OUT_YAML, "w") as f:
-        f.write(yml)
+        f.write(yml_out)
 
     uris = []
     for i, p in enumerate(proxies):
