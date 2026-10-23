@@ -2,7 +2,8 @@ name: update-novalinks
 
 on:
   schedule:
-    - cron: '17 */6 * * *'
+    # 每天一次。账号刷满 192h(24h 试用 + 7 天广告) 后, 之后每天只做一次秒级检查
+    - cron: '23 4 * * *'
   workflow_dispatch:
 
 permissions:
@@ -15,7 +16,8 @@ concurrency:
 jobs:
   fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # 首次刷满 192h 需要约 3.5 小时 (384 次 x 31s)
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
         with:
@@ -28,7 +30,7 @@ jobs:
       - name: 安装依赖
         run: pip install --quiet pyyaml
 
-      - name: 下载 xray (用于节点实测)
+      - name: 下载 xray (节点实测)
         run: |
           curl -sL --retry 3 -o xray.zip \
             https://github.com/XTLS/Xray-core/releases/download/v25.9.11/Xray-linux-64.zip
@@ -36,16 +38,18 @@ jobs:
           chmod +x xray
           ./xray version | head -1
 
-      - name: 抓取订阅
+      - name: 抓取 + 续时长
         env:
           XRAY_BIN: ./xray
-        run: python3 novalinks.py --probe
+          NOVA_STATE: novalinks_state.json
+        run: python3 novalinks.py --probe --target 192 --refresh-below 12
 
       - name: 提交
+        if: always()
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f novalinks_sub.yaml novalinks_nodes.txt
+          git add -f novalinks_state.json novalinks_sub.yaml novalinks_nodes.txt 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "无变化"
             exit 0
