@@ -436,7 +436,6 @@ rules:
 - DOMAIN-SUFFIX,openai.com,🤖 AI 服务
 - DOMAIN-SUFFIX,oaistatic.com,🤖 AI 服务
 - DOMAIN-SUFFIX,oaiusercontent.com,🤖 AI 服务
-- DOMAIN-SUFFIX,sora.com,🤖 AI 服务
 - DOMAIN-SUFFIX,anthropic.com,🤖 AI 服务
 - DOMAIN-SUFFIX,claude.ai,🤖 AI 服务
 - DOMAIN-SUFFIX,gemini.google.com,🤖 AI 服务
