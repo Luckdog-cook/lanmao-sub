@@ -318,20 +318,6 @@ proxies:
     path: /download
     headers:
       Host: de01.node.qixi.best
-- name: 🇯🇵日本20
-  server: jp01.wenrugou.uk
-  port: 2053
-  type: vless
-  uuid: f96500be-6dce-46f7-8e45-82f269f0d294
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: BduiVUe1QHYj9bg0YNeCW6lw1SvitNzJqYoQe9B8Q0Y
-    short-id: d60944e27067cb30
 proxy-groups:
 - name: 节点选择
   type: select
@@ -363,7 +349,6 @@ proxy-groups:
   - JP06-三网优化
   - US-01-三网优化
   - DE-01-三网优化
-  - 🇯🇵日本20
   - DIRECT
 - name: 自动优选
   type: url-test
@@ -394,7 +379,6 @@ proxy-groups:
   - JP06-三网优化
   - US-01-三网优化
   - DE-01-三网优化
-  - 🇯🇵日本20
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
