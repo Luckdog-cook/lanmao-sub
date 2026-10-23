@@ -1,0 +1,3 @@
+vless://91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a@tw1.nova-26226.site:443?encryption=none&type=ws&security=tls&sni=tw1.nova-26226.site&fp=chrome&path=%2Fnvl-tw1-ws&host=tw1.nova-26226.site#NL-UC-TW01
+vless://91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a@173.242.119.115:443?encryption=none&type=tcp&security=reality&sni=www.amazon.com&fp=chrome&pbk=Ig8U3RBUF3X7KPeM13EvQwbqxkZMTKL4VHQrzJl1AWA&sid=ff052ade&flow=xtls-rprx-vision#NL-BV-US01
+vless://91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a@165.154.63.139:443?encryption=none&type=tcp&security=reality&sni=www.amazon.com&fp=chrome&pbk=AE81BrwMc8-kwGEIA1LhzaL03er0Qwt2V-fFy76F5jQ&sid=ca4aedd4&flow=xtls-rprx-vision#NL-UC-HK00

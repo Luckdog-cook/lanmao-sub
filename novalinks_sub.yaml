@@ -1,0 +1,376 @@
+mixed-port: 10801
+mode: rule
+allow-lan: false
+log-level: info
+ipv6: false
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - '*.lan'
+  - '*.local'
+  - +.lan
+  - +.local
+  - geosite:private
+  - geosite:cn
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  proxy-server-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  nameserver-policy:
+    geosite:cn,private:
+    - 223.5.5.5
+    - 119.29.29.29
+    geosite:geolocation-!cn:
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+proxies:
+- name: Novalinks-UC-TW01
+  type: vless
+  server: tw1.nova-26226.site
+  port: 443
+  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
+  network: ws
+  tls: true
+  servername: tw1.nova-26226.site
+  client-fingerprint: chrome
+  ws-opts:
+    path: /nvl-tw1-ws
+    headers:
+      Host: tw1.nova-26226.site
+- name: Novalinks-BV-US01
+  type: vless
+  server: 173.242.119.115
+  port: 443
+  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.amazon.com
+  reality-opts:
+    public-key: Ig8U3RBUF3X7KPeM13EvQwbqxkZMTKL4VHQrzJl1AWA
+    short-id: ff052ade
+  client-fingerprint: chrome
+- name: Novalinks-UC-HK00
+  type: vless
+  server: 165.154.63.139
+  port: 443
+  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
+  network: tcp
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.amazon.com
+  reality-opts:
+    public-key: AE81BrwMc8-kwGEIA1LhzaL03er0Qwt2V-fFy76F5jQ
+    short-id: ca4aedd4
+  client-fingerprint: chrome
+proxy-groups:
+- name: Proxy
+  type: select
+  proxies:
+  - Novalinks-UC-TW01
+  - Novalinks-BV-US01
+  - Novalinks-UC-HK00
+rules:
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+- IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+- IP-CIDR,224.0.0.0/4,DIRECT,no-resolve
+- IP-CIDR,240.0.0.0/4,DIRECT,no-resolve
+- IP-CIDR6,::1/128,DIRECT,no-resolve
+- IP-CIDR6,fc00::/7,DIRECT,no-resolve
+- IP-CIDR6,fe80::/10,DIRECT,no-resolve
+- GEOSITE,cn,DIRECT
+- GEOSITE,apple-cn,DIRECT
+- GEOSITE,microsoft@cn,DIRECT
+- GEOSITE,private,DIRECT
+- DOMAIN-KEYWORD,qqmusic,DIRECT
+- DOMAIN-KEYWORD,kugou,DIRECT
+- DOMAIN-KEYWORD,kuwo,DIRECT
+- DOMAIN-KEYWORD,migu,DIRECT
+- DOMAIN-KEYWORD,iqiyi,DIRECT
+- DOMAIN-KEYWORD,youku,DIRECT
+- DOMAIN-KEYWORD,letv,DIRECT
+- DOMAIN-KEYWORD,mgtv,DIRECT
+- DOMAIN-KEYWORD,pptv,DIRECT
+- DOMAIN-KEYWORD,tudou,DIRECT
+- DOMAIN-KEYWORD,bilibili,DIRECT
+- DOMAIN-KEYWORD,biligame,DIRECT
+- DOMAIN-KEYWORD,biliapi,DIRECT
+- DOMAIN-KEYWORD,tencent,DIRECT
+- DOMAIN-KEYWORD,qq,DIRECT
+- DOMAIN-KEYWORD,weibo,DIRECT
+- DOMAIN-KEYWORD,sina,DIRECT
+- DOMAIN-KEYWORD,sinaimg,DIRECT
+- DOMAIN-KEYWORD,douyin,DIRECT
+- DOMAIN-KEYWORD,bytedance,DIRECT
+- DOMAIN-KEYWORD,snssdk,DIRECT
+- DOMAIN-KEYWORD,toutiao,DIRECT
+- DOMAIN-KEYWORD,kuaishou,DIRECT
+- DOMAIN-KEYWORD,ksimg,DIRECT
+- DOMAIN-KEYWORD,ksapisrv,DIRECT
+- DOMAIN-KEYWORD,yximgs,DIRECT
+- DOMAIN-KEYWORD,xiaohongshu,DIRECT
+- DOMAIN-KEYWORD,xhscdn,DIRECT
+- DOMAIN-KEYWORD,zhihu,DIRECT
+- DOMAIN-KEYWORD,zhimg,DIRECT
+- DOMAIN-KEYWORD,taobao,DIRECT
+- DOMAIN-KEYWORD,tmall,DIRECT
+- DOMAIN-KEYWORD,tbcdn,DIRECT
+- DOMAIN-KEYWORD,alibaba,DIRECT
+- DOMAIN-KEYWORD,1688,DIRECT
+- DOMAIN-KEYWORD,jd.com,DIRECT
+- DOMAIN-KEYWORD,jdcdn,DIRECT
+- DOMAIN-KEYWORD,360buyimg,DIRECT
+- DOMAIN-KEYWORD,pinduoduo,DIRECT
+- DOMAIN-KEYWORD,yangkeduo,DIRECT
+- DOMAIN-KEYWORD,pddpic,DIRECT
+- DOMAIN-KEYWORD,vip.com,DIRECT
+- DOMAIN-KEYWORD,vipstatic,DIRECT
+- DOMAIN-KEYWORD,suning,DIRECT
+- DOMAIN-KEYWORD,snstatic,DIRECT
+- DOMAIN-KEYWORD,alipay,DIRECT
+- DOMAIN-KEYWORD,alipayobjects,DIRECT
+- DOMAIN-KEYWORD,alipayplus,DIRECT
+- DOMAIN-KEYWORD,tenpay,DIRECT
+- DOMAIN-KEYWORD,wxpay,DIRECT
+- DOMAIN-KEYWORD,unionpay,DIRECT
+- DOMAIN-KEYWORD,95516,DIRECT
+- DOMAIN-KEYWORD,yeepay,DIRECT
+- DOMAIN-KEYWORD,allinpay,DIRECT
+- DOMAIN-KEYWORD,99bill,DIRECT
+- DOMAIN-KEYWORD,lakala,DIRECT
+- DOMAIN-KEYWORD,icbc,DIRECT
+- DOMAIN-KEYWORD,cmbchina,DIRECT
+- DOMAIN-KEYWORD,abchina,DIRECT
+- DOMAIN-KEYWORD,boc.cn,DIRECT
+- DOMAIN-KEYWORD,ccb.com,DIRECT
+- DOMAIN-KEYWORD,psbc,DIRECT
+- DOMAIN-KEYWORD,spdb,DIRECT
+- DOMAIN-KEYWORD,cmbc,DIRECT
+- DOMAIN-KEYWORD,citicbank,DIRECT
+- DOMAIN-KEYWORD,bocom,DIRECT
+- DOMAIN-KEYWORD,cebbank,DIRECT
+- DOMAIN-KEYWORD,bankcomm,DIRECT
+- DOMAIN-KEYWORD,hxb,DIRECT
+- DOMAIN-KEYWORD,lufax,DIRECT
+- DOMAIN-KEYWORD,jdpay,DIRECT
+- DOMAIN-KEYWORD,duxiaoman,DIRECT
+- DOMAIN-KEYWORD,amap,DIRECT
+- DOMAIN-KEYWORD,autonavi,DIRECT
+- DOMAIN-KEYWORD,didi,DIRECT
+- DOMAIN-KEYWORD,didistatic,DIRECT
+- DOMAIN-KEYWORD,didiglobal,DIRECT
+- DOMAIN-KEYWORD,ctrip,DIRECT
+- DOMAIN-KEYWORD,trip.com,DIRECT
+- DOMAIN-KEYWORD,fliggy,DIRECT
+- DOMAIN-KEYWORD,meituan,DIRECT
+- DOMAIN-KEYWORD,dianping,DIRECT
+- DOMAIN-KEYWORD,sankuai,DIRECT
+- DOMAIN-KEYWORD,dingtalk,DIRECT
+- DOMAIN-KEYWORD,alicdn,DIRECT
+- DOMAIN-KEYWORD,feishu,DIRECT
+- DOMAIN-KEYWORD,larksuite,DIRECT
+- DOMAIN-KEYWORD,lark,DIRECT
+- DOMAIN-KEYWORD,wps,DIRECT
+- DOMAIN-KEYWORD,aliyun,DIRECT
+- DOMAIN-KEYWORD,aliyuncs,DIRECT
+- DOMAIN-KEYWORD,alikunlun,DIRECT
+- DOMAIN-KEYWORD,qcloud,DIRECT
+- DOMAIN-KEYWORD,myqcloud,DIRECT
+- DOMAIN-KEYWORD,qiniu,DIRECT
+- DOMAIN-KEYWORD,upyun,DIRECT
+- DOMAIN-KEYWORD,upai,DIRECT
+- DOMAIN-KEYWORD,baidu,DIRECT
+- DOMAIN-KEYWORD,bdstatic,DIRECT
+- DOMAIN-KEYWORD,bdimg,DIRECT
+- DOMAIN-KEYWORD,baiducontent,DIRECT
+- DOMAIN-KEYWORD,sogou,DIRECT
+- DOMAIN-KEYWORD,sogoucdn,DIRECT
+- DOMAIN-KEYWORD,360,DIRECT
+- DOMAIN-KEYWORD,qhimg,DIRECT
+- DOMAIN-KEYWORD,qhres,DIRECT
+- DOMAIN-KEYWORD,xiaomi,DIRECT
+- DOMAIN-KEYWORD,miui,DIRECT
+- DOMAIN-KEYWORD,mi.com,DIRECT
+- DOMAIN-KEYWORD,huawei,DIRECT
+- DOMAIN-KEYWORD,hicloud,DIRECT
+- DOMAIN-KEYWORD,vmall,DIRECT
+- DOMAIN-KEYWORD,dbankcdn,DIRECT
+- DOMAIN-KEYWORD,huaweicloud,DIRECT
+- DOMAIN-KEYWORD,oppomobile,DIRECT
+- DOMAIN-KEYWORD,heytapmobi,DIRECT
+- DOMAIN-KEYWORD,oppo.com,DIRECT
+- DOMAIN-KEYWORD,vivo.com,DIRECT
+- DOMAIN-KEYWORD,vivo-tencent,DIRECT
+- DOMAIN-KEYWORD,mihoyo,DIRECT
+- DOMAIN-KEYWORD,hoyoverse,DIRECT
+- DOMAIN-SUFFIX,music.126.net,DIRECT
+- DOMAIN-SUFFIX,126.net,DIRECT
+- DOMAIN-SUFFIX,gtimg.com,DIRECT
+- DOMAIN-SUFFIX,gtimg.cn,DIRECT
+- DOMAIN-SUFFIX,qpic.cn,DIRECT
+- DOMAIN-SUFFIX,qq.com,DIRECT
+- DOMAIN-SUFFIX,cdn-go.cn,DIRECT
+- DOMAIN-SUFFIX,tcdn.qq.com,DIRECT
+- DOMAIN-SUFFIX,iqiyipic.com,DIRECT
+- DOMAIN-SUFFIX,iqiyi.com,DIRECT
+- DOMAIN-SUFFIX,youku.com,DIRECT
+- DOMAIN-SUFFIX,youkuvod.com,DIRECT
+- DOMAIN-SUFFIX,v.qq.com,DIRECT
+- DOMAIN-SUFFIX,bilivideo.com,DIRECT
+- DOMAIN-SUFFIX,akamaized.net,DIRECT
+- DOMAIN-SUFFIX,douyincdn.com,DIRECT
+- DOMAIN-SUFFIX,douyinpic.com,DIRECT
+- DOMAIN-SUFFIX,douyinvod.com,DIRECT
+- DOMAIN-SUFFIX,kuaishouzt.com,DIRECT
+- DOMAIN-SUFFIX,kwimgs.com,DIRECT
+- DOMAIN-SUFFIX,weixin.qq.com,DIRECT
+- DOMAIN-SUFFIX,wechat.com,DIRECT
+- DOMAIN-SUFFIX,weixinbridge.com,DIRECT
+- DOMAIN-SUFFIX,weibo.com,DIRECT
+- DOMAIN-SUFFIX,weibocdn.com,DIRECT
+- DOMAIN-SUFFIX,alibaba.com,DIRECT
+- DOMAIN-SUFFIX,alipay.com,DIRECT
+- DOMAIN-SUFFIX,alipayobjects.com,DIRECT
+- DOMAIN-SUFFIX,alipayplus.com,DIRECT
+- DOMAIN-SUFFIX,alicdn.com,DIRECT
+- DOMAIN-SUFFIX,taobaocdn.com,DIRECT
+- DOMAIN-SUFFIX,tmall.com,DIRECT
+- DOMAIN-SUFFIX,tmallcdn.com,DIRECT
+- DOMAIN-SUFFIX,jd.com,DIRECT
+- DOMAIN-SUFFIX,jdcdn.com,DIRECT
+- DOMAIN-SUFFIX,pinduoduo.com,DIRECT
+- DOMAIN-SUFFIX,pddpic.com,DIRECT
+- DOMAIN-SUFFIX,tenpay.com,DIRECT
+- DOMAIN-SUFFIX,wxpay.tenpay.com,DIRECT
+- DOMAIN-SUFFIX,pay.weixin.qq.com,DIRECT
+- DOMAIN-SUFFIX,wx.tenpay.com,DIRECT
+- DOMAIN-SUFFIX,wxpay.weixin.qq.com,DIRECT
+- DOMAIN-SUFFIX,api.mch.weixin.qq.com,DIRECT
+- DOMAIN-SUFFIX,mch.weixin.qq.com,DIRECT
+- DOMAIN-SUFFIX,alipay.com,DIRECT
+- DOMAIN-SUFFIX,alipayobjects.com,DIRECT
+- DOMAIN-SUFFIX,alipayplus.com,DIRECT
+- DOMAIN-SUFFIX,mclient.alipay.com,DIRECT
+- DOMAIN-SUFFIX,openapi.alipay.com,DIRECT
+- DOMAIN-SUFFIX,render.alipay.com,DIRECT
+- DOMAIN-SUFFIX,mobilegw.alipay.com,DIRECT
+- DOMAIN-SUFFIX,alipay.cn,DIRECT
+- DOMAIN-SUFFIX,unionpay.com,DIRECT
+- DOMAIN-SUFFIX,95516.com,DIRECT
+- DOMAIN-SUFFIX,unionpayintl.com,DIRECT
+- DOMAIN-SUFFIX,epay.95516.com,DIRECT
+- DOMAIN-SUFFIX,gateway.95516.com,DIRECT
+- DOMAIN-SUFFIX,qmf.95516.com,DIRECT
+- DOMAIN-SUFFIX,jdpay.com,DIRECT
+- DOMAIN-SUFFIX,jdpaydns.com,DIRECT
+- DOMAIN-SUFFIX,yeepay.com,DIRECT
+- DOMAIN-SUFFIX,yibao.cn,DIRECT
+- DOMAIN-SUFFIX,yepay.com,DIRECT
+- DOMAIN-SUFFIX,allinpay.com,DIRECT
+- DOMAIN-SUFFIX,allinpaycard.com,DIRECT
+- DOMAIN-SUFFIX,99bill.com,DIRECT
+- DOMAIN-SUFFIX,lakala.com,DIRECT
+- DOMAIN-SUFFIX,lakalapay.com,DIRECT
+- DOMAIN-SUFFIX,ctsi.com.cn,DIRECT
+- DOMAIN-SUFFIX,duxiaoman.com,DIRECT
+- DOMAIN-SUFFIX,lufax.com,DIRECT
+- DOMAIN-SUFFIX,lufaxedu.com,DIRECT
+- DOMAIN-SUFFIX,icbc.com.cn,DIRECT
+- DOMAIN-SUFFIX,icbc-axa.com,DIRECT
+- DOMAIN-SUFFIX,cmbchina.com,DIRECT
+- DOMAIN-SUFFIX,cmbcsh.com,DIRECT
+- DOMAIN-SUFFIX,abchina.com,DIRECT
+- DOMAIN-SUFFIX,abchina.com.cn,DIRECT
+- DOMAIN-SUFFIX,boc.cn,DIRECT
+- DOMAIN-SUFFIX,bochk.com,DIRECT
+- DOMAIN-SUFFIX,ccb.com,DIRECT
+- DOMAIN-SUFFIX,ccbftc.com,DIRECT
+- DOMAIN-SUFFIX,psbc.com,DIRECT
+- DOMAIN-SUFFIX,spdb.com.cn,DIRECT
+- DOMAIN-SUFFIX,cmbc.com.cn,DIRECT
+- DOMAIN-SUFFIX,ceb.com.cn,DIRECT
+- DOMAIN-SUFFIX,cebbank.com,DIRECT
+- DOMAIN-SUFFIX,citicbank.com,DIRECT
+- DOMAIN-SUFFIX,ecitic.com,DIRECT
+- DOMAIN-SUFFIX,bocom.com,DIRECT
+- DOMAIN-SUFFIX,bankcomm.com,DIRECT
+- DOMAIN-SUFFIX,hxb.com.cn,DIRECT
+- DOMAIN-SUFFIX,pingan.com.cn,DIRECT
+- DOMAIN-SUFFIX,pingan.com,DIRECT
+- DOMAIN-SUFFIX,bankofbeijing.com.cn,DIRECT
+- DOMAIN-SUFFIX,njcb.com.cn,DIRECT
+- DOMAIN-SUFFIX,nbcb.com.cn,DIRECT
+- DOMAIN-SUFFIX,mybank.cn,DIRECT
+- DOMAIN-SUFFIX,ant-financial.com,DIRECT
+- DOMAIN-SUFFIX,webank.com,DIRECT
+- DOMAIN-SUFFIX,12306.cn,DIRECT
+- DOMAIN-SUFFIX,12306.com,DIRECT
+- DOMAIN-SUFFIX,aliyuncs.com,DIRECT
+- DOMAIN-SUFFIX,alikunlun.com,DIRECT
+- DOMAIN-SUFFIX,alipan.com,DIRECT
+- DOMAIN-SUFFIX,aliyundrive.com,DIRECT
+- DOMAIN-SUFFIX,qiniucdn.com,DIRECT
+- DOMAIN-SUFFIX,qiniudns.com,DIRECT
+- DOMAIN-SUFFIX,clouddn.com,DIRECT
+- DOMAIN-SUFFIX,myqcloud.com,DIRECT
+- DOMAIN-SUFFIX,tcloudbase.com,DIRECT
+- DOMAIN-SUFFIX,wps.cn,DIRECT
+- DOMAIN-SUFFIX,wpscdn.cn,DIRECT
+- DOMAIN-SUFFIX,ksosoft.com,DIRECT
+- DOMAIN-SUFFIX,dingtalk.com,DIRECT
+- DOMAIN-SUFFIX,dingtalkcdn.com,DIRECT
+- DOMAIN-SUFFIX,feishu.cn,DIRECT
+- DOMAIN-SUFFIX,feishucdn.com,DIRECT
+- DOMAIN-SUFFIX,baidu.com,DIRECT
+- DOMAIN-SUFFIX,bdstatic.com,DIRECT
+- DOMAIN-SUFFIX,bdimg.com,DIRECT
+- DOMAIN-SUFFIX,baidubcr.com,DIRECT
+- DOMAIN-SUFFIX,baiducontent.com,DIRECT
+- DOMAIN-SUFFIX,sogou.com,DIRECT
+- DOMAIN-SUFFIX,sogoucdn.com,DIRECT
+- DOMAIN-SUFFIX,360.cn,DIRECT
+- DOMAIN-SUFFIX,360safe.com,DIRECT
+- DOMAIN-SUFFIX,qhimg.com,DIRECT
+- DOMAIN-SUFFIX,qhres.com,DIRECT
+- DOMAIN-SUFFIX,mi.com,DIRECT
+- DOMAIN-SUFFIX,miui.com,DIRECT
+- DOMAIN-SUFFIX,xiaomi.com,DIRECT
+- DOMAIN-SUFFIX,miwifi.com,DIRECT
+- DOMAIN-SUFFIX,mi-img.com,DIRECT
+- DOMAIN-SUFFIX,hicloud.com,DIRECT
+- DOMAIN-SUFFIX,huawei.com,DIRECT
+- DOMAIN-SUFFIX,vmall.com,DIRECT
+- DOMAIN-SUFFIX,huaweicloud.com,DIRECT
+- DOMAIN-SUFFIX,dbankcdn.com,DIRECT
+- DOMAIN-SUFFIX,oppomobile.com,DIRECT
+- DOMAIN-SUFFIX,heytapmobi.com,DIRECT
+- DOMAIN-SUFFIX,oppo.com,DIRECT
+- DOMAIN-SUFFIX,heytapdownload.com,DIRECT
+- DOMAIN-SUFFIX,vivo.com.cn,DIRECT
+- DOMAIN-SUFFIX,vivoglobal.com,DIRECT
+- DOMAIN-SUFFIX,ksstatic.com,DIRECT
+- DOMAIN-SUFFIX,wsdvs.com,DIRECT
+- DOMAIN-SUFFIX,xunlei.com,DIRECT
+- DOMAIN-SUFFIX,xunleicdn.com,DIRECT
+- DOMAIN-SUFFIX,1212.fun,DIRECT
+- DOMAIN-SUFFIX,gxftqd.com,DIRECT
+- DOMAIN-SUFFIX,mydote.xyz,DIRECT
+- DOMAIN-SUFFIX,phkji.xyz,DIRECT
+- DOMAIN-SUFFIX,pingdong.top,DIRECT
+- DOMAIN-SUFFIX,yilinkeji.xyz,DIRECT
+- DOMAIN-SUFFIX,zhuig.xyz,DIRECT
+- DOMAIN-SUFFIX,cn,DIRECT
+- GEOIP,CN,DIRECT,no-resolve
+- MATCH,Proxy
