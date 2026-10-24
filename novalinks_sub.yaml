@@ -97,6 +97,22 @@ proxies:
     public-key: 7GnfF1aT2891M9ulxqMKTNFt1lpbcEiVQElH_iwrg0A
     short-id: 6bead06685c7c50a
   client-fingerprint: chrome
+- name: 🌐 新加坡 01
+  type: vless
+  server: sg.jinggai.online
+  port: 443
+  uuid: 05c66efe-4f1e-4df9-99e6-2b1b624fa7ae
+  tls: true
+  servername: sg.jinggai.online
+  network: ws
+  skip-cert-verify: false
+  udp: false
+  alpn:
+  - http/1.1
+  ws-opts:
+    path: /connect/01
+    headers:
+      Host: sg.jinggai.online
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -108,6 +124,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
@@ -119,6 +136,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: 🔯 故障转移
   type: fallback
   url: http://www.gstatic.com/generate_204
@@ -129,6 +147,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: 📲 Telegram
   type: select
   proxies:
@@ -139,6 +158,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: 🤖 AI 服务
   type: select
   proxies:
@@ -149,6 +169,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: 🎬 国际媒体
   type: select
   proxies:
@@ -159,6 +180,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: 📺 巴哈姆特
   type: select
   proxies:
@@ -169,6 +191,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: 🎵 音乐流媒体
   type: select
   proxies:
@@ -179,6 +202,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: 🌏 谷歌服务
   type: select
   proxies:
@@ -189,6 +213,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: 🍎 苹果服务
   type: select
   proxies:
@@ -199,6 +224,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
@@ -209,6 +235,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: 🎮 游戏平台
   type: select
   proxies:
@@ -219,6 +246,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: 📢 社交媒体
   type: select
   proxies:
@@ -229,6 +257,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: 🐟 兜底分流
   type: select
   proxies:
@@ -240,6 +269,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: 🎯 全球直连
   type: select
   proxies:
@@ -249,6 +279,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 - name: 🛑 广告拦截
   type: select
   proxies:
@@ -258,6 +289,7 @@ proxy-groups:
   - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-BV-US00-v6
   - 🇺🇸 Novalinks-DMIT-US02
+  - 🌐 新加坡 01
 rules:
 - GEOSITE,category-ads-all,🛑 广告拦截
 - DOMAIN-SUFFIX,doubleclick.net,🛑 广告拦截

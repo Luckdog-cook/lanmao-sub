@@ -105,6 +105,28 @@
      "short_id": "6bead06685c7c50a"
     }
    }
+  },
+  {
+   "type": "vless",
+   "tag": "🌐 新加坡 01",
+   "server": "sg.jinggai.online",
+   "server_port": 443,
+   "uuid": "05c66efe-4f1e-4df9-99e6-2b1b624fa7ae",
+   "tls": {
+    "enabled": true,
+    "server_name": "sg.jinggai.online",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/connect/01",
+    "headers": {
+     "Host": "sg.jinggai.online"
+    }
+   }
   }
  ]
 }
