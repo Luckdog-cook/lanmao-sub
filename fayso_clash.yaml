@@ -41,7 +41,7 @@ proxies:
     type: hysteria2
     server: '139.180.215.41'
     port: 8443
-    password: 'ppj8TMP3zUK4piZqCjI2gKvt7C2xxQSTOwHo9GqFfA4'
+    password: 'SJfeTBAXnNv7s-My-Nn2PCUbZPBJjoQN6eywpiV8p38'
     sni: 'sg.magicnodes.materialcrate.com'
     skip-cert-verify: false
     up: '0'
@@ -50,7 +50,7 @@ proxies:
     type: hysteria2
     server: '66.42.99.41'
     port: 8443
-    password: 'a6AkSsa4IViqWS3bwDMfwQVE6l--wbpj4fZXbr5VCxc'
+    password: '_qAJdrlei5qqG0FEluJ-BLAFPdIt-BLSrKQpqn9pUVE'
     sni: 'us.magicnodes.hyperlink.us.com'
     skip-cert-verify: false
     up: '0'
@@ -59,7 +59,7 @@ proxies:
     type: hysteria2
     server: '66.135.5.107'
     port: 8443
-    password: 'G5Atmr0uvSqpdrhuP3oOHDuo1bn9ITDQEkN0EWq3RJw'
+    password: 'ALeheNYEH3-q7-tUCs0zMTJ6GQOyfzTBpnjNFBz8SRo'
     sni: 'us-east.magicnodes.hyperlink.us.com'
     skip-cert-verify: false
     up: '0'
@@ -68,7 +68,7 @@ proxies:
     type: hysteria2
     server: '207.148.101.128'
     port: 8443
-    password: 'q0MQCVrAy5_OrvOyTNinBXy9iQ8Usb4ioBdDnxsaSS0'
+    password: 'eI29WiP1cVxXLWoDgS6invIG_hUtYa2ZxGOHla3y-Yc'
     sni: 'jp.magicnodes.hyperlink.us.com'
     skip-cert-verify: false
     up: '0'
@@ -77,7 +77,7 @@ proxies:
     type: hysteria2
     server: '141.164.38.89'
     port: 8443
-    password: 'G3MpGQpN1Z7imiqLtcYoZx6gJEWkFdwvGex_XXP6lQI'
+    password: '_icJhd_RtvgBT1vw0XnqgP0jgAsewquTrdYF4St0l9g'
     sni: 'kr.magicnodes.hyperlink.us.com'
     skip-cert-verify: false
     up: '0'
@@ -86,7 +86,7 @@ proxies:
     type: hysteria2
     server: '20.189.123.104'
     port: 8443
-    password: 'hWqCerXHrH6WOTn0CcNCkolFnteD9p3_wCRMoRkDwnM'
+    password: 'KoX8mKPfy9JbfZdR2ryJpTrlBjG9oL8S1MhL75neFrU'
     sni: 'hk-test.magicnodes.hyperlink.us.com'
     skip-cert-verify: false
     up: '0'
@@ -95,7 +95,7 @@ proxies:
     type: hysteria2
     server: '130.94.47.212'
     port: 8443
-    password: 'AluDEgMgsWuUdDsKH_ZjUHnvVYgv1BEQldagea-dUm0'
+    password: '6t_Hla-Zuinbujg9oY-qezlH5z76MtFfl2QpJHXhvWA'
     sni: 'ae.magicnodes.hyperlink.us.com'
     skip-cert-verify: false
     up: '0'
@@ -104,7 +104,7 @@ proxies:
     type: hysteria2
     server: '104.238.176.45'
     port: 8443
-    password: '5l9Un26_F6_sICEYWJuYxFTT0fFmhWe9PnHE7GVPApc'
+    password: 'tLzp7LpaTZ25Hj57XVpfkX7s87AHMhywjCSX-VMKDfI'
     sni: 'de.magicnodes.hyperlink.us.com'
     skip-cert-verify: false
     up: '0'
