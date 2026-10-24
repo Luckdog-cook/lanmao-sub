@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24T17:29:59Z",
+  "updated": "2026-10-24T17:40:36Z",
   "sub_uuid": "f4cfcf87-c8fe-4e25-b379-aa9577eca361",
   "subject": "免费体验套餐",
   "count": 11,
@@ -31,7 +31,7 @@
       "sni": "jiasu5.jiasuwu.com",
       "method": null,
       "speed_limit_mbps": 150,
-      "load_percent": 33.4
+      "load_percent": 36.0
     },
     {
       "name": "香港普通线路2",
@@ -42,7 +42,7 @@
       "sni": "iepl1.jiasuwu.com",
       "method": null,
       "speed_limit_mbps": 100,
-      "load_percent": 51.2
+      "load_percent": 53.2
     },
     {
       "name": "香港普通线路3",
@@ -53,7 +53,7 @@
       "sni": null,
       "method": "2022-blake3-aes-256-gcm",
       "speed_limit_mbps": 100,
-      "load_percent": 31.3
+      "load_percent": 29.8
     },
     {
       "name": "日本普通线路1",
@@ -64,7 +64,7 @@
       "sni": null,
       "method": "2022-blake3-aes-256-gcm",
       "speed_limit_mbps": 30,
-      "load_percent": 46.5
+      "load_percent": 29.3
     },
     {
       "name": "日本普通线路2",
@@ -75,7 +75,7 @@
       "sni": "jp2.jiasuwu.com",
       "method": null,
       "speed_limit_mbps": 30,
-      "load_percent": 26.1
+      "load_percent": 31.1
     },
     {
       "name": "美国普通线路1",
