@@ -90,6 +90,9 @@ def main():
             uid = json.loads(info).get("user", "")
         except Exception:
             pass
+        # 先试 getlist: 可能一次返回全部节点
+        gl = call("user/getlist", p)
+        print(f"    getlist: {(gl or '')[:200]}")
         srv = call("user/getserver", p)
         try:
             j = json.loads(srv)
