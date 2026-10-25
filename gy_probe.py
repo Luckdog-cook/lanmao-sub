@@ -7,13 +7,14 @@ def dec(s):
     try:
         pt=AES.new(KEY,AES.MODE_CBC,IV).decrypt(base64.b64decode(s.strip()))
         return pt[:-pt[-1]].decode("utf-8","replace")
-    except Exception: return "RAW:"+s[:60]
+    except Exception: return "RAW:"+s[:80]
 def call(ep,d):
     try: return dec(requests.post(BASE+ep,data=d,headers=H,timeout=15).text)
     except Exception as e: return f"ERR {e}"
-dev=uuid.uuid4().hex
-p={"imei":dev,"user":"0","v":"3.2.1","cid":"1","a":"11","b":"Xiaomi","c":"M2012K11AC","d":"venus"}
-print("imei:",dev)
-print("[getInfo]", call("user/getInfo",p)[:500])
-print("[getserver]", call("user/getserver",p)[:300])
-print("[getserver user=1]", call("user/getserver",{**p,"user":"1"})[:300])
+for i in range(3):
+    dev="di:"+uuid.uuid4().hex[:16]
+    p={"imei":dev,"user":"0","v":"3.2.1","cid":"1","a":"13","b":"google","c":"Pixel 7","d":"redfin"}
+    o=call("user/getInfo",p)
+    print(f"[{i}] imei={dev}")
+    print("    getInfo:", o[:260])
+    print("    getserver:", call("user/getserver",p)[:200])
