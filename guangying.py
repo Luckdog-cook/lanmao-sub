@@ -1,91 +1,129 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""光影VPN 节点猎手 v6.8 -- GitHub Actions 版，适配 sslocal 新版 --server-url"""
+"""
+光影VPN (com.guangying.go 3.2.1) 节点抓取
+------------------------------------------
+老版 43.159.7.5 的 SS 已停服(全端口扫描只剩 22), 新版改走 API:
 
-import base64, concurrent.futures as cf, os, random, re, shutil, subprocess, sys, time, tempfile
+  BASE  https://www.gynew.men/api/
+  HDR   agentX: super-ok-http
+  加密  AES-256-CBC  key=Gz#8kP@mQ2xL!nRv4Yw&TbE6sJdF0cAh  iv=Xk3N7pQ1mZ9wL5rT
 
-TARGET   = "43.159.7.5"
-METHOD   = "aes-128-gcm"
-PASSWORD = "2wsxcde3"
-KNOWN    = [21574, 31597, 35933, 36735, 40322, 49277, 53907]
-TRACE    = "https://www.cloudflare.com/cdn-cgi/trace"
-OUTDIR   = os.path.dirname(os.path.abspath(__file__))
+流程:
+  getInfo(imei=di:<16hex uuid>)  首次自动注册, 返回 user id
+  getserver                      返回 {"ret":2,"link":"<sing-box JSON 明文>"}
+  link 是 vless + reality + vision 节点, 直接转 vless:// URI
 
-def sh(cmd, timeout=300):
-    return subprocess.run(cmd, shell=True, capture_output=True, text=True, timeout=timeout)
+注意:
+  - imei 必须是 "di:" + 16 位 hex, 纯 32 位 hex 会被拒
+  - 同一出口 IP 注册 2~3 次后服务端开始返回"注册失败", 需换 IP
+"""
+import base64, json, os, sys, uuid
+import requests
+from urllib.parse import quote
 
-def get_proxy_bin():
-    for b in ("ss-local", "sslocal"):
-        if shutil.which(b):
-            return ("ss", b)
-    sys.exit("no sslocal engine found")
+BASE = "https://www.gynew.men/api/"
+KEY = b"Gz#8kP@mQ2xL!nRv4Yw&TbE6sJdF0cAh"
+IV = b"Xk3N7pQ1mZ9wL5rT"
+H = {"agentX": "super-ok-http", "User-Agent": "okhttp/4.9.0"}
+OUT = os.environ.get("GY_OUT", "guangying.txt")
+TRIES = int(os.environ.get("GY_TRIES", "8"))
+DEVICES = [("13", "google", "Pixel 7", "redfin"),
+           ("12", "samsung", "SM-G998B", "o1s"),
+           ("11", "Xiaomi", "M2012K11AC", "venus"),
+           ("10", "HUAWEI", "ELS-AN00", "HWELE")]
 
-def discover_ports():
-    if os.environ.get("GITHUB_ACTIONS") == "true":
-        return sorted(set(KNOWN + [36736, 49278, 53908]))
-    return sorted(KNOWN)
 
-def handshake(port, timeout=9, bin_path=None):
-    lp = random.randint(20000, 59999)
-    proc = None
-    # 新版 sslocal(s) 用 --server-url 传整条 ss:// 链接
-    # 形式: ss://base64(method:password)@host:port
-    userinfo = base64.b64encode(("%s:%s" % (METHOD, PASSWORD)).encode()).decode()
-    server_url = "ss://%s@%s:%d" % (userinfo, TARGET, port)
-    cmd = [bin_path, "-b", "127.0.0.1:%d" % lp, "--server-url", server_url]
-    curl_cmd = ["curl", "-s", "--socks5-hostname", "127.0.0.1:%d" % lp,
-                "-m", str(timeout), TRACE]
+def dec(s):
+    """响应是 AES-256-CBC + base64; 解不开说明是明文/HTML"""
     try:
-        proc = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        time.sleep(1.0)  # 新版 sslocal 启动稍慢
-        r = subprocess.run(curl_cmd, capture_output=True, text=True, timeout=timeout + 3)
-        loc = None
-        ip = None
-        for line in r.stdout.splitlines():
-            if line.startswith("loc="):
-                loc = line[4:].strip()
-            if line.startswith("ip="):
-                ip = line[3:].strip()
-        if loc:
-            return (loc, ip)
+        pt = __import__("Crypto.Cipher.AES", fromlist=["AES"]).AES.new(KEY, 2, IV).decrypt(
+            base64.b64decode(s.strip()))
+        return pt[:-pt[-1]].decode("utf-8", "replace")
     except Exception:
-        pass
-    finally:
-        if proc:
-            proc.terminate()
-            try:
-                proc.wait(timeout=2)
-            except Exception:
-                proc.kill()
-    return None
+        return None
+
+
+def call(ep, data):
+    try:
+        r = requests.post(BASE + ep, data=data, headers=H, timeout=15)
+        return dec(r.text) or r.text
+    except Exception as e:
+        return f"ERR {e}"
+
+
+def to_uri(n):
+    tls = n.get("tls") or {}
+    r = tls.get("reality") or {}
+    q = {
+        "encryption": "none",
+        "security": "reality" if r.get("enabled") else "tls",
+        "sni": tls.get("server_name", ""),
+        "fp": (tls.get("utls") or {}).get("fingerprint", "chrome"),
+        "type": n.get("network", "tcp"),
+    }
+    if n.get("flow"):
+        q["flow"] = n["flow"]
+    if r.get("enabled"):
+        q["pbk"] = r.get("public_key", "")
+        q["sid"] = r.get("short_id", "")
+    if n.get("network") == "ws":
+        q["path"] = (n.get("ws_settings") or {}).get("path", "/")
+    qs = "&".join(f"{k}={quote(str(v), safe='')}" for k, v in q.items() if v)
+    return f'vless://{n["uuid"]}@{n["server"]}:{n["server_port"]}?{qs}'
+
 
 def main():
-    os.makedirs(OUTDIR, exist_ok=True)
-    _engine, bin_path = get_proxy_bin()
-    print("[*] engine: sslocal (%s)" % bin_path)
-    ports = discover_ports()
-    print("[*] ports to test: %d" % len(ports))
-    hits = []
-    with cf.ThreadPoolExecutor(20) as ex:
-        futs = {ex.submit(handshake, p, 10, bin_path): p for p in ports}
-        for fu in cf.as_completed(futs):
-            p = futs[fu]
-            res = fu.result()
-            if res is not None:
-                loc, ip = res
-                hits.append((p, loc, ip))
-                print("  OK %d loc=%s" % (p, loc))
-    if not hits:
-        print("[x] no hits, keep old guangying.txt")
-        return
-    # 输出 clash 订阅格式: 每行一个 ss:// 节点
-    sub_lines = []
-    for p in sorted(_p for _p, _loc, _ip in hits):
-        userinfo = base64.b64encode(("%s:%s" % (METHOD, PASSWORD)).encode()).decode()
-        sub_lines.append("ss://%s@%s:%d" % (userinfo, TARGET, p))
-    with open(os.path.join(OUTDIR, "guangying.txt"), "w") as f:
-        f.write("\n".join(sub_lines) + "\n")
-    print("[+] guangying.txt generated, %d nodes" % len(hits))
+    nodes, seen = [], set()
+    for i in range(TRIES):
+        a, b, c, d = DEVICES[i % len(DEVICES)]
+        dev = "di:" + uuid.uuid4().hex[:16]
+        p = {"imei": dev, "user": "0", "v": "3.2.1", "cid": "1",
+             "a": a, "b": b, "c": c, "d": d}
+        info = call("user/getInfo", p)
+        if "登录成功" not in (info or ""):
+            print(f"[{i+1}] {dev} 注册失败: {(info or '')[:60]}")
+            continue
+        uid = ""
+        try:
+            uid = json.loads(info).get("user", "")
+        except Exception:
+            pass
+        srv = call("user/getserver", p)
+        try:
+            j = json.loads(srv)
+        except Exception:
+            print(f"[{i+1}] {dev} user={uid} getserver 异常")
+            continue
+        link = j.get("link")
+        if not link:
+            print(f"[{i+1}] {dev} user={uid} 无 link: {str(j)[:80]}")
+            continue
+        try:
+            n = json.loads(link) if link.strip().startswith("{") else json.loads(dec(link) or "{}")
+        except Exception:
+            print(f"[{i+1}] link 解析失败: {link[:80]}")
+            continue
+        key = (n.get("server"), n.get("server_port"), n.get("uuid"))
+        print(f"[{i+1}] {dev} user={uid} -> {n.get('server')}:{n.get('server_port')} "
+              f"{'NEW' if key not in seen else 'dup'}")
+        if key in seen:
+            continue
+        seen.add(key)
+        n["_tag"] = f"光影-{n.get('server')}"
+        nodes.append(n)
+
+    if not nodes:
+        print("[x] 没有抓到节点, 保留旧文件")
+        return 1
+
+    uris = [to_uri(n) + "#" + quote(n["_tag"]) for n in nodes]
+    open(OUT, "wb").write(base64.b64encode("\n".join(uris).encode()))
+    print(f"\n[+] {OUT}: {len(nodes)} 个节点")
+    for u in uris:
+        print("   ", u[:110])
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
