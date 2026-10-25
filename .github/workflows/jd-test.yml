@@ -1,0 +1,16 @@
+name: jd-test
+on:
+  workflow_dispatch:
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 准备
+        run: |
+          curl -sL --retry 3 -o sb.tgz https://github.com/SagerNet/sing-box/releases/download/v1.11.15/sing-box-1.11.15-linux-amd64.tar.gz
+          tar xzf sb.tgz && cp sing-box-1.11.15-linux-amd64/sing-box ./sing-box && chmod +x ./sing-box
+      - name: 测节点
+        env:
+          JD_SUB: jidian_sub.txt
+        run: python3 jd_test.py
