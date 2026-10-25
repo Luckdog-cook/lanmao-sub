@@ -90,9 +90,6 @@ def main():
             uid = json.loads(info).get("user", "")
         except Exception:
             pass
-        # 先试 getlist: 可能一次返回全部节点
-        gl = call("user/getlist", p)
-        print(f"    getlist: {(gl or '')[:200]}")
         srv = call("user/getserver", p)
         try:
             j = json.loads(srv)
@@ -121,9 +118,24 @@ def main():
         print("[x] 没有抓到节点, 保留旧文件")
         return 1
 
+    # 合并历史节点(每次只分到一个, 多跑几次累积)
+    old = []
+    try:
+        raw = base64.b64decode(open(OUT).read().strip() + "").decode()
+        old = [l.strip() for l in raw.splitlines() if l.strip()]
+    except Exception:
+        pass
     uris = [to_uri(n) + "#" + quote(n["_tag"]) for n in nodes]
-    open(OUT, "wb").write(base64.b64encode("\n".join(uris).encode()))
-    print(f"\n[+] {OUT}: {len(nodes)} 个节点")
+    seen_u = set()
+    merged = []
+    for u in old + uris:
+        key = u.split("#")[0]
+        if key in seen_u:
+            continue
+        seen_u.add(key)
+        merged.append(u)
+    open(OUT, "wb").write(base64.b64encode("\n".join(merged).encode()))
+    print(f"\n[+] {OUT}: 新增 {len(uris)} / 累计 {len(merged)} 个节点")
     for u in uris:
         print("   ", u[:110])
     return 0
