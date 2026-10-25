@@ -2,7 +2,7 @@ name: update guangying nodes
 
 on:
   schedule:
-    - cron: '0 */12 * * *'
+    - cron: '23 */8 * * *'
   workflow_dispatch:
 
 jobs:
@@ -11,40 +11,17 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Download sslocal (自动解析最新版)
-        run: |
-          set -e
-          URL=$(curl -sL https://api.github.com/repos/shadowsocks/shadowsocks-rust/releases/latest | python3 -c "
-          import json,sys
-          d=json.load(sys.stdin)
-          for a in d.get('assets',[]):
-              n=a['name']
-              if 'x86_64-unknown-linux-gnu' in n and n.endswith('.tar.xz'):
-                  print(a['browser_download_url']); break
-          ")
-          echo "download: $URL"
-          curl -sL -o /tmp/ss.tar.xz "$URL"
-          mkdir -p /tmp/ss
-          tar -xJf /tmp/ss.tar.xz -C /tmp/ss
-          ssbin=$(find /tmp/ss -type f -name sslocal | head -n1)
-          install -m 755 "$ssbin" /usr/local/bin/sslocal
-          sslocal --version
-      - name: Run hunter
-        run: python3 guangying.py
+      - run: pip install --quiet requests pycryptodome
+      - run: python3 guangying.py
       - name: Commit & push
         run: |
           git config user.name "gy-bot"
           git config user.email "gy-bot@users.noreply.github.com"
-          if test -f guangying.txt; then
-            git add guangying.txt
-            git commit -m "auto update nodes $(date -u '+%Y-%m-%d %H:%M')" --allow-empty
-            git push
-          else
-            echo "no guangying.txt generated, skip push"
-          fi
+          git add guangying.txt
+          git diff --staged --quiet && { echo "no change"; exit 0; }
+          git commit -m "auto update nodes $(date -u '+%Y-%m-%d %H:%M')"
+          for i in 1 2 3; do git pull --rebase && git push && break || sleep 5; done
