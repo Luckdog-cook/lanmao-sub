@@ -15,11 +15,27 @@ def call(ep,d):
     except Exception as e: return f"ERR {e}"
 dev="di:"+uuid.uuid4().hex[:16]
 p={"imei":dev,"user":"0","v":"3.2.1","cid":"1","a":"13","b":"google","c":"Pixel 7","d":"redfin"}
-info=call("user/getInfo",p); print("[getInfo]",info[:200])
+info=call("user/getInfo",p)
 try: uid=json.loads(info)["user"]
 except Exception: uid="0"
-print("uid=",uid)
+print("uid",uid)
 p["user"]=uid
-for ep in ["user/getlist","user/getserver","user/getInfo"]:
-    o=call(ep,p)
-    print(f"[{ep} user={uid}]",(o or "")[:400])
+gl=call("user/getlist",p)
+print("[getlist]",gl[:800])
+try:
+    groups=json.loads(gl)["group"]
+except Exception:
+    groups=[]
+for g in groups:
+    print(f"== {g['name']} (type={g.get('type')})")
+    for s in g.get("server",[]):
+        sid=s.get("id")
+        for key in ("id","server_id","serverId","sid"):
+            r=call("user/getserver",{**p,key:str(sid)})
+            if r and r.startswith("{"):
+                j=json.loads(r)
+                if j.get("link"):
+                    print(f"   id={sid} {s.get('location')} [{key}] -> link {len(j['link'])}")
+                    break
+        else:
+            print(f"   id={sid} {s.get('location')} -> 失败 {r[:60] if r else ''}")
