@@ -5,6 +5,11 @@ on:
     # 每天检查一次; 脚本内部判断账号是否到期(2 天), 未到期直接跳过
     - cron: '23 3 * * *'
   workflow_dispatch:
+    inputs:
+      force:
+        description: '强制重抓 (1=是)'
+        required: false
+        default: '0'
 
 jobs:
   update:
@@ -17,7 +22,16 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install --quiet requests pycryptodome
-      - run: python3 guangying.py
+      - name: 下载 xray (实测真实出口)
+        run: |
+          curl -sL --retry 3 -o xray.zip \
+            https://github.com/XTLS/Xray-core/releases/download/v25.9.11/Xray-linux-64.zip
+          unzip -oq xray.zip xray && chmod +x xray && ./xray version | head -1
+      - name: 抓取 + 归属校正
+        env:
+          XRAY_BIN: ./xray
+          GY_FORCE: ${{ inputs.force }}
+        run: python3 guangying.py
       - name: Commit & push
         if: always()
         run: |
