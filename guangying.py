@@ -20,7 +20,7 @@
   - 必须先拿到 user id 再调 getlist, 传 user=0 会返回 ThinkPHP 错误页
   - VIP 组用参数 id, SVIP 组用 server_id, 脚本两种都试
 """
-import base64, json, os, sys, uuid
+import base64, json, os, sys, time, uuid
 import requests
 from urllib.parse import quote
 
@@ -29,6 +29,7 @@ KEY = b"Gz#8kP@mQ2xL!nRv4Yw&TbE6sJdF0cAh"
 IV = b"Xk3N7pQ1mZ9wL5rT"
 H = {"agentX": "super-ok-http", "User-Agent": "okhttp/4.9.0"}
 OUT = os.environ.get("GY_OUT", "guangying.txt")
+STATE = os.environ.get("GY_STATE", "guangying_state.json")
 TRIES = int(os.environ.get("GY_TRIES", "6"))
 
 
@@ -87,7 +88,7 @@ def to_uri(n):
 
 
 def register():
-    """设备自动注册, 返回 (params, uid)"""
+    """设备自动注册, 返回 (params, uid, info_raw)"""
     for i in range(TRIES):
         dev = "di:" + uuid.uuid4().hex[:16]
         p = {"imei": dev, "user": "0", "v": "3.2.1", "cid": "1",
@@ -98,17 +99,47 @@ def register():
                 uid = json.loads(info)["user"]
             except Exception:
                 uid = "0"
-            return {**p, "user": uid}, uid
+            return {**p, "user": uid}, uid, info
         print(f"[{i+1}] {dev} 注册失败: {(info or '')[:60]}")
-    return None, None
+    return None, None, None
+
+
+def load_state():
+    try:
+        return json.load(open(STATE))
+    except Exception:
+        return {}
+
+
+def save_state(d):
+    d["updated"] = int(time.time())
+    with open(STATE, "w") as f:
+        json.dump(d, f, ensure_ascii=False, indent=1)
 
 
 def main():
-    p, uid = register()
+    import time
+    st = load_state()
+    exp = int(st.get("expires_at", 0))
+    left = exp - time.time()
+    if left > 3600:
+        print(f"[=] 账号未过期, 剩余 {left / 3600:.1f}h, 跳过抓取 (到期后自动重跑)")
+        return 0
+
+    p, uid, info_raw = register()
     if not p:
         print("[x] 注册失败(该 IP 额度用尽), 保留旧文件")
         return 1
     print(f"[+] 注册成功 user={uid}")
+    free_days = 2
+    try:
+        free_days = int(json.loads(info_raw)["free_days"])
+    except Exception:
+        pass
+    save_state({"user": uid, "expires_at": int(time.time() + free_days * 86400),
+                "free_days": free_days})
+    print(f"    账号有效期 {free_days} 天, 到期时间 "
+          f"{time.strftime('%Y-%m-%d %H:%M', time.localtime(time.time() + free_days * 86400))}")
 
     gl = call("user/getlist", p)
     try:
