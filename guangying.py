@@ -50,6 +50,21 @@ def call(ep, data):
         return f"ERR {e}"
 
 
+FLAG = {"美国": "\U0001F1FA\U0001F1F8", "香港": "\U0001F1ED\U0001F1F0",
+        "台湾": "\U0001F1F9\U0001F1FC", "德國": "\U0001F1E9\U0001F1EA",
+        "德国": "\U0001F1E9\U0001F1EA", "日本": "\U0001F1EF\U0001F1F5",
+        "新加坡": "\U0001F1F8\U0001F1EC", "英国": "\U0001F1EC\U0001F1E7",
+        "韩国": "\U0001F1F0\U0001F1F7", "越南": "\U0001F1FB\U0001F1F3"}
+
+
+def tag_of(loc):
+    """VIP-1美国 -> 🇺🇸 VIP-1美国"""
+    for k, v in FLAG.items():
+        if k in loc:
+            return f"{v} {loc}"
+    return "\U0001F310 " + loc
+
+
 def to_uri(n):
     tls = n.get("tls") or {}
     r = tls.get("reality") or {}
@@ -126,7 +141,7 @@ def main():
             except Exception:
                 print(f"    {gname} / {loc} link 解析失败")
                 continue
-            n["_tag"] = loc or f"{gname}-{sid}"
+            n["_tag"] = tag_of(loc or f"{gname}-{sid}")
             nodes.append(n)
             print(f"    {gname} / {loc:<12} {n.get('server')}:{n.get('server_port')}")
 
