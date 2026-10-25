@@ -37,8 +37,9 @@ DEVICES = [("13", "google", "Pixel 7", "redfin"),
 def dec(s):
     """响应是 AES-256-CBC + base64; 解不开说明是明文/HTML"""
     try:
-        pt = __import__("Crypto.Cipher.AES", fromlist=["AES"]).AES.new(KEY, 2, IV).decrypt(
-            base64.b64decode(s.strip()))
+        from Crypto.Cipher import AES as _A
+        raw = base64.b64decode(s.strip().replace("\\/", "/"))
+        pt = _A.new(KEY, _A.MODE_CBC, IV).decrypt(raw)
         return pt[:-pt[-1]].decode("utf-8", "replace")
     except Exception:
         return None
