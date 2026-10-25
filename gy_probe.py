@@ -7,14 +7,19 @@ def dec(s):
     try:
         pt=AES.new(KEY,AES.MODE_CBC,IV).decrypt(base64.b64decode(s.strip()))
         return pt[:-pt[-1]].decode("utf-8","replace")
-    except Exception: return "RAW:"+s[:80]
+    except Exception: return None
 def call(ep,d):
-    try: return dec(requests.post(BASE+ep,data=d,headers=H,timeout=15).text)
+    try:
+        r=requests.post(BASE+ep,data=d,headers=H,timeout=15)
+        return dec(r.text) or r.text
     except Exception as e: return f"ERR {e}"
-for i in range(3):
-    dev="di:"+uuid.uuid4().hex[:16]
-    p={"imei":dev,"user":"0","v":"3.2.1","cid":"1","a":"13","b":"google","c":"Pixel 7","d":"redfin"}
-    o=call("user/getInfo",p)
-    print(f"[{i}] imei={dev}")
-    print("    getInfo:", o[:260])
-    print("    getserver:", call("user/getserver",p)[:200])
+dev="di:"+uuid.uuid4().hex[:16]
+p={"imei":dev,"user":"0","v":"3.2.1","cid":"1","a":"13","b":"google","c":"Pixel 7","d":"redfin"}
+info=call("user/getInfo",p); print("[getInfo]",info[:200])
+try: uid=json.loads(info)["user"]
+except Exception: uid="0"
+print("uid=",uid)
+p["user"]=uid
+for ep in ["user/getlist","user/getserver","user/getInfo"]:
+    o=call(ep,p)
+    print(f"[{ep} user={uid}]",(o or "")[:400])
