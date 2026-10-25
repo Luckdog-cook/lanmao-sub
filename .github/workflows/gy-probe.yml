@@ -10,4 +10,4 @@ jobs:
         with:
           python-version: '3.11'
       - run: pip install --quiet requests pycryptodome
-      - run: python3 gy2.py
+      - run: python3 gy_probe.py
