@@ -45,32 +45,6 @@ proxies:
     path: /nvl-tw1-ws
     headers:
       Host: tw1.nova-26226.site
-- name: 🇺🇸 Novalinks-BV-US01
-  type: vless
-  server: 173.242.119.115
-  port: 443
-  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.amazon.com
-  reality-opts:
-    public-key: Ig8U3RBUF3X7KPeM13EvQwbqxkZMTKL4VHQrzJl1AWA
-    short-id: ff052ade
-  client-fingerprint: chrome
-- name: 🇭🇰 Novalinks-UC-HK00
-  type: vless
-  server: 165.154.63.139
-  port: 443
-  uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.amazon.com
-  reality-opts:
-    public-key: AE81BrwMc8-kwGEIA1LhzaL03er0Qwt2V-fFy76F5jQ
-    short-id: ca4aedd4
-  client-fingerprint: chrome
 - name: 🇺🇸 Novalinks-DMIT-US02
   type: vless
   server: 179.255.103.55
@@ -107,8 +81,6 @@ proxy-groups:
   - ♻️ 自动选择
   - 🔯 故障转移
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: ♻️ 自动选择
@@ -118,8 +90,6 @@ proxy-groups:
   tolerance: 50
   proxies:
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: 🔯 故障转移
@@ -128,8 +98,6 @@ proxy-groups:
   interval: 300
   proxies:
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: 📲 Telegram
@@ -138,8 +106,6 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: 🤖 AI 服务
@@ -148,8 +114,6 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: 🎬 国际媒体
@@ -158,8 +122,6 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: 📺 巴哈姆特
@@ -168,8 +130,6 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: 🎵 音乐流媒体
@@ -178,8 +138,6 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: 🌏 谷歌服务
@@ -188,8 +146,6 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: 🍎 苹果服务
@@ -198,8 +154,6 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: Ⓜ️ 微软服务
@@ -208,8 +162,6 @@ proxy-groups:
   - DIRECT
   - 🚀 节点选择
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: 🎮 游戏平台
@@ -218,8 +170,6 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: 📢 社交媒体
@@ -228,8 +178,6 @@ proxy-groups:
   - 🚀 节点选择
   - ♻️ 自动选择
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: 🐟 兜底分流
@@ -239,8 +187,6 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: 🎯 全球直连
@@ -248,8 +194,6 @@ proxy-groups:
   proxies:
   - DIRECT
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 - name: 🛑 广告拦截
@@ -257,8 +201,6 @@ proxy-groups:
   proxies:
   - REJECT
   - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-BV-US01
-  - 🇭🇰 Novalinks-UC-HK00
   - 🇺🇸 Novalinks-DMIT-US02
   - 🌐 新加坡 01
 rules:

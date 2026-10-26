@@ -24,48 +24,6 @@
   },
   {
    "type": "vless",
-   "tag": "🇺🇸 Novalinks-BV-US01",
-   "server": "173.242.119.115",
-   "server_port": 443,
-   "uuid": "91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a",
-   "flow": "xtls-rprx-vision",
-   "tls": {
-    "enabled": true,
-    "server_name": "www.amazon.com",
-    "utls": {
-     "enabled": true,
-     "fingerprint": "chrome"
-    },
-    "reality": {
-     "enabled": true,
-     "public_key": "Ig8U3RBUF3X7KPeM13EvQwbqxkZMTKL4VHQrzJl1AWA",
-     "short_id": "ff052ade"
-    }
-   }
-  },
-  {
-   "type": "vless",
-   "tag": "🇭🇰 Novalinks-UC-HK00",
-   "server": "165.154.63.139",
-   "server_port": 443,
-   "uuid": "91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a",
-   "flow": "xtls-rprx-vision",
-   "tls": {
-    "enabled": true,
-    "server_name": "www.amazon.com",
-    "utls": {
-     "enabled": true,
-     "fingerprint": "chrome"
-    },
-    "reality": {
-     "enabled": true,
-     "public_key": "AE81BrwMc8-kwGEIA1LhzaL03er0Qwt2V-fFy76F5jQ",
-     "short_id": "ca4aedd4"
-    }
-   }
-  },
-  {
-   "type": "vless",
    "tag": "🇺🇸 Novalinks-DMIT-US02",
    "server": "179.255.103.55",
    "server_port": 443,
