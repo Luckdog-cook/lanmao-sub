@@ -41,6 +41,7 @@ jobs:
       - name: 抓取 + 续时长
         env:
           XRAY_BIN: ./xray
+          NOVA_FORCE_DROP: "Novalinks-BV-US01,Novalinks-UC-HK00"
           NOVA_STATE: novalinks_state.json
         run: python3 novalinks.py --probe --target 192 --refresh-below 12
 
