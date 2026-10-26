@@ -384,11 +384,12 @@ def main():
     mihomo = os.environ.get("MIHOMO_BIN", os.path.join(HERE, "mihomo"))
     if os.path.exists(mihomo):
         verify = verify_nodes(nodes, mihomo)
-        kept = []
+        kept, rest = [], []
         for n in nodes:
             old = flag_name(n)
             vname = rename_by_exit(n, verify)
             if not vname:
+                rest.append(n)  # runner 视角不可达
                 continue
             d, cc = verify[old][0], verify[old][1]
             for emo in FLAGS.values():  # 去掉旧旗帜, 保留新名
@@ -399,7 +400,15 @@ def main():
             n["name"] = vname
             n["_delay"] = d
             kept.append(n)
-        print("实测可用并已按真实出口改名: %d 个 (丢弃 %d 个)" % (len(kept), len(nodes) - len(kept)))
+        if os.environ.get("GITHUB_ACTIONS"):
+            # 海外 runner 测不通≠国内不可用: 保留并标注, 排在实测可用之后
+            for n in rest:
+                n["name"] = "⚠️" + n["name"]
+                n["_delay"] = 99999
+            kept += rest
+            print("Actions 环境: 实测可用 %d, 未达 %d (保留标注)" % (len(kept) - len(rest), len(rest)))
+        else:
+            print("实测可用并已按真实出口改名: %d 个 (丢弃 %d 个)" % (len(kept), len(rest)))
         kept.sort(key=lambda n: n["_delay"])
         nodes = kept
     else:
