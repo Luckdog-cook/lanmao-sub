@@ -66,27 +66,6 @@
   },
   {
    "type": "vless",
-   "tag": "🇺🇸 Novalinks-BV-US00-v6",
-   "server": "2605:52c0:2:4a25:4a:48ff:fed0:f52a",
-   "server_port": 443,
-   "uuid": "91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a",
-   "flow": "xtls-rprx-vision",
-   "tls": {
-    "enabled": true,
-    "server_name": "www.amazon.com",
-    "utls": {
-     "enabled": true,
-     "fingerprint": "chrome"
-    },
-    "reality": {
-     "enabled": true,
-     "public_key": "Njwb7fCl8PXKOs3owDB-gjzbmEyEewlL6JlMKwMTUQc",
-     "short_id": "b46b142b"
-    }
-   }
-  },
-  {
-   "type": "vless",
    "tag": "🇺🇸 Novalinks-DMIT-US02",
    "server": "179.255.103.55",
    "server_port": 443,
@@ -118,7 +97,10 @@
     "utls": {
      "enabled": true,
      "fingerprint": "chrome"
-    }
+    },
+    "alpn": [
+     "http/1.1"
+    ]
    },
    "transport": {
     "type": "ws",
