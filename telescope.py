@@ -364,17 +364,24 @@ def main():
     api = pick_api(api_domains)
     print("使用 API: %s" % api)
 
+    # 服务端报 24h 有效期, 实测 1~4.5h 就掐死试用号。
+    # 因此不能迷信 expire: 定时(快速)模式每次都换新号; 手动模式按实际年龄(>25 分钟)强制换号。
+    fast = bool(os.environ.get("TELESCOPE_FAST"))
     st = load_state()
+    age = int(time.time()) - int(st.get("ts", 0))
+    reuse_ok = (not force) and (not fast) and bool(st.get("token")) \
+        and st.get("expire", 0) > time.time() + 600 and age < 25 * 60
     nodes, err = None, None
-    if not force and st.get("token") and st.get("expire", 0) > time.time() + 600:
-        print("复用已有 token (uid=%s, 到期 %s)" % (st.get("uid"), time.strftime("%m-%d %H:%M", time.localtime(st["expire"]))))
+    if reuse_ok:
+        print("复用已有 token (age=%dmin, 到期 %s)" % (age // 60,
+              time.strftime("%m-%d %H:%M", time.localtime(st["expire"]))))
         try:
             nodes, err = get_routes(api, st["token"], st["imei"])
         except Exception as e:
             err = str(e)
     if nodes is None:
         if err:
-            print("旧 token 失效: %s -> 重新试用登录" % err)
+            print("旧 token 失效/超时: %s -> 重新试用登录" % err)
         token, expire, imei = trial_login(api)
         print("试用登录成功 token=%s... imei=%s 到期=%s" % (token[:12], imei,
               time.strftime("%m-%d %H:%M", time.localtime(expire)) if expire else "?"))
@@ -383,6 +390,7 @@ def main():
         if nodes is None:
             raise SystemExit("拿线路失败: %s" % err)
 
+    st["ts"] = int(time.time())
     st["expire"] = st.get("expire") or int(time.time()) + 86400
     save_state(st)
     print("节点总数: %d" % len(nodes))
