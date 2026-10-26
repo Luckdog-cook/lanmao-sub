@@ -42,7 +42,7 @@ jobs:
         env:
           XRAY_BIN: ./xray
           NOVA_STATE: novalinks_state.json
-        run: python3 novalinks.py --target 192 --refresh-below 12
+        run: python3 novalinks.py --probe --target 192 --refresh-below 12
 
       - name: 提交
         if: always()
