@@ -16,6 +16,7 @@ from urllib.parse import urlparse, parse_qs, quote, unquote
 BASES = ["https://e3h5ydd.com", "https://t9r5sre.com",
          "https://cfmnfr6.com", "https://4dcs3n8.com"]
 OUT_DIR = os.environ.get("XN_OUT", ".")
+STATE = os.environ.get("XN_STATE", "xiaoniu_state.json")
 PROBE = "--probe" in sys.argv
 XRAY = os.environ.get("XRAY_BIN", "xray")
 
@@ -54,24 +55,57 @@ def register():
     print("[x] 全部域名注册失败")
     return None, None, None
 
-def main():
-    base, mc, data = register()
-    if not base: return 1
-    gt = data["guest_token"]
+def load_state():
+    try:
+        return json.load(open(STATE))
+    except Exception:
+        return {}
+
+def save_state(d):
+    d["created_at"] = int(time.time())
+    json.dump(d, open(STATE, "w"), ensure_ascii=False, indent=1)
+
+def try_existing(st):
+    """复用已有游客号: 返回 (base, mc, sub_url) 或 None"""
+    mc, gt = st.get("mach_code"), st.get("guest_token")
+    if not mc or not gt: return None
     H = {"MachCode": mc, "GuestToken": gt}
+    for base in BASES:
+        code, txt = http(base, "GET", "/api/v1/subscribe/subscribe", None, H)
+        try: d = json.loads(txt)
+        except Exception: continue
+        if d.get("code") == 20000:
+            sub = (d.get("data") or {}).get("trial_subscribe") or (d.get("data") or {}).get("guest_subscribe") or {}
+            if sub.get("subscribe_url"):
+                print(f"[1] 复用现有游客号 uid≈{st.get('guest_user_id','?')} "
+                      f"(已用 {(time.time()-st.get('created_at',0))/86400:.1f} 天)")
+                return base, mc, sub["subscribe_url"]
+        print(f"    {base} 复用失败: {d.get('msg','')[:60]}")
+    return None
 
-    code, txt = http(base, "POST", "/api/v1/guest/trialVip", {}, H)
-    print(f"[2] 领取试用VIP: {json.loads(txt).get('msg') if txt.startswith('{') else txt[:80]}")
-
-    code, txt = http(base, "GET", "/api/v1/subscribe/subscribe", None, H)
-    d = json.loads(txt).get("data") or {}
-    sub = d.get("trial_subscribe") or d.get("guest_subscribe") or {}
-    url = sub.get("subscribe_url")
-    if not url:
-        print("[x] 没有拿到订阅链接:", txt[:150]); return 1
+def main():
+    st = load_state()
+    reuse = try_existing(st)
+    if reuse:
+        base, mc, url = reuse
+        gt = st["guest_token"]
+    else:
+        base, mc, data = register()
+        if not base: return 1
+        gt = data["guest_token"]
+        st = {"mach_code": mc, "guest_token": gt,
+              "guest_user_id": data.get("guest_user_id")}
+        save_state(st)
+        H = {"MachCode": mc, "GuestToken": gt}
+        code, txt = http(base, "POST", "/api/v1/guest/trialVip", {}, H)
+        print(f"[2] 领取试用VIP: {json.loads(txt).get('msg') if txt.startswith('{') else txt[:80]}")
+        code, txt = http(base, "GET", "/api/v1/subscribe/subscribe", None, H)
+        d = json.loads(txt).get("data") or {}
+        sub = d.get("trial_subscribe") or d.get("guest_subscribe") or {}
+        url = sub.get("subscribe_url")
+        if not url:
+            print("[x] 新号也没拿到订阅:", txt[:150]); return 1
     print(f"[3] 订阅链接: {url}")
-    print(f"    试用组: 流量 {sub.get('transfer_enable',0)/1024**3:.0f}GB 限速 {sub.get('speed_limit')}")
-
     req = urllib.request.Request(url, headers={"User-Agent": "okhttp/4.9.0"})
     raw = urllib.request.urlopen(req, timeout=25).read()
     links = [l for l in base64.b64decode(raw + b"=" * (-len(raw) % 4)).decode("utf-8", "replace").splitlines() if l.strip()]
