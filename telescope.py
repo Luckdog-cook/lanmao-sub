@@ -257,17 +257,26 @@ dns:
   nameserver: [223.5.5.5, 119.29.29.29]
   fallback: [8.8.8.8, 1.1.1.1]
 """
+    def grp(name, first):
+        """每组: 指定前缀选项 + 节点选择/自动选择 + 全部节点"""
+        opts = list(first) + [gname, "♻️ 自动选择"] + names
+        seen, uniq = set(), []
+        for x in opts:
+            if x not in seen:
+                seen.add(x)
+                uniq.append(x)
+        return {"name": name, "type": "select", "proxies": uniq}
     groups = {"proxy-groups": [
         {"name": gname, "type": "select", "proxies": ["♻️ 自动选择"] + names},
         {"name": "♻️ 自动选择", "type": "url-test", "url": "http://www.gstatic.com/generate_204",
          "interval": 300, "tolerance": 80, "proxies": names},
-        {"name": "🐟 漏网之鱼", "type": "select", "proxies": [gname, "♻️ 自动选择", "DIRECT"]},
-        {"name": "🛑 广告拦截", "type": "select", "proxies": ["REJECT", "DIRECT"]},
-        {"name": "🍎 苹果服务", "type": "select", "proxies": ["DIRECT", gname]},
-        {"name": "📣 谷歌服务", "type": "select", "proxies": [gname, "♻️ 自动选择"]},
-        {"name": "📲 电报消息", "type": "select", "proxies": [gname, "♻️ 自动选择"]},
-        {"name": "🎬 流媒体验", "type": "select", "proxies": [gname, "♻️ 自动选择"]},
-        {"name": "Ⓜ️ 微软服务", "type": "select", "proxies": ["DIRECT", gname]},
+        grp("🐟 漏网之鱼", ["DIRECT"]),
+        grp("🛑 广告拦截", ["REJECT", "DIRECT"]),
+        grp("🍎 苹果服务", ["DIRECT"]),
+        grp("📣 谷歌服务", []),
+        grp("📲 电报消息", []),
+        grp("🎬 流媒体验", []),
+        grp("Ⓜ️ 微软服务", ["DIRECT"]),
     ]}
     rules = {"rules": [
         "DOMAIN-SUFFIX,telescopes.vip,DIRECT",
