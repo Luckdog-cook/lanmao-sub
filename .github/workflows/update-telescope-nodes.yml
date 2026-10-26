@@ -17,14 +17,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: 下载 mihomo 内核 (实测+出口校正)
+      - name: 下载 mihomo 内核 (仅手动全量模式)
+        if: github.event_name != 'schedule'
         run: |
           curl -sL --retry 3 -o mihomo.gz \
             https://github.com/MetaCubeX/mihomo/releases/download/v1.19.33/mihomo-linux-amd64-v1.19.33.gz
           gunzip -c mihomo.gz > mihomo && chmod +x mihomo && ./mihomo -v | head -1
-      - name: 抓取 + 实测 + 出口校正
+      - name: 抓取 + 换号 (定时=快速约1分钟 / 手动=全量实测约5分钟)
         env:
           MIHOMO_BIN: ./mihomo
+          TELESCOPE_FAST: ${{ github.event_name == 'schedule' && '1' || '' }}
         run: |
           pip install pyyaml requests -q
           python3 telescope.py
