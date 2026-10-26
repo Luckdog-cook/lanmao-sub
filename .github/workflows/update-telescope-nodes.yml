@@ -1,0 +1,32 @@
+name: update telescope nodes
+
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: 抓取 Telescope 线路
+        run: |
+          pip install pyyaml -q
+          python3 telescope.py
+      - name: Commit & push
+        if: always()
+        run: |
+          git config user.name "tel-bot"
+          git config user.email "tel-bot@users.noreply.github.com"
+          git add -f telescope_state.json telescope_sub.txt telescope_nodes.txt telescope_clash.yaml 2>/dev/null || true
+          git diff --staged --quiet && { echo "no change"; exit 0; }
+          git commit -m "telescope: $(date -u '+%Y-%m-%d %H:%M UTC')"
+          for i in 1 2 3; do git pull --rebase && git push && break || sleep 5; done
