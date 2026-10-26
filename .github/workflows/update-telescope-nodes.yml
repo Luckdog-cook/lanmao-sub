@@ -11,15 +11,22 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: 抓取 Telescope 线路
+      - name: 下载 mihomo 内核 (实测+出口校正)
         run: |
-          pip install pyyaml -q
+          curl -sL --retry 3 -o mihomo.gz \
+            https://github.com/MetaCubeX/mihomo/releases/download/v1.19.33/mihomo-linux-amd64-v1.19.33.gz
+          gunzip -c mihomo.gz > mihomo && chmod +x mihomo && ./mihomo -v | head -1
+      - name: 抓取 + 实测 + 出口校正
+        env:
+          MIHOMO_BIN: ./mihomo
+        run: |
+          pip install pyyaml requests -q
           python3 telescope.py
       - name: Commit & push
         if: always()
