@@ -25,7 +25,7 @@ jobs:
       - name: 抓取 + 实测
         env:
           XRAY_BIN: ./xray
-        run: python3 xiaoniu.py --probe
+        run: python3 xiaoniu.py
       - name: Commit & push
         if: always()
         run: |
