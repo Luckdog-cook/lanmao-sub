@@ -391,7 +391,9 @@ def main():
 
     # ---- 实测 + 真实出口校正 ----
     mihomo = os.environ.get("MIHOMO_BIN", os.path.join(HERE, "mihomo"))
-    if os.path.exists(mihomo):
+    if os.environ.get("TELESCOPE_FAST"):
+        print("快速模式: 跳过实测 (换号优先)")
+    elif os.path.exists(mihomo):
         verify = verify_nodes(nodes, mihomo)
         kept, rest = [], []
         for n in nodes:
