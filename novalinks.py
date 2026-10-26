@@ -331,6 +331,8 @@ def _to_outbound(p):
         ss["security"] = "tls"
         ss["tlsSettings"] = {"serverName": sni, "fingerprint": p.get("client-fingerprint", "chrome"),
                              "allowInsecure": bool(p.get("skip-cert-verify", False))}
+        if p.get("alpn"):
+            ss["tlsSettings"]["alpn"] = p["alpn"]
     else:
         ss["security"] = "none"
     if net == "ws":
@@ -353,6 +355,8 @@ def to_singbox_outbound(p, tag):
     sni = p.get("servername") or p.get("sni") or p["server"]
     tls = {"enabled": True, "server_name": sni,
            "utls": {"enabled": True, "fingerprint": p.get("client-fingerprint", "chrome")}}
+    if p.get("alpn"):
+        tls["alpn"] = p["alpn"]
     ro = p.get("reality-opts") or {}
     if ro.get("public-key"):
         tls["reality"] = {"enabled": True, "public_key": ro["public-key"],
