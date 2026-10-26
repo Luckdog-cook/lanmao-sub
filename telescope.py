@@ -35,7 +35,14 @@ FLAGS = {
     "hu": "🇭🇺", "es": "🇪🇸", "pt": "🇵🇹", "it": "🇮🇹", "pl": "🇵🇱",
     "za": "🇿🇦", "qa": "🇶🇦", "sa": "🇸🇦", "ae": "🇦🇪", "eg": "🇪🇬",
     "iq": "🇮🇶", "il": "🇮🇱", "az": "🇦🇿", "kz": "🇰🇿", "tr": "🇹🇷",
-    "ar": "🇦🇷", "br": "🇧🇷", "mx": "🇲🇽",
+    "ar": "🇦🇷", "br": "🇧🇷", "mx": "🇲🇽", "cd": "🇨🇩", "uy": "🇺🇾",
+    "pk": "🇵🇰", "by": "🇧🇾", "ro": "🇷🇴", "cz": "🇨🇿", "no": "🇳🇴",
+    "fi": "🇫🇮", "dk": "🇩🇰", "at": "🇦🇹", "lv": "🇱🇻", "lt": "🇱🇹",
+    "md": "🇲🇩", "ge": "🇬🇪", "am": "🇦🇲", "jo": "🇯🇴", "lb": "🇱🇧",
+    "om": "🇴🇲", "kw": "🇰🇼", "bd": "🇧🇩", "lk": "🇱🇰", "pe": "🇵🇪",
+    "cl": "🇨🇱", "co": "🇨🇴", "ec": "🇪🇨", "ng": "🇳🇬", "ke": "🇰🇪",
+    "gh": "🇬🇭", "ma": "🇲🇦", "tn": "🇹🇳", "sn": "🇸🇳", "ci": "🇨🇮",
+    "cm": "🇨🇲", "zw": "🇿🇼", "ug": "🇺🇬", "tz": "🇹🇿", "et": "🇪🇹",
 }
 CN_NAME = {
     "hk": "香港", "tw": "台湾", "mo": "澳门", "jp": "日本", "sg": "新加坡",
@@ -47,7 +54,14 @@ CN_NAME = {
     "hu": "匈牙利", "es": "西班牙", "pt": "葡萄牙", "it": "意大利", "pl": "波兰",
     "za": "南非", "qa": "卡塔尔", "sa": "沙特", "ae": "阿联酋", "eg": "埃及",
     "iq": "伊拉克", "il": "以色列", "az": "阿塞拜疆", "kz": "哈萨克斯坦", "tr": "土耳其",
-    "ar": "阿根廷", "br": "巴西", "mx": "墨西哥",
+    "ar": "阿根廷", "br": "巴西", "mx": "墨西哥", "cd": "刚果（金）", "uy": "乌拉圭",
+    "pk": "巴基斯坦", "by": "白俄罗斯", "ro": "罗马尼亚", "cz": "捷克", "no": "挪威",
+    "fi": "芬兰", "dk": "丹麦", "at": "奥地利", "lv": "拉脱维亚", "lt": "立陶宛",
+    "md": "摩尔多瓦", "ge": "格鲁吉亚", "am": "亚美尼亚", "jo": "约旦", "lb": "黎巴嫩",
+    "om": "阿曼", "kw": "科威特", "bd": "孟加拉国", "lk": "斯里兰卡", "pe": "秘鲁",
+    "cl": "智利", "co": "哥伦比亚", "ec": "厄瓜多尔", "ng": "尼日利亚", "ke": "肯尼亚",
+    "gh": "加纳", "ma": "摩洛哥", "tn": "突尼斯", "sn": "塞内加尔", "ci": "科特迪瓦",
+    "cm": "喀麦隆", "zw": "津巴布韦", "ug": "乌干达", "tz": "坦桑尼亚", "et": "埃塞俄比亚",
 }
 ORDER = ["hk", "tw", "mo", "jp", "sg", "us", "kr", "ca", "gb", "au", "de"]
 
@@ -122,6 +136,98 @@ def sort_nodes(nodes):
         f = n["flag"]
         return (ORDER.index(f) if f in ORDER else len(ORDER) + (len(f) % 7), f, n["name"])
     return sorted(nodes, key=key)
+
+def clash_proxy(n):
+    return {
+        "name": flag_name(n), "type": "ssr",
+        "server": n["ip"], "port": int(n["port"]),
+        "cipher": n["method"], "password": n["passwd"],
+        "protocol": n["protocol"], "protocol-param": n["protoparam"],
+        "obfs": n["obfs"], "obfs-param": n["obfsparam"],
+        "udp": True,
+    }
+
+# ---------------- 实测: 延迟测活 + 真实出口校正 ----------------
+CTRL = "http://127.0.0.1:9099"
+LOCAL_PROXY = "http://127.0.0.1:7897"
+
+def _api(path, data=None, method="GET", timeout=8):
+    req = urllib.request.Request(CTRL + path,
+        data=json.dumps(data).encode() if data is not None else None, method=method)
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return json.loads(r.read().decode() or "{}")
+
+def verify_nodes(nodes, bin_path, workers=24):
+    """mihomo 内核实测。返回 {idx: (delay_ms, real_cc, real_cn, exit_ip)}，挂了的不在表里。"""
+    import subprocess as sp, socket, time as _t
+    from concurrent.futures import ThreadPoolExecutor
+    import requests
+    cfg = {"mixed-port": 7897, "mode": "global", "log-level": "warning",
+           "external-controller": "127.0.0.1:9099",
+           "proxies": [clash_proxy(n) for n in nodes]}
+    cfgf = os.path.join(HERE, "_test_config.yaml")
+    import yaml
+    yaml.safe_dump(cfg, open(cfgf, "w"), allow_unicode=True)
+    proc = sp.Popen([bin_path, "-f", cfgf], stdout=sp.DEVNULL, stderr=sp.DEVNULL)
+    try:
+        for _ in range(50):
+            try:
+                socket.create_connection(("127.0.0.1", 9099), 1).close()
+                break
+            except OSError:
+                _t.sleep(0.3)
+        else:
+            raise RuntimeError("mihomo 启动失败")
+
+        def delay_test(n):
+            try:
+                u = "/proxies/%s/delay?url=%s&timeout=5000" % (
+                    urllib.parse.quote(flag_name(n)), "http://www.gstatic.com/generate_204")
+                d = _api(u, timeout=10).get("delay")
+                return flag_name(n), d
+            except Exception:
+                return flag_name(n), None
+
+        with ThreadPoolExecutor(workers) as ex:
+            results = dict(ex.map(delay_test, nodes))
+        alive = {k: v for k, v in results.items() if v}
+        print("实测存活: %d / %d" % (len(alive), len(nodes)))
+
+        out = {}
+        px = {"http": LOCAL_PROXY, "https": LOCAL_PROXY}
+        for n in nodes:  # 出口检查串行(GLOBAL 单选), 只测活的
+            name = flag_name(n)
+            if name not in alive:
+                continue
+            try:
+                _api("/proxies/GLOBAL", {"name": name}, method="PUT")
+                j = requests.get(
+                    "http://ip-api.com/json/?fields=status,countryCode,country,query",
+                    proxies=px, timeout=8).json()
+                if j.get("status") == "success":
+                    out[name] = (alive[name], j["countryCode"], j["country"], j["query"])
+                    print("  ✓ %-22s %5dms  出口 %s %s (%s)" % (name, alive[name], j["countryCode"], j["country"], j["query"]))
+            except Exception:
+                continue
+        return out
+    finally:
+        proc.kill()
+
+def rename_by_exit(n, verify):
+    """按真实出口改名: 🇺🇸美国_R_2365_标称香港"""
+    name = flag_name(n)
+    v = verify.get(name)
+    if not v:
+        return None
+    _, cc, _, _ = v
+    cc = cc.lower()
+    orig = n["name"]
+    claimed = CN_NAME.get(n["flag"], n["flag"])
+    tail = orig[len(claimed):].lstrip("_") if orig.startswith(claimed) else orig
+    if cc == n["flag"].lower():
+        return name  # 出口与标称一致
+    return "%s%s_%s_标称%s" % (FLAGS.get(cc, "🏳️"), CN_NAME.get(cc, cc.upper()), tail, claimed)
+
 
 def build_clash(nodes):
     proxies, names = [], []
@@ -273,6 +379,32 @@ def main():
     print("节点总数: %d" % len(nodes))
 
     nodes = sort_nodes(nodes)
+
+    # ---- 实测 + 真实出口校正 ----
+    mihomo = os.environ.get("MIHOMO_BIN", os.path.join(HERE, "mihomo"))
+    if os.path.exists(mihomo):
+        verify = verify_nodes(nodes, mihomo)
+        kept = []
+        for n in nodes:
+            old = flag_name(n)
+            vname = rename_by_exit(n, verify)
+            if not vname:
+                continue
+            d, cc = verify[old][0], verify[old][1]
+            for emo in FLAGS.values():  # 去掉旧旗帜, 保留新名
+                if vname.startswith(emo):
+                    vname = vname[len(emo):]
+                    break
+            n["flag"] = cc.lower()
+            n["name"] = vname
+            n["_delay"] = d
+            kept.append(n)
+        print("实测可用并已按真实出口改名: %d 个 (丢弃 %d 个)" % (len(kept), len(nodes) - len(kept)))
+        kept.sort(key=lambda n: n["_delay"])
+        nodes = kept
+    else:
+        print("未找到 mihomo 内核, 跳过实测 (设 MIHOMO_BIN 启用)")
+
     links = [gen_ssr_link(n) for n in nodes]
     open(os.path.join(HERE, "telescope_nodes.txt"), "w").write("\n".join(links) + "\n")
     open(os.path.join(HERE, "telescope_sub.txt"), "w").write(
