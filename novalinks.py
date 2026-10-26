@@ -495,6 +495,14 @@ def main():
         return 0
 
     # ---- 实测 ----
+    # 国内不可达的节点(海外 runner 测不出来, 用环境变量强制剔除)
+    force_drop = [x.strip() for x in os.environ.get("NOVA_FORCE_DROP", "").split(",") if x.strip()]
+    if force_drop:
+        before = len(proxies)
+        proxies = [p for p in proxies if not any(d in p["name"] for d in force_drop)]
+        if before != len(proxies):
+            log(f"    强制剔除国内不可达: {', '.join(force_drop)}")
+
     if do_probe and proxies:
         log("[4] 实测节点 (xray)")
         ok = probe(proxies)
