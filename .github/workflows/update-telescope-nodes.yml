@@ -2,7 +2,7 @@ name: update telescope nodes
 
 on:
   schedule:
-    - cron: '11,41 * * * *'
+    - cron: '3,23,43 * * * *'
   workflow_dispatch:
 
 permissions:
