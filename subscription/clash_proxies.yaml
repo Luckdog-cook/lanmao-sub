@@ -3,7 +3,7 @@ proxies:
 - name: 香港主力
   type: vless
   server: 103-180-20-190.sslip.io
-  port: 20201
+  port: 24501
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -17,7 +17,7 @@ proxies:
 - name: 🆓香港主力（1MB限速）
   type: vless
   server: 103-180-20-190.sslip.io
-  port: 20201
+  port: 24501
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -31,7 +31,7 @@ proxies:
 - name: 日本主力
   type: vless
   server: 103-180-20-190.sslip.io
-  port: 20202
+  port: 24502
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -45,7 +45,7 @@ proxies:
 - name: 🆓日本主力（1MB限速）
   type: vless
   server: 103-180-20-190.sslip.io
-  port: 20202
+  port: 24502
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -59,7 +59,7 @@ proxies:
 - name: 香港 03
   type: vless
   server: 103.180.20.190
-  port: 20001
+  port: 24401
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -73,7 +73,7 @@ proxies:
 - name: 🆓香港 03（1MB限速）
   type: vless
   server: 103.180.20.190
-  port: 20001
+  port: 24401
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -87,7 +87,7 @@ proxies:
 - name: 香港 05
   type: vless
   server: 103.180.20.190
-  port: 20003
+  port: 24403
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -101,7 +101,7 @@ proxies:
 - name: 🆓香港 05（1MB限速）
   type: vless
   server: 103.180.20.190
-  port: 20003
+  port: 24403
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -115,7 +115,7 @@ proxies:
 - name: 日本 03
   type: vless
   server: 103.180.20.190
-  port: 20004
+  port: 24404
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -129,7 +129,7 @@ proxies:
 - name: 🆓日本 03（1MB限速）
   type: vless
   server: 103.180.20.190
-  port: 20004
+  port: 24404
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -143,7 +143,7 @@ proxies:
 - name: 日本 04
   type: vless
   server: 103.180.20.190
-  port: 20005
+  port: 24405
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -157,7 +157,7 @@ proxies:
 - name: 🆓日本 04（1MB限速）
   type: vless
   server: 103.180.20.190
-  port: 20005
+  port: 24405
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -171,7 +171,7 @@ proxies:
 - name: 台湾 01
   type: vless
   server: 103.180.20.190
-  port: 20006
+  port: 24406
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -185,7 +185,7 @@ proxies:
 - name: 🆓台湾 01（1MB限速）
   type: vless
   server: 103.180.20.190
-  port: 20006
+  port: 24406
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -199,7 +199,7 @@ proxies:
 - name: 新加坡 03
   type: vless
   server: 103.180.20.190
-  port: 20007
+  port: 24407
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -213,7 +213,7 @@ proxies:
 - name: 🆓新加坡 03（1MB限速）
   type: vless
   server: 103.180.20.190
-  port: 20007
+  port: 24407
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -227,7 +227,7 @@ proxies:
 - name: 美国 03
   type: vless
   server: 103.180.20.190
-  port: 20008
+  port: 24408
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -241,7 +241,7 @@ proxies:
 - name: 🆓美国 03（1MB限速）
   type: vless
   server: 103.180.20.190
-  port: 20008
+  port: 24408
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -255,7 +255,7 @@ proxies:
 - name: 英国 01
   type: vless
   server: 103.180.20.190
-  port: 20009
+  port: 24409
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
@@ -269,7 +269,7 @@ proxies:
 - name: 🆓英国 01（1MB限速）
   type: vless
   server: 103.180.20.190
-  port: 20009
+  port: 24409
   uuid: ad1d39b6-ff90-44c1-9439-b1d34cd3e196
   network: tcp
   udp: true
