@@ -172,6 +172,20 @@ proxies:
     path: /download
     headers:
       Host: de01.node.qixi.best
+- name: TW-01-三网优化
+  server: tw01.node.qixi.best
+  port: 443
+  type: trojan
+  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
+  network: ws
+  udp: true
+  tls: true
+  servername: tw01.node.qixi.best
+  client-fingerprint: chrome
+  ws-opts:
+    path: /download
+    headers:
+      Host: tw01.node.qixi.best
 - name: US-01-三网优化
   server: us01.node.qixi.best
   port: 443
@@ -350,6 +364,7 @@ proxy-groups:
   - JP-05-三网优化
   - JP06-三网优化
   - JP-07-三网优化
+  - TW-01-三网优化
   - US-01-三网优化
   - DE-01-三网优化
   - 🇭🇰香港-Gemini-IEPL
@@ -381,6 +396,7 @@ proxy-groups:
   - JP-05-三网优化
   - JP06-三网优化
   - JP-07-三网优化
+  - TW-01-三网优化
   - US-01-三网优化
   - DE-01-三网优化
   - 🇭🇰香港-Gemini-IEPL

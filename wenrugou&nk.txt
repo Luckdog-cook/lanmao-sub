@@ -267,6 +267,28 @@
       }
     },
     {
+      "tag": "TW-01-三网优化",
+      "server": "tw01.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "dfaa4830-6ace-46a5-8f02-75cbca1a0770",
+      "tls": {
+        "enabled": true,
+        "server_name": "tw01.node.qixi.best",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "tw01.node.qixi.best"
+        }
+      }
+    },
+    {
       "tag": "US-01-三网优化",
       "server": "us01.node.qixi.best",
       "server_port": 443,
