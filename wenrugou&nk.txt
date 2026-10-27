@@ -133,6 +133,18 @@
       }
     },
     {
+      "tag": "HK-08-三网优化",
+      "server": "103.231.59.131",
+      "server_port": 16606,
+      "type": "hysteria2",
+      "password": "dfaa4830-6ace-46a5-8f02-75cbca1a0770",
+      "tls": {
+        "enabled": true,
+        "server_name": "bing.com",
+        "insecure": true
+      }
+    },
+    {
       "tag": "JP-01-三网优化",
       "server": "JP01.node.qixi.best",
       "server_port": 443,
@@ -330,6 +342,18 @@
         "headers": {
           "Host": "de01.node.qixi.best"
         }
+      }
+    },
+    {
+      "tag": "HK-09-移动优化",
+      "server": "82.29.36.39",
+      "server_port": 16606,
+      "type": "hysteria2",
+      "password": "dfaa4830-6ace-46a5-8f02-75cbca1a0770",
+      "tls": {
+        "enabled": true,
+        "server_name": "bing.com",
+        "insecure": true
       }
     },
     {
