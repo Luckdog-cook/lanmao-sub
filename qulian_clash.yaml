@@ -1,6 +1,6 @@
 # 趣连自动订阅 (Clash Meta / mihomo)
-# 更新时间: 2026-10-28 05:54:50 UTC
-# 节点数: 25
+# 更新时间: 2026-10-28 15:12:23 UTC
+# 节点数: 17
 
 mixed-port: 7890
 allow-lan: false
@@ -9,62 +9,12 @@ log-level: info
 
 proxies:
   - name: "CA-ca001.zestapp778.com"
-    type: vless
-    server: "ca001.zestapp778.com"
-    port: 32355
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "ca001.zestapp778.com"
-    client-fingerprint: chrome
-  - name: "FR-fr.tronsg.com"
     type: trojan
-    server: "fr.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
+    server: "ca001.zestapp778.com"
+    port: 46977
+    password: "5t6i121em5lkmsmk"
     udp: true
-    sni: "fr.tronsg.com"
-  - name: "FR-fr001.zestapp778.com"
-    type: vless
-    server: "fr001.zestapp778.com"
-    port: 28484
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "fr001.zestapp778.com"
-    client-fingerprint: chrome
-  - name: "BR-br001.zestapp778.com"
-    type: vless
-    server: "br001.zestapp778.com"
-    port: 15040
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "br.zestapp778.com"
-    client-fingerprint: chrome
-  - name: "DE-de001.zestapp778.com"
-    type: vless
-    server: "de001.zestapp778.com"
-    port: 33770
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "de001.zestapp778.com"
-    client-fingerprint: chrome
-  - name: "AU-au001.zestapp778.com"
-    type: vless
-    server: "au001.zestapp778.com"
-    port: 35652
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "au001.zestapp778.com"
-    client-fingerprint: chrome
+    sni: "ca001.zestapp778.com"
   - name: "GB-en001.zestapp778.com"
     type: vless
     server: "en001.zestapp778.com"
@@ -85,26 +35,6 @@ proxies:
     network: tcp
     servername: "hk011.zestapp778.com"
     client-fingerprint: chrome
-  - name: "IN-in001.zestapp778.com"
-    type: vless
-    server: "in001.zestapp778.com"
-    port: 57353
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "in001.zestapp778.com"
-    client-fingerprint: chrome
-  - name: "HK-hk010.zestapp778.com"
-    type: vless
-    server: "hk010.zestapp778.com"
-    port: 31884
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "hk010.zestapp778.com"
-    client-fingerprint: chrome
   - name: "HK-hk013.zestapp778.com"
     type: vless
     server: "hk013.zestapp778.com"
@@ -115,6 +45,47 @@ proxies:
     network: tcp
     servername: "hk013.zestapp778.com"
     client-fingerprint: ios
+  - name: "HK-hk010.zestapp778.com"
+    type: vless
+    server: "hk010.zestapp778.com"
+    port: 31884
+    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "hk010.zestapp778.com"
+    client-fingerprint: chrome
+  - name: "IN-in001.zestapp778.com"
+    type: vless
+    server: "in001.zestapp778.com"
+    port: 57353
+    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "in001.zestapp778.com"
+    client-fingerprint: chrome
+  - name: "NG-hk-02.tronsg.com"
+    type: trojan
+    server: "hk-02.tronsg.com"
+    port: 443
+    password: "9daT1DW2Jp"
+    udp: true
+    sni: "hk-02.tronsg.com"
+  - name: "IN-in002.zestapp778.com"
+    type: trojan
+    server: "in002.zestapp778.com"
+    port: 42733
+    password: "5t6i121em5lkmsmk"
+    udp: true
+    sni: "in002.zestapp778.com"
+  - name: "MY-my.tronsg.com"
+    type: trojan
+    server: "my.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "my.tronsg.com"
   - name: "HK-hk014.zestapp778.com"
     type: vless
     server: "hk014.zestapp778.com"
@@ -126,66 +97,19 @@ proxies:
     servername: "hk014.zestapp778.com"
     client-fingerprint: chrome
   - name: "KR-kr002.zestapp778.com"
-    type: vless
+    type: trojan
     server: "kr002.zestapp778.com"
-    port: 37095
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
+    port: 48851
+    password: "5t6i121em5lkmsmk"
     udp: true
-    tls: true
-    network: tcp
-    servername: "kr002.zestapp778.com"
-    client-fingerprint: chrome
-  - name: "IN-in002.zestapp778.com"
-    type: vless
-    server: "in002.zestapp778.com"
-    port: 46362
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "in002.zestapp778.com"
-    client-fingerprint: chrome
-  - name: "NG-hk-02.tronsg.com"
-    type: trojan
-    server: "hk-02.tronsg.com"
-    port: 443
-    password: "9daT1DW2Jp"
-    udp: true
-    sni: "hk-02.tronsg.com"
-  - name: "MY-my.tronsg.com"
-    type: trojan
-    server: "my.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
-    udp: true
-    sni: "my.tronsg.com"
-  - name: "MX-mx001.zestapp778.com"
-    type: vless
-    server: "mx001.zestapp778.com"
-    port: 19167
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "mx001.zestapp778.com"
-    client-fingerprint: chrome
+    sni: "kr002.zestapp778.com"
   - name: "PH-ph001.zestapp778.com"
-    type: vless
-    server: "ph001.zestapp778.com"
-    port: 15656
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "ph001.zestapp778.com"
-    client-fingerprint: chrome
-  - name: "TW-tw.tronsg.com"
     type: trojan
-    server: "tw.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
+    server: "ph001.zestapp778.com"
+    port: 46293
+    password: "5t6i121em5lkmsmk"
     udp: true
-    sni: "tw.tronsg.com"
+    sni: "ph001.zestapp778.com"
   - name: "RU-ru.tronsg.com"
     type: trojan
     server: "ru.tronsg.com"
@@ -193,56 +117,37 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "ru.tronsg.com"
-  - name: "SG-sg1.zestapp778.com"
-    type: vless
-    server: "sg1.zestapp778.com"
-    port: 56984
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
+  - name: "TW-tw.tronsg.com"
+    type: trojan
+    server: "tw.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
     udp: true
-    tls: true
-    network: tcp
-    servername: "sg1.zestapp778.com"
-    client-fingerprint: chrome
+    sni: "tw.tronsg.com"
   - name: "TH-th001.zestapp778.com"
-    type: vless
+    type: trojan
     server: "th001.zestapp778.com"
-    port: 22222
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
+    port: 33079
+    password: "5t6i121em5lkmsmk"
     udp: true
-    tls: true
-    network: tcp
-    servername: "th001.zestapp778.com"
-    client-fingerprint: chrome
-  - name: "US-us007.zestapp778.com"
-    type: vless
-    server: "us007.zestapp778.com"
-    port: 18580
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "us007.zestapp778.com"
-    client-fingerprint: chrome
-  - name: "US-us007.zestapp778.com (2)"
-    type: vless
-    server: "us007.zestapp778.com"
-    port: 18580
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "us007.zestapp778.com"
-    client-fingerprint: chrome
+    sni: "th001.zestapp778.com"
   - name: "US-us6.zestapp778.com"
     type: vless
     server: "us6.zestapp778.com"
-    port: 33069
+    port: 33071
     uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
     udp: true
     tls: true
     network: tcp
     servername: "us6.zestapp778.com"
     client-fingerprint: chrome
+  - name: "US-us007.zestapp778.com"
+    type: trojan
+    server: "us007.zestapp778.com"
+    port: 42314
+    password: "5t6i121em5lkmsmk"
+    udp: true
+    sni: "us007.zestapp778.com"
 
 proxy-groups:
   - name: "自动选择"
@@ -252,60 +157,44 @@ proxy-groups:
     tolerance: 50
     proxies:
       - "CA-ca001.zestapp778.com"
-      - "FR-fr.tronsg.com"
-      - "FR-fr001.zestapp778.com"
-      - "BR-br001.zestapp778.com"
-      - "DE-de001.zestapp778.com"
-      - "AU-au001.zestapp778.com"
       - "GB-en001.zestapp778.com"
       - "HK-hk011.zestapp778.com"
-      - "IN-in001.zestapp778.com"
-      - "HK-hk010.zestapp778.com"
       - "HK-hk013.zestapp778.com"
+      - "HK-hk010.zestapp778.com"
+      - "IN-in001.zestapp778.com"
+      - "NG-hk-02.tronsg.com"
+      - "IN-in002.zestapp778.com"
+      - "MY-my.tronsg.com"
       - "HK-hk014.zestapp778.com"
       - "KR-kr002.zestapp778.com"
-      - "IN-in002.zestapp778.com"
-      - "NG-hk-02.tronsg.com"
-      - "MY-my.tronsg.com"
-      - "MX-mx001.zestapp778.com"
       - "PH-ph001.zestapp778.com"
-      - "TW-tw.tronsg.com"
       - "RU-ru.tronsg.com"
-      - "SG-sg1.zestapp778.com"
+      - "TW-tw.tronsg.com"
       - "TH-th001.zestapp778.com"
-      - "US-us007.zestapp778.com"
-      - "US-us007.zestapp778.com (2)"
       - "US-us6.zestapp778.com"
+      - "US-us007.zestapp778.com"
   - name: "节点选择"
     type: select
     proxies:
       - "自动选择"
       - "DIRECT"
       - "CA-ca001.zestapp778.com"
-      - "FR-fr.tronsg.com"
-      - "FR-fr001.zestapp778.com"
-      - "BR-br001.zestapp778.com"
-      - "DE-de001.zestapp778.com"
-      - "AU-au001.zestapp778.com"
       - "GB-en001.zestapp778.com"
       - "HK-hk011.zestapp778.com"
-      - "IN-in001.zestapp778.com"
-      - "HK-hk010.zestapp778.com"
       - "HK-hk013.zestapp778.com"
+      - "HK-hk010.zestapp778.com"
+      - "IN-in001.zestapp778.com"
+      - "NG-hk-02.tronsg.com"
+      - "IN-in002.zestapp778.com"
+      - "MY-my.tronsg.com"
       - "HK-hk014.zestapp778.com"
       - "KR-kr002.zestapp778.com"
-      - "IN-in002.zestapp778.com"
-      - "NG-hk-02.tronsg.com"
-      - "MY-my.tronsg.com"
-      - "MX-mx001.zestapp778.com"
       - "PH-ph001.zestapp778.com"
-      - "TW-tw.tronsg.com"
       - "RU-ru.tronsg.com"
-      - "SG-sg1.zestapp778.com"
+      - "TW-tw.tronsg.com"
       - "TH-th001.zestapp778.com"
-      - "US-us007.zestapp778.com"
-      - "US-us007.zestapp778.com (2)"
       - "US-us6.zestapp778.com"
+      - "US-us007.zestapp778.com"
 
 rules:
   - GEOIP,LAN,DIRECT,no-resolve
