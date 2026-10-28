@@ -591,7 +591,7 @@
     {
       "type": "vless",
       "tag": "[CN]日本-vip-441",
-      "server": "01dgzf.supertoolify.com",
+      "server": "zfapi.zalolink.com",
       "server_port": 25445,
       "uuid": "69b6b450-7905-471b-908a-00e38ed0ee4a",
       "tls": {
@@ -661,7 +661,7 @@
     {
       "type": "hysteria2",
       "tag": "[CN]日本-vip-646",
-      "server": "55jp.supertoolify.com",
+      "server": "151.241.128.46",
       "server_port": 40110,
       "password": "69b6b450-7905-471b-908a-00e38ed0ee4a",
       "tls": {
@@ -669,6 +669,28 @@
         "server_name": "psstatic.cdn.bcebos.com",
         "insecure": true
       }
+    },
+    {
+      "type": "vless",
+      "tag": "[CN]日本-vip-747",
+      "server": "zfapi.zalolink.com",
+      "server_port": 43149,
+      "uuid": "69b6b450-7905-471b-908a-00e38ed0ee4a",
+      "tls": {
+        "enabled": true,
+        "server_name": "psstatic.cdn.bcebos.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "cvong7paE8XIzzbKWgV5iUruP1pBqI2IhMuBHc8c0UE",
+          "short_id": "15aa0ad4"
+        }
+      },
+      "flow": "xtls-rprx-vision"
     },
     {
       "type": "vless",
@@ -2139,6 +2161,7 @@
         "[CN]美国-vip-544",
         "[CN]美国-vip-645",
         "[CN]日本-vip-646",
+        "[CN]日本-vip-747",
         "[Global]日本-vip-126",
         "[Global]日本-vip-227",
         "[Global]日本-vip-328",
@@ -2249,6 +2272,7 @@
         "[CN]美国-vip-544",
         "[CN]美国-vip-645",
         "[CN]日本-vip-646",
+        "[CN]日本-vip-747",
         "[Global]日本-vip-126",
         "[Global]日本-vip-227",
         "[Global]日本-vip-328",
