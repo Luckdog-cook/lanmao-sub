@@ -700,7 +700,7 @@
       "uuid": "69b6b450-7905-471b-908a-00e38ed0ee4a",
       "tls": {
         "enabled": true,
-        "server_name": "www.microsoft.com",
+        "server_name": "psstatic.cdn.bcebos.com",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
