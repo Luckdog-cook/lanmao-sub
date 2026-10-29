@@ -2,13 +2,13 @@
  "outbounds": [
   {
    "type": "vless",
-   "tag": "🇹🇼 Novalinks-UC-TW01",
-   "server": "tw1.nova-26226.site",
-   "server_port": 443,
+   "tag": "🌐 台北01",
+   "server": "n04.jinggai.online",
+   "server_port": 8443,
    "uuid": "91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a",
    "tls": {
     "enabled": true,
-    "server_name": "tw1.nova-26226.site",
+    "server_name": "n04.jinggai.online",
     "utls": {
      "enabled": true,
      "fingerprint": "chrome"
@@ -16,55 +16,31 @@
    },
    "transport": {
     "type": "ws",
-    "path": "/nvl-tw1-ws",
+    "path": "/nvl-n04-ws/e0577fe8fd7c8823",
     "headers": {
-     "Host": "tw1.nova-26226.site"
+     "Host": "n04.jinggai.online"
     }
    }
   },
   {
    "type": "vless",
-   "tag": "🇺🇸 Novalinks-DMIT-US02",
-   "server": "179.255.103.55",
-   "server_port": 443,
+   "tag": "🌐 美国03",
+   "server": "n03.jinggai.online",
+   "server_port": 8443,
    "uuid": "91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a",
-   "flow": "xtls-rprx-vision",
    "tls": {
     "enabled": true,
-    "server_name": "gateway.icloud.com",
+    "server_name": "n03.jinggai.online",
     "utls": {
      "enabled": true,
      "fingerprint": "chrome"
-    },
-    "reality": {
-     "enabled": true,
-     "public_key": "7GnfF1aT2891M9ulxqMKTNFt1lpbcEiVQElH_iwrg0A",
-     "short_id": "6bead06685c7c50a"
     }
-   }
-  },
-  {
-   "type": "vless",
-   "tag": "🌐 新加坡 01",
-   "server": "sg.jinggai.online",
-   "server_port": 443,
-   "uuid": "05c66efe-4f1e-4df9-99e6-2b1b624fa7ae",
-   "tls": {
-    "enabled": true,
-    "server_name": "sg.jinggai.online",
-    "utls": {
-     "enabled": true,
-     "fingerprint": "chrome"
-    },
-    "alpn": [
-     "http/1.1"
-    ]
    },
    "transport": {
     "type": "ws",
-    "path": "/connect/01",
+    "path": "/nvl-n03-ws/e0577fe8fd7c8823",
     "headers": {
-     "Host": "sg.jinggai.online"
+     "Host": "n03.jinggai.online"
     }
    }
   }

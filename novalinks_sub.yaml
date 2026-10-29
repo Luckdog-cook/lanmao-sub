@@ -32,177 +32,145 @@ dns:
     - https://1.1.1.1/dns-query
     - https://dns.google/dns-query
 proxies:
-- name: 🇹🇼 Novalinks-UC-TW01
+- name: 🌐 台北01
   type: vless
-  server: tw1.nova-26226.site
-  port: 443
+  server: n04.jinggai.online
+  port: 8443
   uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
   network: ws
   tls: true
-  servername: tw1.nova-26226.site
+  servername: n04.jinggai.online
   client-fingerprint: chrome
   ws-opts:
-    path: /nvl-tw1-ws
+    path: /nvl-n04-ws/e0577fe8fd7c8823
     headers:
-      Host: tw1.nova-26226.site
-- name: 🇺🇸 Novalinks-DMIT-US02
+      Host: n04.jinggai.online
+- name: 🌐 美国03
   type: vless
-  server: 179.255.103.55
-  port: 443
+  server: n03.jinggai.online
+  port: 8443
   uuid: 91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a
-  network: tcp
-  flow: xtls-rprx-vision
-  tls: true
-  servername: gateway.icloud.com
-  reality-opts:
-    public-key: 7GnfF1aT2891M9ulxqMKTNFt1lpbcEiVQElH_iwrg0A
-    short-id: 6bead06685c7c50a
-  client-fingerprint: chrome
-- name: 🌐 新加坡 01
-  type: vless
-  server: sg.jinggai.online
-  port: 443
-  uuid: 05c66efe-4f1e-4df9-99e6-2b1b624fa7ae
-  tls: true
-  servername: sg.jinggai.online
   network: ws
-  skip-cert-verify: false
-  udp: false
-  alpn:
-  - http/1.1
+  tls: true
+  servername: n03.jinggai.online
+  client-fingerprint: chrome
   ws-opts:
-    path: /connect/01
+    path: /nvl-n03-ws/e0577fe8fd7c8823
     headers:
-      Host: sg.jinggai.online
+      Host: n03.jinggai.online
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ♻️ 自动选择
   - 🔯 故障转移
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: ♻️ 自动选择
   type: url-test
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
   proxies:
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: 🔯 故障转移
   type: fallback
   url: http://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: 📲 Telegram
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: 🤖 AI 服务
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: 🎬 国际媒体
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: 📺 巴哈姆特
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: 🎵 音乐流媒体
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: 🌏 谷歌服务
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: 🍎 苹果服务
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: Ⓜ️ 微软服务
   type: select
   proxies:
   - DIRECT
   - 🚀 节点选择
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: 🎮 游戏平台
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: 📢 社交媒体
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: 🐟 兜底分流
   type: select
   proxies:
   - 🚀 节点选择
   - ♻️ 自动选择
   - DIRECT
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: 🎯 全球直连
   type: select
   proxies:
   - DIRECT
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 - name: 🛑 广告拦截
   type: select
   proxies:
   - REJECT
-  - 🇹🇼 Novalinks-UC-TW01
-  - 🇺🇸 Novalinks-DMIT-US02
-  - 🌐 新加坡 01
+  - 🌐 台北01
+  - 🌐 美国03
 rules:
 - GEOSITE,category-ads-all,🛑 广告拦截
 - DOMAIN-SUFFIX,doubleclick.net,🛑 广告拦截
