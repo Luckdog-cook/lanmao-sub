@@ -1,2 +1,2 @@
-hysteria2://5aa139495a599d1e23e7f6458c0c85fc@179.255.107.182:443?sni=bing.com&insecure=0&obfs=salamander&obfs-password=5c8f1a3e7b2d9046c1f8a5e3b7d04f2a#%E7%BE%8E%E5%9B%BD%203-Hy2
-hysteria2://5aa139495a599d1e23e7f6458c0c85fc@131.143.180.87:443?sni=bing.com&insecure=0&obfs=salamander&obfs-password=5c8f1a3e7b2d9046c1f8a5e3b7d04f2a#%E7%BE%8E%E5%9B%BD%204-Hy2
+hysteria2://3e5123d2c12a05ff22e6bc675e2e4867@179.255.105.49:443?sni=bing.com&insecure=0&obfs=salamander&obfs-password=5c8f1a3e7b2d9046c1f8a5e3b7d04f2a#%E7%BE%8E%E5%9B%BD-Hy2
+hysteria2://3e5123d2c12a05ff22e6bc675e2e4867@179.255.107.182:443?sni=bing.com&insecure=0&obfs=salamander&obfs-password=5c8f1a3e7b2d9046c1f8a5e3b7d04f2a#%E7%BE%8E%E5%9B%BD%203-Hy2
