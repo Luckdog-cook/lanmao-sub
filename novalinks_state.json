@@ -5,7 +5,8 @@
  "trial_minutes": 1440,
  "trial_expires_at": 1792853981,
  "account_created_at": 1792767581,
- "updated_at": 1792767659,
+ "updated_at": 1793454199,
  "sub_url": "https://api.novalinks.cloud/sub/config?token=sub_e9n184erzZD_RwSo7G1DVRQ4H_jnyWuVFvDnZkXtqSY",
- "sub_expires": 1795273259
+ "sub_expires": 1795273259,
+ "ad_expires_at": 1794108618
 }
