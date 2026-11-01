@@ -23,7 +23,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -34,7 +34,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -45,7 +45,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -56,7 +56,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -67,7 +67,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -78,7 +78,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -89,7 +89,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -100,7 +100,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -111,7 +111,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -122,7 +122,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -133,7 +133,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -144,7 +144,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -155,7 +155,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -166,7 +166,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -177,7 +177,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -188,7 +188,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -199,7 +199,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -210,7 +210,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -221,7 +221,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -232,7 +232,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -243,7 +243,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -254,7 +254,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -265,7 +265,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -276,7 +276,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -287,7 +287,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -298,7 +298,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -309,7 +309,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -320,7 +320,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -331,62 +331,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇲🇴澳门_R_2384
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35324
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇲🇴澳门_R_2385
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35325
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇲🇴澳门_R_2386
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35326
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇲🇴澳门_R_2387
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35327
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇲🇴澳门_R_2388
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35328
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -397,7 +342,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -408,7 +353,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -419,7 +364,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -430,7 +375,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -441,7 +386,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -452,7 +397,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -463,7 +408,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -474,7 +419,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -485,7 +430,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -496,7 +441,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -507,7 +452,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -518,7 +463,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -529,7 +474,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -540,7 +485,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -551,7 +496,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -562,7 +507,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -573,7 +518,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -584,7 +529,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -595,7 +540,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -606,7 +551,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -617,7 +562,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -628,7 +573,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -639,7 +584,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -650,7 +595,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -661,7 +606,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -672,7 +617,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -683,7 +628,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -694,7 +639,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -705,7 +650,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -716,7 +661,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -727,7 +672,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -738,7 +683,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -749,7 +694,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -760,7 +705,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -771,7 +716,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -782,29 +727,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇰🇷韩国_R_2256
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35317
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇰🇷韩国_R_2349
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35101
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -815,7 +738,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -826,7 +749,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -837,29 +760,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇨🇦加拿大_R_2343
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35068
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇨🇦加拿大_R_2351
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35105
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -870,7 +771,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -881,29 +782,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇬🇧英国_R_2250
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35285
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇬🇧英国_R_2374
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35265
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -914,29 +793,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇦🇺澳大利亚_R_2290
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35038
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇦🇺澳大利亚_R_2380
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35293
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -947,7 +804,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -958,7 +815,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -969,7 +826,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -980,29 +837,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇩🇪德国_R_2306
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35057
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇦🇪迪拜_R_2364
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35230
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1013,18 +848,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇦🇷阿根廷_R_2246
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35121
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1035,7 +859,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1046,18 +870,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇦🇿阿塞拜疆_R_2352
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35128
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1068,29 +881,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇧🇬保加利亚_R_2357
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35180
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇧🇷巴西_R_2249
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35243
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1101,18 +892,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇨🇭瑞士_R_2368
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35241
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1123,18 +903,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇪🇪爱沙尼亚_R_2353
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35137
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1145,18 +914,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇪🇬埃及_R_2392
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35353
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1167,7 +925,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1178,29 +936,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇪🇸西班牙_R_2358
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35182
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇫🇷法国_R_2274
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35014
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1211,18 +947,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇭🇺匈牙利_R_2363
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35209
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1233,18 +958,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇮🇩印度尼西亚_R_2361
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35197
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1255,18 +969,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇮🇪爱尔兰_R_2346
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35090
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1277,7 +980,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1288,29 +991,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇮🇱以色列_R_2360
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35185
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇮🇳印度_R_2253
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35093
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1321,18 +1002,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇮🇶伊拉克_R_2244
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35289
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1343,7 +1013,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1354,29 +1024,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇮🇸冰岛_R_2356
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35179
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇮🇹意大利_R_2362
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35208
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1387,18 +1035,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇰🇭柬埔寨_R_2366
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35234
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1409,18 +1046,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇰🇿哈萨克斯坦_R_2251
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35286
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1431,18 +1057,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇲🇲缅甸_R_2248
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35263
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1453,7 +1068,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1464,29 +1079,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇲🇽墨西哥_R_2378
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35290
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇲🇾马来西亚_R_2382
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35304
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1497,18 +1090,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇳🇱荷兰_R_2278
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35020
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1519,18 +1101,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇳🇵尼泊尔_R_2243
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35288
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1541,18 +1112,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇵🇭菲律宾_R_2286
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35033
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1563,18 +1123,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇵🇹葡萄牙_R_2381
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35302
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1585,18 +1134,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇶🇦卡塔尔_R_2255
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35318
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1607,18 +1145,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇷🇺俄罗斯_R_2389
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35329
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1629,18 +1156,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇸🇦沙特_R_2257
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35319
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1651,18 +1167,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇸🇪瑞典_R_2344
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35071
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1673,29 +1178,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇹🇭泰国_R_2254
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35240
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇹🇭泰国_R_2341
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35354
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1706,7 +1189,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1717,18 +1200,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇹🇷土耳其_R_2342
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35067
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1739,7 +1211,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1750,18 +1222,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇺🇦乌克兰_R_2359
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35183
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1772,7 +1233,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1783,40 +1244,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇻🇳越南_R_2310
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35066
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇻🇳越南_R_2373
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35261
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇻🇳越南_R_2383
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35315
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1827,18 +1255,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇿🇦南非_R_2369
-  type: ssr
-  server: 005-01.telescopes.work
-  port: 35244
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1849,7 +1266,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1340585:ab7f50cc23
+  protocol-param: 1340762:31c4a29f01
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1887,11 +1304,6 @@ proxy-groups:
   - 🇹🇼台湾省_R_2460
   - 🇹🇼台湾省_R_2486
   - 🇲🇴澳门_R_2221
-  - 🇲🇴澳门_R_2384
-  - 🇲🇴澳门_R_2385
-  - 🇲🇴澳门_R_2386
-  - 🇲🇴澳门_R_2387
-  - 🇲🇴澳门_R_2388
   - 🇲🇴澳门_R_2479
   - 🇲🇴澳门_R_2480
   - 🇲🇴澳门_R_2481
@@ -1928,102 +1340,54 @@ proxy-groups:
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
-  - 🇰🇷韩国_R_2256
-  - 🇰🇷韩国_R_2349
   - 🇰🇷韩国_R_2442
   - 🇰🇷韩国_R_2475
   - 🇨🇦加拿大_R_2175
-  - 🇨🇦加拿大_R_2343
-  - 🇨🇦加拿大_R_2351
   - 🇨🇦加拿大_R_2443
   - 🇬🇧英国_R_2208
-  - 🇬🇧英国_R_2250
-  - 🇬🇧英国_R_2374
   - 🇬🇧英国_R_2467
-  - 🇦🇺澳大利亚_R_2290
-  - 🇦🇺澳大利亚_R_2380
   - 🇦🇺澳大利亚_R_2433
   - 🇦🇺澳大利亚_R_2471
   - 🇩🇪德国_D_364
   - 🇩🇪德国_R_2173
-  - 🇩🇪德国_R_2306
-  - 🇦🇪迪拜_R_2364
   - 🇦🇪迪拜_R_2451
-  - 🇦🇷阿根廷_R_2246
   - 🇦🇷阿根廷_R_2444
   - 🇦🇿阿塞拜疆_R_2172
-  - 🇦🇿阿塞拜疆_R_2352
   - 🇧🇬保加利亚_R_2169
-  - 🇧🇬保加利亚_R_2357
-  - 🇧🇷巴西_R_2249
   - 🇧🇷巴西_R_2458
-  - 🇨🇭瑞士_R_2368
   - 🇨🇭瑞士_R_2457
-  - 🇪🇪爱沙尼亚_R_2353
   - 🇪🇪爱沙尼亚_R_2445
-  - 🇪🇬埃及_R_2392
   - 🇪🇬埃及_R_2487
   - 🇪🇸西班牙_R_2168
-  - 🇪🇸西班牙_R_2358
-  - 🇫🇷法国_R_2274
   - 🇫🇷法国_R_2429
-  - 🇭🇺匈牙利_R_2363
   - 🇭🇺匈牙利_R_2450
-  - 🇮🇩印度尼西亚_R_2361
   - 🇮🇩印度尼西亚_R_2448
-  - 🇮🇪爱尔兰_R_2346
   - 🇮🇪爱尔兰_R_2438
   - 🇮🇱以色列_R_2166
-  - 🇮🇱以色列_R_2360
-  - 🇮🇳印度_R_2253
   - 🇮🇳印度_R_2440
-  - 🇮🇶伊拉克_R_2244
   - 🇮🇶伊拉克_R_2470
   - 🇮🇸冰岛_R_2170
-  - 🇮🇸冰岛_R_2356
-  - 🇮🇹意大利_R_2362
   - 🇮🇹意大利_R_2449
-  - 🇰🇭柬埔寨_R_2366
   - 🇰🇭柬埔寨_R_2454
-  - 🇰🇿哈萨克斯坦_R_2251
   - 🇰🇿哈萨克斯坦_R_2468
-  - 🇲🇲缅甸_R_2248
   - 🇲🇲缅甸_R_2462
   - 🇲🇽墨西哥_R_2181
-  - 🇲🇽墨西哥_R_2378
-  - 🇲🇾马来西亚_R_2382
   - 🇲🇾马来西亚_R_2473
-  - 🇳🇱荷兰_R_2278
   - 🇳🇱荷兰_R_2430
-  - 🇳🇵尼泊尔_R_2243
   - 🇳🇵尼泊尔_R_2469
-  - 🇵🇭菲律宾_R_2286
   - 🇵🇭菲律宾_R_2432
-  - 🇵🇹葡萄牙_R_2381
   - 🇵🇹葡萄牙_R_2472
-  - 🇶🇦卡塔尔_R_2255
   - 🇶🇦卡塔尔_R_2476
-  - 🇷🇺俄罗斯_R_2389
   - 🇷🇺俄罗斯_R_2483
-  - 🇸🇦沙特_R_2257
   - 🇸🇦沙特_R_2477
-  - 🇸🇪瑞典_R_2344
   - 🇸🇪瑞典_R_2436
-  - 🇹🇭泰国_R_2254
-  - 🇹🇭泰国_R_2341
   - 🇹🇭泰国_R_2456
   - 🇹🇭泰国_R_2488
-  - 🇹🇷土耳其_R_2342
   - 🇹🇷土耳其_R_2435
   - 🇺🇦乌克兰_R_2167
-  - 🇺🇦乌克兰_R_2359
   - 🇻🇳越南_R_2185
   - 🇻🇳越南_R_2209
-  - 🇻🇳越南_R_2310
-  - 🇻🇳越南_R_2373
-  - 🇻🇳越南_R_2383
   - 🇻🇳越南_R_2474
-  - 🇿🇦南非_R_2369
   - 🇿🇦南非_R_2459
 - name: ♻️ 自动选择
   type: url-test
@@ -2060,11 +1424,6 @@ proxy-groups:
   - 🇹🇼台湾省_R_2460
   - 🇹🇼台湾省_R_2486
   - 🇲🇴澳门_R_2221
-  - 🇲🇴澳门_R_2384
-  - 🇲🇴澳门_R_2385
-  - 🇲🇴澳门_R_2386
-  - 🇲🇴澳门_R_2387
-  - 🇲🇴澳门_R_2388
   - 🇲🇴澳门_R_2479
   - 🇲🇴澳门_R_2480
   - 🇲🇴澳门_R_2481
@@ -2101,102 +1460,54 @@ proxy-groups:
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
-  - 🇰🇷韩国_R_2256
-  - 🇰🇷韩国_R_2349
   - 🇰🇷韩国_R_2442
   - 🇰🇷韩国_R_2475
   - 🇨🇦加拿大_R_2175
-  - 🇨🇦加拿大_R_2343
-  - 🇨🇦加拿大_R_2351
   - 🇨🇦加拿大_R_2443
   - 🇬🇧英国_R_2208
-  - 🇬🇧英国_R_2250
-  - 🇬🇧英国_R_2374
   - 🇬🇧英国_R_2467
-  - 🇦🇺澳大利亚_R_2290
-  - 🇦🇺澳大利亚_R_2380
   - 🇦🇺澳大利亚_R_2433
   - 🇦🇺澳大利亚_R_2471
   - 🇩🇪德国_D_364
   - 🇩🇪德国_R_2173
-  - 🇩🇪德国_R_2306
-  - 🇦🇪迪拜_R_2364
   - 🇦🇪迪拜_R_2451
-  - 🇦🇷阿根廷_R_2246
   - 🇦🇷阿根廷_R_2444
   - 🇦🇿阿塞拜疆_R_2172
-  - 🇦🇿阿塞拜疆_R_2352
   - 🇧🇬保加利亚_R_2169
-  - 🇧🇬保加利亚_R_2357
-  - 🇧🇷巴西_R_2249
   - 🇧🇷巴西_R_2458
-  - 🇨🇭瑞士_R_2368
   - 🇨🇭瑞士_R_2457
-  - 🇪🇪爱沙尼亚_R_2353
   - 🇪🇪爱沙尼亚_R_2445
-  - 🇪🇬埃及_R_2392
   - 🇪🇬埃及_R_2487
   - 🇪🇸西班牙_R_2168
-  - 🇪🇸西班牙_R_2358
-  - 🇫🇷法国_R_2274
   - 🇫🇷法国_R_2429
-  - 🇭🇺匈牙利_R_2363
   - 🇭🇺匈牙利_R_2450
-  - 🇮🇩印度尼西亚_R_2361
   - 🇮🇩印度尼西亚_R_2448
-  - 🇮🇪爱尔兰_R_2346
   - 🇮🇪爱尔兰_R_2438
   - 🇮🇱以色列_R_2166
-  - 🇮🇱以色列_R_2360
-  - 🇮🇳印度_R_2253
   - 🇮🇳印度_R_2440
-  - 🇮🇶伊拉克_R_2244
   - 🇮🇶伊拉克_R_2470
   - 🇮🇸冰岛_R_2170
-  - 🇮🇸冰岛_R_2356
-  - 🇮🇹意大利_R_2362
   - 🇮🇹意大利_R_2449
-  - 🇰🇭柬埔寨_R_2366
   - 🇰🇭柬埔寨_R_2454
-  - 🇰🇿哈萨克斯坦_R_2251
   - 🇰🇿哈萨克斯坦_R_2468
-  - 🇲🇲缅甸_R_2248
   - 🇲🇲缅甸_R_2462
   - 🇲🇽墨西哥_R_2181
-  - 🇲🇽墨西哥_R_2378
-  - 🇲🇾马来西亚_R_2382
   - 🇲🇾马来西亚_R_2473
-  - 🇳🇱荷兰_R_2278
   - 🇳🇱荷兰_R_2430
-  - 🇳🇵尼泊尔_R_2243
   - 🇳🇵尼泊尔_R_2469
-  - 🇵🇭菲律宾_R_2286
   - 🇵🇭菲律宾_R_2432
-  - 🇵🇹葡萄牙_R_2381
   - 🇵🇹葡萄牙_R_2472
-  - 🇶🇦卡塔尔_R_2255
   - 🇶🇦卡塔尔_R_2476
-  - 🇷🇺俄罗斯_R_2389
   - 🇷🇺俄罗斯_R_2483
-  - 🇸🇦沙特_R_2257
   - 🇸🇦沙特_R_2477
-  - 🇸🇪瑞典_R_2344
   - 🇸🇪瑞典_R_2436
-  - 🇹🇭泰国_R_2254
-  - 🇹🇭泰国_R_2341
   - 🇹🇭泰国_R_2456
   - 🇹🇭泰国_R_2488
-  - 🇹🇷土耳其_R_2342
   - 🇹🇷土耳其_R_2435
   - 🇺🇦乌克兰_R_2167
-  - 🇺🇦乌克兰_R_2359
   - 🇻🇳越南_R_2185
   - 🇻🇳越南_R_2209
-  - 🇻🇳越南_R_2310
-  - 🇻🇳越南_R_2373
-  - 🇻🇳越南_R_2383
   - 🇻🇳越南_R_2474
-  - 🇿🇦南非_R_2369
   - 🇿🇦南非_R_2459
 - name: 🐟 漏网之鱼
   type: select
@@ -2233,11 +1544,6 @@ proxy-groups:
   - 🇹🇼台湾省_R_2460
   - 🇹🇼台湾省_R_2486
   - 🇲🇴澳门_R_2221
-  - 🇲🇴澳门_R_2384
-  - 🇲🇴澳门_R_2385
-  - 🇲🇴澳门_R_2386
-  - 🇲🇴澳门_R_2387
-  - 🇲🇴澳门_R_2388
   - 🇲🇴澳门_R_2479
   - 🇲🇴澳门_R_2480
   - 🇲🇴澳门_R_2481
@@ -2274,102 +1580,54 @@ proxy-groups:
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
-  - 🇰🇷韩国_R_2256
-  - 🇰🇷韩国_R_2349
   - 🇰🇷韩国_R_2442
   - 🇰🇷韩国_R_2475
   - 🇨🇦加拿大_R_2175
-  - 🇨🇦加拿大_R_2343
-  - 🇨🇦加拿大_R_2351
   - 🇨🇦加拿大_R_2443
   - 🇬🇧英国_R_2208
-  - 🇬🇧英国_R_2250
-  - 🇬🇧英国_R_2374
   - 🇬🇧英国_R_2467
-  - 🇦🇺澳大利亚_R_2290
-  - 🇦🇺澳大利亚_R_2380
   - 🇦🇺澳大利亚_R_2433
   - 🇦🇺澳大利亚_R_2471
   - 🇩🇪德国_D_364
   - 🇩🇪德国_R_2173
-  - 🇩🇪德国_R_2306
-  - 🇦🇪迪拜_R_2364
   - 🇦🇪迪拜_R_2451
-  - 🇦🇷阿根廷_R_2246
   - 🇦🇷阿根廷_R_2444
   - 🇦🇿阿塞拜疆_R_2172
-  - 🇦🇿阿塞拜疆_R_2352
   - 🇧🇬保加利亚_R_2169
-  - 🇧🇬保加利亚_R_2357
-  - 🇧🇷巴西_R_2249
   - 🇧🇷巴西_R_2458
-  - 🇨🇭瑞士_R_2368
   - 🇨🇭瑞士_R_2457
-  - 🇪🇪爱沙尼亚_R_2353
   - 🇪🇪爱沙尼亚_R_2445
-  - 🇪🇬埃及_R_2392
   - 🇪🇬埃及_R_2487
   - 🇪🇸西班牙_R_2168
-  - 🇪🇸西班牙_R_2358
-  - 🇫🇷法国_R_2274
   - 🇫🇷法国_R_2429
-  - 🇭🇺匈牙利_R_2363
   - 🇭🇺匈牙利_R_2450
-  - 🇮🇩印度尼西亚_R_2361
   - 🇮🇩印度尼西亚_R_2448
-  - 🇮🇪爱尔兰_R_2346
   - 🇮🇪爱尔兰_R_2438
   - 🇮🇱以色列_R_2166
-  - 🇮🇱以色列_R_2360
-  - 🇮🇳印度_R_2253
   - 🇮🇳印度_R_2440
-  - 🇮🇶伊拉克_R_2244
   - 🇮🇶伊拉克_R_2470
   - 🇮🇸冰岛_R_2170
-  - 🇮🇸冰岛_R_2356
-  - 🇮🇹意大利_R_2362
   - 🇮🇹意大利_R_2449
-  - 🇰🇭柬埔寨_R_2366
   - 🇰🇭柬埔寨_R_2454
-  - 🇰🇿哈萨克斯坦_R_2251
   - 🇰🇿哈萨克斯坦_R_2468
-  - 🇲🇲缅甸_R_2248
   - 🇲🇲缅甸_R_2462
   - 🇲🇽墨西哥_R_2181
-  - 🇲🇽墨西哥_R_2378
-  - 🇲🇾马来西亚_R_2382
   - 🇲🇾马来西亚_R_2473
-  - 🇳🇱荷兰_R_2278
   - 🇳🇱荷兰_R_2430
-  - 🇳🇵尼泊尔_R_2243
   - 🇳🇵尼泊尔_R_2469
-  - 🇵🇭菲律宾_R_2286
   - 🇵🇭菲律宾_R_2432
-  - 🇵🇹葡萄牙_R_2381
   - 🇵🇹葡萄牙_R_2472
-  - 🇶🇦卡塔尔_R_2255
   - 🇶🇦卡塔尔_R_2476
-  - 🇷🇺俄罗斯_R_2389
   - 🇷🇺俄罗斯_R_2483
-  - 🇸🇦沙特_R_2257
   - 🇸🇦沙特_R_2477
-  - 🇸🇪瑞典_R_2344
   - 🇸🇪瑞典_R_2436
-  - 🇹🇭泰国_R_2254
-  - 🇹🇭泰国_R_2341
   - 🇹🇭泰国_R_2456
   - 🇹🇭泰国_R_2488
-  - 🇹🇷土耳其_R_2342
   - 🇹🇷土耳其_R_2435
   - 🇺🇦乌克兰_R_2167
-  - 🇺🇦乌克兰_R_2359
   - 🇻🇳越南_R_2185
   - 🇻🇳越南_R_2209
-  - 🇻🇳越南_R_2310
-  - 🇻🇳越南_R_2373
-  - 🇻🇳越南_R_2383
   - 🇻🇳越南_R_2474
-  - 🇿🇦南非_R_2369
   - 🇿🇦南非_R_2459
 - name: 🛑 广告拦截
   type: select
@@ -2407,11 +1665,6 @@ proxy-groups:
   - 🇹🇼台湾省_R_2460
   - 🇹🇼台湾省_R_2486
   - 🇲🇴澳门_R_2221
-  - 🇲🇴澳门_R_2384
-  - 🇲🇴澳门_R_2385
-  - 🇲🇴澳门_R_2386
-  - 🇲🇴澳门_R_2387
-  - 🇲🇴澳门_R_2388
   - 🇲🇴澳门_R_2479
   - 🇲🇴澳门_R_2480
   - 🇲🇴澳门_R_2481
@@ -2448,102 +1701,54 @@ proxy-groups:
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
-  - 🇰🇷韩国_R_2256
-  - 🇰🇷韩国_R_2349
   - 🇰🇷韩国_R_2442
   - 🇰🇷韩国_R_2475
   - 🇨🇦加拿大_R_2175
-  - 🇨🇦加拿大_R_2343
-  - 🇨🇦加拿大_R_2351
   - 🇨🇦加拿大_R_2443
   - 🇬🇧英国_R_2208
-  - 🇬🇧英国_R_2250
-  - 🇬🇧英国_R_2374
   - 🇬🇧英国_R_2467
-  - 🇦🇺澳大利亚_R_2290
-  - 🇦🇺澳大利亚_R_2380
   - 🇦🇺澳大利亚_R_2433
   - 🇦🇺澳大利亚_R_2471
   - 🇩🇪德国_D_364
   - 🇩🇪德国_R_2173
-  - 🇩🇪德国_R_2306
-  - 🇦🇪迪拜_R_2364
   - 🇦🇪迪拜_R_2451
-  - 🇦🇷阿根廷_R_2246
   - 🇦🇷阿根廷_R_2444
   - 🇦🇿阿塞拜疆_R_2172
-  - 🇦🇿阿塞拜疆_R_2352
   - 🇧🇬保加利亚_R_2169
-  - 🇧🇬保加利亚_R_2357
-  - 🇧🇷巴西_R_2249
   - 🇧🇷巴西_R_2458
-  - 🇨🇭瑞士_R_2368
   - 🇨🇭瑞士_R_2457
-  - 🇪🇪爱沙尼亚_R_2353
   - 🇪🇪爱沙尼亚_R_2445
-  - 🇪🇬埃及_R_2392
   - 🇪🇬埃及_R_2487
   - 🇪🇸西班牙_R_2168
-  - 🇪🇸西班牙_R_2358
-  - 🇫🇷法国_R_2274
   - 🇫🇷法国_R_2429
-  - 🇭🇺匈牙利_R_2363
   - 🇭🇺匈牙利_R_2450
-  - 🇮🇩印度尼西亚_R_2361
   - 🇮🇩印度尼西亚_R_2448
-  - 🇮🇪爱尔兰_R_2346
   - 🇮🇪爱尔兰_R_2438
   - 🇮🇱以色列_R_2166
-  - 🇮🇱以色列_R_2360
-  - 🇮🇳印度_R_2253
   - 🇮🇳印度_R_2440
-  - 🇮🇶伊拉克_R_2244
   - 🇮🇶伊拉克_R_2470
   - 🇮🇸冰岛_R_2170
-  - 🇮🇸冰岛_R_2356
-  - 🇮🇹意大利_R_2362
   - 🇮🇹意大利_R_2449
-  - 🇰🇭柬埔寨_R_2366
   - 🇰🇭柬埔寨_R_2454
-  - 🇰🇿哈萨克斯坦_R_2251
   - 🇰🇿哈萨克斯坦_R_2468
-  - 🇲🇲缅甸_R_2248
   - 🇲🇲缅甸_R_2462
   - 🇲🇽墨西哥_R_2181
-  - 🇲🇽墨西哥_R_2378
-  - 🇲🇾马来西亚_R_2382
   - 🇲🇾马来西亚_R_2473
-  - 🇳🇱荷兰_R_2278
   - 🇳🇱荷兰_R_2430
-  - 🇳🇵尼泊尔_R_2243
   - 🇳🇵尼泊尔_R_2469
-  - 🇵🇭菲律宾_R_2286
   - 🇵🇭菲律宾_R_2432
-  - 🇵🇹葡萄牙_R_2381
   - 🇵🇹葡萄牙_R_2472
-  - 🇶🇦卡塔尔_R_2255
   - 🇶🇦卡塔尔_R_2476
-  - 🇷🇺俄罗斯_R_2389
   - 🇷🇺俄罗斯_R_2483
-  - 🇸🇦沙特_R_2257
   - 🇸🇦沙特_R_2477
-  - 🇸🇪瑞典_R_2344
   - 🇸🇪瑞典_R_2436
-  - 🇹🇭泰国_R_2254
-  - 🇹🇭泰国_R_2341
   - 🇹🇭泰国_R_2456
   - 🇹🇭泰国_R_2488
-  - 🇹🇷土耳其_R_2342
   - 🇹🇷土耳其_R_2435
   - 🇺🇦乌克兰_R_2167
-  - 🇺🇦乌克兰_R_2359
   - 🇻🇳越南_R_2185
   - 🇻🇳越南_R_2209
-  - 🇻🇳越南_R_2310
-  - 🇻🇳越南_R_2373
-  - 🇻🇳越南_R_2383
   - 🇻🇳越南_R_2474
-  - 🇿🇦南非_R_2369
   - 🇿🇦南非_R_2459
 - name: 🍎 苹果服务
   type: select
@@ -2580,11 +1785,6 @@ proxy-groups:
   - 🇹🇼台湾省_R_2460
   - 🇹🇼台湾省_R_2486
   - 🇲🇴澳门_R_2221
-  - 🇲🇴澳门_R_2384
-  - 🇲🇴澳门_R_2385
-  - 🇲🇴澳门_R_2386
-  - 🇲🇴澳门_R_2387
-  - 🇲🇴澳门_R_2388
   - 🇲🇴澳门_R_2479
   - 🇲🇴澳门_R_2480
   - 🇲🇴澳门_R_2481
@@ -2621,102 +1821,54 @@ proxy-groups:
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
-  - 🇰🇷韩国_R_2256
-  - 🇰🇷韩国_R_2349
   - 🇰🇷韩国_R_2442
   - 🇰🇷韩国_R_2475
   - 🇨🇦加拿大_R_2175
-  - 🇨🇦加拿大_R_2343
-  - 🇨🇦加拿大_R_2351
   - 🇨🇦加拿大_R_2443
   - 🇬🇧英国_R_2208
-  - 🇬🇧英国_R_2250
-  - 🇬🇧英国_R_2374
   - 🇬🇧英国_R_2467
-  - 🇦🇺澳大利亚_R_2290
-  - 🇦🇺澳大利亚_R_2380
   - 🇦🇺澳大利亚_R_2433
   - 🇦🇺澳大利亚_R_2471
   - 🇩🇪德国_D_364
   - 🇩🇪德国_R_2173
-  - 🇩🇪德国_R_2306
-  - 🇦🇪迪拜_R_2364
   - 🇦🇪迪拜_R_2451
-  - 🇦🇷阿根廷_R_2246
   - 🇦🇷阿根廷_R_2444
   - 🇦🇿阿塞拜疆_R_2172
-  - 🇦🇿阿塞拜疆_R_2352
   - 🇧🇬保加利亚_R_2169
-  - 🇧🇬保加利亚_R_2357
-  - 🇧🇷巴西_R_2249
   - 🇧🇷巴西_R_2458
-  - 🇨🇭瑞士_R_2368
   - 🇨🇭瑞士_R_2457
-  - 🇪🇪爱沙尼亚_R_2353
   - 🇪🇪爱沙尼亚_R_2445
-  - 🇪🇬埃及_R_2392
   - 🇪🇬埃及_R_2487
   - 🇪🇸西班牙_R_2168
-  - 🇪🇸西班牙_R_2358
-  - 🇫🇷法国_R_2274
   - 🇫🇷法国_R_2429
-  - 🇭🇺匈牙利_R_2363
   - 🇭🇺匈牙利_R_2450
-  - 🇮🇩印度尼西亚_R_2361
   - 🇮🇩印度尼西亚_R_2448
-  - 🇮🇪爱尔兰_R_2346
   - 🇮🇪爱尔兰_R_2438
   - 🇮🇱以色列_R_2166
-  - 🇮🇱以色列_R_2360
-  - 🇮🇳印度_R_2253
   - 🇮🇳印度_R_2440
-  - 🇮🇶伊拉克_R_2244
   - 🇮🇶伊拉克_R_2470
   - 🇮🇸冰岛_R_2170
-  - 🇮🇸冰岛_R_2356
-  - 🇮🇹意大利_R_2362
   - 🇮🇹意大利_R_2449
-  - 🇰🇭柬埔寨_R_2366
   - 🇰🇭柬埔寨_R_2454
-  - 🇰🇿哈萨克斯坦_R_2251
   - 🇰🇿哈萨克斯坦_R_2468
-  - 🇲🇲缅甸_R_2248
   - 🇲🇲缅甸_R_2462
   - 🇲🇽墨西哥_R_2181
-  - 🇲🇽墨西哥_R_2378
-  - 🇲🇾马来西亚_R_2382
   - 🇲🇾马来西亚_R_2473
-  - 🇳🇱荷兰_R_2278
   - 🇳🇱荷兰_R_2430
-  - 🇳🇵尼泊尔_R_2243
   - 🇳🇵尼泊尔_R_2469
-  - 🇵🇭菲律宾_R_2286
   - 🇵🇭菲律宾_R_2432
-  - 🇵🇹葡萄牙_R_2381
   - 🇵🇹葡萄牙_R_2472
-  - 🇶🇦卡塔尔_R_2255
   - 🇶🇦卡塔尔_R_2476
-  - 🇷🇺俄罗斯_R_2389
   - 🇷🇺俄罗斯_R_2483
-  - 🇸🇦沙特_R_2257
   - 🇸🇦沙特_R_2477
-  - 🇸🇪瑞典_R_2344
   - 🇸🇪瑞典_R_2436
-  - 🇹🇭泰国_R_2254
-  - 🇹🇭泰国_R_2341
   - 🇹🇭泰国_R_2456
   - 🇹🇭泰国_R_2488
-  - 🇹🇷土耳其_R_2342
   - 🇹🇷土耳其_R_2435
   - 🇺🇦乌克兰_R_2167
-  - 🇺🇦乌克兰_R_2359
   - 🇻🇳越南_R_2185
   - 🇻🇳越南_R_2209
-  - 🇻🇳越南_R_2310
-  - 🇻🇳越南_R_2373
-  - 🇻🇳越南_R_2383
   - 🇻🇳越南_R_2474
-  - 🇿🇦南非_R_2369
   - 🇿🇦南非_R_2459
 - name: 📣 谷歌服务
   type: select
@@ -2752,11 +1904,6 @@ proxy-groups:
   - 🇹🇼台湾省_R_2460
   - 🇹🇼台湾省_R_2486
   - 🇲🇴澳门_R_2221
-  - 🇲🇴澳门_R_2384
-  - 🇲🇴澳门_R_2385
-  - 🇲🇴澳门_R_2386
-  - 🇲🇴澳门_R_2387
-  - 🇲🇴澳门_R_2388
   - 🇲🇴澳门_R_2479
   - 🇲🇴澳门_R_2480
   - 🇲🇴澳门_R_2481
@@ -2793,102 +1940,54 @@ proxy-groups:
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
-  - 🇰🇷韩国_R_2256
-  - 🇰🇷韩国_R_2349
   - 🇰🇷韩国_R_2442
   - 🇰🇷韩国_R_2475
   - 🇨🇦加拿大_R_2175
-  - 🇨🇦加拿大_R_2343
-  - 🇨🇦加拿大_R_2351
   - 🇨🇦加拿大_R_2443
   - 🇬🇧英国_R_2208
-  - 🇬🇧英国_R_2250
-  - 🇬🇧英国_R_2374
   - 🇬🇧英国_R_2467
-  - 🇦🇺澳大利亚_R_2290
-  - 🇦🇺澳大利亚_R_2380
   - 🇦🇺澳大利亚_R_2433
   - 🇦🇺澳大利亚_R_2471
   - 🇩🇪德国_D_364
   - 🇩🇪德国_R_2173
-  - 🇩🇪德国_R_2306
-  - 🇦🇪迪拜_R_2364
   - 🇦🇪迪拜_R_2451
-  - 🇦🇷阿根廷_R_2246
   - 🇦🇷阿根廷_R_2444
   - 🇦🇿阿塞拜疆_R_2172
-  - 🇦🇿阿塞拜疆_R_2352
   - 🇧🇬保加利亚_R_2169
-  - 🇧🇬保加利亚_R_2357
-  - 🇧🇷巴西_R_2249
   - 🇧🇷巴西_R_2458
-  - 🇨🇭瑞士_R_2368
   - 🇨🇭瑞士_R_2457
-  - 🇪🇪爱沙尼亚_R_2353
   - 🇪🇪爱沙尼亚_R_2445
-  - 🇪🇬埃及_R_2392
   - 🇪🇬埃及_R_2487
   - 🇪🇸西班牙_R_2168
-  - 🇪🇸西班牙_R_2358
-  - 🇫🇷法国_R_2274
   - 🇫🇷法国_R_2429
-  - 🇭🇺匈牙利_R_2363
   - 🇭🇺匈牙利_R_2450
-  - 🇮🇩印度尼西亚_R_2361
   - 🇮🇩印度尼西亚_R_2448
-  - 🇮🇪爱尔兰_R_2346
   - 🇮🇪爱尔兰_R_2438
   - 🇮🇱以色列_R_2166
-  - 🇮🇱以色列_R_2360
-  - 🇮🇳印度_R_2253
   - 🇮🇳印度_R_2440
-  - 🇮🇶伊拉克_R_2244
   - 🇮🇶伊拉克_R_2470
   - 🇮🇸冰岛_R_2170
-  - 🇮🇸冰岛_R_2356
-  - 🇮🇹意大利_R_2362
   - 🇮🇹意大利_R_2449
-  - 🇰🇭柬埔寨_R_2366
   - 🇰🇭柬埔寨_R_2454
-  - 🇰🇿哈萨克斯坦_R_2251
   - 🇰🇿哈萨克斯坦_R_2468
-  - 🇲🇲缅甸_R_2248
   - 🇲🇲缅甸_R_2462
   - 🇲🇽墨西哥_R_2181
-  - 🇲🇽墨西哥_R_2378
-  - 🇲🇾马来西亚_R_2382
   - 🇲🇾马来西亚_R_2473
-  - 🇳🇱荷兰_R_2278
   - 🇳🇱荷兰_R_2430
-  - 🇳🇵尼泊尔_R_2243
   - 🇳🇵尼泊尔_R_2469
-  - 🇵🇭菲律宾_R_2286
   - 🇵🇭菲律宾_R_2432
-  - 🇵🇹葡萄牙_R_2381
   - 🇵🇹葡萄牙_R_2472
-  - 🇶🇦卡塔尔_R_2255
   - 🇶🇦卡塔尔_R_2476
-  - 🇷🇺俄罗斯_R_2389
   - 🇷🇺俄罗斯_R_2483
-  - 🇸🇦沙特_R_2257
   - 🇸🇦沙特_R_2477
-  - 🇸🇪瑞典_R_2344
   - 🇸🇪瑞典_R_2436
-  - 🇹🇭泰国_R_2254
-  - 🇹🇭泰国_R_2341
   - 🇹🇭泰国_R_2456
   - 🇹🇭泰国_R_2488
-  - 🇹🇷土耳其_R_2342
   - 🇹🇷土耳其_R_2435
   - 🇺🇦乌克兰_R_2167
-  - 🇺🇦乌克兰_R_2359
   - 🇻🇳越南_R_2185
   - 🇻🇳越南_R_2209
-  - 🇻🇳越南_R_2310
-  - 🇻🇳越南_R_2373
-  - 🇻🇳越南_R_2383
   - 🇻🇳越南_R_2474
-  - 🇿🇦南非_R_2369
   - 🇿🇦南非_R_2459
 - name: 📲 电报消息
   type: select
@@ -2924,11 +2023,6 @@ proxy-groups:
   - 🇹🇼台湾省_R_2460
   - 🇹🇼台湾省_R_2486
   - 🇲🇴澳门_R_2221
-  - 🇲🇴澳门_R_2384
-  - 🇲🇴澳门_R_2385
-  - 🇲🇴澳门_R_2386
-  - 🇲🇴澳门_R_2387
-  - 🇲🇴澳门_R_2388
   - 🇲🇴澳门_R_2479
   - 🇲🇴澳门_R_2480
   - 🇲🇴澳门_R_2481
@@ -2965,102 +2059,54 @@ proxy-groups:
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
-  - 🇰🇷韩国_R_2256
-  - 🇰🇷韩国_R_2349
   - 🇰🇷韩国_R_2442
   - 🇰🇷韩国_R_2475
   - 🇨🇦加拿大_R_2175
-  - 🇨🇦加拿大_R_2343
-  - 🇨🇦加拿大_R_2351
   - 🇨🇦加拿大_R_2443
   - 🇬🇧英国_R_2208
-  - 🇬🇧英国_R_2250
-  - 🇬🇧英国_R_2374
   - 🇬🇧英国_R_2467
-  - 🇦🇺澳大利亚_R_2290
-  - 🇦🇺澳大利亚_R_2380
   - 🇦🇺澳大利亚_R_2433
   - 🇦🇺澳大利亚_R_2471
   - 🇩🇪德国_D_364
   - 🇩🇪德国_R_2173
-  - 🇩🇪德国_R_2306
-  - 🇦🇪迪拜_R_2364
   - 🇦🇪迪拜_R_2451
-  - 🇦🇷阿根廷_R_2246
   - 🇦🇷阿根廷_R_2444
   - 🇦🇿阿塞拜疆_R_2172
-  - 🇦🇿阿塞拜疆_R_2352
   - 🇧🇬保加利亚_R_2169
-  - 🇧🇬保加利亚_R_2357
-  - 🇧🇷巴西_R_2249
   - 🇧🇷巴西_R_2458
-  - 🇨🇭瑞士_R_2368
   - 🇨🇭瑞士_R_2457
-  - 🇪🇪爱沙尼亚_R_2353
   - 🇪🇪爱沙尼亚_R_2445
-  - 🇪🇬埃及_R_2392
   - 🇪🇬埃及_R_2487
   - 🇪🇸西班牙_R_2168
-  - 🇪🇸西班牙_R_2358
-  - 🇫🇷法国_R_2274
   - 🇫🇷法国_R_2429
-  - 🇭🇺匈牙利_R_2363
   - 🇭🇺匈牙利_R_2450
-  - 🇮🇩印度尼西亚_R_2361
   - 🇮🇩印度尼西亚_R_2448
-  - 🇮🇪爱尔兰_R_2346
   - 🇮🇪爱尔兰_R_2438
   - 🇮🇱以色列_R_2166
-  - 🇮🇱以色列_R_2360
-  - 🇮🇳印度_R_2253
   - 🇮🇳印度_R_2440
-  - 🇮🇶伊拉克_R_2244
   - 🇮🇶伊拉克_R_2470
   - 🇮🇸冰岛_R_2170
-  - 🇮🇸冰岛_R_2356
-  - 🇮🇹意大利_R_2362
   - 🇮🇹意大利_R_2449
-  - 🇰🇭柬埔寨_R_2366
   - 🇰🇭柬埔寨_R_2454
-  - 🇰🇿哈萨克斯坦_R_2251
   - 🇰🇿哈萨克斯坦_R_2468
-  - 🇲🇲缅甸_R_2248
   - 🇲🇲缅甸_R_2462
   - 🇲🇽墨西哥_R_2181
-  - 🇲🇽墨西哥_R_2378
-  - 🇲🇾马来西亚_R_2382
   - 🇲🇾马来西亚_R_2473
-  - 🇳🇱荷兰_R_2278
   - 🇳🇱荷兰_R_2430
-  - 🇳🇵尼泊尔_R_2243
   - 🇳🇵尼泊尔_R_2469
-  - 🇵🇭菲律宾_R_2286
   - 🇵🇭菲律宾_R_2432
-  - 🇵🇹葡萄牙_R_2381
   - 🇵🇹葡萄牙_R_2472
-  - 🇶🇦卡塔尔_R_2255
   - 🇶🇦卡塔尔_R_2476
-  - 🇷🇺俄罗斯_R_2389
   - 🇷🇺俄罗斯_R_2483
-  - 🇸🇦沙特_R_2257
   - 🇸🇦沙特_R_2477
-  - 🇸🇪瑞典_R_2344
   - 🇸🇪瑞典_R_2436
-  - 🇹🇭泰国_R_2254
-  - 🇹🇭泰国_R_2341
   - 🇹🇭泰国_R_2456
   - 🇹🇭泰国_R_2488
-  - 🇹🇷土耳其_R_2342
   - 🇹🇷土耳其_R_2435
   - 🇺🇦乌克兰_R_2167
-  - 🇺🇦乌克兰_R_2359
   - 🇻🇳越南_R_2185
   - 🇻🇳越南_R_2209
-  - 🇻🇳越南_R_2310
-  - 🇻🇳越南_R_2373
-  - 🇻🇳越南_R_2383
   - 🇻🇳越南_R_2474
-  - 🇿🇦南非_R_2369
   - 🇿🇦南非_R_2459
 - name: 🎬 流媒体验
   type: select
@@ -3096,11 +2142,6 @@ proxy-groups:
   - 🇹🇼台湾省_R_2460
   - 🇹🇼台湾省_R_2486
   - 🇲🇴澳门_R_2221
-  - 🇲🇴澳门_R_2384
-  - 🇲🇴澳门_R_2385
-  - 🇲🇴澳门_R_2386
-  - 🇲🇴澳门_R_2387
-  - 🇲🇴澳门_R_2388
   - 🇲🇴澳门_R_2479
   - 🇲🇴澳门_R_2480
   - 🇲🇴澳门_R_2481
@@ -3137,102 +2178,54 @@ proxy-groups:
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
-  - 🇰🇷韩国_R_2256
-  - 🇰🇷韩国_R_2349
   - 🇰🇷韩国_R_2442
   - 🇰🇷韩国_R_2475
   - 🇨🇦加拿大_R_2175
-  - 🇨🇦加拿大_R_2343
-  - 🇨🇦加拿大_R_2351
   - 🇨🇦加拿大_R_2443
   - 🇬🇧英国_R_2208
-  - 🇬🇧英国_R_2250
-  - 🇬🇧英国_R_2374
   - 🇬🇧英国_R_2467
-  - 🇦🇺澳大利亚_R_2290
-  - 🇦🇺澳大利亚_R_2380
   - 🇦🇺澳大利亚_R_2433
   - 🇦🇺澳大利亚_R_2471
   - 🇩🇪德国_D_364
   - 🇩🇪德国_R_2173
-  - 🇩🇪德国_R_2306
-  - 🇦🇪迪拜_R_2364
   - 🇦🇪迪拜_R_2451
-  - 🇦🇷阿根廷_R_2246
   - 🇦🇷阿根廷_R_2444
   - 🇦🇿阿塞拜疆_R_2172
-  - 🇦🇿阿塞拜疆_R_2352
   - 🇧🇬保加利亚_R_2169
-  - 🇧🇬保加利亚_R_2357
-  - 🇧🇷巴西_R_2249
   - 🇧🇷巴西_R_2458
-  - 🇨🇭瑞士_R_2368
   - 🇨🇭瑞士_R_2457
-  - 🇪🇪爱沙尼亚_R_2353
   - 🇪🇪爱沙尼亚_R_2445
-  - 🇪🇬埃及_R_2392
   - 🇪🇬埃及_R_2487
   - 🇪🇸西班牙_R_2168
-  - 🇪🇸西班牙_R_2358
-  - 🇫🇷法国_R_2274
   - 🇫🇷法国_R_2429
-  - 🇭🇺匈牙利_R_2363
   - 🇭🇺匈牙利_R_2450
-  - 🇮🇩印度尼西亚_R_2361
   - 🇮🇩印度尼西亚_R_2448
-  - 🇮🇪爱尔兰_R_2346
   - 🇮🇪爱尔兰_R_2438
   - 🇮🇱以色列_R_2166
-  - 🇮🇱以色列_R_2360
-  - 🇮🇳印度_R_2253
   - 🇮🇳印度_R_2440
-  - 🇮🇶伊拉克_R_2244
   - 🇮🇶伊拉克_R_2470
   - 🇮🇸冰岛_R_2170
-  - 🇮🇸冰岛_R_2356
-  - 🇮🇹意大利_R_2362
   - 🇮🇹意大利_R_2449
-  - 🇰🇭柬埔寨_R_2366
   - 🇰🇭柬埔寨_R_2454
-  - 🇰🇿哈萨克斯坦_R_2251
   - 🇰🇿哈萨克斯坦_R_2468
-  - 🇲🇲缅甸_R_2248
   - 🇲🇲缅甸_R_2462
   - 🇲🇽墨西哥_R_2181
-  - 🇲🇽墨西哥_R_2378
-  - 🇲🇾马来西亚_R_2382
   - 🇲🇾马来西亚_R_2473
-  - 🇳🇱荷兰_R_2278
   - 🇳🇱荷兰_R_2430
-  - 🇳🇵尼泊尔_R_2243
   - 🇳🇵尼泊尔_R_2469
-  - 🇵🇭菲律宾_R_2286
   - 🇵🇭菲律宾_R_2432
-  - 🇵🇹葡萄牙_R_2381
   - 🇵🇹葡萄牙_R_2472
-  - 🇶🇦卡塔尔_R_2255
   - 🇶🇦卡塔尔_R_2476
-  - 🇷🇺俄罗斯_R_2389
   - 🇷🇺俄罗斯_R_2483
-  - 🇸🇦沙特_R_2257
   - 🇸🇦沙特_R_2477
-  - 🇸🇪瑞典_R_2344
   - 🇸🇪瑞典_R_2436
-  - 🇹🇭泰国_R_2254
-  - 🇹🇭泰国_R_2341
   - 🇹🇭泰国_R_2456
   - 🇹🇭泰国_R_2488
-  - 🇹🇷土耳其_R_2342
   - 🇹🇷土耳其_R_2435
   - 🇺🇦乌克兰_R_2167
-  - 🇺🇦乌克兰_R_2359
   - 🇻🇳越南_R_2185
   - 🇻🇳越南_R_2209
-  - 🇻🇳越南_R_2310
-  - 🇻🇳越南_R_2373
-  - 🇻🇳越南_R_2383
   - 🇻🇳越南_R_2474
-  - 🇿🇦南非_R_2369
   - 🇿🇦南非_R_2459
 - name: Ⓜ️ 微软服务
   type: select
@@ -3269,11 +2262,6 @@ proxy-groups:
   - 🇹🇼台湾省_R_2460
   - 🇹🇼台湾省_R_2486
   - 🇲🇴澳门_R_2221
-  - 🇲🇴澳门_R_2384
-  - 🇲🇴澳门_R_2385
-  - 🇲🇴澳门_R_2386
-  - 🇲🇴澳门_R_2387
-  - 🇲🇴澳门_R_2388
   - 🇲🇴澳门_R_2479
   - 🇲🇴澳门_R_2480
   - 🇲🇴澳门_R_2481
@@ -3310,102 +2298,54 @@ proxy-groups:
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
-  - 🇰🇷韩国_R_2256
-  - 🇰🇷韩国_R_2349
   - 🇰🇷韩国_R_2442
   - 🇰🇷韩国_R_2475
   - 🇨🇦加拿大_R_2175
-  - 🇨🇦加拿大_R_2343
-  - 🇨🇦加拿大_R_2351
   - 🇨🇦加拿大_R_2443
   - 🇬🇧英国_R_2208
-  - 🇬🇧英国_R_2250
-  - 🇬🇧英国_R_2374
   - 🇬🇧英国_R_2467
-  - 🇦🇺澳大利亚_R_2290
-  - 🇦🇺澳大利亚_R_2380
   - 🇦🇺澳大利亚_R_2433
   - 🇦🇺澳大利亚_R_2471
   - 🇩🇪德国_D_364
   - 🇩🇪德国_R_2173
-  - 🇩🇪德国_R_2306
-  - 🇦🇪迪拜_R_2364
   - 🇦🇪迪拜_R_2451
-  - 🇦🇷阿根廷_R_2246
   - 🇦🇷阿根廷_R_2444
   - 🇦🇿阿塞拜疆_R_2172
-  - 🇦🇿阿塞拜疆_R_2352
   - 🇧🇬保加利亚_R_2169
-  - 🇧🇬保加利亚_R_2357
-  - 🇧🇷巴西_R_2249
   - 🇧🇷巴西_R_2458
-  - 🇨🇭瑞士_R_2368
   - 🇨🇭瑞士_R_2457
-  - 🇪🇪爱沙尼亚_R_2353
   - 🇪🇪爱沙尼亚_R_2445
-  - 🇪🇬埃及_R_2392
   - 🇪🇬埃及_R_2487
   - 🇪🇸西班牙_R_2168
-  - 🇪🇸西班牙_R_2358
-  - 🇫🇷法国_R_2274
   - 🇫🇷法国_R_2429
-  - 🇭🇺匈牙利_R_2363
   - 🇭🇺匈牙利_R_2450
-  - 🇮🇩印度尼西亚_R_2361
   - 🇮🇩印度尼西亚_R_2448
-  - 🇮🇪爱尔兰_R_2346
   - 🇮🇪爱尔兰_R_2438
   - 🇮🇱以色列_R_2166
-  - 🇮🇱以色列_R_2360
-  - 🇮🇳印度_R_2253
   - 🇮🇳印度_R_2440
-  - 🇮🇶伊拉克_R_2244
   - 🇮🇶伊拉克_R_2470
   - 🇮🇸冰岛_R_2170
-  - 🇮🇸冰岛_R_2356
-  - 🇮🇹意大利_R_2362
   - 🇮🇹意大利_R_2449
-  - 🇰🇭柬埔寨_R_2366
   - 🇰🇭柬埔寨_R_2454
-  - 🇰🇿哈萨克斯坦_R_2251
   - 🇰🇿哈萨克斯坦_R_2468
-  - 🇲🇲缅甸_R_2248
   - 🇲🇲缅甸_R_2462
   - 🇲🇽墨西哥_R_2181
-  - 🇲🇽墨西哥_R_2378
-  - 🇲🇾马来西亚_R_2382
   - 🇲🇾马来西亚_R_2473
-  - 🇳🇱荷兰_R_2278
   - 🇳🇱荷兰_R_2430
-  - 🇳🇵尼泊尔_R_2243
   - 🇳🇵尼泊尔_R_2469
-  - 🇵🇭菲律宾_R_2286
   - 🇵🇭菲律宾_R_2432
-  - 🇵🇹葡萄牙_R_2381
   - 🇵🇹葡萄牙_R_2472
-  - 🇶🇦卡塔尔_R_2255
   - 🇶🇦卡塔尔_R_2476
-  - 🇷🇺俄罗斯_R_2389
   - 🇷🇺俄罗斯_R_2483
-  - 🇸🇦沙特_R_2257
   - 🇸🇦沙特_R_2477
-  - 🇸🇪瑞典_R_2344
   - 🇸🇪瑞典_R_2436
-  - 🇹🇭泰国_R_2254
-  - 🇹🇭泰国_R_2341
   - 🇹🇭泰国_R_2456
   - 🇹🇭泰国_R_2488
-  - 🇹🇷土耳其_R_2342
   - 🇹🇷土耳其_R_2435
   - 🇺🇦乌克兰_R_2167
-  - 🇺🇦乌克兰_R_2359
   - 🇻🇳越南_R_2185
   - 🇻🇳越南_R_2209
-  - 🇻🇳越南_R_2310
-  - 🇻🇳越南_R_2373
-  - 🇻🇳越南_R_2383
   - 🇻🇳越南_R_2474
-  - 🇿🇦南非_R_2369
   - 🇿🇦南非_R_2459
 rules:
 - DOMAIN-SUFFIX,telescopes.vip,DIRECT
