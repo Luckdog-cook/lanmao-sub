@@ -4,6 +4,230 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
+- name: HK-01-三网优化
+  server: hk01.node.qixi.best
+  port: 443
+  type: trojan
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  network: ws
+  udp: true
+  tls: true
+  servername: hk01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk01.node.qixi.best
+- name: HK-02-三网优化
+  server: hk02.node.qixi.best
+  port: 443
+  type: trojan
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  network: ws
+  udp: true
+  tls: true
+  servername: hk02.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk02.node.qixi.best
+- name: HK-03-三网优化
+  server: hk03.node.qixi.best
+  port: 443
+  type: trojan
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  network: ws
+  udp: true
+  tls: true
+  servername: hk03.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk03.node.qixi.best
+- name: HK-05-三网优化
+  server: hk05.node.qixi.best
+  port: 443
+  type: trojan
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  network: ws
+  udp: true
+  tls: true
+  servername: hk05.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk05.node.qixi.best
+- name: HK-06-三网优化
+  server: hk06.node.qixi.best
+  port: 443
+  type: trojan
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  network: ws
+  udp: true
+  tls: true
+  servername: hk06.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk06.node.qixi.best
+- name: HK-07-三网优化
+  server: hk07.node.qixi.best
+  port: 443
+  type: trojan
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  network: ws
+  udp: true
+  tls: true
+  servername: hk07.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk07.node.qixi.best
+- name: HK-08-三网优化
+  server: 103.231.59.131
+  port: 16606
+  type: hysteria2
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  sni: bing.com
+  skip-cert-verify: true
+- name: JP-01-三网优化
+  server: JP01.node.qixi.best
+  port: 443
+  type: trojan
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  network: ws
+  udp: true
+  tls: true
+  servername: jp01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp01.node.qixi.best
+- name: JP-02-三网优化
+  server: JP02.node.qixi.best
+  port: 443
+  type: trojan
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  network: ws
+  udp: true
+  tls: true
+  servername: jp02.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp02.node.qixi.best
+- name: JP-03-三网优化
+  server: JP03.node.qixi.best
+  port: 443
+  type: trojan
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  network: ws
+  udp: true
+  tls: true
+  servername: jp03.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp03.node.qixi.best
+- name: JP-04-三网优化
+  server: JP04.node.qixi.best
+  port: 443
+  type: trojan
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  network: ws
+  udp: true
+  tls: true
+  servername: jp04.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp04.node.qixi.best
+- name: JP-05-三网优化
+  server: 216.23.120.16
+  port: 16606
+  type: hysteria2
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  sni: bing.com
+  skip-cert-verify: true
+- name: JP06-三网优化
+  server: 52.199.139.99
+  port: 16606
+  type: hysteria2
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  sni: bing.com
+  skip-cert-verify: true
+- name: JP-07-三网优化
+  server: jp07.node.qixi.best
+  port: 443
+  type: trojan
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  network: ws
+  udp: true
+  tls: true
+  servername: de01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: de01.node.qixi.best
+- name: TW-01-三网优化
+  server: tw01.node.qixi.best
+  port: 443
+  type: trojan
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  network: ws
+  udp: true
+  tls: true
+  servername: tw01.node.qixi.best
+  client-fingerprint: chrome
+  ws-opts:
+    path: /download
+    headers:
+      Host: tw01.node.qixi.best
+- name: US-01-三网优化
+  server: us01.node.qixi.best
+  port: 443
+  type: trojan
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  network: ws
+  udp: true
+  tls: true
+  servername: us01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: us01.node.qixi.best
+- name: DE-01-三网优化
+  server: de01.node.qixi.best
+  port: 443
+  type: trojan
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  network: ws
+  udp: true
+  tls: true
+  servername: de01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: de01.node.qixi.best
+- name: HK-09-移动优化
+  server: 82.29.36.39
+  port: 16606
+  type: hysteria2
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  sni: bing.com
+  skip-cert-verify: true
 - name: 🇭🇰香港-Gemini-IEPL
   server: gd.bjnet2.com
   port: 36602
@@ -136,247 +360,11 @@ proxies:
   plugin-opts:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: HK-01-三网优化
-  server: hk01.node.qixi.best
-  port: 443
-  type: trojan
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  network: ws
-  udp: true
-  tls: true
-  servername: hk01.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk01.node.qixi.best
-- name: HK-02-三网优化
-  server: hk02.node.qixi.best
-  port: 443
-  type: trojan
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  network: ws
-  udp: true
-  tls: true
-  servername: hk02.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk02.node.qixi.best
-- name: HK-03-三网优化
-  server: hk03.node.qixi.best
-  port: 443
-  type: trojan
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  network: ws
-  udp: true
-  tls: true
-  servername: hk03.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk03.node.qixi.best
-- name: HK-05-三网优化
-  server: hk05.node.qixi.best
-  port: 443
-  type: trojan
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  network: ws
-  udp: true
-  tls: true
-  servername: hk05.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk05.node.qixi.best
-- name: HK-06-三网优化
-  server: hk06.node.qixi.best
-  port: 443
-  type: trojan
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  network: ws
-  udp: true
-  tls: true
-  servername: hk06.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk06.node.qixi.best
-- name: HK-07-三网优化
-  server: hk07.node.qixi.best
-  port: 443
-  type: trojan
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  network: ws
-  udp: true
-  tls: true
-  servername: hk07.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: hk07.node.qixi.best
-- name: HK-08-三网优化
-  server: 103.231.59.131
-  port: 16606
-  type: hysteria2
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  sni: bing.com
-  skip-cert-verify: true
-- name: JP-01-三网优化
-  server: JP01.node.qixi.best
-  port: 443
-  type: trojan
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  network: ws
-  udp: true
-  tls: true
-  servername: jp01.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: jp01.node.qixi.best
-- name: JP-02-三网优化
-  server: JP02.node.qixi.best
-  port: 443
-  type: trojan
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  network: ws
-  udp: true
-  tls: true
-  servername: jp02.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: jp02.node.qixi.best
-- name: JP-03-三网优化
-  server: JP03.node.qixi.best
-  port: 443
-  type: trojan
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  network: ws
-  udp: true
-  tls: true
-  servername: jp03.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: jp03.node.qixi.best
-- name: JP-04-三网优化
-  server: JP04.node.qixi.best
-  port: 443
-  type: trojan
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  network: ws
-  udp: true
-  tls: true
-  servername: jp04.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: jp04.node.qixi.best
-- name: JP-05-三网优化
-  server: 216.23.120.16
-  port: 16606
-  type: hysteria2
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  sni: bing.com
-  skip-cert-verify: true
-- name: JP06-三网优化
-  server: 52.199.139.99
-  port: 16606
-  type: hysteria2
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  sni: bing.com
-  skip-cert-verify: true
-- name: JP-07-三网优化
-  server: jp07.node.qixi.best
-  port: 443
-  type: trojan
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  network: ws
-  udp: true
-  tls: true
-  servername: de01.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: de01.node.qixi.best
-- name: TW-01-三网优化
-  server: tw01.node.qixi.best
-  port: 443
-  type: trojan
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  network: ws
-  udp: true
-  tls: true
-  servername: tw01.node.qixi.best
-  client-fingerprint: chrome
-  ws-opts:
-    path: /download
-    headers:
-      Host: tw01.node.qixi.best
-- name: US-01-三网优化
-  server: us01.node.qixi.best
-  port: 443
-  type: trojan
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  network: ws
-  udp: true
-  tls: true
-  servername: us01.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: us01.node.qixi.best
-- name: DE-01-三网优化
-  server: de01.node.qixi.best
-  port: 443
-  type: trojan
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  network: ws
-  udp: true
-  tls: true
-  servername: de01.node.qixi.best
-  client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: de01.node.qixi.best
-- name: HK-09-移动优化
-  server: 82.29.36.39
-  port: 16606
-  type: hysteria2
-  password: dfaa4830-6ace-46a5-8f02-75cbca1a0770
-  sni: bing.com
-  skip-cert-verify: true
 proxy-groups:
 - name: 节点选择
   type: select
   proxies:
   - 自动优选
-  - 🇭🇰香港-Gemini-IEPL
-  - 🇭🇰香港2-IEPL
-  - 🇹🇼台湾-IEPL
-  - 🇹🇼台湾2-IEPL
-  - 🇸🇬新加坡-Gemini-IEPL
-  - 🇸🇬新加坡2-Gemini-IEPL
-  - 🇯🇵日本-IEPL-GPT
-  - 🇯🇵日本2-IEPL-GPT
-  - 🇯🇵日本家宽-IEPL2
-  - 🇺🇸美国-IEPL-GPT
-  - 🇺🇸美国2-IEPL-GPT
-  - 🇩🇪德国-IEPL
   - HK-01-三网优化
   - HK-02-三网优化
   - HK-03-三网优化
@@ -395,22 +383,22 @@ proxy-groups:
   - US-01-三网优化
   - DE-01-三网优化
   - HK-09-移动优化
+  - 🇭🇰香港-Gemini-IEPL
+  - 🇭🇰香港2-IEPL
+  - 🇹🇼台湾-IEPL
+  - 🇹🇼台湾2-IEPL
+  - 🇸🇬新加坡-Gemini-IEPL
+  - 🇸🇬新加坡2-Gemini-IEPL
+  - 🇯🇵日本-IEPL-GPT
+  - 🇯🇵日本2-IEPL-GPT
+  - 🇯🇵日本家宽-IEPL2
+  - 🇺🇸美国-IEPL-GPT
+  - 🇺🇸美国2-IEPL-GPT
+  - 🇩🇪德国-IEPL
   - DIRECT
 - name: 自动优选
   type: url-test
   proxies:
-  - 🇭🇰香港-Gemini-IEPL
-  - 🇭🇰香港2-IEPL
-  - 🇹🇼台湾-IEPL
-  - 🇹🇼台湾2-IEPL
-  - 🇸🇬新加坡-Gemini-IEPL
-  - 🇸🇬新加坡2-Gemini-IEPL
-  - 🇯🇵日本-IEPL-GPT
-  - 🇯🇵日本2-IEPL-GPT
-  - 🇯🇵日本家宽-IEPL2
-  - 🇺🇸美国-IEPL-GPT
-  - 🇺🇸美国2-IEPL-GPT
-  - 🇩🇪德国-IEPL
   - HK-01-三网优化
   - HK-02-三网优化
   - HK-03-三网优化
@@ -429,6 +417,18 @@ proxy-groups:
   - US-01-三网优化
   - DE-01-三网优化
   - HK-09-移动优化
+  - 🇭🇰香港-Gemini-IEPL
+  - 🇭🇰香港2-IEPL
+  - 🇹🇼台湾-IEPL
+  - 🇹🇼台湾2-IEPL
+  - 🇸🇬新加坡-Gemini-IEPL
+  - 🇸🇬新加坡2-Gemini-IEPL
+  - 🇯🇵日本-IEPL-GPT
+  - 🇯🇵日本2-IEPL-GPT
+  - 🇯🇵日本家宽-IEPL2
+  - 🇺🇸美国-IEPL-GPT
+  - 🇺🇸美国2-IEPL-GPT
+  - 🇩🇪德国-IEPL
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
