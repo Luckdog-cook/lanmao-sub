@@ -173,12 +173,12 @@ proxies:
   network: ws
   udp: true
   tls: true
-  servername: de01.node.qixi.best
+  servername: jp07.node.qixi.best
   client-fingerprint: firefox
   ws-opts:
     path: /download
     headers:
-      Host: de01.node.qixi.best
+      Host: jp07.node.qixi.best
 - name: TW-01-三网优化
   server: tw01.node.qixi.best
   port: 443

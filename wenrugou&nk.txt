@@ -264,7 +264,7 @@
       "password": "7e9facb8-b5e1-4a00-8295-2bf6e2e60a70",
       "tls": {
         "enabled": true,
-        "server_name": "de01.node.qixi.best",
+        "server_name": "jp07.node.qixi.best",
         "utls": {
           "enabled": true,
           "fingerprint": "firefox"
@@ -274,7 +274,7 @@
         "type": "ws",
         "path": "/download",
         "headers": {
-          "Host": "de01.node.qixi.best"
+          "Host": "jp07.node.qixi.best"
         }
       }
     },
