@@ -227,6 +227,13 @@ proxies:
   password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
   sni: bing.com
   skip-cert-verify: true
+- name: HK-09-移动优化
+  server: 82.29.36.39
+  port: 16606
+  type: hysteria2
+  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
+  sni: bing.com
+  skip-cert-verify: true
 - name: JP-01-三网优化
   server: JP01.node.qixi.best
   port: 443
@@ -353,13 +360,6 @@ proxies:
     path: /download
     headers:
       Host: de01.node.qixi.best
-- name: HK-09-移动优化
-  server: 82.29.36.39
-  port: 16606
-  type: hysteria2
-  password: 7e9facb8-b5e1-4a00-8295-2bf6e2e60a70
-  sni: bing.com
-  skip-cert-verify: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -384,6 +384,7 @@ proxy-groups:
   - HK-06-三网优化
   - HK-07-三网优化
   - HK-08-三网优化
+  - HK-09-移动优化
   - JP-01-三网优化
   - JP-02-三网优化
   - JP-03-三网优化
@@ -394,7 +395,6 @@ proxy-groups:
   - TW-01-三网优化
   - US-01-三网优化
   - DE-01-三网优化
-  - HK-09-移动优化
   - DIRECT
 - name: 自动优选
   type: url-test
@@ -418,6 +418,7 @@ proxy-groups:
   - HK-06-三网优化
   - HK-07-三网优化
   - HK-08-三网优化
+  - HK-09-移动优化
   - JP-01-三网优化
   - JP-02-三网优化
   - JP-03-三网优化
@@ -428,7 +429,6 @@ proxy-groups:
   - TW-01-三网优化
   - US-01-三网优化
   - DE-01-三网优化
-  - HK-09-移动优化
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
