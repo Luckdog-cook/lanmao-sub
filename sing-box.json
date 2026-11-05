@@ -659,6 +659,74 @@
       }
     },
     {
+      "type": "hysteria2",
+      "tag": "[CN]香港-vip-647",
+      "server": "103.30.76.28",
+      "server_port": 40180,
+      "password": "69b6b450-7905-471b-908a-00e38ed0ee4a",
+      "tls": {
+        "enabled": true,
+        "server_name": "psstatic.cdn.bcebos.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "[CN]德国-vip-348",
+      "server": "a3dee.supertoolify.com",
+      "server_port": 4430,
+      "password": "69b6b450-7905-471b-908a-00e38ed0ee4a",
+      "tls": {
+        "enabled": true,
+        "server_name": "psstatic.cdn.bcebos.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "[CN]香港-vip-749",
+      "server": "dy3hk.mateflora.com",
+      "server_port": 443,
+      "uuid": "69b6b450-7905-471b-908a-00e38ed0ee4a",
+      "tls": {
+        "enabled": true,
+        "server_name": "psstatic.cdn.bcebos.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "EGuhWZHwoU9j5-tr17lIbhcB5ZpbqrUm9xnw4NB5K3I",
+          "short_id": "4afc5cba29"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
+      "type": "vless",
+      "tag": "[CN]日本-vip-750",
+      "server": "n2jp.mateflora.com",
+      "server_port": 443,
+      "uuid": "69b6b450-7905-471b-908a-00e38ed0ee4a",
+      "tls": {
+        "enabled": true,
+        "server_name": "psstatic.cdn.bcebos.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "RI371-lYgNvJBO7ArimTr3EelNwUUcfMwg8J3SZ96Xk",
+          "short_id": "2dcc47"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
       "type": "vless",
       "tag": "[Global]新加坡-vip-126",
       "server": "downloadcfpro.xn--ghq880n3na965a.com",
@@ -1976,6 +2044,10 @@
         "[CN]日本-vip-643",
         "[CN]澳大利亚-vip-345",
         "[CN]香港-vip-546",
+        "[CN]香港-vip-647",
+        "[CN]德国-vip-348",
+        "[CN]香港-vip-749",
+        "[CN]日本-vip-750",
         "[Global]新加坡-vip-126",
         "[Global]新加坡-vip-227",
         "[Global]新加坡-vip-328",
@@ -2079,6 +2151,10 @@
         "[CN]日本-vip-643",
         "[CN]澳大利亚-vip-345",
         "[CN]香港-vip-546",
+        "[CN]香港-vip-647",
+        "[CN]德国-vip-348",
+        "[CN]香港-vip-749",
+        "[CN]日本-vip-750",
         "[Global]新加坡-vip-126",
         "[Global]新加坡-vip-227",
         "[Global]新加坡-vip-328",
