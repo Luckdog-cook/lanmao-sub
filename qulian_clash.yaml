@@ -1,6 +1,6 @@
 # 趣连自动订阅 (Clash Meta / mihomo)
-# 更新时间: 2026-11-05 00:56:26 UTC
-# 节点数: 12
+# 更新时间: 2026-11-05 22:07:06 UTC
+# 节点数: 15
 
 mixed-port: 7890
 allow-lan: false
@@ -8,27 +8,20 @@ mode: rule
 log-level: info
 
 proxies:
-  - name: "DE-de001.zestapp778.com"
+  - name: "AU-au001.zestapp778.com"
     type: trojan
-    server: "de001.zestapp778.com"
-    port: 51520
+    server: "au001.zestapp778.com"
+    port: 54374
     password: "5t6i121em5lkmsmk"
     udp: true
-    sni: "de001.zestapp778.com"
-  - name: "CA-ca001.zestapp778.com"
+    sni: "au001.zestapp778.com"
+  - name: "GB-en001.zestapp778.com"
     type: trojan
-    server: "ca001.zestapp778.com"
-    port: 46977
+    server: "en001.zestapp778.com"
+    port: 29813
     password: "5t6i121em5lkmsmk"
     udp: true
-    sni: "ca001.zestapp778.com"
-  - name: "BR-br001.zestapp778.com"
-    type: trojan
-    server: "br001.zestapp778.com"
-    port: 39533
-    password: "5t6i121em5lkmsmk"
-    udp: true
-    sni: "br001.zestapp778.com"
+    sni: "en001.zestapp778.com"
   - name: "FR-fr001.zestapp778.com"
     type: trojan
     server: "fr001.zestapp778.com"
@@ -36,6 +29,20 @@ proxies:
     password: "5t6i121em5lkmsmk"
     udp: true
     sni: "fr001.zestapp778.com"
+  - name: "DE-de001.zestapp778.com"
+    type: trojan
+    server: "de001.zestapp778.com"
+    port: 51520
+    password: "5t6i121em5lkmsmk"
+    udp: true
+    sni: "de001.zestapp778.com"
+  - name: "BR-br001.zestapp778.com"
+    type: trojan
+    server: "br001.zestapp778.com"
+    port: 39533
+    password: "5t6i121em5lkmsmk"
+    udp: true
+    sni: "br001.zestapp778.com"
   - name: "KR-kr002.zestapp778.com"
     type: trojan
     server: "kr002.zestapp778.com"
@@ -43,13 +50,16 @@ proxies:
     password: "5t6i121em5lkmsmk"
     udp: true
     sni: "kr002.zestapp778.com"
-  - name: "IN-in002.zestapp778.com"
-    type: trojan
-    server: "in002.zestapp778.com"
-    port: 42733
-    password: "5t6i121em5lkmsmk"
+  - name: "IN-in001.zestapp778.com"
+    type: vless
+    server: "in001.zestapp778.com"
+    port: 57353
+    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
     udp: true
-    sni: "in002.zestapp778.com"
+    tls: true
+    network: tcp
+    servername: "in001.zestapp778.com"
+    client-fingerprint: chrome
   - name: "MY-my.tronsg.com"
     type: trojan
     server: "my.tronsg.com"
@@ -57,16 +67,20 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "my.tronsg.com"
-  - name: "SG-sg1.zestapp778.com"
-    type: vless
-    server: "sg1.zestapp778.com"
-    port: 56984
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
+  - name: "MX-mx001.zestapp778.com"
+    type: trojan
+    server: "mx001.zestapp778.com"
+    port: 15083
+    password: "5t6i121em5lkmsmk"
     udp: true
-    tls: true
-    network: tcp
-    servername: "sg1.zestapp778.com"
-    client-fingerprint: chrome
+    sni: "mx001.zestapp778.com"
+  - name: "PH-ph001.zestapp778.com"
+    type: trojan
+    server: "ph001.zestapp778.com"
+    port: 46298
+    password: "5t6i121em5lkmsmk"
+    udp: true
+    sni: "ph001.zestapp778.com"
   - name: "NG-hk-02.tronsg.com"
     type: trojan
     server: "hk-02.tronsg.com"
@@ -81,13 +95,13 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "ru.tronsg.com"
-  - name: "TW-tw.tronsg.com"
+  - name: "TH-th001.zestapp778.com"
     type: trojan
-    server: "tw.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
+    server: "th001.zestapp778.com"
+    port: 33079
+    password: "5t6i121em5lkmsmk"
     udp: true
-    sni: "tw.tronsg.com"
+    sni: "th001.zestapp778.com"
   - name: "US-us007.zestapp778.com"
     type: trojan
     server: "us007.zestapp778.com"
@@ -95,6 +109,13 @@ proxies:
     password: "5t6i121em5lkmsmk"
     udp: true
     sni: "us007.zestapp778.com"
+  - name: "US-us001.zestapp778.com"
+    type: trojan
+    server: "us001.zestapp778.com"
+    port: 57277
+    password: "5t6i121em5lkmsmk"
+    udp: true
+    sni: "us001.zestapp778.com"
 
 proxy-groups:
   - name: "自动选择"
@@ -103,35 +124,41 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "DE-de001.zestapp778.com"
-      - "CA-ca001.zestapp778.com"
-      - "BR-br001.zestapp778.com"
+      - "AU-au001.zestapp778.com"
+      - "GB-en001.zestapp778.com"
       - "FR-fr001.zestapp778.com"
+      - "DE-de001.zestapp778.com"
+      - "BR-br001.zestapp778.com"
       - "KR-kr002.zestapp778.com"
-      - "IN-in002.zestapp778.com"
+      - "IN-in001.zestapp778.com"
       - "MY-my.tronsg.com"
-      - "SG-sg1.zestapp778.com"
+      - "MX-mx001.zestapp778.com"
+      - "PH-ph001.zestapp778.com"
       - "NG-hk-02.tronsg.com"
       - "RU-ru.tronsg.com"
-      - "TW-tw.tronsg.com"
+      - "TH-th001.zestapp778.com"
       - "US-us007.zestapp778.com"
+      - "US-us001.zestapp778.com"
   - name: "节点选择"
     type: select
     proxies:
       - "自动选择"
       - "DIRECT"
-      - "DE-de001.zestapp778.com"
-      - "CA-ca001.zestapp778.com"
-      - "BR-br001.zestapp778.com"
+      - "AU-au001.zestapp778.com"
+      - "GB-en001.zestapp778.com"
       - "FR-fr001.zestapp778.com"
+      - "DE-de001.zestapp778.com"
+      - "BR-br001.zestapp778.com"
       - "KR-kr002.zestapp778.com"
-      - "IN-in002.zestapp778.com"
+      - "IN-in001.zestapp778.com"
       - "MY-my.tronsg.com"
-      - "SG-sg1.zestapp778.com"
+      - "MX-mx001.zestapp778.com"
+      - "PH-ph001.zestapp778.com"
       - "NG-hk-02.tronsg.com"
       - "RU-ru.tronsg.com"
-      - "TW-tw.tronsg.com"
+      - "TH-th001.zestapp778.com"
       - "US-us007.zestapp778.com"
+      - "US-us001.zestapp778.com"
 
 rules:
   - GEOIP,LAN,DIRECT,no-resolve
