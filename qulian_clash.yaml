@@ -1,6 +1,6 @@
 # 趣连自动订阅 (Clash Meta / mihomo)
-# 更新时间: 2026-11-06 21:38:26 UTC
-# 节点数: 9
+# 更新时间: 2026-11-07 06:12:31 UTC
+# 节点数: 10
 
 mixed-port: 7890
 allow-lan: false
@@ -43,13 +43,6 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "my.tronsg.com"
-  - name: "NG-hk-02.tronsg.com"
-    type: trojan
-    server: "hk-02.tronsg.com"
-    port: 443
-    password: "9daT1DW2Jp"
-    udp: true
-    sni: "hk-02.tronsg.com"
   - name: "PH-ph001.zestapp778.com"
     type: trojan
     server: "ph001.zestapp778.com"
@@ -57,6 +50,23 @@ proxies:
     password: "5t6i121em5lkmsmk"
     udp: true
     sni: "ph001.zestapp778.com"
+  - name: "SG-sg1.zestapp778.com"
+    type: vless
+    server: "sg1.zestapp778.com"
+    port: 56984
+    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
+    udp: true
+    tls: true
+    network: tcp
+    servername: "sg1.zestapp778.com"
+    client-fingerprint: chrome
+  - name: "NG-hk-02.tronsg.com"
+    type: trojan
+    server: "hk-02.tronsg.com"
+    port: 443
+    password: "9daT1DW2Jp"
+    udp: true
+    sni: "hk-02.tronsg.com"
   - name: "TH-th001.zestapp778.com"
     type: trojan
     server: "th001.zestapp778.com"
@@ -84,8 +94,9 @@ proxy-groups:
       - "DE-de001.zestapp778.com"
       - "KR-kr002.zestapp778.com"
       - "MY-my.tronsg.com"
-      - "NG-hk-02.tronsg.com"
       - "PH-ph001.zestapp778.com"
+      - "SG-sg1.zestapp778.com"
+      - "NG-hk-02.tronsg.com"
       - "TH-th001.zestapp778.com"
       - "US-us001.zestapp778.com"
   - name: "节点选择"
@@ -98,8 +109,9 @@ proxy-groups:
       - "DE-de001.zestapp778.com"
       - "KR-kr002.zestapp778.com"
       - "MY-my.tronsg.com"
-      - "NG-hk-02.tronsg.com"
       - "PH-ph001.zestapp778.com"
+      - "SG-sg1.zestapp778.com"
+      - "NG-hk-02.tronsg.com"
       - "TH-th001.zestapp778.com"
       - "US-us001.zestapp778.com"
 
