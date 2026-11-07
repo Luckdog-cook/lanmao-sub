@@ -4,247 +4,9 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: HK-01-三网优化
-  server: jp01.wenrugou.uk
-  port: 31128
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: HK-02-三网优化
-  server: jp01.wenrugou.uk
-  port: 31129
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: HK-03-三网优化
-  server: jp01.wenrugou.uk
-  port: 31130
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: HK-05-三网优化
-  server: jp01.wenrugou.uk
-  port: 31131
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: HK-06-三网优化
-  server: jp01.wenrugou.uk
-  port: 31132
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: HK-07-三网优化
-  server: jp01.wenrugou.uk
-  port: 31133
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: HK-08-三网优化
-  server: jp01.wenrugou.uk
-  port: 31134
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: HK-09-移动优化
-  server: jp01.wenrugou.uk
-  port: 31135
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: JP-01-三网优化
-  server: jp01.wenrugou.uk
-  port: 31136
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: JP-02-三网优化
-  server: jp01.wenrugou.uk
-  port: 31137
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: JP-03-三网优化
-  server: jp01.wenrugou.uk
-  port: 31138
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: JP-04-三网优化
-  server: jp01.wenrugou.uk
-  port: 31139
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: JP-07-三网优化
-  server: jp01.wenrugou.uk
-  port: 31140
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: TW-01-三网优化
-  server: jp01.wenrugou.uk
-  port: 31141
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: US-01-三网优化
-  server: jp01.wenrugou.uk
-  port: 31142
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: DE-01-三网优化
-  server: jp01.wenrugou.uk
-  port: 31143
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: HK-10-v6-移动优化
-  server: jp01.wenrugou.uk
-  port: 31144
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
 - name: 🇭🇰香港-Gemini-IEPL
   server: jp01.wenrugou.uk
-  port: 31145
+  port: 31174
   type: vless
   uuid: ''
   network: tcp
@@ -258,7 +20,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇭🇰香港2-IEPL
   server: jp01.wenrugou.uk
-  port: 31146
+  port: 31175
   type: vless
   uuid: ''
   network: tcp
@@ -272,7 +34,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇹🇼台湾-IEPL
   server: jp01.wenrugou.uk
-  port: 31147
+  port: 31176
   type: vless
   uuid: ''
   network: tcp
@@ -286,7 +48,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇹🇼台湾2-IEPL
   server: jp01.wenrugou.uk
-  port: 31148
+  port: 31177
   type: vless
   uuid: ''
   network: tcp
@@ -300,7 +62,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇸🇬新加坡-Gemini-IEPL
   server: jp01.wenrugou.uk
-  port: 31149
+  port: 31178
   type: vless
   uuid: ''
   network: tcp
@@ -314,7 +76,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇸🇬新加坡2-Gemini-IEPL
   server: jp01.wenrugou.uk
-  port: 31150
+  port: 31179
   type: vless
   uuid: ''
   network: tcp
@@ -328,7 +90,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇯🇵日本-IEPL-GPT
   server: jp01.wenrugou.uk
-  port: 31151
+  port: 31180
   type: vless
   uuid: ''
   network: tcp
@@ -342,7 +104,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇯🇵日本2-IEPL-GPT
   server: jp01.wenrugou.uk
-  port: 31152
+  port: 31181
   type: vless
   uuid: ''
   network: tcp
@@ -356,7 +118,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇯🇵日本家宽-IEPL2
   server: jp01.wenrugou.uk
-  port: 31153
+  port: 31182
   type: vless
   uuid: ''
   network: tcp
@@ -370,7 +132,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇺🇸美国-IEPL-GPT
   server: jp01.wenrugou.uk
-  port: 31154
+  port: 31183
   type: vless
   uuid: ''
   network: tcp
@@ -384,7 +146,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇺🇸美国2-IEPL-GPT
   server: jp01.wenrugou.uk
-  port: 31155
+  port: 31184
   type: vless
   uuid: ''
   network: tcp
@@ -398,7 +160,245 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇩🇪德国-IEPL
   server: jp01.wenrugou.uk
-  port: 31156
+  port: 31185
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: HK-01-三网优化
+  server: jp01.wenrugou.uk
+  port: 31186
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: HK-02-三网优化
+  server: jp01.wenrugou.uk
+  port: 31187
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: HK-03-三网优化
+  server: jp01.wenrugou.uk
+  port: 31188
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: HK-05-三网优化
+  server: jp01.wenrugou.uk
+  port: 31189
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: HK-06-三网优化
+  server: jp01.wenrugou.uk
+  port: 31190
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: HK-07-三网优化
+  server: jp01.wenrugou.uk
+  port: 31191
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: HK-08-三网优化
+  server: jp01.wenrugou.uk
+  port: 31192
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: HK-09-移动优化
+  server: jp01.wenrugou.uk
+  port: 31193
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: JP-01-三网优化
+  server: jp01.wenrugou.uk
+  port: 31194
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: JP-02-三网优化
+  server: jp01.wenrugou.uk
+  port: 31195
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: JP-03-三网优化
+  server: jp01.wenrugou.uk
+  port: 31196
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: JP-04-三网优化
+  server: jp01.wenrugou.uk
+  port: 31197
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: JP-07-三网优化
+  server: jp01.wenrugou.uk
+  port: 31198
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: TW-01-三网优化
+  server: jp01.wenrugou.uk
+  port: 31199
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: US-01-三网优化
+  server: jp01.wenrugou.uk
+  port: 31200
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: DE-01-三网优化
+  server: jp01.wenrugou.uk
+  port: 31201
+  type: vless
+  uuid: ''
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.cloudflare.com
+  client-fingerprint: chrome
+  reality-opts:
+    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
+    short-id: a136d276f05dbf1f
+- name: HK-10-v6-移动优化
+  server: jp01.wenrugou.uk
+  port: 31202
   type: vless
   uuid: ''
   network: tcp
@@ -429,6 +429,18 @@ proxy-groups:
   type: select
   proxies:
   - 自动优选
+  - 🇭🇰香港-Gemini-IEPL
+  - 🇭🇰香港2-IEPL
+  - 🇹🇼台湾-IEPL
+  - 🇹🇼台湾2-IEPL
+  - 🇸🇬新加坡-Gemini-IEPL
+  - 🇸🇬新加坡2-Gemini-IEPL
+  - 🇯🇵日本-IEPL-GPT
+  - 🇯🇵日本2-IEPL-GPT
+  - 🇯🇵日本家宽-IEPL2
+  - 🇺🇸美国-IEPL-GPT
+  - 🇺🇸美国2-IEPL-GPT
+  - 🇩🇪德国-IEPL
   - HK-01-三网优化
   - HK-02-三网优化
   - HK-03-三网优化
@@ -446,23 +458,23 @@ proxy-groups:
   - US-01-三网优化
   - DE-01-三网优化
   - HK-10-v6-移动优化
-  - 🇭🇰香港-Gemini-IEPL
-  - 🇭🇰香港2-IEPL
-  - 🇹🇼台湾-IEPL
-  - 🇹🇼台湾2-IEPL
-  - 🇸🇬新加坡-Gemini-IEPL
-  - 🇸🇬新加坡2-Gemini-IEPL
-  - 🇯🇵日本-IEPL-GPT
-  - 🇯🇵日本2-IEPL-GPT
-  - 🇯🇵日本家宽-IEPL2
-  - 🇺🇸美国-IEPL-GPT
-  - 🇺🇸美国2-IEPL-GPT
-  - 🇩🇪德国-IEPL
   - 🇯🇵日本20
   - DIRECT
 - name: 自动优选
   type: url-test
   proxies:
+  - 🇭🇰香港-Gemini-IEPL
+  - 🇭🇰香港2-IEPL
+  - 🇹🇼台湾-IEPL
+  - 🇹🇼台湾2-IEPL
+  - 🇸🇬新加坡-Gemini-IEPL
+  - 🇸🇬新加坡2-Gemini-IEPL
+  - 🇯🇵日本-IEPL-GPT
+  - 🇯🇵日本2-IEPL-GPT
+  - 🇯🇵日本家宽-IEPL2
+  - 🇺🇸美国-IEPL-GPT
+  - 🇺🇸美国2-IEPL-GPT
+  - 🇩🇪德国-IEPL
   - HK-01-三网优化
   - HK-02-三网优化
   - HK-03-三网优化
@@ -480,18 +492,6 @@ proxy-groups:
   - US-01-三网优化
   - DE-01-三网优化
   - HK-10-v6-移动优化
-  - 🇭🇰香港-Gemini-IEPL
-  - 🇭🇰香港2-IEPL
-  - 🇹🇼台湾-IEPL
-  - 🇹🇼台湾2-IEPL
-  - 🇸🇬新加坡-Gemini-IEPL
-  - 🇸🇬新加坡2-Gemini-IEPL
-  - 🇯🇵日本-IEPL-GPT
-  - 🇯🇵日本2-IEPL-GPT
-  - 🇯🇵日本家宽-IEPL2
-  - 🇺🇸美国-IEPL-GPT
-  - 🇺🇸美国2-IEPL-GPT
-  - 🇩🇪德国-IEPL
   - 🇯🇵日本20
   url: http://www.gstatic.com/generate_204
   interval: 300
