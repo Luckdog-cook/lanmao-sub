@@ -1,12 +1,12 @@
 {
- "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI3MDIwIiwiZW1haWwiOiIiLCJkZXZpY2VfaWQiOiI0OGE3Nzc4YjRhNGY0NjA1ODU0ZmVmYTNkMzU2YTYxYyIsImV4cCI6MTc5MzM3MjM4MSwiaWF0IjoxNzkyNzY3NTgxfQ.6QCNtan4TpcNTyEpgk8c58pyUtnNS8a1UJ-AtKBWhAw",
- "device_id": "48a7778b4a4f4605854fefa3d356a61c",
- "user_id": "7020",
+ "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI4NTAwIiwiZW1haWwiOiIiLCJkZXZpY2VfaWQiOiJmNDhkM2M4NWY3ZWI0ZTI2OWJhMzUyMGRiMDI2YTZjZSIsImV4cCI6MTc5NDc0MTgzMiwiaWF0IjoxNzk0MTM3MDMyfQ.CWmzDer57aGwpAOWhPW5odeVZREEXyuDgUF0ZkDeTeo",
+ "device_id": "f48d3c85f7eb4e269ba3520db026a6ce",
+ "user_id": "8500",
  "trial_minutes": 1440,
- "trial_expires_at": 1792853981,
- "account_created_at": 1792767581,
- "updated_at": 1793454199,
- "sub_url": "https://api.novalinks.cloud/sub/config?token=sub_e9n184erzZD_RwSo7G1DVRQ4H_jnyWuVFvDnZkXtqSY",
- "sub_expires": 1795273259,
- "ad_expires_at": 1794108618
+ "trial_expires_at": 1794223432,
+ "account_created_at": 1794137032,
+ "updated_at": 1794149055,
+ "ad_expires_at": 1794785064,
+ "sub_url": "https://api.novalinks.cloud/sub/config?token=sub_IBbBs63ev0qeN2HDomYjDOSAt4EuP0Fca7HqKmT5JMM",
+ "sub_expires": 1796654655
 }
