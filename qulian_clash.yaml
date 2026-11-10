@@ -1,5 +1,5 @@
 # 趣连自动订阅 (Clash Meta / mihomo)
-# 更新时间: 2026-11-09 18:55:38 UTC
+# 更新时间: 2026-11-10 02:47:35 UTC
 # 节点数: 8
 
 mixed-port: 7890
@@ -8,13 +8,6 @@ mode: rule
 log-level: info
 
 proxies:
-  - name: "AU-au001.zestapp778.com"
-    type: trojan
-    server: "au001.zestapp778.com"
-    port: 54374
-    password: "5t6i121em5lkmsmk"
-    udp: true
-    sni: "au001.zestapp778.com"
   - name: "CA-ca001.zestapp778.com"
     type: trojan
     server: "ca001.zestapp778.com"
@@ -29,6 +22,13 @@ proxies:
     password: "5t6i121em5lkmsmk"
     udp: true
     sni: "de001.zestapp778.com"
+  - name: "AU-au001.zestapp778.com"
+    type: trojan
+    server: "au001.zestapp778.com"
+    port: 54374
+    password: "5t6i121em5lkmsmk"
+    udp: true
+    sni: "au001.zestapp778.com"
   - name: "KR-kr002.zestapp778.com"
     type: trojan
     server: "kr002.zestapp778.com"
@@ -75,9 +75,9 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "AU-au001.zestapp778.com"
       - "CA-ca001.zestapp778.com"
       - "DE-de001.zestapp778.com"
+      - "AU-au001.zestapp778.com"
       - "KR-kr002.zestapp778.com"
       - "NG-hk-02.tronsg.com"
       - "MY-my.tronsg.com"
@@ -88,9 +88,9 @@ proxy-groups:
     proxies:
       - "自动选择"
       - "DIRECT"
-      - "AU-au001.zestapp778.com"
       - "CA-ca001.zestapp778.com"
       - "DE-de001.zestapp778.com"
+      - "AU-au001.zestapp778.com"
       - "KR-kr002.zestapp778.com"
       - "NG-hk-02.tronsg.com"
       - "MY-my.tronsg.com"

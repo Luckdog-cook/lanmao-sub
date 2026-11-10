@@ -1,6 +1,6 @@
-trojan://5t6i121em5lkmsmk@au001.zestapp778.com:54374?sni=au001.zestapp778.com&security=tls&type=tcp&allowInsecure=1#AU-au001.zestapp778.com
 trojan://5t6i121em5lkmsmk@ca001.zestapp778.com:46977?sni=ca001.zestapp778.com&security=tls&type=tcp&allowInsecure=1#CA-ca001.zestapp778.com
 trojan://5t6i121em5lkmsmk@de001.zestapp778.com:51520?sni=de001.zestapp778.com&security=tls&type=tcp&allowInsecure=1#DE-de001.zestapp778.com
+trojan://5t6i121em5lkmsmk@au001.zestapp778.com:54374?sni=au001.zestapp778.com&security=tls&type=tcp&allowInsecure=1#AU-au001.zestapp778.com
 trojan://5t6i121em5lkmsmk@kr002.zestapp778.com:48851?sni=kr002.zestapp778.com&security=tls&type=tcp&allowInsecure=1#KR-kr002.zestapp778.com
 trojan://9daT1DW2Jp@hk-02.tronsg.com:443?sni=hk-02.tronsg.com&security=tls&type=tcp&allowInsecure=1#NG-hk-02.tronsg.com
 trojan://Trojan%4082164024@my.tronsg.com:443?sni=my.tronsg.com&security=tls&type=tcp&allowInsecure=1#MY-my.tronsg.com
