@@ -6,7 +6,7 @@ external-controller: 127.0.0.1:9090
 proxies:
 - name: HK-01-三网优化
   server: jp01.wenrugou.uk
-  port: 31534
+  port: 31650
   type: vless
   uuid: ''
   network: tcp
@@ -20,7 +20,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: HK-02-三网优化
   server: jp01.wenrugou.uk
-  port: 31535
+  port: 31651
   type: vless
   uuid: ''
   network: tcp
@@ -34,7 +34,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: HK-03-三网优化
   server: jp01.wenrugou.uk
-  port: 31536
+  port: 31652
   type: vless
   uuid: ''
   network: tcp
@@ -48,7 +48,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: HK-05-三网优化
   server: jp01.wenrugou.uk
-  port: 31537
+  port: 31653
   type: vless
   uuid: ''
   network: tcp
@@ -62,7 +62,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: HK-06-三网优化
   server: jp01.wenrugou.uk
-  port: 31538
+  port: 31654
   type: vless
   uuid: ''
   network: tcp
@@ -76,7 +76,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: HK-07-三网优化
   server: jp01.wenrugou.uk
-  port: 31539
+  port: 31655
   type: vless
   uuid: ''
   network: tcp
@@ -90,7 +90,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: HK-08-三网优化
   server: jp01.wenrugou.uk
-  port: 31540
+  port: 31656
   type: vless
   uuid: ''
   network: tcp
@@ -104,7 +104,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: HK-09-移动优化
   server: jp01.wenrugou.uk
-  port: 31541
+  port: 31657
   type: vless
   uuid: ''
   network: tcp
@@ -118,7 +118,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: JP-01-三网优化
   server: jp01.wenrugou.uk
-  port: 31542
+  port: 31658
   type: vless
   uuid: ''
   network: tcp
@@ -132,7 +132,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: JP-02-三网优化
   server: jp01.wenrugou.uk
-  port: 31543
+  port: 31659
   type: vless
   uuid: ''
   network: tcp
@@ -146,7 +146,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: JP-03-三网优化
   server: jp01.wenrugou.uk
-  port: 31544
+  port: 31660
   type: vless
   uuid: ''
   network: tcp
@@ -160,7 +160,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: JP-04-三网优化
   server: jp01.wenrugou.uk
-  port: 31545
+  port: 31661
   type: vless
   uuid: ''
   network: tcp
@@ -174,7 +174,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: JP-07-三网优化
   server: jp01.wenrugou.uk
-  port: 31546
+  port: 31662
   type: vless
   uuid: ''
   network: tcp
@@ -188,7 +188,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: TW-01-三网优化
   server: jp01.wenrugou.uk
-  port: 31547
+  port: 31663
   type: vless
   uuid: ''
   network: tcp
@@ -202,7 +202,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: US-01-三网优化
   server: jp01.wenrugou.uk
-  port: 31548
+  port: 31664
   type: vless
   uuid: ''
   network: tcp
@@ -216,7 +216,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: DE-01-三网优化
   server: jp01.wenrugou.uk
-  port: 31549
+  port: 31665
   type: vless
   uuid: ''
   network: tcp
@@ -230,7 +230,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: HK-10-v6-移动优化
   server: jp01.wenrugou.uk
-  port: 31550
+  port: 31666
   type: vless
   uuid: ''
   network: tcp
@@ -244,7 +244,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇭🇰香港-Gemini-IEPL
   server: jp01.wenrugou.uk
-  port: 31551
+  port: 31667
   type: vless
   uuid: ''
   network: tcp
@@ -258,7 +258,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇭🇰香港2-IEPL
   server: jp01.wenrugou.uk
-  port: 31552
+  port: 31668
   type: vless
   uuid: ''
   network: tcp
@@ -272,7 +272,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇹🇼台湾-IEPL
   server: jp01.wenrugou.uk
-  port: 31553
+  port: 31669
   type: vless
   uuid: ''
   network: tcp
@@ -286,7 +286,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇹🇼台湾2-IEPL
   server: jp01.wenrugou.uk
-  port: 31554
+  port: 31670
   type: vless
   uuid: ''
   network: tcp
@@ -300,7 +300,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇸🇬新加坡-Gemini-IEPL
   server: jp01.wenrugou.uk
-  port: 31555
+  port: 31671
   type: vless
   uuid: ''
   network: tcp
@@ -314,7 +314,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇸🇬新加坡2-Gemini-IEPL
   server: jp01.wenrugou.uk
-  port: 31556
+  port: 31672
   type: vless
   uuid: ''
   network: tcp
@@ -328,7 +328,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇯🇵日本-IEPL-GPT
   server: jp01.wenrugou.uk
-  port: 31557
+  port: 31673
   type: vless
   uuid: ''
   network: tcp
@@ -342,7 +342,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇯🇵日本2-IEPL-GPT
   server: jp01.wenrugou.uk
-  port: 31558
+  port: 31674
   type: vless
   uuid: ''
   network: tcp
@@ -356,7 +356,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇯🇵日本家宽-IEPL2
   server: jp01.wenrugou.uk
-  port: 31559
+  port: 31675
   type: vless
   uuid: ''
   network: tcp
@@ -370,7 +370,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇺🇸美国-IEPL-GPT
   server: jp01.wenrugou.uk
-  port: 31560
+  port: 31676
   type: vless
   uuid: ''
   network: tcp
@@ -384,7 +384,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇺🇸美国2-IEPL-GPT
   server: jp01.wenrugou.uk
-  port: 31561
+  port: 31677
   type: vless
   uuid: ''
   network: tcp
@@ -398,7 +398,7 @@ proxies:
     short-id: a136d276f05dbf1f
 - name: 🇩🇪德国-IEPL
   server: jp01.wenrugou.uk
-  port: 31562
+  port: 31678
   type: vless
   uuid: ''
   network: tcp
