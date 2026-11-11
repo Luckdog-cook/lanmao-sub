@@ -2,35 +2,34 @@
  "outbounds": [
   {
    "type": "vless",
-   "tag": "🌐 台北01",
-   "server": "n04.jinggai.online",
-   "server_port": 8443,
-   "uuid": "91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a",
+   "tag": "🇺🇸 US03-a1",
+   "server": "d03.jinggai.online",
+   "server_port": 24443,
+   "uuid": "92bf29cc-ee08-4c97-bf0b-b4dff41e5bd8",
+   "flow": "xtls-rprx-vision",
    "tls": {
     "enabled": true,
-    "server_name": "n04.jinggai.online",
+    "server_name": "www.comdomlaxone.store",
     "utls": {
      "enabled": true,
      "fingerprint": "chrome"
-    }
-   },
-   "transport": {
-    "type": "ws",
-    "path": "/nvl-n04-ws/e0577fe8fd7c8823",
-    "headers": {
-     "Host": "n04.jinggai.online"
+    },
+    "reality": {
+     "enabled": true,
+     "public_key": "ajwPK9RiMeDGIJy2gLlfucMv-uRuk12QoiLSCz4it2I",
+     "short_id": "0c0ccdcdf03ad6d2"
     }
    }
   },
   {
    "type": "vless",
-   "tag": "🌐 美国03",
-   "server": "n03.jinggai.online",
-   "server_port": 8443,
-   "uuid": "91ad30e9-ab06-4b4c-9fb9-1c2aa97d8b3a",
+   "tag": "🇭🇰 HK02-b",
+   "server": "h02b.jinggai.online",
+   "server_port": 443,
+   "uuid": "92bf29cc-ee08-4c97-bf0b-b4dff41e5bd8",
    "tls": {
     "enabled": true,
-    "server_name": "n03.jinggai.online",
+    "server_name": "h02b.jinggai.online",
     "utls": {
      "enabled": true,
      "fingerprint": "chrome"
@@ -38,9 +37,31 @@
    },
    "transport": {
     "type": "ws",
-    "path": "/nvl-n03-ws/e0577fe8fd7c8823",
+    "path": "/h02/entry",
     "headers": {
-     "Host": "n03.jinggai.online"
+     "Host": "h02b.jinggai.online"
+    }
+   }
+  },
+  {
+   "type": "vless",
+   "tag": "🇹🇼 TW01-b",
+   "server": "t01b.jinggai.online",
+   "server_port": 443,
+   "uuid": "92bf29cc-ee08-4c97-bf0b-b4dff41e5bd8",
+   "tls": {
+    "enabled": true,
+    "server_name": "t01b.jinggai.online",
+    "utls": {
+     "enabled": true,
+     "fingerprint": "chrome"
+    }
+   },
+   "transport": {
+    "type": "ws",
+    "path": "/t01/entry",
+    "headers": {
+     "Host": "t01b.jinggai.online"
     }
    }
   }
