@@ -1,1 +1,1 @@
-vless://7695d3c2-20d6-401f-9626-6e115b722e51@82.139.235.73:443?type=tcp&security=reality&fp=chrome&pbk=IXRlHf-YEhBbvFahvvyQD173TUy2UfKNjZljrZw5NHA&sid=52ac85a27935&sni=cloudflare.com#DE-697-i6w5bawg
+vless://5730020b-afcb-4f85-8f17-b4da60cc194a@82.139.235.73:443?type=tcp&security=reality&fp=chrome&pbk=IXRlHf-YEhBbvFahvvyQD173TUy2UfKNjZljrZw5NHA&sid=52ac85a27935&sni=cloudflare.com#DE-697-2dgr70u7
