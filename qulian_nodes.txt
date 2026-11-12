@@ -1,6 +1,5 @@
-trojan://5t6i121em5lkmsmk@ca001.zestapp778.com:46977?sni=ca001.zestapp778.com&security=tls&type=tcp&allowInsecure=1#CA-ca001.zestapp778.com
-trojan://5t6i121em5lkmsmk@au001.zestapp778.com:54374?sni=au001.zestapp778.com&security=tls&type=tcp&allowInsecure=1#AU-au001.zestapp778.com
 vless://e9a8144e-5237-488a-afb1-9ca3d8d54c80@in001.zestapp778.com:57353?encryption=none&security=tls&type=tcp&sni=in001.zestapp778.com&fp=chrome#IN-in001.zestapp778.com
 trojan://5t6i121em5lkmsmk@mx001.zestapp778.com:15083?sni=mx001.zestapp778.com&security=tls&type=tcp&allowInsecure=1#MX-mx001.zestapp778.com
-trojan://Trojan%4082164024@my.tronsg.com:443?sni=my.tronsg.com&security=tls&type=tcp&allowInsecure=1#MY-my.tronsg.com
 trojan://9daT1DW2Jp@hk-02.tronsg.com:443?sni=hk-02.tronsg.com&security=tls&type=tcp&allowInsecure=1#NG-hk-02.tronsg.com
+trojan://Trojan%4082164024@my.tronsg.com:443?sni=my.tronsg.com&security=tls&type=tcp&allowInsecure=1#MY-my.tronsg.com
+vless://e9a8144e-5237-488a-afb1-9ca3d8d54c80@sg1.zestapp778.com:56984?encryption=none&security=tls&type=tcp&sni=sg1.zestapp778.com&fp=chrome#SG-sg1.zestapp778.com
