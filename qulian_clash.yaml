@@ -1,6 +1,6 @@
 # 趣连自动订阅 (Clash Meta / mihomo)
-# 更新时间: 2026-11-12 07:24:22 UTC
-# 节点数: 5
+# 更新时间: 2026-11-12 16:53:29 UTC
+# 节点数: 2
 
 mixed-port: 7890
 allow-lan: false
@@ -8,30 +8,6 @@ mode: rule
 log-level: info
 
 proxies:
-  - name: "IN-in001.zestapp778.com"
-    type: vless
-    server: "in001.zestapp778.com"
-    port: 57353
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
-    udp: true
-    tls: true
-    network: tcp
-    servername: "in001.zestapp778.com"
-    client-fingerprint: chrome
-  - name: "MX-mx001.zestapp778.com"
-    type: trojan
-    server: "mx001.zestapp778.com"
-    port: 15083
-    password: "5t6i121em5lkmsmk"
-    udp: true
-    sni: "mx001.zestapp778.com"
-  - name: "NG-hk-02.tronsg.com"
-    type: trojan
-    server: "hk-02.tronsg.com"
-    port: 443
-    password: "9daT1DW2Jp"
-    udp: true
-    sni: "hk-02.tronsg.com"
   - name: "MY-my.tronsg.com"
     type: trojan
     server: "my.tronsg.com"
@@ -39,16 +15,13 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "my.tronsg.com"
-  - name: "SG-sg1.zestapp778.com"
-    type: vless
-    server: "sg1.zestapp778.com"
-    port: 56984
-    uuid: "e9a8144e-5237-488a-afb1-9ca3d8d54c80"
+  - name: "NG-hk-02.tronsg.com"
+    type: trojan
+    server: "hk-02.tronsg.com"
+    port: 443
+    password: "9daT1DW2Jp"
     udp: true
-    tls: true
-    network: tcp
-    servername: "sg1.zestapp778.com"
-    client-fingerprint: chrome
+    sni: "hk-02.tronsg.com"
 
 proxy-groups:
   - name: "自动选择"
@@ -57,21 +30,15 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "IN-in001.zestapp778.com"
-      - "MX-mx001.zestapp778.com"
-      - "NG-hk-02.tronsg.com"
       - "MY-my.tronsg.com"
-      - "SG-sg1.zestapp778.com"
+      - "NG-hk-02.tronsg.com"
   - name: "节点选择"
     type: select
     proxies:
       - "自动选择"
       - "DIRECT"
-      - "IN-in001.zestapp778.com"
-      - "MX-mx001.zestapp778.com"
-      - "NG-hk-02.tronsg.com"
       - "MY-my.tronsg.com"
-      - "SG-sg1.zestapp778.com"
+      - "NG-hk-02.tronsg.com"
 
 rules:
   - GEOIP,LAN,DIRECT,no-resolve
