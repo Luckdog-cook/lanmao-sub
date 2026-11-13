@@ -261,8 +261,8 @@
     {
       "type": "hysteria2",
       "tag": "[CN]英国-vip-127",
-      "server": "hello.hikigo.com",
-      "server_port": 443,
+      "server": "86.53.207.251",
+      "server_port": 40055,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "tls": {
         "enabled": true,
@@ -649,8 +649,8 @@
     {
       "type": "hysteria2",
       "tag": "[Global]英国-vip-127",
-      "server": "hello.hikigo.com",
-      "server_port": 443,
+      "server": "86.53.207.251",
+      "server_port": 40055,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "tls": {
         "enabled": true,

@@ -11,7 +11,7 @@ vless://57beeeb0-03fc-4fc9-94da-7604488a7134@zfapi.zalolink.com:30322?encryption
 vless://57beeeb0-03fc-4fc9-94da-7604488a7134@zfapi.zalolink.com:11802?encryption=none&security=reality&sni=psstatic.cdn.bcebos.com&fp=ios&type=tcp&pbk=FUBjYwXlKIVwF7IuJf5dt_HU2sUnrEt10s4TIlTe8Q4&sid=6c84fbac2d&flow=xtls-rprx-vision#%5BCN%5D%E6%B3%B0%E5%9B%BD-vip-123
 vless://57beeeb0-03fc-4fc9-94da-7604488a7134@zfapi.zalolink.com:46957?encryption=none&security=reality&sni=psstatic.cdn.bcebos.com&fp=safari&type=tcp&pbk=1SefqLQXrqkiUdf7cTMF53hrMZyo684_uneRC8-qTxI&sid=8f6683a234d3&flow=xtls-rprx-vision#%5BCN%5D%E6%96%B0%E5%8A%A0%E5%9D%A1-vip-224
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@a3dee.supertoolify.com:4430?insecure=1&sni=psstatic.cdn.bcebos.com#%5BCN%5D%E5%BE%B7%E5%9B%BD-vip-325
-hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@hello.hikigo.com:443?insecure=1&sni=psstatic.cdn.bcebos.com#%5BCN%5D%E8%8B%B1%E5%9B%BD-vip-127
+hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@86.53.207.251:40055?insecure=1&sni=psstatic.cdn.bcebos.com#%5BCN%5D%E8%8B%B1%E5%9B%BD-vip-127
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@22egdg.mateflora.com:40055?insecure=1&sni=psstatic.cdn.bcebos.com#%5BCN%5D%E8%8B%B1%E5%9B%BD-vip-228
 vless://57beeeb0-03fc-4fc9-94da-7604488a7134@dg1hk.mateflora.com:44988?encryption=none&security=reality&sni=www.tesla.com&fp=ios&type=tcp&pbk=f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A&sid=bb82c8&flow=xtls-rprx-vision#%5BCN%5D%E8%B6%8A%E5%8D%97-vip-229
 vless://57beeeb0-03fc-4fc9-94da-7604488a7134@zfapi.zalolink.com:42120?encryption=none&security=reality&sni=www.tesla.com&fp=ios&type=tcp&pbk=f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A&sid=bb82c8&flow=xtls-rprx-vision#%5BCN%5D%E8%B6%8A%E5%8D%97-vip-330
@@ -35,7 +35,7 @@ vless://57beeeb0-03fc-4fc9-94da-7604488a7134@zfapi.zalolink.com:30322?encryption
 vless://57beeeb0-03fc-4fc9-94da-7604488a7134@zfapi.zalolink.com:11802?encryption=none&security=reality&sni=psstatic.cdn.bcebos.com&fp=ios&type=tcp&pbk=FUBjYwXlKIVwF7IuJf5dt_HU2sUnrEt10s4TIlTe8Q4&sid=6c84fbac2d&flow=xtls-rprx-vision#%5BGlobal%5D%E6%B3%B0%E5%9B%BD-vip-123
 vless://57beeeb0-03fc-4fc9-94da-7604488a7134@zfapi.zalolink.com:46957?encryption=none&security=reality&sni=psstatic.cdn.bcebos.com&fp=safari&type=tcp&pbk=1SefqLQXrqkiUdf7cTMF53hrMZyo684_uneRC8-qTxI&sid=8f6683a234d3&flow=xtls-rprx-vision#%5BGlobal%5D%E6%96%B0%E5%8A%A0%E5%9D%A1-vip-224
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@a3dee.supertoolify.com:4430?insecure=1&sni=psstatic.cdn.bcebos.com#%5BGlobal%5D%E5%BE%B7%E5%9B%BD-vip-325
-hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@hello.hikigo.com:443?insecure=1&sni=psstatic.cdn.bcebos.com#%5BGlobal%5D%E8%8B%B1%E5%9B%BD-vip-127
+hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@86.53.207.251:40055?insecure=1&sni=psstatic.cdn.bcebos.com#%5BGlobal%5D%E8%8B%B1%E5%9B%BD-vip-127
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@22egdg.mateflora.com:40055?insecure=1&sni=psstatic.cdn.bcebos.com#%5BGlobal%5D%E8%8B%B1%E5%9B%BD-vip-228
 vless://57beeeb0-03fc-4fc9-94da-7604488a7134@dg1hk.mateflora.com:44988?encryption=none&security=reality&sni=www.tesla.com&fp=ios&type=tcp&pbk=f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A&sid=bb82c8&flow=xtls-rprx-vision#%5BGlobal%5D%E8%B6%8A%E5%8D%97-vip-229
 vless://57beeeb0-03fc-4fc9-94da-7604488a7134@zfapi.zalolink.com:42120?encryption=none&security=reality&sni=www.tesla.com&fp=ios&type=tcp&pbk=f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A&sid=bb82c8&flow=xtls-rprx-vision#%5BGlobal%5D%E8%B6%8A%E5%8D%97-vip-330
