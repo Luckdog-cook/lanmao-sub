@@ -329,11 +329,8 @@
         }
       },
       "transport": {
-        "type": "ws",
-        "path": "/download",
-        "headers": {
-          "Host": "de01.node.qixi.best"
-        }
+        "type": "grpc",
+        "service_name": "file_download"
       }
     },
     {
@@ -346,6 +343,25 @@
         "enabled": true,
         "server_name": "bing.com",
         "insecure": true
+      }
+    },
+    {
+      "tag": "IT-01-0.2X",
+      "server": "it01.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
+      "tls": {
+        "enabled": true,
+        "server_name": "it01.node.qixi.best",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "file_download"
       }
     },
     {

@@ -208,15 +208,13 @@ proxies:
   port: 443
   type: trojan
   password: 6aa160fb-c0e6-4cff-9733-881961bca52a
-  network: ws
+  network: grpc
   udp: true
   tls: true
   servername: de01.node.qixi.best
   client-fingerprint: firefox
-  ws-opts:
-    path: /download
-    headers:
-      Host: de01.node.qixi.best
+  grpc-opts:
+    grpc-service-name: file_download
 - name: HK-10-v6-移动优化
   server: hk10-v6.node.qixi.best
   port: 16606
@@ -224,6 +222,18 @@ proxies:
   password: 6aa160fb-c0e6-4cff-9733-881961bca52a
   sni: bing.com
   skip-cert-verify: true
+- name: IT-01-0.2X
+  server: it01.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: grpc
+  udp: true
+  tls: true
+  servername: it01.node.qixi.best
+  client-fingerprint: firefox
+  grpc-opts:
+    grpc-service-name: file_download
 - name: 🇭🇰香港-Gemini-IEPL
   server: gd.bjnet2.com
   port: 36602
@@ -378,6 +388,7 @@ proxy-groups:
   - US-01-三网优化
   - DE-01-三网优化
   - HK-10-v6-移动优化
+  - IT-01-0.2X
   - 🇭🇰香港-Gemini-IEPL
   - 🇭🇰香港2-IEPL
   - 🇹🇼台湾-IEPL
@@ -411,6 +422,7 @@ proxy-groups:
   - US-01-三网优化
   - DE-01-三网优化
   - HK-10-v6-移动优化
+  - IT-01-0.2X
   - 🇭🇰香港-Gemini-IEPL
   - 🇭🇰香港2-IEPL
   - 🇹🇼台湾-IEPL
