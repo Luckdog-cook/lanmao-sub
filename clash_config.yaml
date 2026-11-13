@@ -4,443 +4,363 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: 🇭🇰香港-Gemini-IEPL
-  server: jp01.wenrugou.uk
-  port: 31491
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: 🇭🇰香港2-IEPL
-  server: jp01.wenrugou.uk
-  port: 31492
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: 🇹🇼台湾-IEPL
-  server: jp01.wenrugou.uk
-  port: 31493
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: 🇹🇼台湾2-IEPL
-  server: jp01.wenrugou.uk
-  port: 31494
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: 🇸🇬新加坡-Gemini-IEPL
-  server: jp01.wenrugou.uk
-  port: 31495
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: 🇸🇬新加坡2-Gemini-IEPL
-  server: jp01.wenrugou.uk
-  port: 31496
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: 🇯🇵日本-IEPL-GPT
-  server: jp01.wenrugou.uk
-  port: 31497
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: 🇯🇵日本2-IEPL-GPT
-  server: jp01.wenrugou.uk
-  port: 31498
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: 🇯🇵日本家宽-IEPL2
-  server: jp01.wenrugou.uk
-  port: 31499
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: 🇺🇸美国-IEPL-GPT
-  server: jp01.wenrugou.uk
-  port: 31500
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: 🇺🇸美国2-IEPL-GPT
-  server: jp01.wenrugou.uk
-  port: 31501
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: 🇩🇪德国-IEPL
-  server: jp01.wenrugou.uk
-  port: 31502
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
 - name: HK-01-三网优化
-  server: jp01.wenrugou.uk
-  port: 31503
-  type: vless
-  uuid: ''
-  network: tcp
+  server: hk01.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: ws
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  servername: hk01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk01.node.qixi.best
 - name: HK-02-三网优化
-  server: jp01.wenrugou.uk
-  port: 31504
-  type: vless
-  uuid: ''
-  network: tcp
+  server: hk02.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: ws
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  servername: hk02.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk02.node.qixi.best
 - name: HK-03-三网优化
-  server: jp01.wenrugou.uk
-  port: 31505
-  type: vless
-  uuid: ''
-  network: tcp
+  server: hk03.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: ws
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  servername: hk03.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk03.node.qixi.best
 - name: HK-05-三网优化
-  server: jp01.wenrugou.uk
-  port: 31506
-  type: vless
-  uuid: ''
-  network: tcp
+  server: hk05.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: ws
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  servername: hk05.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk05.node.qixi.best
 - name: HK-06-三网优化
-  server: jp01.wenrugou.uk
-  port: 31507
-  type: vless
-  uuid: ''
-  network: tcp
+  server: hk06.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: grpc
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  servername: hk06.node.qixi.best
+  client-fingerprint: firefox
+  grpc-opts:
+    grpc-service-name: file_download
 - name: HK-07-三网优化
-  server: jp01.wenrugou.uk
-  port: 31508
-  type: vless
-  uuid: ''
-  network: tcp
+  server: hk07.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: ws
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  servername: hk07.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: hk07.node.qixi.best
 - name: HK-09-移动优化
-  server: jp01.wenrugou.uk
-  port: 31509
-  type: vless
-  uuid: ''
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  server: 163.5.186.197
+  port: 16606
+  type: hysteria2
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  sni: bing.com
+  skip-cert-verify: true
 - name: JP-01-三网优化
-  server: jp01.wenrugou.uk
-  port: 31510
-  type: vless
-  uuid: ''
-  network: tcp
+  server: JP01.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: ws
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  servername: jp01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp01.node.qixi.best
 - name: JP-02-三网优化
-  server: jp01.wenrugou.uk
-  port: 31511
-  type: vless
-  uuid: ''
-  network: tcp
+  server: JP02.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: ws
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  servername: jp02.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp02.node.qixi.best
 - name: JP-03-三网优化
-  server: jp01.wenrugou.uk
-  port: 31512
-  type: vless
-  uuid: ''
-  network: tcp
+  server: JP03.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: ws
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  servername: jp03.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp03.node.qixi.best
 - name: JP-04-三网优化
-  server: jp01.wenrugou.uk
-  port: 31513
-  type: vless
-  uuid: ''
-  network: tcp
+  server: JP04.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: ws
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  servername: jp04.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp04.node.qixi.best
 - name: JP-07-三网优化
-  server: jp01.wenrugou.uk
-  port: 31514
-  type: vless
-  uuid: ''
-  network: tcp
+  server: jp07.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: ws
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  servername: jp07.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: jp07.node.qixi.best
 - name: TW-01-三网优化
-  server: jp01.wenrugou.uk
-  port: 31515
-  type: vless
-  uuid: ''
-  network: tcp
+  server: tw01.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: ws
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
+  servername: tw01.node.qixi.best
   client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  ws-opts:
+    path: /download
+    headers:
+      Host: tw01.node.qixi.best
 - name: SG-01-三网优化
-  server: jp01.wenrugou.uk
-  port: 31516
-  type: vless
-  uuid: ''
-  network: tcp
+  server: sg01.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: grpc
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  servername: sg01.node.qixi.best
+  client-fingerprint: firefox
+  grpc-opts:
+    grpc-service-name: file_download
 - name: US-01-三网优化
-  server: jp01.wenrugou.uk
-  port: 31517
-  type: vless
-  uuid: ''
-  network: tcp
+  server: us01.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: ws
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  servername: us01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: us01.node.qixi.best
 - name: DE-01-三网优化
-  server: jp01.wenrugou.uk
-  port: 31518
-  type: vless
-  uuid: ''
-  network: tcp
+  server: de01.node.qixi.best
+  port: 443
+  type: trojan
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  network: ws
   udp: true
-  flow: xtls-rprx-vision
   tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
+  servername: de01.node.qixi.best
+  client-fingerprint: firefox
+  ws-opts:
+    path: /download
+    headers:
+      Host: de01.node.qixi.best
 - name: HK-10-v6-移动优化
-  server: jp01.wenrugou.uk
-  port: 31519
-  type: vless
-  uuid: ''
-  network: tcp
+  server: hk10-v6.node.qixi.best
+  port: 16606
+  type: hysteria2
+  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  sni: bing.com
+  skip-cert-verify: true
+- name: 🇭🇰香港-Gemini-IEPL
+  server: gd.bjnet2.com
+  port: 36602
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc
-    short-id: a136d276f05dbf1f
-- name: 🇯🇵日本20
-  server: jp01.wenrugou.uk
-  port: 2053
-  type: vless
-  uuid: f96500be-6dce-46f7-8e45-82f269f0d294
-  network: tcp
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇭🇰香港2-IEPL
+  server: gd2.bjnet2.com
+  port: 36602
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
   udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: BduiVUe1QHYj9bg0YNeCW6lw1SvitNzJqYoQe9B8Q0Y
-    short-id: d60944e27067cb30
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇹🇼台湾-IEPL
+  server: gd.bjnet2.com
+  port: 36603
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇹🇼台湾2-IEPL
+  server: gd2.bjnet2.com
+  port: 36603
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇸🇬新加坡-Gemini-IEPL
+  server: gd.bjnet2.com
+  port: 36604
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇸🇬新加坡2-Gemini-IEPL
+  server: gd2.bjnet2.com
+  port: 36604
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇯🇵日本-IEPL-GPT
+  server: gd.bjnet2.com
+  port: 36609
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇯🇵日本2-IEPL-GPT
+  server: gd2.bjnet2.com
+  port: 36609
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇯🇵日本家宽-IEPL2
+  server: gd2.bjnet2.com
+  port: 36610
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇺🇸美国-IEPL-GPT
+  server: gd.bjnet2.com
+  port: 36608
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇺🇸美国2-IEPL-GPT
+  server: gd2.bjnet2.com
+  port: 36608
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇩🇪德国-IEPL
+  server: gd.bjnet2.com
+  port: 36611
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 proxy-groups:
 - name: 节点选择
   type: select
   proxies:
   - 自动优选
-  - 🇭🇰香港-Gemini-IEPL
-  - 🇭🇰香港2-IEPL
-  - 🇹🇼台湾-IEPL
-  - 🇹🇼台湾2-IEPL
-  - 🇸🇬新加坡-Gemini-IEPL
-  - 🇸🇬新加坡2-Gemini-IEPL
-  - 🇯🇵日本-IEPL-GPT
-  - 🇯🇵日本2-IEPL-GPT
-  - 🇯🇵日本家宽-IEPL2
-  - 🇺🇸美国-IEPL-GPT
-  - 🇺🇸美国2-IEPL-GPT
-  - 🇩🇪德国-IEPL
   - HK-01-三网优化
   - HK-02-三网优化
   - HK-03-三网优化
@@ -458,23 +378,22 @@ proxy-groups:
   - US-01-三网优化
   - DE-01-三网优化
   - HK-10-v6-移动优化
-  - 🇯🇵日本20
+  - 🇭🇰香港-Gemini-IEPL
+  - 🇭🇰香港2-IEPL
+  - 🇹🇼台湾-IEPL
+  - 🇹🇼台湾2-IEPL
+  - 🇸🇬新加坡-Gemini-IEPL
+  - 🇸🇬新加坡2-Gemini-IEPL
+  - 🇯🇵日本-IEPL-GPT
+  - 🇯🇵日本2-IEPL-GPT
+  - 🇯🇵日本家宽-IEPL2
+  - 🇺🇸美国-IEPL-GPT
+  - 🇺🇸美国2-IEPL-GPT
+  - 🇩🇪德国-IEPL
   - DIRECT
 - name: 自动优选
   type: url-test
   proxies:
-  - 🇭🇰香港-Gemini-IEPL
-  - 🇭🇰香港2-IEPL
-  - 🇹🇼台湾-IEPL
-  - 🇹🇼台湾2-IEPL
-  - 🇸🇬新加坡-Gemini-IEPL
-  - 🇸🇬新加坡2-Gemini-IEPL
-  - 🇯🇵日本-IEPL-GPT
-  - 🇯🇵日本2-IEPL-GPT
-  - 🇯🇵日本家宽-IEPL2
-  - 🇺🇸美国-IEPL-GPT
-  - 🇺🇸美国2-IEPL-GPT
-  - 🇩🇪德国-IEPL
   - HK-01-三网优化
   - HK-02-三网优化
   - HK-03-三网优化
@@ -492,7 +411,18 @@ proxy-groups:
   - US-01-三网优化
   - DE-01-三网优化
   - HK-10-v6-移动优化
-  - 🇯🇵日本20
+  - 🇭🇰香港-Gemini-IEPL
+  - 🇭🇰香港2-IEPL
+  - 🇹🇼台湾-IEPL
+  - 🇹🇼台湾2-IEPL
+  - 🇸🇬新加坡-Gemini-IEPL
+  - 🇸🇬新加坡2-Gemini-IEPL
+  - 🇯🇵日本-IEPL-GPT
+  - 🇯🇵日本2-IEPL-GPT
+  - 🇯🇵日本家宽-IEPL2
+  - 🇺🇸美国-IEPL-GPT
+  - 🇺🇸美国2-IEPL-GPT
+  - 🇩🇪德国-IEPL
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50

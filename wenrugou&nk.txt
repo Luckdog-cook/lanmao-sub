@@ -1,634 +1,472 @@
 {
   "outbounds": [
     {
-      "tag": "🇭🇰香港-Gemini-IEPL",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31491,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
-        }
-      }
-    },
-    {
-      "tag": "🇭🇰香港2-IEPL",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31492,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
-        }
-      }
-    },
-    {
-      "tag": "🇹🇼台湾-IEPL",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31493,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
-        }
-      }
-    },
-    {
-      "tag": "🇹🇼台湾2-IEPL",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31494,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
-        }
-      }
-    },
-    {
-      "tag": "🇸🇬新加坡-Gemini-IEPL",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31495,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
-        }
-      }
-    },
-    {
-      "tag": "🇸🇬新加坡2-Gemini-IEPL",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31496,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
-        }
-      }
-    },
-    {
-      "tag": "🇯🇵日本-IEPL-GPT",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31497,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
-        }
-      }
-    },
-    {
-      "tag": "🇯🇵日本2-IEPL-GPT",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31498,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
-        }
-      }
-    },
-    {
-      "tag": "🇯🇵日本家宽-IEPL2",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31499,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
-        }
-      }
-    },
-    {
-      "tag": "🇺🇸美国-IEPL-GPT",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31500,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
-        }
-      }
-    },
-    {
-      "tag": "🇺🇸美国2-IEPL-GPT",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31501,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
-        }
-      }
-    },
-    {
-      "tag": "🇩🇪德国-IEPL",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31502,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
-        }
-      }
-    },
-    {
       "tag": "HK-01-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31503,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "hk01.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "hk01.node.qixi.best",
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "hk01.node.qixi.best"
         }
       }
     },
     {
       "tag": "HK-02-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31504,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "hk02.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "hk02.node.qixi.best",
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "hk02.node.qixi.best"
         }
       }
     },
     {
       "tag": "HK-03-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31505,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "hk03.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "hk03.node.qixi.best",
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "hk03.node.qixi.best"
         }
       }
     },
     {
       "tag": "HK-05-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31506,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "hk05.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "hk05.node.qixi.best",
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "hk05.node.qixi.best"
         }
       }
     },
     {
       "tag": "HK-06-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31507,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "hk06.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "hk06.node.qixi.best",
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+          "fingerprint": "firefox"
         }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "file_download"
       }
     },
     {
       "tag": "HK-07-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31508,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "hk07.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "hk07.node.qixi.best",
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "hk07.node.qixi.best"
         }
       }
     },
     {
       "tag": "HK-09-移动优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31509,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "163.5.186.197",
+      "server_port": 16606,
+      "type": "hysteria2",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
-        }
+        "server_name": "bing.com",
+        "insecure": true
       }
     },
     {
       "tag": "JP-01-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31510,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "JP01.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "jp01.node.qixi.best",
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "jp01.node.qixi.best"
         }
       }
     },
     {
       "tag": "JP-02-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31511,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "JP02.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "jp02.node.qixi.best",
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "jp02.node.qixi.best"
         }
       }
     },
     {
       "tag": "JP-03-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31512,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "JP03.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "jp03.node.qixi.best",
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "jp03.node.qixi.best"
         }
       }
     },
     {
       "tag": "JP-04-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31513,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "JP04.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "jp04.node.qixi.best",
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "jp04.node.qixi.best"
         }
       }
     },
     {
       "tag": "JP-07-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31514,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "jp07.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "jp07.node.qixi.best",
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "jp07.node.qixi.best"
         }
       }
     },
     {
       "tag": "TW-01-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31515,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "tw01.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "tw01.node.qixi.best",
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "tw01.node.qixi.best"
         }
       }
     },
     {
       "tag": "SG-01-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31516,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "sg01.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "sg01.node.qixi.best",
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+          "fingerprint": "firefox"
         }
+      },
+      "transport": {
+        "type": "grpc",
+        "service_name": "file_download"
       }
     },
     {
       "tag": "US-01-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31517,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "us01.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "us01.node.qixi.best",
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "us01.node.qixi.best"
         }
       }
     },
     {
       "tag": "DE-01-三网优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31518,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "de01.node.qixi.best",
+      "server_port": 443,
+      "type": "trojan",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
+        "server_name": "de01.node.qixi.best",
         "utls": {
           "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
+          "fingerprint": "firefox"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/download",
+        "headers": {
+          "Host": "de01.node.qixi.best"
         }
       }
     },
     {
       "tag": "HK-10-v6-移动优化",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 31519,
-      "type": "vless",
-      "uuid": "",
-      "flow": "xtls-rprx-vision",
+      "server": "hk10-v6.node.qixi.best",
+      "server_port": 16606,
+      "type": "hysteria2",
+      "password": "6aa160fb-c0e6-4cff-9733-881961bca52a",
       "tls": {
         "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "U4YsJ4KE60l4CNrUepKLhZdLV8Z5AqEC_Hiu32VWhXc",
-          "short_id": "a136d276f05dbf1f"
-        }
+        "server_name": "bing.com",
+        "insecure": true
       }
     },
     {
-      "tag": "🇯🇵日本20",
-      "server": "jp01.wenrugou.uk",
-      "server_port": 2053,
-      "type": "vless",
-      "uuid": "f96500be-6dce-46f7-8e45-82f269f0d294",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.cloudflare.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "BduiVUe1QHYj9bg0YNeCW6lw1SvitNzJqYoQe9B8Q0Y",
-          "short_id": "d60944e27067cb30"
-        }
-      }
+      "tag": "🇭🇰香港-Gemini-IEPL",
+      "server": "gd.bjnet2.com",
+      "server_port": 36602,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇭🇰香港2-IEPL",
+      "server": "gd2.bjnet2.com",
+      "server_port": 36602,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇹🇼台湾-IEPL",
+      "server": "gd.bjnet2.com",
+      "server_port": 36603,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇹🇼台湾2-IEPL",
+      "server": "gd2.bjnet2.com",
+      "server_port": 36603,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇸🇬新加坡-Gemini-IEPL",
+      "server": "gd.bjnet2.com",
+      "server_port": 36604,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇸🇬新加坡2-Gemini-IEPL",
+      "server": "gd2.bjnet2.com",
+      "server_port": 36604,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇯🇵日本-IEPL-GPT",
+      "server": "gd.bjnet2.com",
+      "server_port": 36609,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇯🇵日本2-IEPL-GPT",
+      "server": "gd2.bjnet2.com",
+      "server_port": 36609,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇯🇵日本家宽-IEPL2",
+      "server": "gd2.bjnet2.com",
+      "server_port": 36610,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇺🇸美国-IEPL-GPT",
+      "server": "gd.bjnet2.com",
+      "server_port": 36608,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇺🇸美国2-IEPL-GPT",
+      "server": "gd2.bjnet2.com",
+      "server_port": 36608,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇩🇪德国-IEPL",
+      "server": "gd.bjnet2.com",
+      "server_port": 36611,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
     }
   ]
 }
