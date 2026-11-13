@@ -1,6 +1,6 @@
 # 趣连自动订阅 (Clash Meta / mihomo)
-# 更新时间: 2026-11-13 01:12:25 UTC
-# 节点数: 2
+# 更新时间: 2026-11-13 12:21:07 UTC
+# 节点数: 3
 
 mixed-port: 7890
 allow-lan: false
@@ -8,13 +8,13 @@ mode: rule
 log-level: info
 
 proxies:
-  - name: "MY-my.tronsg.com"
+  - name: "MX-mx001.zestapp778.com"
     type: trojan
-    server: "my.tronsg.com"
-    port: 443
-    password: "Trojan@82164024"
+    server: "mx001.zestapp778.com"
+    port: 15083
+    password: "5t6i121em5lkmsmk"
     udp: true
-    sni: "my.tronsg.com"
+    sni: "mx001.zestapp778.com"
   - name: "NG-hk-02.tronsg.com"
     type: trojan
     server: "hk-02.tronsg.com"
@@ -22,6 +22,13 @@ proxies:
     password: "9daT1DW2Jp"
     udp: true
     sni: "hk-02.tronsg.com"
+  - name: "MY-my.tronsg.com"
+    type: trojan
+    server: "my.tronsg.com"
+    port: 443
+    password: "Trojan@82164024"
+    udp: true
+    sni: "my.tronsg.com"
 
 proxy-groups:
   - name: "自动选择"
@@ -30,15 +37,17 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "MY-my.tronsg.com"
+      - "MX-mx001.zestapp778.com"
       - "NG-hk-02.tronsg.com"
+      - "MY-my.tronsg.com"
   - name: "节点选择"
     type: select
     proxies:
       - "自动选择"
       - "DIRECT"
-      - "MY-my.tronsg.com"
+      - "MX-mx001.zestapp778.com"
       - "NG-hk-02.tronsg.com"
+      - "MY-my.tronsg.com"
 
 rules:
   - GEOIP,LAN,DIRECT,no-resolve
