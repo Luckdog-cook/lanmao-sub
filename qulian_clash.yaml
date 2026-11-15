@@ -1,5 +1,5 @@
 # 趣连自动订阅 (Clash Meta / mihomo)
-# 更新时间: 2026-11-15 06:47:35 UTC
+# 更新时间: 2026-11-15 15:43:07 UTC
 # 节点数: 3
 
 mixed-port: 7890
@@ -8,13 +8,6 @@ mode: rule
 log-level: info
 
 proxies:
-  - name: "MX-mx001.zestapp778.com"
-    type: trojan
-    server: "mx001.zestapp778.com"
-    port: 15083
-    password: "5t6i121em5lkmsmk"
-    udp: true
-    sni: "mx001.zestapp778.com"
   - name: "MY-my.tronsg.com"
     type: trojan
     server: "my.tronsg.com"
@@ -22,6 +15,13 @@ proxies:
     password: "Trojan@82164024"
     udp: true
     sni: "my.tronsg.com"
+  - name: "MX-mx001.zestapp778.com"
+    type: trojan
+    server: "mx001.zestapp778.com"
+    port: 15083
+    password: "5t6i121em5lkmsmk"
+    udp: true
+    sni: "mx001.zestapp778.com"
   - name: "NG-hk-02.tronsg.com"
     type: trojan
     server: "hk-02.tronsg.com"
@@ -37,16 +37,16 @@ proxy-groups:
     interval: 300
     tolerance: 50
     proxies:
-      - "MX-mx001.zestapp778.com"
       - "MY-my.tronsg.com"
+      - "MX-mx001.zestapp778.com"
       - "NG-hk-02.tronsg.com"
   - name: "节点选择"
     type: select
     proxies:
       - "自动选择"
       - "DIRECT"
-      - "MX-mx001.zestapp778.com"
       - "MY-my.tronsg.com"
+      - "MX-mx001.zestapp778.com"
       - "NG-hk-02.tronsg.com"
 
 rules:
