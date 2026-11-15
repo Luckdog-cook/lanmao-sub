@@ -69,7 +69,7 @@
     {
       "type": "vless",
       "tag": "[CN]澳大利亚-vip-115",
-      "server": "zfapi.zalolink.com",
+      "server": "win2loxfde0202.gggrelay.org",
       "server_port": 54528,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "tls": {
@@ -171,7 +171,7 @@
     {
       "type": "vless",
       "tag": "[CN]新加坡-vip-121",
-      "server": "zfapi.zalolink.com",
+      "server": "win2loxfde0202.gggrelay.org",
       "server_port": 30322,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "tls": {
@@ -215,7 +215,7 @@
     {
       "type": "vless",
       "tag": "[CN]新加坡-vip-223",
-      "server": "zfapi.zalolink.com",
+      "server": "win2loxfde0202.gggrelay.org",
       "server_port": 46957,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "tls": {
@@ -295,7 +295,7 @@
     {
       "type": "vless",
       "tag": "[CN]越南-vip-329",
-      "server": "zfapi.zalolink.com",
+      "server": "win2loxfde0202.gggrelay.org",
       "server_port": 42120,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "tls": {
@@ -457,7 +457,7 @@
     {
       "type": "vless",
       "tag": "[Global]澳大利亚-vip-115",
-      "server": "zfapi.zalolink.com",
+      "server": "win2loxfde0202.gggrelay.org",
       "server_port": 54528,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "tls": {
@@ -559,7 +559,7 @@
     {
       "type": "vless",
       "tag": "[Global]新加坡-vip-121",
-      "server": "zfapi.zalolink.com",
+      "server": "win2loxfde0202.gggrelay.org",
       "server_port": 30322,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "tls": {
@@ -603,7 +603,7 @@
     {
       "type": "vless",
       "tag": "[Global]新加坡-vip-223",
-      "server": "zfapi.zalolink.com",
+      "server": "win2loxfde0202.gggrelay.org",
       "server_port": 46957,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "tls": {
@@ -683,7 +683,7 @@
     {
       "type": "vless",
       "tag": "[Global]越南-vip-329",
-      "server": "zfapi.zalolink.com",
+      "server": "win2loxfde0202.gggrelay.org",
       "server_port": 42120,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "tls": {
