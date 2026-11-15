@@ -235,7 +235,7 @@ proxies:
   grpc-opts:
     grpc-service-name: file_download
 - name: 🇭🇰香港-Gemini-IEPL
-  server: gd.bjnet2.com
+  server: vznx8djz.cn-in.net
   port: 36602
   type: ss
   cipher: aes-128-gcm
@@ -246,7 +246,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇭🇰香港2-IEPL
-  server: gd2.bjnet2.com
+  server: vznx8djz.cn-in.net
   port: 36602
   type: ss
   cipher: aes-128-gcm
@@ -257,7 +257,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇹🇼台湾-IEPL
-  server: gd.bjnet2.com
+  server: vznx8djz.cn-in.net
   port: 36603
   type: ss
   cipher: aes-128-gcm
@@ -268,7 +268,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇹🇼台湾2-IEPL
-  server: gd2.bjnet2.com
+  server: vznx8djz.cn-in.net
   port: 36603
   type: ss
   cipher: aes-128-gcm
@@ -279,7 +279,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇸🇬新加坡-Gemini-IEPL
-  server: gd.bjnet2.com
+  server: vznx8djz.cn-in.net
   port: 36604
   type: ss
   cipher: aes-128-gcm
@@ -290,7 +290,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇸🇬新加坡2-Gemini-IEPL
-  server: gd2.bjnet2.com
+  server: vznx8djz.cn-in.net
   port: 36604
   type: ss
   cipher: aes-128-gcm
@@ -301,7 +301,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本-IEPL-GPT
-  server: gd.bjnet2.com
+  server: vznx8djz.cn-in.net
   port: 36609
   type: ss
   cipher: aes-128-gcm
@@ -312,7 +312,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本2-IEPL-GPT
-  server: gd2.bjnet2.com
+  server: vznx8djz.cn-in.net
   port: 36609
   type: ss
   cipher: aes-128-gcm
@@ -323,7 +323,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本家宽-IEPL2
-  server: gd2.bjnet2.com
+  server: vznx8djz.cn-in.net
   port: 36610
   type: ss
   cipher: aes-128-gcm
@@ -334,7 +334,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇺🇸美国-IEPL-GPT
-  server: gd.bjnet2.com
+  server: vznx8djz.cn-in.net
   port: 36608
   type: ss
   cipher: aes-128-gcm
@@ -345,7 +345,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇺🇸美国2-IEPL-GPT
-  server: gd2.bjnet2.com
+  server: vznx8djz.cn-in.net
   port: 36608
   type: ss
   cipher: aes-128-gcm
@@ -356,7 +356,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇩🇪德国-IEPL
-  server: gd.bjnet2.com
+  server: vznx8djz.cn-in.net
   port: 36611
   type: ss
   cipher: aes-128-gcm
