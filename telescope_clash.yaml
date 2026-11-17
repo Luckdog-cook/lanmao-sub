@@ -23,7 +23,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -34,7 +34,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -45,7 +45,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -56,7 +56,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -67,7 +67,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -78,7 +78,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -89,7 +89,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -100,7 +100,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -111,7 +111,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -122,7 +122,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -133,7 +133,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -144,7 +144,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -155,7 +155,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -166,7 +166,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -177,7 +177,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -188,7 +188,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -199,73 +199,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇭🇰香港_R_2434
-  type: ssr
-  server: tmp-002.telescopes.work
-  port: 35055
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇭🇰香港_R_2439
-  type: ssr
-  server: tmp-002.telescopes.work
-  port: 35092
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇭🇰香港_R_2446
-  type: ssr
-  server: tmp-002.telescopes.work
-  port: 35151
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇭🇰香港_R_2453
-  type: ssr
-  server: tmp-002.telescopes.work
-  port: 35232
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇭🇰香港_R_2463
-  type: ssr
-  server: tmp-002.telescopes.work
-  port: 35267
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇭🇰香港_R_2464
-  type: ssr
-  server: tmp-002.telescopes.work
-  port: 35268
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -276,7 +210,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -287,7 +221,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -298,7 +232,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -309,7 +243,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -320,7 +254,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -331,7 +265,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -342,7 +276,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -353,7 +287,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -364,7 +298,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -375,7 +309,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -386,7 +320,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -397,7 +331,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -408,7 +342,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -419,7 +353,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -430,7 +364,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -441,7 +375,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -452,7 +386,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -463,7 +397,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -474,7 +408,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -485,7 +419,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -496,7 +430,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -507,7 +441,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -518,7 +452,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -529,7 +463,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -540,7 +474,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -551,7 +485,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -562,7 +496,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -573,7 +507,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -584,7 +518,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -595,7 +529,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -606,7 +540,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -617,7 +551,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -628,7 +562,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -639,7 +573,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -650,7 +584,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -661,7 +595,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -672,7 +606,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -683,7 +617,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -694,7 +628,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -705,51 +639,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇺🇸美国_R_2447
-  type: ssr
-  server: tmp-002.telescopes.work
-  port: 35173
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇺🇸美国_R_2466
-  type: ssr
-  server: tmp-002.telescopes.work
-  port: 35273
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇺🇸美国_R_2478
-  type: ssr
-  server: tmp-002.telescopes.work
-  port: 35320
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇺🇸美国_R_2485
-  type: ssr
-  server: tmp-002.telescopes.work
-  port: 35345
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -760,7 +650,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -771,7 +661,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -782,18 +672,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇺🇸美国_R_2573
-  type: ssr
-  server: tmp-002.telescopes.work
-  port: 35362
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -804,7 +683,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -815,18 +694,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
-  obfs: tls1.2_ticket_auth
-  obfs-param: ajax.microsoft.com
-  udp: true
-- name: 🇺🇸美国_R_2577
-  type: ssr
-  server: tmp-002.telescopes.work
-  port: 35357
-  cipher: aes-256-cfb
-  password: hGkQ6915tD
-  protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -837,7 +705,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -848,7 +716,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -859,7 +727,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -870,7 +738,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -881,7 +749,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -892,7 +760,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -903,7 +771,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -914,7 +782,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -925,7 +793,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -936,7 +804,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -947,7 +815,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -958,7 +826,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -969,7 +837,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -980,7 +848,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -991,7 +859,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1002,7 +870,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1013,7 +881,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1024,7 +892,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1035,7 +903,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1046,7 +914,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1057,7 +925,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1068,7 +936,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1079,7 +947,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1090,7 +958,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1101,7 +969,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1112,7 +980,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1123,7 +991,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1134,7 +1002,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1145,7 +1013,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1156,7 +1024,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1167,7 +1035,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1178,7 +1046,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1189,7 +1057,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1200,7 +1068,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1211,7 +1079,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1222,7 +1090,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1233,7 +1101,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1244,7 +1112,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1255,7 +1123,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1266,7 +1134,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1277,7 +1145,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1288,7 +1156,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1299,7 +1167,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1310,7 +1178,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1321,7 +1189,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1332,7 +1200,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1343,7 +1211,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1354,7 +1222,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1365,7 +1233,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1376,7 +1244,7 @@ proxies:
   cipher: aes-256-cfb
   password: hGkQ6915tD
   protocol: auth_aes128_md5
-  protocol-param: 1350196:7d72690769
+  protocol-param: 1350397:3e32876875
   obfs: tls1.2_ticket_auth
   obfs-param: ajax.microsoft.com
   udp: true
@@ -1402,12 +1270,6 @@ proxy-groups:
   - 🇭🇰香港_R_2375
   - 🇭🇰香港_R_2376
   - 🇭🇰香港_R_2379
-  - 🇭🇰香港_R_2434
-  - 🇭🇰香港_R_2439
-  - 🇭🇰香港_R_2446
-  - 🇭🇰香港_R_2453
-  - 🇭🇰香港_R_2463
-  - 🇭🇰香港_R_2464
   - 🇭🇰香港_R_2490
   - 🇭🇰香港_R_2509
   - 🇹🇼台湾省_D_237
@@ -1448,17 +1310,11 @@ proxy-groups:
   - 🇺🇸美国_R_2355
   - 🇺🇸美国_R_2377
   - 🇺🇸美国_R_2390
-  - 🇺🇸美国_R_2447
-  - 🇺🇸美国_R_2466
-  - 🇺🇸美国_R_2478
-  - 🇺🇸美国_R_2485
   - 🇺🇸美国_R_2492
   - 🇺🇸美国_R_2512
   - 🇺🇸美国_R_2572
-  - 🇺🇸美国_R_2573
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2576
-  - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
   - 🇰🇷韩国_R_2256
   - 🇰🇷韩国_R_2349
@@ -1532,12 +1388,6 @@ proxy-groups:
   - 🇭🇰香港_R_2375
   - 🇭🇰香港_R_2376
   - 🇭🇰香港_R_2379
-  - 🇭🇰香港_R_2434
-  - 🇭🇰香港_R_2439
-  - 🇭🇰香港_R_2446
-  - 🇭🇰香港_R_2453
-  - 🇭🇰香港_R_2463
-  - 🇭🇰香港_R_2464
   - 🇭🇰香港_R_2490
   - 🇭🇰香港_R_2509
   - 🇹🇼台湾省_D_237
@@ -1578,17 +1428,11 @@ proxy-groups:
   - 🇺🇸美国_R_2355
   - 🇺🇸美国_R_2377
   - 🇺🇸美国_R_2390
-  - 🇺🇸美国_R_2447
-  - 🇺🇸美国_R_2466
-  - 🇺🇸美国_R_2478
-  - 🇺🇸美国_R_2485
   - 🇺🇸美国_R_2492
   - 🇺🇸美国_R_2512
   - 🇺🇸美国_R_2572
-  - 🇺🇸美国_R_2573
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2576
-  - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
   - 🇰🇷韩国_R_2256
   - 🇰🇷韩国_R_2349
@@ -1662,12 +1506,6 @@ proxy-groups:
   - 🇭🇰香港_R_2375
   - 🇭🇰香港_R_2376
   - 🇭🇰香港_R_2379
-  - 🇭🇰香港_R_2434
-  - 🇭🇰香港_R_2439
-  - 🇭🇰香港_R_2446
-  - 🇭🇰香港_R_2453
-  - 🇭🇰香港_R_2463
-  - 🇭🇰香港_R_2464
   - 🇭🇰香港_R_2490
   - 🇭🇰香港_R_2509
   - 🇹🇼台湾省_D_237
@@ -1708,17 +1546,11 @@ proxy-groups:
   - 🇺🇸美国_R_2355
   - 🇺🇸美国_R_2377
   - 🇺🇸美国_R_2390
-  - 🇺🇸美国_R_2447
-  - 🇺🇸美国_R_2466
-  - 🇺🇸美国_R_2478
-  - 🇺🇸美国_R_2485
   - 🇺🇸美国_R_2492
   - 🇺🇸美国_R_2512
   - 🇺🇸美国_R_2572
-  - 🇺🇸美国_R_2573
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2576
-  - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
   - 🇰🇷韩国_R_2256
   - 🇰🇷韩国_R_2349
@@ -1793,12 +1625,6 @@ proxy-groups:
   - 🇭🇰香港_R_2375
   - 🇭🇰香港_R_2376
   - 🇭🇰香港_R_2379
-  - 🇭🇰香港_R_2434
-  - 🇭🇰香港_R_2439
-  - 🇭🇰香港_R_2446
-  - 🇭🇰香港_R_2453
-  - 🇭🇰香港_R_2463
-  - 🇭🇰香港_R_2464
   - 🇭🇰香港_R_2490
   - 🇭🇰香港_R_2509
   - 🇹🇼台湾省_D_237
@@ -1839,17 +1665,11 @@ proxy-groups:
   - 🇺🇸美国_R_2355
   - 🇺🇸美国_R_2377
   - 🇺🇸美国_R_2390
-  - 🇺🇸美国_R_2447
-  - 🇺🇸美国_R_2466
-  - 🇺🇸美国_R_2478
-  - 🇺🇸美国_R_2485
   - 🇺🇸美国_R_2492
   - 🇺🇸美国_R_2512
   - 🇺🇸美国_R_2572
-  - 🇺🇸美国_R_2573
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2576
-  - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
   - 🇰🇷韩国_R_2256
   - 🇰🇷韩国_R_2349
@@ -1923,12 +1743,6 @@ proxy-groups:
   - 🇭🇰香港_R_2375
   - 🇭🇰香港_R_2376
   - 🇭🇰香港_R_2379
-  - 🇭🇰香港_R_2434
-  - 🇭🇰香港_R_2439
-  - 🇭🇰香港_R_2446
-  - 🇭🇰香港_R_2453
-  - 🇭🇰香港_R_2463
-  - 🇭🇰香港_R_2464
   - 🇭🇰香港_R_2490
   - 🇭🇰香港_R_2509
   - 🇹🇼台湾省_D_237
@@ -1969,17 +1783,11 @@ proxy-groups:
   - 🇺🇸美国_R_2355
   - 🇺🇸美国_R_2377
   - 🇺🇸美国_R_2390
-  - 🇺🇸美国_R_2447
-  - 🇺🇸美国_R_2466
-  - 🇺🇸美国_R_2478
-  - 🇺🇸美国_R_2485
   - 🇺🇸美国_R_2492
   - 🇺🇸美国_R_2512
   - 🇺🇸美国_R_2572
-  - 🇺🇸美国_R_2573
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2576
-  - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
   - 🇰🇷韩国_R_2256
   - 🇰🇷韩国_R_2349
@@ -2052,12 +1860,6 @@ proxy-groups:
   - 🇭🇰香港_R_2375
   - 🇭🇰香港_R_2376
   - 🇭🇰香港_R_2379
-  - 🇭🇰香港_R_2434
-  - 🇭🇰香港_R_2439
-  - 🇭🇰香港_R_2446
-  - 🇭🇰香港_R_2453
-  - 🇭🇰香港_R_2463
-  - 🇭🇰香港_R_2464
   - 🇭🇰香港_R_2490
   - 🇭🇰香港_R_2509
   - 🇹🇼台湾省_D_237
@@ -2098,17 +1900,11 @@ proxy-groups:
   - 🇺🇸美国_R_2355
   - 🇺🇸美国_R_2377
   - 🇺🇸美国_R_2390
-  - 🇺🇸美国_R_2447
-  - 🇺🇸美国_R_2466
-  - 🇺🇸美国_R_2478
-  - 🇺🇸美国_R_2485
   - 🇺🇸美国_R_2492
   - 🇺🇸美国_R_2512
   - 🇺🇸美国_R_2572
-  - 🇺🇸美国_R_2573
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2576
-  - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
   - 🇰🇷韩国_R_2256
   - 🇰🇷韩国_R_2349
@@ -2181,12 +1977,6 @@ proxy-groups:
   - 🇭🇰香港_R_2375
   - 🇭🇰香港_R_2376
   - 🇭🇰香港_R_2379
-  - 🇭🇰香港_R_2434
-  - 🇭🇰香港_R_2439
-  - 🇭🇰香港_R_2446
-  - 🇭🇰香港_R_2453
-  - 🇭🇰香港_R_2463
-  - 🇭🇰香港_R_2464
   - 🇭🇰香港_R_2490
   - 🇭🇰香港_R_2509
   - 🇹🇼台湾省_D_237
@@ -2227,17 +2017,11 @@ proxy-groups:
   - 🇺🇸美国_R_2355
   - 🇺🇸美国_R_2377
   - 🇺🇸美国_R_2390
-  - 🇺🇸美国_R_2447
-  - 🇺🇸美国_R_2466
-  - 🇺🇸美国_R_2478
-  - 🇺🇸美国_R_2485
   - 🇺🇸美国_R_2492
   - 🇺🇸美国_R_2512
   - 🇺🇸美国_R_2572
-  - 🇺🇸美国_R_2573
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2576
-  - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
   - 🇰🇷韩国_R_2256
   - 🇰🇷韩国_R_2349
@@ -2310,12 +2094,6 @@ proxy-groups:
   - 🇭🇰香港_R_2375
   - 🇭🇰香港_R_2376
   - 🇭🇰香港_R_2379
-  - 🇭🇰香港_R_2434
-  - 🇭🇰香港_R_2439
-  - 🇭🇰香港_R_2446
-  - 🇭🇰香港_R_2453
-  - 🇭🇰香港_R_2463
-  - 🇭🇰香港_R_2464
   - 🇭🇰香港_R_2490
   - 🇭🇰香港_R_2509
   - 🇹🇼台湾省_D_237
@@ -2356,17 +2134,11 @@ proxy-groups:
   - 🇺🇸美国_R_2355
   - 🇺🇸美国_R_2377
   - 🇺🇸美国_R_2390
-  - 🇺🇸美国_R_2447
-  - 🇺🇸美国_R_2466
-  - 🇺🇸美国_R_2478
-  - 🇺🇸美国_R_2485
   - 🇺🇸美国_R_2492
   - 🇺🇸美国_R_2512
   - 🇺🇸美国_R_2572
-  - 🇺🇸美国_R_2573
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2576
-  - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
   - 🇰🇷韩国_R_2256
   - 🇰🇷韩国_R_2349
@@ -2440,12 +2212,6 @@ proxy-groups:
   - 🇭🇰香港_R_2375
   - 🇭🇰香港_R_2376
   - 🇭🇰香港_R_2379
-  - 🇭🇰香港_R_2434
-  - 🇭🇰香港_R_2439
-  - 🇭🇰香港_R_2446
-  - 🇭🇰香港_R_2453
-  - 🇭🇰香港_R_2463
-  - 🇭🇰香港_R_2464
   - 🇭🇰香港_R_2490
   - 🇭🇰香港_R_2509
   - 🇹🇼台湾省_D_237
@@ -2486,17 +2252,11 @@ proxy-groups:
   - 🇺🇸美国_R_2355
   - 🇺🇸美国_R_2377
   - 🇺🇸美国_R_2390
-  - 🇺🇸美国_R_2447
-  - 🇺🇸美国_R_2466
-  - 🇺🇸美国_R_2478
-  - 🇺🇸美国_R_2485
   - 🇺🇸美国_R_2492
   - 🇺🇸美国_R_2512
   - 🇺🇸美国_R_2572
-  - 🇺🇸美国_R_2573
   - 🇺🇸美国_R_2574
   - 🇺🇸美国_R_2576
-  - 🇺🇸美国_R_2577
   - 🇺🇸美国_R_2578
   - 🇰🇷韩国_R_2256
   - 🇰🇷韩国_R_2349
