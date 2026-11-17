@@ -421,6 +421,18 @@
       }
     },
     {
+      "type": "hysteria2",
+      "tag": "[CN]日本-vip-851",
+      "server": "52.194.169.14",
+      "server_port": 8443,
+      "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "tls": {
+        "enabled": true,
+        "server_name": "52.194.169.14",
+        "insecure": true
+      }
+    },
+    {
       "type": "vless",
       "tag": "[Global]越南-vip-113",
       "server": "zfapi.zalolink.com",
@@ -809,6 +821,18 @@
       }
     },
     {
+      "type": "hysteria2",
+      "tag": "[Global]日本-vip-851",
+      "server": "52.194.169.14",
+      "server_port": 8443,
+      "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "tls": {
+        "enabled": true,
+        "server_name": "52.194.169.14",
+        "insecure": true
+      }
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -844,6 +868,7 @@
         "[CN]德国-vip-347",
         "[CN]美国-vip-649",
         "[CN]英国-vip-350",
+        "[CN]日本-vip-851",
         "[Global]越南-vip-113",
         "[Global]德国-vip-114",
         "[Global]澳大利亚-vip-115",
@@ -868,6 +893,7 @@
         "[Global]德国-vip-347",
         "[Global]美国-vip-649",
         "[Global]英国-vip-350",
+        "[Global]日本-vip-851",
         "direct"
       ],
       "default": "[CN]越南-vip-113"
@@ -900,6 +926,7 @@
         "[CN]德国-vip-347",
         "[CN]美国-vip-649",
         "[CN]英国-vip-350",
+        "[CN]日本-vip-851",
         "[Global]越南-vip-113",
         "[Global]德国-vip-114",
         "[Global]澳大利亚-vip-115",
@@ -923,7 +950,8 @@
         "[Global]美国-vip-445",
         "[Global]德国-vip-347",
         "[Global]美国-vip-649",
-        "[Global]英国-vip-350"
+        "[Global]英国-vip-350",
+        "[Global]日本-vip-851"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "5m"

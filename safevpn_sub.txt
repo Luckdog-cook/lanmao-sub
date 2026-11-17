@@ -22,6 +22,7 @@ vless://57beeeb0-03fc-4fc9-94da-7604488a7134@zfapi.zalolink.com:47691?encryption
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@a3de.supertoolify.com:443?insecure=0&sni=a3de.supertoolify.com#%5BCN%5D%E5%BE%B7%E5%9B%BD-vip-347
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@dg2us.supertoolify.com:443?insecure=0&sni=dg2us.supertoolify.com#%5BCN%5D%E7%BE%8E%E5%9B%BD-vip-649
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@86.53.207.112:40055?insecure=1&sni=psstatic.cdn.bcebos.com#%5BCN%5D%E8%8B%B1%E5%9B%BD-vip-350
+hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@52.194.169.14:8443?insecure=1&sni=52.194.169.14#%5BCN%5D%E6%97%A5%E6%9C%AC-vip-851
 vless://57beeeb0-03fc-4fc9-94da-7604488a7134@zfapi.zalolink.com:55688?encryption=none&security=reality&sni=bilibili-vn.biliimg.com&fp=ios&type=tcp&pbk=6dqd0hqbC0bht9RtsYamvlYdMpxyUbk7uXw0xtO8DzQ&sid=865c1b2c&flow=xtls-rprx-vision#%5BGlobal%5D%E8%B6%8A%E5%8D%97-vip-113
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@dga1de.mateflora.com:40120?insecure=1&sni=psstatic.cdn.bcebos.com#%5BGlobal%5D%E5%BE%B7%E5%9B%BD-vip-114
 vless://57beeeb0-03fc-4fc9-94da-7604488a7134@win2loxfde0202.gggrelay.org:54528?encryption=none&security=reality&sni=www.apple.com&fp=ios&type=tcp&pbk=7GvJVbR6BRhtrc8-rcZvB8qTFUF1LPeM_MmoZ04mBxo&sid=54cca3c1c1c7&flow=xtls-rprx-vision#%5BGlobal%5D%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A-vip-115
@@ -46,3 +47,4 @@ vless://57beeeb0-03fc-4fc9-94da-7604488a7134@zfapi.zalolink.com:47691?encryption
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@a3de.supertoolify.com:443?insecure=0&sni=a3de.supertoolify.com#%5BGlobal%5D%E5%BE%B7%E5%9B%BD-vip-347
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@dg2us.supertoolify.com:443?insecure=0&sni=dg2us.supertoolify.com#%5BGlobal%5D%E7%BE%8E%E5%9B%BD-vip-649
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@86.53.207.112:40055?insecure=1&sni=psstatic.cdn.bcebos.com#%5BGlobal%5D%E8%8B%B1%E5%9B%BD-vip-350
+hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@52.194.169.14:8443?insecure=1&sni=52.194.169.14#%5BGlobal%5D%E6%97%A5%E6%9C%AC-vip-851
