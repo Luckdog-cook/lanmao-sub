@@ -8,7 +8,7 @@ proxies:
   server: hk01.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
@@ -22,7 +22,7 @@ proxies:
   server: hk02.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
@@ -36,7 +36,7 @@ proxies:
   server: hk03.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
@@ -50,7 +50,7 @@ proxies:
   server: hk05.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
@@ -64,7 +64,7 @@ proxies:
   server: hk06.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
@@ -78,7 +78,7 @@ proxies:
   server: hk07.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
@@ -92,14 +92,14 @@ proxies:
   server: 82.29.36.39
   port: 16606
   type: hysteria2
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   sni: bing.com
   skip-cert-verify: true
 - name: JP-01-三网优化
   server: JP01.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
@@ -113,7 +113,7 @@ proxies:
   server: JP02.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
@@ -127,7 +127,7 @@ proxies:
   server: JP03.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
@@ -141,7 +141,7 @@ proxies:
   server: JP04.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
@@ -155,7 +155,7 @@ proxies:
   server: jp07.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
@@ -169,7 +169,7 @@ proxies:
   server: tw01.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
@@ -183,7 +183,7 @@ proxies:
   server: sg01.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: grpc
   udp: true
   tls: true
@@ -195,7 +195,7 @@ proxies:
   server: us01.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
@@ -209,7 +209,7 @@ proxies:
   server: de01.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
@@ -223,14 +223,14 @@ proxies:
   server: hk10-v6.node.qixi.best
   port: 16606
   type: hysteria2
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   sni: bing.com
   skip-cert-verify: true
 - name: IT-01-0.2X
   server: it01.node.qixi.best
   port: 443
   type: trojan
-  password: 6aa160fb-c0e6-4cff-9733-881961bca52a
+  password: 31703819-c5eb-44fe-98d5-07799c80bd70
   network: ws
   udp: true
   tls: true
