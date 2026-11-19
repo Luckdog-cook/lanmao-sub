@@ -3,35 +3,567 @@ allow-lan: true
 mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
-
-proxy-providers:
-  蓝猫:
-    type: http
-    url: "https://raw.githubusercontent.com/Luckdog-cook/lanmao-sub/main/bluecat_nodes_base64.txt"
-    interval: 3600
-    path: ./providers/蓝猫.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
-
-proxies: []
-
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  nameserver:
+  - 8.8.8.8
+  - 1.1.1.1
+  fallback:
+  - https://dns.google/dns-query
+proxies:
+- name: '[CN]澳大利亚-vip-114'
+  type: vless
+  server: doghkzf.zalolink.com
+  port: 48158
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  network: tcp
+  tls: true
+  udp: true
+  servername: www.apple.com
+  client-fingerprint: ios
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 7GvJVbR6BRhtrc8-rcZvB8qTFUF1LPeM_MmoZ04mBxo
+    short-id: 54cca3c1c1c7
+- name: '[CN]澳大利亚-vip-215'
+  type: vless
+  server: win2loxfde0202.gggrelay.org
+  port: 54528
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  network: tcp
+  tls: true
+  udp: true
+  servername: www.apple.com
+  client-fingerprint: ios
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 7GvJVbR6BRhtrc8-rcZvB8qTFUF1LPeM_MmoZ04mBxo
+    short-id: 54cca3c1c1c7
+- name: '[CN]越南-vip-116'
+  type: vless
+  server: zfapi.zalolink.com
+  port: 55688
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  network: tcp
+  tls: true
+  udp: true
+  servername: bilibili-vn.biliimg.com
+  client-fingerprint: ios
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 6dqd0hqbC0bht9RtsYamvlYdMpxyUbk7uXw0xtO8DzQ
+    short-id: 865c1b2c
+- name: '[CN]德国-vip-117'
+  type: hysteria2
+  server: dga1de.mateflora.com
+  port: 40120
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+- name: '[CN]美国-vip-118'
+  type: hysteria2
+  server: a1dgus.supertoolify.com
+  port: 40205
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+- name: '[CN]美国-vip-219'
+  type: hysteria2
+  server: a3dgus.supertoolify.com
+  port: 40055
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+- name: '[CN]日本-vip-120'
+  type: vless
+  server: win2loxfde0303.gggrelay.org
+  port: 43149
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  network: tcp
+  tls: true
+  udp: true
+  servername: psstatic.cdn.bcebos.com
+  client-fingerprint: firefox
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: cvong7paE8XIzzbKWgV5iUruP1pBqI2IhMuBHc8c0UE
+    short-id: 15aa0ad4
+- name: '[CN]德国-vip-222'
+  type: hysteria2
+  server: a3dee.supertoolify.com
+  port: 4430
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+- name: '[CN]英国-vip-124'
+  type: hysteria2
+  server: 22egdg.mateflora.com
+  port: 40055
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+- name: '[CN]越南-vip-225'
+  type: vless
+  server: dg1hk.mateflora.com
+  port: 44988
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  network: tcp
+  tls: true
+  udp: true
+  servername: www.tesla.com
+  client-fingerprint: ios
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A
+    short-id: bb82c8
+- name: '[CN]越南-vip-326'
+  type: vless
+  server: win2loxfde0202.gggrelay.org
+  port: 42120
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  network: tcp
+  tls: true
+  udp: true
+  servername: www.tesla.com
+  client-fingerprint: ios
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A
+    short-id: bb82c8
+- name: '[CN]美国-vip-327'
+  type: hysteria2
+  server: 64.118.154.18
+  port: 40055
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+- name: '[CN]香港-vip-228'
+  type: hysteria2
+  server: 66hk.mateflora.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: 66hk.mateflora.com
+  skip-cert-verify: false
+- name: '[CN]日本-vip-633'
+  type: hysteria2
+  server: dg3rb.ianai.it.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: dg3rb.ianai.it.com
+  skip-cert-verify: false
+- name: '[CN]香港-vip-439'
+  type: hysteria2
+  server: nb2hk.hikigo.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: nb2hk.hikigo.com
+  skip-cert-verify: false
+- name: '[CN]新加坡-vip-242'
+  type: hysteria2
+  server: hkzfsg2.mateflora.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: hkzfsg2.mateflora.com
+  skip-cert-verify: false
+- name: '[CN]英国-vip-243'
+  type: hysteria2
+  server: dg3yg.mateflora.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: dg3yg.mateflora.com
+  skip-cert-verify: false
+- name: '[CN]德国-vip-346'
+  type: hysteria2
+  server: a3de.supertoolify.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: a3de.supertoolify.com
+  skip-cert-verify: false
+- name: '[CN]美国-vip-548'
+  type: hysteria2
+  server: dg2us.supertoolify.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: dg2us.supertoolify.com
+  skip-cert-verify: false
+- name: '[CN]英国-vip-349'
+  type: hysteria2
+  server: 86.53.207.112
+  port: 40055
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+- name: '[CN]新加坡-vip-451'
+  type: hysteria2
+  server: ahysg1.hikigo.com
+  port: 8443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: ahysg1.hikigo.com
+  skip-cert-verify: false
+- name: '[Global]澳大利亚-vip-114'
+  type: vless
+  server: doghkzf.zalolink.com
+  port: 48158
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  network: tcp
+  tls: true
+  udp: true
+  servername: www.apple.com
+  client-fingerprint: ios
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 7GvJVbR6BRhtrc8-rcZvB8qTFUF1LPeM_MmoZ04mBxo
+    short-id: 54cca3c1c1c7
+- name: '[Global]澳大利亚-vip-215'
+  type: vless
+  server: win2loxfde0202.gggrelay.org
+  port: 54528
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  network: tcp
+  tls: true
+  udp: true
+  servername: www.apple.com
+  client-fingerprint: ios
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 7GvJVbR6BRhtrc8-rcZvB8qTFUF1LPeM_MmoZ04mBxo
+    short-id: 54cca3c1c1c7
+- name: '[Global]越南-vip-116'
+  type: vless
+  server: zfapi.zalolink.com
+  port: 55688
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  network: tcp
+  tls: true
+  udp: true
+  servername: bilibili-vn.biliimg.com
+  client-fingerprint: ios
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 6dqd0hqbC0bht9RtsYamvlYdMpxyUbk7uXw0xtO8DzQ
+    short-id: 865c1b2c
+- name: '[Global]德国-vip-117'
+  type: hysteria2
+  server: dga1de.mateflora.com
+  port: 40120
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+- name: '[Global]美国-vip-118'
+  type: hysteria2
+  server: a1dgus.supertoolify.com
+  port: 40205
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+- name: '[Global]美国-vip-219'
+  type: hysteria2
+  server: a3dgus.supertoolify.com
+  port: 40055
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+- name: '[Global]日本-vip-120'
+  type: vless
+  server: win2loxfde0303.gggrelay.org
+  port: 43149
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  network: tcp
+  tls: true
+  udp: true
+  servername: psstatic.cdn.bcebos.com
+  client-fingerprint: firefox
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: cvong7paE8XIzzbKWgV5iUruP1pBqI2IhMuBHc8c0UE
+    short-id: 15aa0ad4
+- name: '[Global]德国-vip-222'
+  type: hysteria2
+  server: a3dee.supertoolify.com
+  port: 4430
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+- name: '[Global]英国-vip-124'
+  type: hysteria2
+  server: 22egdg.mateflora.com
+  port: 40055
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+- name: '[Global]越南-vip-225'
+  type: vless
+  server: dg1hk.mateflora.com
+  port: 44988
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  network: tcp
+  tls: true
+  udp: true
+  servername: www.tesla.com
+  client-fingerprint: ios
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A
+    short-id: bb82c8
+- name: '[Global]越南-vip-326'
+  type: vless
+  server: win2loxfde0202.gggrelay.org
+  port: 42120
+  uuid: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  network: tcp
+  tls: true
+  udp: true
+  servername: www.tesla.com
+  client-fingerprint: ios
+  skip-cert-verify: false
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A
+    short-id: bb82c8
+- name: '[Global]美国-vip-327'
+  type: hysteria2
+  server: 64.118.154.18
+  port: 40055
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+- name: '[Global]香港-vip-228'
+  type: hysteria2
+  server: 66hk.mateflora.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: 66hk.mateflora.com
+  skip-cert-verify: false
+- name: '[Global]日本-vip-633'
+  type: hysteria2
+  server: dg3rb.ianai.it.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: dg3rb.ianai.it.com
+  skip-cert-verify: false
+- name: '[Global]香港-vip-439'
+  type: hysteria2
+  server: nb2hk.hikigo.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: nb2hk.hikigo.com
+  skip-cert-verify: false
+- name: '[Global]新加坡-vip-242'
+  type: hysteria2
+  server: hkzfsg2.mateflora.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: hkzfsg2.mateflora.com
+  skip-cert-verify: false
+- name: '[Global]英国-vip-243'
+  type: hysteria2
+  server: dg3yg.mateflora.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: dg3yg.mateflora.com
+  skip-cert-verify: false
+- name: '[Global]德国-vip-346'
+  type: hysteria2
+  server: a3de.supertoolify.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: a3de.supertoolify.com
+  skip-cert-verify: false
+- name: '[Global]美国-vip-548'
+  type: hysteria2
+  server: dg2us.supertoolify.com
+  port: 443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: dg2us.supertoolify.com
+  skip-cert-verify: false
+- name: '[Global]英国-vip-349'
+  type: hysteria2
+  server: 86.53.207.112
+  port: 40055
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: psstatic.cdn.bcebos.com
+  skip-cert-verify: true
+- name: '[Global]新加坡-vip-451'
+  type: hysteria2
+  server: ahysg1.hikigo.com
+  port: 8443
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: ahysg1.hikigo.com
+  skip-cert-verify: false
 proxy-groups:
-  - name: 🚀 节点选择
-    type: select
-    use:
-      - 蓝猫
-    proxies:
-      - ♻️ 自动选择
-      - DIRECT
-  - name: ♻️ 自动选择
-    type: url-test
-    use:
-      - 蓝猫
-    url: http://www.gstatic.com/generate_204
-    interval: 300
-
+- name: 🚀 节点选择
+  type: select
+  proxies:
+  - ♻️ 自动选择
+  - DIRECT
+  - '[CN]澳大利亚-vip-114'
+  - '[CN]澳大利亚-vip-215'
+  - '[CN]越南-vip-116'
+  - '[CN]德国-vip-117'
+  - '[CN]美国-vip-118'
+  - '[CN]美国-vip-219'
+  - '[CN]日本-vip-120'
+  - '[CN]德国-vip-222'
+  - '[CN]英国-vip-124'
+  - '[CN]越南-vip-225'
+  - '[CN]越南-vip-326'
+  - '[CN]美国-vip-327'
+  - '[CN]香港-vip-228'
+  - '[CN]日本-vip-633'
+  - '[CN]香港-vip-439'
+  - '[CN]新加坡-vip-242'
+  - '[CN]英国-vip-243'
+  - '[CN]德国-vip-346'
+  - '[CN]美国-vip-548'
+  - '[CN]英国-vip-349'
+  - '[CN]新加坡-vip-451'
+  - '[Global]澳大利亚-vip-114'
+  - '[Global]澳大利亚-vip-215'
+  - '[Global]越南-vip-116'
+  - '[Global]德国-vip-117'
+  - '[Global]美国-vip-118'
+  - '[Global]美国-vip-219'
+  - '[Global]日本-vip-120'
+  - '[Global]德国-vip-222'
+  - '[Global]英国-vip-124'
+  - '[Global]越南-vip-225'
+  - '[Global]越南-vip-326'
+  - '[Global]美国-vip-327'
+  - '[Global]香港-vip-228'
+  - '[Global]日本-vip-633'
+  - '[Global]香港-vip-439'
+  - '[Global]新加坡-vip-242'
+  - '[Global]英国-vip-243'
+  - '[Global]德国-vip-346'
+  - '[Global]美国-vip-548'
+  - '[Global]英国-vip-349'
+  - '[Global]新加坡-vip-451'
+- name: ♻️ 自动选择
+  type: url-test
+  proxies:
+  - '[CN]澳大利亚-vip-114'
+  - '[CN]澳大利亚-vip-215'
+  - '[CN]越南-vip-116'
+  - '[CN]德国-vip-117'
+  - '[CN]美国-vip-118'
+  - '[CN]美国-vip-219'
+  - '[CN]日本-vip-120'
+  - '[CN]德国-vip-222'
+  - '[CN]英国-vip-124'
+  - '[CN]越南-vip-225'
+  - '[CN]越南-vip-326'
+  - '[CN]美国-vip-327'
+  - '[CN]香港-vip-228'
+  - '[CN]日本-vip-633'
+  - '[CN]香港-vip-439'
+  - '[CN]新加坡-vip-242'
+  - '[CN]英国-vip-243'
+  - '[CN]德国-vip-346'
+  - '[CN]美国-vip-548'
+  - '[CN]英国-vip-349'
+  - '[CN]新加坡-vip-451'
+  - '[Global]澳大利亚-vip-114'
+  - '[Global]澳大利亚-vip-215'
+  - '[Global]越南-vip-116'
+  - '[Global]德国-vip-117'
+  - '[Global]美国-vip-118'
+  - '[Global]美国-vip-219'
+  - '[Global]日本-vip-120'
+  - '[Global]德国-vip-222'
+  - '[Global]英国-vip-124'
+  - '[Global]越南-vip-225'
+  - '[Global]越南-vip-326'
+  - '[Global]美国-vip-327'
+  - '[Global]香港-vip-228'
+  - '[Global]日本-vip-633'
+  - '[Global]香港-vip-439'
+  - '[Global]新加坡-vip-242'
+  - '[Global]英国-vip-243'
+  - '[Global]德国-vip-346'
+  - '[Global]美国-vip-548'
+  - '[Global]英国-vip-349'
+  - '[Global]新加坡-vip-451'
+  url: http://www.gstatic.com/generate_204
+  interval: 300
+- name: 🌍 国外媒体
+  type: select
+  proxies:
+  - 🚀 节点选择
+  - ♻️ 自动选择
+  - '[CN]澳大利亚-vip-114'
+  - '[CN]澳大利亚-vip-215'
+  - '[CN]越南-vip-116'
+  - '[CN]德国-vip-117'
+  - '[CN]美国-vip-118'
+  - '[CN]美国-vip-219'
+  - '[CN]日本-vip-120'
+  - '[CN]德国-vip-222'
+  - '[CN]英国-vip-124'
+  - '[CN]越南-vip-225'
+  - '[CN]越南-vip-326'
+  - '[CN]美国-vip-327'
+  - '[CN]香港-vip-228'
+  - '[CN]日本-vip-633'
+  - '[CN]香港-vip-439'
+  - '[CN]新加坡-vip-242'
+  - '[CN]英国-vip-243'
+  - '[CN]德国-vip-346'
+  - '[CN]美国-vip-548'
+  - '[CN]英国-vip-349'
+  - '[CN]新加坡-vip-451'
+  - '[Global]澳大利亚-vip-114'
+  - '[Global]澳大利亚-vip-215'
+  - '[Global]越南-vip-116'
+  - '[Global]德国-vip-117'
+  - '[Global]美国-vip-118'
+  - '[Global]美国-vip-219'
+  - '[Global]日本-vip-120'
+  - '[Global]德国-vip-222'
+  - '[Global]英国-vip-124'
+  - '[Global]越南-vip-225'
+  - '[Global]越南-vip-326'
+  - '[Global]美国-vip-327'
+  - '[Global]香港-vip-228'
+  - '[Global]日本-vip-633'
+  - '[Global]香港-vip-439'
+  - '[Global]新加坡-vip-242'
+  - '[Global]英国-vip-243'
+  - '[Global]德国-vip-346'
+  - '[Global]美国-vip-548'
+  - '[Global]英国-vip-349'
+  - '[Global]新加坡-vip-451'
+- name: 🍎 苹果服务
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+- name: 🎯 全球直连
+  type: select
+  proxies:
+  - DIRECT
+  - 🚀 节点选择
+- name: 🛑 全球拦截
+  type: select
+  proxies:
+  - REJECT
+  - DIRECT
 rules:
-  - GEOIP,CN,DIRECT
-  - MATCH,🚀 节点选择
+- DOMAIN-SUFFIX,local,DIRECT
+- IP-CIDR,127.0.0.0/8,DIRECT
+- IP-CIDR,192.168.0.0/16,DIRECT
+- IP-CIDR,10.0.0.0/8,DIRECT
+- IP-CIDR,172.16.0.0/12,DIRECT
+- GEOIP,CN,🎯 全球直连
+- MATCH,🚀 节点选择
