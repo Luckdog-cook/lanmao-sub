@@ -281,6 +281,28 @@
       }
     },
     {
+      "type": "vless",
+      "tag": "[CN]新加坡-vip-550",
+      "server": "zzfxgcp.mateflora.com",
+      "server_port": 8443,
+      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.lamer.com.sg",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "aHbpNgKYJssDDzN0faQYKh9CzzrEnsCRpB4qpMiv5Ug",
+          "short_id": "49170ca81691d962"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
       "type": "hysteria2",
       "tag": "[Global]德国-vip-114",
       "server": "dga1de.mateflora.com",
@@ -529,6 +551,28 @@
       }
     },
     {
+      "type": "vless",
+      "tag": "[Global]新加坡-vip-550",
+      "server": "zzfxgcp.mateflora.com",
+      "server_port": 8443,
+      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.lamer.com.sg",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "firefox"
+        },
+        "insecure": false,
+        "reality": {
+          "enabled": true,
+          "public_key": "aHbpNgKYJssDDzN0faQYKh9CzzrEnsCRpB4qpMiv5Ug",
+          "short_id": "49170ca81691d962"
+        }
+      },
+      "flow": "xtls-rprx-vision"
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -559,6 +603,7 @@
         "[CN]新加坡-vip-446",
         "[CN]日本-vip-748",
         "[CN]澳大利亚-vip-149",
+        "[CN]新加坡-vip-550",
         "[Global]德国-vip-114",
         "[Global]美国-vip-115",
         "[Global]美国-vip-216",
@@ -578,6 +623,7 @@
         "[Global]新加坡-vip-446",
         "[Global]日本-vip-748",
         "[Global]澳大利亚-vip-149",
+        "[Global]新加坡-vip-550",
         "direct"
       ],
       "default": "[CN]德国-vip-114"
@@ -605,6 +651,7 @@
         "[CN]新加坡-vip-446",
         "[CN]日本-vip-748",
         "[CN]澳大利亚-vip-149",
+        "[CN]新加坡-vip-550",
         "[Global]德国-vip-114",
         "[Global]美国-vip-115",
         "[Global]美国-vip-216",
@@ -623,7 +670,8 @@
         "[Global]英国-vip-344",
         "[Global]新加坡-vip-446",
         "[Global]日本-vip-748",
-        "[Global]澳大利亚-vip-149"
+        "[Global]澳大利亚-vip-149",
+        "[Global]新加坡-vip-550"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "5m"
