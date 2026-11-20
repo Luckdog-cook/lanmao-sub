@@ -1,2 +1,2 @@
-vless://bce79198-02ad-498a-82a1-cbf913a70bf3@210.0.244.192:443?type=tcp&security=reality&fp=chrome&pbk=GJKLu2oIjaK0pWBB5Xlfu3lKUj8uZktESogwQlLVJTw&sid=d9f3337cac6cfb&sni=cloudflare.com#HK-705-5drx2tvw
-vless://4f17f94b-e725-4be8-92a4-0e4987578bcc@82.139.235.44:443?type=tcp&security=reality&fp=chrome&pbk=ZHnkRCy0F75B26CsYwK-jRbIjWkr9u8uqX6frMtQORo&sid=a5ba46c7&sni=cloudflare.com#DE-704-p2ynn5s5
+vless://45c22bc2-5fa9-4292-9434-979675151f0f@210.0.244.192:443?type=tcp&security=reality&fp=chrome&pbk=GJKLu2oIjaK0pWBB5Xlfu3lKUj8uZktESogwQlLVJTw&sid=d9f3337cac6cfb&sni=cloudflare.com#HK-705-xhpha7z9
+vless://81bc7f1e-3a6f-4cb3-8fce-3604f167ea90@82.139.235.44:443?type=tcp&security=reality&fp=chrome&pbk=ZHnkRCy0F75B26CsYwK-jRbIjWkr9u8uqX6frMtQORo&sid=a5ba46c7&sni=cloudflare.com#DE-704-psodairx
