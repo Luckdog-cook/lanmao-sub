@@ -18,6 +18,8 @@ hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@ahysg1.hikigo.com:8443?insecure
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@nb5rb.hikigo.com:443?insecure=0&sni=nb5rb.hikigo.com#%5BCN%5D%E6%97%A5%E6%9C%AC-vip-748
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@akzfau2.hikigo.com:443?insecure=0&sni=akzfau2.hikigo.com#%5BCN%5D%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A-vip-149
 vless://57beeeb0-03fc-4fc9-94da-7604488a7134@zzfxgcp.mateflora.com:8443?encryption=none&security=reality&sni=www.lamer.com.sg&fp=firefox&type=tcp&pbk=aHbpNgKYJssDDzN0faQYKh9CzzrEnsCRpB4qpMiv5Ug&sid=49170ca81691d962&flow=xtls-rprx-vision#%5BCN%5D%E6%96%B0%E5%8A%A0%E5%9D%A1-vip-550
+hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@bgsg2.hikigo.com:443?insecure=0&sni=bgsg2.hikigo.com#%5BCN%5D%E6%96%B0%E5%8A%A0%E5%9D%A1-vip-859
+hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@zzfxgcp.mateflora.com:33585?insecure=0&sni=bgsg2.hikigo.com#%5BCN%5D%E6%96%B0%E5%8A%A0%E5%9D%A1-vip-960
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@dga1de.mateflora.com:40120?insecure=1&sni=psstatic.cdn.bcebos.com#%5BGlobal%5D%E5%BE%B7%E5%9B%BD-vip-114
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@a1dgus.supertoolify.com:40205?insecure=1&sni=psstatic.cdn.bcebos.com#%5BGlobal%5D%E7%BE%8E%E5%9B%BD-vip-115
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@a3dgus.supertoolify.com:40055?insecure=1&sni=psstatic.cdn.bcebos.com#%5BGlobal%5D%E7%BE%8E%E5%9B%BD-vip-216
@@ -38,3 +40,5 @@ hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@ahysg1.hikigo.com:8443?insecure
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@nb5rb.hikigo.com:443?insecure=0&sni=nb5rb.hikigo.com#%5BGlobal%5D%E6%97%A5%E6%9C%AC-vip-748
 hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@akzfau2.hikigo.com:443?insecure=0&sni=akzfau2.hikigo.com#%5BGlobal%5D%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A-vip-149
 vless://57beeeb0-03fc-4fc9-94da-7604488a7134@zzfxgcp.mateflora.com:8443?encryption=none&security=reality&sni=www.lamer.com.sg&fp=firefox&type=tcp&pbk=aHbpNgKYJssDDzN0faQYKh9CzzrEnsCRpB4qpMiv5Ug&sid=49170ca81691d962&flow=xtls-rprx-vision#%5BGlobal%5D%E6%96%B0%E5%8A%A0%E5%9D%A1-vip-550
+hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@bgsg2.hikigo.com:443?insecure=0&sni=bgsg2.hikigo.com#%5BGlobal%5D%E6%96%B0%E5%8A%A0%E5%9D%A1-vip-859
+hysteria2://57beeeb0-03fc-4fc9-94da-7604488a7134@zzfxgcp.mateflora.com:33585?insecure=0&sni=bgsg2.hikigo.com#%5BGlobal%5D%E6%96%B0%E5%8A%A0%E5%9D%A1-vip-960

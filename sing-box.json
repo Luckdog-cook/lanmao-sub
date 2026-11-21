@@ -304,6 +304,30 @@
     },
     {
       "type": "hysteria2",
+      "tag": "[CN]新加坡-vip-859",
+      "server": "bgsg2.hikigo.com",
+      "server_port": 443,
+      "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "tls": {
+        "enabled": true,
+        "server_name": "bgsg2.hikigo.com",
+        "insecure": false
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "[CN]新加坡-vip-960",
+      "server": "zzfxgcp.mateflora.com",
+      "server_port": 33585,
+      "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "tls": {
+        "enabled": true,
+        "server_name": "bgsg2.hikigo.com",
+        "insecure": false
+      }
+    },
+    {
+      "type": "hysteria2",
       "tag": "[Global]德国-vip-114",
       "server": "dga1de.mateflora.com",
       "server_port": 40120,
@@ -573,6 +597,30 @@
       "flow": "xtls-rprx-vision"
     },
     {
+      "type": "hysteria2",
+      "tag": "[Global]新加坡-vip-859",
+      "server": "bgsg2.hikigo.com",
+      "server_port": 443,
+      "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "tls": {
+        "enabled": true,
+        "server_name": "bgsg2.hikigo.com",
+        "insecure": false
+      }
+    },
+    {
+      "type": "hysteria2",
+      "tag": "[Global]新加坡-vip-960",
+      "server": "zzfxgcp.mateflora.com",
+      "server_port": 33585,
+      "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
+      "tls": {
+        "enabled": true,
+        "server_name": "bgsg2.hikigo.com",
+        "insecure": false
+      }
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -604,6 +652,8 @@
         "[CN]日本-vip-748",
         "[CN]澳大利亚-vip-149",
         "[CN]新加坡-vip-550",
+        "[CN]新加坡-vip-859",
+        "[CN]新加坡-vip-960",
         "[Global]德国-vip-114",
         "[Global]美国-vip-115",
         "[Global]美国-vip-216",
@@ -624,6 +674,8 @@
         "[Global]日本-vip-748",
         "[Global]澳大利亚-vip-149",
         "[Global]新加坡-vip-550",
+        "[Global]新加坡-vip-859",
+        "[Global]新加坡-vip-960",
         "direct"
       ],
       "default": "[CN]德国-vip-114"
@@ -652,6 +704,8 @@
         "[CN]日本-vip-748",
         "[CN]澳大利亚-vip-149",
         "[CN]新加坡-vip-550",
+        "[CN]新加坡-vip-859",
+        "[CN]新加坡-vip-960",
         "[Global]德国-vip-114",
         "[Global]美国-vip-115",
         "[Global]美国-vip-216",
@@ -671,7 +725,9 @@
         "[Global]新加坡-vip-446",
         "[Global]日本-vip-748",
         "[Global]澳大利亚-vip-149",
-        "[Global]新加坡-vip-550"
+        "[Global]新加坡-vip-550",
+        "[Global]新加坡-vip-859",
+        "[Global]新加坡-vip-960"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "5m"
