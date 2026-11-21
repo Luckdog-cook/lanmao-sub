@@ -115,30 +115,8 @@
       "flow": "xtls-rprx-vision"
     },
     {
-      "type": "vless",
-      "tag": "[CN]越南-vip-222",
-      "server": "win2loxfde0202.gggrelay.org",
-      "server_port": 42120,
-      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.tesla.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "ios"
-        },
-        "insecure": false,
-        "reality": {
-          "enabled": true,
-          "public_key": "f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A",
-          "short_id": "bb82c8"
-        }
-      },
-      "flow": "xtls-rprx-vision"
-    },
-    {
       "type": "hysteria2",
-      "tag": "[CN]美国-vip-323",
+      "tag": "[CN]美国-vip-322",
       "server": "64.118.154.18",
       "server_port": 40055,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -150,7 +128,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]香港-vip-224",
+      "tag": "[CN]香港-vip-223",
       "server": "66hk.mateflora.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -162,7 +140,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]日本-vip-529",
+      "tag": "[CN]日本-vip-528",
       "server": "dg3rb.ianai.it.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -174,7 +152,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]香港-vip-434",
+      "tag": "[CN]香港-vip-433",
       "server": "nb2hk.hikigo.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -186,7 +164,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]新加坡-vip-237",
+      "tag": "[CN]新加坡-vip-236",
       "server": "hkzfsg2.mateflora.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -198,7 +176,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]英国-vip-238",
+      "tag": "[CN]英国-vip-237",
       "server": "dg3yg.mateflora.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -210,7 +188,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]德国-vip-341",
+      "tag": "[CN]德国-vip-340",
       "server": "a3de.supertoolify.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -222,7 +200,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]美国-vip-543",
+      "tag": "[CN]美国-vip-542",
       "server": "dg2us.supertoolify.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -234,7 +212,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]英国-vip-344",
+      "tag": "[CN]英国-vip-343",
       "server": "86.53.207.112",
       "server_port": 40055,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -246,7 +224,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]新加坡-vip-446",
+      "tag": "[CN]新加坡-vip-445",
       "server": "ahysg1.hikigo.com",
       "server_port": 8443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -258,7 +236,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]日本-vip-748",
+      "tag": "[CN]日本-vip-747",
       "server": "nb5rb.hikigo.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -269,29 +247,17 @@
       }
     },
     {
-      "type": "hysteria2",
-      "tag": "[CN]澳大利亚-vip-149",
-      "server": "akzfau2.hikigo.com",
-      "server_port": 443,
-      "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
-      "tls": {
-        "enabled": true,
-        "server_name": "akzfau2.hikigo.com",
-        "insecure": false
-      }
-    },
-    {
       "type": "vless",
-      "tag": "[CN]新加坡-vip-550",
-      "server": "zzfxgcp.mateflora.com",
-      "server_port": 8443,
+      "tag": "[CN]新加坡-vip-548",
+      "server": "win2loxfde0203.gggrelay.org",
+      "server_port": 64006,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "tls": {
         "enabled": true,
         "server_name": "www.lamer.com.sg",
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         },
         "insecure": false,
         "reality": {
@@ -304,7 +270,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]新加坡-vip-859",
+      "tag": "[CN]新加坡-vip-857",
       "server": "bgsg2.hikigo.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -316,7 +282,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[CN]新加坡-vip-960",
+      "tag": "[CN]新加坡-vip-958",
       "server": "zzfxgcp.mateflora.com",
       "server_port": 33585,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -409,30 +375,8 @@
       "flow": "xtls-rprx-vision"
     },
     {
-      "type": "vless",
-      "tag": "[Global]越南-vip-222",
-      "server": "win2loxfde0202.gggrelay.org",
-      "server_port": 42120,
-      "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.tesla.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "ios"
-        },
-        "insecure": false,
-        "reality": {
-          "enabled": true,
-          "public_key": "f6Tj8-uvWsLv3V-lGLuPciArp5oKqUImBg-U7-WJ-0A",
-          "short_id": "bb82c8"
-        }
-      },
-      "flow": "xtls-rprx-vision"
-    },
-    {
       "type": "hysteria2",
-      "tag": "[Global]美国-vip-323",
+      "tag": "[Global]美国-vip-322",
       "server": "64.118.154.18",
       "server_port": 40055,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -444,7 +388,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[Global]香港-vip-224",
+      "tag": "[Global]香港-vip-223",
       "server": "66hk.mateflora.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -456,7 +400,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[Global]日本-vip-529",
+      "tag": "[Global]日本-vip-528",
       "server": "dg3rb.ianai.it.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -468,7 +412,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[Global]香港-vip-434",
+      "tag": "[Global]香港-vip-433",
       "server": "nb2hk.hikigo.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -480,7 +424,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[Global]新加坡-vip-237",
+      "tag": "[Global]新加坡-vip-236",
       "server": "hkzfsg2.mateflora.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -492,7 +436,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[Global]英国-vip-238",
+      "tag": "[Global]英国-vip-237",
       "server": "dg3yg.mateflora.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -504,7 +448,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[Global]德国-vip-341",
+      "tag": "[Global]德国-vip-340",
       "server": "a3de.supertoolify.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -516,7 +460,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[Global]美国-vip-543",
+      "tag": "[Global]美国-vip-542",
       "server": "dg2us.supertoolify.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -528,7 +472,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[Global]英国-vip-344",
+      "tag": "[Global]英国-vip-343",
       "server": "86.53.207.112",
       "server_port": 40055,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -540,7 +484,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[Global]新加坡-vip-446",
+      "tag": "[Global]新加坡-vip-445",
       "server": "ahysg1.hikigo.com",
       "server_port": 8443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -552,7 +496,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[Global]日本-vip-748",
+      "tag": "[Global]日本-vip-747",
       "server": "nb5rb.hikigo.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -563,29 +507,17 @@
       }
     },
     {
-      "type": "hysteria2",
-      "tag": "[Global]澳大利亚-vip-149",
-      "server": "akzfau2.hikigo.com",
-      "server_port": 443,
-      "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
-      "tls": {
-        "enabled": true,
-        "server_name": "akzfau2.hikigo.com",
-        "insecure": false
-      }
-    },
-    {
       "type": "vless",
-      "tag": "[Global]新加坡-vip-550",
-      "server": "zzfxgcp.mateflora.com",
-      "server_port": 8443,
+      "tag": "[Global]新加坡-vip-548",
+      "server": "win2loxfde0203.gggrelay.org",
+      "server_port": 64006,
       "uuid": "57beeeb0-03fc-4fc9-94da-7604488a7134",
       "tls": {
         "enabled": true,
         "server_name": "www.lamer.com.sg",
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
         },
         "insecure": false,
         "reality": {
@@ -598,7 +530,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[Global]新加坡-vip-859",
+      "tag": "[Global]新加坡-vip-857",
       "server": "bgsg2.hikigo.com",
       "server_port": 443,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -610,7 +542,7 @@
     },
     {
       "type": "hysteria2",
-      "tag": "[Global]新加坡-vip-960",
+      "tag": "[Global]新加坡-vip-958",
       "server": "zzfxgcp.mateflora.com",
       "server_port": 33585,
       "password": "57beeeb0-03fc-4fc9-94da-7604488a7134",
@@ -638,44 +570,40 @@
         "[CN]德国-vip-218",
         "[CN]英国-vip-120",
         "[CN]越南-vip-121",
-        "[CN]越南-vip-222",
-        "[CN]美国-vip-323",
-        "[CN]香港-vip-224",
-        "[CN]日本-vip-529",
-        "[CN]香港-vip-434",
-        "[CN]新加坡-vip-237",
-        "[CN]英国-vip-238",
-        "[CN]德国-vip-341",
-        "[CN]美国-vip-543",
-        "[CN]英国-vip-344",
-        "[CN]新加坡-vip-446",
-        "[CN]日本-vip-748",
-        "[CN]澳大利亚-vip-149",
-        "[CN]新加坡-vip-550",
-        "[CN]新加坡-vip-859",
-        "[CN]新加坡-vip-960",
+        "[CN]美国-vip-322",
+        "[CN]香港-vip-223",
+        "[CN]日本-vip-528",
+        "[CN]香港-vip-433",
+        "[CN]新加坡-vip-236",
+        "[CN]英国-vip-237",
+        "[CN]德国-vip-340",
+        "[CN]美国-vip-542",
+        "[CN]英国-vip-343",
+        "[CN]新加坡-vip-445",
+        "[CN]日本-vip-747",
+        "[CN]新加坡-vip-548",
+        "[CN]新加坡-vip-857",
+        "[CN]新加坡-vip-958",
         "[Global]德国-vip-114",
         "[Global]美国-vip-115",
         "[Global]美国-vip-216",
         "[Global]德国-vip-218",
         "[Global]英国-vip-120",
         "[Global]越南-vip-121",
-        "[Global]越南-vip-222",
-        "[Global]美国-vip-323",
-        "[Global]香港-vip-224",
-        "[Global]日本-vip-529",
-        "[Global]香港-vip-434",
-        "[Global]新加坡-vip-237",
-        "[Global]英国-vip-238",
-        "[Global]德国-vip-341",
-        "[Global]美国-vip-543",
-        "[Global]英国-vip-344",
-        "[Global]新加坡-vip-446",
-        "[Global]日本-vip-748",
-        "[Global]澳大利亚-vip-149",
-        "[Global]新加坡-vip-550",
-        "[Global]新加坡-vip-859",
-        "[Global]新加坡-vip-960",
+        "[Global]美国-vip-322",
+        "[Global]香港-vip-223",
+        "[Global]日本-vip-528",
+        "[Global]香港-vip-433",
+        "[Global]新加坡-vip-236",
+        "[Global]英国-vip-237",
+        "[Global]德国-vip-340",
+        "[Global]美国-vip-542",
+        "[Global]英国-vip-343",
+        "[Global]新加坡-vip-445",
+        "[Global]日本-vip-747",
+        "[Global]新加坡-vip-548",
+        "[Global]新加坡-vip-857",
+        "[Global]新加坡-vip-958",
         "direct"
       ],
       "default": "[CN]德国-vip-114"
@@ -690,44 +618,40 @@
         "[CN]德国-vip-218",
         "[CN]英国-vip-120",
         "[CN]越南-vip-121",
-        "[CN]越南-vip-222",
-        "[CN]美国-vip-323",
-        "[CN]香港-vip-224",
-        "[CN]日本-vip-529",
-        "[CN]香港-vip-434",
-        "[CN]新加坡-vip-237",
-        "[CN]英国-vip-238",
-        "[CN]德国-vip-341",
-        "[CN]美国-vip-543",
-        "[CN]英国-vip-344",
-        "[CN]新加坡-vip-446",
-        "[CN]日本-vip-748",
-        "[CN]澳大利亚-vip-149",
-        "[CN]新加坡-vip-550",
-        "[CN]新加坡-vip-859",
-        "[CN]新加坡-vip-960",
+        "[CN]美国-vip-322",
+        "[CN]香港-vip-223",
+        "[CN]日本-vip-528",
+        "[CN]香港-vip-433",
+        "[CN]新加坡-vip-236",
+        "[CN]英国-vip-237",
+        "[CN]德国-vip-340",
+        "[CN]美国-vip-542",
+        "[CN]英国-vip-343",
+        "[CN]新加坡-vip-445",
+        "[CN]日本-vip-747",
+        "[CN]新加坡-vip-548",
+        "[CN]新加坡-vip-857",
+        "[CN]新加坡-vip-958",
         "[Global]德国-vip-114",
         "[Global]美国-vip-115",
         "[Global]美国-vip-216",
         "[Global]德国-vip-218",
         "[Global]英国-vip-120",
         "[Global]越南-vip-121",
-        "[Global]越南-vip-222",
-        "[Global]美国-vip-323",
-        "[Global]香港-vip-224",
-        "[Global]日本-vip-529",
-        "[Global]香港-vip-434",
-        "[Global]新加坡-vip-237",
-        "[Global]英国-vip-238",
-        "[Global]德国-vip-341",
-        "[Global]美国-vip-543",
-        "[Global]英国-vip-344",
-        "[Global]新加坡-vip-446",
-        "[Global]日本-vip-748",
-        "[Global]澳大利亚-vip-149",
-        "[Global]新加坡-vip-550",
-        "[Global]新加坡-vip-859",
-        "[Global]新加坡-vip-960"
+        "[Global]美国-vip-322",
+        "[Global]香港-vip-223",
+        "[Global]日本-vip-528",
+        "[Global]香港-vip-433",
+        "[Global]新加坡-vip-236",
+        "[Global]英国-vip-237",
+        "[Global]德国-vip-340",
+        "[Global]美国-vip-542",
+        "[Global]英国-vip-343",
+        "[Global]新加坡-vip-445",
+        "[Global]日本-vip-747",
+        "[Global]新加坡-vip-548",
+        "[Global]新加坡-vip-857",
+        "[Global]新加坡-vip-958"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "5m"
