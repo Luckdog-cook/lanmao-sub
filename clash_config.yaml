@@ -5,7 +5,7 @@ log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
 - name: 🇭🇰香港-Gemini-IEPL
-  server: jvviodib.jhm.qwer123.net
+  server: qh274xkt.jhm.qwer123.net
   port: 36602
   type: ss
   cipher: aes-128-gcm
@@ -16,7 +16,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇭🇰香港2-IEPL
-  server: jvviodib.jhm.qwer123.net
+  server: qh274xkt.jhm.qwer123.net
   port: 36602
   type: ss
   cipher: aes-128-gcm
@@ -27,7 +27,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇹🇼台湾-IEPL
-  server: jvviodib.jhm.qwer123.net
+  server: qh274xkt.jhm.qwer123.net
   port: 36603
   type: ss
   cipher: aes-128-gcm
@@ -38,7 +38,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇹🇼台湾2-IEPL
-  server: jvviodib.jhm.qwer123.net
+  server: qh274xkt.jhm.qwer123.net
   port: 36603
   type: ss
   cipher: aes-128-gcm
@@ -49,7 +49,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇸🇬新加坡-Gemini-IEPL
-  server: jvviodib.jhm.qwer123.net
+  server: qh274xkt.jhm.qwer123.net
   port: 36604
   type: ss
   cipher: aes-128-gcm
@@ -60,7 +60,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇸🇬新加坡2-Gemini-IEPL
-  server: jvviodib.jhm.qwer123.net
+  server: qh274xkt.jhm.qwer123.net
   port: 36604
   type: ss
   cipher: aes-128-gcm
@@ -71,7 +71,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本-IEPL-GPT
-  server: jvviodib.jhm.qwer123.net
+  server: qh274xkt.jhm.qwer123.net
   port: 36609
   type: ss
   cipher: aes-128-gcm
@@ -82,7 +82,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本2-IEPL-GPT
-  server: jvviodib.jhm.qwer123.net
+  server: qh274xkt.jhm.qwer123.net
   port: 36609
   type: ss
   cipher: aes-128-gcm
@@ -93,7 +93,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本家宽-IEPL2
-  server: jvviodib.jhm.qwer123.net
+  server: qh274xkt.jhm.qwer123.net
   port: 36610
   type: ss
   cipher: aes-128-gcm
@@ -104,7 +104,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇺🇸美国-IEPL-GPT
-  server: jvviodib.jhm.qwer123.net
+  server: qh274xkt.jhm.qwer123.net
   port: 36608
   type: ss
   cipher: aes-128-gcm
@@ -115,7 +115,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇺🇸美国2-IEPL-GPT
-  server: jvviodib.jhm.qwer123.net
+  server: qh274xkt.jhm.qwer123.net
   port: 36608
   type: ss
   cipher: aes-128-gcm
@@ -126,7 +126,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇩🇪德国-IEPL
-  server: jvviodib.jhm.qwer123.net
+  server: qh274xkt.jhm.qwer123.net
   port: 36611
   type: ss
   cipher: aes-128-gcm
