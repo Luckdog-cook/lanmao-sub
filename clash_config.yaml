@@ -4,138 +4,6 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: 🇭🇰香港-Gemini-IEPL
-  server: qh274xkt.jhm.qwer123.net
-  port: 36602
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇭🇰香港2-IEPL
-  server: qh274xkt.jhm.qwer123.net
-  port: 36602
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇹🇼台湾-IEPL
-  server: qh274xkt.jhm.qwer123.net
-  port: 36603
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇹🇼台湾2-IEPL
-  server: qh274xkt.jhm.qwer123.net
-  port: 36603
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇸🇬新加坡-Gemini-IEPL
-  server: qh274xkt.jhm.qwer123.net
-  port: 36604
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇸🇬新加坡2-Gemini-IEPL
-  server: qh274xkt.jhm.qwer123.net
-  port: 36604
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇯🇵日本-IEPL-GPT
-  server: qh274xkt.jhm.qwer123.net
-  port: 36609
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇯🇵日本2-IEPL-GPT
-  server: qh274xkt.jhm.qwer123.net
-  port: 36609
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇯🇵日本家宽-IEPL2
-  server: qh274xkt.jhm.qwer123.net
-  port: 36610
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇺🇸美国-IEPL-GPT
-  server: qh274xkt.jhm.qwer123.net
-  port: 36608
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇺🇸美国2-IEPL-GPT
-  server: qh274xkt.jhm.qwer123.net
-  port: 36608
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 🇩🇪德国-IEPL
-  server: qh274xkt.jhm.qwer123.net
-  port: 36611
-  type: ss
-  cipher: aes-128-gcm
-  password: 2599d3af-02fd-430c-b176-b3a7964590c8
-  udp: true
-  plugin: obfs
-  plugin-opts:
-    mode: http
-    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 新加坡 AWS 移联 · 0.05×
   server: gjxjp.ohsas18001.cn
   port: 41578
@@ -165,11 +33,145 @@ proxies:
     path: /chuixue/kr1
     headers:
       Host: kr.ohsas18001.cn
+- name: 🇭🇰香港-Gemini-IEPL
+  server: cgbqoiqg.jhm.qwer123.net
+  port: 36602
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇭🇰香港2-IEPL
+  server: cgbqoiqg.jhm.qwer123.net
+  port: 36602
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇹🇼台湾-IEPL
+  server: cgbqoiqg.jhm.qwer123.net
+  port: 36603
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇹🇼台湾2-IEPL
+  server: cgbqoiqg.jhm.qwer123.net
+  port: 36603
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇸🇬新加坡-Gemini-IEPL
+  server: cgbqoiqg.jhm.qwer123.net
+  port: 36604
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇸🇬新加坡2-Gemini-IEPL
+  server: cgbqoiqg.jhm.qwer123.net
+  port: 36604
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇯🇵日本-IEPL-GPT
+  server: cgbqoiqg.jhm.qwer123.net
+  port: 36609
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇯🇵日本2-IEPL-GPT
+  server: cgbqoiqg.jhm.qwer123.net
+  port: 36609
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇯🇵日本家宽-IEPL2
+  server: cgbqoiqg.jhm.qwer123.net
+  port: 36610
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇺🇸美国-IEPL-GPT
+  server: cgbqoiqg.jhm.qwer123.net
+  port: 36608
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇺🇸美国2-IEPL-GPT
+  server: cgbqoiqg.jhm.qwer123.net
+  port: 36608
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 🇩🇪德国-IEPL
+  server: cgbqoiqg.jhm.qwer123.net
+  port: 36611
+  type: ss
+  cipher: aes-128-gcm
+  password: 2599d3af-02fd-430c-b176-b3a7964590c8
+  udp: true
+  plugin: obfs
+  plugin-opts:
+    mode: http
+    host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 proxy-groups:
 - name: 节点选择
   type: select
   proxies:
   - 自动优选
+  - 新加坡 AWS 移联 · 0.05×
+  - 韩国 AWS 电信 · 0.05×
   - 🇭🇰香港-Gemini-IEPL
   - 🇭🇰香港2-IEPL
   - 🇹🇼台湾-IEPL
@@ -182,12 +184,12 @@ proxy-groups:
   - 🇺🇸美国-IEPL-GPT
   - 🇺🇸美国2-IEPL-GPT
   - 🇩🇪德国-IEPL
-  - 新加坡 AWS 移联 · 0.05×
-  - 韩国 AWS 电信 · 0.05×
   - DIRECT
 - name: 自动优选
   type: url-test
   proxies:
+  - 新加坡 AWS 移联 · 0.05×
+  - 韩国 AWS 电信 · 0.05×
   - 🇭🇰香港-Gemini-IEPL
   - 🇭🇰香港2-IEPL
   - 🇹🇼台湾-IEPL
@@ -200,8 +202,6 @@ proxy-groups:
   - 🇺🇸美国-IEPL-GPT
   - 🇺🇸美国2-IEPL-GPT
   - 🇩🇪德国-IEPL
-  - 新加坡 AWS 移联 · 0.05×
-  - 韩国 AWS 电信 · 0.05×
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
