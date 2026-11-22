@@ -136,6 +136,35 @@ proxies:
   plugin-opts:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 新加坡 AWS 移联 · 0.05×
+  server: gjxjp.ohsas18001.cn
+  port: 41578
+  type: vless
+  uuid: f479626c-626e-40e0-8ebf-16313978d813
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: download-porter.hoyoverse.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: I30XoDdFny4OU3sduP85pzBMjawF4dVOHSBrCaudXkc
+    short-id: aea4e341
+- name: 韩国 AWS 电信 · 0.05×
+  server: cf.xnncl.com
+  port: 2087
+  type: vless
+  uuid: f479626c-626e-40e0-8ebf-16313978d813
+  network: ws
+  udp: true
+  tls: true
+  servername: kr.ohsas18001.cn
+  client-fingerprint: chrome
+  skip-cert-verify: true
+  ws-opts:
+    path: /chuixue/kr1
+    headers:
+      Host: kr.ohsas18001.cn
 proxy-groups:
 - name: 节点选择
   type: select
@@ -153,6 +182,8 @@ proxy-groups:
   - 🇺🇸美国-IEPL-GPT
   - 🇺🇸美国2-IEPL-GPT
   - 🇩🇪德国-IEPL
+  - 新加坡 AWS 移联 · 0.05×
+  - 韩国 AWS 电信 · 0.05×
   - DIRECT
 - name: 自动优选
   type: url-test
@@ -169,6 +200,8 @@ proxy-groups:
   - 🇺🇸美国-IEPL-GPT
   - 🇺🇸美国2-IEPL-GPT
   - 🇩🇪德国-IEPL
+  - 新加坡 AWS 移联 · 0.05×
+  - 韩国 AWS 电信 · 0.05×
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
