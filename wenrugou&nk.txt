@@ -1,7 +1,7 @@
 {
   "outbounds": [
     {
-      "tag": "新加坡 AWS 移联 · 0.05×",
+      "tag": "新加坡 AWS 移联 · 0.03×",
       "server": "gjxjp.ohsas18001.cn",
       "server_port": 41578,
       "type": "vless",
@@ -22,7 +22,7 @@
       }
     },
     {
-      "tag": "韩国 AWS 电信 · 0.05×",
+      "tag": "韩国 AWS 电信 · 0.03×",
       "server": "cf.xnncl.com",
       "server_port": 2087,
       "type": "vless",
@@ -30,7 +30,6 @@
       "tls": {
         "enabled": true,
         "server_name": "kr.ohsas18001.cn",
-        "insecure": true,
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -46,7 +45,7 @@
     },
     {
       "tag": "🇭🇰香港-Gemini-IEPL",
-      "server": "cgbqoiqg.jhm.qwer123.net",
+      "server": "r7qm495z.jhm.qwer123.net",
       "server_port": 36602,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -56,7 +55,7 @@
     },
     {
       "tag": "🇭🇰香港2-IEPL",
-      "server": "cgbqoiqg.jhm.qwer123.net",
+      "server": "r7qm495z.jhm.qwer123.net",
       "server_port": 36602,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -66,7 +65,7 @@
     },
     {
       "tag": "🇹🇼台湾-IEPL",
-      "server": "cgbqoiqg.jhm.qwer123.net",
+      "server": "r7qm495z.jhm.qwer123.net",
       "server_port": 36603,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -76,7 +75,7 @@
     },
     {
       "tag": "🇹🇼台湾2-IEPL",
-      "server": "cgbqoiqg.jhm.qwer123.net",
+      "server": "r7qm495z.jhm.qwer123.net",
       "server_port": 36603,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -86,7 +85,7 @@
     },
     {
       "tag": "🇸🇬新加坡-Gemini-IEPL",
-      "server": "cgbqoiqg.jhm.qwer123.net",
+      "server": "r7qm495z.jhm.qwer123.net",
       "server_port": 36604,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -96,7 +95,7 @@
     },
     {
       "tag": "🇸🇬新加坡2-Gemini-IEPL",
-      "server": "cgbqoiqg.jhm.qwer123.net",
+      "server": "r7qm495z.jhm.qwer123.net",
       "server_port": 36604,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -106,7 +105,7 @@
     },
     {
       "tag": "🇯🇵日本-IEPL-GPT",
-      "server": "cgbqoiqg.jhm.qwer123.net",
+      "server": "r7qm495z.jhm.qwer123.net",
       "server_port": 36609,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -116,7 +115,7 @@
     },
     {
       "tag": "🇯🇵日本2-IEPL-GPT",
-      "server": "cgbqoiqg.jhm.qwer123.net",
+      "server": "r7qm495z.jhm.qwer123.net",
       "server_port": 36609,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -126,7 +125,7 @@
     },
     {
       "tag": "🇯🇵日本家宽-IEPL2",
-      "server": "cgbqoiqg.jhm.qwer123.net",
+      "server": "r7qm495z.jhm.qwer123.net",
       "server_port": 36610,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -136,7 +135,7 @@
     },
     {
       "tag": "🇺🇸美国-IEPL-GPT",
-      "server": "cgbqoiqg.jhm.qwer123.net",
+      "server": "r7qm495z.jhm.qwer123.net",
       "server_port": 36608,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -146,7 +145,7 @@
     },
     {
       "tag": "🇺🇸美国2-IEPL-GPT",
-      "server": "cgbqoiqg.jhm.qwer123.net",
+      "server": "r7qm495z.jhm.qwer123.net",
       "server_port": 36608,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -156,7 +155,7 @@
     },
     {
       "tag": "🇩🇪德国-IEPL",
-      "server": "cgbqoiqg.jhm.qwer123.net",
+      "server": "r7qm495z.jhm.qwer123.net",
       "server_port": 36611,
       "type": "shadowsocks",
       "method": "aes-128-gcm",

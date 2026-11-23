@@ -4,7 +4,7 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: 新加坡 AWS 移联 · 0.05×
+- name: 新加坡 AWS 移联 · 0.03×
   server: gjxjp.ohsas18001.cn
   port: 41578
   type: vless
@@ -18,7 +18,7 @@ proxies:
   reality-opts:
     public-key: I30XoDdFny4OU3sduP85pzBMjawF4dVOHSBrCaudXkc
     short-id: aea4e341
-- name: 韩国 AWS 电信 · 0.05×
+- name: 韩国 AWS 电信 · 0.03×
   server: cf.xnncl.com
   port: 2087
   type: vless
@@ -28,13 +28,12 @@ proxies:
   tls: true
   servername: kr.ohsas18001.cn
   client-fingerprint: chrome
-  skip-cert-verify: true
   ws-opts:
     path: /chuixue/kr1
     headers:
       Host: kr.ohsas18001.cn
 - name: 🇭🇰香港-Gemini-IEPL
-  server: cgbqoiqg.jhm.qwer123.net
+  server: r7qm495z.jhm.qwer123.net
   port: 36602
   type: ss
   cipher: aes-128-gcm
@@ -45,7 +44,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇭🇰香港2-IEPL
-  server: cgbqoiqg.jhm.qwer123.net
+  server: r7qm495z.jhm.qwer123.net
   port: 36602
   type: ss
   cipher: aes-128-gcm
@@ -56,7 +55,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇹🇼台湾-IEPL
-  server: cgbqoiqg.jhm.qwer123.net
+  server: r7qm495z.jhm.qwer123.net
   port: 36603
   type: ss
   cipher: aes-128-gcm
@@ -67,7 +66,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇹🇼台湾2-IEPL
-  server: cgbqoiqg.jhm.qwer123.net
+  server: r7qm495z.jhm.qwer123.net
   port: 36603
   type: ss
   cipher: aes-128-gcm
@@ -78,7 +77,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇸🇬新加坡-Gemini-IEPL
-  server: cgbqoiqg.jhm.qwer123.net
+  server: r7qm495z.jhm.qwer123.net
   port: 36604
   type: ss
   cipher: aes-128-gcm
@@ -89,7 +88,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇸🇬新加坡2-Gemini-IEPL
-  server: cgbqoiqg.jhm.qwer123.net
+  server: r7qm495z.jhm.qwer123.net
   port: 36604
   type: ss
   cipher: aes-128-gcm
@@ -100,7 +99,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本-IEPL-GPT
-  server: cgbqoiqg.jhm.qwer123.net
+  server: r7qm495z.jhm.qwer123.net
   port: 36609
   type: ss
   cipher: aes-128-gcm
@@ -111,7 +110,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本2-IEPL-GPT
-  server: cgbqoiqg.jhm.qwer123.net
+  server: r7qm495z.jhm.qwer123.net
   port: 36609
   type: ss
   cipher: aes-128-gcm
@@ -122,7 +121,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇯🇵日本家宽-IEPL2
-  server: cgbqoiqg.jhm.qwer123.net
+  server: r7qm495z.jhm.qwer123.net
   port: 36610
   type: ss
   cipher: aes-128-gcm
@@ -133,7 +132,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇺🇸美国-IEPL-GPT
-  server: cgbqoiqg.jhm.qwer123.net
+  server: r7qm495z.jhm.qwer123.net
   port: 36608
   type: ss
   cipher: aes-128-gcm
@@ -144,7 +143,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇺🇸美国2-IEPL-GPT
-  server: cgbqoiqg.jhm.qwer123.net
+  server: r7qm495z.jhm.qwer123.net
   port: 36608
   type: ss
   cipher: aes-128-gcm
@@ -155,7 +154,7 @@ proxies:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
 - name: 🇩🇪德国-IEPL
-  server: cgbqoiqg.jhm.qwer123.net
+  server: r7qm495z.jhm.qwer123.net
   port: 36611
   type: ss
   cipher: aes-128-gcm
@@ -170,8 +169,8 @@ proxy-groups:
   type: select
   proxies:
   - 自动优选
-  - 新加坡 AWS 移联 · 0.05×
-  - 韩国 AWS 电信 · 0.05×
+  - 新加坡 AWS 移联 · 0.03×
+  - 韩国 AWS 电信 · 0.03×
   - 🇭🇰香港-Gemini-IEPL
   - 🇭🇰香港2-IEPL
   - 🇹🇼台湾-IEPL
@@ -188,8 +187,8 @@ proxy-groups:
 - name: 自动优选
   type: url-test
   proxies:
-  - 新加坡 AWS 移联 · 0.05×
-  - 韩国 AWS 电信 · 0.05×
+  - 新加坡 AWS 移联 · 0.03×
+  - 韩国 AWS 电信 · 0.03×
   - 🇭🇰香港-Gemini-IEPL
   - 🇭🇰香港2-IEPL
   - 🇹🇼台湾-IEPL
