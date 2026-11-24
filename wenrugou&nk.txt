@@ -1,49 +1,6 @@
 {
   "outbounds": [
     {
-      "tag": "新加坡 AWS 移联 · 0.03×",
-      "server": "gjxjp.ohsas18001.cn",
-      "server_port": 41578,
-      "type": "vless",
-      "uuid": "f479626c-626e-40e0-8ebf-16313978d813",
-      "flow": "xtls-rprx-vision",
-      "tls": {
-        "enabled": true,
-        "server_name": "download-porter.hoyoverse.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "safari"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "I30XoDdFny4OU3sduP85pzBMjawF4dVOHSBrCaudXkc",
-          "short_id": "aea4e341"
-        }
-      }
-    },
-    {
-      "tag": "韩国 AWS 电信 · 0.03×",
-      "server": "cf.xnncl.com",
-      "server_port": 2087,
-      "type": "vless",
-      "uuid": "f479626c-626e-40e0-8ebf-16313978d813",
-      "tls": {
-        "enabled": true,
-        "server_name": "kr.ohsas18001.cn",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/chuixue/kr1",
-        "headers": {
-          "Host": "kr.ohsas18001.cn"
-        }
-      }
-    },
-    {
       "tag": "🇭🇰香港-Gemini-IEPL",
       "server": "r7qm495z.jhm.qwer123.net",
       "server_port": 36602,
@@ -162,6 +119,49 @@
       "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
       "plugin": "obfs-local",
       "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "新加坡 AWS 移联 · 0.03×",
+      "server": "gjxjp.ohsas18001.cn",
+      "server_port": 41578,
+      "type": "vless",
+      "uuid": "f479626c-626e-40e0-8ebf-16313978d813",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "download-porter.hoyoverse.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "I30XoDdFny4OU3sduP85pzBMjawF4dVOHSBrCaudXkc",
+          "short_id": "aea4e341"
+        }
+      }
+    },
+    {
+      "tag": "韩国 AWS 电信 · 0.03×",
+      "server": "cf.xnncl.com",
+      "server_port": 2087,
+      "type": "vless",
+      "uuid": "f479626c-626e-40e0-8ebf-16313978d813",
+      "tls": {
+        "enabled": true,
+        "server_name": "kr.ohsas18001.cn",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/chuixue/kr1",
+        "headers": {
+          "Host": "kr.ohsas18001.cn"
+        }
+      }
     }
   ]
 }
