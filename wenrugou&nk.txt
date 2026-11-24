@@ -122,7 +122,7 @@
     },
     {
       "tag": "新加坡 AWS 移联 · 0.03×",
-      "server": "gjxjp.ohsas18001.cn",
+      "server": "sg.lgcpw.com",
       "server_port": 41578,
       "type": "vless",
       "uuid": "f479626c-626e-40e0-8ebf-16313978d813",
