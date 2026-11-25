@@ -45,7 +45,7 @@
     },
     {
       "tag": "🇭🇰香港-Gemini-IEPL",
-      "server": "r7qm495z.jhm.qwer123.net",
+      "server": "bpnpa5ei.jhm.qwer123.net",
       "server_port": 36602,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -55,7 +55,7 @@
     },
     {
       "tag": "🇭🇰香港2-IEPL",
-      "server": "r7qm495z.jhm.qwer123.net",
+      "server": "bpnpa5ei.jhm.qwer123.net",
       "server_port": 36602,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -65,7 +65,7 @@
     },
     {
       "tag": "🇹🇼台湾-IEPL",
-      "server": "r7qm495z.jhm.qwer123.net",
+      "server": "bpnpa5ei.jhm.qwer123.net",
       "server_port": 36603,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -75,7 +75,7 @@
     },
     {
       "tag": "🇹🇼台湾2-IEPL",
-      "server": "r7qm495z.jhm.qwer123.net",
+      "server": "bpnpa5ei.jhm.qwer123.net",
       "server_port": 36603,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -85,7 +85,7 @@
     },
     {
       "tag": "🇸🇬新加坡-Gemini-IEPL",
-      "server": "r7qm495z.jhm.qwer123.net",
+      "server": "bpnpa5ei.jhm.qwer123.net",
       "server_port": 36604,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -95,7 +95,7 @@
     },
     {
       "tag": "🇸🇬新加坡2-Gemini-IEPL",
-      "server": "r7qm495z.jhm.qwer123.net",
+      "server": "bpnpa5ei.jhm.qwer123.net",
       "server_port": 36604,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -105,7 +105,7 @@
     },
     {
       "tag": "🇯🇵日本-IEPL-GPT",
-      "server": "r7qm495z.jhm.qwer123.net",
+      "server": "bpnpa5ei.jhm.qwer123.net",
       "server_port": 36609,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -115,7 +115,7 @@
     },
     {
       "tag": "🇯🇵日本2-IEPL-GPT",
-      "server": "r7qm495z.jhm.qwer123.net",
+      "server": "bpnpa5ei.jhm.qwer123.net",
       "server_port": 36609,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -125,7 +125,7 @@
     },
     {
       "tag": "🇯🇵日本家宽-IEPL2",
-      "server": "r7qm495z.jhm.qwer123.net",
+      "server": "bpnpa5ei.jhm.qwer123.net",
       "server_port": 36610,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -135,7 +135,7 @@
     },
     {
       "tag": "🇺🇸美国-IEPL-GPT",
-      "server": "r7qm495z.jhm.qwer123.net",
+      "server": "bpnpa5ei.jhm.qwer123.net",
       "server_port": 36608,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -145,7 +145,7 @@
     },
     {
       "tag": "🇺🇸美国2-IEPL-GPT",
-      "server": "r7qm495z.jhm.qwer123.net",
+      "server": "bpnpa5ei.jhm.qwer123.net",
       "server_port": 36608,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
@@ -155,7 +155,7 @@
     },
     {
       "tag": "🇩🇪德国-IEPL",
-      "server": "r7qm495z.jhm.qwer123.net",
+      "server": "bpnpa5ei.jhm.qwer123.net",
       "server_port": 36611,
       "type": "shadowsocks",
       "method": "aes-128-gcm",
