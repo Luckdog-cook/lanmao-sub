@@ -4,34 +4,6 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
-- name: 新加坡 AWS 移联 · 0.03×
-  server: sg.lgcpw.com
-  port: 41578
-  type: vless
-  uuid: f479626c-626e-40e0-8ebf-16313978d813
-  network: tcp
-  udp: true
-  flow: xtls-rprx-vision
-  tls: true
-  servername: download-porter.hoyoverse.com
-  client-fingerprint: safari
-  reality-opts:
-    public-key: I30XoDdFny4OU3sduP85pzBMjawF4dVOHSBrCaudXkc
-    short-id: aea4e341
-- name: 韩国 AWS 电信 · 0.03×
-  server: cf.xnncl.com
-  port: 2087
-  type: vless
-  uuid: f479626c-626e-40e0-8ebf-16313978d813
-  network: ws
-  udp: true
-  tls: true
-  servername: kr.ohsas18001.cn
-  client-fingerprint: chrome
-  ws-opts:
-    path: /chuixue/kr1
-    headers:
-      Host: kr.ohsas18001.cn
 - name: 🇭🇰香港-Gemini-IEPL
   server: bpnpa5ei.jhm.qwer123.net
   port: 36602
@@ -164,13 +136,180 @@ proxies:
   plugin-opts:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
+- name: 香港 AWS 移联 · 0.03×
+  server: hk.lgcpw.com
+  port: 36143
+  type: vless
+  uuid: f479626c-626e-40e0-8ebf-16313978d813
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: updates.cdn-apple.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: 3T3Jy216qIXLUXKuVC6N9vnnU3obkxCcCLVRHXOFaVg
+    short-id: 9fbf85d4
+- name: 台湾 DataWave 移联 · 0.07×
+  server: hk.lgcpw.com
+  port: 22573
+  type: vless
+  uuid: f479626c-626e-40e0-8ebf-16313978d813
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: cdn-dynmedia-1.microsoft.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: u8PrvP4OU2KQIZzLMI0YBkhkKYUkeprzwaFaTKYTiEk
+    short-id: 0ca6d31c
+- name: 日本 AWS 移联 · 0.03×
+  server: jp.lgcpw.com
+  port: 18448
+  type: vless
+  uuid: f479626c-626e-40e0-8ebf-16313978d813
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: updates.cdn-apple.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: eStHrgJMA7ITfTski0mMefDAqn2W0YkjK2smX6xBYhg
+    short-id: 5027ff1c
+- name: 新加坡 AWS 移联 · 0.03×
+  server: sg.lgcpw.com
+  port: 41578
+  type: vless
+  uuid: f479626c-626e-40e0-8ebf-16313978d813
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: download-porter.hoyoverse.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: I30XoDdFny4OU3sduP85pzBMjawF4dVOHSBrCaudXkc
+    short-id: aea4e341
+- name: 韩国 AWS 移联 · 0.03×
+  server: kr.lgcpw.com
+  port: 18710
+  type: vless
+  uuid: f479626c-626e-40e0-8ebf-16313978d813
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: cdn-dynmedia-1.microsoft.com
+  client-fingerprint: ios
+  reality-opts:
+    public-key: s7K9_mzNFAehLV2VAlMYCCJwv7NjYwOvZFy2Qei9DQA
+    short-id: fc3e66b3
+- name: 美国 AWS 移联 · 0.03×
+  server: us.lgcpw.com
+  port: 25080
+  type: vless
+  uuid: f479626c-626e-40e0-8ebf-16313978d813
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: cdn-dynmedia-1.microsoft.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: a46vLllzBdk3fewZvFBnaqGZqLA-yiQeqrvtmPciz3o
+    short-id: 8aebcbd4
+- name: 香港 AWS 电信 · 0.03×
+  server: cf.xnncl.com
+  port: 2087
+  type: vless
+  uuid: f479626c-626e-40e0-8ebf-16313978d813
+  network: ws
+  udp: true
+  tls: true
+  servername: viphk668027.hongaiedu.cn
+  client-fingerprint: chrome
+  ws-opts:
+    path: /SUJNxwdxQpMkXZa43rblBmWkOux1Ek
+    headers:
+      Host: viphk668027.hongaiedu.cn
+- name: 台湾 DataWave 电信 · 0.07×
+  server: cf.xnncl.com
+  port: 2053
+  type: vless
+  uuid: f479626c-626e-40e0-8ebf-16313978d813
+  network: ws
+  udp: true
+  tls: true
+  servername: viptw954251.hongaiedu.cn
+  client-fingerprint: chrome
+  skip-cert-verify: true
+  ws-opts:
+    path: /B5ZM2jRf8R0pQFx5BauXiqKHw4m3nH
+    headers:
+      Host: viptw954251.hongaiedu.cn
+- name: 日本 AWS 电信 · 0.03×
+  server: cf.xnncl.com
+  port: 2087
+  type: vless
+  uuid: f479626c-626e-40e0-8ebf-16313978d813
+  network: ws
+  udp: true
+  tls: true
+  servername: vipjp400103.hongaiedu.cn
+  client-fingerprint: chrome
+  ws-opts:
+    path: /QE9VfQYwQyRxI5SLL9E3YeAB7RVwiK
+    headers:
+      Host: vipjp400103.hongaiedu.cn
+- name: 新加坡 AWS 电信 · 0.03×
+  server: cf.xnncl.com
+  port: 2087
+  type: vless
+  uuid: f479626c-626e-40e0-8ebf-16313978d813
+  network: ws
+  udp: true
+  tls: true
+  servername: vipsg693640.hongaiedu.cn
+  client-fingerprint: chrome
+  ws-opts:
+    path: /G24Wlm7VmpKc0gsZxVYIqZzolHsPA8
+    headers:
+      Host: vipsg693640.hongaiedu.cn
+- name: 韩国 AWS 电信 · 0.03×
+  server: cf.xnncl.com
+  port: 2087
+  type: vless
+  uuid: f479626c-626e-40e0-8ebf-16313978d813
+  network: ws
+  udp: true
+  tls: true
+  servername: vipkr890534.hongaiedu.cn
+  client-fingerprint: chrome
+  ws-opts:
+    path: /Ywir425APCHDHU8bsXHoGZ1SdSJ6E0
+    headers:
+      Host: vipkr890534.hongaiedu.cn
+- name: 美国 AWS 电信 · 0.03×
+  server: cf.xnncl.com
+  port: 2087
+  type: vless
+  uuid: f479626c-626e-40e0-8ebf-16313978d813
+  network: ws
+  udp: true
+  tls: true
+  servername: vipus752877.hongaiedu.cn
+  client-fingerprint: chrome
+  ws-opts:
+    path: /1UinJHIBUp5Bd1go743hXBRGkAMryf
+    headers:
+      Host: vipus752877.hongaiedu.cn
 proxy-groups:
 - name: 节点选择
   type: select
   proxies:
   - 自动优选
-  - 新加坡 AWS 移联 · 0.03×
-  - 韩国 AWS 电信 · 0.03×
   - 🇭🇰香港-Gemini-IEPL
   - 🇭🇰香港2-IEPL
   - 🇹🇼台湾-IEPL
@@ -183,12 +322,22 @@ proxy-groups:
   - 🇺🇸美国-IEPL-GPT
   - 🇺🇸美国2-IEPL-GPT
   - 🇩🇪德国-IEPL
+  - 香港 AWS 移联 · 0.03×
+  - 台湾 DataWave 移联 · 0.07×
+  - 日本 AWS 移联 · 0.03×
+  - 新加坡 AWS 移联 · 0.03×
+  - 韩国 AWS 移联 · 0.03×
+  - 美国 AWS 移联 · 0.03×
+  - 香港 AWS 电信 · 0.03×
+  - 台湾 DataWave 电信 · 0.07×
+  - 日本 AWS 电信 · 0.03×
+  - 新加坡 AWS 电信 · 0.03×
+  - 韩国 AWS 电信 · 0.03×
+  - 美国 AWS 电信 · 0.03×
   - DIRECT
 - name: 自动优选
   type: url-test
   proxies:
-  - 新加坡 AWS 移联 · 0.03×
-  - 韩国 AWS 电信 · 0.03×
   - 🇭🇰香港-Gemini-IEPL
   - 🇭🇰香港2-IEPL
   - 🇹🇼台湾-IEPL
@@ -201,6 +350,18 @@ proxy-groups:
   - 🇺🇸美国-IEPL-GPT
   - 🇺🇸美国2-IEPL-GPT
   - 🇩🇪德国-IEPL
+  - 香港 AWS 移联 · 0.03×
+  - 台湾 DataWave 移联 · 0.07×
+  - 日本 AWS 移联 · 0.03×
+  - 新加坡 AWS 移联 · 0.03×
+  - 韩国 AWS 移联 · 0.03×
+  - 美国 AWS 移联 · 0.03×
+  - 香港 AWS 电信 · 0.03×
+  - 台湾 DataWave 电信 · 0.07×
+  - 日本 AWS 电信 · 0.03×
+  - 新加坡 AWS 电信 · 0.03×
+  - 韩国 AWS 电信 · 0.03×
+  - 美国 AWS 电信 · 0.03×
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
