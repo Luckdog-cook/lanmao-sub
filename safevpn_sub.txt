@@ -22,6 +22,7 @@ vless://69b6b450-7905-471b-908a-00e38ed0ee4a@awrbzf2.supertoolify.com:443?encryp
 hysteria2://69b6b450-7905-471b-908a-00e38ed0ee4a@awuxsx1.mateflora.com:443?insecure=1&sni=psstatic.cdn.bcebos.com#%5BCN%5D%E7%BE%8E%E5%9B%BD-vip-650
 vless://69b6b450-7905-471b-908a-00e38ed0ee4a@zfxsxg2.zalolink.com:29969?encryption=none&security=reality&sni=www.lamer.com.sg&fp=ios&type=tcp&pbk=HbAbCQFEIlLFQVy4HO9boFlH6CLSreXe4rmdxKltuBI&sid=8a01d620b9f322&flow=xtls-rprx-vision#%5BCN%5D%E6%96%B0%E5%8A%A0%E5%9D%A1-vip-552
 hysteria2://69b6b450-7905-471b-908a-00e38ed0ee4a@xkxr1.mateflora.com:443?insecure=1&sni=psstatic.cdn.bcebos.com#%5BCN%5D%E9%9F%A9%E5%9B%BD-vip-353
+hysteria2://69b6b450-7905-471b-908a-00e38ed0ee4a@dgxzxf2.mateflora.com:443?insecure=0&sni=dgxzxf2.mateflora.com#%5BCN%5D%E9%A6%99%E6%B8%AF-vip-554
 hysteria2://69b6b450-7905-471b-908a-00e38ed0ee4a@64.118.154.18:40055?insecure=1&sni=psstatic.cdn.bcebos.com#%5BGlobal%5D%E7%BE%8E%E5%9B%BD-vip-115
 vless://69b6b450-7905-471b-908a-00e38ed0ee4a@zfxsxg.zalolink.com:36071?encryption=none&security=reality&sni=psstatic.cdn.bcebos.com&fp=chrome&type=tcp&pbk=Qab7uGrygOcM4MmAKV2Jyb0JmoFzs0yd0p-e7kYpk3k&sid=3bb35809&flow=xtls-rprx-vision#%5BGlobal%5D%E6%BE%B3%E5%A4%A7%E5%88%A9%E4%BA%9A-vip-120
 hysteria2://69b6b450-7905-471b-908a-00e38ed0ee4a@nb2de.ianai.it.com:4430?insecure=1&sni=psstatic.cdn.bcebos.com#%5BGlobal%5D%E5%BE%B7%E5%9B%BD-vip-223
@@ -46,3 +47,4 @@ vless://69b6b450-7905-471b-908a-00e38ed0ee4a@awrbzf2.supertoolify.com:443?encryp
 hysteria2://69b6b450-7905-471b-908a-00e38ed0ee4a@awuxsx1.mateflora.com:443?insecure=1&sni=psstatic.cdn.bcebos.com#%5BGlobal%5D%E7%BE%8E%E5%9B%BD-vip-650
 vless://69b6b450-7905-471b-908a-00e38ed0ee4a@zfxsxg2.zalolink.com:29969?encryption=none&security=reality&sni=www.lamer.com.sg&fp=ios&type=tcp&pbk=HbAbCQFEIlLFQVy4HO9boFlH6CLSreXe4rmdxKltuBI&sid=8a01d620b9f322&flow=xtls-rprx-vision#%5BGlobal%5D%E6%96%B0%E5%8A%A0%E5%9D%A1-vip-552
 hysteria2://69b6b450-7905-471b-908a-00e38ed0ee4a@xkxr1.mateflora.com:443?insecure=1&sni=psstatic.cdn.bcebos.com#%5BGlobal%5D%E9%9F%A9%E5%9B%BD-vip-353
+hysteria2://69b6b450-7905-471b-908a-00e38ed0ee4a@dgxzxf2.mateflora.com:443?insecure=0&sni=dgxzxf2.mateflora.com#%5BGlobal%5D%E9%A6%99%E6%B8%AF-vip-554

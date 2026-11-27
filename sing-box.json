@@ -442,6 +442,18 @@
     },
     {
       "type": "hysteria2",
+      "tag": "[CN]香港-vip-554",
+      "server": "dgxzxf2.mateflora.com",
+      "server_port": 443,
+      "password": "69b6b450-7905-471b-908a-00e38ed0ee4a",
+      "tls": {
+        "enabled": true,
+        "server_name": "dgxzxf2.mateflora.com",
+        "insecure": false
+      }
+    },
+    {
+      "type": "hysteria2",
       "tag": "[Global]美国-vip-115",
       "server": "64.118.154.18",
       "server_port": 40055,
@@ -849,6 +861,18 @@
       }
     },
     {
+      "type": "hysteria2",
+      "tag": "[Global]香港-vip-554",
+      "server": "dgxzxf2.mateflora.com",
+      "server_port": 443,
+      "password": "69b6b450-7905-471b-908a-00e38ed0ee4a",
+      "tls": {
+        "enabled": true,
+        "server_name": "dgxzxf2.mateflora.com",
+        "insecure": false
+      }
+    },
+    {
       "type": "direct",
       "tag": "direct"
     },
@@ -884,6 +908,7 @@
         "[CN]美国-vip-650",
         "[CN]新加坡-vip-552",
         "[CN]韩国-vip-353",
+        "[CN]香港-vip-554",
         "[Global]美国-vip-115",
         "[Global]澳大利亚-vip-120",
         "[Global]德国-vip-223",
@@ -908,6 +933,7 @@
         "[Global]美国-vip-650",
         "[Global]新加坡-vip-552",
         "[Global]韩国-vip-353",
+        "[Global]香港-vip-554",
         "direct"
       ],
       "default": "[CN]美国-vip-115"
@@ -940,6 +966,7 @@
         "[CN]美国-vip-650",
         "[CN]新加坡-vip-552",
         "[CN]韩国-vip-353",
+        "[CN]香港-vip-554",
         "[Global]美国-vip-115",
         "[Global]澳大利亚-vip-120",
         "[Global]德国-vip-223",
@@ -963,7 +990,8 @@
         "[Global]日本-vip-547",
         "[Global]美国-vip-650",
         "[Global]新加坡-vip-552",
-        "[Global]韩国-vip-353"
+        "[Global]韩国-vip-353",
+        "[Global]香港-vip-554"
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "5m"
