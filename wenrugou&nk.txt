@@ -1,126 +1,6 @@
 {
   "outbounds": [
     {
-      "tag": "🇭🇰香港-Gemini-IEPL",
-      "server": "bpnpa5ei.jhm.qwer123.net",
-      "server_port": 36602,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇭🇰香港2-IEPL",
-      "server": "bpnpa5ei.jhm.qwer123.net",
-      "server_port": 36602,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇹🇼台湾-IEPL",
-      "server": "bpnpa5ei.jhm.qwer123.net",
-      "server_port": 36603,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇹🇼台湾2-IEPL",
-      "server": "bpnpa5ei.jhm.qwer123.net",
-      "server_port": 36603,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇸🇬新加坡-Gemini-IEPL",
-      "server": "bpnpa5ei.jhm.qwer123.net",
-      "server_port": 36604,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇸🇬新加坡2-Gemini-IEPL",
-      "server": "bpnpa5ei.jhm.qwer123.net",
-      "server_port": 36604,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇯🇵日本-IEPL-GPT",
-      "server": "bpnpa5ei.jhm.qwer123.net",
-      "server_port": 36609,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇯🇵日本2-IEPL-GPT",
-      "server": "bpnpa5ei.jhm.qwer123.net",
-      "server_port": 36609,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇯🇵日本家宽-IEPL2",
-      "server": "bpnpa5ei.jhm.qwer123.net",
-      "server_port": 36610,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇺🇸美国-IEPL-GPT",
-      "server": "bpnpa5ei.jhm.qwer123.net",
-      "server_port": 36608,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇺🇸美国2-IEPL-GPT",
-      "server": "bpnpa5ei.jhm.qwer123.net",
-      "server_port": 36608,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "🇩🇪德国-IEPL",
-      "server": "bpnpa5ei.jhm.qwer123.net",
-      "server_port": 36611,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
-      "plugin": "obfs-local",
-      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
       "tag": "香港 AWS 移联 · 0.03×",
       "server": "hk.lgcpw.com",
       "server_port": 36143,
@@ -378,6 +258,126 @@
           "Host": "vipus752877.hongaiedu.cn"
         }
       }
+    },
+    {
+      "tag": "🇭🇰香港-Gemini-IEPL",
+      "server": "bpnpa5ei.jhm.qwer123.net",
+      "server_port": 36602,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇭🇰香港2-IEPL",
+      "server": "bpnpa5ei.jhm.qwer123.net",
+      "server_port": 36602,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇹🇼台湾-IEPL",
+      "server": "bpnpa5ei.jhm.qwer123.net",
+      "server_port": 36603,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇹🇼台湾2-IEPL",
+      "server": "bpnpa5ei.jhm.qwer123.net",
+      "server_port": 36603,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇸🇬新加坡-Gemini-IEPL",
+      "server": "bpnpa5ei.jhm.qwer123.net",
+      "server_port": 36604,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇸🇬新加坡2-Gemini-IEPL",
+      "server": "bpnpa5ei.jhm.qwer123.net",
+      "server_port": 36604,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇯🇵日本-IEPL-GPT",
+      "server": "bpnpa5ei.jhm.qwer123.net",
+      "server_port": 36609,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇯🇵日本2-IEPL-GPT",
+      "server": "bpnpa5ei.jhm.qwer123.net",
+      "server_port": 36609,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇯🇵日本家宽-IEPL2",
+      "server": "bpnpa5ei.jhm.qwer123.net",
+      "server_port": 36610,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇺🇸美国-IEPL-GPT",
+      "server": "bpnpa5ei.jhm.qwer123.net",
+      "server_port": 36608,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇺🇸美国2-IEPL-GPT",
+      "server": "bpnpa5ei.jhm.qwer123.net",
+      "server_port": 36608,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
+    },
+    {
+      "tag": "🇩🇪德国-IEPL",
+      "server": "bpnpa5ei.jhm.qwer123.net",
+      "server_port": 36611,
+      "type": "shadowsocks",
+      "method": "aes-128-gcm",
+      "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
+      "plugin": "obfs-local",
+      "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
     }
   ]
 }
