@@ -1,6 +1,768 @@
 {
   "outbounds": [
     {
+      "tag": "🇭🇰香港高速01|BGP|CMCU",
+      "server": "aws-link1.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "fastcdn.hoyoverse.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "TF960L2RQcljFhnd6GKHRO82TGpefFLT25BY-KSuwxA",
+          "short_id": "c8660f6e"
+        }
+      }
+    },
+    {
+      "tag": "🇭🇰香港高速02|BGP|CMCU",
+      "server": "aws-link2.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "fastcdn.hoyoverse.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ypy2n5s98wb2NQfVnOG_nvyXk329g_PAZCTerKcMi28",
+          "short_id": "6afd82c0"
+        }
+      }
+    },
+    {
+      "tag": "🇭🇰香港高速03|BGP|CMCU",
+      "server": "aws-link3.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.lamer.com.hk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ux5T2jsYXnAMuf4eILTucbcX1xd1OwocOEkYetmUyAs",
+          "short_id": "3206e665"
+        }
+      }
+    },
+    {
+      "tag": "🇭🇰香港高速04|BGP|CMCU",
+      "server": "aws-link4.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.lamer.com.hk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "wlh6mFICApoUIVqqQRBbS7o5X3sveqUJCRc54bH0XSg",
+          "short_id": "a31b59fe"
+        }
+      }
+    },
+    {
+      "tag": "🇭🇰香港高速05|BGP|CMCU",
+      "server": "aws-link5.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "fastcdn.hoyoverse.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "HfZeg7YPEWJMQKBXctbNZBuBAk1CW98FoJ7AEyCEdQQ",
+          "short_id": "a49232a7"
+        }
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡高速01|BGP|CTCUCM",
+      "server": "aws-link7.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "fastcdn.hoyoverse.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "w7AGIp_u4slcX3JotLyiuaT05lawuzU3f1eL88RI53c",
+          "short_id": "1d77a374"
+        }
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡高速02|BGP|CTCUCM",
+      "server": "aws-link8.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "iosapps.itunes.apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "vDrdqD70aoQOIU5P5UU-h2h9wCu_tEOD4pGu8NOGvzA",
+          "short_id": "55c73a28"
+        }
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡高速03|BGP|CTCUCM",
+      "server": "aws-link9.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "iosapps.itunes.apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ncsES25G1Nj31aY0kdaNrooqQOqqqaHLk8zbF2b4BGw",
+          "short_id": "bef8fff6"
+        }
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡高速04|BGP|CTCUCM",
+      "server": "aws-link30.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.lamer.com.hk",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "NQboj96aHW_domplSIfIBqJpAnNN8rZokNYa-W-NdAo",
+          "short_id": "fa6fb544"
+        }
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡高速05|BGP|CTCUCM",
+      "server": "aws-link31.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "download-porter.hoyoverse.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "wXayfckurSM2zWeis7OAL_QVGm9wBLr0WYp2zFtJFAE",
+          "short_id": "c7487aeb"
+        }
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡高速06|BGP|CTCU",
+      "server": "cfyes.7770008.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "lx-sg1.7770006.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/liangxin/sg1",
+        "headers": {
+          "Host": "lx-sg1.7770006.xyz"
+        }
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡高速07|BGP|CTCU",
+      "server": "cfyes.7770008.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "lx-sg1.7770006.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/liangxin/sg1",
+        "headers": {
+          "Host": "lx-sg1.7770006.xyz"
+        }
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡高速08|BGP|CTCU",
+      "server": "cfyes.7770008.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "lx-sg1.7770006.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/liangxin/sg1",
+        "headers": {
+          "Host": "lx-sg1.7770006.xyz"
+        }
+      }
+    },
+    {
+      "tag": "🇯🇵日本高速01|BGP|CUCM",
+      "server": "aws-link13.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "download-porter.hoyoverse.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "AYnt6YQxdEGfpWjo25H9ZvgPp_WxRbGWSkaptwTZJ3M",
+          "short_id": "131baaed"
+        }
+      }
+    },
+    {
+      "tag": "🇯🇵日本高速02|BGP|CUCM",
+      "server": "aws-link14.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "download-porter.hoyoverse.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "-nx1roqVG90gja9-412UcxR7tqdtdKqxuSHsSh03wm4",
+          "short_id": "93d482c0"
+        }
+      }
+    },
+    {
+      "tag": "🇯🇵日本高速03|BGP|CUCM",
+      "server": "aws-link19.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "download-porter.hoyoverse.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "p6pNXigacmPazS1t76m66ia0DcFgAxOshOiPgzVvNGs",
+          "short_id": "44099498"
+        }
+      }
+    },
+    {
+      "tag": "🇯🇵日本高速04|BGP|CUCM",
+      "server": "aws-link20.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "download-porter.hoyoverse.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "QE5l0RUqs4OsH3j3u_xHm06-4NlILmQivZUJqiEx11o",
+          "short_id": "6314e825"
+        }
+      }
+    },
+    {
+      "tag": "🇯🇵日本高速05|BGP|CUCM",
+      "server": "aws-link23.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "download-porter.hoyoverse.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "dLmUAqcdy4Z7iucApd9zjOhkXTjl-xt_eHumShIYW0c",
+          "short_id": "ba826a54"
+        }
+      }
+    },
+    {
+      "tag": "🇺🇸美国高速01|CTCU|0.1x",
+      "server": "cfyes.777078.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "lx-us1.777096.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/liangxin/us",
+        "headers": {
+          "Host": "lx-us1.777096.xyz"
+        }
+      }
+    },
+    {
+      "tag": "🇺🇸美国高速02|CTCU|0.1x",
+      "server": "cfyes.777078.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "lx-us2.777096.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/liangxin/us",
+        "headers": {
+          "Host": "lx-us2.777096.xyz"
+        }
+      }
+    },
+    {
+      "tag": "🇺🇸美国高速03|CTCU|0.1x",
+      "server": "cfyes.777078.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "lx-us3.777096.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/liangxin/us",
+        "headers": {
+          "Host": "lx-us3.777096.xyz"
+        }
+      }
+    },
+    {
+      "tag": "🇺🇸美国高速04|CTCU|0.1x",
+      "server": "cfyes.777078.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "lx-us4.777096.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/liangxin/us",
+        "headers": {
+          "Host": "lx-us4.777096.xyz"
+        }
+      }
+    },
+    {
+      "tag": "🇺🇸美国高速05|CTCU|0.1x",
+      "server": "cfyes.777078.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "lx-us5.777096.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/liangxin/us",
+        "headers": {
+          "Host": "lx-us5.777096.xyz"
+        }
+      }
+    },
+    {
+      "tag": "🇬🇧英国伦敦01|CTCU|0.1x",
+      "server": "cfyes.777078.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "gb-lx.777096.xyz",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "ios"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/liangxin/gb1",
+        "headers": {
+          "Host": "gb-lx.777096.xyz"
+        }
+      }
+    },
+    {
+      "tag": "🇬🇧英国伦敦02|CTCU|0.1x",
+      "server": "62.164.143.252",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "download-porter.hoyoverse.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "a9I2uA3NNZA6uBAe3Tui9vZ8CG5MrMaYOifWrAdc0zg",
+          "short_id": "a8609be8"
+        }
+      }
+    },
+    {
+      "tag": "🇨🇳台湾高速01|BGP|流媒体",
+      "server": "aws-link28.lxyun.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "download-porter.hoyoverse.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "I0KCN29MUCJ9CnUptlwBK4Nr-NZZUNh0bQj5aXxKrDY",
+          "short_id": "0b03cf9a"
+        }
+      }
+    },
+    {
+      "tag": "🇺🇸美国洛杉矶01|流媒体|0.01x",
+      "server": "lxyus1.777078.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "iosapps.itunes.apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "ulU6wfyain_FQnYt23NGunTAfBQNLhIBY49mvekiQB0",
+          "short_id": "ca032f81"
+        }
+      }
+    },
+    {
+      "tag": "🇺🇸美国洛杉矶02|流媒体|0.01x",
+      "server": "lxyus3.777078.xyz",
+      "server_port": 443,
+      "type": "vless",
+      "uuid": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "flow": "xtls-rprx-vision",
+      "tls": {
+        "enabled": true,
+        "server_name": "iosapps.itunes.apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "paFz5M87V_EcKgUk7C9MlHYCTkOMLTNVe-h-6mSHOAk",
+          "short_id": "cffc91ca"
+        }
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡专线01|BGP|流媒体",
+      "server": "aws-linkhy9.lxyun.xyz",
+      "server_port": 60000,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "iosapps.itunes.apple.com"
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡专线02|BGP|流媒体",
+      "server": "aws-linkhy10.lxyun.xyz",
+      "server_port": 60000,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "iosapps.itunes.apple.com"
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡专线03|BGP|流媒体",
+      "server": "aws-linkhy11.lxyun.xyz",
+      "server_port": 60000,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "iosapps.itunes.apple.com"
+      }
+    },
+    {
+      "tag": "🇸🇬新加坡专线04|BGP|流媒体",
+      "server": "aws-linkhy12.lxyun.xyz",
+      "server_port": 60000,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "iosapps.itunes.apple.com"
+      }
+    },
+    {
+      "tag": "🇯🇵日本专线01|BGP|流媒体",
+      "server": "aws-linkhy15.lxyun.xyz",
+      "server_port": 60000,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "bilibili-jp.biliimg.com"
+      }
+    },
+    {
+      "tag": "🇯🇵日本专线02|BGP|流媒体",
+      "server": "aws-linkhy16.lxyun.xyz",
+      "server_port": 60000,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "bilibili-jp2.biliimg.com"
+      }
+    },
+    {
+      "tag": "🇯🇵日本专线03|BGP|流媒体",
+      "server": "aws-linkhy17.lxyun.xyz",
+      "server_port": 60000,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "bilibili-jp3.biliimg.com"
+      }
+    },
+    {
+      "tag": "🇯🇵日本专线04|BGP|流媒体",
+      "server": "aws-linkhy18.lxyun.xyz",
+      "server_port": 60000,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "bilibili-jp4.biliimg.com"
+      }
+    },
+    {
+      "tag": "🇬🇧英国伦敦01|流媒体|0.1x",
+      "server": "62.164.143.251",
+      "server_port": 60000,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "bilibili-gb.biliimg.com"
+      }
+    },
+    {
+      "tag": "🇬🇧英国伦敦02|流媒体|0.1x",
+      "server": "62.164.143.251",
+      "server_port": 60000,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "bilibili-gb.biliimg.com"
+      }
+    },
+    {
+      "tag": "🇺🇸美国01|流媒体|0.1x",
+      "server": "lxyus1.777078.xyz",
+      "server_port": 443,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "iosapps.itunes.apple.com"
+      }
+    },
+    {
+      "tag": "🇺🇸美国02|流媒体|0.1x",
+      "server": "lxyus2.777078.xyz",
+      "server_port": 443,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "iosapps.itunes.apple.com"
+      }
+    },
+    {
+      "tag": "🇺🇸美国03|流媒体|0.1x",
+      "server": "lxyus3.777078.xyz",
+      "server_port": 443,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "iosapps.itunes.apple.com"
+      }
+    },
+    {
+      "tag": "🇺🇸美国04|流媒体|0.1x",
+      "server": "lxyus4.777078.xyz",
+      "server_port": 443,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "iosapps.itunes.apple.com"
+      }
+    },
+    {
+      "tag": "🇺🇸美国05|流媒体|0.1x",
+      "server": "203.10.97.121",
+      "server_port": 60000,
+      "type": "hysteria2",
+      "password": "cb794c97-bf05-4933-a8dd-d5caeda8396e",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.apple.com"
+      }
+    },
+    {
       "tag": "🇭🇰香港-Gemini-IEPL",
       "server": "bpnpa5ei.jhm.qwer123.net",
       "server_port": 36602,
@@ -119,14 +881,6 @@
       "password": "2599d3af-02fd-430c-b176-b3a7964590c8",
       "plugin": "obfs-local",
       "plugin_opts": "obfs=http;obfs-host=672f802b15cc3428ebc095121f38e39f.baidu.com"
-    },
-    {
-      "tag": "请关闭代理，使用中国大陆本地网络更新订阅",
-      "server": "127.0.0.1",
-      "server_port": 9,
-      "type": "shadowsocks",
-      "method": "aes-128-gcm",
-      "password": "0000000000000000"
     }
   ]
 }

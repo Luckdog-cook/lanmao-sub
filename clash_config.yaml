@@ -4,6 +4,488 @@ mode: rule
 log-level: info
 external-controller: 127.0.0.1:9090
 proxies:
+- name: 🇭🇰香港高速01|BGP|CMCU
+  server: aws-link1.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: fastcdn.hoyoverse.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: TF960L2RQcljFhnd6GKHRO82TGpefFLT25BY-KSuwxA
+    short-id: c8660f6e
+- name: 🇭🇰香港高速02|BGP|CMCU
+  server: aws-link2.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: fastcdn.hoyoverse.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: ypy2n5s98wb2NQfVnOG_nvyXk329g_PAZCTerKcMi28
+    short-id: 6afd82c0
+- name: 🇭🇰香港高速03|BGP|CMCU
+  server: aws-link3.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.lamer.com.hk
+  client-fingerprint: ios
+  reality-opts:
+    public-key: ux5T2jsYXnAMuf4eILTucbcX1xd1OwocOEkYetmUyAs
+    short-id: 3206e665
+- name: 🇭🇰香港高速04|BGP|CMCU
+  server: aws-link4.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.lamer.com.hk
+  client-fingerprint: ios
+  reality-opts:
+    public-key: wlh6mFICApoUIVqqQRBbS7o5X3sveqUJCRc54bH0XSg
+    short-id: a31b59fe
+- name: 🇭🇰香港高速05|BGP|CMCU
+  server: aws-link5.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: fastcdn.hoyoverse.com
+  client-fingerprint: ios
+  reality-opts:
+    public-key: HfZeg7YPEWJMQKBXctbNZBuBAk1CW98FoJ7AEyCEdQQ
+    short-id: a49232a7
+- name: 🇸🇬新加坡高速01|BGP|CTCUCM
+  server: aws-link7.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: fastcdn.hoyoverse.com
+  client-fingerprint: ios
+  reality-opts:
+    public-key: w7AGIp_u4slcX3JotLyiuaT05lawuzU3f1eL88RI53c
+    short-id: 1d77a374
+- name: 🇸🇬新加坡高速02|BGP|CTCUCM
+  server: aws-link8.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: iosapps.itunes.apple.com
+  client-fingerprint: ios
+  reality-opts:
+    public-key: vDrdqD70aoQOIU5P5UU-h2h9wCu_tEOD4pGu8NOGvzA
+    short-id: 55c73a28
+- name: 🇸🇬新加坡高速03|BGP|CTCUCM
+  server: aws-link9.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: iosapps.itunes.apple.com
+  client-fingerprint: ios
+  reality-opts:
+    public-key: ncsES25G1Nj31aY0kdaNrooqQOqqqaHLk8zbF2b4BGw
+    short-id: bef8fff6
+- name: 🇸🇬新加坡高速04|BGP|CTCUCM
+  server: aws-link30.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: www.lamer.com.hk
+  client-fingerprint: safari
+  reality-opts:
+    public-key: NQboj96aHW_domplSIfIBqJpAnNN8rZokNYa-W-NdAo
+    short-id: fa6fb544
+- name: 🇸🇬新加坡高速05|BGP|CTCUCM
+  server: aws-link31.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: download-porter.hoyoverse.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: wXayfckurSM2zWeis7OAL_QVGm9wBLr0WYp2zFtJFAE
+    short-id: c7487aeb
+- name: 🇸🇬新加坡高速06|BGP|CTCU
+  server: cfyes.7770008.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: ws
+  udp: true
+  tls: true
+  servername: lx-sg1.7770006.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /liangxin/sg1
+    headers:
+      Host: lx-sg1.7770006.xyz
+- name: 🇸🇬新加坡高速07|BGP|CTCU
+  server: cfyes.7770008.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: ws
+  udp: true
+  tls: true
+  servername: lx-sg1.7770006.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /liangxin/sg1
+    headers:
+      Host: lx-sg1.7770006.xyz
+- name: 🇸🇬新加坡高速08|BGP|CTCU
+  server: cfyes.7770008.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: ws
+  udp: true
+  tls: true
+  servername: lx-sg1.7770006.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /liangxin/sg1
+    headers:
+      Host: lx-sg1.7770006.xyz
+- name: 🇯🇵日本高速01|BGP|CUCM
+  server: aws-link13.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: download-porter.hoyoverse.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: AYnt6YQxdEGfpWjo25H9ZvgPp_WxRbGWSkaptwTZJ3M
+    short-id: 131baaed
+- name: 🇯🇵日本高速02|BGP|CUCM
+  server: aws-link14.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: download-porter.hoyoverse.com
+  client-fingerprint: ios
+  reality-opts:
+    public-key: -nx1roqVG90gja9-412UcxR7tqdtdKqxuSHsSh03wm4
+    short-id: 93d482c0
+- name: 🇯🇵日本高速03|BGP|CUCM
+  server: aws-link19.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: download-porter.hoyoverse.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: p6pNXigacmPazS1t76m66ia0DcFgAxOshOiPgzVvNGs
+    short-id: '44099498'
+- name: 🇯🇵日本高速04|BGP|CUCM
+  server: aws-link20.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: download-porter.hoyoverse.com
+  client-fingerprint: ios
+  reality-opts:
+    public-key: QE5l0RUqs4OsH3j3u_xHm06-4NlILmQivZUJqiEx11o
+    short-id: 6314e825
+- name: 🇯🇵日本高速05|BGP|CUCM
+  server: aws-link23.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: download-porter.hoyoverse.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: dLmUAqcdy4Z7iucApd9zjOhkXTjl-xt_eHumShIYW0c
+    short-id: ba826a54
+- name: 🇺🇸美国高速01|CTCU|0.1x
+  server: cfyes.777078.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: ws
+  udp: true
+  tls: true
+  servername: lx-us1.777096.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /liangxin/us
+    headers:
+      Host: lx-us1.777096.xyz
+- name: 🇺🇸美国高速02|CTCU|0.1x
+  server: cfyes.777078.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: ws
+  udp: true
+  tls: true
+  servername: lx-us2.777096.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /liangxin/us
+    headers:
+      Host: lx-us2.777096.xyz
+- name: 🇺🇸美国高速03|CTCU|0.1x
+  server: cfyes.777078.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: ws
+  udp: true
+  tls: true
+  servername: lx-us3.777096.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /liangxin/us
+    headers:
+      Host: lx-us3.777096.xyz
+- name: 🇺🇸美国高速04|CTCU|0.1x
+  server: cfyes.777078.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: ws
+  udp: true
+  tls: true
+  servername: lx-us4.777096.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /liangxin/us
+    headers:
+      Host: lx-us4.777096.xyz
+- name: 🇺🇸美国高速05|CTCU|0.1x
+  server: cfyes.777078.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: ws
+  udp: true
+  tls: true
+  servername: lx-us5.777096.xyz
+  client-fingerprint: chrome
+  ws-opts:
+    path: /liangxin/us
+    headers:
+      Host: lx-us5.777096.xyz
+- name: 🇬🇧英国伦敦01|CTCU|0.1x
+  server: cfyes.777078.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: ws
+  udp: true
+  tls: true
+  servername: gb-lx.777096.xyz
+  client-fingerprint: ios
+  ws-opts:
+    path: /liangxin/gb1
+    headers:
+      Host: gb-lx.777096.xyz
+- name: 🇬🇧英国伦敦02|CTCU|0.1x
+  server: 62.164.143.252
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: download-porter.hoyoverse.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: a9I2uA3NNZA6uBAe3Tui9vZ8CG5MrMaYOifWrAdc0zg
+    short-id: a8609be8
+- name: 🇨🇳台湾高速01|BGP|流媒体
+  server: aws-link28.lxyun.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: download-porter.hoyoverse.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: I0KCN29MUCJ9CnUptlwBK4Nr-NZZUNh0bQj5aXxKrDY
+    short-id: 0b03cf9a
+- name: 🇺🇸美国洛杉矶01|流媒体|0.01x
+  server: lxyus1.777078.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: iosapps.itunes.apple.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: ulU6wfyain_FQnYt23NGunTAfBQNLhIBY49mvekiQB0
+    short-id: ca032f81
+- name: 🇺🇸美国洛杉矶02|流媒体|0.01x
+  server: lxyus3.777078.xyz
+  port: 443
+  type: vless
+  uuid: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  network: tcp
+  udp: true
+  flow: xtls-rprx-vision
+  tls: true
+  servername: iosapps.itunes.apple.com
+  client-fingerprint: safari
+  reality-opts:
+    public-key: paFz5M87V_EcKgUk7C9MlHYCTkOMLTNVe-h-6mSHOAk
+    short-id: cffc91ca
+- name: 🇸🇬新加坡专线01|BGP|流媒体
+  server: aws-linkhy9.lxyun.xyz
+  port: 60000
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: iosapps.itunes.apple.com
+- name: 🇸🇬新加坡专线02|BGP|流媒体
+  server: aws-linkhy10.lxyun.xyz
+  port: 60000
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: iosapps.itunes.apple.com
+- name: 🇸🇬新加坡专线03|BGP|流媒体
+  server: aws-linkhy11.lxyun.xyz
+  port: 60000
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: iosapps.itunes.apple.com
+- name: 🇸🇬新加坡专线04|BGP|流媒体
+  server: aws-linkhy12.lxyun.xyz
+  port: 60000
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: iosapps.itunes.apple.com
+- name: 🇯🇵日本专线01|BGP|流媒体
+  server: aws-linkhy15.lxyun.xyz
+  port: 60000
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: bilibili-jp.biliimg.com
+- name: 🇯🇵日本专线02|BGP|流媒体
+  server: aws-linkhy16.lxyun.xyz
+  port: 60000
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: bilibili-jp2.biliimg.com
+- name: 🇯🇵日本专线03|BGP|流媒体
+  server: aws-linkhy17.lxyun.xyz
+  port: 60000
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: bilibili-jp3.biliimg.com
+- name: 🇯🇵日本专线04|BGP|流媒体
+  server: aws-linkhy18.lxyun.xyz
+  port: 60000
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: bilibili-jp4.biliimg.com
+- name: 🇬🇧英国伦敦01|流媒体|0.1x
+  server: 62.164.143.251
+  port: 60000
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: bilibili-gb.biliimg.com
+- name: 🇬🇧英国伦敦02|流媒体|0.1x
+  server: 62.164.143.251
+  port: 60000
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: bilibili-gb.biliimg.com
+- name: 🇺🇸美国01|流媒体|0.1x
+  server: lxyus1.777078.xyz
+  port: 443
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: iosapps.itunes.apple.com
+- name: 🇺🇸美国02|流媒体|0.1x
+  server: lxyus2.777078.xyz
+  port: 443
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: iosapps.itunes.apple.com
+- name: 🇺🇸美国03|流媒体|0.1x
+  server: lxyus3.777078.xyz
+  port: 443
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: iosapps.itunes.apple.com
+- name: 🇺🇸美国04|流媒体|0.1x
+  server: lxyus4.777078.xyz
+  port: 443
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: iosapps.itunes.apple.com
+- name: 🇺🇸美国05|流媒体|0.1x
+  server: 203.10.97.121
+  port: 60000
+  type: hysteria2
+  password: cb794c97-bf05-4933-a8dd-d5caeda8396e
+  sni: www.apple.com
 - name: 🇭🇰香港-Gemini-IEPL
   server: bpnpa5ei.jhm.qwer123.net
   port: 36602
@@ -136,18 +618,54 @@ proxies:
   plugin-opts:
     mode: http
     host: 672f802b15cc3428ebc095121f38e39f.baidu.com
-- name: 请关闭代理，使用中国大陆本地网络更新订阅
-  server: 127.0.0.1
-  port: 9
-  type: ss
-  cipher: aes-128-gcm
-  password: '0000000000000000'
-  udp: true
 proxy-groups:
 - name: 节点选择
   type: select
   proxies:
   - 自动优选
+  - 🇭🇰香港高速01|BGP|CMCU
+  - 🇭🇰香港高速02|BGP|CMCU
+  - 🇭🇰香港高速03|BGP|CMCU
+  - 🇭🇰香港高速04|BGP|CMCU
+  - 🇭🇰香港高速05|BGP|CMCU
+  - 🇸🇬新加坡高速01|BGP|CTCUCM
+  - 🇸🇬新加坡高速02|BGP|CTCUCM
+  - 🇸🇬新加坡高速03|BGP|CTCUCM
+  - 🇸🇬新加坡高速04|BGP|CTCUCM
+  - 🇸🇬新加坡高速05|BGP|CTCUCM
+  - 🇸🇬新加坡高速06|BGP|CTCU
+  - 🇸🇬新加坡高速07|BGP|CTCU
+  - 🇸🇬新加坡高速08|BGP|CTCU
+  - 🇯🇵日本高速01|BGP|CUCM
+  - 🇯🇵日本高速02|BGP|CUCM
+  - 🇯🇵日本高速03|BGP|CUCM
+  - 🇯🇵日本高速04|BGP|CUCM
+  - 🇯🇵日本高速05|BGP|CUCM
+  - 🇺🇸美国高速01|CTCU|0.1x
+  - 🇺🇸美国高速02|CTCU|0.1x
+  - 🇺🇸美国高速03|CTCU|0.1x
+  - 🇺🇸美国高速04|CTCU|0.1x
+  - 🇺🇸美国高速05|CTCU|0.1x
+  - 🇬🇧英国伦敦01|CTCU|0.1x
+  - 🇬🇧英国伦敦02|CTCU|0.1x
+  - 🇨🇳台湾高速01|BGP|流媒体
+  - 🇺🇸美国洛杉矶01|流媒体|0.01x
+  - 🇺🇸美国洛杉矶02|流媒体|0.01x
+  - 🇸🇬新加坡专线01|BGP|流媒体
+  - 🇸🇬新加坡专线02|BGP|流媒体
+  - 🇸🇬新加坡专线03|BGP|流媒体
+  - 🇸🇬新加坡专线04|BGP|流媒体
+  - 🇯🇵日本专线01|BGP|流媒体
+  - 🇯🇵日本专线02|BGP|流媒体
+  - 🇯🇵日本专线03|BGP|流媒体
+  - 🇯🇵日本专线04|BGP|流媒体
+  - 🇬🇧英国伦敦01|流媒体|0.1x
+  - 🇬🇧英国伦敦02|流媒体|0.1x
+  - 🇺🇸美国01|流媒体|0.1x
+  - 🇺🇸美国02|流媒体|0.1x
+  - 🇺🇸美国03|流媒体|0.1x
+  - 🇺🇸美国04|流媒体|0.1x
+  - 🇺🇸美国05|流媒体|0.1x
   - 🇭🇰香港-Gemini-IEPL
   - 🇭🇰香港2-IEPL
   - 🇹🇼台湾-IEPL
@@ -160,11 +678,53 @@ proxy-groups:
   - 🇺🇸美国-IEPL-GPT
   - 🇺🇸美国2-IEPL-GPT
   - 🇩🇪德国-IEPL
-  - 请关闭代理，使用中国大陆本地网络更新订阅
   - DIRECT
 - name: 自动优选
   type: url-test
   proxies:
+  - 🇭🇰香港高速01|BGP|CMCU
+  - 🇭🇰香港高速02|BGP|CMCU
+  - 🇭🇰香港高速03|BGP|CMCU
+  - 🇭🇰香港高速04|BGP|CMCU
+  - 🇭🇰香港高速05|BGP|CMCU
+  - 🇸🇬新加坡高速01|BGP|CTCUCM
+  - 🇸🇬新加坡高速02|BGP|CTCUCM
+  - 🇸🇬新加坡高速03|BGP|CTCUCM
+  - 🇸🇬新加坡高速04|BGP|CTCUCM
+  - 🇸🇬新加坡高速05|BGP|CTCUCM
+  - 🇸🇬新加坡高速06|BGP|CTCU
+  - 🇸🇬新加坡高速07|BGP|CTCU
+  - 🇸🇬新加坡高速08|BGP|CTCU
+  - 🇯🇵日本高速01|BGP|CUCM
+  - 🇯🇵日本高速02|BGP|CUCM
+  - 🇯🇵日本高速03|BGP|CUCM
+  - 🇯🇵日本高速04|BGP|CUCM
+  - 🇯🇵日本高速05|BGP|CUCM
+  - 🇺🇸美国高速01|CTCU|0.1x
+  - 🇺🇸美国高速02|CTCU|0.1x
+  - 🇺🇸美国高速03|CTCU|0.1x
+  - 🇺🇸美国高速04|CTCU|0.1x
+  - 🇺🇸美国高速05|CTCU|0.1x
+  - 🇬🇧英国伦敦01|CTCU|0.1x
+  - 🇬🇧英国伦敦02|CTCU|0.1x
+  - 🇨🇳台湾高速01|BGP|流媒体
+  - 🇺🇸美国洛杉矶01|流媒体|0.01x
+  - 🇺🇸美国洛杉矶02|流媒体|0.01x
+  - 🇸🇬新加坡专线01|BGP|流媒体
+  - 🇸🇬新加坡专线02|BGP|流媒体
+  - 🇸🇬新加坡专线03|BGP|流媒体
+  - 🇸🇬新加坡专线04|BGP|流媒体
+  - 🇯🇵日本专线01|BGP|流媒体
+  - 🇯🇵日本专线02|BGP|流媒体
+  - 🇯🇵日本专线03|BGP|流媒体
+  - 🇯🇵日本专线04|BGP|流媒体
+  - 🇬🇧英国伦敦01|流媒体|0.1x
+  - 🇬🇧英国伦敦02|流媒体|0.1x
+  - 🇺🇸美国01|流媒体|0.1x
+  - 🇺🇸美国02|流媒体|0.1x
+  - 🇺🇸美国03|流媒体|0.1x
+  - 🇺🇸美国04|流媒体|0.1x
+  - 🇺🇸美国05|流媒体|0.1x
   - 🇭🇰香港-Gemini-IEPL
   - 🇭🇰香港2-IEPL
   - 🇹🇼台湾-IEPL
@@ -177,7 +737,6 @@ proxy-groups:
   - 🇺🇸美国-IEPL-GPT
   - 🇺🇸美国2-IEPL-GPT
   - 🇩🇪德国-IEPL
-  - 请关闭代理，使用中国大陆本地网络更新订阅
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
